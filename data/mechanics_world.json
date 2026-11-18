@@ -977,5 +977,354 @@
     "fortnite-br": "w:en/a/ae/Fortnite_Save_The_World.jpg",
     "dead-space": "w:en/5/57/Dead_Space_Box_Art.jpg",
     "doom-2016": "w:en/2/28/Doom_Cover.jpg"
+  },
+  "prices": {
+    "cpi": {
+      "1977": 60.6,
+      "1980": 82.4,
+      "1982": 96.5,
+      "1985": 107.6,
+      "1988": 118.3,
+      "1990": 130.7,
+      "1992": 140.3,
+      "1994": 148.2,
+      "1995": 152.4,
+      "1997": 160.5,
+      "2000": 172.2,
+      "2001": 177.1,
+      "2005": 195.3,
+      "2008": 215.3,
+      "2010": 218.1,
+      "2013": 233.0,
+      "2017": 245.1,
+      "2020": 258.8,
+      "2023": 304.7,
+      "2026": 324.0
+    },
+    "eras": [
+      {
+        "era": "1977–1982",
+        "short": "'77–'82",
+        "repYear": 1980,
+        "label": "Atari 2600 ROM Cartridges",
+        "format": "2KB–8KB ROM cartridge",
+        "nom": 34.95,
+        "high": 39.95,
+        "real": 137,
+        "highReal": 157,
+        "note": "Early silicon ROM chips were pricey. Space Invaders & Pac-Man launched around $29.95–$37.95 — equivalent to ~$130–$155 in today's money.",
+        "games": [
+          "space-invaders",
+          "pac-man",
+          "pitfall"
+        ]
+      },
+      {
+        "era": "1983–1986",
+        "short": "'83–'86",
+        "repYear": 1985,
+        "label": "C64, Speccy & Amiga Tapes / Floppies",
+        "format": "Cassette (£2–£10) & 5.25\"/3.5\" floppy",
+        "nom": 29.95,
+        "high": 39.95,
+        "real": 90,
+        "highReal": 120,
+        "note": "After the 1983 US console crash, magnetic tape & floppy disks slashed manufacturing costs — including £1.99–£9.99 pocket-money cassettes in Europe.",
+        "games": [
+          "elite",
+          "defender-of-the-crown",
+          "tetris"
+        ]
+      },
+      {
+        "era": "1987–1990",
+        "short": "'87–'90",
+        "repYear": 1989,
+        "label": "8-Bit NES Golden Age",
+        "format": "NES ROM cartridge (+ battery save)",
+        "nom": 49.99,
+        "high": 54.99,
+        "real": 131,
+        "highReal": 144,
+        "note": "Standard NES hits cost $44.99–$49.99 at Toys \"R\" Us (~$131 today), turning weekend Blockbuster & local video-store rentals ($3) into a childhood ritual.",
+        "games": [
+          "super-mario-bros-3",
+          "zelda",
+          "mega-man-2"
+        ]
+      },
+      {
+        "era": "1991–1995",
+        "short": "'91–'95",
+        "repYear": 1994,
+        "label": "16-Bit SNES & Genesis Silicon Peak",
+        "format": "16–32 Megabit custom ROM carts",
+        "nom": 64.99,
+        "high": 89.99,
+        "real": 142,
+        "highReal": 197,
+        "note": "The priciest mainstream era in history! Big RPG & fighting carts packed custom chips: Street Fighter II Turbo ($69.99), Chrono Trigger ($79.99), and Phantasy Star IV ($99.99 = ~$218 today!).",
+        "games": [
+          "chrono-trigger",
+          "street-fighter-ii",
+          "doom"
+        ]
+      },
+      {
+        "era": "1996–1999",
+        "short": "'96–'99",
+        "repYear": 1997,
+        "label": "$1 PlayStation CDs vs. $70 N64 Carts",
+        "format": "650MB CD-ROM ($49) vs. N64 Cart ($69)",
+        "nom": 49.99,
+        "high": 74.99,
+        "real": 101,
+        "highReal": 151,
+        "note": "Sony's $1-to-press CD-ROMs dropped flagship PlayStation games to $39.99–$49.99, while N64 cartridges (Turok, Ocarina, GoldenEye) still hit $59.99–$74.99.",
+        "games": [
+          "final-fantasy-vii",
+          "the-legend-of-zelda-ocarina-of-time",
+          "goldeneye-007"
+        ]
+      },
+      {
+        "era": "2000–2004",
+        "short": "'00–'04",
+        "repYear": 2001,
+        "label": "PS2, Xbox & GameCube DVD Standard",
+        "format": "4.7GB DVD-ROM keep-case",
+        "nom": 49.99,
+        "high": 49.99,
+        "real": 91,
+        "highReal": 91,
+        "note": "Optical discs won across the board, locking nearly every console & PC blockbuster cleanly at $49.99 (~$91 in 2026 dollars) with $19.99 Greatest Hits.",
+        "games": [
+          "gta3",
+          "halo-combat-evolved",
+          "half-life-2"
+        ]
+      },
+      {
+        "era": "2005–2012",
+        "short": "'05–'12",
+        "repYear": 2007,
+        "label": "HD Era ($59.99) + $15 Indie Birth",
+        "format": "Blu-ray / DVD + Steam & XBLA digital",
+        "nom": 59.99,
+        "high": 59.99,
+        "real": 94,
+        "highReal": 94,
+        "note": "Xbox 360 & PS3 raised AAA games by $10 to $59.99 — while Steam sales, Xbox Live Arcade, and Minecraft sparked a brand-new $10–$20 indie golden age.",
+        "games": [
+          "the-elder-scrolls-v-skyrim",
+          "minecraft",
+          "portal-2"
+        ]
+      },
+      {
+        "era": "2013–2019",
+        "short": "'13–'19",
+        "repYear": 2016,
+        "label": "The 15-Year $59.99 Freeze + F2P Boom",
+        "format": "Digital download, Blu-ray & Free-to-Play",
+        "nom": 59.99,
+        "high": 59.99,
+        "real": 81,
+        "highReal": 81,
+        "note": "AAA stayed frozen at $59.99 for 15 straight years even as dev teams grew 10×, funded by optional DLC/cosmetics, $0 free-to-play titans, and $15 indie classics.",
+        "games": [
+          "the-witcher-3-wild-hunt",
+          "fortnite-br",
+          "stardew-valley"
+        ]
+      },
+      {
+        "era": "2020–2026",
+        "short": "'20–'26",
+        "repYear": 2025,
+        "label": "Modern $69.99 AAA & $15–$30 Breakout Hits",
+        "format": "SSD digital, physical & Game Pass / Steam",
+        "nom": 69.99,
+        "high": 79.99,
+        "real": 70,
+        "highReal": 80,
+        "note": "PS5 & Series X nudged flagship AAA to $69.99 — still ~47% cheaper in real purchasing power than 1990s cartridges, alongside $15–$30 GOTY contenders like Balatro & Hades.",
+        "games": [
+          "elden-ring",
+          "baldur-s-gate-3",
+          "balatro"
+        ]
+      }
+    ],
+    "consoles": [
+      {
+        "sys": "Atari 2600",
+        "year": 1977,
+        "nom": 199,
+        "real": 1064
+      },
+      {
+        "sys": "NES",
+        "year": 1985,
+        "nom": 179,
+        "real": 539
+      },
+      {
+        "sys": "Amiga 500",
+        "year": 1987,
+        "nom": 699,
+        "real": 1990
+      },
+      {
+        "sys": "Game Boy",
+        "year": 1989,
+        "nom": 89.99,
+        "real": 235
+      },
+      {
+        "sys": "Neo Geo AES",
+        "year": 1991,
+        "nom": 649.99,
+        "real": 1545
+      },
+      {
+        "sys": "PlayStation",
+        "year": 1995,
+        "nom": 299,
+        "real": 636
+      },
+      {
+        "sys": "PlayStation 2",
+        "year": 2000,
+        "nom": 299,
+        "real": 563
+      },
+      {
+        "sys": "Switch",
+        "year": 2017,
+        "nom": 299,
+        "real": 395
+      },
+      {
+        "sys": "PlayStation 5",
+        "year": 2020,
+        "nom": 499,
+        "real": 625
+      }
+    ],
+    "comparisons": [
+      {
+        "icon": "🎟️",
+        "item": "Live Concert Ticket (major tour avg)",
+        "cat": "Music & Events",
+        "p1990": 22.0,
+        "p1990Real": 54.5,
+        "p2026": 136.0,
+        "pct": 518,
+        "perHr": "$54.00 / hr (2.5 hrs)"
+      },
+      {
+        "icon": "🎓",
+        "item": "Public 4-Year College Tuition (1 yr)",
+        "cat": "Everyday Life",
+        "p1990": 1908,
+        "p1990Real": 4730,
+        "p2026": 11610,
+        "pct": 508,
+        "perHr": "—"
+      },
+      {
+        "icon": "☕",
+        "item": "Cafe / Diner Cup of Coffee",
+        "cat": "Everyday Life",
+        "p1990": 0.75,
+        "p1990Real": 1.86,
+        "p2026": 3.75,
+        "pct": 400,
+        "perHr": "—"
+      },
+      {
+        "icon": "🏠",
+        "item": "Median US Monthly Rent",
+        "cat": "Everyday Life",
+        "p1990": 480,
+        "p1990Real": 1190,
+        "p2026": 1590,
+        "pct": 231,
+        "perHr": "—"
+      },
+      {
+        "icon": "🎬",
+        "item": "Movie Theater Ticket (standard 2D)",
+        "cat": "Movies",
+        "p1990": 4.23,
+        "p1990Real": 10.49,
+        "p2026": 11.75,
+        "pct": 178,
+        "perHr": "$5.35–$9.50 / hr (2.2 hrs; $19+ IMAX)"
+      },
+      {
+        "icon": "⛽",
+        "item": "Gallon of Regular Gasoline",
+        "cat": "Everyday Life",
+        "p1990": 1.16,
+        "p1990Real": 2.88,
+        "p2026": 3.15,
+        "pct": 172,
+        "perHr": "—"
+      },
+      {
+        "icon": "🍔",
+        "item": "McDonald's Big Mac",
+        "cat": "Food",
+        "p1990": 2.2,
+        "p1990Real": 5.45,
+        "p2026": 5.79,
+        "pct": 163,
+        "perHr": "—"
+      },
+      {
+        "icon": "📊",
+        "item": "Overall US Inflation (CPI-U Basket)",
+        "cat": "Baseline",
+        "p1990": 100,
+        "p1990Real": 248,
+        "p2026": 248,
+        "pct": 148,
+        "perHr": "Baseline (+148% since 1990)"
+      },
+      {
+        "icon": "💿",
+        "item": "New Physical Album (1990 CD → 2026 Vinyl LP)",
+        "cat": "Music",
+        "p1990": 15.98,
+        "p1990Real": 39.6,
+        "p2026": 32.99,
+        "pct": 106,
+        "perHr": "$11.99/mo streaming = unlimited"
+      },
+      {
+        "icon": "🎮",
+        "item": "Flagship Video Game (1990 NES/SNES → 2026 AAA)",
+        "cat": "Games",
+        "p1990": 49.99,
+        "p1990Real": 123.9,
+        "p2026": 69.99,
+        "pct": 40,
+        "perHr": "$0.60–$2.30 / hr (30–120+ hrs)",
+        "highlight": true
+      },
+      {
+        "icon": "💎",
+        "item": "Modern Indie Classic (Stardew, Hollow Knight, Balatro)",
+        "cat": "Games",
+        "p1990": 49.99,
+        "p1990Real": 123.9,
+        "p2026": 14.99,
+        "pct": -70,
+        "perHr": "$0.15–$0.40 / hr (40–100+ hrs)",
+        "highlight": true
+      }
+    ]
   }
 }

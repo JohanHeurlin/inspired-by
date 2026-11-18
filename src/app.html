@@ -437,9 +437,11 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 /* story mode */
 .story{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--paper);max-block-size:100vh;max-block-size:100dvh;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .sthead{display:flex;align-items:center;gap:12px;padding-block:12px}
-.stprog{flex:1;display:flex;gap:3px}
-.stprog i{flex:1;height:4px;border-radius:2px;background:var(--line)}
-.stprog i.on{background:var(--accent)}
+.stprog{flex:1;display:flex;gap:3px;align-items:center}
+.stprog button,.stprog i{flex:1;height:6px;min-block-size:6px;min-inline-size:0;padding:0;border:0;border-radius:3px;background:var(--line);cursor:pointer;position:relative}
+.stprog button::after{content:"";position:absolute;inset:-8px 0}
+.stprog .on{background:color-mix(in srgb,var(--accent) 48%,var(--line))}
+.stprog .cur{background:var(--love);height:9px;min-block-size:9px}
 .stbody{flex:1;overflow:auto;overscroll-behavior:contain;display:flex;align-items:center}
 .stin{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center;width:100%;padding-block:12px}
 @media (max-width:640px){.stin{grid-template-columns:1fr;gap:16px;justify-items:start}}
@@ -448,11 +450,13 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .stin h2{font-family:var(--f-display);font-size:clamp(22px,4.4vw,34px);margin:8px 0 4px;line-height:1.1}
 .stlink{margin-top:16px;border-left:4px solid var(--c);padding:4px 0 4px 14px}
 .stlink .lead{font-size:13px;color:var(--muted);margin:0 0 6px}
-.stfoot{display:flex;justify-content:space-between;gap:10px;padding-block:12px;border-top:1px solid var(--line)}
+.stfoot{display:flex;justify-content:space-between;gap:10px;padding-block:12px;border-top:1px solid var(--line);flex-wrap:wrap}
 .stsum{font-size:clamp(17px,3vw,22px);line-height:1.4;max-width:46ch}
 @media (prefers-reduced-motion:no-preference){
-  .stin{animation:stin .35s ease-out}
-  @keyframes stin{from{transform:translateX(18px)}to{transform:none}}
+  .stin{animation:stinR .32s ease-out}
+  .stin.back{animation:stinL .32s ease-out}
+  @keyframes stinR{from{transform:translateX(18px);opacity:.65}to{transform:none;opacity:1}}
+  @keyframes stinL{from{transform:translateX(-18px);opacity:.65}to{transform:none;opacity:1}}
   .tile .art .cv{transition:transform .12s ease-out}
 }
 
@@ -510,9 +514,9 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .relbadge.disp{background:var(--love-soft);color:var(--love)}
 .stbtn{border:0;background:none;padding:0;color:var(--ink2);font:inherit;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px;cursor:pointer;text-align:left}
 .stbtn:hover{color:var(--accent);text-decoration-color:var(--accent)}
-.makerbtn{display:inline-flex;gap:7px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13.5px;color:var(--ink);text-decoration:none}
+.makerbtn{display:inline-flex;gap:7px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13.5px;color:var(--ink);text-decoration:none}
 .makerbtn:hover{border-color:var(--accent);color:var(--accent)}
-.makerbtn span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.makerbtn span{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-box:trim-both cap alphabetic}
 .stgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:14px}
 .stcard{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;text-align:left;color:inherit}
 .stcard:hover{border-color:var(--line2);box-shadow:var(--shadow)}
@@ -614,7 +618,48 @@ dialog.sheetdlg::backdrop{background:rgb(6 9 18 / .54);backdrop-filter:blur(2px)
 .navback{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:600;color:var(--ink2);flex:none}
 .navback:hover{border-color:var(--accent);color:var(--accent)}
 .sheetfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding-top:12px;border-top:1px solid var(--line);flex-wrap:wrap}
-.stlogo{height:22px;max-width:76px;padding:2px 6px;border-radius:5px;background:#F4F6FA;border:1px solid var(--line);object-fit:contain;vertical-align:middle;flex:none}
+.stlogobox{display:inline-flex;align-items:center;justify-content:center;width:68px;height:26px;padding:3px 6px;border-radius:6px;background:#FFFFFF;border:1px solid var(--line);box-sizing:border-box;vertical-align:middle;flex:none;overflow:hidden;box-shadow:inset 0 0 0 1px rgb(0 0 0 / .05)}
+.stlogobox.lg{width:96px;height:38px;padding:5px 9px;border-radius:8px}
+.stlogo{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;display:block}
+.stname{text-box:trim-both cap alphabetic}
+/* price history & everyday comparison */
+.pchart{display:grid;grid-template-columns:repeat(9,minmax(58px,1fr));gap:8px;align-items:end;min-height:220px;padding:24px 6px 6px;overflow-x:auto}
+.pecol{display:flex;flex-direction:column;align-items:center;gap:5px;border:1.5px solid transparent;background:none;border-radius:12px;padding:8px 4px;color:inherit;cursor:pointer;min-inline-size:58px}
+.pecol:hover{background:var(--card);border-color:var(--line)}
+.pecol[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.pecol .peval{font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--ink)}
+.pecol .pebarwrap{width:100%;height:148px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.pecol .pebar{width:min(100%,38px);border-radius:7px 7px 3px 3px;background:var(--accent);transition:height .22s ease-out}
+.pecol .pebar.real{background:var(--love)}
+.pecol .pehi{position:absolute;width:2px;background:var(--hook);opacity:.85;border-radius:1px}
+.pecol .pelbl{font-family:var(--f-mono);font-size:11px;color:var(--muted);white-space:nowrap}
+.cmpbars{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.cmprow{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(110px,1.5fr) auto;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+.cmprow.hi{border-color:var(--accent);background:color-mix(in srgb,var(--accent-soft) 45%,var(--card))}
+@media (max-width:560px){.cmprow{grid-template-columns:minmax(0,1fr) auto}.cmprow .cmpbar{grid-column:1 / -1}}
+.cmpbar{height:10px;border-radius:5px;background:var(--line);overflow:hidden;position:relative}
+.cmpbar i{position:absolute;inset:0 auto 0 0;border-radius:5px;background:var(--love)}
+.cmprow.hi .cmpbar i{background:var(--accent)}
+.ptablewrap{overflow:auto;max-inline-size:100%;max-block-size:min(560px,80vh);container-type:inline-size;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+table.ptable{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;text-align:left;--label-2:"1990 sticker";--label-3:"1990 in 2026 $";--label-4:"2026 price";--label-5:"Sticker change";--label-6:"Cost / hour"}
+table.ptable caption{padding:12px 14px 8px;font-weight:700;text-align:left;color:var(--ink2);font-size:13px;border-bottom:1px solid var(--line)}
+table.ptable thead{position:sticky;inset-block-start:0;z-index:2;background:var(--paper)}
+table.ptable th,table.ptable td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.ptable thead th{font-family:var(--f-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--paper)}
+table.ptable tbody th{position:sticky;inset-inline-start:0;background:var(--card);font-weight:600;z-index:1}
+table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in srgb,var(--accent-soft) 40%,var(--card))}
+@container (width < 600px){
+  table.ptable,table.ptable thead,table.ptable tbody,table.ptable tr,table.ptable th,table.ptable td{display:block}
+  table.ptable thead{display:none}
+  table.ptable tr{margin:10px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  table.ptable tbody th{position:sticky;inset-block-start:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--line)}
+  table.ptable td{display:flex;justify-content:space-between;gap:10px;padding:7px 12px}
+  table.ptable td:nth-child(2)::before{content:var(--label-2) ": ";color:var(--muted);font-weight:600}
+  table.ptable td:nth-child(3)::before{content:var(--label-3) ": ";color:var(--muted);font-weight:600}
+  table.ptable td:nth-child(4)::before{content:var(--label-4) ": ";color:var(--muted);font-weight:600}
+  table.ptable td:nth-child(5)::before{content:var(--label-5) ": ";color:var(--muted);font-weight:600}
+  table.ptable td:nth-child(6)::before{content:var(--label-6) ": ";color:var(--muted);font-weight:600}
+}
 .mechgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:14px}
 .mechcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
 .genpill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;color:var(--ink2);text-decoration:none}
@@ -752,7 +797,7 @@ G.forEach(g=>{
 });
 STUDIOS.forEach(st=>{st.games.sort((a,b)=>a.year-b.year||b.pop-a.pop);st.maxInf=st.games.reduce((m,g)=>Math.max(m,g.inf),0);st.treeCount=st.games.filter(g=>g.tree).length});
 const findStudio=x=>x?(STUDIOS.get(x)||STUDIO_ALIAS.get(norm(x))||STUDIO_ALIAS.get(slugStudio(x))||null):null;
-const studioLogoHTML=st=>st&&st.logo?`<img class="stlogo" src="${esc(st.logo)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">`:"";
+const studioLogoHTML=(st,cls="")=>st&&st.logo?`<span class="stlogobox${cls?" "+cls:""}"><img class="stlogo" src="${esc(st.logo)}" alt="" loading="lazy" decoding="async" onerror="this.parentElement.remove()"></span>`:"";
 const studioBtn=(nm,cls="stbtn")=>{if(!nm)return "";const st=findStudio(nm);return st?`<button type="button" class="${cls}" data-act="studio" data-st="${esc(st.id)}">${esc(nm)}</button>`:esc(nm)};
 const studioLinks=dev=>String(dev||"").split(/\s*(?:\/|;|,)\s*/).map(s=>s.trim()).filter(Boolean).map(nm=>studioBtn(nm)).join(" / ");
 
@@ -1319,7 +1364,7 @@ function friendList(){
 /* ================================================================
    Router and views
    ================================================================ */
-const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),showArtWhy:store.get("ib3-artwhy",1),makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),mechTab:"mechanics",genreSel:"",worldCC:"",worldMine:false,quizMode:"lineage",posterMode:"wall",mapMode:"pillars",mapStrong:true,listIdx:0,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),showArtWhy:store.get("ib3-artwhy",1),makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),mechTab:"mechanics",priceReal:false,priceComp:false,priceEra:3,genreSel:"",worldCC:"",worldMine:false,quizMode:"lineage",posterMode:"wall",mapMode:"pillars",mapStrong:true,listIdx:0,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
 state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
 const isDevMode=()=>!!(state.devMode||workedEntries(hist).length||(hist.workedStudios&&hist.workedStudios.length));
 function renderSandboxBar(){
@@ -1337,7 +1382,7 @@ function parseHash(){
   if(h==="picks"){if(hist.birth){hist.stage="picks";return {view:"start",picks:1}}return home}
   if(h==="timeline")return hist.birth&&!hist.stage?{view:"timeline"}:{view:"start"};
   if(h==="explore")return {view:"explore"};
-  if(h==="mechanics"||h==="boardgames"||h==="genres"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":"mechanics";return {view:"mechanics"}}
+  if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":"mechanics";return {view:"mechanics",mt:state.mechTab}}
   if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
   if(h==="world"){return {view:"world"}}
   if(h.startsWith("country-")&&/^[A-Za-z]{2}$/.test(h.slice(8))){state.worldCC=h.slice(8).toUpperCase();return {view:"world",cc:state.worldCC}}
@@ -1361,7 +1406,7 @@ function render(){
   const r=state.route,m=$("#main");
   const tab=r.view==="start"?"timeline":(r.view==="shared"||r.view==="person"||r.view==="sharedList")?"friends":r.view==="game"?"explore":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
   $$(".tab").forEach(a=>a.toggleAttribute("aria-current",a.dataset.tab===tab)),$$(".tab").forEach(a=>{if(a.dataset.tab===tab)a.setAttribute("aria-current","page")});
-  const key=r.view+(r.id||"")+(r.st||"")+(r.gen||"")+(r.cc||"")+(r.payload||"")+(r.fk||"")+(r.picks||"");
+  const key=r.view+(r.id||"")+(r.st||"")+(r.gen||"")+(r.cc||"")+(r.payload||"")+(r.fk||"")+(r.picks||"")+(r.mt||"");
   if(r.view==="start")renderStart(m);
   else if(r.view==="timeline")renderTimeline(m);
   else if(r.view==="explore")renderExplore(m);
@@ -1386,6 +1431,7 @@ const footer=()=>`<footer class="wrap foot-about">
       <button type="button" class="chip" data-act="listsSheet">📋 Custom lists</button>
       <a class="chip" href="#explore">Explore tree</a>
       <a class="chip" href="#mechanics">Genres & mechanics</a>
+      <a class="chip" href="#prices">💸 Game prices</a>
       <a class="chip" href="#world">🌍 World map</a>
       <a class="chip" href="#gratitude">💌 Thank makers</a>
       <a class="chip" href="#friends">Friends</a>
@@ -1893,6 +1939,7 @@ function renderTimeline(m){
       ${st.fav?`<button type="button" class="chip" data-act="bandJump" data-to="favSec">♥ Favorites (${st.fav})</button>`:""}
       ${dx?`<button type="button" class="chip" data-act="bandJump" data-to="dna">🧬 Gaming DNA & Next Up</button>`:""}
       <button type="button" class="chip" data-act="bandJump" data-to="odeSec">💌 Creators & Machines</button>
+      <a class="chip" href="#prices">💸 Game prices</a>
       ${!hasStash?`<button type="button" class="chip" data-act="sandboxEnter" title="Temporarily test onboarding as a brand-new visitor without losing your saved timeline">🧪 Test new-visitor flow</button>`:""}
     </nav></div>
     ${first?`<section class="wrap"><div class="banner"><p><b>Your timeline is a living notebook —</b> send it to friends now, and jump back into <b>➕ Pick games</b> anytime a forgotten childhood game pops into your head.</p><button class="btn primary" data-act="share">Share my timeline</button></div></section>`:""}
@@ -2075,6 +2122,7 @@ function renderExplore(m){
         <a class="chip" href="#mechanics">⚙️ Mechanics that stuck</a>
         <a class="chip" href="#genres">🧬 How genres breed</a>
         <a class="chip" href="#boardgames">🎲 Boardgame roots</a>
+        <a class="chip" href="#prices">💸 Game prices over time</a>
         <a class="chip" href="#world">🌍 World map (46 countries)</a>
         <button type="button" class="chip" data-act="bandJump" data-to="quizSec">🎮 Arcade trivia</button>
         <button type="button" class="chip" data-act="bandJump" data-to="inflSec">🏆 Most influential</button>
@@ -2125,7 +2173,7 @@ function studioCardHTML(st){
   const yrs=st.founded?(st.closed?`${st.founded}–${st.closed}`:`${st.founded}–present`):(st.games.length?`${st.games[0].year}–${st.games[st.games.length-1].year}`:"");
   const mySt=isWorkedStudio(hist,st.id);
   return `<button type="button" class="stcard" data-act="studio" data-st="${esc(st.id)}" ${mySt?`style="border-color:var(--craft)"`:""}>
-    <div class="row" style="justify-content:space-between;width:100%"><span class="row" style="gap:7px;min-width:0">${studioLogoHTML(st)}<b>${flag(st.cc)} ${esc(st.name)}</b></span><span class="row" style="gap:6px">${mySt?`<span class="pill craft">🛠 Worked here</span>`:""}${statusLabel(st)}</span></div>
+    <div class="row" style="justify-content:space-between;width:100%"><span class="row" style="gap:7px;min-width:0">${studioLogoHTML(st)}<b class="stname">${flag(st.cc)} ${esc(st.name)}</b></span><span class="row" style="gap:6px">${mySt?`<span class="pill craft">🛠 Worked here</span>`:""}${statusLabel(st)}</span></div>
     <small class="mono muted">${esc(yrs)}${st.hq?" · "+esc(st.hq):""} · ${plural(st.games.length,"game")}</small>
     ${st.bio?`<p style="margin:2px 0;font-size:13px;color:var(--ink2);line-height:1.4">${esc(st.bio)}</p>`:""}
     ${st.diaspora&&st.diaspora.length?`<small class="muted">Seeded: <b>${esc(st.diaspora.map(d=>d.studio).join(", "))}</b></small>`:""}
@@ -2245,7 +2293,7 @@ function renderStudio(m,id){
     <nav class="trail"><button type="button" class="navback" data-act="navBack" data-fb="studios">◂ Back</button><button data-act="goStudios">Makers</button><span aria-hidden="true">›</span><span class="cur">${esc(st.name)}</span></nav>
     <section style="padding-block:16px 8px">
       <div class="row" style="gap:10px;margin-bottom:6px"><span class="eyebrow" style="margin:0">Studio & makers</span>${statusLabel(st)}</div>
-      <div class="row" style="gap:12px;margin-bottom:8px">${studioLogoHTML(st)}<h1 class="h1" style="margin:0">${flag(st.cc)} ${esc(st.name)}</h1></div>
+      <div class="row" style="gap:12px;margin-bottom:8px">${studioLogoHTML(st,"lg")}<h1 class="h1" style="margin:0">${flag(st.cc)} ${esc(st.name)}</h1></div>
       <p class="meta"><span class="mono">${esc(yrs)}</span>${st.hq?`<span>${esc(st.hq)}</span>`:""}${st.cc?`<button type="button" class="stbtn" data-act="country" data-cc="${esc(st.cc)}">${esc(countryName(st.cc))} ▸</button>`:""}</p>
       ${st.bio?`<p class="lede" style="margin-top:12px">${esc(st.bio)}</p>`:""}
       <div class="gstats"><span><b>${st.games.length}</b> game${st.games.length===1?"":"s"} in catalog</span><span><b>${st.treeCount}</b> in the family tree</span><span><b>${st.maxInf.toLocaleString()}</b> max descendant games</span></div>
@@ -2262,7 +2310,171 @@ function renderStudio(m,id){
   </div>${footer()}`;
 }
 
-/* ---------- genres, mechanics that stuck & tabletop/boardgame roots ---------- */
+/* ---------- genres, mechanics, tabletop roots & game prices over time ---------- */
+function cpiFactorTo2026(y){
+  const tbl=(MW.prices&&MW.prices.cpi)||{1977:60.6,1980:82.4,1985:107.6,1990:130.7,1995:152.4,2000:172.2,2005:195.3,2010:218.1,2015:237,2020:258.8,2026:324};
+  const ks=Object.keys(tbl).map(Number).sort((a,b)=>a-b);
+  const c26=tbl[2026]||324;
+  if(y<=ks[0])return c26/tbl[ks[0]];
+  if(y>=ks[ks.length-1])return 1;
+  for(let i=0;i<ks.length-1;i++){
+    const a=ks[i],b=ks[i+1];
+    if(y>=a&&y<=b){const t=(y-a)/(b-a),cpi=tbl[a]+t*(tbl[b]-tbl[a]);return c26/cpi}
+  }
+  return 1;
+}
+function estimateGamePrice(g){
+  if(!g||!playable(g))return null;
+  if(F2P_IDS.has(g.id)||/free-to-play/i.test(g.note||""))return {nom:0,real:0,kind:"Free-to-play"};
+  const ps=sysOfGame(g);
+  if(ps.length===1&&ps[0]==="Arcade")return {nom:0.25,real:+(0.25*cpiFactorTo2026(Math.max(1977,g.year))).toFixed(2),kind:"Arcade quarter",arcade:true};
+  if(ps.every(p=>p==="iPhone / iPad"||p==="Android"||p==="Browser"))return {nom:2.99,real:Math.round(2.99*cpiFactorTo2026(g.year)),kind:"Mobile / web"};
+  let nom=59.99;
+  if(g.year<1983)nom=34.95;
+  else if(g.year<1987)nom=ps.some(p=>/Commodore 64|ZX Spectrum|Amstrad|Amiga|Atari ST|PC/.test(p))?29.95:39.95;
+  else if(g.year<1991)nom=ps.some(p=>/Amiga|Commodore 64|PC|Atari ST/.test(p))?39.95:49.99;
+  else if(g.year<1996)nom=ps.some(p=>/SNES|Genesis|Neo Geo/.test(p))?64.99:44.99;
+  else if(g.year<2000)nom=ps.includes("Nintendo 64")&&!ps.includes("PlayStation")?64.99:49.99;
+  else if(g.year<2005)nom=49.99;
+  else if(g.year<2020)nom=g.pop<=3?19.99:59.99;
+  else nom=g.pop<=3?19.99:69.99;
+  return {nom,real:Math.round(nom*cpiFactorTo2026(Math.max(1977,g.year))),kind:g.pop<=3&&g.year>=2006?"Indie / mid-tier":"Standard retail"};
+}
+function renderPricesHTML(){
+  const P=MW.prices||{eras:[],consoles:[],comparisons:[]};
+  const eras=P.eras||[],conList=P.consoles||[],cmps=P.comparisons||[];
+  const useReal=!!state.priceReal,showComp=!!state.priceComp;
+  const selIdx=Math.max(0,Math.min(eras.length-1,state.priceEra??3));
+  const selEra=eras[selIdx]||eras[0];
+  const maxVal=Math.max(1,...eras.map(e=>useReal?(e.highReal||e.real):(e.high||e.nom)));
+  const fmtUSD=v=>v>=100?`$${Math.round(v).toLocaleString()}`:v===0?"$0":`$${Number(v).toFixed(v%1?2:0)}`;
+  /* Catalog-driven stats from G */
+  const catIndies=G.filter(g=>playable(g)&&g.year>=2008&&g.pop<=3).length;
+  const catCarts=G.filter(g=>playable(g)&&g.year>=1977&&g.year<=1996&&sysOfGame(g).some(p=>/Atari 2600|NES|SNES|Genesis|Game Boy|Nintendo 64|Neo Geo/.test(p))).length;
+  /* Personal timeline receipt if user has logged games */
+  let myReceipt="";
+  if(hist.birth&&entries(hist).length>=2){
+    const priced=entries(hist).filter(x=>x.g).map(x=>({g:x.g,y:x.y,p:estimateGamePrice(x.g)})).filter(x=>x.p&&!x.p.arcade&&x.p.nom>0);
+    if(priced.length>=2){
+      const sumNom=priced.reduce((s,x)=>s+x.p.nom,0),sumReal=priced.reduce((s,x)=>s+x.p.real,0);
+      const topBox=priced.slice().sort((a,b)=>b.p.real-a.p.real)[0];
+      myReceipt=`<div class="personacard" style="margin-bottom:18px">
+        <div class="row" style="justify-content:space-between"><div><p class="eyebrow" style="margin-bottom:3px">🧾 Your personal timeline receipt · ${priced.length} boxed/digital games</p>
+          <h2 class="h2" style="font-size:19px">~$${Math.round(sumNom).toLocaleString()} on launch-day price tags · ~$${Math.round(sumReal).toLocaleString()} in 2026 money</h2>
+          <p class="sub" style="margin:4px 0 0">${topBox?`Priciest box on your timeline in real purchasing power: <b>${esc(topBox.g.title)} (${topBox.g.year})</b> — ~$${topBox.p.nom.toFixed(2)} then, or <b>~$${topBox.p.real}</b> today! `:""}Shout-out to birthday savings, paper routes, video rental stores, and hand-me-downs.</p>
+        </div><button type="button" class="btn sm primary" data-act="priceComp">${showComp?"🎮 See 1977–2026 era chart":"🍿 Compare vs. movies & life ▸"}</button></div>
+      </div>`;
+    }
+  }
+  if(showComp){
+    const maxPct=Math.max(100,...cmps.map(c=>Math.abs(c.pct)));
+    return `<section class="wrap sec" id="priceTop">
+      <div class="row" style="justify-content:space-between;margin-bottom:16px">
+        <div class="row" style="gap:8px">
+          <button type="button" class="btn wrap" data-act="priceComp" aria-pressed="false">◂ Game &amp; console prices (1977–2026)</button>
+          <button type="button" class="btn primary wrap" data-act="priceComp" aria-pressed="true">🍿 Vs. Movies, Music &amp; Everyday Life</button>
+        </div>
+        <span class="sync">1990 baseline ($49.99 NES/PC game) → 2026 US CPI-U &amp; retail averages</span>
+      </div>
+      ${myReceipt}
+      <div class="card" style="margin-bottom:18px">
+        <p class="eyebrow">1990 → Today · Sticker price % change</p>
+        <h2 class="h2">How the “$70 game” stacks up against movies, music, burgers &amp; rent</h2>
+        <p class="sub">Since 1990, overall US consumer prices rose <b>+148%</b> ($100 → $248). If a 1990 $49.99 game had simply tracked general inflation, standard games today would cost <b>$124</b> — before counting 100× larger teams and budgets.</p>
+        <div class="cmpbars">
+          ${cmps.map(c=>{
+            const neg=c.pct<0,w=(Math.max(5,Math.abs(c.pct)/maxPct*100)).toFixed(1);
+            return `<div class="cmprow${c.highlight?" hi":""}">
+              <div><b style="font-size:13.5px">${c.icon} ${esc(c.item)}</b><small class="muted" style="display:block;font-size:11.5px">${fmtUSD(c.p1990)} in 1990 → <b>${fmtUSD(c.p2026)}</b> today${c.perHr&&c.perHr!=="—"?" · "+esc(c.perHr):""}</small></div>
+              <div class="cmpbar"><i style="width:${w}%;${neg?"background:var(--t-mech)":""}"></i></div>
+              <span class="mono" style="font-weight:700;font-size:13px;min-width:64px;text-align:right;color:${neg?"var(--t-mech)":c.highlight?"var(--accent)":"var(--love)"}">${c.pct>0?"+"+c.pct:c.pct}%</span>
+            </div>`;
+          }).join("")}
+        </div>
+      </div>
+      <div class="hgrid" style="margin-bottom:18px">
+        <div class="card"><p class="eyebrow">Cost per hour of joy</p><h3 class="h3">What $70 (or $15) buys in hours</h3>
+          <p class="sub">Comparing a typical night out vs. worlds you inhabit for weeks or months:</p>
+          <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>🎟️ Live Arena Concert</b><small>~2.5 hours · avg major tour ticket</small></span><span class="mono" style="font-weight:700;color:var(--love)">~$54.00 / hr</span></div>
+          <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>🎬 IMAX Movie + Popcorn</b><small>~2.3 hours ($19 ticket + $9 snack)</small></span><span class="mono" style="font-weight:700;color:var(--love)">~$12.15 / hr</span></div>
+          <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>📖 Hardcover Novel</b><small>~10 hours ($28 cover price)</small></span><span class="mono" style="font-weight:700">~$2.80 / hr</span></div>
+          <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>🎮 $69.99 Flagship RPG / Open World</b><small>50–120+ hours (Elden Ring, BG3, GTA)</small></span><span class="mono" style="font-weight:700;color:var(--accent)">~$0.58–$1.40 / hr</span></div>
+          <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>💎 $14.99 Indie Phenomenon</b><small>50–100+ hours (Stardew, Hollow Knight, Balatro)</small></span><span class="mono" style="font-weight:700;color:var(--t-mech)">~$0.15–$0.30 / hr</span></div>
+        </div>
+        <div class="card"><p class="eyebrow">Why gamers still feel squeezed (fair point!)</p><h3 class="h3">Sticker price isn't the whole story</h3>
+          <p style="margin:0 0 10px;font-size:13.5px;color:var(--ink2);line-height:1.5"><b>1. Essentials ate disposable income:</b> Rent (+231%), tuition (+508%), and groceries climbed way faster than wages — so $70 hurts more when rent already took everything.</p>
+          <p style="margin:0 0 10px;font-size:13.5px;color:var(--ink2);line-height:1.5"><b>2. Deluxe editions &amp; battle passes:</b> In 1994, a $70 cartridge was 100% of the game (and you could resell or lend it). Today, $100 “3-day early access” tiers and $20 skins rightly rub players the wrong way.</p>
+          <p style="margin:0;font-size:13.5px;color:var(--ink2);line-height:1.5"><b>3. The upside:</b> Between <b>$15–$25 indies</b> (${catIndies.toLocaleString()} compact post-2008 gems in our catalog), deep Steam/GOG sales, and libraries, patient players pay less per classic than in any era in history.</p>
+        </div>
+      </div>
+      <div tabindex="0" role="region" aria-labelledby="ptableCaption" class="ptablewrap">
+        <table class="ptable">
+          <caption id="ptableCaption">1990 vs. 2026 side-by-side price comparison (US retail &amp; BLS CPI-U inflation adjustment)</caption>
+          <thead><tr><th scope="col">Item</th><th scope="col">1990 sticker</th><th scope="col">1990 in 2026 $</th><th scope="col">2026 price</th><th scope="col">Sticker change</th><th scope="col">Value / hour</th></tr></thead>
+          <tbody>${cmps.map(c=>`<tr class="${c.highlight?"hi":""}"><th scope="row">${c.icon} ${esc(c.item)}</th><td class="mono">${fmtUSD(c.p1990)}</td><td class="mono muted">${fmtUSD(c.p1990Real)}</td><td class="mono"><b>${fmtUSD(c.p2026)}</b></td><td class="mono" style="font-weight:700;color:${c.pct<0?"var(--t-mech)":c.highlight?"var(--accent)":"var(--love)"}">${c.pct>0?"+"+c.pct:c.pct}%</td><td>${esc(c.perHr||"—")}</td></tr>`).join("")}</tbody>
+        </table>
+      </div>
+    </section>`;
+  }
+  const [fYr,tYr]=(selEra?selEra.era:"1991–1995").split("–").map(s=>parseInt(s,10));
+  const eraCount=G.filter(g=>playable(g)&&g.year>=fYr&&g.year<=tYr).length;
+  const selGames=(selEra&&selEra.games||[]).map(gameRef).filter(Boolean);
+  return `<section class="wrap sec" id="priceTop">
+    <div class="row" style="justify-content:space-between;margin-bottom:16px">
+      <span class="seg" role="group" aria-label="Price lens" style="max-width:100%">
+        <button type="button" data-act="priceReal" data-v="0" aria-pressed="${!useReal}">🏷️ Launch sticker ($)</button>
+        <button type="button" data-act="priceReal" data-v="1" aria-pressed="${useReal}">📈 In 2026 $ (inflation)</button>
+      </span>
+      <button type="button" class="btn primary wrap" data-act="priceComp">🍿 Compare vs. Movies, Music &amp; Everyday Life ▸</button>
+    </div>
+    ${myReceipt}
+    <div class="card" style="margin-bottom:18px">
+      <div class="row" style="justify-content:space-between">
+        <div><p class="eyebrow">${useReal?"Real purchasing power (2026 US CPI-U dollars)":"Nominal shelf tag at launch (1977–2026)"}</p>
+          <h2 class="h2">${useReal?"Adjusted for inflation, the 1990s cartridge era peaked at $140–$200+ per game":"On the price tag, games jumped on 16-bit silicon, dropped on $1 CDs, then froze at $60 for 15 years"}</h2>
+        </div>
+        <span class="sync">Tap any era column below · amber whisker = RPG / multi-chip cart peak</span>
+      </div>
+      <div class="pchart" role="group" aria-label="Game prices by era">
+        ${eras.map((e,idx)=>{
+          const v=useReal?e.real:e.nom,hi=useReal?(e.highReal||e.real):(e.high||e.nom);
+          const bh=Math.max(12,Math.round(v/maxVal*136)),hh=Math.max(bh,Math.round(hi/maxVal*136));
+          return `<button type="button" class="pecol" data-act="priceEra" data-i="${idx}" aria-pressed="${idx===selIdx}">
+            <span class="peval">$${Math.round(v)}</span>
+            <span class="pebarwrap">
+              ${hh>bh+4?`<i class="pehi" style="height:${hh-bh}px;bottom:${bh}px" title="High-end cartridge / deluxe peak: $${Math.round(hi)}"></i>`:""}
+              <i class="pebar${useReal?" real":""}" style="height:${bh}px"></i>
+            </span>
+            <span class="pelbl">${esc(e.short)}</span>
+          </button>`;
+        }).join("")}
+      </div>
+      ${selEra?`<div class="diascard" style="margin-top:12px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center">
+        <div style="flex:1 1 260px;min-width:0">
+          <span class="eyebrow" style="margin:0">${esc(selEra.era)} · ${esc(selEra.format)} · ${eraCount.toLocaleString()} catalog games</span>
+          <h3 class="h2" style="margin:4px 0">${esc(selEra.label)} — <b>$${selEra.nom.toFixed(2)}</b> launch tag <span class="muted" style="font-weight:500">(~$${selEra.real} in 2026 $)</span></h3>
+          <p style="margin:4px 0 0;font-size:13.5px;color:var(--ink2);max-width:68ch">${esc(selEra.note)}</p>
+        </div>
+        ${selGames.length?`<div class="row" style="gap:8px">${selGames.map(g=>`<button type="button" class="sbook" style="width:64px" data-act="quickLook" data-id="${g.id}">${cover(g,{showYear:false})}<span class="yr">${g.year}</span><b style="font-size:10.5px">${esc(g.title)}</b></button>`).join("")}</div>`:""}
+      </div>`:""}
+    </div>
+    <div class="hgrid" style="margin-bottom:18px">
+      <div class="card"><p class="eyebrow">From our ${G.length.toLocaleString()}-game database</p><h3 class="h3">Why CDs &amp; digital flipped the economics</h3>
+        <p class="sub">Physical media cost used to dictate retail prices:</p>
+        <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>🕹️ Custom Silicon Cartridges (${catCarts.toLocaleString()} classics)</b><small>1977–1999 · $12–$28 factory BOM per cart + battery SRAM</small></span><span class="mono" style="font-weight:700;color:var(--love)">~$100–$195 real</span></div>
+        <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>💿 PlayStation / PC Optical Discs</b><small>1995–2012 · ~$0.80–$1.50 to press a 650MB CD or 4.7GB DVD</small></span><span class="mono" style="font-weight:700">~$85–$100 real</span></div>
+        <div class="anc" style="grid-template-columns:minmax(0,1fr) auto"><span><b>💎 Modern Indie Digital (${catIndies.toLocaleString()} in catalog)</b><small>2008–today · Zero disc manufacturing, global digital storefronts</small></span><span class="mono" style="font-weight:700;color:var(--t-mech)">$5–$25 today</span></div>
+      </div>
+      <div class="card"><p class="eyebrow">Hardware sticker shock</p><h3 class="h3">What consoles cost at launch (then vs. 2026 $)</h3>
+        <div style="margin-top:6px">${conList.map(c=>`<div class="anc" style="grid-template-columns:46px minmax(0,1fr) auto;padding:6px 0">${hwSVG(c.sys.replace(" 500","").replace(" AES",""))}<span><b>${esc(c.sys)}</b> <small class="mono muted">(${c.year})</small><small style="display:block">$${c.nom} at launch</small></span><span class="mono" style="font-weight:700;color:${c.real>=1000?"var(--love)":"var(--ink)"}">~$${c.real.toLocaleString()} <small class="muted" style="font-weight:400">in '26</small></span></div>`).join("")}</div>
+      </div>
+    </div>
+    <div class="banner">
+      <p><b>Wait — so how does gaming's +40% sticker increase since 1990 compare to movie tickets, concerts, coffee, Big Macs, and rent?</b></p>
+      <button type="button" class="btn primary wrap" data-act="priceComp">🍿 Show Movies, Music &amp; Everyday Comparison ▸</button>
+    </div>
+  </section>`;
+}
 function renderMechanics(m){
   const tab=state.mechTab||"mechanics";
   const mechs=MW.mechanics||[],genMeta=MW.genres||{},bgs=MW.boardgames||[];
@@ -2270,19 +2482,22 @@ function renderMechanics(m){
   const selInfo=genMeta[selG.k]||{};
   const genGames=tab==="genres"?G.filter(g=>g.gen.includes(selG.i)).sort((a,b)=>b.pop-a.pop||b.inf-a.inf).slice(0,36):[];
   m.innerHTML=`<section class="wrap exhero">
-    <p class="eyebrow">Design vocabulary & lineage</p>
-    <h1 class="h1">${tab==="genres"?"How game genres fit & breed":tab==="boardgames"?"From cardboard & dice to pixels":"The mechanics that stuck"}</h1>
-    <p class="lede">${tab==="genres"?"Genres aren't rigid boxes — new ones are born whenever designers cross-pollinate two earlier traditions into something fresh."
+    <p class="eyebrow">${tab==="prices"?"50 years of sticker shock & inflation":"Design vocabulary & lineage"}</p>
+    <h1 class="h1">${tab==="prices"?"Are video games actually getting more expensive?":tab==="genres"?"How game genres fit & breed":tab==="boardgames"?"From cardboard & dice to pixels":"The mechanics that stuck"}</h1>
+    <p class="lede">${tab==="prices"?"Gamers love debating $70 price tags — so let's trace 50 years of arcade quarters, $80 SNES cartridges, $1 PlayStation CDs, and $15 indies, then compare them against movies, music, burgers, and rent."
+      :tab==="genres"?"Genres aren't rigid boxes — new ones are born whenever designers cross-pollinate two earlier traditions into something fresh."
       :tab==="boardgames"?"Long before GPUs, tabletop wargames, pen-and-paper RPGs, and physical deckbuilders invented hit points, fog of war, tech trees, and synergistic combos."
       :"Players remember worlds, yet single tactile mechanics — a mid-air double jump, fog of war, or recovering lost souls — quietly leap across hundreds of games."}</p>
     <div class="row" style="margin-top:12px">
       <button type="button" class="chip" data-act="mechTab" data-t="mechanics" aria-pressed="${tab==="mechanics"}">⚙️ Mechanics that stuck (${mechs.length})</button>
       <button type="button" class="chip" data-act="mechTab" data-t="genres" aria-pressed="${tab==="genres"}">🧬 Genres & hybrids (${GEN.length})</button>
       <button type="button" class="chip" data-act="mechTab" data-t="boardgames" aria-pressed="${tab==="boardgames"}">🎲 Tabletop & boardgame roots (${bgs.length})</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="prices" aria-pressed="${tab==="prices"}">💸 Game prices &amp; inflation</button>
       <a class="chip" href="#world">🌍 World map ▸</a>
     </div>
   </section>
-  ${tab==="mechanics"?`<section class="wrap sec"><div class="mechgrid">${mechs.map(mc=>{
+  ${tab==="prices"?renderPricesHTML()
+  :tab==="mechanics"?`<section class="wrap sec"><div class="mechgrid">${mechs.map(mc=>{
       const og=mc.origin&&gameRef(mc.origin);
       const exs=(mc.games||[]).map(gameRef).filter(Boolean);
       return `<article class="mechcard">
@@ -2609,7 +2824,7 @@ function renderGame(m,id){
     <header class="gphead">${cover(g)}
       <div style="min-width:0"><div class="row" style="gap:5px;margin-bottom:6px">${g.gen.length?g.gen.map(i=>`<button type="button" class="genpill" data-act="genre" data-g="${esc(GEN[i].k)}"><i style="width:8px;height:8px;border-radius:3px;background:${GEN[i].c};display:inline-block"></i>${esc(GEN[i].label)}</button>`).join(""):`<span class="eyebrow" style="margin:0">Game</span>`}</div>
         <h1>${esc(g.title)}</h1>
-        <div class="meta"><span class="mono">${g.year}</span><span>${ studioLogoHTML(findStudio(studio(g))) } ${flag(g.cc)} ${studioLinks(g.dev||"")}</span>${g.cc?`<button type="button" class="stbtn" data-act="country" data-cc="${esc(g.cc)}">${esc(countryName(g.cc))} ▸</button>`:""}</div>
+        <div class="meta"><span class="mono">${g.year}</span><span style="display:inline-flex;align-items:center;gap:7px">${studioLogoHTML(findStudio(studio(g)))}<span>${flag(g.cc)} ${studioLinks(g.dev||"")}</span></span>${g.cc?`<button type="button" class="stbtn" data-act="country" data-cc="${esc(g.cc)}">${esc(countryName(g.cc))} ▸</button>`:""}</div>
         ${g.plats.length?`<p class="sub" style="margin:6px 0 0">${esc(sysOfGame(g).join(" · "))}</p>`:""}
         ${g.note?`<p class="gnote">${esc(g.note)}</p>`:""}
         <div class="gstats">${g.tree?`<span><b>${ups.length}</b> direct inspiration${ups.length===1?"":"s"}</span><span><b>${downs.length}</b> game${downs.length===1?"":"s"} it inspired directly</span><span><b>${g.inf.toLocaleString()}</b> later game${g.inf===1?"":"s"} trace${g.inf===1?"s":""} back to it</span>`:""}${age!=null?`<span>${age>=0?`First released when you were <b>${age}</b>`:`Released <b>${-age}</b> years before you were born`}</span>`:""}</div>
@@ -2691,35 +2906,37 @@ function treeSVG(g){
   return s+`</svg>`;
 }
 
-/* ---------- story mode: walk the roots (chronological left = older, right = newer) ---------- */
+/* ---------- story mode: walk the roots (left = older, right = newer; starts at target game on right, click left to step back) ---------- */
 let story=null;
-function openStory(chain){story={chain:compressChain(chain).slice().reverse(),total:chain.length-1,k:0};drawStory();document.addEventListener("keydown",storyKeys)}
+function openStory(chain){const c=compressChain(chain).slice().reverse();story={chain:c,total:chain.length-1,k:c.length-1,dir:-1};drawStory();document.addEventListener("keydown",storyKeys)}
 function closeStory(){story=null;$("#layer").innerHTML="";document.removeEventListener("keydown",storyKeys)}
-function storyKeys(e){if(!story)return;if(e.key==="ArrowRight"){storyStep(1)}else if(e.key==="ArrowLeft"){storyStep(-1)}else if(e.key==="Escape")closeStory()}
-function storyStep(d){if(!story)return;const n=story.chain.length;story.k=Math.max(0,Math.min(n,story.k+d));drawStory()}
+function storyKeys(e){if(!story)return;if(e.key==="ArrowLeft"){storyStep(-1)}else if(e.key==="ArrowRight"){storyStep(1)}else if(e.key==="Escape")closeStory()}
+function storyStep(d){if(!story)return;const n=story.chain.length,nk=Math.max(-1,Math.min(n-1,story.k+d));if(nk===story.k)return;story.dir=d;story.k=nk;drawStory()}
 function drawStory(){
-  const {chain,k}=story,n=chain.length;
+  const {chain,k,dir}=story,n=chain.length;
   const oldest=chain[0].g,newest=chain[n-1].g;
-  const prog=`<div class="stprog">${chain.map((_,j)=>`<i class="${j<=k?"on":""}"></i>`).join("")}<i class="${k>=n?"on":""}"></i></div>`;
+  const shortT=s=>s.length>24?s.slice(0,23)+"…":s;
+  const prog=`<div class="stprog" role="group" aria-label="Lineage timeline (${oldest.year} on left to ${newest.year} on right)"><button type="button" class="${k===-1?"cur on":""}" data-act="storyJump" data-k="-1" title="Full lineage summary" aria-label="Full lineage summary"></button>${chain.map((st,j)=>`<button type="button" class="${j>=Math.max(0,k)?"on":""}${j===k?" cur":""}" data-act="storyJump" data-k="${j}" title="${st.g.year}: ${esc(st.g.title)}" aria-label="${st.g.year}: ${esc(st.g.title)}"></button>`).join("")}</div>`;
   let body;
-  if(k>=n){const studios=new Set(chain.map(s=>studio(s.g)).filter(Boolean)),cs=new Set(chain.map(s=>s.g.cc).filter(Boolean));
-    body=`<div class="wrap"><p class="eyebrow">${oldest.year} → ${newest.year} · Lineage complete</p><h2 class="h1" style="font-size:clamp(26px,5vw,42px)">${esc(newest.title)} (${newest.year})</h2>
-      <p class="stsum">From <b>${esc(oldest.title)}</b> (${oldest.year}) forward to <b>${esc(newest.title)}</b> (${newest.year}): <b>${newest.year-oldest.year} years</b>, ${plural(story.total,"step")}, ${plural(studios.size,"team")} in ${plural(cs.size,"country","countries")}. Every team stood on earlier craft and added something of their own.</p>
-      <div class="row" style="margin-top:18px"><button class="btn primary wrap" data-act="game" data-id="${newest.id}" data-close="1">Open ${esc(newest.title)}</button><button class="btn wrap" data-act="game" data-id="${oldest.id}" data-close="1">Open ${esc(oldest.title)} (${oldest.year})</button><button class="btn" data-act="storyRestart">Replay from ${oldest.year}</button><button class="btn" data-act="copyWalk" data-id="${newest.id}">Copy walk link</button></div></div>`}
+  if(k<0){const studios=new Set(chain.map(s=>studio(s.g)).filter(Boolean)),cs=new Set(chain.map(s=>s.g.cc).filter(Boolean));
+    body=`<div class="wrap"><p class="eyebrow">${oldest.year} ◂ ${newest.year} · Root walk complete</p><h2 class="h1" style="font-size:clamp(26px,5vw,42px)">${esc(oldest.title)} (${oldest.year}) → ${esc(newest.title)} (${newest.year})</h2>
+      <p class="stsum">Starting at <b>${esc(newest.title)}</b> (${newest.year}) and walking back to <b>${esc(oldest.title)}</b> (${oldest.year}): <b>${newest.year-oldest.year} years</b>, ${plural(story.total,"step")}, ${plural(studios.size,"team")} in ${plural(cs.size,"country","countries")}. Every team stood on earlier craft and added something of their own.</p>
+      <div class="row" style="margin-top:18px"><button class="btn primary wrap" data-act="game" data-id="${oldest.id}" data-close="1">Open ${esc(oldest.title)} (${oldest.year})</button><button class="btn wrap" data-act="game" data-id="${newest.id}" data-close="1">Open ${esc(newest.title)} (${newest.year})</button><button class="btn" data-act="storyRestart">Restart at ${esc(newest.title)} (${newest.year}) ▸</button><button class="btn" data-act="copyWalk" data-id="${newest.id}">Copy walk link</button></div></div>`}
   else{const s=chain[k],g=s.g,l=s.link,p=l?G[l.from]:null,t=l?TIERS[l.t]:null;
     const srcs=l?srcHTML(l.src,l.tier):"";
-    body=`<div class="wrap"><div class="stin" key="${k}">${cover(g)}<div style="min-width:0"><div class="styear">${g.year}</div><h2>${esc(g.title)}</h2>
+    const stepNote=k===n-1?`Starting point — press <b>◂ Earlier</b> (or Left Arrow) to step back through its roots`:k===0?`Oldest recorded root (${oldest.year})`:`Step ${n-k} of ${n} walking back from ${esc(newest.title)}`;
+    body=`<div class="wrap"><div class="stin${dir<0?" back":""}" key="${k}">${cover(g)}<div style="min-width:0"><p class="eyebrow" style="margin-bottom:4px">${stepNote}</p><div class="styear">${g.year}</div><h2>${esc(g.title)}</h2>
       <p class="sub" style="margin:0">${flag(g.cc)} ${studioLinks(g.dev||"")}${hist.birth?` · ${g.year-hist.birth>=0?"first released when you were "+(g.year-hist.birth):(hist.birth-g.year)+" years before you were born"}`:""}</p>
       ${g.note?`<p class="gnote" style="font-size:14px">${esc(g.note)}</p>`:""}
       ${l?`<div class="stlink" style="--c:var(${t.c})"><p class="lead">Built on <b>${esc(p.title)}</b> (${p.year}) · <span class="tier">${t.label}</span></p><dl class="ta"><dt>${l.rel==="variant"||l.rel==="fast-follow"?"Changed":"Added"}</dt><dd class="add">${esc(l.added)}</dd><dt>Took</dt><dd>${esc(l.took)}</dd></dl>${srcs?`<div class="src">Source: ${srcs}</div>`:""}</div>`
         :s.collapsed?`<div class="stlink" style="--c:var(--t-series)"><p class="lead">Built on its own series: ${plural(s.collapsed.n,"game")} from <b>${esc(s.collapsed.to.title)}</b> (${s.collapsed.to.year}) · <span class="tier">Same series</span></p><p class="src" style="margin:4px 0 0">${esc(s.collapsed.via.map(v=>v.title+" ("+v.year+")").join(" ▸ "))}</p></div>`
-        :`<div class="stlink" style="--c:var(--accent)"><p class="lead"><b>Origin point (${g.year}):</b> where the road to ${esc(newest.title)} (${newest.year}) begins.</p></div>`}
+        :`<div class="stlink" style="--c:var(--accent)"><p class="lead"><b>Origin point (${g.year}):</b> where the ${newest.year-oldest.year}-year road to ${esc(newest.title)} (${newest.year}) begins.</p></div>`}
     </div></div></div>`}
-  const prevLbl=k>0&&k<=n?`◂ Earlier (${chain[k-1].g.year})`:"◂ Earlier";
-  const nextLbl=k<n-1?`Later (${chain[k+1].g.year}) ▸`:k===n-1?"Summary ▸":"Done";
-  $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="wrap sthead"><button type="button" class="navback" data-act="closeStory">◂ Exit walk</button>${prog}<span class="mono muted" style="font-size:12px">${oldest.year} → ${newest.year} · ${Math.min(k+1,n)}/${n}</span><button class="x" data-act="closeStory" aria-label="Close">×</button></div>
+  const prevLbl=k>0?`◂ Earlier (${chain[k-1].g.year} · ${esc(shortT(chain[k-1].g.title))})`:k===0?`◂ Summary (${newest.year-oldest.year} yrs)`:"◂ Origin reached";
+  const nextLbl=k<0?`Origin (${oldest.year}) ▸`:k<n-1?`Later (${chain[k+1].g.year}) ▸`:`At ${newest.year} ▸`;
+  $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="wrap sthead"><button type="button" class="navback" data-act="closeStory">◂ Exit walk</button>${prog}<span class="mono muted" style="font-size:12px">${oldest.year} ◂ ${k>=0?chain[k].g.year:"Summary"} ▸ ${newest.year}</span><button class="x" data-act="closeStory" aria-label="Close">×</button></div>
     <div class="stbody">${body}</div>
-    <div class="wrap stfoot"><button class="btn" data-act="storyPrev" ${k===0?"disabled":""}>${prevLbl}</button><button class="btn ghost" data-act="closeStory">Close</button><button class="btn primary" data-act="storyNext" ${k>=n?"disabled":""}>${nextLbl}</button></div></div>`;
+    <div class="wrap stfoot"><button class="btn${k>=0?" primary":""}" data-act="storyPrev" ${k<0?"disabled":""}>${prevLbl}</button><button class="btn ghost" data-act="closeStory">Close</button><button class="btn${k<0?" primary":""}" data-act="storyNext" ${k>=n-1?"disabled":""}>${nextLbl}</button></div></div>`;
 }
 
 /* ---------- friends ---------- */
@@ -2880,8 +3097,8 @@ function openQuickLook(g){
     </div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="gsheet" style="align-items:start">${cover(g)}
       <div style="min-width:0">
-        <p class="sub" style="margin:0 0 6px"><b class="mono">${g.year}</b> · ${studioLogoHTML(stObj)} ${flag(g.cc)} ${studioLinks(g.dev||"Unknown studio")}${g.cc?` · <button type="button" class="stbtn" data-act="country" data-cc="${esc(g.cc)}">${esc(countryName(g.cc))}</button>`:""}</p>
-        <p class="sub" style="margin:0 0 8px;font-size:12.5px">📦 ${esc(eraBoxContext(g))}</p>
+        <p class="sub" style="margin:0 0 6px;display:flex;align-items:center;flex-wrap:wrap;gap:6px"><b class="mono">${g.year}</b> · ${studioLogoHTML(stObj)}<span>${flag(g.cc)} ${studioLinks(g.dev||"Unknown studio")}${g.cc?` · <button type="button" class="stbtn" data-act="country" data-cc="${esc(g.cc)}">${esc(countryName(g.cc))}</button>`:""}</span></p>
+        <p class="sub" style="margin:0 0 8px;font-size:12.5px">📦 ${esc(eraBoxContext(g))} · <button type="button" class="link" style="font-size:12px" data-act="goPrices">Compare era prices ▸</button></p>
         ${ps.length?`<p class="sub" style="margin:0 0 10px;font-size:12.5px"><b>Systems:</b> ${esc(ps.join(" · "))}</p>`:""}
         <p style="margin:0 0 10px;font-size:14.5px;line-height:1.5;color:var(--ink)">${esc(g.note||`${g.title} launched in ${g.year} from ${g.dev||"its development team"}.`)}</p>
         ${topUp?`<div class="diascard" style="margin:0 0 10px;padding:9px 12px"><small class="muted" style="display:block">Key lineage spark: <b>${esc(G[topUp.from].title)} (${G[topUp.from].year})</b></small><span style="font-size:13px"><b>Built on:</b> ${esc(topUp.took)} · <b>Added:</b> ${esc(topUp.added)}</span></div>`:""}
@@ -3794,7 +4011,11 @@ const ACTIONS={
     });
   },
   slotSpin(){openSlotSheet()},
-  mechTab(el){state.mechTab=el.dataset.t;go(el.dataset.t==="boardgames"?"boardgames":el.dataset.t==="genres"?"genres":"mechanics")},
+  mechTab(el){state.mechTab=el.dataset.t;go(el.dataset.t==="boardgames"?"boardgames":el.dataset.t==="genres"?"genres":el.dataset.t==="prices"?"prices":"mechanics")},
+  goPrices(){clearLayer();state.mechTab="prices";go("prices")},
+  priceReal(el){state.priceReal=el.dataset.v==="1";const y=window.scrollY;render();window.scrollTo({top:y})},
+  priceComp(){state.priceComp=!state.priceComp;render();const top=$("#priceTop");if(top)top.scrollIntoView({behavior:"smooth",block:"start"})},
+  priceEra(el){state.priceEra=+el.dataset.i;const y=window.scrollY;render();window.scrollTo({top:y})},
   genre(el){const k=el.dataset.g;if(!k)return;clearLayer();go("genre-"+k)},
   genrePick(el){state.mechTab="genres";state.genreSel=el.dataset.g||"";render()},
   country(el){const cc=el.dataset.cc;if(!cc)return;clearLayer();go("country-"+cc)},
@@ -3985,7 +4206,7 @@ const ACTIONS={
   allTiers(){TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);render()},
   moreLinks(el){state.treeMore[el.dataset.dir]=1;render()},
   treeMore(el){state.treeMore["c"+el.dataset.col]=1;render()},
-  closeStory(){closeStory()},storyNext(){storyStep(1)},storyPrev(){storyStep(-1)},storyRestart(){story.k=0;drawStory()},
+  closeStory(){closeStory()},storyNext(){storyStep(1)},storyPrev(){storyStep(-1)},storyRestart(){if(story){story.dir=1;story.k=story.chain.length-1;drawStory()}},storyJump(el){if(story){const nk=+el.dataset.k;story.dir=nk<story.k?-1:1;story.k=nk;drawStory()}},
   friend(el){const f=findFriend(el.dataset.key);if(!f)return;if(f.src==="seen"&&f.payload)go(f.payload);else go(friendHash(f))},
   forget(el){const p=el.dataset.payload;seen=seen.filter(s=>s.payload!==p);store.set("ib2-seen",seen);DEC.delete(p);toast("Removed from this device");go("friends")},
   compare(el){const f=state.viewing;if(f)openCompare(f)},

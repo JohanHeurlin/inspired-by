@@ -342,6 +342,7 @@ if (Test-Path 'data\mechanics_world.json') {
     mechanics  = @(Get $mwDoc 'mechanics')
     genres     = (Get $mwDoc 'genres')
     boardgames = @(Get $mwDoc 'boardgames')
+    prices     = (Get $mwDoc 'prices')
   }
   $mwJson = $ser2.Serialize($mwExport)
 }
