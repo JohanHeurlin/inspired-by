@@ -84,7 +84,8 @@ input,select{font:inherit;color:var(--ink)}
 [aria-disabled="true"]{opacity:.55;cursor:default}
 .toputil{display:inline-flex;gap:5px;align-items:center;flex:none}
 .sync{font-size:12px;color:var(--muted)}
-@media (max-width:880px){.logo small{display:none}.topin{flex-wrap:wrap;gap:6px 8px;padding-block:8px}.tabs{width:100%;max-width:100%;min-width:0;margin:0;order:3;gap:4px;padding-bottom:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;text-align:center;padding:6px 11px;font-size:13px}.toputil{margin-left:auto}}
+@media (max-width:1160px){.logo small{display:none}}
+@media (max-width:1060px){.topin{flex-wrap:wrap;gap:6px 8px;padding-block:8px}.tabs{width:100%;max-width:100%;min-width:0;margin:0;order:3;gap:4px;padding-bottom:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;text-align:center;padding:6px 11px;font-size:13px}.toputil{margin-left:auto}}
 @media (max-width:440px){.logo b{font-size:14.5px}.tab{font-size:12.5px;padding:6px 10px}.artbtn{font-size:11px;padding:4px 7px}}
 
 /* ---------- type & controls ---------- */
@@ -438,24 +439,36 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .sharebox input{flex:1 1 200px;min-width:0;font-family:var(--f-mono);font-size:13px}
 .imgprev{max-width:100%;border-radius:10px;border:1px solid var(--line);display:block;margin:10px auto}
 
-/* story mode */
-.story{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--paper);max-block-size:100vh;max-block-size:100dvh;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-.sthead{display:flex;align-items:center;gap:12px;padding-block:12px}
+/* story mode — centered stage with controls attached directly to the card */
+.story{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--paper);max-block-size:100vh;max-block-size:100dvh;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);overflow:auto;overscroll-behavior:contain}
+.ststage{width:min(980px,100%);margin:auto;padding:16px max(18px,env(safe-area-inset-right,0px)) 20px max(18px,env(safe-area-inset-left,0px));box-sizing:border-box;display:flex;flex-direction:column;gap:12px}
+@media (max-width:640px){.ststage{margin:0 auto;padding:10px max(14px,env(safe-area-inset-right,0px)) 16px max(14px,env(safe-area-inset-left,0px));gap:10px;min-block-size:100%}}
+.sthead{display:flex;align-items:center;gap:12px;padding:0 2px}
 .stprog{flex:1;display:flex;gap:3px;align-items:center}
 .stprog button,.stprog i{flex:1;height:6px;min-block-size:6px;min-inline-size:0;padding:0;border:0;border-radius:3px;background:var(--line);cursor:pointer;position:relative}
 .stprog button::after{content:"";position:absolute;inset:-8px 0}
 .stprog .on{background:color-mix(in srgb,var(--accent) 48%,var(--line))}
 .stprog .cur{background:var(--love);height:9px;min-block-size:9px}
-.stbody{flex:1;overflow:auto;overscroll-behavior:contain;display:flex;align-items:safe center}
-.stin{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center;width:100%;padding-block:12px}
-@media (max-width:640px){.stbody{align-items:flex-start}.stin{grid-template-columns:minmax(0,1fr);gap:14px;justify-items:start}.stin > .cv{width:min(148px,40vw)}}
-.stin .cv{width:min(220px,46vw);box-shadow:0 18px 40px rgb(0 0 0 / .35)}
-.styear{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,11vw,92px);line-height:.9;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
-.stin h2{font-family:var(--f-display);font-size:clamp(22px,4.4vw,34px);margin:8px 0 4px;line-height:1.1}
-.stlink{margin-top:16px;border-left:4px solid var(--c);padding:4px 0 4px 14px}
+.stframe{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center}
+@media (max-width:860px){.stframe{grid-template-columns:minmax(0,1fr)}.stpad{display:none!important}}
+.stpad{width:46px;height:68px;border-radius:14px;border:1.5px solid var(--line2);background:var(--card);color:var(--ink);font-size:20px;font-weight:700;display:grid;place-items:center;box-shadow:var(--shadow);flex:none;transition:border-color .15s,background .15s,scale .12s}
+.stpad:hover:not([disabled]){border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.stpad:active:not([disabled]){scale:.96}
+.stpad[disabled]{opacity:.28;cursor:default;box-shadow:none}
+.stcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px 18px;box-shadow:var(--shadow);min-inline-size:0;max-inline-size:100%;box-sizing:border-box}
+@media (max-width:640px){.stcard{padding:16px 15px 14px;border-radius:15px}}
+.stbody{min-inline-size:0}
+.stin{display:grid;grid-template-columns:minmax(0,204px) minmax(0,1fr);gap:26px;align-items:center;width:100%}
+@media (max-width:640px){.stin{grid-template-columns:minmax(0,1fr);gap:14px;justify-items:start}.stin > .cv{width:min(148px,40vw)}}
+.stin .cv{width:min(204px,46vw);box-shadow:0 16px 36px rgb(0 0 0 / .32)}
+.styear{font-family:var(--f-display);font-weight:700;font-size:clamp(42px,9vw,78px);line-height:.92;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+.stin h2{font-family:var(--f-display);font-size:clamp(22px,4vw,32px);margin:8px 0 4px;line-height:1.1}
+.stlink{margin-top:14px;border-left:4px solid var(--c);padding:4px 0 4px 14px}
 .stlink .lead{font-size:13px;color:var(--muted);margin:0 0 6px}
-.stfoot{display:flex;justify-content:space-between;gap:10px;padding-block:12px;border-top:1px solid var(--line);flex-wrap:wrap}
-.stsum{font-size:clamp(17px,3vw,22px);line-height:1.4;max-width:46ch}
+.stfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;padding-top:15px;border-top:1px dashed var(--line);flex-wrap:wrap}
+.stfoot-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap;min-inline-size:0}
+@media (max-width:600px){.stfoot-nav{width:100%;flex-wrap:nowrap}.stfoot-nav > .btn{flex:1 1 0;min-inline-size:0;padding:10px 8px;font-size:13px}.stfoot-aux{width:100%;justify-content:space-between}}
+.stsum{font-size:clamp(17px,3vw,21px);line-height:1.45;max-width:52ch}
 @media (prefers-reduced-motion:no-preference){
   .stin{animation:stinR .32s ease-out}
   .stin.back{animation:stinL .32s ease-out}
@@ -485,6 +498,17 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .qopt.right{border-color:var(--t-mech);background:color-mix(in srgb,var(--t-mech) 12%,transparent)}
 .qopt.wrong{border-color:var(--love);opacity:.75}
 .qopt[disabled]{cursor:default}
+.quizstage{display:grid;grid-template-columns:164px minmax(0,1fr);gap:18px;align-items:center;margin-top:12px}
+.quizstage > .cv{width:164px;border-radius:8px;box-shadow:0 12px 28px rgb(0 0 0 / .28)}
+.quizans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.quizbtn{display:flex;align-items:center;justify-content:center;text-align:center;min-block-size:52px;padding:11px 13px;border:1.5px solid var(--line2);border-radius:12px;background:var(--paper);color:var(--ink);font-weight:700;font-size:14px;line-height:1.25;transition:border-color .14s,background .14s,scale .12s}
+.quizbtn:hover:not([disabled]){border-color:var(--accent);background:var(--accent-soft)}
+.quizbtn:active:not([disabled]){scale:.98}
+.quizbtn.right{border-color:var(--t-mech);background:color-mix(in srgb,var(--t-mech) 16%,var(--card));color:var(--ink)}
+.quizbtn.wrong{border-color:var(--love);background:var(--love-soft);opacity:.82}
+.quizbtn[disabled]{cursor:default}
+@container cardcol (inline-size < 460px){.quizstage{grid-template-columns:132px minmax(0,1fr);gap:13px}.quizstage > .cv{width:132px}.quizans{grid-template-columns:minmax(0,1fr);gap:8px}.quizbtn{min-block-size:42px;padding:9px 11px;font-size:13.5px}}
+@media (max-width:520px){.quizstage{grid-template-columns:132px minmax(0,1fr);gap:13px}.quizstage > .cv{width:132px}.quizans{grid-template-columns:minmax(0,1fr);gap:8px}.quizbtn{min-block-size:42px;padding:9px 11px;font-size:13.5px}}
 .qres{margin-top:14px;border-left:4px solid var(--c);padding:4px 0 4px 14px}
 .streak{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
 
@@ -718,8 +742,6 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
   .mapctl{top:12px;bottom:auto}
   .mapcard{right:max(12px,env(safe-area-inset-right,0px));bottom:12px;max-width:none}
   .sthead-yr,.sthead-x,.stfoot-close{display:none}
-  .stfoot{flex-wrap:nowrap}
-  .stfoot > .btn{flex:1 1 0;min-inline-size:0;padding:10px 8px;font-size:13px}
 }
 </style>
 
@@ -728,6 +750,7 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
     <a class="logo" href="#explore" aria-label="Played & Made — your life in games and the humans who built them"><i aria-hidden="true"></i><b>Played &amp; Made</b><small>LIFE IN GAMES</small></a>
     <nav class="tabs" aria-label="Sections">
       <a class="tab" href="#timeline" data-tab="timeline">My timeline</a>
+      <a class="tab" href="#picks" data-tab="picks">🕹️ Pick games</a>
       <a class="tab" href="#explore" data-tab="explore">Explore</a>
       <a class="tab" href="#mechanics" data-tab="mechanics">Genres & craft</a>
       <a class="tab" href="#studios" data-tab="studios">Makers & world</a>
@@ -1429,10 +1452,13 @@ function renderSandboxBar(){
 }
 function parseHash(){
   let h="";try{h=decodeURIComponent(location.hash.slice(1))}catch(e){h=location.hash.slice(1)}
-  const home={view:hist.birth&&!hist.stage?"timeline":"start"};
-  if(!h||h==="start")return home;
-  if(h==="picks"){if(hist.birth){hist.stage="picks";return {view:"start",picks:1}}return home}
-  if(h==="timeline")return hist.birth&&!hist.stage?{view:"timeline"}:{view:"start"};
+  const hasTl=!!(hist.birth||entries(hist).length);
+  const home={view:hasTl&&!hist.stage?"timeline":"start"};
+  if(!h)return home;
+  if(h==="start")return {view:"start"};
+  if(h==="picks"){hist.stage=null;return {view:"picks"}}
+  if(h==="systems")return {view:"systems"};
+  if(h==="timeline"){hist.stage=null;return hasTl?{view:"timeline"}:{view:"start"}}
   if(h==="explore")return {view:"explore"};
   if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":"mechanics";return {view:"mechanics",mt:state.mechTab}}
   if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
@@ -1456,10 +1482,12 @@ addEventListener("hashchange",route);
 function render(){
   renderSandboxBar();
   const r=state.route,m=$("#main");
-  const tab=r.view==="start"?"timeline":(r.view==="shared"||r.view==="person"||r.view==="sharedList")?"friends":r.view==="game"?"explore":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
+  const tab=r.view==="start"?(hist.stage?"picks":"timeline"):(r.view==="picks"||r.view==="systems")?"picks":(r.view==="shared"||r.view==="person"||r.view==="sharedList")?"friends":r.view==="game"?"explore":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
   $$(".tab").forEach(a=>a.toggleAttribute("aria-current",a.dataset.tab===tab)),$$(".tab").forEach(a=>{if(a.dataset.tab===tab)a.setAttribute("aria-current","page")});
   const key=r.view+(r.id||"")+(r.st||"")+(r.gen||"")+(r.cc||"")+(r.payload||"")+(r.fk||"")+(r.picks||"")+(r.mt||"");
   if(r.view==="start")renderStart(m);
+  else if(r.view==="picks")renderPicks(m);
+  else if(r.view==="systems")renderSystems(m);
   else if(r.view==="timeline")renderTimeline(m);
   else if(r.view==="explore")renderExplore(m);
   else if(r.view==="mechanics")renderMechanics(m);
@@ -1485,7 +1513,7 @@ const footer=()=>`<footer class="wrap foot-about">
   <div class="row" style="justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--line)">
     <div class="row" style="gap:6px">
       <a class="chip" href="#timeline">My timeline</a>
-      ${hist.birth?`<button type="button" class="chip" data-act="obAgain">➕ Pick games</button>`:""}
+      <a class="chip" href="#picks">🕹️ Pick games</a>
       <button type="button" class="chip" data-act="listsSheet">📋 Custom lists</button>
       <a class="chip" href="#explore">Explore tree</a>
       <a class="chip" href="#mechanics">Genres & mechanics</a>
@@ -1552,6 +1580,7 @@ function renderStart(m){
         <label class="field" for="birthIn">Year you were born<input class="input" id="birthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1984" autocomplete="off"></label>
         <button class="btn primary" type="submit">Start my timeline</button>
       </form>
+      <div class="row" style="margin-top:10px;gap:8px"><a class="btn sm" href="#picks">🕹️ Browse all eras &amp; pick games directly ▸</a><a class="btn sm ghost" href="#systems">Pick consoles</a></div>
       <p class="sub" id="birthErr" style="margin-top:8px" hidden></p>
       ${isDevMode()?`<p class="sub" style="margin-top:10px;font-size:13.5px">🛠 Industry mode active · <button type="button" class="link" data-act="makerSheet">Add dev / studio credits ▸</button></p>`:""}
     </div>
@@ -1579,7 +1608,7 @@ function renderStart(m){
 }
 
 /* ---------- onboarding: systems, then quick picks ---------- */
-function relevantSystems(birth){const a=birth-2;return SYSTEMS.filter(([,n,f,t])=>t>=a&&f<=NOW)}
+function relevantSystems(birth){if(!birth)return SYSTEMS;const a=birth-2;return SYSTEMS.filter(([,n,f,t])=>t>=a&&f<=NOW)}
 function renderOnboard(m){
   if(hist.stage==="systems")return renderSystems(m);
   return renderPicks(m);
@@ -1589,7 +1618,7 @@ function renderSystems(m){
   const groups={};sys.forEach(s=>(groups[s[0]]=groups[s[0]]||[]).push(s));
   const order=["A","C","N","S","P","X","M","O"];
   m.innerHTML=`<section class="wrap" style="padding-block:28px 10px;max-width:960px">
-    <div class="steps"><i class="on"></i><i class="on"></i><i></i><span>Step 2 of 3</span></div>
+    <div class="steps"><i class="on"></i><i class="on"></i><i></i><span>${hist.birth?`Born ${hist.birth} · Systems you played on`:"Systems & machines you played on"}</span></div>
     <h1 class="h1" style="font-size:clamp(1.6rem,1.1rem + 2.5vw,2.4rem)">What did you play on?</h1>
     <p class="lede">Pick the machines you played on — at home, on an older sibling's desk, at a friend's house, or at the arcade. Hover or tap any machine to inspect it.</p>
     <div class="sysgroups">${order.filter(b=>groups[b]).map(b=>`<div class="sysgroup"><h3>${BRANDS[b]}</h3><div>${groups[b].map(([,n,f,t])=>`<button class="syschip" data-act="own" data-sys="${esc(n)}" aria-pressed="${own.has(n)}">${hwSVG(n)}<span><b>${esc(n)}</b><small>${f}${t>=NOW?"–now":"–"+t}</small></span></button>`).join("")}</div></div>`).join("")}</div>
@@ -1608,11 +1637,23 @@ const ERA_BANDS=[
   [30,39,"a30","Your thirties","30s","",18],
   [40,49,"a40","Your forties","40s","",16],
   [50,90,"a50","Since you turned 50","50+","",14]];
+const DECADE_BANDS=[
+  [1971,1979,"d70","1970s · Arcade & Home Console Dawn","1970s","Pong, Space Invaders, Atari 2600 & early mainframe adventures",16],
+  [1980,1984,"d80a","Early 1980s · Golden Age of Arcades & 8-Bit Micros","1980–84","Pac-Man, Donkey Kong, Commodore 64, Apple II & ZX Spectrum",18],
+  [1985,1989,"d80b","Late 1980s · NES, Amiga & 8-Bit Boom","1985–89","Super Mario Bros., Zelda, Out Run, Amiga 500 & Game Boy",18],
+  [1990,1994,"d90a","Early 1990s · 16-Bit Consoles, Amiga & DOS PC","1990–94","SNES, Mega Drive, Monkey Island, Street Fighter II & Doom",18],
+  [1995,1999,"d90b","Late 1990s · The 3D Revolution (PS1, N64 & PC)","1995–99","PlayStation, Nintendo 64, FF7, Ocarina of Time, Half-Life & Pokémon",18],
+  [2000,2004,"d00a","Early 2000s · PS2, Xbox, GameCube & LAN Parties","2000–04","GTA III, Halo, Counter-Strike, The Sims & World of Warcraft",18],
+  [2005,2009,"d00b","Late 2000s · HD Consoles, Wii & Indie Awakening","2005–09","Xbox 360, Wii Sports, Portal, BioShock, CoD4 & Minecraft",18],
+  [2010,2014,"d10a","Early 2010s · Open Worlds, Souls & Indie Wave","2010–14","Skyrim, Dark Souls, GTA V, The Last of Us & Terraria",18],
+  [2015,2019,"d10b","Late 2010s · Switch, Battle Royale & High Craft","2015–19","Witcher 3, Breath of the Wild, Fortnite, Hollow Knight & RDR2",18],
+  [2020,NOW,"d20","2020s · Modern Classics & Upcoming Landmarks","2020s","Elden Ring, Baldur's Gate 3, Hades, Astro Bot & GTA VI",18]];
 function quickBands(birth,owned,sysFilter=""){
   const own=new Set(owned||[]),useOwn=own.size>0;
   const bands=[];
-  for(const [a,b,key,label,short,sub,n] of ERA_BANDS){
-    const from=Math.max(1950,birth+a),to=Math.min(NOW,birth+b);if(from>to)continue;
+  const rawBands=birth?ERA_BANDS.map(([a,b,key,label,short,sub,n])=>[Math.max(1950,birth+a),Math.min(NOW,birth+b),key,label,short,sub,n]):DECADE_BANDS;
+  for(const [from,to,key,label,short,sub,n] of rawBands){
+    if(from>to)continue;
     let scored=[];
     if(sysFilter&&sysFilter!=="__other__"){
       const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=2||g.tree)&&playable(g));
@@ -1650,7 +1691,7 @@ function quickBands(birth,owned,sysFilter=""){
   return bands;
 }
 function pickSysCounts(birth,owned){
-  const from=Math.max(1950,birth-10),out=new Map();
+  const from=birth?Math.max(1950,birth-10):1950,out=new Map();
   (owned||[]).forEach(sy=>out.set(sy,0));
   for(const g of G){if(g.year<from||g.year>NOW||!(g.cat||g.pop>=2||g.tree)||!playable(g))continue;
     for(const p of sysOfGame(g))if(out.has(p))out.set(p,out.get(p)+1)}
@@ -1672,8 +1713,8 @@ function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false,quickTick=false}=
     <button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>${wk&&ent.role?`<span class="trole">🛠 ${esc(ent.role)}</span>`:""}${sub!==null?`<span class="ts">${sub}</span>`:`<span class="ts">${g.year} · ${studioBtn(studio(g))}</span>`}${qt}${wkTog&&isDevMode()?`<button type="button" class="wktog" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on ✓":"I worked on"}</button>`:""}</div>`}
 function histBars(d,from,to){const counts={},loves={};for(const {y,lv} of entries(d)){counts[y]=(counts[y]||0)+1;if(lv===3)loves[y]=1}
   const max=Math.max(1,...Object.values(counts));let h="";for(let y=from;y<=to;y++){const c=counts[y]||0;h+=`<i class="${c?(loves[y]?"l":""):"z"}" style="height:${c?Math.max(12,c/max*100):6}%" title="${y}: ${c}"></i>`}return h}
-function pickSummary(){const es=entries(hist);const ys=es.map(x=>x.y);return {n:es.length,from:ys.length?Math.min(...ys):hist.birth,to:ys.length?Math.max(...ys):hist.birth}}
-function pickBars(){const s=pickSummary();return histBars(hist,Math.max(1950,Math.min(hist.birth-10,s.from)),Math.min(NOW,Math.max(hist.birth+40,s.to)))}
+function pickSummary(){const es=entries(hist);const ys=es.map(x=>x.y),def=hist.birth||1990;return {n:es.length,from:ys.length?Math.min(...ys):def,to:ys.length?Math.max(...ys):def}}
+function pickBars(){const s=pickSummary(),b=hist.birth;return histBars(hist,b?Math.max(1950,Math.min(b-10,s.from)):Math.max(1970,s.from-4),b?Math.min(NOW,Math.max(b+40,s.to)):NOW)}
 function renderPicks(m){
   const own=hist.owned||[],ownSet=new Set(own);
   if(state.pickSys&&state.pickSys!=="__other__"&&!ownSet.has(state.pickSys))state.pickSys="";
@@ -1683,18 +1724,24 @@ function renderPicks(m){
   const curPack=MEMORY_PACKS.find(p=>p.k===state.packKey)||MEMORY_PACKS[0];
   const curPackGames=byPack?packGames(curPack):[];
   const s=pickSummary();
-  m.innerHTML=`<section class="wrap" style="padding-block:28px 0">
+  m.innerHTML=`<section class="wrap" style="padding-block:24px 0">
     <div class="row" style="justify-content:space-between">
-      <div class="steps" style="margin:0"><i class="on"></i><i class="on"></i><i class="on"></i><span>${s.n?"Game picker · Auto-saved":"Step 3 of 3 · Auto-saved as you tap"}</span></div>
-      <div class="row"><button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button><button type="button" class="btn sm" data-act="obSystems">🕹️ Systems (${own.length||"all"})</button>${s.n?`<button type="button" class="btn sm primary" data-act="obDone">Back to my timeline (${s.n}) ▸</button>`:""}</div>
+      <div class="steps" style="margin:0"><i class="on"></i><i class="on"></i><i class="on"></i><span>${hist.birth?`Born ${hist.birth} · Era & game picker · Auto-saved`:"All eras & mood packs · Auto-saved as you tap"}</span></div>
+      <div class="row">
+        ${hist.birth?`<button type="button" class="chip" data-act="settings" title="Change birth year or name">🎂 Born ${hist.birth} ✎</button>`:""}
+        <button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button>
+        <a class="btn sm" href="#systems">🕹️ Systems (${own.length||"all"})</a>
+        ${s.n||hist.birth?`<a class="btn sm primary" href="#timeline">My timeline${s.n?` (${s.n})`:""} ▸</a>`:""}
+      </div>
     </div>
     <h1 class="h1" style="font-size:clamp(1.6rem,1.1rem + 2.5vw,2.4rem);margin-top:8px">Tap the games you played</h1>
     <div class="tap-hint"><span><b>✓</b>1 tap: played</span><span><b class="l2">★</b>2 taps: played a ton</span><span><b class="l3">♥</b>3 taps: all-time favorite</span><span class="muted">· tap <b>i</b> or title for game info · <b>⑂</b> for family tree</span></div>
-    <p class="sub" style="margin-bottom:10px"><b>No need to do it all in one sitting:</b> everything saves automatically in this browser, and you can jump to your timeline anytime and add more games later whenever a memory hits.</p>
+    <p class="sub" style="margin-bottom:10px"><b>Always right in the top bar:</b> jump between <b>🕹️ Pick games</b> and <b>My timeline</b> anytime — everything saves automatically in this browser.</p>
     <div class="pickpanel">
+      ${!hist.birth?`<form class="row" id="pickBirthForm" style="padding-bottom:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);justify-content:space-between"><span class="sync"><b>Optional:</b> enter your birth year to group eras by your childhood ages:</span><span class="row" style="gap:6px"><input class="input" id="pickBirthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1984" aria-label="Birth year" style="width:90px;padding:6px 10px;font-size:15px;font-family:var(--f-mono)"><button class="btn sm primary" type="submit">Personalize ages</button><a class="btn sm" href="#systems">🕹️ Pick systems</a></span></form>`:""}
       <div class="row" style="justify-content:space-between;margin-bottom:10px">
         <span class="seg" role="group" aria-label="Browse style">
-          <button type="button" data-act="pickMode" data-m="eras" aria-pressed="${!byPack}">By era & age</button>
+          <button type="button" data-act="pickMode" data-m="eras" aria-pressed="${!byPack}">${hist.birth?"By era & age":"By decade & era"}</button>
           <button type="button" data-act="pickMode" data-m="packs" aria-pressed="${byPack}">✦ By memory, vibe & mood</button>
         </span>
         <span class="sync">Pick 10–15 to unlock your Gamer Archetype & DNA</span>
@@ -1734,8 +1781,10 @@ function renderPicks(m){
       <span class="minihist" id="phist" aria-hidden="true">${pickBars()}</span>
       <button class="btn primary" data-act="obDone">See my timeline ▸</button></div></div>
   </section>`;
+  const pb=$("#pickBirthForm");
+  if(pb)pb.onsubmit=ev=>{ev.preventDefault();const y=parseInt(($("#pickBirthIn")||{}).value,10);if(y>=1940&&y<=NOW-3){hist.birth=y;hist.stage=null;save();toast(`Personalized eras for born ${y}`);render()}else toast("Enter a 4-digit year like 1984")};
   wireSearch($("#pickQ"),$("#pickR"),p=>{
-    if(p.custom){const py=Math.min(NOW,hist.birth+10);addCustom(p.custom,py,1);playBlip(1);toast(`✓ Added “${p.custom}” (${py})`);updatePickBar();return}
+    if(p.custom){const py=hist.birth?Math.min(NOW,hist.birth+10):NOW-10;addCustom(p.custom,py,1);playBlip(1);toast(`✓ Added “${p.custom}” (${py})`);updatePickBar();return}
     const nl=Math.min(3,levelOf(hist,p)+1);setLevel(p,nl);playBlip(nl);
     $$(`.art[data-id="${CSS.escape(p.id)}"]`).forEach(btn=>refreshTile(btn,p));
     updatePickBar();toast(`${LV[nl].m} ${LV[nl].label}: ${p.title} (tap again in search for ★/♥)`);
@@ -1772,7 +1821,7 @@ function lifeStrip(d,{mine=true,workedOnly=false}={}){
   let h="",stage="",gapFrom=null;
   const flushGap=y=>{if(gapFrom!=null){if(!workedOnly){const a=gapFrom,b=y-1;h+=`<div class="ygap" data-yrow="${a}"><b>${a===b?a:a+"–"+b}</b><span>Nothing yet</span>${mine?`<button class="link" data-act="year" data-y="${a}">Add or drop games into ${a===b?a:a+"–"+b}</button>`:""}</div>`}gapFrom=null}};
   for(let y=from;y<=to;y++){
-    const age=y-(d.birth||y),st=workedOnly?`${Math.floor(y/10)*10}s`:lifeStage(age);
+    const age=d.birth?y-d.birth:0,st=(workedOnly||!d.birth)?`${Math.floor(y/10)*10}s`:lifeStage(age);
     const xs=(byY[y]||[]).sort((a,b)=>(!!b.e.wk-!!a.e.wk)||b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
     if(!xs.length){if(gapFrom==null)gapFrom=y;continue}
     if(st!==stage){flushGap(y);const sr=!workedOnly&&stageYearRange(st,d.birth);h+=`<div class="stage">${st}</div>${sr?eraMomentsHTML(sr[0],sr[1]):""}`;stage=st}
@@ -1985,7 +2034,7 @@ function renderTimeline(m){
   m.innerHTML=`<section class="wrap mehead">
       <div><p class="eyebrow">${first?"Here it is":wkMode?"My game industry career":"My gaming timeline · Saved on this device"}</p>
         <h1 class="h1" style="font-size:clamp(1.65rem,1.1rem + 2.8vw,2.5rem)">${first?"Your life in games":wkMode?esc(d.name?d.name+"'s work in games":"Games I helped build"):esc(d.name?d.name+"'s games":"My life in games")}</h1>
-        <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.span}</b><span>${st.span===1?"year":"years"}${yrSpanTxt?` (${yrSpanTxt})`:""}</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge>=0?` (age ${peakAge})`:""}</span></div>`:`<div class="stat"><b>${d.birth}</b><span>born</span></div>`}</div>
+        <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.span}</b><span>${st.span===1?"year":"years"}${yrSpanTxt?` (${yrSpanTxt})`:""}</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge!=null&&peakAge>=0?` (age ${peakAge})`:""}</span></div>`:d.birth?`<div class="stat"><b>${d.birth}</b><span>born</span></div>`:""}</div>
         ${teaser}
       </div>
       <div class="row"><button class="btn primary" data-act="obAgain">➕ Pick games</button><button class="btn primary" data-act="share">Share & export</button><button class="btn" data-act="listsSheet">📋 Custom lists</button>${isDevMode()?`<button class="btn ${mk?"craft":""}" data-act="makerSheet">🛠 ${mk?`Dev credits (${st.wk})`:`I worked in games`}</button>`:""}<button class="btn" data-act="poster">Poster & Box Pile</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
@@ -2020,7 +2069,7 @@ function renderTimeline(m){
     ${footer()}`;
   if(first)store.set("ib2-revealed",true);
   wireTimelineDrag(m);
-  wireSearch($("#addq"),$("#addr"),p=>{if(p.custom){openYearSheet(Math.min(NOW,hist.birth+10),p.custom);return}setLevel(p,Math.max(1,levelOf(hist,p)));playBlip(1);const py=entryYearOf(hist,p)||p.year;toast(`Added ${p.title} (${py})`);render()},{custom:true,catFirst:true,playOnly:true});
+  wireSearch($("#addq"),$("#addr"),p=>{if(p.custom){openYearSheet(hist.birth?Math.min(NOW,hist.birth+10):NOW-10,p.custom);return}setLevel(p,Math.max(1,levelOf(hist,p)));playBlip(1);const py=entryYearOf(hist,p)||p.year;toast(`Added ${p.title} (${py})`);render()},{custom:true,catFirst:true,playOnly:true});
 }
 function favSection(d,mine){
   const favs=entries(d).filter(x=>x.lv===3).sort((a,b)=>a.y-b.y);if(!favs.length)return "";
@@ -2711,10 +2760,15 @@ function renderQuiz(){
   if(quiz.mode!=="lineage"){
     const {g,ans,opts,picked,fact,mode}=quiz;
     const qTitle=mode==="year"?`What year did ${g.title} launch?`:mode==="studio"?`Which studio built ${g.title}?`:mode==="country"?`Where was ${g.title} made?`:`Which system did ${g.title} launch on?`;
+    const subHint=mode==="year"?`From ${studio(g)||"its original team"} — pick its debut release year:`
+      :mode==="studio"?`Released in ${g.year} — pick the studio behind it:`
+      :mode==="country"?`Released in ${g.year} — pick the country where its team built it:`
+      :`Released in ${g.year} — pick one of its original platforms:`;
     el.innerHTML=`<div class="sechead" style="margin:0"><div><p class="eyebrow">Arcade trivia</p><h2 class="h2">${esc(qTitle)}</h2></div><span class="streak">${quizStreak?`${quizStreak} in a row`:""}${quizBest?` · best ${quizBest}`:""}</span></div>
       ${tabs}
-      <div class="today" style="grid-template-columns:76px minmax(0,1fr);gap:14px;margin-top:8px">${cover(g,{showYear:mode!=="year"})}
-        <div class="row" style="gap:8px">${opts.map(o=>`<button type="button" class="btn sm${picked!=null?(o.k===ans?" craft":o.k===picked?" love":""):""}" data-act="quizPickVal" data-v="${esc(o.k)}" ${picked!=null?"disabled":""}>${esc(o.label)}</button>`).join("")}</div>
+      <p class="sub" style="margin:0">${esc(subHint)}</p>
+      <div class="quizstage">${cover(g,{showYear:false})}
+        <div class="quizans">${opts.map(o=>`<button type="button" class="quizbtn${picked!=null?(o.k===ans?" right":o.k===picked?" wrong":""):""}" data-act="quizPickVal" data-v="${esc(o.k)}" ${picked!=null?"disabled":""}>${esc(o.label)}</button>`).join("")}</div>
       </div>
       ${picked!=null?`<div class="qres" style="--c:var(${picked===ans?"--t-mech":"--love"})"><p style="margin:0 0 4px;font-weight:700">${picked===ans?"Spot on!":"Close — "+esc(opts.find(o=>o.k===ans)?.label||ans)}</p><p class="sub" style="margin:0">${esc(fact)}</p></div>
         <div class="row" style="margin-top:12px"><button class="btn primary" data-act="quizNext">Next question</button><button class="btn wrap" data-act="quickLook" data-id="${g.id}">Inspect ${esc(g.title)}</button></div>`:""}`;
@@ -2723,7 +2777,7 @@ function renderQuiz(){
   const {child,parent,opts,picked,l}=quiz,t=TIERS[l.t];
   el.innerHTML=`<div class="sechead" style="margin:0"><div><p class="eyebrow">Arcade trivia</p><h2 class="h2">Which game inspired ${esc(child.title)}?</h2></div><span class="streak">${quizStreak?`${quizStreak} in a row`:""}${quizBest?` · best ${quizBest}`:""}</span></div>
     ${tabs}
-    <p class="sub" style="margin:0">${esc(child.title)} came out in ${child.year}. One of these shaped it.</p>
+    <div style="display:flex;align-items:center;gap:12px;margin:2px 0 4px"><div style="width:46px;flex:none">${cover(child,{showYear:false})}</div><p class="sub" style="margin:0"><b>${esc(child.title)}</b> came out in ${child.year}. Which of these earlier games directly shaped it?</p></div>
     <div class="quizopts">${opts.map(g=>`<button class="qopt${picked!=null?(g===parent?" right":g.i===picked?" wrong":""):""}" data-act="quizPick" data-i="${g.i}" ${picked!=null?"disabled":""}>${cover(g)}<b>${esc(g.title)}</b><small>${g.year}</small></button>`).join("")}</div>
     ${picked!=null?`<div class="qres" style="--c:var(${t.c})"><p style="margin:0 0 4px;font-weight:700">${picked===parent.i?"Right.":"Not quite. It was "+esc(parent.title)+"."}</p><dl class="ta" style="margin:4px 0"><dt>Took</dt><dd>${esc(l.took)}</dd><dt>Added</dt><dd class="add">${esc(l.added)}</dd></dl><span class="tier">${t.label}</span></div>
       <div class="row" style="margin-top:12px"><button class="btn primary" data-act="quizNext">Next question</button><button class="btn wrap" data-act="game" data-id="${child.id}">Open ${esc(child.title)}</button></div>`:""}`;
@@ -2986,26 +3040,46 @@ function drawStory(){
   const oldest=chain[0].g,newest=chain[n-1].g;
   const shortT=s=>s.length>(window.innerWidth<540?14:24)?s.slice(0,window.innerWidth<540?13:23)+"…":s;
   const prog=`<div class="stprog" role="group" aria-label="Lineage timeline (${oldest.year} on left to ${newest.year} on right)"><button type="button" class="${k===-1?"cur on":""}" data-act="storyJump" data-k="-1" title="Full lineage summary" aria-label="Full lineage summary"></button>${chain.map((st,j)=>`<button type="button" class="${j>=Math.max(0,k)?"on":""}${j===k?" cur":""}" data-act="storyJump" data-k="${j}" title="${st.g.year}: ${esc(st.g.title)}" aria-label="${st.g.year}: ${esc(st.g.title)}"></button>`).join("")}</div>`;
+  const curG=k>=0?chain[k].g:null;
   let body;
   if(k<0){const studios=new Set(chain.map(s=>studio(s.g)).filter(Boolean)),cs=new Set(chain.map(s=>s.g.cc).filter(Boolean));
-    body=`<div class="wrap"><p class="eyebrow">${oldest.year} ◂ ${newest.year} · Root walk complete</p><h2 class="h1" style="font-size:clamp(26px,5vw,42px)">${esc(oldest.title)} (${oldest.year}) → ${esc(newest.title)} (${newest.year})</h2>
+    body=`<div><p class="eyebrow">${oldest.year} ◂ ${newest.year} · Root walk complete</p><h2 class="h1" style="font-size:clamp(24px,4.5vw,38px)">${esc(oldest.title)} (${oldest.year}) → ${esc(newest.title)} (${newest.year})</h2>
       <p class="stsum">Starting at <b>${esc(newest.title)}</b> (${newest.year}) and walking back to <b>${esc(oldest.title)}</b> (${oldest.year}): <b>${newest.year-oldest.year} years</b>, ${plural(story.total,"step")}, ${plural(studios.size,"team")} in ${plural(cs.size,"country","countries")}. Every team stood on earlier craft and added something of their own.</p>
-      <div class="row" style="margin-top:18px"><button class="btn primary wrap" data-act="game" data-id="${oldest.id}" data-close="1">Open ${esc(oldest.title)} (${oldest.year})</button><button class="btn wrap" data-act="game" data-id="${newest.id}" data-close="1">Open ${esc(newest.title)} (${newest.year})</button><button class="btn" data-act="storyRestart">Restart at ${esc(newest.title)} (${newest.year}) ▸</button><button class="btn" data-act="copyWalk" data-id="${newest.id}">Copy walk link</button></div></div>`}
+      <div class="row" style="margin-top:16px"><button class="btn primary wrap" data-act="game" data-id="${oldest.id}" data-close="1">Open ${esc(oldest.title)} (${oldest.year})</button><button class="btn wrap" data-act="game" data-id="${newest.id}" data-close="1">Open ${esc(newest.title)} (${newest.year})</button><button class="btn" data-act="storyRestart">Restart at ${esc(newest.title)} (${newest.year}) ▸</button><button class="btn" data-act="copyWalk" data-id="${newest.id}">Copy walk link</button></div></div>`}
   else{const s=chain[k],g=s.g,l=s.link,p=l?G[l.from]:null,t=l?TIERS[l.t]:null;
     const srcs=l?srcHTML(l.src,l.tier):"";
-    const stepNote=k===n-1?`Starting point — press <b>◂ Earlier</b> (or Left Arrow) to step back through its roots`:k===0?`Oldest recorded root (${oldest.year})`:`Step ${n-k} of ${n} walking back from ${esc(newest.title)}`;
-    body=`<div class="wrap"><div class="stin${dir<0?" back":""}" key="${k}">${cover(g)}<div style="min-width:0"><p class="eyebrow" style="margin-bottom:4px">${stepNote}</p><div class="styear">${g.year}</div><h2>${esc(g.title)}</h2>
+    const stepNote=k===n-1?`Starting point (${n} steps) — click <b>◂ Earlier</b> right below (or Left Arrow) to step back`:k===0?`Oldest recorded root (${oldest.year})`:`Step ${n-k+1} of ${n} · walking back from ${esc(newest.title)}`;
+    body=`<div class="stin${dir<0?" back":""}" key="${k}">${cover(g)}<div style="min-width:0"><p class="eyebrow" style="margin-bottom:4px">${stepNote}</p><div class="styear">${g.year}</div><h2>${esc(g.title)}</h2>
       <p class="sub" style="margin:0">${flag(g.cc)} ${studioLinks(g.dev||"")}${hist.birth?` · ${g.year-hist.birth>=0?"first released when you were "+(g.year-hist.birth):(hist.birth-g.year)+" years before you were born"}`:""}</p>
       ${g.note?`<p class="gnote" style="font-size:14px">${esc(g.note)}</p>`:""}
       ${l?`<div class="stlink" style="--c:var(${t.c})"><p class="lead">Built on <b>${esc(p.title)}</b> (${p.year}) · <span class="tier">${t.label}</span></p><dl class="ta"><dt>${l.rel==="variant"||l.rel==="fast-follow"?"Changed":"Added"}</dt><dd class="add">${esc(l.added)}</dd><dt>Took</dt><dd>${esc(l.took)}</dd></dl>${srcs?`<div class="src">Source: ${srcs}</div>`:""}</div>`
         :s.collapsed?`<div class="stlink" style="--c:var(--t-series)"><p class="lead">Built on its own series: ${plural(s.collapsed.n,"game")} from <b>${esc(s.collapsed.to.title)}</b> (${s.collapsed.to.year}) · <span class="tier">Same series</span></p><p class="src" style="margin:4px 0 0">${esc(s.collapsed.via.map(v=>v.title+" ("+v.year+")").join(" ▸ "))}</p></div>`
         :`<div class="stlink" style="--c:var(--accent)"><p class="lead"><b>Origin point (${g.year}):</b> where the ${newest.year-oldest.year}-year road to ${esc(newest.title)} (${newest.year}) begins.</p></div>`}
-    </div></div></div>`}
+    </div></div>`}
   const prevLbl=k>0?`◂ Earlier (${chain[k-1].g.year} · ${esc(shortT(chain[k-1].g.title))})`:k===0?`◂ Summary (${newest.year-oldest.year} yrs)`:"◂ Origin reached";
   const nextLbl=k<0?`Origin (${oldest.year}) ▸`:k<n-1?`Later (${chain[k+1].g.year}) ▸`:`At ${newest.year} ▸`;
-  $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="wrap sthead"><button type="button" class="navback" data-act="closeStory">◂ Exit walk</button>${prog}<span class="mono muted sthead-yr" style="font-size:12px">${oldest.year} ◂ ${k>=0?chain[k].g.year:"Summary"} ▸ ${newest.year}</span><button class="x sthead-x" data-act="closeStory" aria-label="Close">×</button></div>
-    <div class="stbody" id="storyBody">${body}</div>
-    <div class="wrap stfoot"><button class="btn${k>=0?" primary":""}" data-act="storyPrev" ${k<0?"disabled":""}>${prevLbl}</button><button class="btn ghost stfoot-close" data-act="closeStory">Close</button><button class="btn${k<0?" primary":""}" data-act="storyNext" ${k>=n-1?"disabled":""}>${nextLbl}</button></div></div>`;
+  const prevTip=k>0?`Step back to ${chain[k-1].g.title} (${chain[k-1].g.year})`:"Summary";
+  const nextTip=k<n-1?`Step forward to ${chain[Math.max(0,k+1)].g.title}`:"Latest step";
+  $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="ststage">
+    <div class="sthead"><button type="button" class="navback" data-act="closeStory">◂ Exit walk</button>${prog}<span class="mono muted sthead-yr" style="font-size:12px">${oldest.year} ◂ ${k>=0?chain[k].g.year:"Summary"} ▸ ${newest.year}</span><button class="x sthead-x" data-act="closeStory" aria-label="Close">×</button></div>
+    <div class="stframe">
+      <button type="button" class="stpad prev" data-act="storyPrev" ${k<0?"disabled":""} title="${esc(prevTip)}" aria-label="${esc(prevTip)}">◂</button>
+      <div class="stcard" id="storyBody">
+        <div class="stbody">${body}</div>
+        <div class="stfoot">
+          <div class="stfoot-nav">
+            <button class="btn${k>=0?" primary":""}" data-act="storyPrev" ${k<0?"disabled":""}>${prevLbl}</button>
+            <button class="btn${k<0?" primary":""}" data-act="storyNext" ${k>=n-1?"disabled":""}>${nextLbl}</button>
+          </div>
+          <div class="row stfoot-aux" style="gap:6px">
+            ${curG?`<button type="button" class="btn sm ghost" data-act="game" data-id="${curG.id}" data-close="1">⑂ Family tree</button><button type="button" class="btn sm ghost" data-act="watchTv" data-id="${curG.id}">▶ Gameplay</button>`:""}
+            <button type="button" class="btn sm ghost stfoot-close" data-act="closeStory">Exit</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="stpad next" data-act="storyNext" ${k>=n-1?"disabled":""} title="${esc(nextTip)}" aria-label="${esc(nextTip)}">▸</button>
+    </div>
+  </div></div>`;
   const sb=$("#storyBody");
   if(sb){
     let sx=0,sy=0;
@@ -3779,11 +3853,11 @@ function openPoster(d,name){
   const ys=Object.keys(byY).map(Number);if(!ys.length){toast("Add some games first");return}
   clearLayer();
   const mode=state.posterMode||"wall";
-  const from=Math.min(d.birth,...ys),to=Math.max(...ys);
+  const from=Math.min(...(d.birth?[d.birth,...ys]:ys)),to=Math.max(...ys);
   let cols="";
   if(mode==="wall"){
     for(let y=from;y<=to;y++){const xs=(byY[y]||[]).sort((a,b)=>b.lv-a.lv);
-      cols+=`<div class="wcol${xs.length?"":" e"}"><div class="wh">${y}<small>${y-d.birth>=0?"age "+(y-d.birth):""}</small></div>${xs.slice(0,6).map((x,i)=>`<div class="tile lv${x.lv}${i>2?" s":""}">${coverOfEntry(x.e,y,{showYear:false,attrs:`data-k="${esc(norm(x.e.t))}"`})}${x.lv===3?`<span class="lvb l3">♥</span>`:""}</div>`).join("")}${xs.length>6?`<div class="rest">+${xs.length-6}</div>`:""}</div>`}
+      cols+=`<div class="wcol${xs.length?"":" e"}"><div class="wh">${y}<small>${d.birth&&y-d.birth>=0?"age "+(y-d.birth):""}</small></div>${xs.slice(0,6).map((x,i)=>`<div class="tile lv${x.lv}${i>2?" s":""}">${coverOfEntry(x.e,y,{showYear:false,attrs:`data-k="${esc(norm(x.e.t))}"`})}${x.lv===3?`<span class="lvb l3">♥</span>`:""}</div>`).join("")}${xs.length>6?`<div class="rest">+${xs.length-6}</div>`:""}</div>`}
   }
   $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Poster and Box Pile"><div class="wrap ovhead" style="flex-wrap:wrap">
       <div class="row" style="gap:10px"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><div><h2>${esc(name||(d.name?d.name+"'s":"My"))} ${mode==="pile"?"game box pile":"gaming years"}</h2><p class="sync" style="margin:2px 0 0">${mode==="pile"?"Grab & fling your favorite boxes · Double-click any box to inspect it.":"Lines show where one of these games inspired another."}</p></div></div>
@@ -4354,16 +4428,16 @@ const ACTIONS={
   random(){const pool=TREE.filter(g=>g.pop>=3&&UP[g.i].length);go(pool[Math.floor(Math.random()*pool.length)].id)},
   cycle(el){const g=byId.get(el.dataset.id);if(!g)return;const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g);updatePickBar()},
   own(el){const n=el.dataset.sys,o=new Set(hist.owned||[]);o.has(n)?o.delete(n):o.add(n);hist.owned=[...o];save();el.setAttribute("aria-pressed",o.has(n));const c=$("#ownCount");if(c)c.textContent=o.size?plural(o.size,"system")+" picked":"Pick a few, or skip"},
-  obBack(){if(entries(hist).length){hist.stage=null;save();go("timeline");return}hist.birth=null;hist.stage=null;save();go("start")},
-  obPicks(){hist.stage="picks";save();go("picks")},
+  obBack(){hist.stage=null;save();if(hist.birth||entries(hist).length)go("picks");else go("start")},
+  obPicks(){hist.stage=null;save();go("picks")},
   pickSys(el){const v=el.dataset.sys||"";state.pickSys=state.pickSys===v&&v?"":v;render();const on=$(`.pickstrip [data-act="pickSys"][aria-pressed="true"]`);if(on&&on.scrollIntoView)try{on.scrollIntoView({block:"nearest",inline:"nearest",container:"nearest"})}catch(e){on.scrollIntoView({block:"nearest",inline:"nearest"})}},
   pickMore(el){const k=el.dataset.band+":"+(state.pickSys||"");state.pickExtra[k]=(state.pickExtra[k]||0)+24;const y=window.scrollY;render();window.scrollTo({top:y})},
   pickAll(el){const k=el.dataset.band+":"+(state.pickSys||"");state.pickExtra[k]=9999;const y=window.scrollY;render();window.scrollTo({top:y})},
   pickLess(el){const k=el.dataset.band+":"+(state.pickSys||"");delete state.pickExtra[k];const sec=el.closest(".band"),id=sec&&sec.id;render();const nsec=id&&document.getElementById(id);if(nsec)nsec.scrollIntoView({behavior:"smooth",block:"start"})},
   bandJump(el){const t=document.getElementById(el.dataset.to);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})},
-  obDone(){hist.stage=null;save();go("timeline")},
-  obSystems(){hist.stage="systems";save();clearLayer();go("start")},
-  obAgain(){if(!hist.birth){clearLayer();go("start");return}hist.stage="picks";save();clearLayer();go("picks")},
+  obDone(){hist.stage=null;save();if(hist.birth||entries(hist).length)go("timeline");else toast("Tap at least one game first (or enter your birth year above)")},
+  obSystems(){hist.stage=null;save();clearLayer();go("systems")},
+  obAgain(){hist.stage=null;save();clearLayer();go("picks")},
   setlv(el){const g=byId.get(el.dataset.id);const v=+el.dataset.lv;const cur=levelOf(hist,g);if(!hist.birth&&v>0){ensureBirthThen(()=>{setLevel(g,v);playBlip(v);render();toast(`${LV[v].label}: ${g.title}`)});return}const nl=v===cur?0:v;setLevel(g,nl);playBlip(nl);render();toast(v&&v!==cur?`${LV[v].label}: ${g.title}`:`Removed ${g.title}`)},
   entry(el){openGameSheet(+el.dataset.y,el.dataset.t,!!el.dataset.ro)},
   entryLv(el){const y=+el.dataset.y,p=hist.years[y]||[],e=p.find(x=>norm(x.t)===norm(el.dataset.t));if(e){e.lv=+el.dataset.lv;playBlip(e.lv);sortPile(p);save();openGameSheet(y,e.t)}},
@@ -4378,7 +4452,7 @@ const ACTIONS={
   yearNav(el){openYearSheet(+el.dataset.y,($("#customIn")||{}).value||"")},
   yearAll(el){state.showAllYear=!state.showAllYear;openYearSheet(+el.dataset.y,($("#customIn")||{}).value||"")},
   closeLayer(el,e){if(el&&el.dataset&&el.dataset.self&&e&&e.target!==el)return;closeLayer()},
-  share(){if(!hist.birth||!entries(hist).length){toast("Add some games first");return}openShare()},
+  share(){if(!entries(hist).length){toast("Add some games first");return}ensureBirthThen(()=>openShare())},
   copyShare(){const v=$("#shareLink").value;copyText(v,$("#shareLink"))},
   webShare(){const u=shareLink(hist);if(navigator.share)navigator.share({title:`${hist.name?hist.name+"'s":"My"} life in games · Played & Made`,text:"Here's my gaming timeline — compare yours in two minutes:",url:u}).catch(()=>{})},
   emailSelf(){const u=shareLink(hist),sub=`My life in games (${entries(hist).length} games) · Played & Made`;location.href=`mailto:?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent("Here is my Played & Made gaming timeline link (open it on any device to view or continue editing):\n\n"+u)}`},
