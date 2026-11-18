@@ -1,0 +1,79 @@
+{
+  "id": "./",
+  "name": "Played & Made — Your Life in Games",
+  "short_name": "Played & Made",
+  "description": "Build your childhood or dev-career gaming timeline, trace 4,190+ games back to the 1950s, and celebrate the human teams and machines that raised you.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0F141C",
+  "theme_color": "#1A63D8",
+  "categories": ["games", "entertainment", "education"],
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./og-card.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Explore 4,190+ games, studio histories & build your personal gaming timeline"
+    },
+    {
+      "src": "./pwa-mobile.png",
+      "sizes": "540x960",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Tap childhood games across every console & export shareable timeline cards"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "My Gaming Timeline",
+      "short_name": "My Timeline",
+      "description": "Open your saved gaming timeline",
+      "url": "./#timeline",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Pick Games",
+      "short_name": "Pick Games",
+      "description": "Add games by childhood era, console, or mood pack",
+      "url": "./#picks",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Explore Family Tree",
+      "short_name": "Explore",
+      "description": "Trace 60+ years of video game lineage & trivia",
+      "url": "./#explore",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Game Prices (1977–2026)",
+      "short_name": "Game Prices",
+      "description": "Compare sticker vs. inflation-adjusted game prices",
+      "url": "./#prices",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

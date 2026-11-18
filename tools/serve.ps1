@@ -1,7 +1,7 @@
 # Minimal static file server for previewing dist\ on http://localhost:8765 (localhost only, no admin rights needed).
 param([int]$Port = 8765)
 $root = Join-Path (Split-Path -Parent $PSScriptRoot) 'dist'
-$types = @{ '.html' = 'text/html; charset=utf-8'; '.json' = 'application/json'; '.js' = 'text/javascript'; '.css' = 'text/css'; '.png' = 'image/png'; '.svg' = 'image/svg+xml'; '.txt' = 'text/plain; charset=utf-8' }
+$types = @{ '.html' = 'text/html; charset=utf-8'; '.json' = 'application/json; charset=utf-8'; '.webmanifest' = 'application/manifest+json; charset=utf-8'; '.js' = 'text/javascript; charset=utf-8'; '.css' = 'text/css; charset=utf-8'; '.png' = 'image/png'; '.svg' = 'image/svg+xml'; '.txt' = 'text/plain; charset=utf-8' }
 $listener = New-Object System.Net.Sockets.TcpListener([System.Net.IPAddress]::Loopback, $Port)
 $listener.Start()
 Write-Output "Serving $root on http://localhost:$Port"

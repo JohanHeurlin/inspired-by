@@ -23,6 +23,7 @@ An interactive family tree of video game history (1950s to today), a heartfelt t
   - **Genres, Mechanics, Tabletop Roots & Game Prices (`#mechanics` / `#genres` / `#boardgames` / `#prices`):** Explore **16 iconic game mechanics**, **30 genres & how hybrid genres breed**, **14 tabletop/wargame/boardgame roots**, and **💸 Game Prices Over Time (1977–2026)** — toggling between launch sticker tags and 2026 inflation-adjusted dollars, your personal timeline receipt, console launch hardware prices, and a one-click **🍿 Reality Check vs. Movies, Music, Food & Everyday Life** (`1990 → 2026` `%` change + cost per hour of entertainment).
   - **World Map (`#world`):** Interactive Natural Earth `110m` choropleth world map across **46 countries** (click any country directly on the map or toggle between the full catalog and your own timeline).
   - **5-Mode Arcade Trivia & 🎰 Lucky Reel:** Test yourself across **Lineage**, **Launch Year**, **Studio**, **Country**, and **System**, or pull the **3-Reel Lucky Slot Machine**.
+- **Installable Progressive Web App (PWA) & Offline Support:** Install **Played & Made** directly to your Windows/macOS dock, Android launcher, or iPhone/iPad Home Screen (`📲 Install` in header/Settings when supported by the browser, with full-bleed maskable & Apple Touch icons, app-icon shortcuts, Richer Install UI previews, and an offline-capable service worker so your timeline, picker, family tree, trivia, and PNG exports work even without Wi-Fi).
 - **Community Feature Backlog & AI Triage (`Settings` Optional Toggles):** Submit ideas in-app (`💡 Suggest a feature or idea`); `tools/ai-feature-triage.py` classifies community ideas into **universal defaults** vs. **optional `Settings` toggles** (*Selection chimes, Era nostalgia headlines, Why games matter reflection, Industry maker mode*) so the core experience stays calm and uncluttered.
 
 ## Project Structure
@@ -35,8 +36,9 @@ An interactive family tree of video game history (1950s to today), a heartfelt t
 - `data/media.json` & `data/media_extra.json`: Resolved cover thumbnails (`wt:`/`w:` Wikimedia, `s:` Steam, `i:` IGDB), MobyGames IDs, and `1,192` YouTube gameplay/trailer IDs (`~` prefix marks best-effort auto-matches).
 - `data/feature_backlog.json` & `tools/ai-feature-triage.py`: Structured feature backlog + AI placement classifier (`default` vs `settings-toggle`).
 - `data/codes.json`: Append-only base-36 game code registry for permanent `#t1-…` and `#list-…` share URLs (**never delete or reorder entries**).
-- `tools/build.ps1`: Validates and merges all data into `dist/index.html`, `dist/inspired-by.html`, and `dist/data.json`.
-- `tools/make-og-card.ps1`: Generates `dist/og-card.png` (`1200×630` social OpenGraph preview image).
+- `src/manifest.webmanifest` & `src/sw.js`: Web App Manifest (with subpath-safe `id`, maskable icons, app shortcuts, and Richer Install screenshots) and build-hashed offline Service Worker template.
+- `tools/build.ps1`: Validates and merges all data into `dist/index.html`, `dist/inspired-by.html`, `dist/data.json`, `dist/manifest.webmanifest`, and versioned `dist/sw.js`.
+- `tools/make-og-card.ps1` & `tools/make-pwa-assets.ps1`: Generate `dist/og-card.png` (`1200×630` OpenGraph card), `dist/icon-192.png`, `dist/icon-512.png`, `dist/icon-maskable-512.png`, `dist/apple-touch-icon.png`, and `dist/pwa-mobile.png`.
 - `tools/fetch-media.py` & `tools/fetch-igdb-covers.py`: Cover art & MobyGames resolvers (`.env.local` is git-ignored and auto-loaded by `fetch-igdb-covers.py`).
 
 ## Rebuild & Preview Locally
