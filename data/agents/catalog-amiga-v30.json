@@ -1,0 +1,233 @@
+{
+  "games": [
+    {
+      "id": "ports-of-call",
+      "title": "Ports of Call",
+      "year": 1987,
+      "dev": "Aegis Interactive / Rolf-Dieter Klein & Martin Ulrich",
+      "cc": "DE",
+      "genres": ["sim", "strategy"],
+      "plats": ["Amiga", "PC (DOS)"],
+      "pop": 3,
+      "note": "German shipping-tycoon and harbour-docking simulator that became a staple multiplayer floppy-swap classic across European Amiga households."
+    },
+    {
+      "id": "silkworm",
+      "title": "Silkworm",
+      "year": 1988,
+      "dev": "Tecmo / Sales Curve",
+      "cc": "JP",
+      "genres": ["shmup", "arcade"],
+      "plats": ["Arcade", "Amiga", "Atari ST", "Commodore 64", "ZX Spectrum", "NES"],
+      "pop": 3,
+      "note": "Asymmetric two-player shoot-'em-up where one player flies a helicopter and the other drives an armoured jeep; Ronald Pieket Weeserik's Amiga conversion became legendary for couch co-op."
+    },
+    {
+      "id": "wings-1990",
+      "title": "Wings",
+      "year": 1990,
+      "dev": "Cinemaware",
+      "cc": "US",
+      "genres": ["sim", "action-adventure"],
+      "plats": ["Amiga"],
+      "pop": 3,
+      "note": "Cinemaware's World War I pilot drama blended 3D dogfighting, strafing runs, and a personal wartime diary across over 200 missions on the Amiga."
+    },
+    {
+      "id": "moonstone-a-hard-days-knight",
+      "title": "Moonstone: A Hard Days Knight",
+      "year": 1991,
+      "dev": "Mindscape / Rob Anderson",
+      "cc": "CA",
+      "genres": ["action-adventure", "fighting"],
+      "plats": ["Amiga", "PC (DOS)"],
+      "pop": 3,
+      "note": "Rob Anderson's dark-fantasy Amiga cult classic combined a four-player board-game overworld with visceral real-time sword duels against beasts and rival knights."
+    },
+    {
+      "id": "swiv",
+      "title": "SWIV",
+      "year": 1991,
+      "dev": "Random Access / Sales Curve",
+      "cc": "GB",
+      "genres": ["shmup"],
+      "plats": ["Amiga", "Atari ST", "Commodore 64", "ZX Spectrum"],
+      "pop": 3,
+      "note": "Spiritual successor to Silkworm that moved the helicopter-and-jeep co-op partnership to a seamless vertically scrolling battlefield with zero loading pauses."
+    },
+    {
+      "id": "super-cars-ii",
+      "title": "Super Cars II",
+      "year": 1991,
+      "dev": "Magnetic Fields",
+      "cc": "GB",
+      "genres": ["racing"],
+      "plats": ["Amiga", "Atari ST"],
+      "pop": 3,
+      "note": "Split-screen top-down combat racer with missiles, mines, and cheeky between-race multiple-choice interviews with sponsors and police."
+    },
+    {
+      "id": "gobliiins",
+      "title": "Gobliiins",
+      "year": 1991,
+      "dev": "Coktel Vision",
+      "cc": "FR",
+      "genres": ["puzzle", "adventure"],
+      "plats": ["Amiga", "Atari ST", "PC (DOS)"],
+      "pop": 3,
+      "note": "Muriel Tramis and Pierre Gilhodes' single-screen puzzle adventure where players coordinate three specialist goblins—warrior, magician, and technician—to solve slapstick contraptions."
+    },
+    {
+      "id": "jaguar-xj220",
+      "title": "Jaguar XJ220",
+      "year": 1992,
+      "dev": "Core Design",
+      "cc": "GB",
+      "genres": ["racing"],
+      "plats": ["Amiga", "Sega CD"],
+      "pop": 3,
+      "note": "Core Design's Amiga racer paired fast sprite-scaled road racing and Martin Iveson's CD-style soundtrack with a built-in track editor."
+    },
+    {
+      "id": "benefactor",
+      "title": "Benefactor",
+      "year": 1994,
+      "dev": "Digital Illusions",
+      "cc": "SE",
+      "genres": ["puzzle", "platformer"],
+      "plats": ["Amiga"],
+      "pop": 3,
+      "note": "Swedish studio Digital Illusions (later DICE) followed its Pinball series with this inventive puzzle-platformer starring Ben E. Factor rescuing stranded Merry Men."
+    },
+    {
+      "id": "slam-tilt",
+      "title": "Slam Tilt",
+      "year": 1996,
+      "dev": "Liquid Entertainment / 21st Century Entertainment",
+      "cc": "SE",
+      "genres": ["arcade"],
+      "plats": ["Amiga", "PC (Windows)"],
+      "pop": 3,
+      "note": "AGA Amiga pinball showcase built in Sweden for 21st Century Entertainment, pushing multi-ball physics and dot-matrix mini-games at the end of the commercial Amiga era."
+    }
+  ],
+  "links": [
+    {
+      "from": "silkworm",
+      "to": "swiv",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Asymmetric two-player helicopter-and-jeep co-op where air and ground vehicles cover each other's blind spots",
+      "added": "Vertical scrolling, continuous uninterrupted streaming stages, and overhead 360-degree jeep turret aiming",
+      "src": [{"t": "Eurogamer — SWIV retrospective & Sales Curve history", "u": "https://www.eurogamer.net/swiv-retrospective"}]
+    },
+    {
+      "from": "defender-of-the-crown",
+      "to": "wings-1990",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Cinemaware's playable-movie framing where painted story scenes wrap distinct action sequences",
+      "added": "A persistent WWI pilot career diary, 3D polygonal-feel biplane dogfights, and permanent squadron permadeath",
+      "src": [{"t": "Game Developer — Cinemaware & Wings retrospective", "u": "https://en.wikipedia.org/wiki/Wings_(1990_video_game)"}]
+    },
+    {
+      "from": "archon",
+      "to": "moonstone-a-hard-days-knight",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Turn-based strategic movement across mystic board spaces that resolves encounters in real-time arena combat",
+      "added": "Four-player questing for artefacts, gruesome timing-based broadsword duels, and distinct monster behaviours",
+      "src": [{"t": "Eurogamer — Moonstone: A Hard Days Knight retrospective", "u": "https://www.eurogamer.net/retrospective-moonstone-a-hard-days-knight"}]
+    },
+    {
+      "from": "gobliiins",
+      "to": "the-lost-vikings",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Switching between three specialist characters whose unique abilities must be combined to clear each stage",
+      "added": "Side-scrolling platforming physics, shield gliding, and simultaneous hazard navigation",
+      "src": [{"t": "Hardcore Gaming 101 — Gobliiins", "u": "https://en.wikipedia.org/wiki/Gobliiins"}]
+    },
+    {
+      "from": "lemmings",
+      "to": "benefactor",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Single-screen rescue puzzles built around guiding helpless little characters safely to an exit",
+      "added": "Direct platformer control of a single hero who flips switches, paints hair-colour rules, and unlocks cages",
+      "src": [{"t": "Benefactor (Digital Illusions, 1994) — Amiga Format review", "u": "https://en.wikipedia.org/wiki/Benefactor_(video_game)"}]
+    },
+    {
+      "from": "lotus-turbo-challenge-2",
+      "to": "jaguar-xj220",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "High-speed Amiga road racing with weather hazards and split-screen two-player competition",
+      "added": "A full built-in circuit designer, repair-budget world championship, and Core Design's smooth road-crest scaling",
+      "src": [{"t": "Jaguar XJ220 (video game)", "u": "https://en.wikipedia.org/wiki/Jaguar_XJ220_(video_game)"}]
+    },
+    {
+      "from": "pinball-illusions",
+      "to": "slam-tilt",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Digital Illusions' multi-table AGA Amiga pinball format with multi-ball modes and themed soundscapes",
+      "added": "Playable dot-matrix video-mode mini-games and ultra-fast ramp combos published by 21st Century Entertainment",
+      "src": [{"t": "Slam Tilt", "u": "https://en.wikipedia.org/wiki/Slam_Tilt"}]
+    },
+    {
+      "from": "mercenary",
+      "to": "hunter",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Open-ended 3D exploration across a free-roaming world without fixed level corridors",
+      "added": "Filled-polygon island archipelago with commandeerable boats, helicopters, tanks, bicycles, and day-night cycles",
+      "src": [{"t": "Eurogamer — Hunter: the 1991 Amiga ancestor of open-world games", "u": "https://en.wikipedia.org/wiki/Hunter_(video_game)"}]
+    }
+  ],
+  "updates": [
+    {"id": "pirates", "field": "addPlats", "value": ["Amiga", "Atari ST", "NES", "Mega Drive / Genesis"]},
+    {"id": "california-games", "field": "addPlats", "value": ["Amiga", "Atari ST", "NES", "Master System", "Mega Drive / Genesis"]},
+    {"id": "ik", "field": "addPlats", "value": ["Amiga", "Atari ST"]},
+    {"id": "wings-of-fury", "field": "addPlats", "value": ["Amiga"]},
+    {"id": "pang", "field": "addPlats", "value": ["Amiga", "Atari ST", "Commodore 64", "ZX Spectrum", "SNES"]},
+    {"id": "the-new-zealand-story", "field": "addPlats", "value": ["Amiga", "Atari ST", "Commodore 64", "ZX Spectrum", "NES"]},
+    {"id": "micro-machines", "field": "addPlats", "value": ["Amiga", "Mega Drive / Genesis", "SNES", "PC (DOS)", "Game Boy"]},
+    {"id": "the-legend-of-kyrandia", "field": "addPlats", "value": ["Amiga", "Mac"]},
+    {"id": "laser-squad", "field": "addPlats", "value": ["Amiga", "Atari ST", "PC (DOS)"]},
+    {"id": "sid-meiers-colonization", "field": "addPlats", "value": ["Amiga", "Mac"]},
+    {"id": "katakis", "field": "addPlats", "value": ["Amiga"]},
+    {"id": "microprose-soccer", "field": "addPlats", "value": ["Amiga", "Atari ST", "PC (DOS)"]},
+    {"id": "simon-the-sorcerer-ii-the-lion-the-wizard-and-the-wardrobe", "field": "addPlats", "value": ["Amiga", "Mac"]},
+    {"id": "pinball-dreams", "field": "pop", "value": 4},
+    {"id": "pinball-fantasies", "field": "pop", "value": 4},
+    {"id": "pinball-illusions", "field": "pop", "value": 3},
+    {"id": "speedball-2", "field": "pop", "value": 4},
+    {"id": "sensible-soccer", "field": "pop", "value": 4},
+    {"id": "cannon-fodder", "field": "pop", "value": 4},
+    {"id": "another-world", "field": "pop", "value": 4},
+    {"id": "flashback", "field": "pop", "value": 4},
+    {"id": "the-settlers", "field": "pop", "value": 4},
+    {"id": "syndicate", "field": "pop", "value": 4},
+    {"id": "dune-ii", "field": "pop", "value": 4},
+    {"id": "turrican-ii", "field": "pop", "value": 4},
+    {"id": "shadow-of-the-beast", "field": "pop", "value": 4},
+    {"id": "defender-of-the-crown", "field": "pop", "value": 4},
+    {"id": "monkey-island-2-lechucks-revenge", "field": "pop", "value": 4},
+    {"id": "indiana-jones-and-the-fate-of-atlantis", "field": "pop", "value": 4},
+    {"id": "lotus-turbo-challenge-2", "field": "pop", "value": 4},
+    {"id": "dungeon-master", "field": "pop", "value": 4},
+    {"id": "north-and-south", "field": "pop", "value": 3},
+    {"id": "frontier-elite-ii", "field": "pop", "value": 3},
+    {"id": "superfrog", "field": "pop", "value": 3},
+    {"id": "simon-the-sorcerer", "field": "pop", "value": 3},
+    {"id": "mega-lo-mania", "field": "pop", "value": 3},
+    {"id": "project-x", "field": "pop", "value": 3},
+    {"id": "zool", "field": "pop", "value": 3},
+    {"id": "zak-mckracken-and-the-alien-mindbenders", "field": "pop", "value": 3},
+    {"id": "lotus-iii-the-ultimate-challenge", "field": "pop", "value": 3},
+    {"id": "hired-guns", "field": "pop", "value": 3},
+    {"id": "hunter", "field": "pop", "value": 3},
+    {"id": "lure-of-the-temptress", "field": "pop", "value": 3}
+  ]
+}

@@ -229,8 +229,16 @@ button.chip:hover{border-color:var(--line2)}
 .syschip small{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
 .syschip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .syschip[aria-pressed="true"] small{color:var(--accent-ink);opacity:.8}
-.band{padding-block:20px 4px}
-.band h2{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.band{padding-block:22px 8px;border-top:1px solid var(--line);scroll-margin-top:4.5rem}
+.band.firstband{border-top:0;padding-top:14px}
+.bandhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.band h2{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0}
+.bandmeta{font-family:var(--f-mono);font-size:12px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+.bandmeta b{color:var(--accent);font-weight:700}
+.bandfoot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}
+.pickstrip{display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;scroll-snap-type:inline proximity;scroll-padding-inline:12px;padding:4px 2px 8px;scrollbar-width:thin}
+.pickstrip > *{flex:none;scroll-snap-align:start}
+.pickpanel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0 6px}
 .pickbar{position:sticky;bottom:0;z-index:15;margin-top:24px;background:var(--paper);border-top:1px solid var(--line);
   padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .pickbar .in{display:flex;align-items:center;gap:14px}
@@ -989,7 +997,7 @@ function friendList(){
 /* ================================================================
    Router and views
    ================================================================ */
-const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",makerRole:"",trail:[],tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",makerRole:"",pickSys:"",trail:[],tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
 state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
 function parseHash(){
   let h="";try{h=decodeURIComponent(location.hash.slice(1))}catch(e){h=location.hash.slice(1)}
@@ -1086,7 +1094,7 @@ function renderStart(m){
 }
 
 /* ---------- onboarding: systems, then quick picks ---------- */
-function relevantSystems(birth){const a=birth+3,b=Math.min(NOW,birth+40);return SYSTEMS.filter(([,n,f,t])=>t>=a&&f<=b&&n!=="Steam Deck")}
+function relevantSystems(birth){const a=birth-2;return SYSTEMS.filter(([,n,f,t])=>t>=a&&f<=NOW)}
 function renderOnboard(m){
   if(hist.stage==="systems")return renderSystems(m);
   return renderPicks(m);
@@ -1103,20 +1111,71 @@ function renderSystems(m){
     <div class="pickbar"><div class="in"><button class="btn ghost" data-act="obBack">Back</button><span class="sync" style="flex:1" id="ownCount">${own.size?plural(own.size,"system")+" picked":"Pick a few, or skip"}</span><button class="btn primary" data-act="obPicks">Next: pick games ▸</button></div></div>
   </section>`;
 }
-function quickBands(birth,owned){
+const ERA_BANDS=[
+  [-10,2,"pre3","Older siblings, hand-me-downs & early classics","Pre-age 3","Games released before you turned 3 — played later via an older brother or sister, cousins, or arcades",18],
+  [3,6,"a3","Early childhood · Ages 3–6","Ages 3–6","First games at home, or watching older siblings play",18],
+  [7,9,"a7","Ages 7–9","Ages 7–9","",18],
+  [10,12,"a10","Ages 10–12","Ages 10–12","",18],
+  [13,15,"a13","Ages 13–15","Ages 13–15","",18],
+  [16,19,"a16","Ages 16–19","Ages 16–19","",18],
+  [20,24,"a20","Ages 20–24","Ages 20–24","",16],
+  [25,29,"a25","Ages 25–29","Ages 25–29","",16],
+  [30,39,"a30","Your thirties","30s","",18],
+  [40,49,"a40","Your forties","40s","",16],
+  [50,90,"a50","Since you turned 50","50+","",14]];
+function quickBands(birth,owned,sysFilter=""){
   const own=new Set(owned||[]),useOwn=own.size>0;
-  const spec=[[-9,-1,"Before you were born","Older siblings, cousins, hand-me-downs and arcades",8],[3,6,"Ages 3–6","",10],[7,9,"Ages 7–9","",14],[10,12,"Ages 10–12","",16],[13,15,"Ages 13–15","",16],[16,19,"Ages 16–19","",16],[20,24,"Ages 20–24","",16],[25,29,"Ages 25–29","",14],[30,39,"Your thirties","",16],[40,49,"Your forties","",14],[50,90,"Since you turned 50","",12]];
   const bands=[];
-  for(const [a,b,label,sub,n] of spec){
+  for(const [a,b,key,label,short,sub,n] of ERA_BANDS){
     const from=Math.max(1950,birth+a),to=Math.min(NOW,birth+b);if(from>to)continue;
-    const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=3)&&playable(g));
-    const scored=pool.map(g=>{const ps=sysOfGame(g),hit=ps.some(p=>own.has(p)),arc=ps.includes("Arcade");
-      const s=g.pop*10+(hit?26:0)+(arc&&g.year<1996?6:0)+Math.min(g.inf,300)/25+(g.cat?3:0);return {g,s,ok:!useOwn||hit||g.pop>=5||(arc&&g.year<1992&&g.pop>=4)}}).filter(x=>x.ok).sort((x,y)=>y.s-x.s);
-    const extra=state.pickExtra[label]||0;
-    const games=scored.slice(0,n+extra).map(x=>x.g);
-    if(games.length)bands.push({label,sub,from,to,games,more:scored.length>n+extra});
+    let scored=[];
+    if(sysFilter&&sysFilter!=="__other__"){
+      const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=2||g.tree)&&playable(g));
+      scored=pool.map(g=>{const ps=sysOfGame(g);if(!ps.includes(sysFilter))return null;
+        const lead=g.plats.length&&canonSys(g.plats[0])===sysFilter?12:0,excl=ps.length<=2?5:ps.length<=4?2:0;
+        return {g,ps,s:g.pop*10+lead+excl+Math.min(g.inf,300)/22+(g.cat?3:0)}}).filter(Boolean).sort((x,y)=>y.s-x.s);
+    }else if(sysFilter==="__other__"){
+      const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=3)&&playable(g));
+      scored=pool.map(g=>{const ps=sysOfGame(g),arc=ps.includes("Arcade");if(ps.some(p=>own.has(p)))return null;
+        if(!(g.pop>=4||(arc&&g.pop>=3)))return null;
+        return {g,ps,s:g.pop*10+(arc?6:0)+Math.min(g.inf,300)/25}}).filter(Boolean).sort((x,y)=>y.s-x.s);
+    }else{
+      const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=3)&&playable(g));
+      scored=pool.map(g=>{const ps=sysOfGame(g),hit=ps.some(p=>own.has(p)),arc=ps.includes("Arcade");
+        const lead=g.plats.length&&own.has(canonSys(g.plats[0]))?8:0,excl=hit&&ps.length<=3?4:0;
+        const s=g.pop*10+(hit?28:0)+lead+excl+(arc&&g.year<1996?5:0)+Math.min(g.inf,300)/25+(g.cat?3:0);
+        return {g,ps,s,ok:!useOwn||hit||g.pop>=5||(arc&&g.year<1992&&g.pop>=4)}}).filter(x=>x.ok).sort((x,y)=>y.s-x.s);
+      if(useOwn&&own.size>1){
+        const queues=[...own].map(sy=>scored.filter(x=>x.ps.includes(sy)).sort((p,q)=>(q.s+(q.g.plats.length&&canonSys(q.g.plats[0])===sy?12:0))-(p.s+(p.g.plats.length&&canonSys(p.g.plats[0])===sy?12:0)))).filter(q=>q.length);
+        if(queues.length>1){
+          const seen=new Set(),inter=[],ptr=queues.map(()=>0),target=Math.max(n,queues.length*5);
+          while(inter.length<target){let added=0;for(let qi=0;qi<queues.length;qi++){const q=queues[qi];while(ptr[qi]<q.length&&seen.has(q[ptr[qi]].g.i))ptr[qi]++;if(ptr[qi]<q.length){const it=q[ptr[qi]++];seen.add(it.g.i);inter.push(it);added++}}if(!added)break}
+          scored.forEach(x=>{if(!seen.has(x.g.i))inter.push(x)});
+          scored=inter;
+        }
+      }
+    }
+    if(!scored.length)continue;
+    const extra=state.pickExtra[key+":"+sysFilter]||0;
+    const shown=Math.min(scored.length,n+extra);
+    const games=scored.slice(0,shown).map(x=>x.g);
+    const pickedInBand=scored.reduce((c,x)=>c+(levelOf(hist,x.g)>0?1:0),0);
+    bands.push({key,label,short,sub,from,to,games,baseN:n,extra,total:scored.length,shown,rem:scored.length-shown,picked:pickedInBand});
   }
   return bands;
+}
+function pickSysCounts(birth,owned){
+  const from=Math.max(1950,birth-10),out=new Map();
+  (owned||[]).forEach(sy=>out.set(sy,0));
+  for(const g of G){if(g.year<from||g.year>NOW||!(g.cat||g.pop>=2||g.tree)||!playable(g))continue;
+    for(const p of sysOfGame(g))if(out.has(p))out.set(p,out.get(p)+1)}
+  return out;
+}
+function pickTileSub(g,ownSet,sysFilter){
+  if(sysFilter&&sysFilter!=="__other__")return `${g.year} · ${esc(studio(g))}`;
+  const ps=sysOfGame(g),hits=ownSet.size?ps.filter(p=>ownSet.has(p)):[];
+  if(hits.length)return `${g.year} · ${esc(hits.slice(0,2).join(", "))}`;
+  return `${g.year} · ${esc(ps[0]||studio(g))}`;
 }
 function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false}={}){
   const lv=d?levelOf(d,g):0,ent=d?entryOf(d,g):null,wk=!!(ent&&ent.wk);
@@ -1126,25 +1185,68 @@ function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false}={}){
 function histBars(d,from,to){const counts={},loves={};for(const {y,lv} of entries(d)){counts[y]=(counts[y]||0)+1;if(lv===3)loves[y]=1}
   const max=Math.max(1,...Object.values(counts));let h="";for(let y=from;y<=to;y++){const c=counts[y]||0;h+=`<i class="${c?(loves[y]?"l":""):"z"}" style="height:${c?Math.max(12,c/max*100):6}%" title="${y}: ${c}"></i>`}return h}
 function pickSummary(){const es=entries(hist);const ys=es.map(x=>x.y);return {n:es.length,from:ys.length?Math.min(...ys):hist.birth,to:ys.length?Math.max(...ys):hist.birth}}
-function pickBars(){const s=pickSummary();return histBars(hist,Math.max(1950,Math.min(hist.birth-9,s.from)),Math.min(NOW,Math.max(hist.birth+40,s.to)))}
+function pickBars(){const s=pickSummary();return histBars(hist,Math.max(1950,Math.min(hist.birth-10,s.from)),Math.min(NOW,Math.max(hist.birth+40,s.to)))}
 function renderPicks(m){
-  const bands=quickBands(hist.birth,hist.owned);
+  const own=hist.owned||[],ownSet=new Set(own);
+  if(state.pickSys&&state.pickSys!=="__other__"&&!ownSet.has(state.pickSys))state.pickSys="";
+  const sf=state.pickSys||"";
+  const bands=quickBands(hist.birth,own,sf);
+  const sysCnt=own.length?pickSysCounts(hist.birth,own):null;
   const s=pickSummary();
   m.innerHTML=`<section class="wrap" style="padding-block:28px 0">
-    <div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i><span>Step 3 of 3</span></div>
-    <h1 class="h1" style="font-size:clamp(26px,5vw,38px)">Tap the games you played</h1>
+    <div class="row" style="justify-content:space-between">
+      <div class="steps" style="margin:0"><i class="on"></i><i class="on"></i><i class="on"></i><span>Step 3 of 3</span></div>
+      <button type="button" class="btn sm ghost" data-act="obSystems">◂ Edit systems (${own.length||"all"})</button>
+    </div>
+    <h1 class="h1" style="font-size:clamp(1.6rem,1.1rem + 2.5vw,2.4rem);margin-top:8px">Tap the games you played</h1>
     <div class="tap-hint"><span><b>✓</b>1 tap: played</span><span><b class="l2">★</b>2 taps: played a ton</span><span><b class="l3">♥</b>3 taps: all-time favorite</span><span class="muted">· tap <b>⑂</b> on any cover to see its roots</span></div>
-    <p class="sub">Picked from ${hist.owned&&hist.owned.length?"the systems you chose, plus games everyone knew":"the best-known games of each year"}. Early releases automatically land in your childhood, and you can move any game's year later.</p>
-    ${bands.map(b=>`<section class="band"><h2 class="h2">${b.label} <span class="mono muted" style="font-size:13px;font-weight:500">${b.from===b.to?b.from:b.from+"–"+b.to}</span></h2>${b.sub?`<p class="sub">${b.sub}</p>`:""}
-      <div class="grid">${b.games.map(g=>tileHTML(g,hist)).join("")}</div>
-      ${b.more?`<button class="btn sm" style="margin-top:12px" data-act="pickMore" data-band="${esc(b.label)}">Show more from ${b.from===b.to?b.from:b.from+"–"+b.to}</button>`:""}</section>`).join("")}
+    <p class="sub" style="margin-bottom:10px">You don't need to find every single game — tap the 3–8 highlights that jump out from each era and hop down to the next. Older sibling & early classics automatically land in your childhood on your timeline.</p>
+    <div class="pickpanel">
+      <div class="search"><input class="input" id="pickQ" type="search" placeholder="Remember a specific game (e.g. Moonstone, Ports of Call, GoldenEye)? Search & tap to tick it…" autocomplete="off" aria-label="Search any game to add"><div class="results" id="pickR" hidden></div></div>
+      ${own.length?`<div style="margin-top:10px"><span class="sync" style="display:block;margin-bottom:4px">Filter by system (tap one, like Amiga, to browse deep cuts from that machine):</span>
+        <div class="pickstrip" role="group" aria-label="Filter by system">
+          <button type="button" class="chip" data-act="pickSys" data-sys="" aria-pressed="${!sf}">All my systems (${own.length})</button>
+          ${own.map(sy=>`<button type="button" class="chip" data-act="pickSys" data-sys="${esc(sy)}" aria-pressed="${sf===sy}">${esc(sy)} <span class="mono muted">${sysCnt.get(sy)||0}</span></button>`).join("")}
+          <button type="button" class="chip" data-act="pickSys" data-sys="__other__" aria-pressed="${sf==="__other__"}">Other systems & arcades</button>
+        </div></div>`:""}
+      ${bands.length>1?`<div style="margin-top:${own.length?"6px":"10px"}"><span class="sync" style="display:block;margin-bottom:4px">Jump to era:</span>
+        <div class="pickstrip" aria-label="Jump to era">${bands.map((b,idx)=>`<button type="button" class="chip" data-act="bandJump" data-to="band-${idx}" data-bjump="${esc(b.key)}">${esc(b.short)} <span class="mono muted">${b.from===b.to?b.from:"'"+String(b.from).slice(-2)+"–'"+String(b.to).slice(-2)}${b.picked?` · ${b.picked}✓`:""}</span></button>`).join("")}</div></div>`:""}
+    </div>
+    ${bands.map((b,idx)=>`<section class="band${idx===0?" firstband":""}" id="band-${idx}" data-bkey="${esc(b.key)}">
+      <div class="bandhead">
+        <h2 class="h2">${esc(b.label)} <span class="mono muted" style="font-size:13px;font-weight:500">${b.from===b.to?b.from:b.from+"–"+b.to}</span></h2>
+        <span class="bandmeta"><span>Showing ${b.shown} of ${b.total}</span><b data-bpick="${esc(b.key)}" ${b.picked?"":"hidden"}>${b.picked} picked</b></span>
+      </div>
+      ${b.sub?`<p class="sub">${esc(b.sub)}</p>`:`<div style="height:8px"></div>`}
+      <div class="grid">${b.games.map(g=>tileHTML(g,hist,{sub:pickTileSub(g,ownSet,sf)})).join("")}</div>
+      <div class="bandfoot">
+        ${b.rem>32?`<button type="button" class="btn sm" data-act="pickMore" data-band="${esc(b.key)}">Show ${Math.min(24,b.rem)} more <span class="mono muted">(${b.rem} left)</span></button><button type="button" class="btn sm ghost" data-act="pickAll" data-band="${esc(b.key)}">Show all ${b.total}</button>`
+          :b.rem>0?`<button type="button" class="btn sm" data-act="pickAll" data-band="${esc(b.key)}">Show all ${b.rem} remaining <span class="mono muted">(of ${b.total})</span></button>`
+          :b.total>b.baseN?`<span class="sync">Showing all ${b.total} games in this era</span>`:""}
+        ${b.extra>0?`<button type="button" class="btn sm ghost" data-act="pickLess" data-band="${esc(b.key)}">Show fewer</button>`:""}
+        ${idx<bands.length-1?`<button type="button" class="btn sm ghost" data-act="bandJump" data-to="band-${idx+1}">Next: ${esc(bands[idx+1].short)} ↓</button>`:""}
+      </div></section>`).join("")||`<p class="empty" style="margin-top:18px">No matching games found for this filter.</p>`}
     <div class="pickbar"><div class="in">
       <span class="count" id="pcount">${plural(s.n,"game")}<small>${s.n?`${s.from}–${s.to}`:"Nothing yet"}</small></span>
       <span class="minihist" id="phist" aria-hidden="true">${pickBars()}</span>
       <button class="btn primary" data-act="obDone">See my timeline ▸</button></div></div>
   </section>`;
+  wireSearch($("#pickQ"),$("#pickR"),p=>{
+    if(p.custom){const py=Math.min(NOW,hist.birth+10);addCustom(p.custom,py,1);toast(`✓ Added “${p.custom}” (${py})`);updatePickBar();return}
+    const nl=Math.min(3,levelOf(hist,p)+1);setLevel(p,nl);
+    $$(`.art[data-id="${CSS.escape(p.id)}"]`).forEach(btn=>refreshTile(btn,p));
+    updatePickBar();toast(`${LV[nl].m} ${LV[nl].label}: ${p.title} (tap again in search for ★/♥)`);
+  },{custom:true,catFirst:true,playOnly:true});
 }
-function updatePickBar(){const s=pickSummary(),c=$("#pcount"),h=$("#phist");if(c)c.innerHTML=`${plural(s.n,"game")}<small>${s.n?`${s.from}–${s.to}`:"Nothing yet"}</small>`;if(h)h.innerHTML=pickBars()}
+function updatePickBar(){
+  const s=pickSummary(),c=$("#pcount"),h=$("#phist");
+  if(c)c.innerHTML=`${plural(s.n,"game")}<small>${s.n?`${s.from}–${s.to}`:"Nothing yet"}</small>`;
+  if(h)h.innerHTML=pickBars();
+  $$("section.band[data-bkey]").forEach(sec=>{
+    const k=sec.dataset.bkey,cnt=$$(".tile.lv1,.tile.lv2,.tile.lv3",sec).length;
+    const b=$("[data-bpick]",sec);if(b){b.hidden=!cnt;b.textContent=`${cnt} picked`}
+  });
+}
 function refreshTile(btn,g){const tile=btn.closest(".tile");if(!tile)return;const lv=levelOf(hist,g);
   tile.classList.remove("lv1","lv2","lv3");if(lv)tile.classList.add("lv"+lv);
   const old=btn.querySelector(".lvb");if(old)old.remove();
@@ -2086,7 +2188,11 @@ const ACTIONS={
   own(el){const n=el.dataset.sys,o=new Set(hist.owned||[]);o.has(n)?o.delete(n):o.add(n);hist.owned=[...o];save();el.setAttribute("aria-pressed",o.has(n));const c=$("#ownCount");if(c)c.textContent=o.size?plural(o.size,"system")+" picked":"Pick a few, or skip"},
   obBack(){if(entries(hist).length){hist.stage=null;save();go("timeline");return}hist.birth=null;hist.stage=null;save();go("start")},
   obPicks(){hist.stage="picks";save();render();window.scrollTo({top:0})},
-  pickMore(el){const k=el.dataset.band;state.pickExtra[k]=(state.pickExtra[k]||0)+12;const y=window.scrollY;render();window.scrollTo({top:y})},
+  pickSys(el){const v=el.dataset.sys||"";state.pickSys=state.pickSys===v&&v?"":v;render();const on=$(`.pickstrip [data-act="pickSys"][aria-pressed="true"]`);if(on&&on.scrollIntoView)try{on.scrollIntoView({block:"nearest",inline:"nearest",container:"nearest"})}catch(e){on.scrollIntoView({block:"nearest",inline:"nearest"})}},
+  pickMore(el){const k=el.dataset.band+":"+(state.pickSys||"");state.pickExtra[k]=(state.pickExtra[k]||0)+24;const y=window.scrollY;render();window.scrollTo({top:y})},
+  pickAll(el){const k=el.dataset.band+":"+(state.pickSys||"");state.pickExtra[k]=9999;const y=window.scrollY;render();window.scrollTo({top:y})},
+  pickLess(el){const k=el.dataset.band+":"+(state.pickSys||"");delete state.pickExtra[k];const sec=el.closest(".band"),id=sec&&sec.id;render();const nsec=id&&document.getElementById(id);if(nsec)nsec.scrollIntoView({behavior:"smooth",block:"start"})},
+  bandJump(el){const t=document.getElementById(el.dataset.to);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})},
   obDone(){hist.stage=null;save();go("timeline")},
   obSystems(){hist.stage="systems";save();clearLayer();go("start")},
   obAgain(){hist.stage="picks";save();clearLayer();go("start")},

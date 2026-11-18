@@ -147,6 +147,7 @@ foreach ($u in $updates) {
     'dev' { if (Str (Get $u 'why')) { Note "dev update: $($g.title) '$($g.dev)' -> '$val'"; $g.dev = Str $val; $applied++ } }
     'cc' { $c = (Str $val).ToUpperInvariant(); if ($c -match '^[A-Z]{2}$') { $g.cc = $c; $applied++ } }
     'genres' { $gs = Genres $val; if ($gs.Count) { $g.genres = $gs; $applied++ } }
+    'addPlats' { foreach ($np in (Plats $val)) { if ($g.plats -notcontains $np) { $g.plats = @($g.plats) + $np } }; $applied++ }
     'note' { if (Str $val) { $g.note = Str $val; $applied++ } }
   }
 }
