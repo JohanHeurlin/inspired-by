@@ -665,9 +665,24 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
 .genpill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;color:var(--ink2);text-decoration:none}
 .genpill:hover{border-color:var(--accent);color:var(--accent)}
 .wmapbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;overflow:hidden}
-.wmapsvg{width:100%;height:auto;display:block;border-radius:10px;background:color-mix(in srgb,var(--accent-soft) 32%,var(--paper))}
+.wmapsvg{width:100%;height:auto;display:block;border-radius:10px;background:color-mix(in srgb,var(--accent-soft) 38%,var(--paper));border:1px solid var(--line)}
+.wmapsvg path.ccpoly{cursor:pointer;transition:fill .15s,opacity .15s}
+.wmapsvg path.ccpoly:hover{opacity:.88;stroke:var(--ink);stroke-width:1.1}
 .wmapsvg circle.ccdot{cursor:pointer;transition:opacity .15s,stroke-width .15s}
-.wmapsvg circle.ccdot:hover{stroke-width:2.5;opacity:1}
+.wmapsvg circle.ccdot:hover{stroke-width:2.2;opacity:1}
+/* in-app screenshots, title screens & artwork gallery */
+.galbox{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.galstrip{display:flex;gap:10px;overflow-x:auto;max-width:100%;padding:6px 2px 8px;scrollbar-width:thin}
+.galcard{flex:none;width:168px;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:5px;text-align:left;color:inherit;cursor:pointer}
+.galcard:hover,.galcard[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.galcard .galthumb{width:100%;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#0B0E16;display:grid;place-items:center}
+.galcard .galthumb img{width:100%;height:100%;object-fit:cover;display:block}
+.galcard.box .galthumb img{object-fit:contain}
+.galcard small{font-family:var(--f-mono);font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.galcard span{font-size:11.5px;color:var(--ink2);line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.galstage{color-scheme:dark;background:#0B0E16;color:#EEF2FA;accent-color:#8AB4F8;border:1px solid #252C3D;border-radius:12px;padding:10px 12px;margin-top:8px}
+.galstage .galimgwrap{width:100%;max-height:min(54vh,440px);display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:8px;background:#05070C}
+.galstage .galimgwrap img{max-width:100%;max-height:min(54vh,440px);width:auto;height:auto;object-fit:contain;display:block}
 .slotreels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
 .slotcell{background:var(--card);border:1.5px solid var(--line2);border-radius:12px;padding:12px 10px;text-align:center}
 .slotcell small{display:block;font-family:var(--f-pixel);font-size:10px;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
@@ -1143,6 +1158,7 @@ function connectPath(a,b){
    ================================================================ */
 const LV={1:{m:"✓",label:"Played"},2:{m:"★",label:"Played a ton"},3:{m:"♥",label:"Favorite"}};
 const MEM_TAGS=["Couch co-op","With siblings","With friends","LAN party","After school","Summer break","Late nights","Arcade","Hand-me-down","🛟 Carried me through","🏠 Safe harbor","✨ Shaped who I am","🎨 Pure art","😤 Made me sweat"];
+const UI_MEM_TAGS=MEM_TAGS.filter(t=>t!=="🏠 Safe harbor");
 const HARBOR_TAGS=new Set(["🛟 Carried me through","🏠 Safe harbor","✨ Shaped who I am","🎨 Pure art"]);
 const SWEAT_TAG="😤 Made me sweat";
 const DEV_ROLES=["Design","Engineering","Art & Animation","Audio & Music","Narrative","Production","QA","Publishing & Ops"];
@@ -1979,7 +1995,7 @@ function specialShelvesSection(d,mine){
   const shelfGrid=arr=>`<div class="grid">${arr.map(x=>{const g=x.g;return `<div class="tile lv${x.lv}"><button class="art" data-act="entry" data-y="${x.y}" data-t="${esc(x.e.t)}" ${mine?"":"data-ro=\"1\""}>${coverOfEntry(x.e,x.y)}</button><span class="tn">${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>`:esc(x.e.t)}</span><span class="ts">${x.y}${g?" · "+studioBtn(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div>`;
   let out="";
   if(harbor.length){
-    out+=`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Safe harbors & lifelines</p><h2 class="h2">🛟 Worlds that carried ${mine?"me":"them"} through</h2><p class="sub">Games marked as safe harbors, lifelines in rough seasons, or worlds that shaped who ${mine?"you":"they"} became.</p></div>${mine?`<button type="button" class="btn sm love" data-act="gratSheet">💌 Thank a maker</button>`:""}</div>${shelfGrid(harbor)}</section>`;
+    out+=`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Lifelines &amp; formative worlds</p><h2 class="h2">🛟 Worlds that carried ${mine?"me":"them"} through</h2><p class="sub">Games that helped ${mine?"you":"them"} weather rough seasons or shaped who ${mine?"you":"they"} became.</p></div>${mine?`<button type="button" class="btn sm love" data-act="gratSheet">💌 Thank a maker</button>`:""}</div>${shelfGrid(harbor)}</section>`;
   }
   if(sweat.length){
     out+=`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Palms sweating · Controller survived</p><h2 class="h2">😤 Games that made ${mine?"me":"them"} sweat</h2><p class="sub">Infamous jumps, brutal bosses, and tests of pure stubbornness.</p></div>${mine?`<button type="button" class="btn sm" data-act="openSweatPack">+ Add more brutal classics</button>`:""}</div>${shelfGrid(sweat)}</section>`;
@@ -1987,7 +2003,7 @@ function specialShelvesSection(d,mine){
   if(mine&&(!harbor.length||!sweat.length||myLists.length)){
     out+=`<section class="wrap sec"><div class="card" style="padding:14px 16px"><div class="row" style="justify-content:space-between">
       <div><b style="font-size:14px">Personal shelves & custom themed lists</b><p class="sub" style="margin:2px 0 0;font-size:12.5px">Tap any game on your timeline to tag <b>🛟 Carried me through</b> or <b>😤 Made me sweat</b> — or build & share your own themed lists${myLists.length?` (${plural(myLists.length,"saved list")})`:""}.</p></div>
-      <div class="row"><button type="button" class="btn sm" data-act="openSweatPack">😤 Browse brutal games</button><button type="button" class="btn sm" data-act="openHarborPack">🛟 Safe-harbor classics</button><button type="button" class="btn sm primary" data-act="listsSheet">📋 ${myLists.length?`My themed lists (${myLists.length})`:"Create a themed list"}</button></div>
+      <div class="row"><button type="button" class="btn sm" data-act="openSweatPack">😤 Browse brutal games</button><button type="button" class="btn sm" data-act="openHarborPack">🛟 Carried us through</button><button type="button" class="btn sm primary" data-act="listsSheet">📋 ${myLists.length?`My themed lists (${myLists.length})`:"Create a themed list"}</button></div>
     </div></div></section>`;
   }
   return out;
@@ -2214,7 +2230,7 @@ function gratitudeCardHTML(gItem){
 function gratitudeSectionHTML(){
   const notes=allGratitudeNotes();
   return `${whyGamesSectionHTML(false)}
-    <section class="wrap sec" id="gratitudeWall"><div class="sechead"><div><p class="eyebrow">No vote counts · No rankings · Pure gratitude</p><h2 class="h2">💌 Letters to the makers who raised us</h2><p class="sub">Not a popularity contest — just personal stories for the studios, programmers, artists, and musicians whose worlds carried us through growing up. Write a note to create a shareable thank-you postcard or post to the community guestbook.</p></div><button type="button" class="btn primary" data-act="gratSheet">💌 Write a thank-you note</button></div>
+    <section class="wrap sec" id="gratitudeWall"><div class="sechead"><div><p class="eyebrow">Curated stories · No public comment wall, rankings, or pile-ons</p><h2 class="h2">💌 Letters to the makers who raised us</h2><p class="sub">Intentionally curated and troll-free — no public comment feed or ratings, just heartfelt stories for the studios, programmers, artists, and musicians whose worlds carried us through growing up. Write your own thank-you note to save locally and download a <b>Thank-You Postcard (.png)</b> you can send directly to a creator.</p></div><button type="button" class="btn primary" data-act="gratSheet">💌 Create a thank-you postcard</button></div>
       <div class="gratgrid">${notes.map(gratitudeCardHTML).join("")}</div>
     </section>`;
 }
@@ -2534,12 +2550,12 @@ function renderMechanics(m){
   ${footer()}`;
 }
 
-/* ---------- world map & country explorer ---------- */
-const CC_GEO={US:[39,-98],CA:[56,-106],MX:[23,-102],BR:[-14,-52],AR:[-34,-64],CL:[-33,-71],UY:[-33,-56],CO:[4,-73],
-  GB:[54,-2],IE:[53,-8],FR:[46,2],DE:[51,10],NL:[52.3,5.3],BE:[50.8,4.4],ES:[40,-4],PT:[39.5,-8],IT:[42,12.5],CH:[46.8,8.2],AT:[47.5,14.5],
-  SE:[62,15],FI:[64,26],NO:[61,8.5],DK:[56,10],IS:[65,-18],EE:[58.6,25],PL:[52,19],CZ:[49.8,15.5],SK:[48.7,19.7],HU:[47.2,19.5],HR:[45.1,15.5],RO:[45.9,25],BG:[42.7,25.5],GR:[39,22],
-  UA:[49,31],BY:[53.7,28],RU:[58,50],TR:[39,35],CY:[35,33],IL:[31.5,34.8],ZA:[-30,25],IN:[21,78],
-  CN:[35,104],HK:[22.3,114.2],TW:[23.7,121],KR:[36.5,127.8],JP:[36.2,138.2],SG:[1.3,103.8],VN:[16,108],ID:[-2,118],AU:[-25,134],NZ:[-41,174]};
+/* ---------- world map & country explorer (real Natural Earth 110m choropleth) ---------- */
+const CC_GEO={US:[39,-98],CA:[57,-106],MX:[23,-102],BR:[-12,-52],AR:[-34,-64],CL:[-33,-71],UY:[-33,-56],CO:[4,-73],
+  GB:[54,-2],IE:[53,-8],FR:[46.5,2.2],DE:[51,10.2],NL:[52.3,5.3],BE:[50.8,4.4],ES:[40,-4],PT:[39.5,-8],IT:[42.5,12.5],CH:[46.8,8.2],AT:[47.5,14.5],
+  SE:[62,15.5],FI:[64,26],NO:[61,8.8],DK:[56,10],IS:[65,-18],EE:[58.7,25.5],PL:[52,19.2],CZ:[49.8,15.5],SK:[48.7,19.7],HU:[47.2,19.5],HR:[45.1,15.5],RO:[45.9,25],BG:[42.7,25.5],GR:[39,22],
+  UA:[49,31.5],BY:[53.7,28],RU:[60,65],TR:[39,35],CY:[35,33],IL:[31.5,34.8],ZA:[-29,25],IN:[21,78],
+  CN:[35,104],HK:[22.3,114.2],TW:[23.7,121],KR:[36.5,127.8],JP:[36.2,138.2],SG:[1.3,103.8],VN:[16,108],ID:[-2,118],AU:[-25,134],NZ:[-41.5,173]};
 function renderWorld(m){
   const hasMine=hist.birth&&entries(hist).length>=1;
   const mineOnly=state.worldMine&&hasMine;
@@ -2552,29 +2568,32 @@ function renderWorld(m){
   const ccStudios=[...STUDIOS.values()].filter(s=>s.cc===selCC&&s.games.length>=1).sort((a,b)=>(b.curated-a.curated)||(b.games.length-a.games.length)).slice(0,18);
   const ccPio=(CULT.pioneers||[]).filter(p=>p.cc===selCC);
   const maxCnt=Math.max(1,ranked[0]?ranked[0][1].length:1);
-  const proj=([lat,lon])=>[((lon+180)/360*900).toFixed(1),((90-lat)/180*420).toFixed(1)];
-  /* stylized simplified continent silhouettes */
-  const land=`<g fill="var(--line)" opacity=".65">
-    <path d="M55,65 L235,55 L285,115 L240,195 L185,215 L145,180 L85,140 Z"/>
-    <path d="M225,225 L315,245 L335,315 L285,395 L250,385 L235,295 Z"/>
-    <path d="M415,62 L525,52 L555,105 L530,158 L425,162 L408,120 Z"/>
-    <path d="M425,175 L545,175 L575,255 L525,355 L468,350 L435,245 Z"/>
-    <path d="M545,62 L795,68 L825,155 L755,225 L625,215 L555,155 Z"/>
-    <path d="M775,132 L798,136 L794,172 L772,168 Z"/>
-    <path d="M715,285 L825,285 L835,358 L735,365 Z"/>
-  </g>`;
-  const dots=ranked.map(([cc,arr])=>{const ll=CC_GEO[cc];if(!ll)return "";const [cx,cy]=proj(ll),r=(4+Math.pow(arr.length/maxCnt,0.38)*18).toFixed(1),isS=cc===selCC;
-    return `<circle class="ccdot" data-act="worldPick" data-cc="${esc(cc)}" cx="${cx}" cy="${cy}" r="${r}" fill="${isS?"var(--love)":"var(--accent)"}" fill-opacity="${isS?.92:.68}" stroke="var(--paper)" stroke-width="${isS?2.5:1.2}"><title>${esc(countryName(cc))}: ${arr.length} games</title></circle>
-      ${arr.length>=20||isS?`<text x="${cx}" y="${(+cy-r-4).toFixed(1)}" text-anchor="middle" font-size="10" font-weight="700" fill="var(--ink)" pointer-events="none">${esc(cc)}</text>`:""}`}).join("");
+  const proj=([lat,lon])=>[((lon+180)/360*900).toFixed(1),((84-Math.max(-58,Math.min(84,lat)))/142*420).toFixed(1)];
+  const wm=(MW&&MW.worldMap)||{cc:{},other:""};
+  const gratLines=[-30,0,30,60].map(la=>{const y=((84-la)/142*420).toFixed(1);return `<line x1="0" y1="${y}" x2="900" y2="${y}" stroke="var(--line)" stroke-width="${la===0?1:.6}" stroke-dasharray="${la===0?"":"3 3"}" opacity=".55"/>`}).join("")
+    +[-120,-60,0,60,120].map(lo=>{const x=((lo+180)/360*900).toFixed(1);return `<line x1="${x}" y1="0" x2="${x}" y2="420" stroke="var(--line)" stroke-width=".6" stroke-dasharray="3 3" opacity=".45"/>`}).join("");
+  let inactivePaths=wm.other||"";
+  const activePolys=[];
+  for(const [cc,d] of Object.entries(wm.cc||{})){
+    const arr=byCC.get(cc);
+    if(!arr||!arr.length){inactivePaths+=d;continue}
+    const isS=cc===selCC,pct=Math.round(24+Math.pow(arr.length/maxCnt,0.34)*64);
+    const fill=isS?"var(--love)":`color-mix(in srgb,var(--accent) ${pct}%,var(--card))`;
+    activePolys.push(`<path class="ccpoly" data-act="worldPick" data-cc="${esc(cc)}" d="${d}" fill="${fill}" stroke="var(--paper)" stroke-width="${isS?1.4:0.65}" stroke-linejoin="round"><title>${esc(countryName(cc))}: ${arr.length} ${arr.length===1?"game":"games"}</title></path>`);
+  }
+  const land=`${gratLines}<path d="${inactivePaths}" fill="color-mix(in srgb,var(--ink) 13%,var(--paper))" stroke="var(--paper)" stroke-width="0.55" stroke-linejoin="round"/>${activePolys.join("")}`;
+  const dots=ranked.map(([cc,arr])=>{const ll=CC_GEO[cc];if(!ll)return "";const [cx,cy]=proj(ll),hasPoly=!!(wm.cc&&wm.cc[cc]),r=hasPoly?(cc===selCC?6.5:Math.max(3,Math.min(7,2.5+Math.pow(arr.length/maxCnt,0.35)*5.5))):6.5,isS=cc===selCC;
+    return `<circle class="ccdot" data-act="worldPick" data-cc="${esc(cc)}" cx="${cx}" cy="${cy}" r="${r.toFixed(1)}" fill="${isS?"var(--love)":"var(--accent)"}" fill-opacity="${isS?1:(hasPoly?.72:.9)}" stroke="var(--paper)" stroke-width="${isS?2:1.1}"><title>${esc(countryName(cc))}: ${arr.length} games</title></circle>
+      ${arr.length>=25||isS?`<text x="${cx}" y="${(+cy-r-4).toFixed(1)}" text-anchor="middle" font-size="10" font-weight="700" fill="var(--ink)" stroke="var(--paper)" stroke-width="2.6" paint-order="stroke" pointer-events="none">${esc(cc)}</text>`:""}`}).join("");
   m.innerHTML=`<section class="wrap exhero">
     <div class="row" style="justify-content:space-between;max-width:100%">
       <div><p class="eyebrow">Global craft · ${ranked.length} countries</p><h1 class="h1">World map of games</h1></div>
       ${hasMine?`<span class="seg" role="group" aria-label="Map source"><button data-act="worldMode" data-m="all" aria-pressed="${!mineOnly}">All catalog (${G.length.toLocaleString()})</button><button data-act="worldMode" data-m="mine" aria-pressed="${mineOnly}">My timeline (${entries(hist).length})</button></span>`:""}
     </div>
-    <p class="lede">Great games come from bedrooms and studios all over the planet — from Kyoto, Guildford, and Austin to Stockholm, Helsinki, Warsaw, and Melbourne. Tap any beacon or country below (try <b>Finland 🇫🇮</b> or <b>Sweden 🇸🇪</b>!).</p>
+    <p class="lede">Great games come from bedrooms and studios all over the planet — from Kyoto, Guildford, and Austin to Stockholm, Helsinki, Warsaw, and Melbourne. Tap any country directly on the map or pick below (try <b>Finland 🇫🇮</b> or <b>Sweden 🇸🇪</b>!).</p>
   </section>
   <section class="wrap"><div class="wmapbox">
-    <svg class="wmapsvg" viewBox="0 0 900 420" role="img" aria-label="Interactive world map of video game origins">${land}${dots}</svg>
+    <svg class="wmapsvg" viewBox="0 0 900 420" role="img" aria-label="Interactive Natural Earth world map of video game origins">${land}${dots}</svg>
     <div class="pickstrip" style="margin-top:10px">${ranked.map(([cc,arr])=>`<button type="button" class="chip" data-act="worldPick" data-cc="${esc(cc)}" aria-pressed="${cc===selCC}">${flag(cc)} ${esc(countryName(cc))} <span class="mono muted">${arr.length}</span></button>`).join("")}</div>
   </div></section>
   <section class="wrap sec" id="ccDetail">
@@ -2833,7 +2852,7 @@ function renderGame(m,id){
         <div class="row" style="margin-top:10px">
           <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button>
           <button type="button" class="btn sm love" data-act="gratSheet" data-id="${g.id}">💌 Thank the makers</button>
-          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Box scans & screenshots ↗</a>
+          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Retail box-back scans ↗</a>
           <a class="btn sm" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Dev credits ↗</a>
           <button class="btn sm ghost" data-act="copyGame" data-id="${g.id}">Copy link</button>
           <button class="btn sm ghost" data-act="suggest" data-subj="${esc("Missing link or correction for "+g.title)}">Suggest a link or source</button>
@@ -2841,6 +2860,7 @@ function renderGame(m,id){
         ${playable(g)?`<div class="row" style="margin-top:8px"><span class="sync">Play officially today:</span>${storeLinksHTML(g)}</div>`:""}
         ${(()=>{const fw=friendsWhoPlayed(g);return fw.length?`<p class="sub" style="margin:10px 0 0">Friends: ${fw.slice(0,6).map(f=>`<b>${esc(f.name)}</b> ${f.wk?"🛠"+(f.role?" ("+esc(f.role)+")":""):LV[f.lv].m}`).join(", ")}${fw.length>6?` and ${fw.length-6} more`:""}</p>`:""})()}
       </div></header>
+    <div id="gameGalBox"></div>
     ${!g.tree?relatedSection(g):""}
     ${!g.tree?"":ch.length>1?`<section class="sec"><div class="sechead"><div><h2 class="h2">Roots: ${g.year-ch[0].g.year} years in ${plural(nSteps,"step")}</h2><p class="sub">The main line back from ${esc(g.title)}: the strongest evidence, staying with the same kind of game where it can.</p></div><button class="btn primary" data-act="walk" data-id="${g.id}">Walk the roots ▸</button></div>
       <div class="roots" id="rootsRow" tabindex="0" role="region" aria-label="Lineage steps">${ch.map((s,k)=>{const nx=ch[k+1];
@@ -2854,6 +2874,7 @@ function renderGame(m,id){
   </div>${footer()}`;
   requestAnimationFrame(()=>{const rr=$("#rootsRow");if(rr)rr.scrollLeft=rr.scrollWidth;
     const tb=$("#treebox");if(tb){const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx;tb.scrollLeft=Math.max(0,x-tb.clientWidth/2)}}});
+  mountGameGallery(g,"#gameGalBox");
 }
 /* catalog-only games: no dead end, point to nearby games that are in the family tree */
 function relatedSection(g){
@@ -3085,12 +3106,134 @@ function eraBoxContext(g){
   if(g.year<2020)return g.pop<=3?"Digital / indie release · typical launch $15–$29":"Keep-case disc & digital storefront · typical launch MSRP $59";
   return g.pop<=3?"Digital / indie release · typical launch $15–$35":"Physical & digital edition · typical launch MSRP $59–$69";
 }
+const LIBRETRO_SYS={"Amiga":"Commodore - Amiga","Commodore 64":"Commodore - 64","Atari ST":"Atari - ST","ZX Spectrum":"Sinclair - ZX Spectrum","MSX":"Microsoft - MSX","NES":"Nintendo - Nintendo Entertainment System","SNES":"Nintendo - Super Nintendo Entertainment System","Nintendo 64":"Nintendo - Nintendo 64","Game Boy":"Nintendo - Game Boy","Game Boy Color":"Nintendo - Game Boy Color","Game Boy Advance":"Nintendo - Game Boy Advance","Nintendo DS":"Nintendo - Nintendo DS","GameCube":"Nintendo - GameCube","Master System":"Sega - Master System - Mark III","Mega Drive / Genesis":"Sega - Mega Drive - Genesis","Saturn":"Sega - Saturn","Dreamcast":"Sega - Dreamcast","PlayStation":"Sony - PlayStation","PlayStation 2":"Sony - PlayStation 2","PSP":"Sony - PlayStation Portable","Atari 2600":"Atari - 2600","TurboGrafx-16":"NEC - PC Engine - TurboGrafx 16","Neo Geo":"SNK - Neo Geo","Arcade":"MAME"};
+const GAL_CACHE=new Map();
+let ACTIVE_GAL={gid:"",boxSel:"",items:[],idx:-1};
+function probeImgOk(url,ms=2800){
+  return new Promise(res=>{
+    const im=new Image();let done=false;
+    const fin=ok=>{if(!done){done=true;res(ok)}};
+    const tm=setTimeout(()=>fin(false),ms);
+    im.onload=()=>{clearTimeout(tm);fin(im.naturalWidth>40&&im.naturalHeight>40)};
+    im.onerror=()=>{clearTimeout(tm);fin(false)};
+    im.src=url;
+  });
+}
+async function fetchWikiGallery(g){
+  const skip=/(Gnome-|Symbol_|Commons-logo|Wikiquote|Portal|Question_book|Crystal_Clear|Edit-clear|Nuvola|Flag_of_|Ambox|Lock-|Padlock|Disambig|Wiki_letter|Speaker_Icon|Loudspeaker|\.svg$)/i;
+  const parseList=d=>{
+    const out=[];
+    for(const it of (d&&d.items||[])){
+      if(it.type!=="image"||!it.title||skip.test(it.title))continue;
+      const ss=it.srcset||[];if(!ss.length)continue;
+      const best=ss[ss.length-1].src||ss[0].src,thumb=ss[0].src;
+      const full=best.startsWith("//")?"https:"+best:best,th=thumb.startsWith("//")?"https:"+thumb:thumb;
+      const cap=((it.caption&&it.caption.text)||"").trim();
+      const isPerson=/\b(portrait|at the \d{4}|in \d{4}|Expo|GDC|E3|designer|director|composer|creator|programmer|founder)\b/i.test(cap+" "+it.title);
+      out.push({src:full,thumb:th,kind:isPerson?"Creator / Team":"Screenshot / Art",cap:cap||it.title.replace(/^File:/,"").replace(/[_-]/g," ").replace(/\.\w+$/,"")});
+    }
+    return out;
+  };
+  const trySlug=async slug=>{
+    try{const r=await fetch(`https://en.wikipedia.org/api/rest_v1/page/media-list/${encodeURIComponent(slug)}`);if(!r.ok)return [];return parseList(await r.json())}catch(e){return []}
+  };
+  const baseSlug=g.title.replace(/\s+/g,"_");
+  let hits=await trySlug(`${baseSlug}_(video_game)`);
+  if(hits.length<2){const h2=await trySlug(baseSlug);if(h2.length>hits.length)hits=h2}
+  if(!hits.length){
+    try{
+      const sr=await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(g.title+" "+g.year+" video game")}&srlimit=1&format=json&origin=*`);
+      if(sr.ok){const sd=await sr.json(),top=sd?.query?.search?.[0]?.title;if(top)hits=await trySlug(top.replace(/\s+/g,"_"))}
+    }catch(e){}
+  }
+  return hits;
+}
+async function fetchGameGallery(g){
+  if(!g)return [];
+  if(GAL_CACHE.has(g.id))return GAL_CACHE.get(g.id);
+  const items=[];
+  if(g.img){
+    const hi=g.img.replace(/\/(\d{2,3})px-/,(m,w)=>+w<500?"/500px-":m);
+    items.push({src:hi,thumb:g.img,kind:"Front Box / Cover",cap:`${g.title} (${g.year})`,box:true});
+  }
+  const stm=g.img&&g.img.match(/\/steam\/apps\/(\d+)\//);
+  const probes=[];
+  if(stm){
+    const aid=stm[1];
+    probes.push((async()=>{const u=`https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${aid}/library_hero.jpg`;return (await probeImgOk(u))?{src:u,thumb:u,kind:"Key Artwork",cap:`${g.title} widescreen banner`}:null})());
+  }
+  const ps=sysOfGame(g);
+  const lrSys=ps.map(p=>LIBRETRO_SYS[p]||(p==="PC"&&g.year<=1997?"DOS":null)).filter(Boolean).slice(0,2);
+  if(lrSys.length){
+    const safeName=g.title.replace(/[:/&*?<>|\\"]/g,"_");
+    for(const kind of [["Named_Snaps","In-Game Screenshot"],["Named_Titles","Title Screen"]]){
+      probes.push((async()=>{
+        for(const sys of lrSys){
+          for(const reg of [" (USA)"," (Europe)"," (World)"," (USA, Europe)",""]){
+            const u=`https://thumbnails.libretro.com/${encodeURIComponent(sys)}/${kind[0]}/${encodeURIComponent(safeName+reg)}.png`;
+            if(await probeImgOk(u,2400))return {src:u,thumb:u,kind:kind[1],cap:`${g.title} — ${kind[1].toLowerCase()} (${sys.split(" - ").pop()})`};
+          }
+        }
+        return null;
+      })());
+    }
+  }
+  const [wikiHits,...probeHits]=await Promise.all([fetchWikiGallery(g),...probes]);
+  probeHits.filter(Boolean).forEach(h=>items.push(h));
+  const seenFile=new Set(items.map(x=>x.src.split("/").pop().replace(/^\d+px-/,"").toLowerCase()));
+  wikiHits.forEach(w=>{
+    const fn=w.src.split("/").pop().replace(/^\d+px-/,"").toLowerCase();
+    if(seenFile.has(fn)||items.length>=8)return;
+    seenFile.add(fn);items.push(w);
+  });
+  GAL_CACHE.set(g.id,items);
+  return items;
+}
+function drawGalleryBox(g,boxSel,items,selIdx=-1){
+  const box=$(boxSel);if(!box)return;
+  if(!items||items.length<=1){box.innerHTML="";return}
+  ACTIVE_GAL={gid:g.id,boxSel,items,idx:selIdx};
+  const cur=selIdx>=0&&items[selIdx]?items[selIdx]:null;
+  box.innerHTML=`<div class="galbox">
+    <div class="row" style="justify-content:space-between;margin-bottom:4px">
+      <span class="eyebrow" style="margin:0">🖼️ Screenshots, title screens &amp; box art (${items.length}) · tap to enlarge</span>
+      <a class="link" style="font-size:12px" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Back-of-box scans on MobyGames ↗</a>
+    </div>
+    <div class="galstrip" role="group" aria-label="Screenshots and artwork for ${esc(g.title)}">
+      ${items.map((it,i)=>`<button type="button" class="galcard${it.box?" box":""}" data-act="galPick" data-i="${i}" data-box="${esc(boxSel)}" data-id="${esc(g.id)}" aria-pressed="${i===selIdx}">
+        <span class="galthumb"><img src="${esc(it.thumb)}" alt="${esc(it.cap)}" loading="lazy" decoding="async"></span>
+        <small>${esc(it.kind)}</small>
+        <span>${esc(it.cap)}</span>
+      </button>`).join("")}
+    </div>
+    ${cur?`<div class="galstage">
+      <div class="galimgwrap"><img src="${esc(cur.src)}" alt="${esc(cur.cap)}" fetchpriority="high"></div>
+      <div class="row" style="justify-content:space-between;margin-top:8px">
+        <span style="font-size:12.5px;color:#CBD4E6"><b>${esc(cur.kind)}:</b> ${esc(cur.cap)}</span>
+        <span class="row" style="gap:6px">
+          <button type="button" class="btn sm" style="background:#1B2234;color:#EEF2FA;border-color:#323C54" data-act="galPick" data-i="${(selIdx-1+items.length)%items.length}" data-box="${esc(boxSel)}" data-id="${esc(g.id)}">◂ Prev</button>
+          <button type="button" class="btn sm" style="background:#1B2234;color:#EEF2FA;border-color:#323C54" data-act="galPick" data-i="${(selIdx+1)%items.length}" data-box="${esc(boxSel)}" data-id="${esc(g.id)}">Next ▸</button>
+          <button type="button" class="btn sm ghost" style="color:#AEB6C8" data-act="galPick" data-i="-1" data-box="${esc(boxSel)}" data-id="${esc(g.id)}">Close zoom</button>
+        </span>
+      </div>
+    </div>`:""}
+  </div>`;
+}
+function mountGameGallery(g,boxSel){
+  const el=$(boxSel);if(!el||!g)return;
+  if(GAL_CACHE.has(g.id)){drawGalleryBox(g,boxSel,GAL_CACHE.get(g.id),-1);return}
+  el.innerHTML=`<div class="galbox"><span class="sync">🖼️ Loading screenshots &amp; artwork…</span></div>`;
+  fetchGameGallery(g).then(items=>{
+    const live=$(boxSel);if(!live)return;
+    drawGalleryBox(g,boxSel,items,-1);
+  });
+}
 function openQuickLook(g){
   if(!g)return;
   const lv=levelOf(hist,g),py=entryYearOf(hist,g),ent=entryOf(hist,g),mtags=(ent&&ent.mtags)||[],ups=UP[g.i],downs=DOWN[g.i];
   const topUp=ups.slice().sort((a,b)=>TIERS[b.t].w-TIERS[a.t].w)[0];
   const ps=sysOfGame(g),stObj=findStudio(studio(g));
-  const quickTags=["🛟 Carried me through","🏠 Safe harbor","😤 Made me sweat","Couch co-op"];
+  const quickTags=["🛟 Carried me through","😤 Made me sweat","Couch co-op","✨ Shaped who I am"];
   openSheet(`<div class="sheethead"><div>
       <div class="row" style="gap:5px;margin-bottom:4px">${g.gen.length?g.gen.map(i=>`<button type="button" class="genpill" data-act="genre" data-g="${esc(GEN[i].k)}"><i style="width:7px;height:7px;border-radius:3px;background:${GEN[i].c};display:inline-block"></i>${esc(GEN[i].label)}</button>`).join(""):`<span class="eyebrow" style="margin:0">Game info</span>`}</div>
       <h2>${esc(g.title)}</h2>
@@ -3113,12 +3256,14 @@ function openQuickLook(g){
           <button type="button" class="btn sm${g.tree?"":" primary"}" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button>
           <button type="button" class="btn sm love" data-act="gratSheet" data-id="${g.id}">💌 Thank makers</button>
           ${ups.length?`<button type="button" class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots ▸</button>`:""}
-          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Box scans & screenshots ↗</a>
+          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Retail box-back scans ↗</a>
           <a class="btn sm ghost" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Credits ↗</a>
         </div>
         ${playable(g)?`<div class="row" style="margin-top:8px"><span class="sync">Official stores:</span>${storeLinksHTML(g)}</div>`:""}
       </div>
-    </div>`,g.title,{wide:true});
+    </div>
+    <div id="qlGalBox"></div>`,g.title,{wide:true});
+  mountGameGallery(g,"#qlGalBox");
 }
 function openSlotSheet(){
   const pool=TREE.filter(x=>x.pop>=3&&playable(x));
@@ -3169,8 +3314,8 @@ function openGameSheet(y,t,ro){
        <div class="row">${presets.slice(0,6).map(([py,lbl])=>`<button type="button" class="chip" data-act="entryYr" data-y="${y}" data-t="${esc(e.t)}" data-to="${py}" aria-pressed="${py===y}">${esc(lbl)}</button>`).join("")}
          <input class="input" id="entryYrIn" inputmode="numeric" maxlength="4" value="${y}" style="width:78px;padding:5px 9px;font-size:13px" aria-label="Year played"><button type="button" class="btn sm" data-act="entryYrGo" data-y="${y}" data-t="${esc(e.t)}">Move</button></div>
        ${plats.length?`<p class="sub" style="margin:12px 0 6px">Played on</p><div class="row">${plats.map(n=>`<button class="chip" data-act="entrySys" data-y="${y}" data-t="${esc(e.t)}" data-sys="${esc(n)}" aria-pressed="${sys.includes(n)}">${esc(n)}</button>`).join("")}</div>`:""}
-       <p class="sub" style="margin:12px 0 6px">Memories & tags (tap 🛟 safe harbor or 😤 made me sweat to add to your shelves)</p>
-       <div class="row">${MEM_TAGS.map(tg=>`<button type="button" class="chip" data-act="entryTag" data-y="${y}" data-t="${esc(e.t)}" data-tag="${esc(tg)}" aria-pressed="${mtags.includes(tg)}">${esc(tg)}</button>`).join("")}</div>
+       <p class="sub" style="margin:12px 0 6px">Memories & tags (tap 🛟 carried me through or 😤 made me sweat to add to your shelves)</p>
+       <div class="row">${UI_MEM_TAGS.map(tg=>`<button type="button" class="chip" data-act="entryTag" data-y="${y}" data-t="${esc(e.t)}" data-tag="${esc(tg)}" aria-pressed="${mtags.includes(tg)}">${esc(tg)}</button>`).join("")}</div>
        <form class="row" id="memForm" style="margin-top:8px"><input class="input" id="memIn" maxlength="80" style="flex:1;min-width:0;padding:7px 10px;font-size:13.5px" placeholder="Short memory, e.g. Summer '98 in the basement" value="${esc(e.mem||"")}" aria-label="Short memory"><button class="btn sm" type="submit">Save note</button></form>`}
       <div class="row" style="margin-top:14px">${g?`<button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree</button><button class="btn sm" data-act="quickLook" data-id="${g.id}">ⓘ Game info</button><button class="btn sm" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button><button class="btn sm love" data-act="gratSheet" data-id="${g.id}">💌 Thank makers</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots</button>`:""}${ro?"":`<button class="btn sm ghost" data-act="entryRm" data-y="${y}" data-t="${esc(e.t)}">Remove</button>`}</div>
       ${g&&playable(g)?`<div class="row" style="margin-top:8px"><span class="sync">Official stores:</span>${storeLinksHTML(g)}</div>`:""}
@@ -3215,7 +3360,7 @@ function openVideoSheet(g,customVid,liveAuto=false){
   openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">▶ Gameplay &amp; trailer player · ${g.year}</p><h2>${esc(g.title)}</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="vidplayer" data-vidgame="${esc(g.id)}">
       <div class="vidscreen">
-        ${vid?`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?rel=0&autoplay=1" title="${esc(g.title)} gameplay" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`
+        ${vid?`<iframe src="https://www.youtube.com/embed/${encodeURIComponent(vid)}?rel=0&autoplay=1" title="${esc(g.title)} gameplay" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`
         :`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;max-width:44ch">
             <div style="width:76px">${cover(g,{showYear:false})}</div>
             <b style="font-size:16px;color:#EEF2FA">${esc(g.title)} (${g.year})</b>
@@ -3224,12 +3369,12 @@ function openVideoSheet(g,customVid,liveAuto=false){
           </div>`}
       </div>
       <div class="vidbar">
-        <span>${vid?(isAuto?`⚡ <b>Best-effort auto-matched clip</b> — picked automatically so you can watch right here; if it misses or is blocked, open YouTube directly:`
+        <span>${vid?(isAuto?`⚡ <b>Best-effort auto-matched clip</b> — if it misses or your browser blocks YouTube Premium cookies in embeds, open directly:`
           :isCustom?`✓ <b>Custom clip</b> saved on this device`
           :`✓ <b>Curated trailer / gameplay</b> · ${esc(studio(g)||String(g.year))}`)
           :`No pre-indexed clip stored yet — paste any YouTube link below or open YouTube search.`}</span>
         <span class="row" style="gap:6px">
-          ${vid?`<a class="btn sm primary" href="${esc(ytWatch)}" target="_blank" rel="noopener">Open on YouTube ↗</a>`:""}
+          ${vid?`<a class="btn sm primary" href="${esc(ytWatch)}" target="_blank" rel="noopener">Open in YouTube ↗</a>`:""}
           <a class="btn sm" href="${esc(ytSearch)}" target="_blank" rel="noopener" style="background:#1B2234;color:#EEF2FA;border-color:#323C54">Search YouTube ↗</a>
         </span>
       </div>
@@ -3249,7 +3394,7 @@ function openVideoSheet(g,customVid,liveAuto=false){
   }
 }
 const openTvSheet=openVideoSheet;
-const GRAT_TAGS=["🛟 Carried me through","🏠 Safe harbor","✨ Shaped who I am","🎨 Pure art","🕹️ Childhood magic","🙏 Never forgotten"];
+const GRAT_TAGS=["🛟 Carried me through","✨ Shaped who I am","🎨 Pure art","🕹️ Childhood magic","🙏 Never forgotten"];
 function openGratitudeSheet(opts={}){
   if(opts.st!==undefined)GRAT_DRAFT.st=opts.st||"";
   if(opts.id!==undefined){
@@ -3264,7 +3409,7 @@ function openGratitudeSheet(opts={}){
   const mobyLink=gm?mobyURL(gm):st?`https://www.mobygames.com/search/?q=${encodeURIComponent(st.name)}&type=company`:"";
   const liLink=st?`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(st.name+" game")}`:gm?`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(studio(gm)+" "+gm.title)}`:"";
   const bskyLink=(st||gm)?`https://bsky.app/search?q=${encodeURIComponent((st?st.name:studio(gm)||gm.title)+" gamedev")}`:"";
-  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">💌 Pure human gratitude · No likes or rankings</p><h2>Send love to ${esc(targetName)}</h2><p class="sub" style="margin:2px 0 0">Many developers from shuttered or older studios wonder if anyone still remembers the worlds they poured years into. Write a personal note, save a thank-you postcard to send them, or add it to the community guestbook.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">💌 Personal thank-you postcard · Zero public comment wall</p><h2>Send love to ${esc(targetName)}</h2><p class="sub" style="margin:2px 0 0">Many developers from shuttered or older studios wonder if anyone still remembers the worlds they poured years into. Save a personal note on your device and download a <b>Thank-You Postcard (.png)</b> you can send directly to a maker on LinkedIn or Bluesky — with zero public comment feed for trolls to spoil.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     ${st||gm?`<div class="diascard" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px">
       <div class="row" style="gap:10px">${gm?`<div style="width:44px">${cover(gm,{showYear:false})}</div>`:studioLogoHTML(st)}<div><b>${st?`${flag(st.cc)} ${esc(st.name)}`:""}${gm?`${st?" · ":""}${esc(gm.title)} (${gm.year})`:""}</b>${st&&st.makers&&st.makers.length?`<small class="muted" style="display:block">Notable team members: ${esc(st.makers.slice(0,5).join(", "))}</small>`:""}</div></div>
       <button type="button" class="btn sm ghost" data-act="gratClearPick">Change game / studio</button>
@@ -3275,11 +3420,11 @@ function openGratitudeSheet(opts={}){
     </div>`}
     <span class="sync" style="display:block;margin-bottom:6px">What did their work mean to you?</span>
     <div class="row" style="gap:6px;margin-bottom:12px">${GRAT_TAGS.map(tg=>`<button type="button" class="chip" data-act="gratTag" data-tag="${esc(tg)}" aria-pressed="${GRAT_DRAFT.tag===tg}">${esc(tg)}</button>`).join("")}</div>
-    <label class="field" for="gratNote">Your note or memory<textarea class="input" id="gratNote" rows="4" maxlength="360" placeholder="Example: Growing up in a chaotic house, booting up ${gm?esc(gm.title):st?esc(st.name+"'s games"):"this world"} after school gave me a calm, hilarious safe harbor I still carry with me today. Thank you to everyone on the team.">${esc(GRAT_DRAFT.note||"")}</textarea></label>
+    <label class="field" for="gratNote">Your note or memory<textarea class="input" id="gratNote" rows="4" maxlength="360" placeholder="Example: Growing up in a chaotic house, booting up ${gm?esc(gm.title):st?esc(st.name+"'s games"):"this world"} after school carried me through rough days I still remember today. Thank you to everyone on the team.">${esc(GRAT_DRAFT.note||"")}</textarea></label>
     <label class="field" for="gratWho" style="margin-top:10px">Signed (optional — first name, platform, or era)<input class="input" id="gratWho" maxlength="48" placeholder="e.g. ${esc(hist.name||"A grateful player")} · Amiga & PC kid" value="${esc(GRAT_DRAFT.who||(hist.name?hist.name:""))}"></label>
     <div class="row" style="margin-top:14px">
-      <button type="button" class="btn primary" data-act="gratPostcard">💌 Save note &amp; download Postcard (.png)</button>
-      <button type="button" class="btn" data-act="gratGh">Post to public Gratitude Guestbook ↗</button>
+      <button type="button" class="btn primary wrap" data-act="gratPostcard">💌 Save note &amp; download Postcard (.png)</button>
+      <button type="button" class="btn" data-act="gratCopy">Copy note text</button>
     </div>
     ${mobyLink||liLink?`<div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)"><span class="sync" style="display:block;margin-bottom:6px">Want to thank a creator directly? Find the real humans on the credits:</span>
       <div class="row" style="gap:8px">
@@ -4049,14 +4194,18 @@ const ACTIONS={
     playBlip(3);
     await exportCanvasPng(rep?[rep]:[],imgMap=>drawPostcard(item,imgMap),`thank-you-${slugStudio(st?st.name:gm?gm.title:"makers")}.png`,"#gratOut");
   },
-  gratGh(){
+  galPick(el){
+    const g=byId.get(el.dataset.id);if(!g)return;
+    const items=GAL_CACHE.get(g.id)||ACTIVE_GAL.items||[];
+    const idx=+el.dataset.i;
+    drawGalleryBox(g,el.dataset.box,items,idx===ACTIVE_GAL.idx&&el.classList.contains("galcard")?-1:idx);
+  },
+  gratCopy(){
     const note=(($("#gratNote")||{}).value||"").trim(),who=(($("#gratWho")||{}).value||"").trim();
     if(note.length<6){toast("Write a short thank-you note first");const el=$("#gratNote");if(el)el.focus();return}
     const gm=GRAT_DRAFT.id&&byId.get(GRAT_DRAFT.id),st=GRAT_DRAFT.st&&findStudio(GRAT_DRAFT.st);
-    const target=gm&&st?`${gm.title} (${st.name})`:st?st.name:gm?gm.title:"Game makers";
-    const repo=ghRepoURL()||"https://github.com/JohanHeurlin/inspired-by";
-    const body=`### Studio or game\n${target}\n\n### What it meant\n${GRAT_DRAFT.tag||"🛟 Carried me through"}\n\n### Your thank-you note\n${note}\n\n### Signed\n${who||"Anonymous player"}`;
-    window.open(`${repo}/issues/new?template=gratitude-note.yml&labels=gratitude&title=${encodeURIComponent("[Thank You] "+target)}&body=${encodeURIComponent(body)}`,"_blank","noopener");
+    const target=gm&&st?`${gm.title} (${st.name})`:st?st.name:gm?gm.title:"the makers";
+    copyText(`To ${target}:\n“${note}”${who?`\n— ${who}`:""}`);
   },
   listsSheet(){openListsSheet()},
   listPick(el){state.listIdx=+el.dataset.i;openListsSheet()},
