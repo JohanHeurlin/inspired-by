@@ -47,7 +47,7 @@ function Plats($arr) { $o = New-Object System.Collections.Generic.List[string]; 
 function Genres($arr) { $o = New-Object System.Collections.Generic.List[string]; foreach ($x in @($arr)) { $s = (Str $x).ToLowerInvariant(); if ($genreAlias.ContainsKey($s)) { $s = $genreAlias[$s] }; if ($genreIdx.ContainsKey($s) -and -not $o.Contains($s)) { $o.Add($s) } }; return ,$o.ToArray() }
 function NewGame([string]$id, [string]$title, [int]$year) {
   if ($byId.ContainsKey($id)) { if ($id -notmatch "-$year$") { $id = "$id-$year" }; $n = 2; $b = $id; while ($byId.ContainsKey($id)) { $id = "$b-$n"; $n++ } }
-  $g = [ordered]@{ id = $id; title = $title; year = $year; dev = ''; cc = ''; genres = @(); plats = @(); pop = 0; note = ''; aka = @(); src = '' }
+  $g = [ordered]@{ id = $id; title = $title; year = $year; dev = ''; cc = ''; genres = @(); plats = @(); pop = 0; note = ''; aka = @(); src = ''; status = '' }
   $games.Add($g); $byId[$id] = $g; $k = Norm $title; if (-not $byNorm.ContainsKey($k)) { $byNorm[$k] = $g }
   if (-not $byNormList.ContainsKey($k)) { $byNormList[$k] = New-Object System.Collections.Generic.List[object] }; $byNormList[$k].Add($g)
   $k2 = NoThe $k; if (-not $byNormThe.ContainsKey($k2)) { $byNormThe[$k2] = $g }
@@ -76,6 +76,7 @@ function Fill($g, $src) {
   $ps = Plats (Get $src 'plats'); if ($ps.Count -and -not $g.plats.Count) { $g.plats = $ps }
   $pop = Get $src 'pop'; if ($pop -and -not $g.pop) { $g.pop = [int]$pop }
   $note = Str (Get $src 'note'); if ($note -and -not $g.note) { $g.note = $note }
+  $st = (Str (Get $src 'status')).ToLowerInvariant(); if (($st -eq 'cancelled' -or $st -eq 'sunset') -and -not $g.status) { $g.status = $st }
 }
 
 $base = ReadJson 'data\base\data.json'
@@ -149,6 +150,7 @@ foreach ($u in $updates) {
     'genres' { $gs = Genres $val; if ($gs.Count) { $g.genres = $gs; $applied++ } }
     'addPlats' { foreach ($np in (Plats $val)) { if ($g.plats -notcontains $np) { $g.plats = @($g.plats) + $np } }; $applied++ }
     'note' { if (Str $val) { $g.note = Str $val; $applied++ } }
+    'status' { $st = (Str $val).ToLowerInvariant(); if ($st -in @('cancelled','sunset','')) { $g.status = $st; $applied++ } }
   }
 }
 
@@ -310,7 +312,8 @@ $aka = @{
   'league-of-legends'='lol'; 'counter-strike'='cs counterstrike'; 'pubg'='playerunknowns battlegrounds'; 'final-fantasy-vii'='ff7 ffvii'; 'metal-gear-solid'='mgs';
   'call-of-duty-4-modern-warfare'='cod4 cod 4'; 'defense-of-the-ancients'='dota'; 'super-mario-bros'='smb mario'; 'the-elder-scrolls-v-skyrim'='skyrim'; 'shadow-colossus'='sotc';
   'battlefield-1942'='bf1942 bf 1942'; 'age-of-empires-ii'='aoe2 aoe 2'; 'team-fortress-2'='tf2'; 'clair-obscur-expedition-33'='expedition 33 e33';
-  'battle-city'='tanki tanchiki dendy tanks 1990'; 'darkwing-duck'='cherniy plashch dendy'; 'chip-n-dale-rescue-rangers'='chip and dale dendy'; 'teenage-mutant-ninja-turtles-iii-the-manhattan-project'='tmnt 3 tmnt3 dendy'
+  'battle-city'='tanki tanchiki dendy tanks 1990'; 'darkwing-duck'='cherniy plashch dendy'; 'chip-n-dale-rescue-rangers'='chip and dale dendy'; 'teenage-mutant-ninja-turtles-iii-the-manhattan-project'='tmnt 3 tmnt3 dendy';
+  'penn-and-tellers-smoke-and-mirrors'='desert bus smoke and mirrors'; 'et-the-extra-terrestrial'='et atari landfill alamogordo'; 'project-titan'='titan blizzard overwatch mmo'; 'van-buren'='fallout 3 black isle van buren'; 'star-wars-1313'='1313 boba fett lucasarts'; 'bs-the-legend-of-zelda'='satellaview bs zelda'
 }
 
 # ---------------- media, culture, mechanics & studios ----------------
@@ -363,7 +366,7 @@ for ($i = 0; $i -lt $games.Count; $i++) {
   $ge = ($g.genres | ForEach-Object { $genreIdx[$_] }) -join ','
   $pl = ($g.plats | ForEach-Object { $platIdx[$_] }) -join ','
   $ak = ''; if ($aka.ContainsKey($g.id)) { $ak = $aka[$g.id] }
-  $flags = 0; if ($g.inCat) { $flags = 1 }
+  $flags = 0; if ($g.inCat) { $flags = $flags -bor 1 }; if ($g.status -eq 'cancelled') { $flags = $flags -bor 2 }; if ($g.status -eq 'sunset') { $flags = $flags -bor 4 }
   $mrec = Get $media $g.id
   $img = ''; $moby = 0; $yt = ''
   if ($mrec) {

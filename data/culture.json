@@ -567,6 +567,69 @@
       "engineers": "Pierre-Loup Griffais, Lawrence Yang, Greg Coomer & AMD Van Gogh team",
       "headline": "Custom 15-watt AMD APU & Proton running Windows PC games on Linux",
       "bio": "Years of Valve work on Steam Controllers, open-source Linux graphics drivers, and the Proton compatibility layer met a custom RDNA 2 AMD chip tuned specifically for 15-watt battery play. With dual trackpads, repairable parts, and zero walled garden, players carried decades of existing PC libraries wherever they went."
+    },
+    {
+      "sys": "Vectrex",
+      "year": 1982,
+      "maker": "General Consumer Electronics / Milton Bradley",
+      "cc": "US",
+      "engineers": "Jay Smith III, John Ross, Gerry Karr & Richardharm",
+      "headline": "The only home console with its own built-in glowing vector CRT & snap-on color overlays",
+      "bio": "Rather than hooking up to a blurry family television, Jay Smith's compact black tower housed a real 9-inch Samsung vector CRT that steered an electron beam point-to-point for laser-sharp Asteroids-style lines. Every box shipped with Mine Storm in ROM and translucent color overlays that snapped over the glass."
+    },
+    {
+      "sys": "NEC PC-98",
+      "year": 1982,
+      "maker": "NEC",
+      "cc": "JP",
+      "engineers": "Kazuya Watanabe & NEC Microcomputer Group",
+      "headline": "High-resolution kanji display & Yamaha FM synth that birthed visual novels and Touhou",
+      "bio": "Engineered around crisp 640×400 kanji text hardware that Western IBM PCs couldn't render in 1982, NEC's PC-98 dominated Japan for over a decade. Its expressive pixel art and Yamaha YM2608 FM synth incubated Nihon Falcom, Hideo Kojima's Policenauts, Japanese RPGs, visual novels, and ZUN's earliest Touhou bullet-hell shooters."
+    },
+    {
+      "sys": "Sharp X68000",
+      "year": 1987,
+      "maker": "Sharp / Hudson Soft",
+      "cc": "JP",
+      "engineers": "Sharp Personal Workstation team & Hudson Soft OS engineers",
+      "headline": "Twin-tower 'Manhattan' workstation that Capcom used to build CPS-1 arcade games",
+      "bio": "With a 10–25 MHz Motorola 68000, dedicated sprite co-processors, 65,536 colors, and 8-channel Yamaha FM + ADPCM audio inside a futuristic twin-tower case, Sharp's X68000 literally served as Capcom's official CPS-1 arcade development machine—giving Japanese bedroom players pixel-perfect Final Fight, Ghouls 'n Ghosts, and Akumajō Dracula."
+    },
+    {
+      "sys": "Subor",
+      "year": 1993,
+      "maker": "Subor (Xiaobawang)",
+      "cc": "CN",
+      "engineers": "Duan Yongping & Zhongshan Subor hardware team",
+      "headline": "A Famiclone disguised inside a typing 'study computer' that raised China's first coders",
+      "bio": "Knowing thrifty parents hesitated to buy pure game consoles, Duan Yongping built Famicom-compatible chips directly into a full computer keyboard with BASIC and typing cartridges—pitched nationwide by Jackie Chan as an educational 'learning machine.' Kids dutifully practiced typing, then popped in Contra and Battle City."
+    },
+    {
+      "sys": "Virtual Boy",
+      "year": 1995,
+      "maker": "Nintendo",
+      "cc": "JP",
+      "engineers": "Gunpei Yokoi & Reflection Technology (Allen Becker)",
+      "headline": "Oscillating red-LED mirrors & true parallax 3D — Gunpei Yokoi's daring final Nintendo invention",
+      "bio": "Years before modern VR headsets, Game Boy creator Gunpei Yokoi used rapidly vibrating mirrors scanning rows of red LEDs to project zero-ghosting stereoscopic depth inside a tabletop visor. Rushed to shelves at $179 and discontinued inside a year, gems like Virtual Boy Wario Land still proved Yokoi's eye for playful depth."
+    },
+    {
+      "sys": "Nokia N-Gage",
+      "year": 2003,
+      "maker": "Nokia",
+      "cc": "FI",
+      "engineers": "Ilkka Raiskinen & Nokia Mobile Entertainment team",
+      "headline": "Symbian 'taco phone' with global cellular N-Gage Arena multiplayer — four years before iPhone",
+      "bio": "Mocked on early forums for 'sidetalking' against the edge of the shell and requiring battery removal to swap MMC game cards, Nokia's bold handheld phone quietly pioneered cellular leaderboards, shadow-ghost downloads, and genuinely great 3D and tactics exclusives like RedLynx's Pathway to Glory."
+    },
+    {
+      "sys": "Gizmondo",
+      "year": 2005,
+      "maker": "Tiger Telematics",
+      "cc": "SE",
+      "engineers": "Plextek (Cambridge RF/ARM hardware), Carl Freer & Stefan Eriksson",
+      "headline": "ARM9 GPS handheld drowned in a $300M Uppsala Mafia scandal & 162-mph Malibu Ferrari wreck",
+      "bio": "Cambridge engineers at Plextek actually delivered capable 400 MHz ARM9, NVIDIA GoForce 3D, and GPS hardware—only for Tiger Telematics executives Carl Freer and former Uppsala Mafia figure Stefan Eriksson to torch ~$300M on celebrity parties, Le Mans cars, and embezzled supercars, stranding 14 dev-team games under fewer than 25,000 units sold."
     }
   ],
   "eras": [
@@ -930,6 +993,87 @@
       "tag": "Childhood safe harbor",
       "who": "Born 1988 · Windows 98 PC",
       "note": "In a cramped apartment where money was tight and nobody had a quiet corner, Maxis's little isometric neighborhood let me build sunlit rooms, bookshelves, and peaceful mornings to Jerry Martin's piano score. Even after Emeryville's studio lights went out, millions of us still carry the gentle hope we practiced building inside those walls."
+    }
+  ],
+  "vaultLore": [
+    {
+      "tag": "🕵️ Scam & Scandal · 2005–2006",
+      "title": "Gizmondo, the Uppsala Mafia & the 162-MPH Malibu Ferrari",
+      "cc": "SE",
+      "sys": "Gizmondo",
+      "games": ["sticky-balls"],
+      "body": "Swedish executives Carl Freer and Stefan 'Tjock-Steffe' Eriksson—a former enforcer in Sweden's notorious Uppsala Mafia—burned through ~$300M+ in investor funds launching the GPS-equipped Gizmondo handheld, staging London Mayfair parties with Sting and Jamiroquai while selling fewer than 25,000 units. Weeks after bankruptcy, Eriksson split an embezzled $1M+ Ferrari Enzo in half at 162 mph on Malibu's Pacific Coast Highway and blamed a phantom German driver named 'Dietrich'—leaving real devs at Warthog Games and Indie Studios with 14 orphaned games."
+    },
+    {
+      "tag": "🏜️ Urban Legend Proven Real · 1982–2014",
+      "title": "728,000 Cartridges in the New Mexico Desert — & Howard Scott Warshaw's Redemption",
+      "cc": "US",
+      "sys": "Atari 2600",
+      "games": ["et-the-extra-terrestrial"],
+      "body": "Blamed for thirty years as the programmer who 'killed video games,' Atari star coder Howard Scott Warshaw (Yars' Revenge) had actually been handed an impossible 5-week solo deadline before Christmas 1982 instead of six months. In Sept 1983, Atari quietly buried ~728,000 unsold warehouse cartridges in Alamogordo, New Mexico. When excavators dug 30 feet down in April 2014 and pulled ~1,300 carts into the sunlight—sending one to the Smithsonian—crowds cheered Warshaw in one of gaming's warmest human redemptions."
+    },
+    {
+      "tag": "🌍 Parallel Universe · 1989–Today",
+      "title": "TecToy's 35-Year Sega Universe in Brazil",
+      "cc": "BR",
+      "sys": "Master System",
+      "games": ["wonder-boy-in-monster-land", "street-fighter-ii"],
+      "body": "When steep Brazilian electronics tariffs priced out imports, São Paulo maker TecToy partnered officially with Sega in 1989—translating Phantasy Star into Portuguese, swapping Wonder Boy sprites into beloved Brazilian comic hero Turma da Mônica, porting Street Fighter II onto 8-bit hardware, launching the 3G cellular Zeebo console, and manufacturing brand-new Master System and Mega Drive variations into the 2020s."
+    },
+    {
+      "tag": "🌍 Parallel Universe · 1992–2000",
+      "title": "Dendy, Subor & Pegasus: How Yellow Multicarts Raised Half the Planet",
+      "cc": "TW",
+      "sys": "Dendy",
+      "games": ["battle-city", "darkwing-duck", "contra"],
+      "body": "Nintendo never officially launched the 8-bit NES across Russia, Ukraine, Poland, or mainland China—so Taiwanese clone silicon stepped into the gap. Marketed with Ivan Maximov's cheerful elephant as Dendy, as Pegasus in Poland, and disguised inside a Jackie Chan–endorsed 'educational typing keyboard' by Subor (Xiaobawang) in China, bright yellow '9999-in-1' market cartridges introduced tens of millions of kids to couch co-op and computer programming."
+    },
+    {
+      "tag": "📡 Lost Broadcasts · 1994–2000",
+      "title": "Streaming Games in 1994: Coax Sega Channel & Live-Voice Satellaview",
+      "cc": "JP",
+      "sys": "SNES",
+      "games": ["bs-the-legend-of-zelda"],
+      "body": "Years before home broadband, Time Warner and TCI beamed 50 rotating Genesis games a month over coaxial cable-TV wires via the Sega Channel adapter. A year later in Japan, Nintendo's Satellaview modem pulled live SoundLink episodes down from an orbital satellite at 6:00 PM on Sundays: actors performed live radio drama over Super Famicom Zelda stages while the real-world clock triggered timed weather buffs and vanishing dungeons."
+    },
+    {
+      "tag": "🕵️ Vaporware Hall of Infamy · 2003–2016",
+      "title": "Gutted PCs & Hot-Glued Capture Cards: Infinium Phantom & Coleco Chameleon",
+      "cc": "US",
+      "games": [],
+      "body": "Hardware hype has its own folklore. In 2003, Infinium Labs raised ~$70M+ promising an always-online subscription console called The Phantom, sued journalists who questioned it, and ended in SEC fraud charges after shipping only a swivel keyboard. Thirteen years later, retro-cartridge darling Coleco Chameleon imploded overnight when eagle-eyed forum sleuths proved its NY Toy Fair 'prototype' was a PCI video-capture card hot-glued inside a clear Atari Jaguar shell."
+    },
+    {
+      "tag": "🚌 Unreleased Cult Miracle · 1995–Today",
+      "title": "Desert Bus: How a Cancelled Penn & Teller Prank Raised $11M+ for Hospitalized Kids",
+      "cc": "US",
+      "sys": "Sega CD",
+      "games": ["penn-and-tellers-smoke-and-mirrors"],
+      "body": "Built to satirize 1990s Senate moral-panic hearings, Desert Bus asked Sega CD players to steer an empty highway bus for 8 real-time hours from Tucson to Las Vegas at a top speed of 45 mph—pulling slightly to the right so nobody could tape a button down—for 1 single point. Cancelled when Absolute Entertainment went bankrupt in 1995, a rediscovered press disc inspired loadingReadyRun's Desert Bus for Hope marathon, raising over $11 million for Child's Play Charity."
+    },
+    {
+      "tag": "🕯️ Shelved 22 Years · 1995–2017",
+      "title": "Star Fox 2: Finished in 1995, Locked in a Vault, Yet Quietly Shaping 3D Nintendo",
+      "cc": "JP",
+      "sys": "SNES",
+      "games": ["star-fox-2", "super-mario-64", "star-fox-64"],
+      "body": "Argonaut coder Dylan Cuthbert and Nintendo EAD completely finished, localized, and QA-tested Star Fox 2 in 1995—only for Shigeru Miyamoto to shelve the completed ROM so SNES polygons wouldn't look dated beside the PlayStation and upcoming N64. Yet the team's labor wasn't wasted: its free-roaming 3D camera and all-range dogfights fed directly into Super Mario 64 and Star Fox 64 before the untouched 1995 master finally shipped in 2017."
+    },
+    {
+      "tag": "👻 Arcade Urban Legend · 1981",
+      "title": "Polybius: Portland's Men-in-Black Arcade Cabinet Myth",
+      "cc": "US",
+      "sys": "Arcade",
+      "games": ["tempest"],
+      "body": "In late 1981, Portland arcades saw real news crews covering teenagers struck with vertigo at glowing vector Tempest cabinets alongside federal agents inspecting coin-op machines in gambling stings. Twenty years later on early web archives, those tangled memories fused into gaming's quintessential ghost story: a mysterious black cabinet called Polybius whose players suffered amnesia while men in dark suits harvested scores after closing time."
+    },
+    {
+      "tag": "🎛️ Glorious Hardware Madness · 2002",
+      "title": "Steel Battalion's 40-Button Cockpit & Save-Wiping Eject Cover",
+      "cc": "JP",
+      "sys": "Xbox",
+      "games": ["steel-battalion"],
+      "body": "Capcom's Production Studio 4 refused to compromise mech immersion: Steel Battalion arrived in an oversized crate with a $200, 40-button twin-stick control desk, three metal foot pedals, a gear shifter, and a physical windshield-wiper button for mud. Best of all, a flip-up plastic safety guard covered the glowing red Eject button—if you failed to eject before your mech blew up, the game permanently wiped your save file."
     }
   ]
 }

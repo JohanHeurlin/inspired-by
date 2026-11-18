@@ -1,0 +1,742 @@
+{
+  "games": [
+    {
+      "id": "mine-storm",
+      "title": "Mine Storm",
+      "year": 1982,
+      "dev": "General Consumer Electronics",
+      "cc": "US",
+      "genres": ["shmup", "arcade"],
+      "plats": ["Vectrex"],
+      "pop": 3,
+      "note": "Hardwired directly into every Vectrex console's ROM so the machine worked even with no cartridge inserted—drawing glowing, razor-sharp electron-beam vector starfields under a snap-on translucent color screen overlay."
+    },
+    {
+      "id": "castlevania-chronicles",
+      "title": "Castlevania Chronicles",
+      "year": 1993,
+      "dev": "Konami",
+      "cc": "JP",
+      "genres": ["platformer", "action-adventure"],
+      "plats": ["Sharp X68000", "PlayStation"],
+      "pop": 3,
+      "note": "Originally crafted as Akumajō Dracula exclusively for Japan's twin-tower Sharp X68000 home workstation, pairing demanding 16-bit gothic stage design with selectable Roland MT-32 and Yamaha FM synthesizer arrangements."
+    },
+    {
+      "id": "link-the-faces-of-evil",
+      "title": "Link: The Faces of Evil",
+      "year": 1993,
+      "dev": "Animation Magic",
+      "cc": "US",
+      "genres": ["platformer", "action-adventure"],
+      "plats": ["Philips CD-i"],
+      "pop": 3,
+      "note": "Born from a 1991 contract clause after Nintendo walked away from its Philips SNES-CD partnership, granting Philips the rights to commission Russian-American animators at Animation Magic to build full-motion CD-i Zelda adventures."
+    },
+    {
+      "id": "virtual-boy-wario-land",
+      "title": "Virtual Boy Wario Land",
+      "year": 1995,
+      "dev": "Nintendo R&D1",
+      "cc": "JP",
+      "genres": ["platformer"],
+      "plats": ["Virtual Boy"],
+      "pop": 3,
+      "note": "Gunpei Yokoi's R&D1 team at the peak of its invention on doomed hardware—using the Virtual Boy's oscillating red-LED stereoscopic mirrors so Wario could leap back and forth between foreground and deep-background dungeon layers."
+    },
+    {
+      "id": "bs-the-legend-of-zelda",
+      "title": "BS The Legend of Zelda",
+      "year": 1995,
+      "dev": "Nintendo EAD",
+      "cc": "JP",
+      "genres": ["action-adventure"],
+      "plats": ["SNES", "Satellaview"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Broadcast live via St.GIGA satellite dish to Japanese Super Famicoms at 6:00 PM on August Sundays in 1995: a live Tokyo radio cast narrated the story over CD-quality audio while real-time clock events opened dungeons or buffed items on the fly."
+    },
+    {
+      "id": "penn-and-tellers-smoke-and-mirrors",
+      "title": "Penn & Teller's Smoke and Mirrors (Desert Bus)",
+      "year": 1995,
+      "dev": "Imagineering / Absolute Entertainment",
+      "cc": "US",
+      "genres": ["party", "sim"],
+      "plats": ["Sega CD"],
+      "status": "cancelled",
+      "pop": 3,
+      "note": "Shelved unreleased when publisher Absolute Entertainment folded in 1995. Its satirical minigame Desert Bus—an 8-hour real-time drive from Tucson to Las Vegas at 45 mph that drifted slightly right so nobody could tape the controller—later inspired Desert Bus for Hope, raising $11M+ for hospitalized children."
+    },
+    {
+      "id": "star-fox-2",
+      "title": "Star Fox 2",
+      "year": 1995,
+      "dev": "Nintendo EAD / Argonaut Software",
+      "cc": "JP",
+      "genres": ["space", "shooter"],
+      "plats": ["SNES"],
+      "pop": 4,
+      "note": "Completely finished, localized, and bug-tested in 1995 using the upgraded Super FX 2 chip—then locked in Nintendo's vault for 22 years so its flat-shaded 3D wouldn't look dated beside the upcoming N64, even as its free-roaming all-range flight and 3D camera lessons shaped Super Mario 64 and Star Fox 64 (finally released in 2017)."
+    },
+    {
+      "id": "lsd-dream-emulator",
+      "title": "LSD: Dream Emulator",
+      "year": 1998,
+      "dev": "Asmik Ace / OutSide Directors Company",
+      "cc": "JP",
+      "genres": ["adventure"],
+      "plats": ["PlayStation"],
+      "pop": 3,
+      "note": "Japanese multimedia artist Osamu Sato rejected arcade scores and game-overs to adapt ten years of designer Hiroko Nishikawa's real dream diary—letting touching any wall, animal, or passerby warp you into shifting, psychedelic dreamscapes."
+    },
+    {
+      "id": "thrill-kill",
+      "title": "Thrill Kill",
+      "year": 1998,
+      "dev": "Paradox Development",
+      "cc": "US",
+      "genres": ["fighting"],
+      "plats": ["PlayStation"],
+      "status": "cancelled",
+      "pop": 3,
+      "note": "100% finished, mastered, and ready for store shelves in October 1998—until Electronic Arts bought Virgin Interactive and abruptly cancelled it over its macabre content. Refusing to let years of engineering die, Paradox repurposed its pioneering 4-player simultaneous PS1 fighting engine for Wu-Tang: Shaolin Style."
+    },
+    {
+      "id": "wu-tang-shaolin-style",
+      "title": "Wu-Tang: Shaolin Style",
+      "year": 1999,
+      "dev": "Paradox Development",
+      "cc": "US",
+      "genres": ["fighting"],
+      "plats": ["PlayStation"],
+      "pop": 3,
+      "note": "Built directly atop Paradox Development's cancelled Thrill Kill four-player arena engine, pairing all nine Wu-Tang Clan members with original RZA beats and a custom W-shaped PlayStation controller."
+    },
+    {
+      "id": "earthbound-64",
+      "title": "EarthBound 64 (Mother 3 N64DD)",
+      "year": 2000,
+      "dev": "HAL Laboratory / Ape Inc.",
+      "cc": "JP",
+      "genres": ["jrpg"],
+      "plats": ["Nintendo 64"],
+      "status": "cancelled",
+      "pop": 3,
+      "note": "Shigesato Itoi and producer Satoru Iwata spent six grueling years building a sprawling twelve-chapter 3D sequel for the 64DD disk drive and N64 cartridge before painfully cancelling it in August 2000—preserving its heartbreak, characters, and story to bloom in 2006's GBA classic Mother 3."
+    },
+    {
+      "id": "steel-battalion",
+      "title": "Steel Battalion",
+      "year": 2002,
+      "dev": "Capcom / Production Studio 4",
+      "cc": "JP",
+      "genres": ["sim", "shooter"],
+      "plats": ["Xbox"],
+      "pop": 3,
+      "note": "Shipped in a giant crate with a $200, 40-button twin-stick cockpit desk controller, three foot pedals, ignition toggles, and a flip-up plastic cover over a glowing Eject button: fail to eject before your Vertical Tank exploded and the game permanently deleted your save file."
+    },
+    {
+      "id": "van-buren",
+      "title": "Van Buren (Black Isle's Fallout 3)",
+      "year": 2003,
+      "dev": "Black Isle Studios",
+      "cc": "US",
+      "genres": ["rpg"],
+      "plats": ["PC"],
+      "status": "cancelled",
+      "pop": 4,
+      "note": "Lead designers Chris Avellone and Josh Sawyer had built a playable 3D isometric engine, companion arcs, and an entire Southwestern wasteland when financially collapsing Interplay laid off Black Isle in December 2003—only for Sawyer and Avellone to resurrect Caesar's Legion, Hoover Dam, and the Burned Man in Fallout: New Vegas."
+    },
+    {
+      "id": "pathway-to-glory",
+      "title": "Pathway to Glory",
+      "year": 2004,
+      "dev": "RedLynx",
+      "cc": "FI",
+      "genres": ["strategy"],
+      "plats": ["Nokia N-Gage"],
+      "pop": 3,
+      "note": "Proving great craft can bloom on the strangest hardware, Helsinki's RedLynx delivered a gripping WWII turn-based squad tactics gem exclusively for Nokia's much-mocked N-Gage phone, complete with voice walkie-talkies and cellular multiplayer."
+    },
+    {
+      "id": "sticky-balls",
+      "title": "Sticky Balls",
+      "year": 2005,
+      "dev": "Warthog Games",
+      "cc": "GB",
+      "genres": ["puzzle"],
+      "plats": ["Gizmondo"],
+      "pop": 2,
+      "note": "Crafted by Manchester veterans at Warthog Games as an addictive billiard-physics launch title—orphaned as one of only 14 games ever released on Tiger Telematics' Gizmondo handheld before executives imploded the company in a $300M scandal."
+    },
+    {
+      "id": "the-matrix-online",
+      "title": "The Matrix Online",
+      "year": 2005,
+      "dev": "Monolith Productions",
+      "cc": "US",
+      "genres": ["mmo"],
+      "plats": ["PC"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Written as an official canon continuation after The Matrix Revolutions, employing a live event team who logged in nightly as Morpheus, Niobe, and Agents to improvise story twists with players until servers went dark in July 2009."
+    },
+    {
+      "id": "chromehounds",
+      "title": "Chromehounds",
+      "year": 2006,
+      "dev": "FromSoftware",
+      "cc": "JP",
+      "genres": ["sim", "shooter"],
+      "plats": ["Xbox 360"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Years before Dark Souls, FromSoftware built a deliberate, heavy-metal persistent squad war across fictional Neroimus where players bolted custom mechs from scratch and had to hold physical COMBAS radio towers just to hear teammates talk—mourned deeply when Sega shut its servers down in January 2010."
+    },
+    {
+      "id": "starcraft-ghost",
+      "title": "StarCraft: Ghost",
+      "year": 2006,
+      "dev": "Blizzard Entertainment / Nihilistic / Swingin' Ape",
+      "cc": "US",
+      "genres": ["immersive-sim", "shooter"],
+      "plats": ["GameCube", "Xbox", "PlayStation 2"],
+      "status": "cancelled",
+      "pop": 4,
+      "note": "Announced in 2002 to let console players step into Terran psychic operative Nova Terra's boots—calling down nuclear strikes from the shadows—before console generation shifts and World of Warcraft's explosive growth led Blizzard to shelve it."
+    },
+    {
+      "id": "half-life-2-episode-three",
+      "title": "Half-Life 2: Episode Three",
+      "year": 2008,
+      "dev": "Valve",
+      "cc": "US",
+      "genres": ["fps"],
+      "plats": ["PC"],
+      "status": "cancelled",
+      "pop": 4,
+      "note": "Intended to conclude Valve's episodic trilogy aboard the time-shifting Aperture research vessel Borealis after Episode Two's devastating cliffhanger; internal prototypes eventually gave way to Source 2 R&D and 2020's VR prequel Half-Life: Alyx."
+    },
+    {
+      "id": "agent-rockstar",
+      "title": "Agent",
+      "year": 2009,
+      "dev": "Rockstar North",
+      "cc": "GB",
+      "genres": ["action-adventure", "immersive-sim"],
+      "plats": ["PlayStation 3"],
+      "status": "cancelled",
+      "pop": 3,
+      "note": "Unveiled at E3 2009 as Rockstar North's late-1970s Cold War espionage, counter-intelligence, and assassination adventure across Cairo and the Mediterranean before the studio pulled every team onto Grand Theft Auto V."
+    },
+    {
+      "id": "1-vs-100",
+      "title": "1 vs. 100 (Xbox Live)",
+      "year": 2009,
+      "dev": "Microsoft Game Studios",
+      "cc": "US",
+      "genres": ["party"],
+      "plats": ["Xbox 360"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Appointment television inside a console: twice a week in 2009–2010, over 100,000 Xbox 360 players gathered simultaneously with a live comedian host, real prizes, and couch families shouting trivia answers into headsets."
+    },
+    {
+      "id": "mag",
+      "title": "MAG",
+      "year": 2010,
+      "dev": "Zipper Interactive",
+      "cc": "US",
+      "genres": ["fps"],
+      "plats": ["PlayStation 3"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "An astonishing technical feat by SOCOM studio Zipper Interactive, putting 256 real players onto a single PS3 battlefield structured into 8-player squads, 32-player platoons, and player-elected company commanders until servers closed in January 2014."
+    },
+    {
+      "id": "glitch",
+      "title": "Glitch",
+      "year": 2011,
+      "dev": "Tiny Speck",
+      "cc": "CA",
+      "genres": ["mmo", "adventure"],
+      "plats": ["Browser"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Stewart Butterfield and Keita Takahashi collaborators built a gentle, combat-free MMO about gardening, cooking, and community inside the minds of eleven Giants. When Glitch closed in 2012, Tiny Speck released its art into the public domain—and spun their internal dev chat tool out as Slack."
+    },
+    {
+      "id": "prey-2-cancelled",
+      "title": "Prey 2 (Human Head)",
+      "year": 2011,
+      "dev": "Human Head Studios",
+      "cc": "US",
+      "genres": ["fps", "open-world"],
+      "plats": ["PC", "PlayStation 3", "Xbox 360"],
+      "status": "cancelled",
+      "pop": 3,
+      "note": "Human Head's electrifying E3 2011 showcase cast players as abducted U.S. Marshal Killian Samuels parkour-chasing alien bounties through the neon slums of Exodus—nearly completed before publisher disputes froze and cancelled it."
+    },
+    {
+      "id": "star-wars-1313",
+      "title": "Star Wars 1313",
+      "year": 2013,
+      "dev": "LucasArts",
+      "cc": "US",
+      "genres": ["action-adventure", "shooter"],
+      "plats": ["PC", "PlayStation 4", "Xbox One"],
+      "status": "cancelled",
+      "pop": 4,
+      "note": "Built collaboratively by LucasArts, ILM, and Skywalker Sound—descending 1,313 levels beneath Coruscant's surface with a young Boba Fett—before Disney shuttered internal LucasArts development in April 2013, scattering its heartbroken creators across top studios."
+    },
+    {
+      "id": "project-titan",
+      "title": "Project Titan",
+      "year": 2013,
+      "dev": "Blizzard Entertainment",
+      "cc": "US",
+      "genres": ["mmo", "fps"],
+      "plats": ["PC"],
+      "status": "cancelled",
+      "pop": 4,
+      "note": "Seven years of sprawling sci-fi MMO work painfully cancelled by Blizzard in May 2013—yet out of that heartbreak, Jeff Kaplan and a small core team rescued its optimistic near-future Earth and time-jumping Jumper class ('Tracer') to create Overwatch."
+    },
+    {
+      "id": "wildstar",
+      "title": "WildStar",
+      "year": 2014,
+      "dev": "Carbine Studios",
+      "cc": "US",
+      "genres": ["mmo"],
+      "plats": ["PC"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Founded by seventeen former World of Warcraft developers, pairing expressive Saturday-morning sci-fi animation with freeform player housing, double-jumping hoverboards, and telegraph action raids until NCSoft closed Carbine and pulled the plug in November 2018."
+    },
+    {
+      "id": "silent-hills",
+      "title": "Silent Hills",
+      "year": 2015,
+      "dev": "Kojima Productions",
+      "cc": "JP",
+      "genres": ["horror"],
+      "plats": ["PlayStation 4"],
+      "status": "cancelled",
+      "pop": 4,
+      "note": "Dreamed up by Hideo Kojima, film director Guillermo del Toro, and horror manga master Junji Ito starring Norman Reedus—revealed at the end of P.T. and cancelled in April 2015, yet its photorealistic first-person dread reshaped an entire decade of horror."
+    },
+    {
+      "id": "battleborn",
+      "title": "Battleborn",
+      "year": 2016,
+      "dev": "Gearbox Software",
+      "cc": "US",
+      "genres": ["fps", "moba"],
+      "plats": ["PC", "PlayStation 4", "Xbox One"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Gearbox's earnest, Saturday-morning-anime blend of co-op story campaigns and MOBA lane defense—overshadowed launching days before Overwatch and permanently bricked (including solo story missions) when its authentication servers shut down in January 2021."
+    },
+    {
+      "id": "scalebound",
+      "title": "Scalebound",
+      "year": 2017,
+      "dev": "PlatinumGames",
+      "cc": "JP",
+      "genres": ["arpg"],
+      "plats": ["Xbox One", "PC"],
+      "status": "cancelled",
+      "pop": 3,
+      "note": "Hideki Kamiya's four-year passion project at PlatinumGames pairing headphone-wearing hero Drew with giant dragon companion Thuban across four-player co-op boss hunts, cancelled in January 2017."
+    },
+    {
+      "id": "echo-vr",
+      "title": "Echo VR",
+      "year": 2017,
+      "dev": "Ready at Dawn",
+      "cc": "US",
+      "genres": ["sports"],
+      "plats": ["VR"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Born as a multiplayer experiment from Lone Echo's zero-gravity hand-locomotion physics, turning weightless arena disc-throwing into VR's most beloved competitive sport until Meta shut its servers down in August 2023—followed by Ready at Dawn's closure."
+    },
+    {
+      "id": "knockout-city",
+      "title": "Knockout City",
+      "year": 2021,
+      "dev": "Velan Studios",
+      "cc": "US",
+      "genres": ["sports", "arcade"],
+      "plats": ["PC", "PlayStation 4", "Xbox One", "Switch"],
+      "status": "sunset",
+      "pop": 3,
+      "note": "Tightly tuned 3v3 fake-out dodgeball brawler whose creators at Velan Studios set the gold standard for honoring players and dev craft when live servers ended in June 2023: shipping a free PC Private Hosted Server build so the game would never vanish."
+    }
+  ],
+  "links": [
+    {
+      "from": "asteroids",
+      "to": "mine-storm",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "360-degree thrust-and-rotate vector spacecraft combat against splitting space hazards",
+      "added": "Built-in home-console ROM play where a giant minelayer seeded every Vectrex CRT screen prior to each wave, paired with a physical color screen overlay",
+      "src": [
+        { "t": "Mine Storm — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mine_Storm" }
+      ]
+    },
+    {
+      "from": "castlevania",
+      "to": "castlevania-chronicles",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Simon Belmont's six-stage whip ascent through Dracula's clockwork and monster-filled castle",
+      "added": "Sharp X68000 16-bit pixel detail, shattered stained-glass setpieces, and live switching between X68000 FM synth and Roland MIDI audio modules",
+      "src": [
+        { "t": "Castlevania Chronicles — Wikipedia", "u": "https://en.wikipedia.org/wiki/Castlevania_Chronicles" }
+      ]
+    },
+    {
+      "from": "zelda",
+      "to": "link-the-faces-of-evil",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Hyrule's characters, rupees, lamp oil, and questing premise via Nintendo's 1991 Philips CD-ROM licensing settlement",
+      "added": "Side-scrolling action stages stitched together by fully voiced, hand-drawn Russian-American CD-i animation",
+      "src": [
+        { "t": "Link: The Faces of Evil — Wikipedia", "u": "https://en.wikipedia.org/wiki/Link:_The_Faces_of_Evil_and_Zelda:_The_Wand_of_Gamelon" }
+      ]
+    },
+    {
+      "from": "zelda",
+      "to": "bs-the-legend-of-zelda",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Top-down 1986 Hyrule overworld and eight-dungeon exploration structure",
+      "added": "16-bit Satellaview broadcast episodes with live-streamed radio voice acting and real-time clock triggers tied to Sunday 6:00 PM airings",
+      "src": [
+        { "t": "Satellaview games from The Legend of Zelda series — Wikipedia", "u": "https://en.wikipedia.org/wiki/Satellaview_games_from_The_Legend_of_Zelda_series" }
+      ]
+    },
+    {
+      "from": "star-fox",
+      "to": "star-fox-2",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Argonaut and Nintendo EAD's Super FX polygonal Arwing combat and Corneria squad wingmen",
+      "added": "Real-time planetary defense map, six playable pilots, walking mech transformations, and 360-degree all-range 3D dogfights",
+      "src": [
+        { "t": "Nintendo SNES Classic Developer Interview: Star Fox 2, 2017", "u": "https://en.wikipedia.org/wiki/Star_Fox_2" }
+      ]
+    },
+    {
+      "from": "star-fox-2",
+      "to": "star-fox-64",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Shelved Star Fox 2's 360-degree all-range mode, rival Star Wolf dogfights, and charged homing shots",
+      "added": "64-bit analog control, Rumble Pak feedback, and branching arcade routes—bringing the unreleased team's best ideas to millions",
+      "src": [
+        { "t": "Star Fox 2 — Wikipedia (Miyamoto & Cuthbert interviews)", "u": "https://en.wikipedia.org/wiki/Star_Fox_2" }
+      ]
+    },
+    {
+      "from": "star-fox-2",
+      "to": "super-mario-64",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "3D camera-tracking experiments and walker-mode ground movement prototyped on the unreleased Super FX 2 sequel",
+      "added": "Full analog 3D platforming vocabulary and Lakitu camera controls on Nintendo 64",
+      "src": [
+        { "t": "Shigeru Miyamoto on Star Fox 2 influencing Super Mario 64", "u": "https://en.wikipedia.org/wiki/Star_Fox_2" }
+      ]
+    },
+    {
+      "from": "thrill-kill",
+      "to": "wu-tang-shaolin-style",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Paradox Development's completed, unreleased four-player simultaneous PlayStation arena fighting engine and meter-driven finishers",
+      "added": "Rebuilt the cancelled fighter around the nine members of the Wu-Tang Clan, martial-arts chambers, and original RZA hip-hop production",
+      "src": [
+        { "t": "Wu-Tang: Shaolin Style — Wikipedia", "u": "https://en.wikipedia.org/wiki/Wu-Tang:_Shaolin_Style" }
+      ]
+    },
+    {
+      "from": "earthbound",
+      "to": "earthbound-64",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Shigesato Itoi's offbeat modern-day JRPG warmth, quirky townsfolk, and rolling HP odometer",
+      "added": "A darker, twelve-chapter tragedy on the Nowhere Islands prototyped in full 3D for the Nintendo 64DD",
+      "src": [
+        { "t": "Development of Mother 3 (EarthBound 64) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Development_of_Mother_3" }
+      ]
+    },
+    {
+      "from": "earthbound-64",
+      "to": "mother-3",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Shigesato Itoi's cancelled N64DD twelve-chapter script, Lucas and Claus's family tragedy, and Tazmily Village cast",
+      "added": "Reborn in expressive 2D Game Boy Advance pixel art with rhythm-timed musical battle combos",
+      "src": [
+        { "t": "Development of Mother 3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Development_of_Mother_3" }
+      ]
+    },
+    {
+      "from": "mechwarrior-2-31st-century-combat",
+      "to": "steel-battalion",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Sim-grade bipedal mech cockpit management, heat/ammo discipline, and torso-twist gunnery",
+      "added": "A dedicated 40-button twin-stick hardware desk console with physical startup switches, foot pedals, and permadeath save-wiping if you failed to eject",
+      "src": [
+        { "t": "Steel Battalion — Wikipedia", "u": "https://en.wikipedia.org/wiki/Steel_Battalion" }
+      ]
+    },
+    {
+      "from": "steel-battalion",
+      "to": "chromehounds",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Heavy, deliberate military mech simulation and squad-role specialization on Xbox",
+      "added": "Modular part-by-part hound construction and a persistent three-nation online war governed by radio-tower communication range",
+      "src": [
+        { "t": "Chromehounds — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chromehounds" }
+      ]
+    },
+    {
+      "from": "fallout-2",
+      "to": "van-buren",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Black Isle's reactive post-nuclear RPG factions, SPECIAL skill checks, and morally grey quest webs",
+      "added": "A custom real-time-and-turn-based 3D engine and a new Southwestern war between the NCR, Caesar's Legion, and Hoover Dam—cancelled days from completion",
+      "src": [
+        { "t": "Van Buren (video game) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Van_Buren_(video_game)" }
+      ]
+    },
+    {
+      "from": "van-buren",
+      "to": "fallout-new-vegas",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Cancelled Van Buren's Caesar's Legion, Hoover Dam conflict, Joshua Graham ('The Burned Man'), and Southwestern faction lore authored by Josh Sawyer and Chris Avellone",
+      "added": "Brought Black Isle's lost Fallout 3 concepts to life inside a first-person Mojave wasteland at Obsidian Entertainment",
+      "src": [
+        { "t": "Josh Sawyer & Chris Avellone interviews on Van Buren ideas in Fallout: New Vegas", "u": "https://en.wikipedia.org/wiki/Van_Buren_(video_game)" }
+      ]
+    },
+    {
+      "from": "everquest",
+      "to": "the-matrix-online",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Persistent 3D MMO faction worlds and community guild politics",
+      "added": "Interlocking martial-arts wire-fu combat and a live-acted canon storyline run nightly by developer puppeteers inside Mega City",
+      "src": [
+        { "t": "The Matrix Online — Wikipedia", "u": "https://en.wikipedia.org/wiki/The_Matrix_Online" }
+      ]
+    },
+    {
+      "from": "starcraft",
+      "to": "starcraft-ghost",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Terran Ghost operative lore, cloaking, EMP lockdown, and Zerg/Protoss battlefields viewed from RTS bird's-eye height",
+      "added": "Brought the Koprulu Sector down to third-person console stealth-action scale with laser-designated tactical nukes",
+      "src": [
+        { "t": "StarCraft: Ghost — Wikipedia", "u": "https://en.wikipedia.org/wiki/StarCraft:_Ghost" }
+      ]
+    },
+    {
+      "from": "tom-clancys-splinter-cell",
+      "to": "starcraft-ghost",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Light-and-shadow third-person stealth traversal, thermal goggles, and silent takedowns",
+      "added": "Combined espionage infiltration with psionic Terran speed boosts and call-down siege strikes",
+      "src": [
+        { "t": "StarCraft: Ghost — Wikipedia", "u": "https://en.wikipedia.org/wiki/StarCraft:_Ghost" }
+      ]
+    },
+    {
+      "from": "half-life-2-episode-two",
+      "to": "half-life-2-episode-three",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Episode Two's White Forest finale and Eli Vance's warning about the vanished Aperture Science icebreaker Borealis",
+      "added": "Concepted an Arctic journey aboard a ship phasing unpredictably across time and space before episodic development halted",
+      "src": [
+        { "t": "Half-Life 2: Episode Three — Wikipedia", "u": "https://en.wikipedia.org/wiki/Half-Life_2:_Episode_Three" }
+      ]
+    },
+    {
+      "from": "grand-theft-auto-san-andreas",
+      "to": "agent-rockstar",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Rockstar North's globe-spanning vehicle chases, disguise missions, and period cinema pastiche",
+      "added": "Pivoted toward late-1970s Cold War counter-intelligence, ski-slope gunfights, and espionage gadgets before cancellation",
+      "src": [
+        { "t": "Agent (video game) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Agent_(video_game)" }
+      ]
+    },
+    {
+      "from": "prey",
+      "to": "prey-2-cancelled",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Human Head's alien-abduction opening and sci-fi shooter universe",
+      "added": "Reimagined the sequel as a vertical neon-city open-world bounty-hunting thriller with agile first-person parkour",
+      "src": [
+        { "t": "Prey 2 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Prey_2" }
+      ]
+    },
+    {
+      "from": "uncharted-2-among-thieves",
+      "to": "star-wars-1313",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Playable blockbuster set-piece traversal, seamless ledge-climbing shootouts, and cinematic motion capture",
+      "added": "Grounded Star Wars in gritty, Force-free Coruscant underworld bounty hunting powered by ILM film-pipeline rendering",
+      "src": [
+        { "t": "Star Wars 1313 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Star_Wars_1313" }
+      ]
+    },
+    {
+      "from": "star-wars-1313",
+      "to": "star-wars-jedi-fallen-order",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "LucasArts' unfulfilled dream of a cinematic, single-player third-person Star Wars action-adventure with seamless planet-side traversal",
+      "added": "Delivered a complete single-player Star Wars adventure six years after 1313's cancellation, blending Metroidvania exploration and lightsaber parries",
+      "src": [
+        { "t": "Star Wars 1313 legacy — Wikipedia", "u": "https://en.wikipedia.org/wiki/Star_Wars_1313" }
+      ]
+    },
+    {
+      "from": "world-of-warcraft",
+      "to": "project-titan",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Blizzard's persistent MMO social guilds, class roles, and raid-team craft",
+      "added": "Attempted a dual-life near-future Earth MMO—mundane jobs by day, heroic sci-fi FPS skirmishes by night—before its 2013 reset",
+      "src": [
+        { "t": "Titan (Blizzard Entertainment project) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Titan_(Blizzard_Entertainment_project)" }
+      ]
+    },
+    {
+      "from": "team-fortress-2",
+      "to": "project-titan",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Readable silhouette-based combat classes with distinct movement and support roles",
+      "added": "Prototyped sci-fi hero abilities—including the time-blinking 'Jumper' class—inside Blizzard's cancelled MMO combat arenas",
+      "src": [
+        { "t": "Jeff Kaplan & Chris Metzen interviews on Project Titan -> Overwatch", "u": "https://en.wikipedia.org/wiki/Titan_(Blizzard_Entertainment_project)" }
+      ]
+    },
+    {
+      "from": "project-titan",
+      "to": "overwatch",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Project Titan's cancelled team, optimistic near-future Earth art direction, Dorado/Anubis map concepts, and the time-skipping Jumper kit",
+      "added": "Distilled seven years of painful MMO scope creep into a joyful, laser-focused 6v6 hero shooter led by Tracer",
+      "src": [
+        { "t": "GameSpot / Polygon oral histories of Project Titan becoming Overwatch", "u": "https://en.wikipedia.org/wiki/Titan_(Blizzard_Entertainment_project)" }
+      ]
+    },
+    {
+      "from": "world-of-warcraft",
+      "to": "wildstar",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Ex-Blizzard developers' deep 40-player raid mastery, stylized faction humor, and holy-trinity dungeon roles",
+      "added": "Dynamic floor-telegraph action dodging, Explorer/Scientist/Settler playstyle paths, and boundless sky-plot player housing",
+      "src": [
+        { "t": "WildStar — Wikipedia", "u": "https://en.wikipedia.org/wiki/WildStar" }
+      ]
+    },
+    {
+      "from": "pt",
+      "to": "silent-hills",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "P.T.'s photorealistic Fox Engine dread, Kojima & Guillermo del Toro's psychological direction, and Norman Reedus's protagonist reveal",
+      "added": "Envisioned a full Silent Hill town collaboration with horror mangaka Junji Ito before Konami cancelled the project in 2015",
+      "src": [
+        { "t": "Silent Hills — Wikipedia", "u": "https://en.wikipedia.org/wiki/Silent_Hills" }
+      ]
+    },
+    {
+      "from": "silent-hills",
+      "to": "resident-evil-7-biohazard",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "P.T. and Silent Hills' intimate, photorealistic first-person domestic claustrophobia that electrified horror fans worldwide",
+      "added": "Carried that first-person dread into a full, shippable survival-horror campaign with resource management and Baker estate bosses",
+      "src": [
+        { "t": "Resident Evil 7 & P.T./Silent Hills comparisons — Eurogamer / IGN", "u": "https://en.wikipedia.org/wiki/Resident_Evil_7:_Biohazard" }
+      ]
+    },
+    {
+      "from": "borderlands-2",
+      "to": "battleborn",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Gearbox's irreverent first-person banter, loot gear loadouts, and co-op boss raids",
+      "added": "25 wildly varied playable heroes with mid-match helix skill trees and MOBA minion-escort PvP modes",
+      "src": [
+        { "t": "Battleborn — Wikipedia", "u": "https://en.wikipedia.org/wiki/Battleborn_(video_game)" }
+      ]
+    },
+    {
+      "from": "devil-may-cry",
+      "to": "scalebound",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Hideki Kamiya's stylish swordplay, devil-arm transformation flair, and cocky headphone-wearing hero attitude",
+      "added": "Real-time bond commands with an AI-driven giant dragon companion across four-player co-op monster hunts before its 2017 cancellation",
+      "src": [
+        { "t": "Scalebound — Wikipedia", "u": "https://en.wikipedia.org/wiki/Scalebound" }
+      ]
+    },
+    {
+      "from": "lone-echo",
+      "to": "echo-vr",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Ready at Dawn's breakthrough zero-gravity VR locomotion—grabbing walls and pushing off into weightless glide with zero motion sickness",
+      "added": "Turned weightless hand-propulsion into a fast, physical team disc sport that became VR's flagship community gathering place until its 2023 shutdown",
+      "src": [
+        { "t": "Echo VR — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lone_Echo#Echo_VR" }
+      ]
+    }
+  ],
+  "updates": [
+    { "id": "star-wars-galaxies", "field": "status", "value": "sunset" },
+    { "id": "city-of-heroes", "field": "status", "value": "sunset" },
+    { "id": "club-penguin", "field": "status", "value": "sunset" },
+    {
+      "id": "et-the-extra-terrestrial",
+      "field": "note",
+      "value": "Handed an impossible 5-week deadline before Christmas 1982 instead of 6 months, Atari star coder Howard Scott Warshaw (Yars' Revenge) solo-built E.T. from scratch. In Sept 1983 Atari buried ~728,000 unsold warehouse carts in Alamogordo, New Mexico—proven real in a joyful 2014 desert dig that put Warshaw's cartridge in the Smithsonian."
+    },
+    { "id": "policenauts", "field": "addPlats", "value": ["NEC PC-98"] },
+    { "id": "snatcher", "field": "addPlats", "value": ["NEC PC-98"] },
+    { "id": "touhou-embodiment-of-scarlet-devil", "field": "addPlats", "value": ["NEC PC-98"] },
+    { "id": "final-fight", "field": "addPlats", "value": ["Sharp X68000"] },
+    { "id": "ghouls-n-ghosts", "field": "addPlats", "value": ["Sharp X68000"] },
+    { "id": "super-mario-bros", "field": "addPlats", "value": ["Subor"] },
+    { "id": "contra", "field": "addPlats", "value": ["Subor"] },
+    { "id": "battle-city", "field": "addPlats", "value": ["Subor"] },
+    { "id": "the-chaos-engine", "field": "addPlats", "value": ["Amiga CD32"] },
+    { "id": "beneath-a-steel-sky", "field": "addPlats", "value": ["Amiga CD32"] },
+    { "id": "worms", "field": "addPlats", "value": ["Amiga CD32"] }
+  ]
+}
