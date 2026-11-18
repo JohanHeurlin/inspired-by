@@ -7,9 +7,9 @@ An interactive family tree of video game history (1950s to today), a heartfelt t
 ## Features
 
 - **My Gaming Timeline & Always-Accessible Game Picker (`➕ Pick games`):** Enter your birth year, pick the tactile 3D systems you played on, and tap games (`✓` Played · `★` Played a ton · `♥` All-Time Favorite) either by era/age or via **✦ Memory, Vibe & Mood Packs** (*Couch Co-op, Older Sibling's Floppy Box, Quarter-Munchers, 2 A.M. Strategy, Indie Gems, 😤 Brutal Games That Made Us Sweat, 🛟 Worlds That Carried Us Through*). Jump back into **➕ Pick games** (`#picks`) anytime, drag any cover's `⠿` grip between years, and test onboarding safely via **🧪 Test new-visitor flow**.
-- **Living Art & Troll-Free Maker Gratitude (`#gratitude`):**
+- **Living Art & Maker Gratitude (`#gratitude`):**
   - **Why Games Matter:** Highlights video games as lifelines through turbulent childhoods, living collaborative art combining music/painting/architecture/code, and lifelong touchstones.
-  - **Curated Letters & Personal Thank-You Postcards:** Intentionally zero public comment wall, ratings, or popularity-contest likes — read curated thank-you letters, save personal notes locally, download a shareable **Thank-You Postcard (`.png`)**, or jump directly to full team credits on MobyGames, LinkedIn alumni search, and Bluesky to thank a creator 1-on-1.
+  - **Curated Letters & Personal Thank-You Postcards:** Read curated thank-you letters, save personal notes on your device, download a shareable **Thank-You Postcard (`.png`)**, or jump directly to full team credits on MobyGames, LinkedIn alumni search, and Bluesky to thank a creator 1-on-1.
 - **In-UI Screenshots, Title Screens & Artwork Gallery:** Automatically pulls real in-game gameplay screenshots, retro title screens, creator photos, and widescreen artwork (via Wikipedia `media-list` REST API, Libretro open thumbnail archive, and Steam CDN) directly into Quick-Look modals and Game pages with an interactive zoom lightbox.
 - **Personal Shelves & Shareable Custom Themed Lists (`📋 Custom lists` / `#list-…`):**
   - Tag games with **`🛟 Carried me through`** or **`😤 Made me sweat`** to unlock dedicated shelves right on your timeline.
