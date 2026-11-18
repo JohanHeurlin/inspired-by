@@ -67,10 +67,11 @@ input,select{font:inherit;color:var(--ink)}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
 .topin{display:flex;align-items:center;gap:14px;padding-block:10px}
 .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex:none}
-.logo i{width:22px;height:22px;background:var(--accent);border-radius:5px;position:relative;flex:none}
-.logo i::before,.logo i::after{content:"";position:absolute;background:var(--accent-ink);border-radius:1px}
-.logo i::before{left:5px;top:5px;width:4px;height:12px}
-.logo i::after{left:9px;top:9px;width:8px;height:4px}
+.logo .logosvg{width:24px;height:24px;border-radius:6px;flex:none;box-shadow:0 1px 3px rgb(0 0 0 / .18)}
+.copywrap{display:inline-flex;align-items:center;gap:8px;position:relative}
+.copytip{font-size:12px;font-weight:600;color:var(--craft);opacity:0;transition:opacity .15s;pointer-events:none}
+.copytip.on{opacity:1}
+.copytip.err{color:var(--love);opacity:1}
 .logo b{font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:-.01em}
 .logo small{font-family:var(--f-pixel);font-size:10px;color:var(--muted);letter-spacing:.06em}
 .tabs{display:flex;gap:3px;margin-left:auto;align-items:center}
@@ -747,7 +748,7 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
 
 <header class="top">
   <div class="wrap topin">
-    <a class="logo" href="#explore" aria-label="Played & Made — your life in games and the humans who built them"><i aria-hidden="true"></i><b>Played &amp; Made</b><small>LIFE IN GAMES</small></a>
+    <a class="logo" href="#explore" aria-label="Played & Made — your life in games and the humans who built them"><svg class="logosvg" viewBox="0 0 17 17" width="24" height="24" aria-hidden="true" shape-rendering="crispEdges"><rect width="17" height="17" rx="4" fill="#1D6AE5" shape-rendering="geometricPrecision"/><path fill="#fff" d="M4 3h3v1h1v1h1V4h1V3h3v1h1v1h1v3h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5v-1H4V9H3V8H2V5h1V4h1z"/><path fill="#FF5442" d="M4 4h3v1h1v1h1V5h1V4h3v1h1v3h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5V9H4V8H3V5h1z"/><path fill="#fff" d="M4 5h2v1H5v1H4z"/></svg><b>Played &amp; Made</b><small>LIFE IN GAMES</small></a>
     <nav class="tabs" aria-label="Sections">
       <a class="tab" href="#timeline" data-tab="timeline">My timeline</a>
       <a class="tab" href="#picks" data-tab="picks">🕹️ Pick games</a>
@@ -885,11 +886,12 @@ const SYSTEMS=[["A","Arcade",1971,2026],
  ["M","iPhone / iPad",2008,2026],["M","Android",2009,2026],["M","Browser",1995,2026],
  ["O","Atari 2600",1977,1992],["O","Atari 7800",1986,1992],["O","Intellivision",1979,1990],["O","ColecoVision",1982,1985],["C","Atari 8-bit",1979,1992],["C","Linux",1995,2026],
  ["N","Game Boy Color",1998,2003],["S","Sega CD",1991,1996],["O","TurboGrafx-16",1987,1994],["O","Neo Geo",1990,2004],["O","Atari Lynx",1989,1995],["O","3DO",1993,1996],["O","Atari Jaguar",1993,1996],
- ["M","Mobile (feature phone)",1997,2010],["N","Game & Watch",1980,1991],["O","VR",2016,2026]];
+ ["M","Mobile (feature phone)",1997,2010],["N","Game & Watch",1980,1991],["O","VR",2016,2026],["O","Dendy",1992,1999]];
 const SYS_IDX=new Map(SYSTEMS.map((s,i)=>[s[1],i]));
-const BRANDS={A:"Arcades",C:"Computers",N:"Nintendo",S:"Sega",P:"PlayStation",X:"Xbox",M:"Phones & browser",O:"Other consoles"};
+const BRANDS={A:"Arcades",C:"Computers",N:"Nintendo",S:"Sega",P:"PlayStation",X:"Xbox",M:"Phones & browser",O:"Other & regional consoles"};
 const canonSys=n=>/^PC \((DOS|Windows)\)$/.test(n)?"PC":n;
 const sysOfGame=g=>[...new Set(g.plats.map(canonSys))];
+const gameMatchesSys=(ps,sy)=>ps.includes(sy)||(sy==="Dendy"&&ps.includes("NES"));
 const brandOfSys=n=>(SYSTEMS[SYS_IDX.get(n)]||["O"])[0];
 const brandOf=g=>g&&g.plats.length?brandOfSys(canonSys(g.plats[0])):"";
 
@@ -925,6 +927,12 @@ function hwSVG(sys,cls="hwsvg"){
     body=`<rect x="6" y="13" width="52" height="14" rx="2" fill="#DCDFE4" stroke="#7E8490" stroke-width="1.4"/>
       <rect x="9" y="27" width="46" height="9" rx="1.5" fill="#8E94A0"/><rect x="12" y="13" width="26" height="9" fill="#BFC4CE"/><rect x="43" y="13" width="7" height="23" fill="#2A2D34"/>
       <rect x="14" y="30" width="5" height="3" rx=".8" fill="#D9383A"/><rect x="21" y="30" width="5" height="3" rx=".8" fill="#D9383A"/>`;
+  }else if(s==="Dendy"){
+    body=`<rect x="21" y="6" width="22" height="10" rx="1.5" fill="#F4C430" stroke="#B88914" stroke-width="1.2"/>
+      <rect x="8" y="15" width="48" height="20" rx="3.5" fill="#E3E5EA" stroke="#858B98" stroke-width="1.4"/>
+      <rect x="18" y="15" width="28" height="5" rx="1" fill="#B8BECB"/>
+      <rect x="14" y="24" width="8" height="4.5" rx="1" fill="#D9383A"/><rect x="42" y="24" width="8" height="4.5" rx="1" fill="#D9383A"/>
+      <rect x="27" y="25" width="10" height="3" rx="1" fill="#5D6475"/>`;
   }else if(s==="SNES"){
     body=`<rect x="6" y="15" width="52" height="20" rx="3.5" fill="#D7DAE2" stroke="#858B99" stroke-width="1.4"/>
       <rect x="15" y="13" width="34" height="9" rx="2" fill="#C2C6D2"/><rect x="19" y="25" width="8" height="5" rx="1.5" fill="#7B68C8"/><rect x="37" y="25" width="8" height="5" rx="1.5" fill="#9D8CE0"/>`;
@@ -987,6 +995,7 @@ function canvasHardware(x,sys,bx,by,w,h){
   else if(s.startsWith("Xbox")){x.fillStyle="#1B1F26";x.beginPath();x.roundRect(cx,cy+10,cw,ch-18,6);x.fill();x.fillStyle="#52E038";x.beginPath();x.arc(cx+cw/2,cy+ch/2+1,9,0,7);x.fill()}
   else if(s.startsWith("PlayStation")){x.fillStyle=s==="PlayStation"?"#C7CCD6":"#171A24";x.beginPath();x.roundRect(cx+4,cy+8,cw-8,ch-14,6);x.fill();x.strokeStyle="#2D6BFF";x.lineWidth=3;x.beginPath();x.arc(cx+cw/2,cy+ch/2+1,11,0,7);x.stroke()}
   else if(s==="Game Boy"||s==="Game Boy Color"){x.fillStyle="#D8D9DE";x.beginPath();x.roundRect(cx+18,cy,40,ch,6);x.fill();x.fillStyle="#7E9448";x.fillRect(cx+24,cy+6,28,18);x.fillStyle="#A62656";x.beginPath();x.arc(cx+48,cy+34,3.5,0,7);x.fill()}
+  else if(s==="Dendy"){x.fillStyle="#F4C430";x.fillRect(cx+22,cy+2,32,12);x.fillStyle="#E3E5EA";x.beginPath();x.roundRect(cx+4,cy+12,cw-8,ch-18,6);x.fill();x.fillStyle="#D9383A";x.fillRect(cx+14,cy+26,12,7);x.fillRect(cx+cw-26,cy+26,12,7)}
   else if(s==="PC"||s==="Mac"){x.fillStyle="#E4DFD3";x.beginPath();x.roundRect(cx+10,cy+2,cw-20,ch-14,5);x.fill();x.fillStyle="#16325C";x.fillRect(cx+16,cy+7,cw-32,ch-24);x.fillStyle="#CFC9BA";x.fillRect(cx+4,cy+ch-10,cw-8,10)}
   else{x.fillStyle="#2B3348";x.beginPath();x.roundRect(cx+2,cy+8,cw-4,ch-14,6);x.fill();x.fillStyle="#FF6E5A";x.fillRect(cx+10,cy+22,16,8);x.fillStyle="#8C9DFF";x.fillRect(cx+32,cy+22,28,8)}
   x.restore();
@@ -1075,6 +1084,7 @@ const MEMORY_PACKS=[
   {k:"indie",title:"💎 Indie Gems Beyond the Mega-Hype",sub:"Small teams and solo creators punching way above blockbuster budgets.",ids:["cave-story","braid","limbo","fez","FTL: Faster Than Light","papers-please","shovel-knight","undertale","stardew-valley","inside","hollow-knight","return-of-the-obra-dinn","outer-wilds","slay-the-spire","baba-is-you","tunic","dredge","dave-the-diver","animal-well","balatro","blue-prince","inscryption","signalis"]},
   {k:"scares",title:"👻 Lights-Off Tension & Survival",sub:"Creaking doors, scarce ammo, and playing with the lamp on.",ids:["alone-in-the-dark","resident-evil","resident-evil-2","resident-evil-4","silent-hill","silent-hill-2","system-shock-2","half-life","dead-space","left-4-dead","amnesia-the-dark-descent","alien-isolation","pt","subnautica","alan-wake-2","lethal-company"]},
   {k:"sandbox",title:"🌍 Open Worlds & Player Chaos",sub:"Sandboxes where making your own fun beat following the rules.",ids:["elite","hunter","grand-theft-auto","grand-theft-auto-iii","grand-theft-auto-san-andreas","grand-theft-auto-v","battlefield-1942","the-elder-scrolls-iii-morrowind","the-elder-scrolls-v-skyrim","garrys-mod","minecraft","terraria","kerbal-space-program","the-legend-of-zelda-breath-of-the-wild","elden-ring","valheim","no-mans-sky"]},
+  {k:"dendy",title:"🐘 Dendy & 9999-in-1 Cartridges",sub:"Yellow market multicarts, Battle City ('Tanki'), Darkwing Duck, Chip 'n Dale & 90s 8-bit couch co-op.",ids:["battle-city","super-mario-bros","contra","super-contra","duck-hunt","chip-n-dale-rescue-rangers","ducktales","darkwing-duck","felix-the-cat","tiny-toon-adventures","teenage-mutant-ninja-turtles-iii-the-manhattan-project","battletoads","battletoads-and-double-dragon","adventure-island","circus-charlie","lode-runner","bomberman","ice-climber","galaxian","road-fighter","antarctic-adventure","nuts-and-milk","double-dragon-ii-the-revenge","prince-of-persia"]},
   {k:"sweat",title:"😤 Brutal Games That Made Us Sweat",sub:"Infamous jumps, palms-sweating bosses, and controller-gripping tests of willpower.",ids:["ghosts-n-goblins","battletoads","ninja-gaiden","contra","rick-dangerous","shadow-of-the-beast","the-lion-king","f-zero-gx","devil-may-cry-3-dantes-awakening","super-meat-boy","dark-souls","spelunky","darkest-dungeon","cuphead","getting-over-it-with-bennett-foddy","celeste","sekiro-shadows-die-twice","returnal","elden-ring"]},
   {k:"harbor",title:"🛟 Worlds That Carried Us Through",sub:"Safe harbors, warm towns, and grand adventures that helped us weather rough seasons.",ids:["the-secret-of-monkey-island","chrono-trigger","final-fantasy-vii","the-legend-of-zelda-ocarina-of-time","pokemon-red-and-blue","simcity-2000","shenmue","animal-crossing","kingdom-hearts","world-of-warcraft","the-elder-scrolls-v-skyrim","minecraft","journey","undertale","stardew-valley","celeste","outer-wilds","animal-crossing-new-horizons"]}
 ];
@@ -1154,7 +1164,8 @@ function wireSearch(input,box,onPick,opts={}){
     items=searchGames(v,opts);on=0;
     box.innerHTML=items.map((g,i)=>`<button type="button" class="res${i===0?" on":""}" data-i="${i}">${cover(g,{showYear:false})}<span><b>${esc(g.title)}</b><small>${flag(g.cc)} ${esc(studio(g)||"")}${g.tree?` · <span class="tag">in the family tree</span>`:""}</small></span><span class="y">${g.year}</span></button>`).join("")
       +(opts.custom&&!items.some(g=>g.n===norm(v))?`<button type="button" class="res" data-custom="1"><span></span><span><b>Add “${esc(v)}”</b><small>As your own entry</small></span><span class="y">+</span></button>`:"")
-      +(!items.length&&!opts.custom?`<p class="empty" style="padding:8px 10px">No match yet. ${G.length.toLocaleString()} games so far.</p>`:"");
+      +(!items.length&&!opts.custom?`<p class="empty" style="padding:8px 10px 4px">No match yet (${G.length.toLocaleString()} games so far).</p>`:"")
+      +(items.length<4?`<button type="button" class="res" data-req="1"><span style="font-size:15px">➕</span><span><b>Request “${esc(v)}” for the catalog</b><small>Missing game or console? Let us know</small></span><span class="y">▸</span></button>`:"");
     box.hidden=false};
   input.addEventListener("input",draw);
   input.addEventListener("focus",()=>{if(input.value.trim())draw()});
@@ -1164,7 +1175,9 @@ function wireSearch(input,box,onPick,opts={}){
     else if(e.key==="Enter"){e.preventDefault();if(box.hidden||!input.value.trim())return;const b=bs[on]||bs[0];if(b)b.click()}
     else if(e.key==="Escape"){box.hidden=true}});
   box.addEventListener("click",e=>{const b=e.target.closest(".res");if(!b)return;
-    const pick=b.dataset.custom?{custom:input.value.trim()}:items[+b.dataset.i];input.value="";box.hidden=true;onPick(pick)});
+    const rawQ=input.value.trim();input.value="";box.hidden=true;
+    if(b.dataset.req){openFeatureSheet({cat:"🎮 Missing Game / Classic",title:rawQ});return}
+    const pick=b.dataset.custom?{custom:rawQ}:items[+b.dataset.i];onPick(pick)});
 }
 /* one listener for every search box: a click outside closes its results */
 document.addEventListener("click",e=>{$$(".results").forEach(b=>{if(!b.hidden&&b.parentElement&&!b.parentElement.contains(e.target))b.hidden=true})});
@@ -1521,11 +1534,12 @@ const footer=()=>`<footer class="wrap foot-about">
       <a class="chip" href="#world">🌍 World map</a>
       <a class="chip" href="#gratitude">💌 Thank makers</a>
       <a class="chip" href="#friends">Friends</a>
+      <button type="button" class="chip" data-act="featureSheet">➕ Request console, game or feature</button>
     </div>
     <button type="button" class="btn sm ghost" data-act="scrollTop">↑ Back to top</button>
   </div>
   <p><b>Played &amp; Made — your life in games, and the humans who built them.</b> For many of us, video games weren't a distraction — they were safe harbors growing up, bridges to friends, and living art built by designers, engineers, writers, painters, and musicians. Every link here honors what teams built on and what they added.</p>
-  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">💡 Suggest a feature or idea</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <button class="link" data-act="goGiveBack">Support youth &amp; preservation ▸</button> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button><span data-install-ui hidden> · <button type="button" class="link" data-act="installApp">📲 Install app</button></span></p>
+  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">➕ Request console, game or feature</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <button class="link" data-act="goGiveBack">Support youth &amp; preservation ▸</button> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button><span data-install-ui hidden> · <button type="button" class="link" data-act="installApp">📲 Install app</button></span></p>
   <p style="margin-top:6px;font-size:12px;opacity:.85">Created by <b>Johan Heurlin</b> · Built ${esc(RAW.built||"")}.</p></footer>`;
 
 function eraMomentsHTML(from,to){
@@ -1622,8 +1636,12 @@ function renderSystems(m){
     <h1 class="h1" style="font-size:clamp(1.6rem,1.1rem + 2.5vw,2.4rem)">What did you play on?</h1>
     <p class="lede">Pick the machines you played on — at home, on an older sibling's desk, at a friend's house, or at the arcade. Hover or tap any machine to inspect it.</p>
     <div class="sysgroups">${order.filter(b=>groups[b]).map(b=>`<div class="sysgroup"><h3>${BRANDS[b]}</h3><div>${groups[b].map(([,n,f,t])=>`<button class="syschip" data-act="own" data-sys="${esc(n)}" aria-pressed="${own.has(n)}">${hwSVG(n)}<span><b>${esc(n)}</b><small>${f}${t>=NOW?"–now":"–"+t}</small></span></button>`).join("")}</div></div>`).join("")}</div>
+    <div class="row" style="justify-content:space-between;margin-top:18px;padding:12px 14px;border:1px dashed var(--line2);border-radius:12px;background:var(--card)">
+      <span class="sub" style="margin:0">Don't see a regional console, Famiclone, or home computer you grew up with?</span>
+      <button type="button" class="btn sm" data-act="featureSheet" data-cat="🕹️ Missing Console / System">➕ Request a missing console or game</button>
+    </div>
     <div class="pickbar"><div class="in"><button class="btn ghost" data-act="obBack">Back</button><span class="sync" style="flex:1" id="ownCount">${own.size?plural(own.size,"system")+" picked":"Pick a few, or skip"}</span><button class="btn primary" data-act="obPicks">Next: pick games ▸</button></div></div>
-  </section>`;
+  </section>${footer()}`;
 }
 const ERA_BANDS=[
   [-10,2,"pre3","Older siblings, hand-me-downs & early classics","Pre-age 3","Games released before you turned 3 — played later via an older brother or sister, cousins, or arcades",18],
@@ -1657,22 +1675,22 @@ function quickBands(birth,owned,sysFilter=""){
     let scored=[];
     if(sysFilter&&sysFilter!=="__other__"){
       const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=2||g.tree)&&playable(g));
-      scored=pool.map(g=>{const ps=sysOfGame(g);if(!ps.includes(sysFilter))return null;
-        const lead=g.plats.length&&canonSys(g.plats[0])===sysFilter?12:0,excl=ps.length<=2?5:ps.length<=4?2:0;
-        return {g,ps,s:g.pop*10+lead+excl+Math.min(g.inf,300)/22+(g.cat?3:0)}}).filter(Boolean).sort((x,y)=>y.s-x.s);
+      scored=pool.map(g=>{const ps=sysOfGame(g);if(!gameMatchesSys(ps,sysFilter))return null;
+        const exact=ps.includes(sysFilter)?18:0,lead=g.plats.length&&canonSys(g.plats[0])===sysFilter?12:0,excl=ps.length<=2?5:ps.length<=4?2:0;
+        return {g,ps,s:g.pop*10+exact+lead+excl+Math.min(g.inf,300)/22+(g.cat?3:0)}}).filter(Boolean).sort((x,y)=>y.s-x.s);
     }else if(sysFilter==="__other__"){
       const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=3)&&playable(g));
-      scored=pool.map(g=>{const ps=sysOfGame(g),arc=ps.includes("Arcade");if(ps.some(p=>own.has(p)))return null;
+      scored=pool.map(g=>{const ps=sysOfGame(g),arc=ps.includes("Arcade");if([...own].some(sy=>gameMatchesSys(ps,sy)))return null;
         if(!(g.pop>=4||(arc&&g.pop>=3)))return null;
         return {g,ps,s:g.pop*10+(arc?6:0)+Math.min(g.inf,300)/25}}).filter(Boolean).sort((x,y)=>y.s-x.s);
     }else{
       const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=3)&&playable(g));
-      scored=pool.map(g=>{const ps=sysOfGame(g),hit=ps.some(p=>own.has(p)),arc=ps.includes("Arcade");
+      scored=pool.map(g=>{const ps=sysOfGame(g),hit=[...own].some(sy=>gameMatchesSys(ps,sy)),exact=[...own].some(sy=>ps.includes(sy)),arc=ps.includes("Arcade");
         const lead=g.plats.length&&own.has(canonSys(g.plats[0]))?8:0,excl=hit&&ps.length<=3?4:0;
-        const s=g.pop*10+(hit?28:0)+lead+excl+(arc&&g.year<1996?5:0)+Math.min(g.inf,300)/25+(g.cat?3:0);
+        const s=g.pop*10+(hit?24:0)+(exact?8:0)+lead+excl+(arc&&g.year<1996?5:0)+Math.min(g.inf,300)/25+(g.cat?3:0);
         return {g,ps,s,ok:!useOwn||hit||g.pop>=5||(arc&&g.year<1992&&g.pop>=4)}}).filter(x=>x.ok).sort((x,y)=>y.s-x.s);
       if(useOwn&&own.size>1){
-        const queues=[...own].map(sy=>scored.filter(x=>x.ps.includes(sy)).sort((p,q)=>(q.s+(q.g.plats.length&&canonSys(q.g.plats[0])===sy?12:0))-(p.s+(p.g.plats.length&&canonSys(p.g.plats[0])===sy?12:0)))).filter(q=>q.length);
+        const queues=[...own].map(sy=>scored.filter(x=>gameMatchesSys(x.ps,sy)).sort((p,q)=>(q.s+(q.ps.includes(sy)?14:0)+(q.g.plats.length&&canonSys(q.g.plats[0])===sy?12:0))-(p.s+(p.ps.includes(sy)?14:0)+(p.g.plats.length&&canonSys(p.g.plats[0])===sy?12:0)))).filter(q=>q.length);
         if(queues.length>1){
           const seen=new Set(),inter=[],ptr=queues.map(()=>0),target=Math.max(n,queues.length*5);
           while(inter.length<target){let added=0;for(let qi=0;qi<queues.length;qi++){const q=queues[qi];while(ptr[qi]<q.length&&seen.has(q[ptr[qi]].g.i))ptr[qi]++;if(ptr[qi]<q.length){const it=q[ptr[qi]++];seen.add(it.g.i);inter.push(it);added++}}if(!added)break}
@@ -1694,7 +1712,8 @@ function pickSysCounts(birth,owned){
   const from=birth?Math.max(1950,birth-10):1950,out=new Map();
   (owned||[]).forEach(sy=>out.set(sy,0));
   for(const g of G){if(g.year<from||g.year>NOW||!(g.cat||g.pop>=2||g.tree)||!playable(g))continue;
-    for(const p of sysOfGame(g))if(out.has(p))out.set(p,out.get(p)+1)}
+    const ps=sysOfGame(g);
+    for(const sy of out.keys())if(gameMatchesSys(ps,sy))out.set(sy,out.get(sy)+1)}
   return out;
 }
 function pickTileSub(g,ownSet,sysFilter){
@@ -1731,6 +1750,7 @@ function renderPicks(m){
         ${hist.birth?`<button type="button" class="chip" data-act="settings" title="Change birth year or name">🎂 Born ${hist.birth} ✎</button>`:""}
         <button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button>
         <a class="btn sm" href="#systems">🕹️ Systems (${own.length||"all"})</a>
+        <button type="button" class="btn sm ghost" data-act="featureSheet" data-cat="🎮 Missing Game / Classic">➕ Request console / game</button>
         ${s.n||hist.birth?`<a class="btn sm primary" href="#timeline">My timeline${s.n?` (${s.n})`:""} ▸</a>`:""}
       </div>
     </div>
@@ -1751,6 +1771,7 @@ function renderPicks(m){
         <div class="pickstrip" role="group" aria-label="Filter by system">
           <button type="button" class="chip" data-act="pickSys" data-sys="" aria-pressed="${!sf}">All my systems (${own.length})</button>
           ${own.map(sy=>`<button type="button" class="chip" data-act="pickSys" data-sys="${esc(sy)}" aria-pressed="${sf===sy}">${esc(sy)} <span class="mono muted">${sysCnt.get(sy)||0}</span></button>`).join("")}
+          ${ownSet.has("Dendy")?`<button type="button" class="chip" data-act="openDendyPack">🐘 Dendy 9999-in-1 pack ▸</button>`:""}
           <button type="button" class="chip" data-act="pickSys" data-sys="__other__" aria-pressed="${sf==="__other__"}">Other systems & arcades</button>
         </div></div>`:""}
       ${!byPack&&bands.length>1?`<div style="margin-top:${own.length?"6px":"10px"}"><span class="sync" style="display:block;margin-bottom:4px">Jump to era:</span>
@@ -1776,11 +1797,15 @@ function renderPicks(m){
         ${b.extra>0?`<button type="button" class="btn sm ghost" data-act="pickLess" data-band="${esc(b.key)}">Show fewer</button>`:""}
         ${idx<bands.length-1?`<button type="button" class="btn sm ghost" data-act="bandJump" data-to="band-${idx+1}">Next: ${esc(bands[idx+1].short)} ↓</button>`:""}
       </div></section>`).join("")||`<p class="empty" style="margin-top:18px">No matching games found for this filter.</p>`}
+    <div class="row" style="justify-content:space-between;margin-top:18px;padding:12px 14px;border:1px dashed var(--line2);border-radius:12px;background:var(--card)">
+      <span class="sub" style="margin:0">Missing a console, regional Famiclone, or childhood game from the catalog?</span>
+      <button type="button" class="btn sm" data-act="featureSheet" data-cat="🎮 Missing Game / Classic">➕ Request a console or game</button>
+    </div>
     <div class="pickbar"><div class="in">
       <span class="count" id="pcount">${plural(s.n,"game")}<small>${s.n?`${s.from}–${s.to} · auto-saved`:"Tap a few covers above"}</small></span>
       <span class="minihist" id="phist" aria-hidden="true">${pickBars()}</span>
       <button class="btn primary" data-act="obDone">See my timeline ▸</button></div></div>
-  </section>`;
+  </section>${footer()}`;
   const pb=$("#pickBirthForm");
   if(pb)pb.onsubmit=ev=>{ev.preventDefault();const y=parseInt(($("#pickBirthIn")||{}).value,10);if(y>=1940&&y<=NOW-3){hist.birth=y;hist.stage=null;save();toast(`Personalized eras for born ${y}`);render()}else toast("Enter a 4-digit year like 1984")};
   wireSearch($("#pickQ"),$("#pickR"),p=>{
@@ -3234,7 +3259,7 @@ function eraBoxContext(g){
   if(g.year<2020)return g.pop<=3?"Digital / indie release · typical launch $15–$29":"Keep-case disc & digital storefront · typical launch MSRP $59";
   return g.pop<=3?"Digital / indie release · typical launch $15–$35":"Physical & digital edition · typical launch MSRP $59–$69";
 }
-const LIBRETRO_SYS={"Amiga":"Commodore - Amiga","Commodore 64":"Commodore - 64","Atari ST":"Atari - ST","ZX Spectrum":"Sinclair - ZX Spectrum","MSX":"Microsoft - MSX","NES":"Nintendo - Nintendo Entertainment System","SNES":"Nintendo - Super Nintendo Entertainment System","Nintendo 64":"Nintendo - Nintendo 64","Game Boy":"Nintendo - Game Boy","Game Boy Color":"Nintendo - Game Boy Color","Game Boy Advance":"Nintendo - Game Boy Advance","Nintendo DS":"Nintendo - Nintendo DS","GameCube":"Nintendo - GameCube","Master System":"Sega - Master System - Mark III","Mega Drive / Genesis":"Sega - Mega Drive - Genesis","Saturn":"Sega - Saturn","Dreamcast":"Sega - Dreamcast","PlayStation":"Sony - PlayStation","PlayStation 2":"Sony - PlayStation 2","PSP":"Sony - PlayStation Portable","Atari 2600":"Atari - 2600","TurboGrafx-16":"NEC - PC Engine - TurboGrafx 16","Neo Geo":"SNK - Neo Geo","Arcade":"MAME"};
+const LIBRETRO_SYS={"Amiga":"Commodore - Amiga","Commodore 64":"Commodore - 64","Atari ST":"Atari - ST","ZX Spectrum":"Sinclair - ZX Spectrum","MSX":"Microsoft - MSX","NES":"Nintendo - Nintendo Entertainment System","Dendy":"Nintendo - Nintendo Entertainment System","SNES":"Nintendo - Super Nintendo Entertainment System","Nintendo 64":"Nintendo - Nintendo 64","Game Boy":"Nintendo - Game Boy","Game Boy Color":"Nintendo - Game Boy Color","Game Boy Advance":"Nintendo - Game Boy Advance","Nintendo DS":"Nintendo - Nintendo DS","GameCube":"Nintendo - GameCube","Master System":"Sega - Master System - Mark III","Mega Drive / Genesis":"Sega - Mega Drive - Genesis","Saturn":"Sega - Saturn","Dreamcast":"Sega - Dreamcast","PlayStation":"Sony - PlayStation","PlayStation 2":"Sony - PlayStation 2","PSP":"Sony - PlayStation Portable","Atari 2600":"Atari - 2600","TurboGrafx-16":"NEC - PC Engine - TurboGrafx 16","Neo Geo":"SNK - Neo Geo","Arcade":"MAME"};
 const GAL_CACHE=new Map();
 let ACTIVE_GAL={gid:"",boxSel:"",items:[],idx:-1};
 function probeImgOk(url,ms=2800){
@@ -3681,22 +3706,68 @@ function renderSharedList(m,payload){
       </article>`}).join("")}</div>
   </section>${footer()}`;
 }
-let FEAT_DRAFT={title:"",cat:"Timeline & Memories",scope:"Let AI & maintainer decide",body:""};
-function openFeatureSheet(){
+let FEAT_DRAFT={title:"",cat:"🕹️ Missing Console / System",scope:"Let AI & maintainer decide",body:""};
+let lastCopyStatusMsg="";
+const COPY_TIMERS=new WeakMap();
+function formatFeatureRequestText(t,b){
+  const isCatalog=/Missing Console|Missing Game/i.test(FEAT_DRAFT.cat);
+  return `Played & Made Request — ${FEAT_DRAFT.cat}\nTitle: ${t}${b?`\nDetails: ${b}`:""}${!isCatalog?`\nPlacement: ${FEAT_DRAFT.scope}`:""}\nSite: ${shareBase()}`;
+}
+function saveLocalRequest(t,b){
+  const saved=store.get("ib3-requests",[]);
+  const rec={title:t,cat:FEAT_DRAFT.cat,body:b||"",ts:Date.now()};
+  const idx=saved.findIndex(x=>norm(x.title)===norm(t)&&x.cat===rec.cat);
+  if(idx>=0)saved[idx]=rec;else saved.unshift(rec);
+  store.set("ib3-requests",saved.slice(0,25));
+}
+function reportCopyStatus(btn,tip,ok){
+  if(!btn||!tip)return;
+  clearTimeout(COPY_TIMERS.get(btn));
+  let msg=ok?"Copied! Paste into any text or chat":"Copy failed";
+  if(msg===lastCopyStatusMsg)msg+="\u00A0";
+  lastCopyStatusMsg=msg;
+  tip.classList.remove("on","err");
+  tip.textContent="";
+  btn.textContent=ok?"✓ Copied request":"📋 Copy request";
+  requestAnimationFrame(()=>{
+    tip.textContent=msg;
+    tip.classList.add(ok?"on":"err");
+  });
+  COPY_TIMERS.set(btn,setTimeout(()=>{
+    btn.textContent="📋 Copy request";
+    tip.classList.remove("on","err");
+    tip.textContent="";
+  },2600));
+}
+function openFeatureSheet(opts={}){
+  if(opts.cat)FEAT_DRAFT.cat=opts.cat;
+  if(opts.title!==undefined)FEAT_DRAFT.title=opts.title;
   const repo=ghRepoURL()||"https://github.com/JohanHeurlin/inspired-by";
-  const cats=["Timeline & Memories","Makers & Gratitude","Family Tree & Visuals","Custom Lists & Sharing","Audio & Polish"];
+  const cats=["🕹️ Missing Console / System","🎮 Missing Game / Classic","Timeline & Memories","Makers & Gratitude","Family Tree & Visuals"];
   const scopes=["Let AI & maintainer decide","Good for everyone (default)","Niche / power-user (Settings toggle)"];
-  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">💡 Community ideas · AI-triaged backlog</p><h2>Suggest a feature or improvement</h2><p class="sub" style="margin:2px 0 0">Every suggestion lands in our structured backlog and is evaluated on two tracks: <b>universal improvements</b> become calm defaults, while <b>niche or power-user workflows</b> (like Industry Maker Mode or Era Headlines) ship as clean toggles in <b>Settings</b> so the site never feels bloated.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
-    <label class="field" for="featTitle">Short idea title<input class="input" id="featTitle" maxlength="80" placeholder="e.g. Compare 3+ friends side-by-side, Soundtrack radio mode…" value="${esc(FEAT_DRAFT.title||"")}"></label>
-    <span class="sync" style="display:block;margin:10px 0 5px">Area</span>
-    <div class="row" style="gap:6px">${cats.map(c=>`<button type="button" class="chip" data-act="featCat" data-v="${esc(c)}" aria-pressed="${FEAT_DRAFT.cat===c}">${esc(c)}</button>`).join("")}</div>
-    <span class="sync" style="display:block;margin:10px 0 5px">Should this be on for everyone or an optional Settings toggle?</span>
-    <div class="row" style="gap:6px">${scopes.map(s=>`<button type="button" class="chip" data-act="featScope" data-v="${esc(s)}" aria-pressed="${FEAT_DRAFT.scope===s}">${esc(s)}</button>`).join("")}</div>
-    <label class="field" for="featBody" style="margin-top:10px">How would it work, and why would it be fun or meaningful?<textarea class="input" id="featBody" rows="4" placeholder="Describe what you'd love to see…">${esc(FEAT_DRAFT.body||"")}</textarea></label>
-    <div class="row" style="margin-top:14px">
-      <button type="button" class="btn primary" data-act="featGh" data-repo="${esc(repo)}">Submit to Feature Backlog on GitHub ↗</button>
-      <button type="button" class="btn" data-act="featCopy">Copy formatted idea</button>
-    </div>`,"Suggest a feature");
+  const isConsole=FEAT_DRAFT.cat.includes("Console"),isGame=FEAT_DRAFT.cat.includes("Game"),isCatalog=isConsole||isGame;
+  const ph=isConsole?"e.g. Subor, Pegasus, Sega Pico, Vectrex, Sharp X68000…"
+    :isGame?"e.g. Captain Claw, Prehistorik 2, Jazz Jackrabbit 2, Dizzy…"
+    :"e.g. Compare 3+ friends side-by-side, Soundtrack radio mode…";
+  const bodyPh=isConsole?"Which years/region did you play it in, and what were its signature games or cartridges?"
+    :isGame?"What year or console/computer did you play it on? Any studio or regional title?"
+    :"Describe what you'd love to see…";
+  const canShare=typeof navigator!=="undefined"&&typeof navigator.share==="function";
+  const savedReqs=store.get("ib3-requests",[]);
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">➕ Missing consoles, regional classics &amp; feature ideas</p><h2>Request a console, game, or feature</h2><p class="sub" style="margin:2px 0 0">Grew up with a regional console, computer, or favorite game that isn't here yet — or have a feature idea? Pick a category below. <b>No GitHub account needed:</b> share or copy your request to text/DM it directly, or post to GitHub Issues if you use GitHub.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <span class="sync" style="display:block;margin:0 0 6px">What are you requesting?</span>
+    <div class="row" style="gap:6px;margin-bottom:12px">${cats.map(c=>`<button type="button" class="chip" data-act="featCat" data-v="${esc(c)}" aria-pressed="${FEAT_DRAFT.cat===c}">${esc(c)}</button>`).join("")}</div>
+    <label class="field" for="featTitle">${isConsole?"Console or computer name":isGame?"Game title (and system if known)":"Short idea title"}<input class="input" id="featTitle" maxlength="90" placeholder="${esc(ph)}" value="${esc(FEAT_DRAFT.title||"")}"></label>
+    ${!isCatalog?`<span class="sync" style="display:block;margin:10px 0 5px">Should this be on for everyone or an optional Settings toggle?</span>
+      <div class="row" style="gap:6px">${scopes.map(s=>`<button type="button" class="chip" data-act="featScope" data-v="${esc(s)}" aria-pressed="${FEAT_DRAFT.scope===s}">${esc(s)}</button>`).join("")}</div>`:""}
+    <label class="field" for="featBody" style="margin-top:10px">${isCatalog?"Favorite games on it, region, or extra notes (optional)":"How would it work, and why would it be fun or meaningful?"}<textarea class="input" id="featBody" rows="3" placeholder="${esc(bodyPh)}">${esc(FEAT_DRAFT.body||"")}</textarea></label>
+    <div class="row" style="margin-top:14px;gap:8px;align-items:center">
+      ${canShare?`<button type="button" class="btn primary" data-act="featShare">📲 Share / Text request (no sign-in)</button>`:""}
+      <span class="copywrap"><button type="button" class="btn${canShare?"":" primary"}" id="featCopyBtn" data-act="featCopy">📋 Copy request</button><span class="copytip" role="status" id="featCopyTip"></span></span>
+      <button type="button" class="btn ghost" data-act="featGh" data-repo="${esc(repo)}">Post on GitHub Issues ↗ <span class="muted" style="font-weight:400;font-size:11.5px">(GitHub login)</span></button>
+    </div>
+    ${savedReqs.length?`<div style="margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)"><span class="sync" style="display:block;margin-bottom:6px">Saved on this device (${savedReqs.length}):</span>
+      <div class="row" style="gap:6px">${savedReqs.slice(0,6).map((r,i)=>`<span class="chip" style="cursor:default">${esc(r.title)} <button type="button" class="link" style="margin-left:4px;text-decoration:none" data-act="featRmSaved" data-i="${i}" aria-label="Remove saved request ${esc(r.title)}">×</button></span>`).join("")}</div></div>`:""}`,"Request a console, game, or feature");
   const ft=$("#featTitle"),fb=$("#featBody");
   if(ft)ft.addEventListener("input",()=>{FEAT_DRAFT.title=ft.value});
   if(fb)fb.addEventListener("input",()=>{FEAT_DRAFT.body=fb.value});
@@ -3801,9 +3872,9 @@ function openSettings(){
   const hasStash=!!store.get("ib3-stashed-hist");
   openSheet(`<div class="sheethead"><h2>Timeline settings &amp; optional features</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <form id="setForm" class="row" style="align-items:flex-end"><label class="field" for="setBirth" style="flex:1">Year you were born<input class="input" id="setBirth" inputmode="numeric" maxlength="4" value="${hist.birth||""}"></label><label class="field" for="setName" style="flex:2">Name<input class="input" id="setName" maxlength="24" value="${esc(hist.name||"")}"></label><button class="btn primary" type="submit">Save</button></form>
-    <div class="row" style="margin-top:14px"><button class="btn primary" data-act="obAgain">➕ Pick games</button><button class="btn" data-act="obSystems">🕹️ Change systems</button><button class="btn" data-act="theme">Switch light / dark</button><button class="btn" data-act="artToggle">${artEra?"Use real box art":"Use retro era spines"}</button>${canInstallApp()?`<button class="btn" type="button" data-act="installApp" data-install-ui>📲 Install app</button>`:isStandaloneApp()?`<span class="pill craft">✓ Installed app</span>`:""}</div>
+    <div class="row" style="margin-top:14px"><button class="btn primary" data-act="obAgain">➕ Pick games</button><button class="btn" data-act="obSystems">🕹️ Change systems</button><button class="btn" type="button" data-act="featureSheet">➕ Request console / game</button><button class="btn" data-act="theme">Switch light / dark</button><button class="btn" data-act="artToggle">${artEra?"Use real box art":"Use retro era spines"}</button>${canInstallApp()?`<button class="btn" type="button" data-act="installApp" data-install-ui>📲 Install app</button>`:isStandaloneApp()?`<span class="pill craft">✓ Installed app</span>`:""}</div>
     <h3 class="h3" style="margin-top:16px">Optional features &amp; toggles</h3>
-    <p class="sub">Turn niche or power-user views on or off anytime. Have an idea for another toggle? <button type="button" class="link" data-act="featureSheet">Suggest a feature ▸</button></p>
+    <p class="sub">Turn niche or power-user views on or off anytime. Missing a console, game, or feature? <button type="button" class="link" data-act="featureSheet">Request it here ▸</button></p>
     <div class="row">
       <button type="button" class="chip" data-act="sfxToggle" aria-pressed="${!!SYNTH.sfx}">${SYNTH.sfx?"🔊 Selection chimes: On":"🔇 Selection chimes: Off"}</button>
       <button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era nostalgia headlines: ${state.eraMem?"On":"Off"}</button>
@@ -4299,6 +4370,7 @@ const ACTIONS={
   packSheet(){openPackSheet()},
   openSweatPack(){state.packKey="sweat";openPackSheet()},
   openHarborPack(){state.packKey="harbor";openPackSheet()},
+  openDendyPack(){state.pickMode="packs";state.packKey="dendy";render()},
   packSheetPick(el){state.packKey=el.dataset.k;openPackSheet()},
   packCycle(el){const g=byId.get(el.dataset.id);if(!g)return;ensureBirthThen(()=>{const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g)})},
   watchTv(el){const g=byId.get(el.dataset.id);if(g)openVideoSheet(g,null,false)},
@@ -4371,19 +4443,55 @@ const ACTIONS={
     ls.push({title:v.title,sub:v.sub||"",author:hist.name||"",items:v.items.map(it=>({id:it.id,note:it.note||""}))});
     state.listIdx=ls.length-1;saveLists(ls);toast("Saved a copy to your Custom Lists");openListsSheet();
   },
-  featureSheet(){openFeatureSheet()},
+  featureSheet(el){
+    const o={};
+    if(el&&el.dataset){if(el.dataset.cat)o.cat=el.dataset.cat;if(el.dataset.title!==undefined)o.title=el.dataset.title}
+    openFeatureSheet(o);
+  },
   featCat(el){FEAT_DRAFT.cat=el.dataset.v;openFeatureSheet()},
   featScope(el){FEAT_DRAFT.scope=el.dataset.v;openFeatureSheet()},
+  async featShare(){
+    const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
+    if(t.length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
+    FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b);
+    const txt=formatFeatureRequestText(t,b);
+    if(navigator.share){
+      try{await navigator.share({title:`Played & Made request: ${t}`,text:txt});toast("Shared request — thank you!");return}
+      catch(err){if(err&&err.name==="AbortError")return}
+    }
+    copyText(txt);
+  },
   featGh(el){
     const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
-    if(t.length<4){toast("Enter a short title for your idea first");const inp=$("#featTitle");if(inp)inp.focus();return}
+    if(t.length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
+    FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b);
     const repo=el.dataset.repo||"https://github.com/JohanHeurlin/inspired-by";
-    const body=`### Idea summary\n${t}\n\n### Area\n${FEAT_DRAFT.cat}\n\n### Default vs. Settings Toggle\n${FEAT_DRAFT.scope}\n\n### Why it matters & how it works\n${b||"(No extra details provided)"}`;
-    window.open(`${repo}/issues/new?template=feature-request.yml&labels=feature-request&title=${encodeURIComponent("[Feature] "+t)}&body=${encodeURIComponent(body)}`,"_blank","noopener");
+    const isConsole=FEAT_DRAFT.cat.includes("Console"),isGame=FEAT_DRAFT.cat.includes("Game");
+    const tag=isConsole?"[Console Request] ":isGame?"[Game Request] ":"[Feature] ";
+    const body=`### Request summary\n${t}\n\n### Category\n${FEAT_DRAFT.cat}\n\n### Default vs. Settings Toggle\n${FEAT_DRAFT.scope}\n\n### Details & notes\n${b||"(No extra details provided)"}`;
+    window.open(`${repo}/issues/new?labels=feature-request&title=${encodeURIComponent(tag+t)}&body=${encodeURIComponent(body)}`,"_blank","noopener");
   },
-  featCopy(){
+  async featCopy(el){
     const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
-    copyText(`Feature: ${t}\nArea: ${FEAT_DRAFT.cat}\nPlacement: ${FEAT_DRAFT.scope}\nDetails: ${b}`);closeLayer();
+    if(t.length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
+    FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b);
+    const txt=formatFeatureRequestText(t,b);
+    const tip=$("#featCopyTip");
+    let ok=false;
+    try{
+      await navigator.clipboard.writeText(txt);
+      ok=true;
+    }catch{
+      const field=Object.assign(document.createElement("textarea"),{value:txt});
+      field.setAttribute("readonly","");field.style.cssText="position:fixed;inset-block-start:0;opacity:0";
+      document.body.append(field);field.select();
+      try{ok=document.execCommand("copy")}finally{field.remove()}
+    }
+    reportCopyStatus(el,tip,ok);
+  },
+  featRmSaved(el){
+    const saved=store.get("ib3-requests",[]),i=+el.dataset.i;
+    if(i>=0&&i<saved.length){saved.splice(i,1);store.set("ib3-requests",saved);openFeatureSheet()}
   },
   goGiveBack(){state.stFilter="giveback";go("studios")},
   toDna(){const s=$("#dna");if(s)s.scrollIntoView({behavior:"smooth",block:"start"})},

@@ -1,7 +1,7 @@
 /* Played & Made — Offline-capable Service Worker */
 "use strict";
 
-const CACHE_NAME = "pm-shell-91aa0ca457";
+const CACHE_NAME = "pm-shell-a035db20d4";
 const FONT_CACHE = "pm-fonts-v1";
 const PRECACHE = [
   "./",
@@ -10,6 +10,7 @@ const PRECACHE = [
   "./icon-192.png",
   "./icon-512.png",
   "./icon-maskable-512.png",
+  "./icon-monochrome-512.png",
   "./apple-touch-icon.png"
 ];
 

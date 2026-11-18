@@ -62,10 +62,31 @@ foreach ($n in $nodes) {
 }
 
 $accentBrush = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 138, 180, 248))
-$logoBg      = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 26, 99, 216))
+$logoBg      = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 29, 106, 229))
 $g.FillRectangle($logoBg, 64, 66, 36, 36)
-$g.FillRectangle($white, 73, 74, 6, 20)
-$g.FillRectangle($white, 79, 81, 13, 6)
+$heartRows = @(
+  "..WWW...WWW..",
+  ".WRRRW.WRRRW.",
+  "WRHHRRWRRRRSW",
+  "WRHRRRRRRRRSW",
+  "WRRRRRRRRRRSW",
+  ".WRRRRRRRRSW.",
+  "..WRRRRRRSW..",
+  "...WRRRRSW...",
+  "....WRRSW....",
+  ".....WSW.....",
+  "......W......"
+)
+$bRed   = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 255, 84, 66))
+$bShade = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 214, 48, 34))
+for ($ry = 0; $ry -lt 11; $ry++) {
+  for ($rx = 0; $rx -lt 13; $rx++) {
+    $ch = $heartRows[$ry][$rx]
+    if ($ch -eq '.') { continue }
+    $hb = if ($ch -eq 'W' -or $ch -eq 'H') { $white } elseif ($ch -eq 'S') { $bShade } else { $bRed }
+    $g.FillRectangle($hb, (69 + $rx * 2), (73 + $ry * 2), 2, 2)
+  }
+}
 
 $fEyebrow = [System.Drawing.Font]::new("Consolas", 14, [System.Drawing.FontStyle]::Bold)
 $fTitle   = [System.Drawing.Font]::new("Segoe UI", 44, [System.Drawing.FontStyle]::Bold)
@@ -73,14 +94,14 @@ $fSub     = [System.Drawing.Font]::new("Segoe UI", 19, [System.Drawing.FontStyle
 $fStats   = [System.Drawing.Font]::new("Consolas", 14, [System.Drawing.FontStyle]::Bold)
 
 $g.DrawString("PLAYED & MADE  ·  GAME HISTORY & MAKERS", $fEyebrow, $accentBrush, [single]114, [single]74)
-$hRect = [System.Drawing.RectangleF]::new([single]60, [single]128, [single]595, [single]190)
-$g.DrawString("Your Life in Games —`n& Who Built Them", $fTitle, $white, $hRect)
+$hRect = [System.Drawing.RectangleF]::new([single]60, [single]128, [single]595, [single]160)
+$g.DrawString("Your Life in Games`n& Who Built Them", $fTitle, $white, $hRect)
 
 $subBrush = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 198, 206, 222))
-$sRect = [System.Drawing.RectangleF]::new([single]64, [single]302, [single]585, [single]180)
-$g.DrawString("Build your childhood or dev-career timeline in two minutes, celebrate the creators and machines that raised you, and trace 4,190+ games back to the 1950s.", $fSub, $subBrush, $sRect)
+$sRect = [System.Drawing.RectangleF]::new([single]64, [single]296, [single]585, [single]180)
+$g.DrawString("Build your childhood or dev-career timeline in two minutes, celebrate the creators and machines that raised you, and trace 4,195+ games back to the 1950s.", $fSub, $subBrush, $sRect)
 
-$g.DrawString("4,190 games  ·  2,757 sourced links  ·  46 countries", $fStats, $accentBrush, [single]64, [single]538)
+$g.DrawString("4,195+ games  ·  2,760+ sourced links  ·  46 countries", $fStats, $accentBrush, [single]64, [single]538)
 
 $outPath = Join-Path $root 'dist\og-card.png'
 $bmp.Save($outPath, [System.Drawing.Imaging.ImageFormat]::Png)

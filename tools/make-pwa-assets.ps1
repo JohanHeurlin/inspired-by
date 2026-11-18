@@ -1,5 +1,6 @@
-﻿# Generates PWA launcher icons (icon-192.png, icon-512.png, icon-maskable-512.png, apple-touch-icon.png)
-# and mobile Richer-Install preview screenshot (pwa-mobile.png) in dist\ using built-in .NET System.Drawing.
+﻿# Generates PWA launcher icons (icon-192.png, icon-512.png, icon-maskable-512.png,
+# icon-monochrome-512.png, apple-touch-icon.png) and mobile Richer-Install preview
+# screenshot (pwa-mobile.png) in dist\ using built-in .NET System.Drawing.
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $dist = Join-Path $root 'dist'
@@ -18,7 +19,72 @@ function New-RoundedRectPath([single]$x, [single]$y, [single]$w, [single]$h, [si
   return $p
 }
 
-function Save-PwaIcon([string]$outPath, [int]$size, [bool]$fullBleed, [single]$markScale) {
+# Symmetrical 13x11 16-bit Pixel Heart matrix:
+#   W = crisp white pixel border, R = coral-red fill, S = ruby shade, H = white L-shine
+$HEART_ROWS = @(
+  "..WWW...WWW..",
+  ".WRRRW.WRRRW.",
+  "WRHHRRWRRRRSW",
+  "WRHRRRRRRRRSW",
+  "WRRRRRRRRRRSW",
+  ".WRRRRRRRRSW.",
+  "..WRRRRRRSW..",
+  "...WRRRRSW...",
+  "....WRRSW....",
+  ".....WSW.....",
+  "......W......"
+)
+
+function Draw-PixelHeart([System.Drawing.Graphics]$g, [single]$cx, [single]$cy, [single]$targetWidth, [bool]$monochrome = $false) {
+  $cols = 13; $rows = 11
+  # Snap pixel cell size to integer pixels when large enough so edges are razor-sharp
+  $px = if ($targetWidth -ge 52) { [single][Math]::Round($targetWidth / $cols) } else { [single]($targetWidth / $cols) }
+  $totalW = $px * $cols
+  $totalH = $px * $rows
+  $ox = [single][Math]::Round($cx - ($totalW / 2.0))
+  $oy = [single][Math]::Round($cy - ($totalH / 2.0))
+
+  $bWhite = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 255, 255, 255))
+  $bRed   = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 255, 84, 66))
+  $bShade = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 214, 48, 34))
+
+  $oldSmooth = $g.SmoothingMode
+  $oldOffset = $g.PixelOffsetMode
+  $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::None
+  $g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::Half
+
+  for ($ry = 0; $ry -lt $rows; $ry++) {
+    $line = $HEART_ROWS[$ry]
+    for ($rx = 0; $rx -lt $cols; $rx++) {
+      $ch = $line[$rx]
+      if ($ch -eq '.') { continue }
+      $x = [single]($ox + ($rx * $px))
+      $y = [single]($oy + ($ry * $px))
+      # Slight overlap (+0.35px when fractional) prevents hairline seams at tiny sizes
+      $s = if ($px -eq [Math]::Floor($px)) { $px } else { [single]($px + 0.35) }
+      if ($monochrome) {
+        # For Android 13+ monochrome themed icons: render crisp inner silhouette with transparent L-shine cutout
+        if ($ch -eq 'R' -or $ch -eq 'S') {
+          $g.FillRectangle($bWhite, $x, $y, $s, $s)
+        }
+      } else {
+        $brush = switch ($ch) {
+          'W' { $bWhite }
+          'H' { $bWhite }
+          'S' { $bShade }
+          default { $bRed }
+        }
+        $g.FillRectangle($brush, $x, $y, $s, $s)
+      }
+    }
+  }
+
+  $g.SmoothingMode = $oldSmooth
+  $g.PixelOffsetMode = $oldOffset
+  $bWhite.Dispose(); $bRed.Dispose(); $bShade.Dispose()
+}
+
+function Save-PwaIcon([string]$outPath, [int]$size, [bool]$fullBleed, [single]$markScale, [bool]$monochrome = $false) {
   $bmp = [System.Drawing.Bitmap]::new($size, $size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
   $g = [System.Drawing.Graphics]::FromImage($bmp)
   $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
@@ -26,83 +92,47 @@ function Save-PwaIcon([string]$outPath, [int]$size, [bool]$fullBleed, [single]$m
   $g.CompositingQuality = [System.Drawing.Drawing2D.CompositingQuality]::HighQuality
   $g.Clear([System.Drawing.Color]::Transparent)
 
-  $bgPath = if ($fullBleed) {
-    New-RoundedRectPath 0 0 $size $size 0
-  } else {
-    $pad = [Math]::Round($size * 0.03)
-    $w = $size - ($pad * 2)
-    New-RoundedRectPath $pad $pad $w $w ($w * 0.225)
+  if (-not $monochrome) {
+    $bgPath = if ($fullBleed) {
+      New-RoundedRectPath 0 0 $size $size 0
+    } else {
+      $pad = [Math]::Round($size * 0.03)
+      $w = $size - ($pad * 2)
+      New-RoundedRectPath $pad $pad $w $w ($w * 0.225)
+    }
+
+    $bgBrush = [System.Drawing.Drawing2D.LinearGradientBrush]::new(
+      [System.Drawing.PointF]::new(0, 0),
+      [System.Drawing.PointF]::new($size, $size),
+      [System.Drawing.Color]::FromArgb(255, 29, 106, 229),
+      [System.Drawing.Color]::FromArgb(255, 13, 32, 74)
+    )
+    $g.FillPath($bgBrush, $bgPath)
+
+    # Clip subtle designer-notebook grid lines inside the icon silhouette
+    $oldClip = $g.Clip
+    $g.SetClip($bgPath)
+    $step = [Math]::Max(12, [int]($size / 8))
+    $gridPen = [System.Drawing.Pen]::new([System.Drawing.Color]::FromArgb(28, 255, 255, 255), [Math]::Max(1.0, $size / 256.0))
+    for ($gx = $step; $gx -lt $size; $gx += $step) {
+      $g.DrawLine($gridPen, $gx, 0, $gx, $size)
+      $g.DrawLine($gridPen, 0, $gx, $size, $gx)
+    }
+
+    # Subtle top-left glow
+    $sheenBrush = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(24, 165, 210, 255))
+    $g.FillEllipse($sheenBrush, -[single]($size * 0.2), -[single]($size * 0.25), [single]($size * 0.9), [single]($size * 0.7))
+    $g.Clip = $oldClip
+
+    if (-not $fullBleed) {
+      $rimPen = [System.Drawing.Pen]::new([System.Drawing.Color]::FromArgb(68, 255, 255, 255), [Math]::Max(1.5, $size / 160.0))
+      $g.DrawPath($rimPen, $bgPath)
+    }
   }
 
-  $bgBrush = [System.Drawing.Drawing2D.LinearGradientBrush]::new(
-    [System.Drawing.PointF]::new(0, 0),
-    [System.Drawing.PointF]::new($size, $size),
-    [System.Drawing.Color]::FromArgb(255, 26, 99, 216),
-    [System.Drawing.Color]::FromArgb(255, 13, 30, 68)
-  )
-  $g.FillPath($bgBrush, $bgPath)
-
-  # Clip subtle notebook grid lines inside the icon silhouette
-  $oldClip = $g.Clip
-  $g.SetClip($bgPath)
-  $step = [Math]::Max(12, [int]($size / 8))
-  $gridPen = [System.Drawing.Pen]::new([System.Drawing.Color]::FromArgb(26, 255, 255, 255), [Math]::Max(1.0, $size / 256.0))
-  for ($gx = $step; $gx -lt $size; $gx += $step) {
-    $g.DrawLine($gridPen, $gx, 0, $gx, $size)
-    $g.DrawLine($gridPen, 0, $gx, $size, $gx)
-  }
-
-  # Subtle radial top-left sheen
-  $sheenBrush = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(22, 160, 205, 255))
-  $g.FillEllipse($sheenBrush, -[single]($size * 0.2), -[single]($size * 0.25), [single]($size * 0.9), [single]($size * 0.7))
-  $g.Clip = $oldClip
-
-  if (-not $fullBleed) {
-    $rimPen = [System.Drawing.Pen]::new([System.Drawing.Color]::FromArgb(60, 255, 255, 255), [Math]::Max(1.5, $size / 160.0))
-    $g.DrawPath($rimPen, $bgPath)
-  }
-
-  # Draw centered Played & Made emblem inside safe zone ($markScale ~ 0.60 for maskable, 0.68 for standard)
-  $box = $size * $markScale
-  $ox = ($size - $box) / 2.0
-  $oy = ($size - $box) / 2.0
-
-  # Coordinates inside [0..100] emblem space
-  $S = { param([single]$v) return [single]($v * $box / 100.0) }
-  $X = { param([single]$v) return [single]($ox + ($v * $box / 100.0)) }
-  $Y = { param([single]$v) return [single]($oy + ($v * $box / 100.0)) }
-
-  # Lineage curves from root pillar (left) to Played (top-right coral) and Made (bottom-right mint)
-  $curveW = [Math]::Max(2.5, (& $S 7.2))
-  $curvePen = [System.Drawing.Pen]::new([System.Drawing.Color]::FromArgb(235, 225, 238, 255), $curveW)
-  $curvePen.StartCap = [System.Drawing.Drawing2D.LineCap]::Round
-  $curvePen.EndCap = [System.Drawing.Drawing2D.LineCap]::Round
-
-  $x1 = (& $X 29); $yMid = (& $Y 50)
-  $x2 = (& $X 66); $yTop = (& $Y 26); $yBot = (& $Y 74)
-  $dx = (& $S 19)
-  $g.DrawBezier($curvePen, $x1, $yMid, ($x1 + $dx), $yMid, ($x2 - $dx), $yTop, $x2, $yTop)
-  $g.DrawBezier($curvePen, $x1, $yMid, ($x1 + $dx), $yMid, ($x2 - $dx), $yBot, $x2, $yBot)
-
-  # Left root pillar + bridge bar (echoing header logo mark)
-  $stemPath = New-RoundedRectPath (& $X 10) (& $Y 14) (& $S 21) (& $S 72) (& $S 5.5)
-  $g.FillPath([System.Drawing.Brushes]::White, $stemPath)
-
-  $barPath = New-RoundedRectPath (& $X 24) (& $Y 41) (& $S 24) (& $S 18) (& $S 4.5)
-  $g.FillPath([System.Drawing.Brushes]::White, $barPath)
-
-  # Top-right node: Warm coral ("Played" / Favorites)
-  $topOuter = New-RoundedRectPath (& $X 60) (& $Y 11) (& $S 30) (& $S 30) (& $S 7.5)
-  $coralBrush = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 255, 110, 90))
-  $g.FillPath($coralBrush, $topOuter)
-  $nodeRim = [System.Drawing.Pen]::new([System.Drawing.Color]::White, [Math]::Max(1.5, (& $S 3.2)))
-  $g.DrawPath($nodeRim, $topOuter)
-
-  # Bottom-right node: Bright mint ("Made" / Craft)
-  $botOuter = New-RoundedRectPath (& $X 60) (& $Y 59) (& $S 30) (& $S 30) (& $S 7.5)
-  $mintBrush = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 56, 201, 168))
-  $g.FillPath($mintBrush, $botOuter)
-  $g.DrawPath($nodeRim, $botOuter)
+  $heartW = [single]($size * $markScale)
+  # Optical vertical nudge (+1.5% height) because a heart tapers at the bottom
+  Draw-PixelHeart $g ([single]($size / 2.0)) ([single](($size / 2.0) + ($size * 0.015))) $heartW $monochrome
 
   $bmp.Save($outPath, [System.Drawing.Imaging.ImageFormat]::Png)
   $g.Dispose(); $bmp.Dispose()
@@ -133,9 +163,8 @@ function Save-MobilePreview([string]$outPath) {
   $white  = [System.Drawing.Brushes]::White
 
   $logoBg = New-RoundedRectPath 40 52 38 38 9
-  $g.FillPath([System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 26, 99, 216)), $logoBg)
-  $g.FillRectangle($white, 49, 60, 6, 22)
-  $g.FillRectangle($white, 55, 68, 14, 6)
+  $g.FillPath([System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 29, 106, 229)), $logoBg)
+  Draw-PixelHeart $g 59 71.5 26 $false
 
   $fEye   = [System.Drawing.Font]::new("Consolas", 12, [System.Drawing.FontStyle]::Bold)
   $fTitle = [System.Drawing.Font]::new("Segoe UI", 30, [System.Drawing.FontStyle]::Bold)
@@ -145,7 +174,7 @@ function Save-MobilePreview([string]$outPath) {
 
   $g.DrawString("PLAYED & MADE", $fEye, $accent, [single]90, [single]62)
   $g.DrawString("Your Life in Games`n& Who Built Them", $fTitle, $white, [System.Drawing.RectangleF]::new(38, 112, 464, 110))
-  $g.DrawString("Tap childhood favorites across every console & home computer, trace 4,190+ games to their roots, and send thank-you postcards to the makers.", $fSub, $sub, [System.Drawing.RectangleF]::new(40, 226, 460, 96))
+  $g.DrawString("Tap childhood favorites across every console & home computer, trace 4,195+ games to their roots, and send thank-you postcards to the makers.", $fSub, $sub, [System.Drawing.RectangleF]::new(40, 226, 460, 96))
 
   $cards = @(
     @{ x=40;  y=346; w=142; h=188; yr="1989 · Game Boy"; t="Tetris";            r1=36;  g1=110; b1=168; r2=16; g2=48; b2=82;  tag="✓ Played" },
@@ -175,15 +204,16 @@ function Save-MobilePreview([string]$outPath) {
   $g.FillPath([System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 23, 31, 44)), $pill)
   $g.DrawPath([System.Drawing.Pen]::new([System.Drawing.Color]::FromArgb(120, 138, 180, 248), 1.5), $pill)
   $g.DrawString("WORKS OFFLINE  ·  ZERO SIGN-UP", $fEye, $accent, [single]62, [single]818)
-  $g.DrawString("4,190 games · 65 studio histories · Shareable PNG cards", $fSub, $white, [System.Drawing.RectangleF]::new(62, 844, 420, 48))
+  $g.DrawString("4,195+ games · 65 studio histories · Shareable PNG cards", $fSub, $white, [System.Drawing.RectangleF]::new(62, 844, 420, 48))
 
   $bmp.Save($outPath, [System.Drawing.Imaging.ImageFormat]::Png)
   $g.Dispose(); $bmp.Dispose()
   Write-Output "Generated $outPath ($W x $H)"
 }
 
-Save-PwaIcon (Join-Path $dist 'icon-192.png')          192 $false 0.68
-Save-PwaIcon (Join-Path $dist 'icon-512.png')          512 $false 0.68
-Save-PwaIcon (Join-Path $dist 'icon-maskable-512.png') 512 $true  0.58
-Save-PwaIcon (Join-Path $dist 'apple-touch-icon.png')  180 $true  0.66
+Save-PwaIcon (Join-Path $dist 'icon-192.png')            192 $false 0.68 $false
+Save-PwaIcon (Join-Path $dist 'icon-512.png')            512 $false 0.68 $false
+Save-PwaIcon (Join-Path $dist 'icon-maskable-512.png')   512 $true  0.57 $false
+Save-PwaIcon (Join-Path $dist 'icon-monochrome-512.png') 512 $true  0.68 $true
+Save-PwaIcon (Join-Path $dist 'apple-touch-icon.png')    180 $true  0.65 $false
 Save-MobilePreview (Join-Path $dist 'pwa-mobile.png')

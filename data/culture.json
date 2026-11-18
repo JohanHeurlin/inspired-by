@@ -479,6 +479,15 @@
       "bio": "Uemura's Super Famicom added rotating Mode 7 backgrounds, translucent sprite layers, shoulder buttons on its rounded controller, and an 8-channel sample audio module quietly engineered for Nintendo by Sony's Ken Kutaragi. In-cartridge chips like the Super FX pushed 16-bit pixel craft and symphonic scores to lasting heights."
     },
     {
+      "sys": "Dendy",
+      "year": 1992,
+      "maker": "Steepler / TXC Corp.",
+      "cc": "TW",
+      "engineers": "Victor Savyuk, TXC Micro Genius silicon team & animator Ivan Maximov (mascot)",
+      "headline": "Grey-and-red Famiclone & yellow '9999-in-1' carts that brought 8-bit co-op to millions",
+      "bio": "With official consoles unavailable across the former Soviet Union and much of Eastern Europe in 1992, Steepler commissioned Taiwanese maker TXC to package Famicom-compatible silicon inside a compact grey-and-red shell with a cheerful elephant mascot. Swapping bright yellow multicarts at weekend markets—playing Battle City ('Tanki'), Contra, Chip 'n Dale, and Darkwing Duck—raised an entire generation of players and developers."
+    },
+    {
       "sys": "PlayStation",
       "year": 1994,
       "maker": "Sony Computer Entertainment",

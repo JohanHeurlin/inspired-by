@@ -1,7 +1,7 @@
 {
   "id": "./",
   "name": "Played & Made — Your Life in Games",
-  "short_name": "Played & Made",
+  "short_name": "Played&Made",
   "description": "Build your childhood or dev-career gaming timeline, trace 4,190+ games back to the 1950s, and celebrate the human teams and machines that raised you.",
   "lang": "en",
   "start_url": "./",
@@ -28,6 +28,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "./icon-monochrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "monochrome"
     }
   ],
   "screenshots": [

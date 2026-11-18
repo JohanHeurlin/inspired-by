@@ -1,0 +1,196 @@
+{
+  "games": [
+    {
+      "id": "nuts-and-milk",
+      "title": "Nuts & Milk",
+      "year": 1983,
+      "dev": "Hudson Soft",
+      "cc": "JP",
+      "genres": ["platformer", "puzzle"],
+      "plats": ["MSX", "NES", "Dendy"],
+      "pop": 3,
+      "note": "Hudson Soft's single-screen fruit-gathering platformer—the first third-party cartridge ever published for Nintendo's Famicom, complete with a built-in stage editor and later ubiquitous on Dendy multicarts."
+    },
+    {
+      "id": "circus-charlie",
+      "title": "Circus Charlie",
+      "year": 1984,
+      "dev": "Konami",
+      "cc": "JP",
+      "genres": ["arcade", "platformer"],
+      "plats": ["Arcade", "NES", "Dendy", "MSX", "Commodore 64"],
+      "pop": 3,
+      "note": "Six cheerful circus events—leaping through flaming rings atop a lion, monkey-dodging on a tightrope, trampolines, rolling balls, horseback hurdles, and flying trapeze—stapled onto almost every 1990s Dendy multicart."
+    },
+    {
+      "id": "battle-city",
+      "title": "Battle City",
+      "year": 1985,
+      "dev": "Namco",
+      "cc": "JP",
+      "genres": ["arcade", "shooter"],
+      "plats": ["NES", "Dendy", "Game Boy", "Arcade"],
+      "pop": 4,
+      "note": "Two-player top-down tank co-op built around guarding a brick-walled Eagle base, grabbing star upgrades, and building custom arenas in an early console level editor—beloved across post-Soviet & Eastern European living rooms on Dendy simply as 'Tanki'."
+    },
+    {
+      "id": "teenage-mutant-ninja-turtles-iii-the-manhattan-project",
+      "title": "Teenage Mutant Ninja Turtles III: The Manhattan Project",
+      "year": 1991,
+      "dev": "Konami",
+      "cc": "JP",
+      "genres": ["beat-em-up"],
+      "plats": ["NES", "Dendy"],
+      "pop": 4,
+      "note": "Konami's original 8-bit co-op brawler—giving each Turtle a signature health-spending special attack after Shredder lifts Manhattan into the sky—cherished on NES and yellow Dendy cartridges alike."
+    },
+    {
+      "id": "darkwing-duck",
+      "title": "Darkwing Duck",
+      "year": 1992,
+      "dev": "Capcom",
+      "cc": "JP",
+      "genres": ["platformer", "action-adventure"],
+      "plats": ["NES", "Dendy", "Game Boy"],
+      "pop": 4,
+      "note": "Built by Capcom on its NES Mega Man engine, pairing nonlinear boss stages across St. Canard with cape shot-deflection, gas-gun ammo switching, and hanging from overhead hooks—an unmistakable 1990s Dendy favorite."
+    },
+    {
+      "id": "felix-the-cat",
+      "title": "Felix the Cat",
+      "year": 1992,
+      "dev": "Hudson Soft",
+      "cc": "JP",
+      "genres": ["platformer"],
+      "plats": ["NES", "Dendy", "Game Boy"],
+      "pop": 3,
+      "note": "Late-era 8-bit cartoon platformer from Hudson Soft where collecting Magic Bag hearts upgraded Felix step-by-step from a boxing glove into a wizard, car, tank, submarine, or airplane."
+    },
+    {
+      "id": "battletoads-and-double-dragon",
+      "title": "Battletoads & Double Dragon",
+      "year": 1993,
+      "dev": "Rare",
+      "cc": "GB",
+      "genres": ["beat-em-up"],
+      "plats": ["NES", "Dendy", "SNES", "Mega Drive / Genesis", "Game Boy"],
+      "pop": 4,
+      "note": "Rare's crossover brawler teaming Rash, Zitz, and Pimple with Billy and Jimmy Lee across colossal spacecraft, speeder bikes, and zero-gravity stages—pushing 8-bit hardware to its absolute limit."
+    }
+  ],
+  "links": [
+    {
+      "from": "tank-battalion",
+      "to": "battle-city",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Top-down brick-maze tank combat centered on protecting a walled Eagle headquarters from waves of enemy armor",
+      "added": "Simultaneous two-player co-op defense, star power-ups that chewed through steel walls, terrain hazards, and a built-in custom map editor right on the cartridge",
+      "src": [
+        { "t": "Battle City — Wikipedia", "u": "https://en.wikipedia.org/wiki/Battle_City" }
+      ]
+    },
+    {
+      "from": "mega-man-2",
+      "to": "darkwing-duck",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Capcom's crisp NES run-and-gun physics, selectable boss-stage structure, and expressive 8-bit sprite craft",
+      "added": "Hanging and dropping from overhead hooks, blocking projectiles with Darkwing's cape, and swapping specialized gas-gun ammo mid-stage",
+      "src": [
+        { "t": "Darkwing Duck (Capcom video game) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Darkwing_Duck_(Capcom_video_game)" }
+      ]
+    },
+    {
+      "from": "adventure-island",
+      "to": "felix-the-cat",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Hudson Soft's brisk 8-bit side-scrolling momentum, collectible stage tokens, and lighthearted world variety",
+      "added": "Multi-tier Magic Bag vehicle transformations—stepping up to a car, tank, airplane, or dolphin submarine as you gathered hearts without taking damage",
+      "src": [
+        { "t": "Felix the Cat (video game) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Felix_the_Cat_(video_game)" }
+      ]
+    },
+    {
+      "from": "double-dragon-ii-the-revenge",
+      "to": "teenage-mutant-ninja-turtles-iii-the-manhattan-project",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Two-player 8-bit belt-scrolling co-op brawling tuned around two-button Famicom and NES pads",
+      "added": "Four distinct Turtles with unique weapon reach and signature crowd-clearing throws that spent a sliver of health",
+      "src": [
+        { "t": "Teenage Mutant Ninja Turtles III: The Manhattan Project — Wikipedia", "u": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles_III:_The_Manhattan_Project" }
+      ]
+    },
+    {
+      "from": "battletoads",
+      "to": "battletoads-and-double-dragon",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Rare's oversized smash-hit finishers, vehicle-stage variety, and two-player co-op spectacle",
+      "added": "Playable Double Dragon martial artists Billy and Jimmy Lee alongside all three Toads, with a more approachable difficulty curve and ship-boarding stages",
+      "src": [
+        { "t": "Battletoads & Double Dragon — Wikipedia", "u": "https://en.wikipedia.org/wiki/Battletoads_%26_Double_Dragon" }
+      ]
+    },
+    {
+      "from": "double-dragon",
+      "to": "battletoads-and-double-dragon",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Technōs Japan's street-brawling brothers Billy and Jimmy Lee, spin kicks, and Shadow Boss",
+      "added": "Blended Double Dragon's martial-arts moveset directly into Rare's high-speed cartoon beat-'em-up engine",
+      "src": [
+        { "t": "Battletoads & Double Dragon — Wikipedia", "u": "https://en.wikipedia.org/wiki/Battletoads_%26_Double_Dragon" }
+      ]
+    }
+  ],
+  "updates": [
+    { "id": "super-mario-bros", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "super-mario-bros-3", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "contra", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "super-contra", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "duck-hunt", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "ducktales", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "chip-n-dale-rescue-rangers", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "adventure-island", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "tiny-toon-adventures", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "road-fighter", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "antarctic-adventure", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "ice-climber", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "excitebike", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "bomberman", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "lode-runner", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "galaxian", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "double-dragon", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "double-dragon-ii-the-revenge", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "prince-of-persia", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "battletoads", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "mega-man-2", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "castlevania", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "wild-gunman", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "hogans-alley", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "balloon-fight", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "popeye", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "karateka", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "yie-ar-kung-fu", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "1942", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "mappy", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "kung-fu-master", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "little-nemo-the-dream-master", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "jackal", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "green-beret", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "elevator-action", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "dig-dug", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "pac-man", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "donkey-kong", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "mario-bros", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "tetris", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "dr-mario", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "ninja-gaiden", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "ghosts-n-goblins", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "teenage-mutant-ninja-turtles", "field": "addPlats", "value": ["Dendy"] },
+    { "id": "bubble-bobble", "field": "addPlats", "value": ["Dendy"] }
+  ]
+}
