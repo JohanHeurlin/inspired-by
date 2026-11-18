@@ -7,10 +7,12 @@
 /* Layout: a game designer's notebook. Graph-paper ground; your life runs down the page year by year;
    family trees read left (older) to right (newer); every link card leads with what the newer team added. */
 :root{
+  --target-size:24px;
   --paper:#EAF0F7; --grid:rgb(43 69 224 / .048); --card:#FFFFFF; --ink:#131726; --ink2:#363D50; --muted:#5D667A; --line:#D5DCE6; --line2:#A5AEBF;
   --accent:#1A63D8; --accent-ink:#FFFFFF; --accent-soft:#E1ECFF;
   --hook:#C8780A; --hook-ink:#FFFFFF; --hook-soft:#FEF1D8;
   --love:#DF3F2C; --love-ink:#FFFFFF; --love-soft:#FCE5E1;
+  --craft:#0D7C66; --craft-ink:#FFFFFF; --craft-soft:#D9F4EC;
   --up:#E4ECFF; --up-ink:#1F3A8A; --down:#DCF1E6; --down-ink:#1B6244;
   --t-dev:#1A63D8; --t-team:#7A3FD1; --t-series:#69738D; --t-critic:#B06C0A; --t-mech:#0D8577; --t-disp:#C2332B;
   --shadow:0 10px 30px rgb(20 26 50 / .12);
@@ -20,11 +22,13 @@
   --f-pixel:"Silkscreen","IBM Plex Mono",ui-monospace,monospace;
   --f-emoji:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif;
 }
+@media (pointer:coarse){:root{--target-size:44px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0F141C; --grid:rgb(138 180 248 / .05); --card:#171F2C; --ink:#E8ECF6; --ink2:#C6CCDB; --muted:#95A0B5; --line:#263144; --line2:#46536B;
   --accent:#8AB4F8; --accent-ink:#0A101D; --accent-soft:#1C283E;
   --hook:#F5B041; --hook-ink:#1D1202; --hook-soft:#352710;
   --love:#FF6E5A; --love-ink:#1A0806; --love-soft:#3A1D1B;
+  --craft:#38C9A8; --craft-ink:#051F19; --craft-soft:#12332C;
   --up:#182338; --up-ink:#ADC6FA; --down:#132920; --down-ink:#8FD7B4;
   --t-dev:#8AB4F8; --t-team:#B78DF6; --t-series:#A4AEC4; --t-critic:#E6A63F; --t-mech:#3EC4B1; --t-disp:#F26B61;
   --shadow:0 10px 30px rgb(0 0 0 / .45); color-scheme:dark}}
@@ -33,18 +37,25 @@
   --accent:#8AB4F8; --accent-ink:#0A101D; --accent-soft:#1C283E;
   --hook:#F5B041; --hook-ink:#1D1202; --hook-soft:#352710;
   --love:#FF6E5A; --love-ink:#1A0806; --love-soft:#3A1D1B;
+  --craft:#38C9A8; --craft-ink:#051F19; --craft-soft:#12332C;
   --up:#182338; --up-ink:#ADC6FA; --down:#132920; --down-ink:#8FD7B4;
   --t-dev:#8AB4F8; --t-team:#B78DF6; --t-series:#A4AEC4; --t-critic:#E6A63F; --t-mech:#3EC4B1; --t-disp:#F26B61;
   --shadow:0 10px 30px rgb(0 0 0 / .45); color-scheme:dark}
+html{scroll-padding-top:calc(3.5rem + env(safe-area-inset-top,0px));scroll-padding-bottom:calc(4.5rem + env(safe-area-inset-bottom,0px))}
 html,body{background-color:var(--paper);color:var(--ink)}
-body{font-family:var(--f-body);font-size:15px;line-height:1.5;
+body{font-family:var(--f-body);font-size:15px;line-height:1.5;overflow-wrap:break-word;
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--paper)}
-.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));box-sizing:border-box}
+.wrap{max-width:min(1380px,100%);margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));box-sizing:border-box}
+@media (min-width:1800px){.wrap{max-width:1520px;padding-inline:max(28px,env(safe-area-inset-left,0px))}}
 button{font:inherit;color:inherit;cursor:pointer}
+:where(button.btn,button.chip,button.syschip,nav a,.artbtn,input,select,textarea){min-block-size:var(--target-size);box-sizing:border-box}
+:where(nav a){display:inline-flex;align-items:center;justify-content:center}
+:where(a,code){overflow-wrap:anywhere}
 a{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 h1,h2,h3{text-wrap:balance}
+p,dd,li{text-wrap:pretty}
 input,select{font:inherit;color:var(--ink)}
 .flag{font-family:var(--f-emoji);font-style:normal;font-weight:400;letter-spacing:0}
 .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
@@ -70,14 +81,15 @@ input,select{font:inherit;color:var(--ink)}
 .sync{font-size:12px;color:var(--muted)}
 @media (max-width:740px){.logo small{display:none}.tab{padding:6px 9px;font-size:13px}}
 @media (max-width:580px){.topin{flex-wrap:wrap;gap:6px 8px;padding-block:8px}.tabs{width:100%;margin:0;order:3}.tab{flex:1;text-align:center;padding:6px 3px;font-size:13px}.artbtn{margin-left:auto}}
+@media (max-width:380px){.tab{font-size:11.5px;padding:6px 2px}.artbtn{font-size:11px;padding:4px 8px}.seg{flex-wrap:wrap}.seg button{padding:6px 8px;font-size:12px}}
 
 /* ---------- type & controls ---------- */
-.eyebrow{font-family:var(--f-pixel);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
-.h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,5.6vw,46px);line-height:1.06;letter-spacing:-.02em;margin:0 0 12px}
-.h2{font-family:var(--f-display);font-weight:700;font-size:clamp(18px,3.2vw,22px);line-height:1.2;margin:0 0 4px}
-.h3{font-weight:700;font-size:15px;margin:0 0 4px}
-.lede{font-size:clamp(15px,2.2vw,17px);color:var(--ink2);max-width:58ch;margin:0 0 18px}
-.sub{font-size:13.5px;color:var(--muted);margin:0 0 12px;max-width:68ch}
+.eyebrow{font-family:var(--f-pixel);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.h1{font-family:var(--f-display);font-weight:700;font-size:clamp(1.75rem,1.1rem + 3.2vw,3rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 12px}
+.h2{font-family:var(--f-display);font-weight:700;font-size:clamp(1.125rem,.95rem + 1.1vw,1.5rem);line-height:1.2;margin:0 0 4px}
+.h3{font-weight:700;font-size:1rem;margin:0 0 4px}
+.lede{font-size:clamp(.95rem,.88rem + .45vw,1.125rem);color:var(--ink2);max-width:60ch;margin:0 0 18px}
+.sub{font-size:.9rem;color:var(--muted);margin:0 0 12px;max-width:68ch}
 .sec{padding-block:26px 6px}
 .sechead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:12px}
 .sechead > div{min-width:0}
@@ -85,6 +97,7 @@ input,select{font:inherit;color:var(--ink)}
 .btn:hover{border-color:var(--ink2)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btn.love{background:var(--love);border-color:var(--love);color:var(--love-ink)}
+.btn.craft{background:var(--craft);border-color:var(--craft);color:var(--craft-ink)}
 .btn.ghost{background:none;border-color:transparent}
 .btn.ghost:hover{background:var(--accent-soft)}
 .btn.sm{padding:6px 10px;font-size:13px;border-radius:8px}
@@ -94,6 +107,7 @@ input,select{font:inherit;color:var(--ink)}
 .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 11px;font-size:13px;color:var(--ink);text-decoration:none;white-space:nowrap}
 button.chip:hover{border-color:var(--line2)}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip.craftchip[aria-pressed="true"]{background:var(--craft);color:var(--craft-ink);border-color:var(--craft)}
 .chip .dot{width:9px;height:9px;border-radius:50%;background:var(--c)}
 .chip.tierchip[aria-pressed="false"]{opacity:.55}
 .chip.tierchip[aria-pressed="false"] .dot{background:transparent;box-shadow:inset 0 0 0 1.5px var(--c)}
@@ -101,7 +115,7 @@ button.chip:hover{border-color:var(--line2)}
 .field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--ink2)}
 .input{width:100%;box-sizing:border-box;border:1px solid var(--line2);background:var(--card);border-radius:10px;padding:11px 13px;font-size:16px}
 .input:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;container:cardcol / inline-size}
 .empty{color:var(--muted);font-size:14px;margin:6px 0}
 .link{border:0;background:none;padding:0;color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-size:inherit}
 
@@ -110,7 +124,7 @@ button.chip:hover{border-color:var(--line2)}
 .search .input{padding-left:40px}
 .search::before{content:"";position:absolute;left:14px;top:50%;width:13px;height:13px;border:2px solid var(--muted);border-radius:50%;transform:translateY(-62%);pointer-events:none}
 .search::after{content:"";position:absolute;left:26px;top:50%;width:7px;height:2px;background:var(--muted);transform:translateY(5px) rotate(45deg);pointer-events:none}
-.results{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:min(60vh,420px);overflow:auto;z-index:20;padding:4px}
+.results{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:min(60vh,420px);max-height:min(60dvh,420px);overflow:auto;overscroll-behavior:contain;z-index:20;padding:4px}
 .res{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;width:100%;border:0;background:none;padding:7px 8px;border-radius:8px;text-align:left}
 .res:hover,.res.on{background:var(--accent-soft)}
 .res .cv{width:30px}
@@ -156,19 +170,25 @@ button.chip:hover{border-color:var(--line2)}
 :root[data-art="era"] .cv.hasimg .ct,:root[data-art="era"] .cv.hasimg .gl,:root[data-art="era"] .cv.hasimg .cy,:root[data-art="era"] .cv.hasimg::before,:root[data-art="era"] .cv.hasimg::after{opacity:1}
 
 /* ---------- tiles ---------- */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:18px 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:18px 12px}
+@media (min-width:1400px){.grid{grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:20px 14px}}
 @media (max-width:520px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 10px}}
+@media (max-width:355px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}}
 .tile{position:relative;display:flex;flex-direction:column;gap:6px;border:0;background:none;padding:0;text-align:left;color:inherit;min-width:0}
 .tile .artwrap{position:relative;width:100%}
 .tile .art{position:relative;display:block;border:0;background:none;padding:0;width:100%;cursor:pointer;border-radius:6px}
-.tile .tjump{position:absolute;right:4px;bottom:4px;z-index:6;width:23px;height:23px;border-radius:6px;border:1px solid rgb(255 255 255 / .28);background:rgb(15 20 28 / .76);color:#fff;font-size:12px;line-height:1;display:grid;place-items:center;padding:0;backdrop-filter:blur(4px);opacity:.86}
+.tile .tjump{position:absolute;right:4px;bottom:4px;z-index:6;width:24px;height:24px;border-radius:6px;border:1px solid rgb(255 255 255 / .28);background:rgb(15 20 28 / .78);color:#fff;font-size:12px;line-height:1;display:grid;place-items:center;padding:0;backdrop-filter:blur(4px);opacity:.88}
+.tile .tjump::after{content:"";position:absolute;inset:-6px}
 .tile .tjump:hover{opacity:1;background:var(--accent);color:var(--accent-ink)}
-.tile .tn{font-size:12.5px;line-height:1.25;font-weight:600;overflow-wrap:anywhere}
+.tile .wkbadge{position:absolute;top:-7px;left:-6px;z-index:6;height:22px;border-radius:11px;padding:0 6px;display:inline-flex;align-items:center;gap:3px;background:var(--craft);color:var(--craft-ink);font-size:10.5px;font-weight:700;box-shadow:0 0 0 2px var(--paper)}
+.tile .tn{font-size:12.5px;line-height:1.25;font-weight:600;overflow-wrap:break-word}
 .tile .ts{font-size:11.5px;color:var(--muted);line-height:1.3}
-.tile .tmem{font-size:11px;color:var(--accent);line-height:1.25;font-style:italic;overflow-wrap:anywhere}
+.tile .tmem{font-size:11px;color:var(--accent);line-height:1.25;font-style:italic;overflow-wrap:break-word}
+.tile .trole{font-size:11px;color:var(--craft);font-weight:600;line-height:1.25}
 .tile.lv1 .cv{box-shadow:0 0 0 2px var(--accent)}
 .tile.lv2 .cv{box-shadow:0 0 0 2px var(--paper),0 0 0 4.5px var(--hook)}
 .tile.lv3 .cv{box-shadow:0 0 0 2px var(--paper),0 0 0 4.5px var(--love)}
+.tile.worked .cv{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--craft)}
 .lvb{position:absolute;top:-7px;right:-7px;z-index:6;min-width:24px;height:24px;box-sizing:border-box;border-radius:12px;padding:0 6px;display:grid;place-items:center;
   background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;box-shadow:0 0 0 2px var(--paper)}
 .lv2 > .art .lvb,.lv2 > .artwrap .lvb,.lvb.l2{background:var(--hook);color:var(--hook-ink)}
@@ -192,7 +212,7 @@ button.chip:hover{border-color:var(--line2)}
 .shelfrow{display:flex;align-items:flex-end;gap:10px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:thin}
 .sbook{flex:none;width:76px;display:flex;flex-direction:column;gap:5px;border:0;background:none;padding:0;color:inherit;text-align:left}
 .sbook .yr{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
-.sbook b{font-size:11.5px;line-height:1.2;font-weight:600;overflow-wrap:anywhere}
+.sbook b{font-size:11.5px;line-height:1.2;font-weight:600;overflow-wrap:break-word}
 .sarrow{flex:none;align-self:center;color:var(--line2);font-size:13px;margin-top:-34px}
 .shelf .foot{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px dashed var(--line);padding-top:10px;font-size:12.5px;color:var(--muted)}
 .trybar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-size:13px;color:var(--muted)}
@@ -212,7 +232,7 @@ button.chip:hover{border-color:var(--line2)}
 .band{padding-block:20px 4px}
 .band h2{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .pickbar{position:sticky;bottom:0;z-index:15;margin-top:24px;background:var(--paper);border-top:1px solid var(--line);
-  padding-block:10px calc(10px + env(safe-area-inset-bottom,0px))}
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .pickbar .in{display:flex;align-items:center;gap:14px}
 .pickbar .count{font-weight:700;font-size:15px;white-space:nowrap}
 .pickbar .count small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
@@ -321,13 +341,13 @@ button.chip:hover{border-color:var(--line2)}
 .roots{display:flex;align-items:flex-start;overflow-x:auto;padding:10px 2px 12px;scrollbar-width:thin}
 .rs{flex:none;width:86px;display:flex;flex-direction:column;align-items:center;gap:5px;border:0;background:none;padding:0;color:inherit}
 .rs .cv{width:62px}
-.rs b{font-size:11.5px;line-height:1.2;text-align:center;font-weight:600;overflow-wrap:anywhere}
+.rs b{font-size:11.5px;line-height:1.2;text-align:center;font-weight:600;overflow-wrap:break-word}
 .rs span{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
 .rs.cur .cv{box-shadow:0 0 0 2px var(--paper),0 0 0 4.5px var(--accent)}
 .rarr{flex:none;width:18px;align-self:flex-start;margin-top:36px;height:2px;background:var(--c,var(--line2));position:relative}
 .rarr::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left-color:var(--c,var(--line2));border-right:0}
 .rfold{flex:none;align-self:flex-start;margin-top:26px;padding:4px 9px;border:1px dashed var(--line2);border-radius:999px;font-size:11px;color:var(--muted);white-space:nowrap;margin-inline:4px}
-.treebox{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:auto;max-height:min(70vh,640px);-webkit-overflow-scrolling:touch}
+.treebox{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:auto;max-height:min(72vh,680px);max-height:min(72dvh,680px);-webkit-overflow-scrolling:touch}
 .wnode{cursor:pointer}
 .wnode:focus-visible rect{stroke:var(--accent);stroke-width:3}
 .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
@@ -379,31 +399,35 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .agehead{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1fr);gap:12px;font-weight:700;font-size:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 56px);background:var(--paper);padding:8px 0;z-index:2}
 
 /* ---------- overlays ---------- */
-.sheet{position:fixed;inset:0;z-index:50;background:rgb(6 9 18 / .5);display:flex;align-items:flex-end;justify-content:center}
-.sheetin{background:var(--paper);width:100%;max-width:680px;max-height:90vh;overflow:auto;border-radius:18px 18px 0 0;box-sizing:border-box;box-shadow:var(--shadow);
+.sheet{position:fixed;inset:0;z-index:50;background:rgb(6 9 18 / .5);display:flex;align-items:flex-end;justify-content:center;overflow:auto;overscroll-behavior:contain}
+.sheetin{background:var(--paper);width:100%;max-width:680px;max-height:90vh;max-height:90dvh;overflow:auto;overscroll-behavior:contain;border-radius:18px 18px 0 0;box-sizing:border-box;box-shadow:var(--shadow);container:sheetcol / inline-size;
   padding:16px max(18px,env(safe-area-inset-right,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
-@media (min-width:760px){.sheet{align-items:center}.sheetin{border-radius:18px;max-height:86vh}}
+@media (min-width:760px){.sheet{align-items:center}.sheetin{border-radius:18px;max-height:86vh;max-height:86dvh}}
 .sheethead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
 .sheethead h2{font-family:var(--f-display);font-size:18px;margin:0;line-height:1.2}
-.x{border:0;background:var(--card);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:18px;line-height:1;flex:none;color:var(--ink2)}
+.x{position:relative;border:0;background:var(--card);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:18px;line-height:1;flex:none;color:var(--ink2)}
+.x::after{content:"";position:absolute;inset:-6px}
 .gsheet{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:start}
 .gsheet .cv{width:96px}
+@container sheetcol (inline-size < 360px){.gsheet{grid-template-columns:1fr}.gsheet .cv{width:84px}}
+@container cardcol (inline-size < 320px){.today{grid-template-columns:1fr}.today .cv{width:76px}}
+@media (max-width:380px){.gphead{grid-template-columns:1fr;gap:12px}.gphead > .cv{width:104px}.agerow,.agehead{grid-template-columns:46px minmax(0,1fr) minmax(0,1fr);gap:8px}}
 .story > .wrap,.ov > .wrap,.stbody > .wrap{width:100%}
-.ov{position:fixed;inset:0;z-index:45;background:var(--paper);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.ov{position:fixed;inset:0;z-index:45;background:var(--paper);display:flex;flex-direction:column;max-block-size:100vh;max-block-size:100dvh;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .ovhead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-block:12px;border-bottom:1px solid var(--line)}
 .ovhead h2{font-family:var(--f-display);font-size:16px;margin:0}
-.ovbody{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;position:relative}
-.sharebox{display:flex;gap:8px;align-items:stretch;margin:8px 0}
-.sharebox input{flex:1;min-width:0;font-family:var(--f-mono);font-size:13px}
+.ovbody{flex:1;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;position:relative}
+.sharebox{display:flex;gap:8px;align-items:stretch;margin:8px 0;flex-wrap:wrap}
+.sharebox input{flex:1 1 200px;min-width:0;font-family:var(--f-mono);font-size:13px}
 .imgprev{max-width:100%;border-radius:10px;border:1px solid var(--line);display:block;margin:10px auto}
 
 /* story mode */
-.story{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--paper);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.story{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--paper);max-block-size:100vh;max-block-size:100dvh;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .sthead{display:flex;align-items:center;gap:12px;padding-block:12px}
 .stprog{flex:1;display:flex;gap:3px}
 .stprog i{flex:1;height:4px;border-radius:2px;background:var(--line)}
 .stprog i.on{background:var(--accent)}
-.stbody{flex:1;overflow:auto;display:flex;align-items:center}
+.stbody{flex:1;overflow:auto;overscroll-behavior:contain;display:flex;align-items:center}
 .stin{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center;width:100%;padding-block:12px}
 @media (max-width:640px){.stin{grid-template-columns:1fr;gap:16px;justify-items:start}}
 .stin .cv{width:min(220px,46vw);box-shadow:0 18px 40px rgb(0 0 0 / .35)}
@@ -461,10 +485,13 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .foot-about p{max-width:72ch;margin:0 0 8px}
 
 /* ---------- marquee spotlight, studios & clone lens ---------- */
-.marquee{background:var(--card);border:1.5px solid var(--accent);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);margin-top:18px}
+.marquee{background:var(--card);border:1.5px solid var(--accent);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);margin-top:18px;container:cardcol / inline-size}
+.marquee.craftbox{border-color:var(--craft)}
 .marquee-in{display:grid;grid-template-columns:92px minmax(0,1fr);gap:18px;align-items:center}
 .marquee-in > .cv{width:92px;box-shadow:0 8px 22px rgb(0 0 0 / .28)}
+@container cardcol (inline-size < 360px){.marquee-in{grid-template-columns:1fr}.marquee-in > .cv{width:76px}}
 @media (max-width:560px){.marquee-in{grid-template-columns:72px minmax(0,1fr);gap:14px}.marquee-in > .cv{width:72px}}
+.pill.craft{background:var(--craft-soft);color:var(--craft)}
 .relbadge{display:inline-flex;align-items:center;gap:4px;border-radius:6px;padding:1px 7px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);margin-left:6px}
 .relbadge.warn{background:var(--hook-soft);color:var(--hook)}
 .relbadge.disp{background:var(--love-soft);color:var(--love)}
@@ -485,6 +512,11 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .memquote{margin:8px 0 0;padding:8px 12px;background:var(--accent-soft);border-radius:8px;font-size:13px;color:var(--ink);font-style:italic}
 .lensgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
 .lenscol{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.craftcard{background:var(--card);border:1.5px solid var(--craft);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);container:cardcol / inline-size}
+.crafteyebrow{font-family:var(--f-pixel);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;color:var(--craft);margin:0 0 6px}
+.makerbtn.worked{border-color:var(--craft);background:var(--craft-soft);color:var(--craft)}
+.wktog{margin-top:2px;border:1px solid var(--line2);background:var(--card);border-radius:999px;padding:3px 8px;font-size:11px;font-weight:600;color:var(--ink2);align-self:flex-start}
+.wktog[aria-pressed="true"]{background:var(--craft);border-color:var(--craft);color:var(--craft-ink)}
 </style>
 
 <header class="top">
@@ -511,7 +543,7 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
    ================================================================ */
 const RAW=JSON.parse(document.getElementById("data").textContent);
 const NOW=Math.max(new Date().getFullYear(),2026);
-const shareBase=()=>location.protocol.startsWith("http")?location.origin+location.pathname:"https://inspired-by.github.io/";
+const shareBase=()=>location.protocol.startsWith("http")?location.origin+location.pathname:"https://johanheurlin.github.io/inspired-by/";
 const ghRepoURL=()=>{if(location.hostname.endsWith(".github.io")){const u=location.hostname.slice(0,-10),r=location.pathname.split("/").filter(Boolean)[0];if(u&&r)return `https://github.com/${u}/${r}`}return ""};
 const TIERS=[
   {k:"dev",label:"Developer said so",c:"--t-dev",w:3},
@@ -747,8 +779,9 @@ function connectPath(a,b){
    ================================================================ */
 const LV={1:{m:"✓",label:"Played"},2:{m:"★",label:"Played a ton"},3:{m:"♥",label:"Favorite"}};
 const MEM_TAGS=["Couch co-op","With siblings","With friends","LAN party","After school","Summer break","Late nights","Arcade","Hand-me-down"];
+const DEV_ROLES=["Design","Engineering","Art & Animation","Audio & Music","Narrative","Production","QA","Publishing & Ops"];
 const lvOf=e=>{const v=(e&&e.lv)|0;return v>=1&&v<=3?v:1};
-function blankHist(){return {birth:null,name:"",owned:[],years:{},top10:[],favOrder:[],sysDef:{},updated:0,stage:null}}
+function blankHist(){return {birth:null,name:"",owned:[],years:{},workedStudios:[],top10:[],favOrder:[],sysDef:{},updated:0,stage:null}}
 /* everything that arrives from someone else (a share link, another viewer's saved doc) goes through here */
 function cleanTimeline(raw){
   const d=blankHist();if(!raw||typeof raw!=="object")return d;
@@ -756,6 +789,7 @@ function cleanTimeline(raw){
   d.name=typeof raw.name==="string"?raw.name.slice(0,24):"";
   const strs=(a,n,m)=>Array.isArray(a)?a.filter(s=>typeof s==="string").slice(0,n).map(s=>s.slice(0,m)):[];
   d.owned=strs(raw.owned,60,40);d.top10=strs(raw.top10,10,120);
+  d.workedStudios=strs(raw.workedStudios,30,60).filter(id=>STUDIOS.has(id));
   const ys=raw.years&&typeof raw.years==="object"?raw.years:{};
   for(const [k,arr] of Object.entries(ys)){const y=parseInt(k,10);if(!(y>=1800&&y<=NOW)||String(y)!==String(k).trim()||!Array.isArray(arr))continue;
     const out=[];for(const e of arr.slice(0,400)){if(!e||typeof e.t!=="string"||!e.t.trim())continue;
@@ -763,20 +797,26 @@ function cleanTimeline(raw){
       if(Array.isArray(e.systems))x.systems=strs(e.systems,8,40);if(typeof e.sys==="string")x.sys=e.sys.slice(0,40);
       if(typeof e.mem==="string"&&e.mem.trim())x.mem=e.mem.trim().slice(0,90);
       if(Array.isArray(e.mtags)&&e.mtags.length)x.mtags=strs(e.mtags,4,24);
+      if(e.wk)x.wk=1;
+      if(typeof e.role==="string"&&DEV_ROLES.includes(e.role))x.role=e.role;
       out.push(x)}
     if(out.length)d.years[y]=out}
   d.updated=Number(raw.updated)||0;return d;
 }
 let hist=Object.assign(blankHist(),store.get("ib-history")||{});
 if(!hist.years)hist.years={};
+if(!Array.isArray(hist.workedStudios))hist.workedStudios=[];
 if(hist.birth&&hist.onboard===true&&!hist.stage)hist.stage=null; // version 1 flag: treat as finished
 delete hist.onboard;
 const pileOf=(d,y)=>(d.years[y]||(d.years[y]=[]));
 function entries(d){const out=[];for(const [y,p] of Object.entries(d.years||{}))for(const e of p)out.push({e,y:+y,g:findGameY(e.t,e.y||+y),lv:lvOf(e)});return out}
+const workedEntries=d=>entries(d).filter(x=>x.e.wk);
+const isWorked=(d,g)=>{const e=d&&g?entryOf(d,g):null;return !!(e&&e.wk)};
+const isWorkedStudio=(d,id)=>Array.isArray(d&&d.workedStudios)&&d.workedStudios.includes(id);
 function entryOf(d,g){for(const [y,p] of Object.entries(d.years||{})){const e=p.find(x=>{const k=norm(x.t);return k===g.n||norm1(x.t)===norm1(g.title)});if(e)return e}return null}
 function entryYearOf(d,g){for(const [y,p] of Object.entries(d.years||{})){const e=p.find(x=>{const k=norm(x.t);return k===g.n||norm1(x.t)===norm1(g.title)});if(e)return +y}return null}
 const levelOf=(d,g)=>{const e=entryOf(d,g);return e?lvOf(e):0};
-const sortPile=p=>p.sort((a,b)=>lvOf(b)-lvOf(a));
+const sortPile=p=>p.sort((a,b)=>(!!b.wk-!!a.wk)||lvOf(b)-lvOf(a));
 /* default year when picking a game: if it came out before you turned 5, place it in early childhood (age 6) so you aren't playing NES at age 1 */
 function defaultPlayedYear(g){
   if(hist.birth&&g.year<hist.birth+5)return Math.min(NOW,Math.max(g.year,hist.birth+6));
@@ -784,8 +824,41 @@ function defaultPlayedYear(g){
 }
 function setLevel(g,lv,forceYear=null){
   for(const [y,p] of Object.entries(hist.years)){const i=p.findIndex(x=>norm(x.t)===g.n||norm1(x.t)===norm1(g.title));
-    if(i>=0){if(lv<=0)p.splice(i,1);else p[i].lv=lv;sortPile(p);save();return}}
+    if(i>=0){if(lv<=0&&!p[i].wk)p.splice(i,1);else p[i].lv=Math.max(1,lv);sortPile(p);save();return}}
   if(lv>0){const py=forceYear||defaultPlayedYear(g);const p=pileOf(hist,py);p.push({t:g.title,p:brandOf(g),y:g.year,lv});sortPile(p);save()}
+}
+function toggleWorked(g,forceRole){
+  const shipY=Math.min(NOW,Math.max(1950,g.year||NOW));
+  const cur=entryOf(hist,g),curY=entryYearOf(hist,g);
+  if(cur){
+    if(cur.wk&&forceRole===undefined){delete cur.wk;delete cur.role;save();return false}
+    cur.wk=1;
+    if(forceRole!==undefined){if(forceRole&&DEV_ROLES.includes(forceRole))cur.role=forceRole;else delete cur.role}
+    if(curY&&curY!==shipY)moveEntryYear(curY,cur.t,shipY);else save();
+    return true;
+  }
+  const p=pileOf(hist,shipY);
+  const item={t:g.title,p:brandOf(g),y:g.year,lv:1,wk:1};
+  if(forceRole&&DEV_ROLES.includes(forceRole))item.role=forceRole;
+  const st=findStudio(studio(g));
+  if(st&&!isWorkedStudio(hist,st.id))hist.workedStudios=[...(hist.workedStudios||[]),st.id].slice(0,30);
+  p.push(item);sortPile(p);save();return true;
+}
+function toggleWorkedStudio(id){
+  if(!STUDIOS.has(id))return false;
+  const cur=new Set(hist.workedStudios||[]);
+  const on=!cur.has(id);
+  if(on)cur.add(id);else cur.delete(id);
+  hist.workedStudios=[...cur].slice(0,30);save();return on;
+}
+function addWorkedCustom(title,y,role){
+  const yr=Math.min(NOW,Math.max(1950,+y||NOW));
+  const p=pileOf(hist,yr);
+  const ex=p.find(x=>norm(x.t)===norm(title));
+  if(ex){ex.wk=1;if(role&&DEV_ROLES.includes(role))ex.role=role;sortPile(p);save();return}
+  const item={t:title.slice(0,80),p:"",y:null,lv:1,wk:1};
+  if(role&&DEV_ROLES.includes(role))item.role=role;
+  p.push(item);sortPile(p);save();
 }
 function moveEntryYear(fromY,title,toY){
   if(fromY===toY||!(toY>=1950&&toY<=NOW))return fromY;
@@ -806,21 +879,26 @@ function sysListOf(e,d){if(Array.isArray(e.systems))return [...new Set(e.systems
 let syncMsg="";
 function save(){hist.updated=Date.now();store.set("ib-history",hist);queueSync()}
 
-/* share links carry the whole timeline in the hash: t1-name-birth-systems-played-alot-favorites-top10-custom(-notes) */
+/* share links carry the whole timeline in the hash: t1-name-birth-systems-played-alot-favorites-top10-custom(-notesAndMaker) */
 const b36=(n,w)=>n.toString(36).padStart(w,"0");
+const hex4=n=>n.toString(16).padStart(4,"0");
 const toHex=(s,max)=>[...new TextEncoder().encode(String(s)).slice(0,max)].map(b=>b.toString(16).padStart(2,"0")).join("");
 const fromHex=h=>{try{return new TextDecoder().decode(new Uint8Array((h.match(/../g)||[]).map(x=>parseInt(x,16))))}catch(e){return ""}};
 function encodeShare(d){
   const lv={1:[],2:[],3:[]},custom=[],notes=[];
   for(const {e,y,g,lv:l} of entries(d)){
+    const ri=e.role&&DEV_ROLES.includes(e.role)?DEV_ROLES.indexOf(e.role):8;
     if(g&&g.year===y&&g.code<46656)lv[l].push(b36(g.code,3));
-    else if(g&&g.code<46656)custom.push("g"+String(y-1900).padStart(3,"0")+l+b36(g.code,3));
+    else if(g&&g.code<65536)custom.push("h"+String(y-1900).padStart(3,"0")+l+(e.wk?ri:9)+hex4(g.code));
+    else if(e.wk)custom.push("w"+String(y-1900).padStart(3,"0")+l+ri+toHex(e.t,40));
     else custom.push(String(y-1900).padStart(3,"0")+l+toHex(e.t,40));
-    if(g&&g.code<46656&&(e.mem||(e.mtags&&e.mtags.length))){
+    if(g&&g.code<65536&&e.wk&&g.year===y)notes.push("w"+hex4(g.code)+ri);
+    if(g&&g.code<65536&&(e.mem||(e.mtags&&e.mtags.length))){
       const ti=(e.mtags||[]).map(t=>MEM_TAGS.indexOf(t)).filter(k=>k>=0).join("");
-      notes.push(b36(g.code,3)+ti+"q"+toHex(e.mem||"",50));
+      notes.push("n"+hex4(g.code)+ti+"q"+toHex(e.mem||"",50));
     }
   }
+  (d.workedStudios||[]).forEach(id=>{if(STUDIOS.has(id))notes.push("s"+toHex(id,32))});
   const owned=(d.owned||[]).map(n=>SYS_IDX.get(n)).filter(i=>i!=null).map(i=>b36(i,2)).join("");
   const t10=(d.top10||[]).map(k=>{const g=byNorm.get(k)||byNorm1.get(k);return g?b36(g.code,3):""}).join("");
   const parts=["t1",toHex(d.name||"",24),d.birth||0,owned,lv[1].join(""),lv[2].join(""),lv[3].join(""),t10,custom.join("z")];
@@ -834,10 +912,15 @@ function decodeShare(s){
   [4,5,6].forEach((k,j)=>{const seg=p[k]||"";for(let i=0;i+3<=seg.length;i+=3){const g=byCode.get(parseInt(seg.substr(i,3),36));if(g)pileOf(d,g.year).push({t:g.title,p:brandOf(g),y:g.year,lv:j+1})}});
   const t=p[7]||"";for(let i=0;i+3<=t.length;i+=3){const g=byCode.get(parseInt(t.substr(i,3),36));if(g)d.top10.push(g.n)}
   (p[8]||"").split("z").filter(Boolean).forEach(x=>{
-    if(x[0]==="g"&&x.length>=8){const y=1900+parseInt(x.slice(1,4),10),l=+x[4]||1,g=byCode.get(parseInt(x.slice(5,8),36));if(g&&y>1900)pileOf(d,y).push({t:g.title,p:brandOf(g),y:g.year,lv:l})}
+    if(x[0]==="h"&&x.length>=10){const y=1900+parseInt(x.slice(1,4),10),l=+x[4]||1,rk=+x[5],g=byCode.get(parseInt(x.slice(6,10),16));if(g&&y>1900){const it={t:g.title,p:brandOf(g),y:g.year,lv:l};if(rk<9){it.wk=1;if(DEV_ROLES[rk])it.role=DEV_ROLES[rk]}pileOf(d,y).push(it)}}
+    else if(x[0]==="w"&&x.length>=7){const y=1900+parseInt(x.slice(1,4),10),l=+x[4]||1,rk=+x[5],title=fromHex(x.slice(6));if(title&&y>1900){const it={t:title,p:"",y:null,lv:l,wk:1};if(DEV_ROLES[rk])it.role=DEV_ROLES[rk];pileOf(d,y).push(it)}}
+    else if(x[0]==="g"&&x.length>=8){const y=1900+parseInt(x.slice(1,4),10),l=+x[4]||1,g=byCode.get(parseInt(x.slice(5,8),36));if(g&&y>1900)pileOf(d,y).push({t:g.title,p:brandOf(g),y:g.year,lv:l})}
     else{const y=1900+parseInt(x.slice(0,3),10),l=+x[3]||1,title=fromHex(x.slice(4));if(title&&y>1900)pileOf(d,y).push({t:title,p:"",y:null,lv:l})}
   });
   if(p[9]){(p[9]||"").split("z").filter(Boolean).forEach(x=>{
+    if(x[0]==="w"&&x.length>=6){const g=byCode.get(parseInt(x.slice(1,5),16)),rk=+x[5];const e=g&&entryOf(d,g);if(e){e.wk=1;if(DEV_ROLES[rk])e.role=DEV_ROLES[rk]}return}
+    if(x[0]==="s"&&x.length>2){const id=fromHex(x.slice(1));if(STUDIOS.has(id)&&!d.workedStudios.includes(id))d.workedStudios.push(id);return}
+    if(x[0]==="n"&&x.length>=6){const g=byCode.get(parseInt(x.slice(1,5),16)),qi=x.indexOf("q",5);if(!g||qi<0)return;const tags=[...x.slice(5,qi)].map(c=>MEM_TAGS[+c]).filter(Boolean),mem=fromHex(x.slice(qi+1));const e=entryOf(d,g);if(e){if(tags.length)e.mtags=tags;if(mem)e.mem=mem}return}
     const g=byCode.get(parseInt(x.slice(0,3),36));if(!g)return;
     const qi=x.indexOf("q",3);if(qi<0)return;
     const tags=[...x.slice(3,qi)].map(c=>MEM_TAGS[+c]).filter(Boolean),mem=fromHex(x.slice(qi+1));
@@ -855,7 +938,7 @@ const DEC=new Map(); // decoded share links, by payload
 let syncT=null,syncing=false,syncAgain=false;
 function queueSync(){if(!CAPS.db||!CAPS.me||CAPS.canWrite===false)return;clearTimeout(syncT);syncT=setTimeout(flush,1200)}
 function packHist(h){const years={};for(const [y,p] of Object.entries(h.years||{}))if(p.length)years[y]=p;
-  return {v:2,birth:h.birth,name:h.name||"",owned:h.owned||[],years,sysDef:h.sysDef||{},favOrder:h.favOrder||[],top10:h.top10||[],updated:h.updated||Date.now()}}
+  return {v:2,birth:h.birth,name:h.name||"",owned:h.owned||[],workedStudios:h.workedStudios||[],years,sysDef:h.sysDef||{},favOrder:h.favOrder||[],top10:h.top10||[],updated:h.updated||Date.now()}}
 async function flush(){
   if(syncing){syncAgain=true;return}syncing=true;
   try{await CAPS.db.doc("timelines/"+CAPS.me).set(packHist(hist));syncMsg="Saved to your account"}
@@ -906,7 +989,7 @@ function friendList(){
 /* ================================================================
    Router and views
    ================================================================ */
-const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",trail:[],tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",makerRole:"",trail:[],tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
 state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
 function parseHash(){
   let h="";try{h=decodeURIComponent(location.hash.slice(1))}catch(e){h=location.hash.slice(1)}
@@ -978,10 +1061,11 @@ function renderStart(m){
         <button class="btn primary" type="submit">Start my timeline</button>
       </form>
       <p class="sub" id="birthErr" style="margin-top:8px" hidden></p>
+      <p class="sub" style="margin-top:10px;font-size:13.5px">Work in the game industry? <button type="button" class="link" data-act="makerSheet">Build a dev / maker credits timeline ▸</button></p>
     </div>
     ${chain.length?`<div class="shelf">
       <h2><b>${esc(hg.title)}</b> stands on ${span} years of game design</h2>
-      <div class="shelfrow" id="heroShelf">${chain.map((s,k)=>`${k?(s.collapsed?`<span class="rfold" style="margin-top:0;align-self:center">… ${s.collapsed.n} more …</span>`:`<span class="sarrow" aria-hidden="true">▸</span>`):""}<button class="sbook" data-act="game" data-id="${s.g.id}">${cover(s.g)}<span class="yr">${s.g.year}</span><b>${esc(s.g.title)}</b></button>`).join("")}</div>
+      <div class="shelfrow" id="heroShelf" tabindex="0" role="region" aria-label="Lineage preview">${chain.map((s,k)=>`${k?(s.collapsed?`<span class="rfold" style="margin-top:0;align-self:center">… ${s.collapsed.n} more …</span>`:`<span class="sarrow" aria-hidden="true">▸</span>`):""}<button class="sbook" data-act="game" data-id="${s.g.id}">${cover(s.g)}<span class="yr">${s.g.year}</span><b>${esc(s.g.title)}</b></button>`).join("")}</div>
       <div class="foot"><span>${plural(full.length-1,"step")} from ${esc(chain[0].g.title)}</span><button class="btn sm primary" data-act="walk" data-id="${hg.id}">Walk the roots ▸</button></div>
     </div>`:""}
   </section>
@@ -1034,11 +1118,11 @@ function quickBands(birth,owned){
   }
   return bands;
 }
-function tileHTML(g,d,{act="cycle",sub=null,cls=""}={}){
-  const lv=d?levelOf(d,g):0;
+function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false}={}){
+  const lv=d?levelOf(d,g):0,ent=d?entryOf(d,g):null,wk=!!(ent&&ent.wk);
   const jump=(act==="cycle"&&g.tree)?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" data-close="1" title="Open ${esc(g.title)} family tree" aria-label="Open ${esc(g.title)} family tree">⑂</button>`:"";
-  return `<div class="tile${lv?" lv"+lv:""} ${cls}"><div class="artwrap"><button class="art" data-act="${act}" data-id="${g.id}" aria-label="${esc(g.title)}, ${lv?LV[lv].label:"not played"}">${cover(g)}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button>${jump}</div>
-    <span class="tn">${esc(g.title)}</span>${sub!==null?`<span class="ts">${sub}</span>`:`<span class="ts">${g.year} · ${esc(studio(g))}</span>`}</div>`}
+  return `<div class="tile${lv?" lv"+lv:""}${wk?" worked":""} ${cls}"><div class="artwrap"><button class="art" data-act="${act}" data-id="${g.id}" aria-label="${esc(g.title)}, ${wk?"worked on it":lv?LV[lv].label:"not played"}">${cover(g)}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button>${jump}</div>
+    <span class="tn">${esc(g.title)}</span>${wk&&ent.role?`<span class="trole">🛠 ${esc(ent.role)}</span>`:""}${sub!==null?`<span class="ts">${sub}</span>`:`<span class="ts">${g.year} · ${esc(studio(g))}</span>`}${wkTog?`<button type="button" class="wktog" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on ✓":"I worked on"}</button>`:""}</div>`}
 function histBars(d,from,to){const counts={},loves={};for(const {y,lv} of entries(d)){counts[y]=(counts[y]||0)+1;if(lv===3)loves[y]=1}
   const max=Math.max(1,...Object.values(counts));let h="";for(let y=from;y<=to;y++){const c=counts[y]||0;h+=`<i class="${c?(loves[y]?"l":""):"z"}" style="height:${c?Math.max(12,c/max*100):6}%" title="${y}: ${c}"></i>`}return h}
 function pickSummary(){const es=entries(hist);const ys=es.map(x=>x.y);return {n:es.length,from:ys.length?Math.min(...ys):hist.birth,to:ys.length?Math.max(...ys):hist.birth}}
@@ -1069,48 +1153,91 @@ function refreshTile(btn,g){const tile=btn.closest(".tile");if(!tile)return;cons
 
 /* ---------- my timeline ---------- */
 function lifeStage(age){return age<0?"Before you were born":age<=12?"Childhood":age<=19?"Teens":age<=29?"Your twenties":age<=39?"Your thirties":age<=49?"Your forties":"Fifty and up"}
-function lifeStrip(d,{mine=true}={}){
-  const es=entries(d);if(!es.length)return `<p class="empty">No games yet.</p>`;
+function lifeStrip(d,{mine=true,workedOnly=false}={}){
+  const es=(workedOnly?workedEntries(d):entries(d));
+  if(!es.length)return workedOnly?`<div class="card"><p class="empty" style="margin:0">No game credits marked yet. ${mine?`<button type="button" class="link" data-act="makerSheet">Add shipped or canceled games you worked on ▸</button>`:""}</p></div>`:`<p class="empty">No games yet.</p>`;
   const byY={};es.forEach(x=>(byY[x.y]=byY[x.y]||[]).push(x));
-  const ys=Object.keys(byY).map(Number);const from=mine?Math.min(d.birth||ys[0],...ys):Math.min(...ys),to=mine?NOW:Math.max(...ys);
+  const ys=Object.keys(byY).map(Number);
+  const from=workedOnly?Math.min(...ys):(mine?Math.min(d.birth||ys[0],...ys):Math.min(...ys)),to=workedOnly?Math.max(...ys):(mine?NOW:Math.max(...ys));
   let h="",stage="",gapFrom=null;
-  const flushGap=y=>{if(gapFrom!=null){const a=gapFrom,b=y-1;h+=`<div class="ygap"><b>${a===b?a:a+"–"+b}</b><span>Nothing yet</span>${mine?`<button class="link" data-act="year" data-y="${a}">Add games from ${a===b?a:a+"–"+b}</button>`:""}</div>`;gapFrom=null}};
+  const flushGap=y=>{if(gapFrom!=null){if(!workedOnly){const a=gapFrom,b=y-1;h+=`<div class="ygap"><b>${a===b?a:a+"–"+b}</b><span>Nothing yet</span>${mine?`<button class="link" data-act="year" data-y="${a}">Add games from ${a===b?a:a+"–"+b}</button>`:""}</div>`}gapFrom=null}};
   for(let y=from;y<=to;y++){
-    const age=y-(d.birth||y),st=lifeStage(age);
-    if(st!==stage){flushGap(y);h+=`<div class="stage">${st}</div>`;stage=st}
-    const xs=(byY[y]||[]).sort((a,b)=>b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
+    const age=y-(d.birth||y),st=workedOnly?`${Math.floor(y/10)*10}s`:lifeStage(age);
+    const xs=(byY[y]||[]).sort((a,b)=>(!!b.e.wk-!!a.e.wk)||b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
     if(!xs.length){if(gapFrom==null)gapFrom=y;continue}
+    if(st!==stage){flushGap(y);h+=`<div class="stage">${st}</div>`;stage=st}
     flushGap(y);
-    h+=`<div class="yr"><div class="yl"><b>${y}</b><span>${age<0?`${-age} before you`:age===0?"born":"age "+age}</span></div><div class="yt">${xs.map(x=>{const g=x.g;const ttl=g?g.title:x.e.t;
-      const relDiff=g&&g.year!==y?`<span class="ts">Out ${g.year}</span>`:"";
+    h+=`<div class="yr"><div class="yl"><b>${y}</b><span>${d.birth?(age<0?`${-age} before you`:age===0?"born":"age "+age):""}</span></div><div class="yt">${xs.map(x=>{const g=x.g,wk=!!x.e.wk;const ttl=g?g.title:x.e.t;
+      const relDiff=g&&g.year!==y?`<span class="ts">Out ${g.year}</span>`:(!g&&wk?`<span class="ts">Custom / unshipped</span>`:"");
+      const roleLine=wk?`<span class="trole">🛠 ${esc(x.e.role||"Worked on it")}</span>`:"";
       const memLine=x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:(x.e.mtags&&x.e.mtags.length?`<span class="ts">${esc(x.e.mtags[0])}</span>`:"");
-      return `<div class="tile lv${x.lv}"><div class="artwrap"><button class="art" data-act="entry" data-y="${y}" data-t="${esc(x.e.t)}" ${mine?"":`data-ro="1"`} aria-label="${esc(ttl)}, ${LV[x.lv].label}">${coverOfEntry(x.e,y,{showYear:false})}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}" aria-hidden="true">${LV[x.lv].m}</span></button>${g&&g.tree?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" title="Open family tree" aria-label="Open ${esc(ttl)} family tree">⑂</button>`:""}</div><span class="tn">${esc(ttl)}</span>${relDiff}${memLine}</div>`}).join("")}
-      ${mine?`<button class="yadd" data-act="year" data-y="${y}" aria-label="Add games from ${y}">+ Add</button>`:""}</div></div>`;
+      return `<div class="tile lv${x.lv}${wk?" worked":""}"><div class="artwrap"><button class="art" data-act="entry" data-y="${y}" data-t="${esc(x.e.t)}" ${mine?"":`data-ro="1"`} aria-label="${esc(ttl)}, ${wk?"worked on it":LV[x.lv].label}">${coverOfEntry(x.e,y,{showYear:false})}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}" aria-hidden="true">${LV[x.lv].m}</span></button>${g&&g.tree?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" title="Open family tree" aria-label="Open ${esc(ttl)} family tree">⑂</button>`:""}</div><span class="tn">${esc(ttl)}</span>${roleLine}${relDiff}${memLine}</div>`}).join("")}
+      ${mine&&(workedOnly?`<button class="yadd" data-act="makerSheet" aria-label="Add game credit">+ Credit</button>`:`<button class="yadd" data-act="year" data-y="${y}" aria-label="Add games from ${y}">+ Add</button>`)||""}</div></div>`;
   }
   flushGap(to+1);
   return h;
 }
 function timelineStats(d){const es=entries(d),ys=new Set(es.map(x=>x.y));const sys=new Set(),yc={};es.forEach(x=>{yc[x.y]=(yc[x.y]||0)+1;sysListOf(x.e,d).forEach(s=>sys.add(s))});
   let peakY=null,peakN=0;for(const [y,n] of Object.entries(yc))if(n>peakN){peakN=n;peakY=+y}
-  return {n:es.length,years:ys.size,sys:sys.size,fav:es.filter(x=>x.lv===3).length,peakY,peakN,from:es.length?Math.min(...ys):null,to:es.length?Math.max(...ys):null}}
+  return {n:es.length,wk:es.filter(x=>x.e.wk).length,years:ys.size,sys:sys.size,fav:es.filter(x=>x.lv===3).length,peakY,peakN,from:es.length?Math.min(...ys):null,to:es.length?Math.max(...ys):null}}
+function makerLegacyOf(d){
+  const wk=workedEntries(d).sort((a,b)=>a.y-b.y);
+  const stIds=new Set(d.workedStudios||[]);
+  wk.forEach(x=>{if(x.g){const st=findStudio(studio(x.g));if(st)stIds.add(st.id)}});
+  const studios=[...stIds].map(id=>STUDIOS.get(id)).filter(Boolean);
+  if(!wk.length&&!studios.length)return null;
+  const wkSet=new Set(wk.filter(x=>x.g).map(x=>x.g.i));
+  const direct=new Set(),reach=new Map(),q=[];
+  wk.filter(x=>x.g).forEach(x=>{
+    DOWN[x.g.i].forEach(l=>{if(l.minor||l.tier==="disp")return;direct.add(l.to);if(!reach.has(l.to)){reach.set(l.to,{via:x.g,step:1});q.push(l.to)}});
+  });
+  let qi=0;while(qi<q.length){const v=q[qi++],info=reach.get(v);
+    for(const l of DOWN[v]){if(l.minor||l.tier==="disp")continue;if(!reach.has(l.to)){reach.set(l.to,{via:info.via,step:info.step+1});q.push(l.to)}}}
+  wkSet.forEach(i=>{direct.delete(i);reach.delete(i)});
+  const desc=[...reach.entries()].map(([i,info])=>({g:G[i],via:info.via,step:info.step,s:(info.step===1?24:0)+G[i].pop*10+Math.min(G[i].inf,300)/15})).sort((a,b)=>b.s-a.s||a.g.year-b.g.year);
+  const roles=[...new Set(wk.map(x=>x.e.role).filter(Boolean))];
+  const unshipped=wk.filter(x=>!x.g);
+  return {wk,studios,directCount:direct.size,reachCount:reach.size,desc:desc.slice(0,12),roles,unshipped,from:wk.length?wk[0].y:null,to:wk.length?wk[wk.length-1].y:null};
+}
+function makerSection(d,mine,pre){
+  const mk=pre||makerLegacyOf(d);if(!mk)return "";
+  const who=mine?"you":"they",pos=mine?"your":"their";
+  return `<section class="wrap sec" id="makerSec"><div class="craftcard">
+    <div class="sechead" style="margin-bottom:8px"><div><p class="crafteyebrow">🛠 Maker legacy & ripple effect</p>
+      <h2 class="h2">${mine?"Games & studios you helped build":`Games & studios ${esc(d.name||"they")} helped build`}</h2>
+      <p class="sub" style="margin:4px 0 0">${mk.wk.length?`<b>${plural(mk.wk.length,"project")}</b>${mk.from?` (${mk.from===mk.to?mk.from:mk.from+"–"+mk.to})`:""}`:"Studio alumni"}${mk.studios.length?` across <b>${plural(mk.studios.length,"studio")}</b>`:""}${mk.roles.length?` · ${esc(mk.roles.join(", "))}`:""}${mk.reachCount?` · <b>${mk.reachCount.toLocaleString()}</b> later ${mk.reachCount===1?"game traces":"games trace"} back to work ${who} touched.`:""}</p>
+    </div>${mine?`<button class="btn sm craft" data-act="makerSheet">🛠 Add / edit credits</button>`:""}</div>
+    ${mk.studios.length?`<div class="makers" style="margin:10px 0 6px">${mk.studios.map(s=>`<button type="button" class="makerbtn worked" data-act="studio" data-st="${esc(s.id)}">🛠 ${flag(s.cc)} ${esc(s.name)}<span>${s.games.length}</span></button>`).join("")}</div>`:""}
+    ${mk.unshipped.length?`<p class="sub" style="margin:8px 0 0;font-size:13px">Includes ${plural(mk.unshipped.length,"unshipped or custom project")} (${mk.unshipped.map(u=>`<b>${esc(u.e.t)}</b>, ${u.y}`).join(" · ")}) — because canceled games still carry years of real craft.</p>`:""}
+    ${mk.desc.length?`<h3 class="h3" style="margin-top:16px">The ripple effect: later games ${pos} work helped inspire</h3>
+      <p class="sub" style="margin-bottom:10px">${mk.directCount?`${plural(mk.directCount,"direct successor")} borrowed straight from ${pos} games`:""}${mk.reachCount>mk.directCount?`, and ${mk.reachCount.toLocaleString()} across all generations`:""}.</p>
+      <div class="recs">${mk.desc.map(r=>`<div class="tile"><button class="art" data-act="game" data-id="${r.g.id}">${cover(r.g)}</button><span class="tn">${esc(r.g.title)}</span><span class="why">${r.step===1?"Directly from ":"Traces to "}${esc(r.via.title)}</span></div>`).join("")}</div>`:""}
+  </div></section>`;
+}
 function renderTimeline(m){
-  const d=hist,st=timelineStats(d);
+  const d=hist,st=timelineStats(d),mk=makerLegacyOf(d);
   const first=store.get("ib2-revealed")!==true&&st.n>0;
   const dx=st.n>=3?dnaOf(d):null;
+  const wkMode=state.tlMode==="worked"&&!!mk;
   const peakAge=st.peakY&&d.birth?st.peakY-d.birth:null;
   const teaser=dx&&dx.oldest?`<p class="lede" style="margin:14px 0 0;font-size:15px">Your games trace back to <b>${dx.allCount.toLocaleString()}</b> earlier games, all the way to <a href="#${dx.oldest.g.id}">${esc(dx.oldest.g.title)}</a> (${dx.oldest.g.year}).${dx.top[0]?` Your biggest root is <b>${esc(dx.top[0].g.title)}</b>.`:""} <button class="link" data-act="toDna">See your gaming DNA</button></p>`:"";
   m.innerHTML=`<section class="wrap mehead">
-      <div><p class="eyebrow">${first?"Here it is":"My gaming timeline"}</p>
-        <h1 class="h1" style="font-size:clamp(26px,5vw,40px)">${first?"Your life in games":esc(d.name?d.name+"'s games":"My life in games")}</h1>
-        <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div><div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge>=0?` (age ${peakAge})`:""}</span></div>`:`<div class="stat"><b>${d.birth}</b><span>born</span></div>`}</div>
+      <div><p class="eyebrow">${first?"Here it is":wkMode?"My game industry career":"My gaming timeline"}</p>
+        <h1 class="h1" style="font-size:clamp(1.65rem,1.1rem + 2.8vw,2.5rem)">${first?"Your life in games":wkMode?esc(d.name?d.name+"'s work in games":"Games I helped build"):esc(d.name?d.name+"'s games":"My life in games")}</h1>
+        <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge>=0?` (age ${peakAge})`:""}</span></div>`:`<div class="stat"><b>${d.birth}</b><span>born</span></div>`}</div>
         ${teaser}
       </div>
-      <div class="row"><button class="btn primary" data-act="share">Share & save</button><button class="btn" data-act="poster">4K Poster</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
+      <div class="row"><button class="btn primary" data-act="share">Share & save</button><button class="btn ${mk?"craft":""}" data-act="makerSheet">🛠 ${mk?`Dev credits (${st.wk})`:`I worked in games`}</button><button class="btn" data-act="poster">4K Poster</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
     </section>
     ${first?`<section class="wrap"><div class="banner"><p><b>Send it to your friends — and tap any game on your timeline to adjust the year you played it or jot a childhood memory.</b></p><button class="btn primary" data-act="share">Share my timeline</button></div></section>`:""}
     <section class="wrap"><div class="search"><input class="input" id="addq" type="search" placeholder="Add any game (tap a cover afterward to move the year you played it or add a memory)" autocomplete="off" aria-label="Add a game"><div class="results" id="addr" hidden></div></div>
-      <p class="sync" id="syncmsg" style="margin-top:6px">${esc(syncMsg||"Tap any game below to change the age you played it or add a memory note.")}</p></section>
-    <section class="wrap life">${lifeStrip(d)}</section>
+      <div class="row" style="justify-content:space-between;margin-top:8px">
+        <p class="sync" id="syncmsg" style="margin:0">${esc(syncMsg||"Tap any game below to change the age you played it, add a memory, or mark a dev credit.")}</p>
+        ${mk?`<span class="seg" role="group" aria-label="Timeline filter"><button data-act="tlMode" data-m="all" aria-pressed="${!wkMode}">All games (${st.n})</button><button data-act="tlMode" data-m="worked" aria-pressed="${wkMode}">🛠 Worked on (${st.wk})</button></span>`:""}
+      </div></section>
+    ${wkMode?makerSection(d,true,mk):""}
+    <section class="wrap life">${lifeStrip(d,{mine:true,workedOnly:wkMode})}</section>
+    ${!wkMode&&mk?makerSection(d,true,mk):""}
     ${favSection(d,true)}
     ${dnaSection(d,true,dx)}
     ${statsSection(d)}
@@ -1261,8 +1388,9 @@ function statusLabel(st){
 }
 function studioCardHTML(st){
   const yrs=st.founded?(st.closed?`${st.founded}–${st.closed}`:`${st.founded}–present`):(st.games.length?`${st.games[0].year}–${st.games[st.games.length-1].year}`:"");
-  return `<button type="button" class="stcard" data-act="studio" data-st="${esc(st.id)}">
-    <div class="row" style="justify-content:space-between;width:100%"><b>${flag(st.cc)} ${esc(st.name)}</b>${statusLabel(st)}</div>
+  const mySt=isWorkedStudio(hist,st.id);
+  return `<button type="button" class="stcard" data-act="studio" data-st="${esc(st.id)}" ${mySt?`style="border-color:var(--craft)"`:""}>
+    <div class="row" style="justify-content:space-between;width:100%"><b>${flag(st.cc)} ${esc(st.name)}</b><span class="row" style="gap:6px">${mySt?`<span class="pill craft">🛠 Worked here</span>`:""}${statusLabel(st)}</span></div>
     <small class="mono muted">${esc(yrs)}${st.hq?" · "+esc(st.hq):""} · ${plural(st.games.length,"game")}</small>
     ${st.bio?`<p style="margin:2px 0;font-size:13px;color:var(--ink2);line-height:1.4">${esc(st.bio)}</p>`:""}
     ${st.diaspora&&st.diaspora.length?`<small class="muted">Seeded: <b>${esc(st.diaspora.map(d=>d.studio).join(", "))}</b></small>`:""}
@@ -1273,6 +1401,7 @@ function renderStudios(m){
   const curated=[...STUDIOS.values()].filter(s=>s.curated).sort((a,b)=>(b.maxInf-a.maxInf)||(b.games.length-a.games.length));
   const list=f==="closed"?curated.filter(s=>s.status!=="active"):f==="active"?curated.filter(s=>s.status==="active"):curated;
   const topOther=[...STUDIOS.values()].filter(s=>!s.curated&&s.games.length>=4).sort((a,b)=>b.games.length-a.games.length).slice(0,36);
+  const wkN=workedEntries(hist).length;
   m.innerHTML=`<section class="wrap exhero">
     <p class="eyebrow">The humans behind the games</p>
     <h1 class="h1">Studios change. Their people carry the art forward.</h1>
@@ -1282,11 +1411,12 @@ function renderStudios(m){
       <button class="chip" data-act="stFilt" data-f="all" aria-pressed="${f==="all"}">All featured (${curated.length})</button>
       <button class="chip" data-act="stFilt" data-f="closed" aria-pressed="${f==="closed"}">Shuttered & scattered (${curated.filter(s=>s.status!=="active").length})</button>
       <button class="chip" data-act="stFilt" data-f="active" aria-pressed="${f==="active"}">Active pioneers (${curated.filter(s=>s.status==="active").length})</button>
+      <button class="chip craftchip" data-act="makerSheet" aria-pressed="${wkN>0||!!(hist.workedStudios&&hist.workedStudios.length)}">🛠 ${wkN?`My dev credits (${wkN})`:"Work in games? Add your studios & credits"}</button>
     </div>
   </section>
   <section class="wrap sec"><div class="stgrid">${list.map(studioCardHTML).join("")}</div></section>
   ${topOther.length?`<section class="wrap sec"><h2 class="h2">More studios across the catalog</h2><p class="sub">Every studio in the database (${STUDIOS.size.toLocaleString()} total) has a page.</p>
-    <div class="makers">${topOther.map(s=>`<button type="button" class="makerbtn" data-act="studio" data-st="${esc(s.id)}">${flag(s.cc)} ${esc(s.name)}<span>${s.games.length}</span></button>`).join("")}</div></section>`:""}
+    <div class="makers">${topOther.map(s=>`<button type="button" class="makerbtn${isWorkedStudio(hist,s.id)?" worked":""}" data-act="studio" data-st="${esc(s.id)}">${isWorkedStudio(hist,s.id)?"🛠 ":""}${flag(s.cc)} ${esc(s.name)}<span>${s.games.length}</span></button>`).join("")}</div></section>`:""}
   ${footer()}`;
   const inp=$("#stq"),box=$("#str");
   inp.addEventListener("input",()=>{
@@ -1299,7 +1429,7 @@ function renderStudios(m){
 function renderStudio(m,id){
   const st=findStudio(id);if(!st){go("studios");return}
   const yrs=st.founded?(st.closed?`${st.founded}–${st.closed}`:`${st.founded}–present`):(st.games.length?`${st.games[0].year}–${st.games[st.games.length-1].year}`:"");
-  const descReach=new Set();st.games.forEach(g=>{DOWN[g.i].forEach(l=>descReach.add(l.to))});
+  const inSt=isWorkedStudio(hist,st.id);
   const mobyCompany=`https://www.mobygames.com/search/?q=${encodeURIComponent(st.name)}&type=company`;
   m.innerHTML=`<div class="wrap">
     <nav class="trail"><button data-act="goStudios">Makers</button><span aria-hidden="true">›</span><span class="cur">${esc(st.name)}</span></nav>
@@ -1309,14 +1439,15 @@ function renderStudio(m,id){
       <p class="meta"><span class="mono">${esc(yrs)}</span>${st.hq?`<span>${esc(st.hq)}</span>`:""}${st.cc?`<span class="muted">${esc(countryName(st.cc))}</span>`:""}</p>
       ${st.bio?`<p class="lede" style="margin-top:12px">${esc(st.bio)}</p>`:""}
       <div class="gstats"><span><b>${st.games.length}</b> game${st.games.length===1?"":"s"} in catalog</span><span><b>${st.treeCount}</b> in the family tree</span><span><b>${st.maxInf.toLocaleString()}</b> max descendant games</span></div>
-      <div class="row" style="margin-top:14px"><a class="btn sm" href="${esc(mobyCompany)}" target="_blank" rel="noopener">Full company credits on MobyGames ↗</a><button class="btn sm ghost" data-act="suggest" data-subj="${esc("Studio note: "+st.name)}">Suggest studio or alumni note</button></div>
+      <div class="row" style="margin-top:14px"><button type="button" class="btn sm ${inSt?"craft":""}" data-act="toggleWkSt" data-st="${esc(st.id)}">🛠 ${inSt?"Worked here ✓":"I worked here"}</button><a class="btn sm" href="${esc(mobyCompany)}" target="_blank" rel="noopener">Full company credits on MobyGames ↗</a><button class="btn sm ghost" data-act="suggest" data-subj="${esc("Studio note: "+st.name)}">Suggest studio or alumni note</button></div>
+      ${inSt?`<div class="craftcard" style="margin-top:14px;padding:12px 16px"><p style="margin:0;font-size:14px">🛠 <b>${esc(st.name)}</b> is on your Maker Legacy. Tap <b>🛠 I worked on</b> under any game below to mark titles you helped ship, or <button type="button" class="link" data-act="makerSheet">log an unshipped / canceled project</button>.</p></div>`:""}
     </section>
     ${st.makers&&st.makers.length?`<section class="sec"><h2 class="h2">Notable creators & team members</h2><p class="sub">Designers, programmers, writers, artists, and composers connected with ${esc(st.name)}.</p>
       <div class="makers">${st.makers.map(mk=>`<a class="makerbtn" href="https://www.mobygames.com/search/?q=${encodeURIComponent(mk)}&type=developer" target="_blank" rel="noopener">${esc(mk)} <span>↗</span></a>`).join("")}</div></section>`:""}
     ${st.diaspora&&st.diaspora.length?`<section class="sec"><h2 class="h2">Where the makers went next</h2><p class="sub">Studios and games shaped by ${esc(st.name)} alumni.</p>
       <div class="diasgrid">${st.diaspora.map(d=>{const dst=findStudio(d.studio);return `<div class="diascard"><b>${dst?`<button type="button" class="stbtn" data-act="studio" data-st="${esc(dst.id)}">${esc(d.studio)} ▸</button>`:esc(d.studio)}</b><p style="margin:4px 0 0;font-size:13px;color:var(--ink2)">${esc(d.note)}</p></div>`}).join("")}</div></section>`:""}
-    <section class="sec"><h2 class="h2">Games by ${esc(st.name)} (${st.games.length})</h2><p class="sub">In chronological order. Tap any game to open its family tree or add it to your timeline.</p>
-      <div class="grid">${st.games.map(g=>tileHTML(g,hist,{act:"game",sub:`${g.year}${g.tree?" · in tree":""}`})).join("")}</div></section>
+    <section class="sec"><h2 class="h2">Games by ${esc(st.name)} (${st.games.length})</h2><p class="sub">In chronological order. Tap any cover for its family tree, or mark titles you worked on.</p>
+      <div class="grid">${st.games.map(g=>tileHTML(g,hist,{act:"game",sub:`${g.year}${g.tree?" · in tree":""}`,wkTog:true})).join("")}</div></section>
   </div>${footer()}`;
 }
 function pathHTML(A,B){
@@ -1459,7 +1590,7 @@ function panelHTML(dir,ls,g){
 function renderGame(m,id){
   const g=byId.get(id);if(!g){go("explore");return}
   if(state.trail[state.trail.length-1]!==id){const k=state.trail.indexOf(id);if(k>=0)state.trail=state.trail.slice(0,k+1);else state.trail.push(id);state.trail=state.trail.slice(-8)}
-  const chain=compressChain(rootsChain(g.i)),ch=chain.slice().reverse(),lv=levelOf(hist,g);
+  const chain=compressChain(rootsChain(g.i)),ch=chain.slice().reverse(),lv=levelOf(hist,g),ent=entryOf(hist,g),wk=!!(ent&&ent.wk);
   const nSteps=rootsChain(g.i).length-1;
   const ups=UP[g.i],downs=DOWN[g.i];
   const age=hist.birth?g.year-hist.birth:null;
@@ -1472,23 +1603,24 @@ function renderGame(m,id){
         ${g.plats.length?`<p class="sub" style="margin:6px 0 0">${esc(sysOfGame(g).join(" · "))}</p>`:""}
         ${g.note?`<p class="gnote">${esc(g.note)}</p>`:""}
         <div class="gstats">${g.tree?`<span><b>${ups.length}</b> direct inspiration${ups.length===1?"":"s"}</span><span><b>${downs.length}</b> game${downs.length===1?"":"s"} it inspired directly</span><span><b>${g.inf.toLocaleString()}</b> later game${g.inf===1?"":"s"} trace${g.inf===1?"s":""} back to it</span>`:""}${age!=null?`<span>${age>=0?`First released when you were <b>${age}</b>`:`Released <b>${-age}</b> years before you were born`}</span>`:""}</div>
-        <div class="mylv"><span class="sync">In my timeline:</span><span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="setlv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>${lv?`<button class="btn sm ghost" data-act="setlv" data-id="${g.id}" data-lv="0">Remove</button>`:""}</div>
+        <div class="mylv"><span class="sync">In my timeline:</span><span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="setlv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>${lv&&!wk?`<button class="btn sm ghost" data-act="setlv" data-id="${g.id}" data-lv="0">Remove</button>`:""}</div>
+        <div class="mylv" style="margin-top:8px"><span class="sync">Industry credit:</span><button type="button" class="btn sm ${wk?"craft":""}" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on this ✓":"I worked on this"}</button>${wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="setWkRole" data-id="${g.id}" data-role="${esc(r)}" aria-pressed="${ent&&ent.role===r}">${esc(r)}</button>`).join(""):""}</div>
         <div class="row" style="margin-top:10px">
           <a class="btn sm" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Full dev credits on MobyGames ↗</a>
           <button class="btn sm ghost" data-act="copyGame" data-id="${g.id}">Copy link</button>
           <button class="btn sm ghost" data-act="suggest" data-subj="${esc("Missing link or correction for "+g.title)}">Suggest a link or source</button>
         </div>
-        ${(()=>{const fw=friendsWhoPlayed(g);return fw.length?`<p class="sub" style="margin:10px 0 0">Friends who played it: ${fw.slice(0,6).map(f=>`<b>${esc(f.name)}</b> ${LV[f.lv].m}`).join(", ")}${fw.length>6?` and ${fw.length-6} more`:""}</p>`:""})()}
+        ${(()=>{const fw=friendsWhoPlayed(g);return fw.length?`<p class="sub" style="margin:10px 0 0">Friends: ${fw.slice(0,6).map(f=>`<b>${esc(f.name)}</b> ${f.wk?"🛠"+(f.role?" ("+esc(f.role)+")":""):LV[f.lv].m}`).join(", ")}${fw.length>6?` and ${fw.length-6} more`:""}</p>`:""})()}
       </div></header>
     ${!g.tree?relatedSection(g):""}
     ${!g.tree?"":ch.length>1?`<section class="sec"><div class="sechead"><div><h2 class="h2">Roots: ${g.year-ch[0].g.year} years in ${plural(nSteps,"step")}</h2><p class="sub">The main line back from ${esc(g.title)}: the strongest evidence, staying with the same kind of game where it can.</p></div><button class="btn primary" data-act="walk" data-id="${g.id}">Walk the roots ▸</button></div>
-      <div class="roots" id="rootsRow">${ch.map((s,k)=>{const nx=ch[k+1];
+      <div class="roots" id="rootsRow" tabindex="0" role="region" aria-label="Lineage steps">${ch.map((s,k)=>{const nx=ch[k+1];
         const arrow=!nx?"":nx.collapsed?`<span class="rfold" title="${esc(nx.collapsed.via.map(v=>v.title).join(", "))}">… ${nx.collapsed.n} more in the series …</span>`:(()=>{const lk=nx.link;return lk?`<span class="rarr" style="--c:var(${TIERS[lk.t].c})" title="${esc(TIERS[lk.t].label)}" aria-hidden="true"></span>`:""})();
         return `<button class="rs${s.g.i===g.i?" cur":""}" data-act="game" data-id="${s.g.id}">${cover(s.g,{showYear:false})}<b>${esc(s.g.title)}</b><span>${s.g.year}</span></button>${arrow}`}).join("")}</div></section>`
       :`<section class="sec"><p class="sub">No recorded roots yet.</p></section>`}
     ${g.tree?`<section class="sec"><div class="sechead"><div><h2 class="h2">Family tree</h2><p class="sub">Two generations back and forward. Tap a game to move the tree to it.</p></div></div>
       <div class="row" style="margin-bottom:10px">${TIERS.map(t=>`<button class="chip tierchip" style="--c:var(${t.c})" data-act="tier" data-tier="${t.k}" aria-pressed="${!!state.tiers[t.k]}"><span class="dot"></span>${t.label}</button>`).join("")}</div>
-      <div class="treebox" id="treebox">${treeSVG(g)}</div></section>
+      <div class="treebox" id="treebox" tabindex="0" role="region" aria-label="Interactive family tree">${treeSVG(g)}</div></section>
     <section class="sec"><div class="cols">${panelHTML("up",ups,g)}${panelHTML("down",downs,g)}</div></section>`:""}
   </div>${footer()}`;
   requestAnimationFrame(()=>{const rr=$("#rootsRow");if(rr)rr.scrollLeft=rr.scrollWidth;
@@ -1529,13 +1661,13 @@ function treeSVG(g){
     const touch=l.from===g.i||l.to===g.i;
     s+=`<path d="M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}" fill="none" stroke="${C(t.c)}" stroke-width="${touch?2.4:1.4}" ${t.dash?'stroke-dasharray="5 4"':""} opacity="${touch?.9:.45}"/>`});
   for(const [i,p] of pos){const n=G[i],isC=i===g.i;const t1=n.title.length>22?n.title.slice(0,21)+"…":n.title;const st=studio(n),t2=`${n.year} · ${st.length>16?st.slice(0,15)+"…":st}`;
-    const myl=levelOf(hist,n);
+    const myl=levelOf(hist,n),myw=isWorked(hist,n);
     s+=`<g class="wnode" data-act="game" data-id="${n.id}" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link" aria-label="${esc(n.title)}, ${n.year}">
-      <rect x="${p.x}" y="${p.y}" width="${W}" height="${H}" rx="10" fill="${isC?acc:card}" stroke="${isC?acc:line2}" stroke-width="1"/>
+      <rect x="${p.x}" y="${p.y}" width="${W}" height="${H}" rx="10" fill="${isC?acc:card}" stroke="${myw?C("--craft"):isC?acc:line2}" stroke-width="${myw?2:1}"/>
       <rect x="${p.x+8}" y="${p.y+9}" width="21" height="28" rx="3" fill="hsl(${n.h} 55% 40%)"/>
       <text x="${p.x+37}" y="${p.y+19}" font-size="12.5" font-weight="700" fill="${isC?accInk:ink}">${esc(t1)}</text>
       <text x="${p.x+37}" y="${p.y+34}" font-size="10.5" fill="${isC?accInk:muted}">${esc(t2)}</text>
-      ${myl?`<circle cx="${p.x+W-10}" cy="${p.y+10}" r="7" fill="${myl===3?C("--love"):acc}"/><text x="${p.x+W-10}" y="${p.y+13.5}" text-anchor="middle" font-size="9" font-weight="700" fill="${paper}">${myl===3?"♥":"✓"}</text>`:""}</g>`}
+      ${myw||myl?`<circle cx="${p.x+W-10}" cy="${p.y+10}" r="7" fill="${myw?C("--craft"):myl===3?C("--love"):acc}"/><text x="${p.x+W-10}" y="${p.y+13.5}" text-anchor="middle" font-size="9" font-weight="700" fill="${myw?C("--craft-ink"):paper}">${myw?"✦":myl===3?"♥":"✓"}</text>`:""}</g>`}
   ks.forEach(k=>{if(more[k]){const n=cols[k].length,off=(maxRows-n-1)/2*(H+RG),y=TOP+off+n*(H+RG);
     s+=`<g class="wnode" data-act="treeMore" data-col="${k}" tabindex="0" role="button"><rect x="${colX[k]}" y="${y}" width="${W}" height="${H}" rx="10" fill="none" stroke="${line2}" stroke-dasharray="4 3"/><text x="${colX[k]+W/2}" y="${y+28}" text-anchor="middle" font-size="12.5" font-weight="600" fill="${muted}">+${more[k]} more</text></g>`}});
   return s+`</svg>`;
@@ -1572,9 +1704,9 @@ function drawStory(){
 /* ---------- friends ---------- */
 function overlap(a,b){const A=new Set(entries(a).map(x=>norm(x.e.t))),B=new Set(entries(b).map(x=>norm(x.e.t)));let both=0;A.forEach(k=>{if(B.has(k))both++});const uni=A.size+B.size-both;return {both,pct:uni?Math.round(both/uni*100):0}}
 function friendCard(f){
-  const d=f.data,es=entries(d),fav=es.filter(x=>x.lv===3&&x.g).sort((a,b)=>(b.g.pop)-(a.g.pop)).slice(0,5);
+  const d=f.data,es=entries(d),wk=es.filter(x=>x.e.wk),fav=es.filter(x=>x.lv===3&&x.g).sort((a,b)=>(b.g.pop)-(a.g.pop)).slice(0,5);
   const ov=hist.birth&&entries(hist).length?overlap(hist,d):null;
-  return `<button class="fcard" data-act="friend" data-key="${esc(f.key)}"><span class="who"><span class="avatar" style="--h:${hueOf(String(f.name))}">${esc(String(f.name||"?").trim().charAt(0).toUpperCase()||"?")}</span><span><b>${esc(f.name)}</b><small>Born ${esc(d.birth)} · ${plural(es.length,"game")}</small></span></span>
+  return `<button class="fcard" data-act="friend" data-key="${esc(f.key)}"><span class="who"><span class="avatar" style="--h:${hueOf(String(f.name))}">${esc(String(f.name||"?").trim().charAt(0).toUpperCase()||"?")}</span><span><b>${esc(f.name)}</b><small>Born ${esc(d.birth)} · ${plural(es.length,"game")}${wk.length?` · 🛠 ${wk.length}`:""}</small></span></span>
     <span class="covers">${(fav.length?fav:es.filter(x=>x.g).slice(0,5)).map(x=>cover(x.g,{showYear:false})).join("")}</span>
     <span class="foot"><span>${f.src==="wall"?"On the friends wall":f.src==="db"?"Synced":"Opened from a link"}</span>${ov?`<span class="pill">${ov.pct}% in common</span>`:""}</span></button>`;
 }
@@ -1601,7 +1733,7 @@ function crewSection(fl){
     ${most.length?`<h3 class="h3" style="margin-top:14px">Played by most of you</h3><div class="recs">${most.map(o=>tile(o,`${o.n} of ${people.length}`)).join("")}</div>`:""}
     ${loved.length?`<h3 class="h3" style="margin-top:18px">The crew's favorites</h3><div class="recs">${loved.map(o=>tile(o,`♥ ${esc(o.who.slice(0,3).join(", "))}${o.who.length>3?" +"+(o.who.length-3):""}`)).join("")}</div>`:""}</section>`;
 }
-function friendsWhoPlayed(g){const out=[];friendList().forEach(f=>{const e=entryOf(f.data,g);if(e)out.push({name:f.name,lv:lvOf(e)})});return out}
+function friendsWhoPlayed(g){const out=[];friendList().forEach(f=>{const e=entryOf(f.data,g);if(e)out.push({name:f.name,lv:lvOf(e),wk:!!e.wk,role:e.role||""})});return out}
 function findFriend(key){return friendList().find(f=>f.key===key)}
 function renderShared(m,payload){
   const d=decodeShare(payload);
@@ -1610,14 +1742,17 @@ function renderShared(m,payload){
   renderPerson(m,{name:d.name||"A friend",data:d,src:"seen",payload});
 }
 function renderPerson(m,f){
-  const d=f.data,st=timelineStats(d),mine=hist.birth&&entries(hist).length;
+  const d=f.data,st=timelineStats(d),mk=makerLegacyOf(d),wkMode=state.tlMode==="worked"&&!!mk,mine=hist.birth&&entries(hist).length;
   const ov=mine?overlap(hist,d):null;
-  m.innerHTML=`<section class="wrap mehead"><div><p class="eyebrow">Gaming timeline</p><h1 class="h1" style="font-size:clamp(26px,5vw,40px)">${esc(f.name)}'s life in games</h1>
-      <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div><div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div><div class="stat"><b>${esc(d.birth)}</b><span>born</span></div>${ov?`<div class="stat"><b>${ov.pct}%</b><span>in common with you</span></div>`:""}</div></div>
+  m.innerHTML=`<section class="wrap mehead"><div><p class="eyebrow">${wkMode?"Game industry credits":"Gaming timeline"}</p><h1 class="h1" style="font-size:clamp(1.65rem,1.1rem + 2.8vw,2.5rem)">${esc(f.name)}'s ${wkMode?"work in games":"life in games"}</h1>
+      <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div><div class="stat"><b>${esc(d.birth)}</b><span>born</span></div>${ov?`<div class="stat"><b>${ov.pct}%</b><span>in common with you</span></div>`:""}</div></div>
       <div class="row">${mine?`<button class="btn primary" data-act="compare" data-key="${esc(f.key||"")}">Compare with mine</button>`:""}${f.payload?`<button class="btn" data-act="copyLink" data-payload="${esc(f.payload)}">Copy link</button><button class="btn ghost" data-act="adoptAsk" title="Load this saved link as your own editable timeline on this device">Load as mine</button>`:""}${CAPS.owner&&f.src!=="wall"?`<button class="btn" data-act="pin" data-key="${esc(f.key||"")}">Pin to friends wall</button>`:""}${CAPS.owner&&f.src==="wall"?`<button class="btn ghost" data-act="unpin" data-doc="${esc(f.docId)}">Unpin</button>`:""}${f.src==="seen"&&f.payload?`<button class="btn ghost" data-act="forget" data-payload="${esc(f.payload)}">Remove from this device</button>`:""}</div></section>
     <div class="wrap" id="adoptBox"></div>
     ${mine?"":`<section class="wrap"><div class="banner"><p><b>What did you play?</b> Make your own timeline in two minutes and see how much you have in common — or if this is your own backup link, click <b>Load as mine</b> above.</p><a class="btn primary" href="#timeline">Make mine</a></div></section>`}
-    <section class="wrap life">${lifeStrip(d,{mine:false})}</section>
+    ${mk?`<section class="wrap" style="margin-top:10px;display:flex;justify-content:flex-end"><span class="seg" role="group" aria-label="Timeline filter"><button data-act="tlMode" data-m="all" aria-pressed="${!wkMode}">All games (${st.n})</button><button data-act="tlMode" data-m="worked" aria-pressed="${wkMode}">🛠 Worked on (${st.wk})</button></span></section>`:""}
+    ${wkMode?makerSection(d,false,mk):""}
+    <section class="wrap life">${lifeStrip(d,{mine:false,workedOnly:wkMode})}</section>
+    ${!wkMode&&mk?makerSection(d,false,mk):""}
     ${favSection(d,false)}${dnaSection(d,false)}${statsSection(d)}${footer()}`;
   state.viewing=f;
 }
@@ -1626,31 +1761,37 @@ function openCompare(f){
   const ka=new Map(ea.map(x=>[norm(x.e.t),x])),kb=new Map(eb.map(x=>[norm(x.e.t),x]));
   const both=[...ka.keys()].filter(k=>kb.has(k)).map(k=>({a:ka.get(k),b:kb.get(k)}));
   const bothFav=both.filter(x=>x.a.lv===3&&x.b.lv===3);
+  const bothWk=both.filter(x=>x.a.e.wk&&x.b.e.wk);
+  const youBuiltTheyPlayed=both.filter(x=>x.a.e.wk&&!x.b.e.wk).sort((p,q)=>q.b.lv-p.b.lv);
+  const theyBuiltYouPlayed=both.filter(x=>x.b.e.wk&&!x.a.e.wk).sort((p,q)=>q.a.lv-p.a.lv);
   const onlyA=ea.filter(x=>!kb.has(norm(x.e.t))&&x.g).sort((x,y)=>y.lv-x.lv||y.g.pop-x.g.pop);
   const onlyB=eb.filter(x=>!ka.has(norm(x.e.t))&&x.g).sort((x,y)=>y.lv-x.lv||y.g.pop-x.g.pop);
   const ov=overlap(a,b);
   const byYr=state.cmpMode==="year";
-  const mini=(x)=>{const g=x.g;return `<div class="tile lv${x.lv}"><button class="art" data-act="${g?"game":"noop"}" data-id="${g?g.id:""}" data-close="1">${coverOfEntry(x.e,x.y,{showYear:false})}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}">${LV[x.lv].m}</span></button><span class="tn">${esc(g?g.title:x.e.t)}</span></div>`};
+  const mini=(x,sub="")=>{const g=x.g,wk=!!x.e.wk;return `<div class="tile lv${x.lv}${wk?" worked":""}"><button class="art" data-act="${g?"game":"noop"}" data-id="${g?g.id:""}" data-close="1">${coverOfEntry(x.e,x.y,{showYear:false})}${wk?`<span class="wkbadge">🛠</span>`:""}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}">${LV[x.lv].m}</span></button><span class="tn">${esc(g?g.title:x.e.t)}</span>${sub?`<span class="trole">${sub}</span>`:""}</div>`};
   const rows=[];
   if(byYr){
     const ys=[...new Set([...ea.map(x=>x.y),...eb.map(x=>x.y)])].sort((p,q)=>p-q);
     for(const yr of ys){const la=ea.filter(x=>x.y===yr).sort((p,q)=>q.lv-p.lv).slice(0,4),lb=eb.filter(x=>x.y===yr).sort((p,q)=>q.lv-p.lv).slice(0,4);
-      if(la.length||lb.length)rows.push(`<div class="agerow"><b>${yr}<small>${yr-a.birth>=0?"age "+(yr-a.birth):"pre"} · ${yr-b.birth>=0?"age "+(yr-b.birth):"pre"}</small></b><div class="agecell">${la.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div><div class="agecell">${lb.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div></div>`)}
+      if(la.length||lb.length)rows.push(`<div class="agerow"><b>${yr}<small>${yr-a.birth>=0?"age "+(yr-a.birth):"pre"} · ${yr-b.birth>=0?"age "+(yr-b.birth):"pre"}</small></b><div class="agecell">${la.map(x=>mini(x)).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div><div class="agecell">${lb.map(x=>mini(x)).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div></div>`)}
   }else{
     for(let age=4;age<=45;age++){const ya=a.birth+age,yb=b.birth+age;if(ya>NOW&&yb>NOW)break;
       const la=ea.filter(x=>x.y===ya).sort((p,q)=>q.lv-p.lv).slice(0,4),lb=eb.filter(x=>x.y===yb).sort((p,q)=>q.lv-p.lv).slice(0,4);
-      if(la.length||lb.length)rows.push(`<div class="agerow"><b>${age}<small>${ya} · ${yb}</small></b><div class="agecell">${la.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div><div class="agecell">${lb.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div></div>`)}
+      if(la.length||lb.length)rows.push(`<div class="agerow"><b>${age}<small>${ya} · ${yb}</small></b><div class="agecell">${la.map(x=>mini(x)).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div><div class="agecell">${lb.map(x=>mini(x)).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div></div>`)}
   }
   const nm=f.name;
   $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Compare timelines"><div class="wrap ovhead"><h2>You and ${esc(nm)}</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="ovbody"><div class="wrap" style="padding-block:18px 40px">
-      <div class="stats"><div class="stat"><b>${ov.pct}%</b><span>in common</span></div><div class="stat"><b>${both.length}</b><span>games you both played</span></div><div class="stat"><b>${bothFav.length}</b><span>shared favorites</span></div><div class="stat"><b>${Math.abs(a.birth-b.birth)}</b><span>years apart</span></div></div>
+      <div class="stats"><div class="stat"><b>${ov.pct}%</b><span>in common</span></div><div class="stat"><b>${both.length}</b><span>games you both played</span></div><div class="stat"><b>${bothFav.length}</b><span>shared favorites</span></div>${bothWk.length?`<div class="stat"><b style="color:var(--craft)">${bothWk.length}</b><span>worked on together</span></div>`:""}<div class="stat"><b>${Math.abs(a.birth-b.birth)}</b><span>years apart</span></div></div>
+      ${bothWk.length?`<section class="sec"><div class="craftcard"><p class="crafteyebrow">🛠 Shared trenches</p><h3 class="h2" style="margin-bottom:10px">Games you both worked on</h3><div class="grid">${bothWk.map(x=>mini(x.a,esc([x.a.e.role,x.b.e.role].filter(Boolean).join(" / ")||"Colleagues"))).join("")}</div></div></section>`:""}
+      ${youBuiltTheyPlayed.length?`<section class="sec"><div class="craftcard"><p class="crafteyebrow">🛠 Maker × Player</p><h3 class="h2" style="margin-bottom:10px">Games you helped build that ${esc(nm)} played</h3><div class="grid">${youBuiltTheyPlayed.map(x=>mini(x.b,`${esc(nm)}: ${LV[x.b.lv].m} ${LV[x.b.lv].label}`)).join("")}</div></div></section>`:""}
+      ${theyBuiltYouPlayed.length?`<section class="sec"><div class="craftcard"><p class="crafteyebrow">🛠 Maker × Player</p><h3 class="h2" style="margin-bottom:10px">Games ${esc(nm)} helped build that you played</h3><div class="grid">${theyBuiltYouPlayed.map(x=>mini(x.a,`You: ${LV[x.a.lv].m} ${LV[x.a.lv].label}`)).join("")}</div></div></section>`:""}
       ${bothFav.length?`<section class="sec"><h3 class="h2">You both loved</h3><div class="grid">${bothFav.map(x=>mini(x.a)).join("")}</div></section>`:""}
       ${both.length?`<section class="sec"><h3 class="h2">You both played</h3><div class="grid">${both.filter(x=>!(x.a.lv===3&&x.b.lv===3)).slice(0,40).map(x=>mini(x.a)).join("")}</div></section>`:""}
       <section class="sec"><div class="sechead"><div><h3 class="h2">${byYr?"Year by year":"At the same age"}</h3><p class="sub">${byYr?"What each of you was playing in the same calendar year.":"What each of you played at age 8, 12, 16…"}</p></div>
         <span class="seg" role="group" aria-label="Compare mode"><button data-act="cmpMode" data-m="age" aria-pressed="${!byYr}">Same age</button><button data-act="cmpMode" data-m="year" aria-pressed="${byYr}">Same year</button></span></div>
         <div class="agehead" style="top:0"><span>${byYr?"Year":"Age"}</span><span>You</span><span>${esc(nm)}</span></div>${rows.join("")}</section>
-      <section class="sec"><div class="hgrid"><div><h3 class="h2">Only you</h3><div class="grid">${onlyA.slice(0,18).map(mini).join("")}</div></div><div><h3 class="h2">Only ${esc(nm)}</h3><div class="grid">${onlyB.slice(0,18).map(mini).join("")}</div></div></div></section>
+      <section class="sec"><div class="hgrid"><div><h3 class="h2">Only you</h3><div class="grid">${onlyA.slice(0,18).map(x=>mini(x)).join("")}</div></div><div><h3 class="h2">Only ${esc(nm)}</h3><div class="grid">${onlyB.slice(0,18).map(x=>mini(x)).join("")}</div></div></div></section>
     </div></div></div>`;
 }
 
@@ -1670,21 +1811,71 @@ function openGameSheet(y,t,ro){
   }
   openSheet(`<div class="sheethead"><h2>${esc(g?g.title:e.t)}</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="gsheet">${coverOfEntry(e,y)}<div style="min-width:0">
-      <p class="sub" style="margin:0 0 8px">Played in <b>${y}</b>${d.birth?` (${y-d.birth>=0?"age "+(y-d.birth):(-y+d.birth)+" yrs before birth"})`:""}${g&&g.year!==y?` · first released ${g.year}`:""}${g?` · ${flag(g.cc)} ${esc(g.dev)}`:""}</p>
-      ${ro?`<p style="margin:0 0 10px"><b>${LV[lv].m} ${LV[lv].label}</b>${sys.length?" on "+esc(sys.join(", ")):""}</p>
+      <p class="sub" style="margin:0 0 8px">${e.wk?"Shipped / worked on in ":"Played in "}<b>${y}</b>${d.birth?` (${y-d.birth>=0?"age "+(y-d.birth):(-y+d.birth)+" yrs before birth"})`:""}${g&&g.year!==y?` · first released ${g.year}`:""}${g?` · ${flag(g.cc)} ${esc(g.dev)}`:""}</p>
+      ${ro?`${e.wk?`<p style="margin:0 0 8px"><span class="pill craft">🛠 Worked on it${e.role?" · "+esc(e.role):""}</span></p>`:""}
+        <p style="margin:0 0 10px"><b>${LV[lv].m} ${LV[lv].label}</b>${sys.length?" on "+esc(sys.join(", ")):""}</p>
         ${mtags.length?`<div class="row" style="margin:6px 0">${mtags.map(tg=>`<span class="pill">${esc(tg)}</span>`).join("")}</div>`:""}
         ${e.mem?`<p class="memquote">“${esc(e.mem)}”</p>`:""}`:
       `<div class="seg" role="group" aria-label="How much you played">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="entryLv" data-y="${y}" data-t="${esc(e.t)}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</div>
-       <p class="sub" style="margin:12px 0 6px">When did you play it?</p>
+       <div class="row" style="margin-top:10px"><button type="button" class="chip craftchip" data-act="entryWk" data-y="${y}" data-t="${esc(e.t)}" aria-pressed="${!!e.wk}">🛠 ${e.wk?"Worked on this game ✓":"I worked on this game"}</button>${e.wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="entryRole" data-y="${y}" data-t="${esc(e.t)}" data-role="${esc(r)}" aria-pressed="${e.role===r}">${esc(r)}</button>`).join(""):""}</div>
+       <p class="sub" style="margin:12px 0 6px">Year on timeline</p>
        <div class="row">${presets.slice(0,6).map(([py,lbl])=>`<button type="button" class="chip" data-act="entryYr" data-y="${y}" data-t="${esc(e.t)}" data-to="${py}" aria-pressed="${py===y}">${esc(lbl)}</button>`).join("")}
          <input class="input" id="entryYrIn" inputmode="numeric" maxlength="4" value="${y}" style="width:78px;padding:5px 9px;font-size:13px" aria-label="Year played"><button type="button" class="btn sm" data-act="entryYrGo" data-y="${y}" data-t="${esc(e.t)}">Move</button></div>
        ${plats.length?`<p class="sub" style="margin:12px 0 6px">Played on</p><div class="row">${plats.map(n=>`<button class="chip" data-act="entrySys" data-y="${y}" data-t="${esc(e.t)}" data-sys="${esc(n)}" aria-pressed="${sys.includes(n)}">${esc(n)}</button>`).join("")}</div>`:""}
-       <p class="sub" style="margin:12px 0 6px">Memories & who with</p>
+       <p class="sub" style="margin:12px 0 6px">Memories & note</p>
        <div class="row">${MEM_TAGS.map(tg=>`<button type="button" class="chip" data-act="entryTag" data-y="${y}" data-t="${esc(e.t)}" data-tag="${esc(tg)}" aria-pressed="${mtags.includes(tg)}">${esc(tg)}</button>`).join("")}</div>
-       <form class="row" id="memForm" style="margin-top:8px"><input class="input" id="memIn" maxlength="80" style="flex:1;min-width:0;padding:7px 10px;font-size:13.5px" placeholder="Short memory, e.g. Summer '98 in the basement with Erik" value="${esc(e.mem||"")}" aria-label="Short memory"><button class="btn sm" type="submit">Save note</button></form>`}
+       <form class="row" id="memForm" style="margin-top:8px"><input class="input" id="memIn" maxlength="80" style="flex:1;min-width:0;padding:7px 10px;font-size:13.5px" placeholder="Short memory, e.g. Summer '98 in the basement — or shipped v1.0 crunch" value="${esc(e.mem||"")}" aria-label="Short memory"><button class="btn sm" type="submit">Save note</button></form>`}
       <div class="row" style="margin-top:14px">${g?`<button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">Family tree</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk its roots</button>`:""}${ro?"":`<button class="btn sm ghost" data-act="entryRm" data-y="${y}" data-t="${esc(e.t)}">Remove</button>`}</div>
     </div></div>`,"Game");
-  const mf=$("#memForm");if(mf)mf.onsubmit=ev=>{ev.preventDefault();const v=$("#memIn").value.trim().slice(0,80);if(v)e.mem=v;else delete e.mem;save();toast(v?"Memory saved":"Memory cleared");closeLayer()};
+  const mf=$("#memForm");if(mf)mf.onsubmit=ev=>{ev.preventDefault();const v=$("#memIn").value.trim().slice(0,80);if(v)e.mem=v;else delete e.mem;save();toast(v?"Note saved":"Note cleared");closeLayer()};
+}
+function ensureBirthThen(cb){
+  if(hist.birth){cb();return}
+  openSheet(`<div class="sheethead"><div><h2>Start your Maker Legacy</h2><p class="sub" style="margin:2px 0 0">Enter your birth year once so your career & gaming timeline lines up by age.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <form id="qbForm" class="row" style="align-items:flex-end;margin-top:8px">
+      <label class="field" for="qbBirth" style="flex:1;min-width:130px">Year you were born<input class="input" id="qbBirth" inputmode="numeric" maxlength="4" placeholder="1984" required></label>
+      <label class="field" for="qbName" style="flex:2;min-width:160px">Your name (optional)<input class="input" id="qbName" maxlength="24" placeholder="First name"></label>
+      <button class="btn craft" type="submit">Save & add credit ▸</button>
+    </form><p class="sub" id="qbErr" style="margin-top:8px" hidden></p>`,"Start Maker Legacy");
+  $("#qbForm").onsubmit=ev=>{ev.preventDefault();const y=parseInt($("#qbBirth").value,10);if(!(y>=1940&&y<=NOW-3)){const er=$("#qbErr");er.hidden=false;er.textContent="Enter a year like 1984.";return}
+    hist.birth=y;hist.name=$("#qbName").value.trim().slice(0,24);hist.stage=null;save();clearLayer();cb()};
+}
+function openMakerSheet(){
+  const wk=workedEntries(hist).sort((a,b)=>a.y-b.y);
+  const stList=(hist.workedStudios||[]).map(id=>STUDIOS.get(id)).filter(Boolean);
+  const role=state.makerRole||"";
+  const syncHead=()=>{
+    const byEl=$("#mkBirth"),nmEl=$("#mkName");
+    if(nmEl&&nmEl.value.trim())hist.name=nmEl.value.trim().slice(0,24);
+    if(byEl){const y=parseInt(byEl.value,10);if(y>=1940&&y<=NOW-3)hist.birth=y}
+    if(!hist.birth){toast("Enter your birth year at the top first (e.g. 1984)");if(byEl)byEl.focus();return false}
+    hist.stage=null;save();return true;
+  };
+  openSheet(`<div class="sheethead"><div><p class="crafteyebrow">🛠 For game makers & industry folks</p><h2>Games & studios I worked on</h2><p class="sub" style="margin:2px 0 0">Mark shipped titles, studios, and unannounced or canceled projects to build your career timeline and see every later game your work helped inspire.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    ${!hist.birth?`<div class="row" style="align-items:flex-end;margin-bottom:14px"><label class="field" for="mkBirth" style="flex:1;min-width:120px">Year you were born<input class="input" id="mkBirth" inputmode="numeric" maxlength="4" placeholder="1984"></label><label class="field" for="mkName" style="flex:2;min-width:160px">Name on timeline<input class="input" id="mkName" maxlength="24" placeholder="Your name" value="${esc(hist.name||"")}"></label></div>`:""}
+    <p class="sub" style="margin:4px 0 6px">Your primary discipline (optional — applied to credits you add below)</p>
+    <div class="row" style="margin-bottom:14px">${DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="mkRole" data-role="${esc(r)}" aria-pressed="${role===r}">${esc(r)}</button>`).join("")}</div>
+    <label class="field" for="mkGameQ">Add a shipped game you worked on</label>
+    <div class="search" style="margin-top:6px"><input class="input" id="mkGameQ" type="search" placeholder="Search 4,180+ games, e.g. Battlefield 1942, Mirror's Edge, Candy Crush…" autocomplete="off"><div class="results" id="mkGameR" hidden></div></div>
+    <label class="field" for="mkStQ" style="margin-top:14px">Add studios / companies you worked at</label>
+    <div class="search" style="margin-top:6px"><input class="input" id="mkStQ" type="search" placeholder="Search studios, e.g. DICE, Looking Glass, King, Bungie…" autocomplete="off"><div class="results" id="mkStR" hidden></div></div>
+    ${stList.length?`<div class="makers" style="margin-top:8px">${stList.map(s=>`<span class="makerbtn worked">🛠 ${flag(s.cc)} ${esc(s.name)} <button type="button" class="link" style="margin-left:4px;color:inherit;text-decoration:none" data-act="mkRmSt" data-st="${esc(s.id)}" aria-label="Remove ${esc(s.name)}">×</button></span>`).join("")}</div>`:""}
+    <h3 class="h3" style="margin-top:16px">Unannounced, internal, or canceled project?</h3>
+    <p class="sub" style="margin-bottom:8px">Canceled projects still represent years of real craft — log them so they live on your timeline too.</p>
+    <form class="row" id="mkCustomForm"><input class="input" id="mkCustTitle" maxlength="70" style="flex:2;min-width:160px" placeholder="e.g. Project Ragtag (Canceled)" aria-label="Project title"><input class="input" id="mkCustYear" inputmode="numeric" maxlength="4" style="width:92px" placeholder="2017" value="${NOW-2}" aria-label="Year"><button class="btn sm craft" type="submit">+ Add credit</button></form>
+    ${wk.length?`<h3 class="h3" style="margin-top:18px">Your credits (${wk.length})</h3>
+      <div>${wk.map(x=>`<div class="anc" style="grid-template-columns:36px minmax(0,1fr) auto">${coverOfEntry(x.e,x.y,{showYear:false})}<span><b>${esc(x.g?x.g.title:x.e.t)}</b><small>${x.y}${x.e.role?" · 🛠 "+esc(x.e.role):""}${x.g?" · "+esc(studio(x.g)):" · Unshipped / custom"}</small></span><button type="button" class="btn sm ghost" data-act="mkRmWk" data-y="${x.y}" data-t="${esc(x.e.t)}" aria-label="Remove credit">×</button></div>`).join("")}</div>`:""}
+    <div class="row" style="margin-top:18px;justify-content:flex-end"><button type="button" class="btn craft" data-act="mkDone">View my Maker timeline ▸</button></div>`,"Games & studios I worked on");
+  wireSearch($("#mkGameQ"),$("#mkGameR"),g=>{if(!g||!g.id)return;if(!syncHead())return;toggleWorked(g,state.makerRole||undefined);toast(`Added credit: ${g.title}`);openMakerSheet()},{playOnly:false});
+  const stIn=$("#mkStQ"),stBox=$("#mkStR");
+  stIn.addEventListener("input",()=>{
+    const q=norm(stIn.value.trim());if(!q){stBox.hidden=true;return}
+    const hits=[...STUDIOS.values()].filter(s=>norm(s.name).includes(q)||s.aliases.some(a=>norm(a).includes(q))).sort((a,b)=>(b.curated-a.curated)||(b.games.length-a.games.length)).slice(0,8);
+    stBox.innerHTML=hits.map((s,i)=>`<button type="button" class="res${i===0?" on":""}" data-stpick="${esc(s.id)}"><span>${flag(s.cc)}</span><span><b>${esc(s.name)}</b><small>${plural(s.games.length,"game")}</small></span><span class="y">${isWorkedStudio(hist,s.id)?"✓":"+"}</span></button>`).join("")||`<p class="empty" style="padding:8px 10px">No studio match.</p>`;
+    stBox.hidden=false;
+  });
+  stBox.addEventListener("click",e=>{const b=e.target.closest("[data-stpick]");if(!b)return;if(!syncHead())return;const id=b.dataset.stpick;if(!isWorkedStudio(hist,id))toggleWorkedStudio(id);stIn.value="";stBox.hidden=true;openMakerSheet()});
+  $("#mkCustomForm").onsubmit=e=>{e.preventDefault();if(!syncHead())return;const t=$("#mkCustTitle").value.trim(),y=parseInt($("#mkCustYear").value,10);if(!t){toast("Enter a project title");return}if(!(y>=1950&&y<=NOW)){toast(`Enter a year between 1950 and ${NOW}`);return}addWorkedCustom(t,y,state.makerRole||"");toast(`Added ${t} (${y})`);openMakerSheet()};
 }
 function openYearSheet(y,customTitle){
   const own=new Set(hist.owned||[]);
@@ -1704,7 +1895,7 @@ function openShare(){
   const canWebShare=!!navigator.share;
   openSheet(`<div class="sheethead"><h2>Share & save your timeline</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <label class="field" for="shareName">Name on your timeline<input class="input" id="shareName" maxlength="24" placeholder="Your first name" value="${esc(hist.name||"")}"></label>
-    <p class="sub" style="margin-top:14px">Your link carries your entire timeline (${plural(st.n,"game")}) right in the address — no account or sign-in required.</p>
+    <p class="sub" style="margin-top:14px">Your link carries your entire timeline (${plural(st.n,"game")}${st.wk?`, including ${plural(st.wk,"dev credit")}`:""}) right in the address — no account or sign-in required.</p>
     <div class="sharebox"><input class="input" id="shareLink" readonly value="${esc(url)}" aria-label="Your timeline link"><button class="btn primary" data-act="copyShare">Copy link</button></div>
     <div class="row" style="margin-top:10px">
       ${canWebShare?`<button class="btn sm" data-act="webShare">Share…</button>`:""}
@@ -1713,7 +1904,7 @@ function openShare(){
     </div>
     <p class="sub" style="margin-top:8px">Tip: emailing the link to yourself keeps a permanent backup you can load on any phone or computer in one tap.</p>
     <h3 class="h3" style="margin-top:16px">Images for group chats & desktops</h3><p class="sub">A vertical story card for chats, or a 4K poster connecting your games.</p>
-    <div class="row"><button class="btn" data-act="png" data-kind="card">Save story card</button><button class="btn" data-act="png" data-kind="wall">Save 4K poster</button></div><div id="imgout"></div>`,"Share");
+    <div class="row"><button class="btn" data-act="png" data-kind="card">Save story card</button>${st.wk?`<button class="btn craft" data-act="png" data-kind="maker">🛠 Save Maker Legacy card</button>`:""}<button class="btn" data-act="png" data-kind="wall">Save 4K poster</button></div><div id="imgout"></div>`,"Share");
   $("#shareName").addEventListener("input",e=>{hist.name=e.target.value.trim().slice(0,24);save();$("#shareLink").value=shareLink(hist)});
 }
 function openSettings(){
@@ -1759,7 +1950,7 @@ function openPoster(d,name){
   let cols="";for(let y=from;y<=to;y++){const xs=(byY[y]||[]).sort((a,b)=>b.lv-a.lv);
     cols+=`<div class="wcol${xs.length?"":" e"}"><div class="wh">${y}<small>${y-d.birth>=0?"age "+(y-d.birth):""}</small></div>${xs.slice(0,6).map((x,i)=>`<div class="tile lv${x.lv}${i>2?" s":""}">${coverOfEntry(x.e,y,{showYear:false,attrs:`data-k="${esc(norm(x.e.t))}"`})}${x.lv===3?`<span class="lvb l3">♥</span>`:""}</div>`).join("")}${xs.length>6?`<div class="rest">+${xs.length-6}</div>`:""}</div>`}
   $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Poster"><div class="wrap ovhead"><div><h2>${esc(name||(d.name?d.name+"'s":"My"))} gaming years</h2><p class="sync" style="margin:2px 0 0">Lines show where one of these games inspired another.</p></div><div class="row"><button class="btn sm" data-act="png" data-kind="wall" data-who="${name?"friend":"me"}">Save 4K poster</button><button class="x" data-act="closeLayer" aria-label="Close">×</button></div></div>
-    <div class="ovbody" id="posterBody"><div class="wall" id="wall"><svg class="lines" id="wallLines"></svg>${cols}</div></div></div>`;
+    <div class="ovbody" id="posterBody" tabindex="0" role="region" aria-label="4K timeline poster"><div class="wall" id="wall"><svg class="lines" id="wallLines"></svg>${cols}</div></div></div>`;
   requestAnimationFrame(()=>drawWallLines(d));
 }
 function wallLinks(d){const ks=new Map();entries(d).forEach(x=>{if(x.g)ks.set(x.g.i,norm(x.e.t))});return L.filter(l=>ks.has(l.from)&&ks.has(l.to)).map(l=>({l,a:ks.get(l.from),b:ks.get(l.to)}))}
@@ -1815,11 +2006,39 @@ function drawCard(d,name){
   x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("What did you play? · Inspired By",72,H-70);
   return cv;
 }
+function drawMakerCard(d,name){
+  const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#14120E");bg.addColorStop(1,"#1B2030");x.fillStyle=bg;x.fillRect(0,0,W,H);
+  const mk=makerLegacyOf(d)||{wk:[],studios:[],reachCount:0,desc:[]};
+  x.fillStyle="#E8A948";x.font="400 30px Silkscreen, IBM Plex Mono, monospace";x.fillText("MY WORK IN GAMES",72,120);
+  x.fillStyle="#F2F4F8";x.font="700 68px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"Maker Legacy"),72,205);
+  x.fillStyle="#AEB6C8";x.font="400 30px IBM Plex Mono, monospace";
+  x.fillText(`${plural(mk.wk.length,"project")}${mk.studios.length?` · ${plural(mk.studios.length,"studio")}`:""}${mk.from?` · ${mk.from}–${mk.to}`:""}`,72,262);
+  let yy=340;
+  if(mk.wk.length){
+    x.fillStyle="#E8A948";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText("GAMES I HELPED BUILD",72,yy);yy+=24;
+    mk.wk.slice(0,10).forEach((e,idx)=>{
+      const row=Math.floor(idx/5),col=idx%5,w=170,h=226,bx=72+col*(w+18),by=yy+row*(h+52);
+      const g=e.g;canvasCover(x,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,w,h);
+      x.strokeStyle="#E8A948";x.lineWidth=5;x.beginPath();x.roundRect(bx,by,w,h,8);x.stroke();
+      x.fillStyle="#CBD2E1";x.font="500 20px IBM Plex Mono, monospace";x.fillText(String(e.y),bx,by+h+28);
+    });
+    yy+=Math.ceil(Math.min(mk.wk.length,10)/5)*(226+52)+36;
+  }
+  if(mk.desc.length&&yy<1550){
+    x.fillStyle="#8C9DFF";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText(`THE RIPPLE EFFECT · ${mk.reachCount} LATER GAMES`,72,yy);yy+=24;
+    mk.desc.slice(0,5).forEach((r,k)=>{const w=170,h=226,bx=72+k*(w+18);canvasCover(x,r.g.title,r.g.year,r.g.h,glyphOf(r.g),bx,yy,w,h)});
+    yy+=226+50;
+  }
+  x.fillStyle="#98A1B6";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Every game stands on earlier craft · Inspired By",72,H-70);
+  return cv;
+}
 async function saveImage(kind,who){
   const d=who==="friend"&&state.viewing?state.viewing.data:hist,name=who==="friend"&&state.viewing?state.viewing.name+"'s":null;
-  const cv=kind==="card"?drawCard(d,name&&name.replace(/'s$/,"")):drawWallpaper(d,name);
+  const cleanName=name&&name.replace(/'s$/,"");
+  const cv=kind==="maker"?drawMakerCard(d,cleanName):kind==="card"?drawCard(d,cleanName):drawWallpaper(d,name);
   const blob=await new Promise(r=>cv.toBlob(r,"image/png"));
-  const fname=kind==="card"?"my-life-in-games.png":"my-gaming-years-4k.png";
+  const fname=kind==="maker"?"my-work-in-games.png":kind==="card"?"my-life-in-games.png":"my-gaming-years-4k.png";
   try{const dl=window.claude&&claude.use?await claude.use("downloads"):null;
     if(dl){await dl.save({filename:fname,data:blob});toast("Saved");return}}catch(e){if(e&&e.code==="declined")return}
   const url=URL.createObjectURL(blob);
@@ -1842,6 +2061,15 @@ const ACTIONS={
   infMode(el){state.infMode=el.dataset.m;store.set("ib2-inf",state.infMode);const y=window.scrollY;render();window.scrollTo({top:y})},
   cmpMode(el){state.cmpMode=el.dataset.m;if(state.viewing)openCompare(state.viewing)},
   stFilt(el){state.stFilter=el.dataset.f;render()},
+  tlMode(el){state.tlMode=el.dataset.m;const y=window.scrollY;render();window.scrollTo({top:y})},
+  makerSheet(){openMakerSheet()},
+  mkRole(el){state.makerRole=state.makerRole===el.dataset.role?"":el.dataset.role;openMakerSheet()},
+  mkRmSt(el){toggleWorkedStudio(el.dataset.st);openMakerSheet()},
+  mkRmWk(el){const y=+el.dataset.y,p=hist.years[y]||[],i=p.findIndex(x=>norm(x.t)===norm(el.dataset.t));if(i>=0){if(p[i].y===null)p.splice(i,1);else{delete p[i].wk;delete p[i].role}save()}openMakerSheet()},
+  mkDone(){const byEl=$("#mkBirth"),nmEl=$("#mkName");if(nmEl&&nmEl.value.trim())hist.name=nmEl.value.trim().slice(0,24);if(byEl){const y=parseInt(byEl.value,10);if(y>=1940&&y<=NOW-3)hist.birth=y}if(!hist.birth){toast("Enter your birth year first (e.g. 1984)");if(byEl)byEl.focus();return}hist.stage=null;if(workedEntries(hist).length)state.tlMode="worked";save();clearLayer();go("timeline")},
+  toggleWk(el){const g=byId.get(el.dataset.id);if(!g)return;ensureBirthThen(()=>{const on=toggleWorked(g);const y=window.scrollY;render();window.scrollTo({top:y});toast(on?`🛠 Marked as worked on: ${g.title}`:`Removed dev credit: ${g.title}`)})},
+  setWkRole(el){const g=byId.get(el.dataset.id);if(!g)return;const cur=entryOf(hist,g),nr=cur&&cur.role===el.dataset.role?"":el.dataset.role;toggleWorked(g,nr);const y=window.scrollY;render();window.scrollTo({top:y})},
+  toggleWkSt(el){const id=el.dataset.st;if(!id)return;ensureBirthThen(()=>{const on=toggleWorkedStudio(id),st=STUDIOS.get(id);const y=window.scrollY;render();window.scrollTo({top:y});toast(on?`🛠 Added ${st?st.name:id} to your studios`:`Removed studio`)})},
   studio(el){const id=el.dataset.st;if(!id)return;clearLayer();go("studio-"+id)},
   goStudios(){go("studios")},
   artToggle(){const r=document.documentElement;r.dataset.art=r.dataset.art==="era"?"real":"era";store.set("ib3-art",r.dataset.art);updateArtBtn();if($("#layer .sheet"))openSettings()},
@@ -1865,6 +2093,8 @@ const ACTIONS={
   setlv(el){const g=byId.get(el.dataset.id);const v=+el.dataset.lv;const cur=levelOf(hist,g);if(!hist.birth&&v>0){toast("Start your timeline first, then add games");go("start");return}setLevel(g,v===cur?0:v);render();toast(v&&v!==cur?`${LV[v].label}: ${g.title}`:`Removed ${g.title}`)},
   entry(el){openGameSheet(+el.dataset.y,el.dataset.t,!!el.dataset.ro)},
   entryLv(el){const y=+el.dataset.y,p=hist.years[y]||[],e=p.find(x=>norm(x.t)===norm(el.dataset.t));if(e){e.lv=+el.dataset.lv;sortPile(p);save();openGameSheet(y,e.t)}},
+  entryWk(el){const y=+el.dataset.y,p=hist.years[y]||[],e=p.find(x=>norm(x.t)===norm(el.dataset.t));if(!e)return;if(e.wk){delete e.wk;delete e.role}else e.wk=1;sortPile(p);save();openGameSheet(y,e.t)},
+  entryRole(el){const y=+el.dataset.y,e=(hist.years[y]||[]).find(x=>norm(x.t)===norm(el.dataset.t));if(!e)return;if(e.role===el.dataset.role)delete e.role;else e.role=el.dataset.role;save();openGameSheet(y,e.t)},
   entryYr(el){const ny=moveEntryYear(+el.dataset.y,el.dataset.t,+el.dataset.to);openGameSheet(ny,el.dataset.t);toast(`Moved to ${ny}`)},
   entryYrGo(el){const v=parseInt(($("#entryYrIn")||{}).value,10);if(!(v>=1950&&v<=NOW)){toast(`Enter a year between 1950 and ${NOW}`);return}const ny=moveEntryYear(+el.dataset.y,el.dataset.t,v);openGameSheet(ny,el.dataset.t);toast(`Moved to ${ny}`)},
   entryTag(el){const y=+el.dataset.y,e=(hist.years[y]||[]).find(x=>norm(x.t)===norm(el.dataset.t));if(!e)return;const tg=el.dataset.tag,cur=(e.mtags||[]).slice(),i=cur.indexOf(tg);if(i>=0)cur.splice(i,1);else if(cur.length<4)cur.push(tg);if(cur.length)e.mtags=cur;else delete e.mtags;save();openGameSheet(y,e.t)},

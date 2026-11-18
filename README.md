@@ -1,11 +1,14 @@
 # Inspired By — The Family Tree of Video Games
 
-An interactive family tree of video game history (1950s to today), a tribute to the human makers and studios behind the art, and a shareable two-minute **"My Life in Games"** childhood timeline.
+Live site: **<https://johanheurlin.github.io/inspired-by/>**
+
+An interactive family tree of video game history (1950s to today), a tribute to the human makers and studios behind the art, and a shareable two-minute **"My Life in Games"** childhood & industry-career timeline.
 
 ## Features
 
 - **My Gaming Timeline:** Enter your birth year, pick the systems you played on, and tap games (`✓` Played · `★` Played a ton · `♥` All-Time Favorite). Move any game to the exact age/year you played it, add childhood memory notes & tags (*Couch co-op, LAN party, Summer break*), and share your timeline via a serverless URL hash (`#t1-…`), 4K desktop poster, or vertical story card.
-- **Friend Comparison:** Open any friend's share link to see your `% in common`, shared favorites, and side-by-side **Same Age** or **Same Calendar Year** comparisons.
+- **Industry Maker Legacy (`🛠 I worked on this`):** Designers, engineers, artists, audio, QA, producers, and studio alumni can mark shipped games, studios (`🛠 I worked here`), disciplines, and unannounced/canceled projects — unlocking a dedicated **Worked On** career view, a **Ripple Effect** showcase of every later game in history that traces back to work they touched, colleague/player callouts in Friend Compare, and a downloadable **Maker Legacy** story card.
+- **Friend Comparison:** Open any friend's share link to see your `% in common`, shared favorites, **Shared Trenches / Maker × Player** callouts, and side-by-side **Same Age** or **Same Calendar Year** comparisons.
 - **Family Tree & Walk the Roots:** Trace any game back to early arcade, mainframe, and tabletop pioneers. Every connection states what changed, what it built on, its evidence tier (*Developer said so, Same team/code, Same series, Critics & historians, Shared mechanics, Debated/disputed*), its relationship lens (*Creative synthesis, Genre evolution, Born from a mod, Fast-follow, Direct variant*), and cited sources.
 - **Makers & Studio Diaspora:** Click any studio name to see its human creators, games, MobyGames full team credits, and — for shuttered or laid-off studios (*Looking Glass, Bullfrog, Clover, Volition, Pandemic, Westwood, Japan Studio*, etc.) — where their developers scattered next.
 - **Real Box Art + Procedural Era Spines:** Lazy-loads official box art thumbnails over zero-latency procedural era covers (CRT phosphor, Atari stripes, NES grid, jewel case, keep case, digital tile), with a one-click header toggle.
@@ -20,6 +23,7 @@ An interactive family tree of video game history (1950s to today), a tribute to 
 - `data/corrections.json`: Hand-checked overrides applied last during build.
 - `data/codes.json`: Append-only base-36 game code registry for permanent `#t1-…` share URLs (**never delete or reorder entries**).
 - `tools/build.ps1`: Validates and merges all data into `dist/index.html` (standalone web / GitHub Pages), `dist/inspired-by.html`, and `dist/data.json`.
+- `tools/make-og-card.ps1`: Generates `dist/og-card.png` (`1200×630` social OpenGraph preview image).
 - `tools/fetch-media.py`: Zero-key Wikidata + Wikipedia + Steam cover & MobyGames ID resolver.
 - `tools/fetch-igdb-covers.py`: Optional IGDB `3:4` cover upgrader (uses free non-commercial Twitch Developer Client ID & Secret).
 - `.github/workflows/pages.yml`: Automatic GitHub Pages deployment from `./dist` on push to `main`.
