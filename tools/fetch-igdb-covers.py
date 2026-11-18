@@ -52,7 +52,20 @@ def igdb_post(endpoint: str, query: str, client_id: str, token: str):
         return json.loads(r.read().decode("utf-8"))
 
 
+def load_dotenv():
+    for fname in (".env.local", ".env"):
+        fpath = os.path.join(ROOT, fname)
+        if os.path.exists(fpath):
+            with open(fpath, encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        k, v = line.split("=", 1)
+                        os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
 def main():
+    load_dotenv()
     cid = os.environ.get("TWITCH_CLIENT_ID", "").strip()
     sec = os.environ.get("TWITCH_CLIENT_SECRET", "").strip()
     if not cid or not sec:

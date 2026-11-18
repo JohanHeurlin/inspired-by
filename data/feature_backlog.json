@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "updated": "2026-11-18",
+  "policy": "AI scans open GitHub issues labeled 'feature-request', filters spam, scores user value vs. UI clutter, and classifies accepted ideas into rollout='default' (everyone) or rollout='settings-toggle' (OPT_FEATURES in Settings) in priority order.",
+  "items": [
+    {
+      "id": "feat-001",
+      "title": "Separate SFX (on by default) and Tron-style Synth music (off by default) toggles",
+      "category": "Timeline & Memories",
+      "rollout": "default",
+      "priority": 1,
+      "status": "shipped",
+      "rationale": "Tactile game-pick chimes delight immediately while music should always stay opt-in."
+    },
+    {
+      "id": "feat-002",
+      "title": "Thank-you postcards & non-competitive Letters to the Makers",
+      "category": "Makers & Gratitude",
+      "rollout": "default",
+      "priority": 1,
+      "status": "shipped",
+      "rationale": "Core mission: remind shuttered/forgotten studios and creators that their worlds carried players through growing up, without turning into a popularity contest."
+    },
+    {
+      "id": "feat-003",
+      "title": "Custom shareable themed lists & 'Games That Made Me Sweat' shelf",
+      "category": "Lists, Trivia & Fun",
+      "rollout": "default",
+      "priority": 2,
+      "status": "shipped",
+      "rationale": "High social shareability via serverless #list-... links without cluttering onboarding."
+    },
+    {
+      "id": "feat-004",
+      "title": "Industry / Maker career credit controls ('I worked on this')",
+      "category": "Makers & Gratitude",
+      "rollout": "settings-toggle",
+      "flagKey": "devMode",
+      "priority": 2,
+      "status": "shipped",
+      "rationale": "Deeply meaningful for game industry folks (~5% of visitors) while keeping everyday player cards clean by default."
+    },
+    {
+      "id": "feat-005",
+      "title": "Era cultural touchstone strips ('Meanwhile in the world')",
+      "category": "Timeline & Memories",
+      "rollout": "settings-toggle",
+      "flagKey": "eraMem",
+      "priority": 3,
+      "status": "shipped",
+      "rationale": "Great nostalgic context, toggleable in Settings and timeline toolbar."
+    }
+  ]
+}

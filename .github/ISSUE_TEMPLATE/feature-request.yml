@@ -1,0 +1,46 @@
+name: Feature Request or Idea
+description: Suggest a new feature, view, or quality-of-life improvement for Played & Made (triaged by AI into Default vs. Settings Toggle).
+title: "[Feature] "
+labels: ["feature-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping shape **Played & Made**! Submitted ideas flow into our feature backlog (`data/feature_backlog.json`), where AI evaluates impact, effort, and clutter risk — rolling universal wins out **by default** and specialized preferences out as **toggles in Settings**.
+  - type: input
+    id: summary
+    attributes:
+      label: Short idea summary
+      placeholder: e.g. Compare three friends' timelines side-by-side
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Area
+      options:
+        - Timeline & Memories
+        - Makers & Gratitude
+        - Visualizations & Views
+        - Lists, Trivia & Fun
+        - Export & Sharing
+        - Mobile / Desktop Polish
+    validations:
+      required: true
+  - type: dropdown
+    id: rollout
+    attributes:
+      label: How should this appear if built?
+      options:
+        - Let AI decide (Default vs. Settings toggle)
+        - Default for everyone
+        - Optional toggle in Settings
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What makes this fun, meaningful, or easier to use?
+      placeholder: Describe how you'd love this to feel when using Played & Made...
+    validations:
+      required: true

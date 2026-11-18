@@ -6,7 +6,9 @@
       "role": "Physicist & creator of Tennis for Two",
       "cc": "US",
       "bio": "Wired an analog computer to a five-inch oscilloscope and two aluminum hand controllers for Brookhaven National Laboratory's 1958 visitor day. Hundreds lined up to bat a glowing ball over a net purely for fun, showing electronic screens could host lively two-player play.",
-      "games": ["tennis-for-two"]
+      "games": [
+        "tennis-for-two"
+      ]
     },
     {
       "name": "Steve Russell",
@@ -14,7 +16,9 @@
       "role": "MIT hacker & lead programmer of Spacewar!",
       "cc": "US",
       "bio": "Programmed Spacewar! on MIT's DEC PDP-1 alongside fellow Tech Model Railroad Club members Martin Graetz and Wayne Wiitanen, pitting two spaceships in a duel around a gravity-pulling star. Passed freely across university labs on paper tape, its code directly inspired the first coin-operated arcade cabinets.",
-      "games": ["spacewar"]
+      "games": [
+        "spacewar"
+      ]
     },
     {
       "name": "Ralph Baer",
@@ -22,7 +26,10 @@
       "role": "Inventor of the home video game console",
       "cc": "US",
       "bio": "Sketched the idea of playing games on ordinary family televisions at a New York bus stop in 1966, then built the 'Brown Box' prototype at Sanders Associates with Bill Harrison and Bill Rusch. Licensed as the 1972 Magnavox Odyssey—and followed by his hit electronic memory game Simon—it turned the living-room TV set into a playground.",
-      "games": ["table-tennis-magnavox-odyssey", "simon"]
+      "games": [
+        "table-tennis-magnavox-odyssey",
+        "simon"
+      ]
     },
     {
       "name": "Al Alcorn",
@@ -30,7 +37,9 @@
       "role": "Atari engineer & designer of Pong",
       "cc": "US",
       "bio": "Handed a simple warm-up assignment by Nolan Bushnell, he engineered Pong from off-the-shelf TTL logic chips, adding segmented paddles for angled shots and rallies that accelerated over time. When the prototype at Andy Capp's Tavern jammed from an overflowing quarter box, the commercial video game industry took flight.",
-      "games": ["pong"]
+      "games": [
+        "pong"
+      ]
     },
     {
       "name": "Jerry Lawson",
@@ -46,7 +55,11 @@
       "role": "Co-founder of Sierra On-Line & graphic adventure pioneer",
       "cc": "US",
       "bio": "Sketched black-and-white rooms at her kitchen table for 1980's Mystery House on the Apple II, building the first graphic adventure game with her husband Ken. Across King's Quest and Phantasmagoria, she turned home computers into stages for fairy-tale exploration, animated heroes, and interactive mystery.",
-      "games": ["mystery-house", "kings-quest", "phantasmagoria"]
+      "games": [
+        "mystery-house",
+        "kings-quest",
+        "phantasmagoria"
+      ]
     },
     {
       "name": "Toru Iwatani",
@@ -54,7 +67,9 @@
       "role": "Namco designer & creator of Pac-Man",
       "cc": "JP",
       "bio": "Determined to make arcades welcoming to women and couples amid rows of dark space shooters, he built a bright maze chase around eating and gave each of its four ghosts distinct pursuit habits. Pac-Man became gaming's first crossover pop-culture character.",
-      "games": ["pac-man"]
+      "games": [
+        "pac-man"
+      ]
     },
     {
       "name": "Gunpei Yokoi",
@@ -62,7 +77,11 @@
       "role": "Nintendo R&D1 head, creator of Game & Watch & Game Boy",
       "cc": "JP",
       "bio": "Guided by his motto of 'lateral thinking with withered technology,' he turned inexpensive calculator LCDs into Game & Watch, invented the cross-shaped D-pad, produced Metroid, and spearheaded the monochrome Game Boy. By prizing battery life, durability, and play feel over raw specs, he put handheld gaming in tens of millions of pockets.",
-      "games": ["ball-game-and-watch", "metroid", "super-mario-land"]
+      "games": [
+        "ball-game-and-watch",
+        "metroid",
+        "super-mario-land"
+      ]
     },
     {
       "name": "Dona Bailey",
@@ -70,7 +89,9 @@
       "role": "Atari coin-op programmer & co-creator of Centipede",
       "cc": "US",
       "bio": "Left assembly-language engineering at General Motors to become the only woman programming inside Atari's coin-op division. Collaborating with designer Ed Logg on 1981's trackball shooter Centipede, she tuned its brisk insect-swarm pace and glowing pastel palette, drawing huge numbers of women to arcade cabinets.",
-      "games": ["centipede"]
+      "games": [
+        "centipede"
+      ]
     },
     {
       "name": "Shigeru Miyamoto",
@@ -78,7 +99,12 @@
       "role": "Nintendo industrial designer & creator of Mario and Zelda",
       "cc": "JP",
       "bio": "Hired by Nintendo as an industrial artist, he built Donkey Kong around slapstick character comedy before turning childhood memories of exploring Kyoto hillsides and caves into Super Mario Bros. and The Legend of Zelda. A decade later, Super Mario 64 wrote the handbook for moving a character and camera smoothly through 3D space.",
-      "games": ["donkey-kong", "super-mario-bros", "zelda", "super-mario-64"]
+      "games": [
+        "donkey-kong",
+        "super-mario-bros",
+        "zelda",
+        "super-mario-64"
+      ]
     },
     {
       "name": "Carol Shaw",
@@ -86,7 +112,9 @@
       "role": "First commercially published woman cartridge designer",
       "cc": "US",
       "bio": "Trained in computer science at UC Berkeley, she wrote 3-D Tic-Tac-Toe and Video Checkers at Atari before joining Activision to solo-design and program 1982's River Raid. Packing procedural canyon banks, fuel runs, and crisp enemy pacing into a 4 KB Atari 2600 ROM, she delivered a million-selling shooter.",
-      "games": ["river-raid"]
+      "games": [
+        "river-raid"
+      ]
     },
     {
       "name": "Dani Bunten Berry",
@@ -94,7 +122,10 @@
       "role": "Multiplayer & economic simulation designer",
       "cc": "US",
       "bio": "Convinced that home computers shone brightest when friends laughed, bargained, and schemed in the same room, she created 1983's four-player supply-and-demand game M.U.L.E. and exploration sim The Seven Cities of Gold in Arkansas. Will Wright later dedicated The Sims to her memory.",
-      "games": ["m-u-l-e", "the-seven-cities-of-gold"]
+      "games": [
+        "m-u-l-e",
+        "the-seven-cities-of-gold"
+      ]
     },
     {
       "name": "Alexey Pajitnov",
@@ -102,7 +133,10 @@
       "role": "Mathematician & creator of Tetris",
       "cc": "RU",
       "bio": "Adapted wooden pentomino puzzles into falling four-square tetrominoes on a text-only Elektronika 60 terminal at the Soviet Academy of Sciences in Moscow, drawing blocks out of bracket pairs. Copied from floppy to floppy before becoming the Game Boy's pack-in sensation, Tetris showed pure rules cross every border.",
-      "games": ["tetris", "hexic"]
+      "games": [
+        "tetris",
+        "hexic"
+      ]
     },
     {
       "name": "David Braben & Ian Bell",
@@ -110,7 +144,10 @@
       "role": "Cambridge undergrads & co-creators of Elite",
       "cc": "GB",
       "bio": "Squeezed eight galaxies of 256 procedurally generated star systems, wireframe 3D docking, cargo trading, and a saveable pilot career into 22 KB of BBC Micro memory. Elite traded arcade three-lives-and-out high scores for open-ended freedom in a simulated cosmos.",
-      "games": ["elite", "frontier-elite-ii"]
+      "games": [
+        "elite",
+        "frontier-elite-ii"
+      ]
     },
     {
       "name": "Koji Kondo",
@@ -118,7 +155,11 @@
       "role": "Nintendo composer & pioneer of dynamic game music",
       "cc": "JP",
       "bio": "As the first person Nintendo hired specifically to write music, he crafted themes for Super Mario Bros. and The Legend of Zelda on four tiny Famicom audio channels that matched jump rhythms and sped up when timers ran low. Generations of players around the world can recognize his melodies in three notes.",
-      "games": ["super-mario-bros", "zelda", "the-legend-of-zelda-ocarina-of-time"]
+      "games": [
+        "super-mario-bros",
+        "zelda",
+        "the-legend-of-zelda-ocarina-of-time"
+      ]
     },
     {
       "name": "Yu Suzuki",
@@ -126,7 +167,12 @@
       "role": "Sega AM2 arcade showman & 3D pioneer",
       "cc": "JP",
       "bio": "Turned arcades into full-body theater with hydraulic tilt bikes and Ferrari convertibles in Hang-On and Out Run, then brought 3D polygon martial arts to life in Virtua Fighter. His 1999 Dreamcast epic Shenmue tracked weather, shopkeeper routines, and neighborhood detail years ahead of modern open worlds.",
-      "games": ["hang-on", "out-run", "virtua-fighter", "shenmue"]
+      "games": [
+        "hang-on",
+        "out-run",
+        "virtua-fighter",
+        "shenmue"
+      ]
     },
     {
       "name": "Hironobu Sakaguchi",
@@ -134,7 +180,12 @@
       "role": "Creator of Final Fantasy & JRPG storyteller",
       "cc": "JP",
       "bio": "Facing lean years at Square in 1987, he poured his ambitions into one make-or-break role-playing adventure—Final Fantasy—saving the studio and sparking a multi-decade anthology. Across Final Fantasy VI, VII, and Chrono Trigger, he wove ensemble character drama and operatic set pieces into turn-based play.",
-      "games": ["final-fantasy", "final-fantasy-vi", "chrono-trigger", "final-fantasy-vii"]
+      "games": [
+        "final-fantasy",
+        "final-fantasy-vi",
+        "chrono-trigger",
+        "final-fantasy-vii"
+      ]
     },
     {
       "name": "Sid Meier",
@@ -142,7 +193,11 @@
       "role": "Co-founder of MicroProse & Firaxis, strategy architect",
       "cc": "US",
       "bio": "Defined games as 'a series of interesting choices,' distilling swashbuckling Caribbean voyages, rail empires, and 6,000 years of human history into Pirates!, Railroad Tycoon, and Civilization. His interlocking tech trees and 'one more turn' pacing set the standard for historical strategy.",
-      "games": ["pirates", "railroad-tycoon", "civilization"]
+      "games": [
+        "pirates",
+        "railroad-tycoon",
+        "civilization"
+      ]
     },
     {
       "name": "Will Wright",
@@ -150,7 +205,11 @@
       "role": "Co-founder of Maxis & creator of SimCity and The Sims",
       "cc": "US",
       "bio": "Noticed while building island maps for Raid on Bungeling Bay that shaping towns was more absorbing than bombing them, turning urban-planning books into SimCity's open-ended 'software toy.' After losing his Oakland home in the 1991 firestorm, he asked how everyday possessions shape happiness—and created The Sims.",
-      "games": ["raid-on-bungeling-bay", "simcity", "the-sims"]
+      "games": [
+        "raid-on-bungeling-bay",
+        "simcity",
+        "the-sims"
+      ]
     },
     {
       "name": "Jordan Mechner",
@@ -158,7 +217,10 @@
       "role": "Filmmaker-programmer & creator of Prince of Persia",
       "cc": "US",
       "bio": "Filmed his karate teacher for college debut Karateka, then spent years rotoscoping home-video footage of his younger brother sprinting and vaulting across parking lots into 48 KB of Apple II memory for 1989's Prince of Persia. Its weighty momentum and sword-parry duels brought silent-film physicality to platformers.",
-      "games": ["karateka", "prince-of-persia"]
+      "games": [
+        "karateka",
+        "prince-of-persia"
+      ]
     },
     {
       "name": "Ron Gilbert",
@@ -166,7 +228,11 @@
       "role": "Co-creator of SCUMM & Monkey Island",
       "cc": "US",
       "bio": "Co-built the SCUMM scripting engine at Lucasfilm Games to replace frustrating text-parser guesswork with clickable verbs in Maniac Mansion, then vowed players in The Secret of Monkey Island shouldn't suffer unfair dead ends for exploring. His comic dialogue trees and fair puzzle logic reshaped narrative adventures.",
-      "games": ["maniac-mansion", "the-secret-of-monkey-island", "monkey-island-2-lechuck-s-revenge"]
+      "games": [
+        "maniac-mansion",
+        "the-secret-of-monkey-island",
+        "monkey-island-2-lechuck-s-revenge"
+      ]
     },
     {
       "name": "John Carmack",
@@ -174,7 +240,12 @@
       "role": "Co-founder of id Software & real-time 3D engine architect",
       "cc": "US",
       "bio": "Solved smooth tile scrolling on IBM PCs for Commander Keen before engineering the blazing raycasting, BSP-tree, and true networked 3D engines behind Wolfenstein 3D, Doom, and Quake. By building Doom for user WAD mods and releasing id's engine source code under open licenses, he seeded an entire generation of studios.",
-      "games": ["commander-keen", "wolfenstein-3d", "doom", "quake"]
+      "games": [
+        "commander-keen",
+        "wolfenstein-3d",
+        "doom",
+        "quake"
+      ]
     },
     {
       "name": "Warren Spector",
@@ -182,7 +253,11 @@
       "role": "Immersive-sim producer & director of Deus Ex",
       "cc": "US",
       "bio": "Championed first-person worlds governed by consistent simulations rather than single scripted answers, producing Ultima Underworld and System Shock before directing 2000's Deus Ex at Ion Storm Austin. Whether sneaking through air ducts, hacking turrets, or talking past guards, players authored their own solutions.",
-      "games": ["ultima-underworld-the-stygian-abyss", "system-shock", "deus-ex"]
+      "games": [
+        "ultima-underworld-the-stygian-abyss",
+        "system-shock",
+        "deus-ex"
+      ]
     },
     {
       "name": "Shinji Mikami",
@@ -190,7 +265,11 @@
       "role": "Creator of Resident Evil & modern third-person action",
       "cc": "JP",
       "bio": "Popularized 'survival horror' in 1996's Resident Evil through scarce ammunition, creaking Spencer Mansion doors, and fixed-camera tension, then tore up his own playbook for 2005's Resident Evil 4. Its tight over-the-shoulder aiming view became the standard camera across modern third-person action games.",
-      "games": ["resident-evil", "resident-evil-2002-remake", "resident-evil-4"]
+      "games": [
+        "resident-evil",
+        "resident-evil-2002-remake",
+        "resident-evil-4"
+      ]
     },
     {
       "name": "Satoshi Tajiri",
@@ -198,7 +277,10 @@
       "role": "Founder of Game Freak & creator of Pokémon",
       "cc": "JP",
       "bio": "Combined childhood summers catching beetles in Tokyo's vanishing fields with the Game Boy Link Cable's ability to pass creatures between two kids sitting side by side. Splitting Pokémon Red and Green so friends had to trade to complete their Pokédex turned solitary handhelds into a schoolyard social network.",
-      "games": ["pok-mon-red-and-green", "pok-mon-gold-and-silver"]
+      "games": [
+        "pok-mon-red-and-green",
+        "pok-mon-gold-and-silver"
+      ]
     },
     {
       "name": "Hideo Kojima",
@@ -206,7 +288,12 @@
       "role": "Director of Metal Gear & Death Stranding",
       "cc": "JP",
       "bio": "Turned MSX2 hardware limits into stealth gameplay in 1987's Metal Gear—rewarding hiding over gunfire—before directing 1998's Metal Gear Solid like a playable espionage thriller full of fourth-wall surprises. Two decades later, Death Stranding reimagined open-world journeys around quiet aid left behind for strangers.",
-      "games": ["metal-gear", "metal-gear-solid", "metal-gear-solid-3", "death-stranding"]
+      "games": [
+        "metal-gear",
+        "metal-gear-solid",
+        "metal-gear-solid-3",
+        "death-stranding"
+      ]
     },
     {
       "name": "Gabe Newell",
@@ -214,7 +301,11 @@
       "role": "Co-founder of Valve, Half-Life producer & architect of Steam",
       "cc": "US",
       "bio": "Left Microsoft after thirteen years working on early Windows—noticing Doom sat on more PCs than the OS itself—to co-found Valve with Mike Harrington and ship Half-Life's unbroken first-person storytelling. By hiring mod teams behind Counter-Strike and Portal, building Steam, and backing Linux handhelds, Valve reshaped PC gaming.",
-      "games": ["half-life", "half-life-2", "portal"]
+      "games": [
+        "half-life",
+        "half-life-2",
+        "portal"
+      ]
     },
     {
       "name": "Fumito Ueda",
@@ -222,7 +313,11 @@
       "role": "Director of Ico & Shadow of the Colossus",
       "cc": "JP",
       "bio": "Shaped his worlds through 'design by subtraction,' stripping away HUD bars, exposition dumps, and filler foes in Ico so holding Yorda's hand carried the whole emotional bond. Shadow of the Colossus pared an entire open land down to a rider, a horse, and sixteen solemn giants.",
-      "games": ["ico", "shadow-colossus", "last-guardian"]
+      "games": [
+        "ico",
+        "shadow-colossus",
+        "last-guardian"
+      ]
     },
     {
       "name": "Hidetaka Miyazaki",
@@ -230,7 +325,12 @@
       "role": "FromSoftware president & director of Dark Souls and Elden Ring",
       "cc": "JP",
       "bio": "Switched from a corporate IT job at 29 to FromSoftware, rescuing a struggling fantasy prototype into 2009's Demon's Souls before directing Dark Souls, Bloodborne, and Elden Ring. Drawing on childhood memories of piecing together English fantasy books he could only half-read, he trusted players with demanding combat, quiet lore, and shared floor notes.",
-      "games": ["demon-s-souls", "dark-souls", "bloodborne", "elden-ring"]
+      "games": [
+        "demon-s-souls",
+        "dark-souls",
+        "bloodborne",
+        "elden-ring"
+      ]
     },
     {
       "name": "Markus Persson & Jens Bergensten",
@@ -238,7 +338,9 @@
       "role": "Creator & longtime lead designer of Minecraft",
       "cc": "SE",
       "bio": "Persson coded Minecraft's blocky procedural survival world in Java over a May 2009 weekend, blending ideas from Infiniminer and Dwarf Fortress and iterating openly with early buyers. Bergensten stepped in as lead designer in 2011, guiding fifteen years of updates that grew it into the best-selling game ever made.",
-      "games": ["minecraft"]
+      "games": [
+        "minecraft"
+      ]
     },
     {
       "name": "Lucas Pope",
@@ -246,7 +348,10 @@
       "role": "Solo indie auteur of Papers, Please & Obra Dinn",
       "cc": "US",
       "bio": "Turned border-checkpoint rubber stamps into moral suspense in 2013's Papers, Please, asking how an ordinary clerk keeps a family warm inside an authoritarian state. Five years later, Return of the Obra Dinn rendered an 1807 maritime insurance mystery in crisp 1-bit dithering inspired by classic Macintosh screens.",
-      "games": ["papers-please", "return-of-the-obra-dinn"]
+      "games": [
+        "papers-please",
+        "return-of-the-obra-dinn"
+      ]
     },
     {
       "name": "Toby Fox",
@@ -254,7 +359,10 @@
       "role": "Solo creator & composer of Undertale and Deltarune",
       "cc": "US",
       "bio": "Wrote, coded, and scored Undertale largely solo after honing EarthBound hacks and webcomic music, letting RPG players joke with, befriend, or spare every monster instead of grinding for experience points. Its bullet-dodging mercy battles and leitmotif-rich soundtrack remembered player choices even across resets.",
-      "games": ["undertale", "deltarune"]
+      "games": [
+        "undertale",
+        "deltarune"
+      ]
     },
     {
       "name": "Eric Barone",
@@ -262,7 +370,9 @@
       "role": "Solo developer ('ConcernedApe') of Stardew Valley",
       "cc": "US",
       "bio": "Started Stardew Valley in Seattle to sharpen his C# skills for job interviews, then spent four and a half years working ten-hour days to pixel-paint, compose, write, and code every season and villager himself. His earnest tribute to Harvest Moon ushered in a wave of gentle farming and life sims.",
-      "games": ["stardew-valley"]
+      "games": [
+        "stardew-valley"
+      ]
     },
     {
       "name": "Brendan Greene",
@@ -270,7 +380,10 @@
       "role": "Modder ('PlayerUnknown') & pioneer of battle royale",
       "cc": "IE",
       "bio": "Working as a photographer and web designer in Ireland, he taught himself scripting to build the DayZ: Battle Royale mod—dropping scavengers onto a vast island inside a shrinking safe circle. Realized at full 100-player scale in 2017's PUBG: Battlegrounds, his survival-ring format reshaped online shooters.",
-      "games": ["dayz-battle-royale", "pubg"]
+      "games": [
+        "dayz-battle-royale",
+        "pubg"
+      ]
     },
     {
       "name": "LocalThunk",
@@ -278,7 +391,9 @@
       "role": "Pseudonymous solo creator of Balatro",
       "cc": "CA",
       "bio": "Built Balatro on vacation in Saskatchewan around Cantonese card game Big Two—despite not playing poker—using LÖVE2D and mischievous Joker cards that bend scoring math to wild heights. Refusing microtransactions and keeping his everyday privacy intact, his side project sold millions and swept year-end awards.",
-      "games": ["balatro"]
+      "games": [
+        "balatro"
+      ]
     }
   ],
   "hardware": [
@@ -666,6 +781,146 @@
       "focus": "Consoles, games & therapeutic play in children's hospitals",
       "url": "https://childsplaycharity.org/",
       "desc": "Founded by gamers and developers in 2003, Child's Play partners with over 190 pediatric hospitals worldwide to fund gaming carts, adaptive controllers, and therapeutic play specialists that bring comfort and connection to hospitalized kids."
+    }
+  ],
+  "artPillars": [
+    {
+      "icon": "🛟",
+      "eyebrow": "Safe harbor",
+      "title": "A lifeline through turbulent childhoods",
+      "body": "For anyone who didn't grow up playing, think of the worn paperback, late-night radio album, or cinema matinee that carried you through a hard year. For millions of kids weathering turbulent homes, lonely school moves, relentless bullying, or long hospital stays, a glowing screen offered that same quiet refuge. Inside those worlds, outside chaos paused for an hour: rules were fair, curiosity was rewarded, and patient effort actually changed tomorrow."
+    },
+    {
+      "icon": "🎨",
+      "eyebrow": "Living art",
+      "title": "Every human art form under one roof",
+      "body": "Calling games a waste of time overlooks the hundreds of disciplined artists standing behind every frame. Hand-painted backdrops, spatial architecture, orchestral and synthesizer scores, character writing, sound foley, behavioral psychology, and real-time systems engineering all meet under one roof. Together, real craftspeople build the only medium you don't just admire from a seat—you step across the threshold, test its corners, and inhabit it."
+    },
+    {
+      "icon": "🔥",
+      "eyebrow": "Grit & agency",
+      "title": "Teaching us how to fail, adapt, and keep going",
+      "body": "Unlike passive media that plays on whether you engage or not, a game waits for your next decision. It asks you to read maps, untangle stubborn puzzles, coordinate calmly with friends, and study why a plan fell apart rather than blaming luck. Picking yourself up after twenty defeats—until an impossible boss or treacherous jump finally gives way—quietly builds patience, composure, and agency that outlast childhood."
+    },
+    {
+      "icon": "💌",
+      "eyebrow": "To the makers",
+      "title": "Even when a studio closes, the worlds you built stay open",
+      "body": "In an industry where beloved studios get bought, renamed, or shuttered overnight and credits roll past too fast, it is easy for a laid-off or retired developer to wonder if the late nights mattered. They did. Decades later, someone across the ocean still lights up at the exact four-bar melody, level shortcut, or small joke you stayed late to polish—because the rooms you built are still sheltering people, and you were never forgotten."
+    }
+  ],
+  "gratitude": [
+    {
+      "studio": "dma-design",
+      "game": "lemmings",
+      "year": 1991,
+      "tag": "Sibling bond",
+      "who": "Born 1981 · Amiga 500",
+      "note": "My sister and I crowded around one beige Amiga 500 mouse on rainy afternoons, shouting out blocker and digger jobs before a hundred green-haired walkers marched off a cliff. Long before Dundee's DMA Design became global front-page news, those tiny pixel rescues taught the two of us how to laugh through panic on the same team."
+    },
+    {
+      "studio": "lucasarts",
+      "game": "the-secret-of-monkey-island",
+      "year": 1990,
+      "tag": "Childhood safe harbor",
+      "who": "Born 1980 · Amiga & DOS PC",
+      "note": "Growing up in a house where raised voices were the nightly soundtrack, swapping floppies into Mêlée Island felt like slipping out a bedroom window into warm Caribbean air. Knowing LucasArts built an adventure where you couldn't get punished for exploring—and where wit beat brute force in every insult swordfight—kept my sense of humor intact."
+    },
+    {
+      "studio": "sierra-on-line",
+      "game": "kings-quest-vi-heir-today-gone-tomorrow",
+      "year": 1992,
+      "tag": "Shaped who I am",
+      "who": "Born 1983 · 386 DOS PC",
+      "note": "Clicking through Sierra's painted Green Isles with a dog-eared dictionary beside our family monitor is how I fell in love with English, folklore, and storytelling after immigrating as a kid. Roberta Williams, Jane Jensen, and the Oakhurst crew treated young players like attentive readers capable of untangling riddles, grief, and fairy-tale wonder."
+    },
+    {
+      "studio": "bullfrog-productions",
+      "game": "theme-hospital",
+      "year": 1997,
+      "tag": "Carried me through",
+      "who": "Born 1986 · Windows 95 PC",
+      "note": "During a childhood winter spent in and out of real clinic waiting rooms, coming home to Bullfrog's cheerfully absurd wards of Bloaty Heads and dry Tannoy announcements took the fear right out of hospitals. Even long after the Guildford studio closed, that warm British mischief reminds me how much courage can hide inside a laugh."
+    },
+    {
+      "studio": "westwood-studios",
+      "game": "command-conquer-red-alert",
+      "year": 1996,
+      "tag": "Sibling bond",
+      "who": "Born 1984 · Pentium PC",
+      "note": "My older brother and I lugged two heavy CRT monitors down the hall with a grey serial cable every Friday night, racing to wall off ore fields while Frank Klepacki's industrial basslines rattled our desk. Westwood's Las Vegas doors closed over twenty years ago, yet whenever my brother and I talk across time zones, those skirmish maps are still shorthand for home."
+    },
+    {
+      "studio": "looking-glass-studios",
+      "game": "thief-the-dark-project",
+      "year": 1998,
+      "tag": "Pure craft",
+      "who": "Born 1982 · Sound Blaster PC",
+      "note": "Crouching in a dark stone corridor with headphones on—listening to footsteps shift from marble to carpet while watching a single torch shadow flicker—showed me games could trust quietness over noise. Looking Glass folded in Cambridge far too soon, yet every time a modern game respects a player's improvisation, your fingerprints are still right there."
+    },
+    {
+      "studio": "origin-systems",
+      "game": "ultima-vii-the-black-gate",
+      "year": 1992,
+      "tag": "Pure craft",
+      "who": "Born 1978 · 486 DOS PC",
+      "note": "Baking bread from flour and water, watching village bakers shutter their windows when rain started in Britannia, and keeping a cloth map above my desk made Origin's motto—'We Create Worlds'—feel completely real. That Austin team built a living world with moral memory rather than high scores, and nothing has ever topped stepping through that red moongate."
+    },
+    {
+      "studio": "microprose",
+      "game": "civilization",
+      "year": 1991,
+      "tag": "Shaped who I am",
+      "who": "Born 1979 · Amiga & DOS PC",
+      "note": "Reading MicroProse's Civilopedia entries past midnight—tracing how pottery, printing presses, and railroads reshaped continents—turned a restless C-student into a high-school history teacher. Whoever wrote and tuned those quiet encyclopedias in Hunt Valley sparked a lifelong curiosity across thousands of classrooms you never got to see."
+    },
+    {
+      "studio": "psygnosis",
+      "game": "wipeout-2097",
+      "year": 1996,
+      "tag": "Shaped who I am",
+      "who": "Born 1982 · PlayStation",
+      "note": "Threading anti-gravity airbrakes through neon tunnels to The Designers Republic's razor-sharp typography and pounding club tracks was the exact night I decided to study graphic design. Liverpool's Psygnosis owl sign is gone from the docks now, yet that fearless marriage of electronic music, industrial art, and velocity still sits on my studio shelf."
+    },
+    {
+      "studio": "nintendo",
+      "game": "super-mario-land",
+      "year": 1989,
+      "tag": "Childhood safe harbor",
+      "who": "Born 1983 · Game Boy",
+      "note": "After my parents split up and I spent every other weekend on long bus rides between two apartments, Gunpei Yokoi's pea-green Game Boy and four AA batteries were the one steady thing in my coat pocket. Reaching Hip Tanaka's bright, wistful ending theme under passing highway streetlights always made me feel like someone out there was cheering me home."
+    },
+    {
+      "studio": "square-enix",
+      "game": "chrono-trigger",
+      "year": 1995,
+      "tag": "Carried me through",
+      "who": "Born 1985 · SNES",
+      "note": "After moving to a new town where I ate lunch alone for a whole semester, sitting around that forest campfire with Lucca, Frog, and Robo gave me a circle of friends who refused to give up on a broken world. When Yasunori Mitsuda's 'Corridors of Time' drifted out of our small bedroom TV, I learned that sixteen-bit pixels and eight sound channels could ache like a great novel."
+    },
+    {
+      "studio": "free-radical-design",
+      "game": "timesplitters-2",
+      "year": 2002,
+      "tag": "Sibling bond",
+      "who": "Born 1990 · PlayStation 2",
+      "note": "Four teenagers wedged onto one sagging basement sofa—building ridiculous custom map-maker arenas and crying with laughter as a gingerbread man sprinted past monkeys in Siberia—gave our friend group its happiest Friday nights. Hearing that Nottingham's Free Radical closed broke our hearts, so please know those split-screen evenings kept four kids out of trouble and bonded for life."
+    },
+    {
+      "studio": "clover-studio",
+      "game": "okami",
+      "year": 2006,
+      "tag": "Carried me through",
+      "who": "Born 1989 · PlayStation 2",
+      "note": "During a bleak autumn in my late teens when everything around me felt drained of color, sweeping a celestial ink brush across Nippon to coax cherry blossoms back onto dead trees felt like quiet medicine. Clover Studio existed for barely three years, yet the tenderness poured into every sumi-e brushstroke still reminds people that barren seasons pass."
+    },
+    {
+      "studio": "maxis",
+      "game": "the-sims",
+      "year": 2000,
+      "tag": "Childhood safe harbor",
+      "who": "Born 1988 · Windows 98 PC",
+      "note": "In a cramped apartment where money was tight and nobody had a quiet corner, Maxis's little isometric neighborhood let me build sunlit rooms, bookshelves, and peaceful mornings to Jerry Martin's piano score. Even after Emeryville's studio lights went out, millions of us still carry the gentle hope we practiced building inside those walls."
     }
   ]
 }

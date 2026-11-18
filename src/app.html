@@ -243,12 +243,13 @@ button.chip:hover{border-color:var(--line2)}
 .pickstrip{display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;scroll-snap-type:inline proximity;scroll-padding-inline:12px;padding:4px 2px 8px;scrollbar-width:thin}
 .pickstrip > *{flex:none;scroll-snap-align:start}
 .pickpanel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0 6px}
-.pickbar{position:sticky;bottom:0;z-index:15;margin-top:24px;background:var(--paper);border-top:1px solid var(--line);
-  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-.pickbar .in{display:flex;align-items:center;gap:14px}
-.pickbar .count{font-weight:700;font-size:15px;white-space:nowrap}
+.pickbar{position:sticky;bottom:0;z-index:15;margin-top:24px;background:var(--paper);border-top:1px solid var(--line);max-inline-size:100%;box-sizing:border-box;
+  padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.pickbar .in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;min-width:0}
+.pickbar .count{font-weight:700;font-size:15px;min-width:0}
 .pickbar .count small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
 .minihist{flex:1;min-width:60px;display:flex;align-items:flex-end;gap:1px;height:30px}
+@media (max-width:560px){.pickbar{padding-inline:6px}.minihist{display:none}.pickbar .btn{padding:8px 12px;font-size:13.5px}}
 .minihist i{flex:1;background:var(--accent);border-radius:1px 1px 0 0;min-height:1px;opacity:.85}
 .minihist i.z{background:var(--line);opacity:1}
 .minihist i.l{background:var(--love)}
@@ -572,27 +573,19 @@ details.gtadet[open] > summary::before{rotate:90deg}
 .storelinks{display:flex;gap:5px;flex-wrap:wrap;margin-top:2px}
 .storetag{font-family:var(--f-mono);font-size:10px;padding:2px 6px;border-radius:5px;border:1px solid var(--line2);color:var(--ink2);text-decoration:none;background:var(--card)}
 .storetag:hover{border-color:var(--accent);color:var(--accent)}
-/* period TV & monitor cabinet */
-.tvwrap{margin-top:10px}
-.tvframe{border-radius:18px;padding:18px;box-shadow:0 18px 44px rgb(0 0 0 / .42);position:relative}
-.tvframe.crt80{background:linear-gradient(180deg,#5C3A21,#3B2313);border:4px solid #7A4F2E;display:grid;grid-template-columns:minmax(0,1fr) 56px;gap:12px;align-items:center}
-.tvframe.crt90{background:linear-gradient(180deg,#2C3038,#1B1E24);border:3px solid #454B57;padding:16px 16px 26px}
-.tvframe.lcd00{background:linear-gradient(180deg,#BFC6D0,#8E96A3);border:2px solid #D8DEE8;padding:14px 14px 24px}
-.tvframe.oled{background:#0B0D12;border:2px solid #2A3040;padding:8px 8px 16px;border-radius:12px}
-@media (max-width:520px){.tvframe.crt80{grid-template-columns:1fr}.tvdials{flex-direction:row!important;justify-content:center}}
-.tvscreen{position:relative;width:100%;aspect-ratio:16/9;background:#05070B;border-radius:10px;overflow:hidden;box-shadow:inset 0 0 24px rgb(0 0 0 / .9)}
-.tvframe.crt80 .tvscreen,.tvframe.crt90 .tvscreen{border-radius:18px}
-.tvscreen iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.tvscan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgb(0 0 0 / .16) 0 1px,transparent 1px 3px);z-index:2}
-.tvdials{display:flex;flex-direction:column;align-items:center;gap:10px}
-.tvknob{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#D7C6B2,#6E5844);border:2px solid #26170D;position:relative}
-.tvknob::after{content:"";position:absolute;left:50%;top:4px;width:3px;height:11px;background:#26170D;transform:translateX(-50%)}
-.tvgrille{width:36px;height:44px;background:repeating-linear-gradient(180deg,#22130A 0 3px,transparent 3px 6px);opacity:.75}
-.tvbadge{margin-top:8px;display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;color:#9BA3B5}
-.tvframe.lcd00 .tvbadge{color:#232832}
-.tvled{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3CE07A;box-shadow:0 0 8px #3CE07A;margin-right:6px}
-/* v32: synth horizon hairline, sandbox bar, quick-jump nav, native dialog, drag handles, cartridge slot, studio logos, world map & mechanics */
-body.synth-on .top{border-bottom-color:color-mix(in srgb,#FF4FD8 45%,var(--line));box-shadow:0 2px 18px rgb(255 79 216 / .12)}
+/* clean cinema video player (always dark surface) */
+.vidplayer{color-scheme:dark;background:#0B0E16;color:#EEF2FA;accent-color:#8AB4F8;border:1px solid #252C3D;border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgb(0 0 0 / .36)}
+.vidscreen{position:relative;width:100%;aspect-ratio:16/9;background:#05070C;display:grid;place-items:center}
+.vidscreen iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vidbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;background:#111623;border-top:1px solid #22293A;font-size:12.5px;color:#B8C1D6;flex-wrap:wrap}
+.gratgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
+.gratcard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--love);border-radius:14px;padding:15px 16px;display:flex;flex-direction:column;gap:8px}
+.gratcard blockquote{margin:0;font-size:14px;line-height:1.5;color:var(--ink)}
+.artgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;margin-top:12px}
+.artcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;display:flex;flex-direction:column;gap:6px}
+.audiobar{display:inline-flex;gap:5px;align-items:center;flex:none}
+/* v33: synth horizon hairline, sandbox bar, quick-jump nav, wide native dialog, drag handles, studio logos, world map & mechanics */
+body.synth-on .top{border-bottom-color:color-mix(in srgb,#00E5FF 55%,var(--line));box-shadow:0 2px 20px rgb(0 229 255 / .16)}
 .sbar{background:var(--hook-soft);border-bottom:1px solid var(--hook);padding:7px 0;font-size:13px;color:var(--ink)}
 .sbar .in{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .subnav{display:flex;gap:6px;overflow-x:auto;max-width:100%;min-width:0;box-sizing:border-box;padding:8px 2px 4px;scrollbar-width:none;align-items:center}
@@ -613,7 +606,8 @@ body.synth-on .top{border-bottom-color:color-mix(in srgb,#FF4FD8 45%,var(--line)
 html.dragging,html.dragging *{cursor:grabbing!important}
 .yr.drop-target,.ygap.drop-target{outline:2px dashed var(--accent);background:var(--accent-soft);border-radius:10px}
 .tile.lifting{position:relative;z-index:35;scale:1.05;box-shadow:var(--shadow);pointer-events:none}
-dialog.sheetdlg{border:1px solid var(--line);background:var(--paper);color:var(--ink);width:calc(100% - 16px);max-width:700px;max-height:88vh;max-height:88dvh;margin:auto;padding:16px max(18px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));border-radius:18px;box-sizing:border-box;box-shadow:var(--shadow);container:sheetcol / inline-size}
+dialog.sheetdlg{border:1px solid var(--line);background:var(--paper);color:var(--ink);width:calc(100% - 16px);max-width:min(880px,92vw);max-height:90vh;max-height:90dvh;margin:auto;padding:18px max(22px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(22px,env(safe-area-inset-left,0px));border-radius:18px;box-sizing:border-box;box-shadow:var(--shadow);container:sheetcol / inline-size}
+dialog.sheetdlg.wide{max-width:min(1240px,95vw);max-height:92vh;max-height:92dvh}
 dialog.sheetdlg[open]{display:block}
 dialog.sheetdlg:modal{overscroll-behavior:contain;overflow:auto}
 dialog.sheetdlg::backdrop{background:rgb(6 9 18 / .54);backdrop-filter:blur(2px);overflow:hidden;overscroll-behavior:contain}
@@ -621,11 +615,6 @@ dialog.sheetdlg::backdrop{background:rgb(6 9 18 / .54);backdrop-filter:blur(2px)
 .navback:hover{border-color:var(--accent);color:var(--accent)}
 .sheetfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding-top:12px;border-top:1px solid var(--line);flex-wrap:wrap}
 .stlogo{height:22px;max-width:76px;padding:2px 6px;border-radius:5px;background:#F4F6FA;border:1px solid var(--line);object-fit:contain;vertical-align:middle;flex:none}
-.mediatray{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;margin-bottom:10px;background:var(--card);border:1px dashed var(--line2);border-radius:12px;flex-wrap:wrap}
-.cartdrag{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:9px;border:1.5px solid var(--accent);background:var(--accent-soft);font-size:12.5px;font-weight:700;cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;translate:0px;scale:1}
-.cartdrag.dragging{cursor:grabbing;z-index:40;box-shadow:var(--shadow);scale:1.06}
-.tvslot{padding:7px 12px;border-radius:9px;border:2px dashed var(--line2);font-family:var(--f-mono);font-size:11.5px;color:var(--muted);transition:border-color .15s,background .15s}
-.tvslot.hot{border-color:var(--craft);background:var(--craft-soft);color:var(--craft);font-weight:700}
 .mechgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:14px}
 .mechcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
 .genpill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;color:var(--ink2);text-decoration:none}
@@ -643,7 +632,7 @@ dialog.sheetdlg::backdrop{background:rgb(6 9 18 / .54);backdrop-filter:blur(2px)
 
 <header class="top">
   <div class="wrap topin">
-    <a class="logo" href="#explore" aria-label="Inspired By, family tree of games"><i aria-hidden="true"></i><b>Inspired By</b><small>GAME HISTORY</small></a>
+    <a class="logo" href="#explore" aria-label="Played & Made — your life in games and the humans who built them"><i aria-hidden="true"></i><b>Played &amp; Made</b><small>LIFE IN GAMES</small></a>
     <nav class="tabs" aria-label="Sections">
       <a class="tab" href="#timeline" data-tab="timeline">My timeline</a>
       <a class="tab" href="#explore" data-tab="explore">Explore</a>
@@ -651,7 +640,10 @@ dialog.sheetdlg::backdrop{background:rgb(6 9 18 / .54);backdrop-filter:blur(2px)
       <a class="tab" href="#studios" data-tab="studios">Makers & world</a>
       <a class="tab" href="#friends" data-tab="friends">Friends</a>
     </nav>
-    <button class="artbtn" id="synthBtn" type="button" data-act="synthToggle" title="Toggle warm 1980s synthwave ambience & retro tap chimes">♪ 80s synth</button>
+    <div class="audiobar" role="group" aria-label="Audio controls">
+      <button class="artbtn" id="sfxBtn" type="button" data-act="sfxToggle" title="Toggle selection & arcade sound effects (on by default)">🔊 SFX</button>
+      <button class="artbtn" id="synthBtn" type="button" data-act="synthToggle" title="Toggle driving Tron-inspired synth music (off by default)">♪ Synth</button>
+    </div>
   </div>
 </header>
 <div id="sandboxBar"></div>
@@ -722,7 +714,7 @@ window._covErr=function(im){
 };
 const CULT=RAW.culture||{};
 const MW=RAW.mw||{mechanics:[],genres:{},boardgames:[]};
-const G=RAW.g.map((r,i)=>({i,code:r[0],id:r[1],title:r[2],year:r[3],dev:r[4],cc:r[5],gen:r[6],plats:r[7].map(p=>PLATS[p]),pop:r[8],note:r[9],inf:r[10],aka:r[11],cat:!!(r[12]&1),img:imgURL(r[13]||""),moby:r[14]||0,yt:r[15]||"",n:norm(r[2]),nr:normR(r[2]),h:hueOf(r[1])}));
+const G=RAW.g.map((r,i)=>{const ryt=String(r[15]||""),yta=ryt.startsWith("~");return {i,code:r[0],id:r[1],title:r[2],year:r[3],dev:r[4],cc:r[5],gen:r[6],plats:r[7].map(p=>PLATS[p]),pop:r[8],note:r[9],inf:r[10],aka:r[11],cat:!!(r[12]&1),img:imgURL(r[13]||""),moby:r[14]||0,yt:yta?ryt.slice(1):ryt,ytAuto:yta,n:norm(r[2]),nr:normR(r[2]),h:hueOf(r[1])}});
 const L=RAW.l.map((r,i)=>({i,from:r[0],to:r[1],t:r[2],tier:TIERS[r[2]].k,took:r[3],added:r[4],src:r[5],extra:r[6],minor:!!(r[7]&1),disputed:!!(r[7]&2),rel:RELS_K[r[8]||0]||""}));
 const mobyURL=g=>g.moby?`https://www.mobygames.com/game/${g.moby}/credits/`:`https://www.mobygames.com/search/?q=${encodeURIComponent(g.title)}&type=game`;
 const mobyCoversURL=g=>g.moby?`https://www.mobygames.com/game/${g.moby}/covers/`:`https://www.mobygames.com/search/?q=${encodeURIComponent(g.title)}&type=game`;
@@ -881,44 +873,76 @@ function canvasHardware(x,sys,bx,by,w,h){
   x.restore();
 }
 
-/* ---------- opt-in 1980s warm synthwave ambience & retro tap chimes (Web Audio, 0 KB) ---------- */
-const SYNTH={ctx:null,on:false,timer:null,step:0};
+/* ---------- audio: SFX on by default + opt-in driving Tron-inspired synth (Web Audio, 0 KB) ---------- */
+const SYNTH={ctx:null,on:false,sfx:store.get("ib3-sfx",1)!==0,timer:null,step:0};
 function ensureAudio(){if(!SYNTH.ctx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)SYNTH.ctx=new AC()}if(SYNTH.ctx&&SYNTH.ctx.state==="suspended")SYNTH.ctx.resume();return SYNTH.ctx}
 function playBlip(lv){
-  if(!SYNTH.on)return;const ctx=ensureAudio();if(!ctx)return;
-  const notes=lv===3?[523.25,659.25,783.99,1046.5]:lv===2?[523.25,659.25]:lv===1?[440]:[330];
+  if(!SYNTH.sfx)return;const ctx=ensureAudio();if(!ctx)return;
+  const notes=lv===3?[523.25,659.25,783.99,1046.5]:lv===2?[523.25,659.25]:lv===1?[440,554.37]:[311.13];
   notes.forEach((f,k)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type="triangle";o.frequency.value=f;
-    const t=ctx.currentTime+k*0.055;g.gain.setValueAtTime(0.001,t);g.gain.exponentialRampToValueAtTime(0.05,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+0.16);
-    o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+0.17)});
+    const t=ctx.currentTime+k*0.05;g.gain.setValueAtTime(0.001,t);g.gain.exponentialRampToValueAtTime(0.052,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+0.15);
+    o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+0.16)});
+}
+function toggleSfx(){
+  SYNTH.sfx=!SYNTH.sfx;store.set("ib3-sfx",SYNTH.sfx?1:0);
+  if(SYNTH.sfx)playBlip(2);
+  updateAudioBtns();
+  toast(SYNTH.sfx?"🔊 Game selection chimes on":"🔇 Sound effects muted");
 }
 function toggleSynth(){
-  if(SYNTH.on){SYNTH.on=false;clearInterval(SYNTH.timer);SYNTH.timer=null;updateSynthBtn();toast("80s synth paused");return}
+  if(SYNTH.on){SYNTH.on=false;clearInterval(SYNTH.timer);SYNTH.timer=null;updateAudioBtns();toast("Synth music paused");return}
   const ctx=ensureAudio();if(!ctx){toast("Audio isn't available in this browser");return}
   SYNTH.on=true;SYNTH.step=0;
-  const chords=[[220,261.63,329.63,392],[174.61,220,261.63,329.63],[130.81,196,246.94,329.63],[196,246.94,293.66,392]];
-  const arp=[0,1,2,3,2,1,3,1];
-  const tick=()=>{if(!SYNTH.on)return;const ch=chords[Math.floor(SYNTH.step/8)%chords.length],n=ch[arp[SYNTH.step%8]];
-    const t=ctx.currentTime,o=ctx.createOscillator(),flt=ctx.createBiquadFilter(),g=ctx.createGain();
-    o.type="sawtooth";o.frequency.setValueAtTime(n,t);flt.type="lowpass";flt.frequency.setValueAtTime(980,t);
-    g.gain.setValueAtTime(0.0008,t);g.gain.linearRampToValueAtTime(0.028,t+0.03);g.gain.exponentialRampToValueAtTime(0.0008,t+0.27);
-    o.connect(flt);flt.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+0.29);
-    if(SYNTH.step%8===0){const b=ctx.createOscillator(),bg=ctx.createGain();b.type="triangle";b.frequency.setValueAtTime(ch[0]/2,t);
-      bg.gain.setValueAtTime(0.001,t);bg.gain.linearRampToValueAtTime(0.036,t+0.08);bg.gain.exponentialRampToValueAtTime(0.0008,t+1.9);
-      b.connect(bg);bg.connect(ctx.destination);b.start(t);b.stop(t+1.95)}
-    SYNTH.step++};
-  tick();SYNTH.timer=setInterval(tick,250);updateSynthBtn();toast("♪ 80s arcade synth on — click again anytime to pause");
+  /* Driving 125-BPM D-minor Tron / Derezzed-inspired 16th-note grid arpeggio + octave bass + kick pulse */
+  const bars=[
+    {bass:73.42,arp:[293.66,349.23,440,587.33,440,349.23,523.25,440,293.66,440,349.23,587.33,659.25,587.33,440,349.23],lead:587.33},
+    {bass:58.27,arp:[233.08,293.66,349.23,466.16,349.23,293.66,523.25,466.16,233.08,349.23,293.66,466.16,587.33,466.16,349.23,293.66],lead:523.25},
+    {bass:87.31,arp:[349.23,440,523.25,698.46,523.25,440,659.25,523.25,349.23,523.25,440,698.46,783.99,698.46,523.25,440],lead:698.46},
+    {bass:65.41,arp:[261.63,329.63,392,523.25,392,329.63,587.33,523.25,261.63,392,329.63,523.25,659.25,587.33,523.25,392],lead:659.25}
+  ];
+  const tick=()=>{
+    if(!SYNTH.on)return;
+    const s=SYNTH.step,bar=bars[Math.floor(s/16)%bars.length],i=s%16,t=ctx.currentTime;
+    /* 16th-note gated sawtooth arpeggio with dynamic filter sweep */
+    const o=ctx.createOscillator(),flt=ctx.createBiquadFilter(),g=ctx.createGain();
+    o.type="sawtooth";o.frequency.setValueAtTime(bar.arp[i],t);
+    flt.type="lowpass";flt.Q.value=4.2;
+    const cutoff=1100+Math.sin(s*0.18)*650+(i%4===0?420:0);
+    flt.frequency.setValueAtTime(cutoff,t);flt.frequency.exponentialRampToValueAtTime(380,t+0.11);
+    g.gain.setValueAtTime(0.0008,t);g.gain.linearRampToValueAtTime(i%4===0?0.032:0.022,t+0.008);g.gain.exponentialRampToValueAtTime(0.0006,t+0.115);
+    o.connect(flt);flt.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+0.12);
+    /* Driving 8th-note octave bassline */
+    if(i%2===0){
+      const b=ctx.createOscillator(),bf=ctx.createBiquadFilter(),bg=ctx.createGain();
+      b.type="sawtooth";b.frequency.setValueAtTime(i%4===2?bar.bass*2:bar.bass,t);
+      bf.type="lowpass";bf.frequency.setValueAtTime(520,t);bf.frequency.exponentialRampToValueAtTime(140,t+0.19);
+      bg.gain.setValueAtTime(0.001,t);bg.gain.linearRampToValueAtTime(0.042,t+0.01);bg.gain.exponentialRampToValueAtTime(0.0008,t+0.20);
+      b.connect(bf);bf.connect(bg);bg.connect(ctx.destination);b.start(t);b.stop(t+0.21);
+    }
+    /* Four-on-the-floor electronic kick pulse */
+    if(i%4===0){
+      const k=ctx.createOscillator(),kg=ctx.createGain();
+      k.type="sine";k.frequency.setValueAtTime(135,t);k.frequency.exponentialRampToValueAtTime(42,t+0.09);
+      kg.gain.setValueAtTime(0.065,t);kg.gain.exponentialRampToValueAtTime(0.0008,t+0.11);
+      k.connect(kg);kg.connect(ctx.destination);k.start(t);k.stop(t+0.12);
+    }
+    /* Soaring Tron brass-lead accent on bar change */
+    if(i===0||i===10){
+      const ld=ctx.createOscillator(),lf=ctx.createBiquadFilter(),lg=ctx.createGain();
+      ld.type="triangle";ld.frequency.setValueAtTime(i===0?bar.lead:bar.lead*0.75,t);
+      lf.type="lowpass";lf.frequency.setValueAtTime(1800,t);
+      lg.gain.setValueAtTime(0.0008,t);lg.gain.linearRampToValueAtTime(0.024,t+0.04);lg.gain.exponentialRampToValueAtTime(0.0006,t+0.55);
+      ld.connect(lf);lf.connect(lg);lg.connect(ctx.destination);ld.start(t);ld.stop(t+0.58);
+    }
+    SYNTH.step++;
+  };
+  tick();SYNTH.timer=setInterval(tick,120);updateAudioBtns();toast("♪ Tron-grid synth on — tap again anytime to pause");
 }
-function playInsertSound(kind){
-  const ctx=ensureAudio();if(!ctx)return;
-  const t=ctx.currentTime;
-  const seq=kind==="floppy"?[[140,0,.04,"square"],[95,.05,.06,"sawtooth"],[320,.13,.09,"triangle"]]
-    :kind==="disc"?[[220,0,.04,"sine"],[440,.05,.12,"sine"],[660,.12,.14,"triangle"]]
-    :[[110,0,.045,"square"],[260,.045,.06,"triangle"],[523.25,.11,.12,"triangle"]];
-  seq.forEach(([f,dt,dur,tp])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type=tp;o.frequency.setValueAtTime(f,t+dt);
-    g.gain.setValueAtTime(0.001,t+dt);g.gain.linearRampToValueAtTime(0.055,t+dt+0.01);g.gain.exponentialRampToValueAtTime(0.0008,t+dt+dur);
-    o.connect(g);g.connect(ctx.destination);o.start(t+dt);o.stop(t+dt+dur+0.01)});
+function updateAudioBtns(){
+  const sb=$("#sfxBtn");if(sb){sb.textContent=SYNTH.sfx?"🔊 SFX":"🔇 SFX";sb.setAttribute("aria-pressed",SYNTH.sfx)}
+  const b=$("#synthBtn");if(b){b.textContent=SYNTH.on?"❚❚ Synth":"♪ Synth";b.classList.toggle("playing",SYNTH.on);b.setAttribute("aria-pressed",SYNTH.on);document.body.classList.toggle("synth-on",SYNTH.on)}
 }
-function updateSynthBtn(){const b=$("#synthBtn");if(!b)return;b.textContent=SYNTH.on?"❚❚ Pause synth":"♪ 80s synth";b.classList.toggle("playing",SYNTH.on);document.body.classList.toggle("synth-on",SYNTH.on)}
+const updateSynthBtn=updateAudioBtns;
 
 /* ---------- curated mood, vibe & memory packs (casual timeline browsing) ---------- */
 const MEMORY_PACKS=[
@@ -931,7 +955,9 @@ const MEMORY_PACKS=[
   {k:"flow",title:"⚡ Pure Flow, Speed & High Scores",sub:"Muscle memory, rhythm, and chasing one cleaner run.",ids:["tetris","super-mario-bros-3","super-mario-world","sonic-the-hedgehog-2","tony-hawks-pro-skater-2","wipeout-2097","ssx-tricky","burnout-3-takedown","mirrors-edge","geometry-wars-retro-evolved","super-meat-boy","hotline-miami","threes","celeste","hades","vampire-survivors","balatro","sekiro-shadows-die-twice"]},
   {k:"indie",title:"💎 Indie Gems Beyond the Mega-Hype",sub:"Small teams and solo creators punching way above blockbuster budgets.",ids:["cave-story","braid","limbo","fez","FTL: Faster Than Light","papers-please","shovel-knight","undertale","stardew-valley","inside","hollow-knight","return-of-the-obra-dinn","outer-wilds","slay-the-spire","baba-is-you","tunic","dredge","dave-the-diver","animal-well","balatro","blue-prince","inscryption","signalis"]},
   {k:"scares",title:"👻 Lights-Off Tension & Survival",sub:"Creaking doors, scarce ammo, and playing with the lamp on.",ids:["alone-in-the-dark","resident-evil","resident-evil-2","resident-evil-4","silent-hill","silent-hill-2","system-shock-2","half-life","dead-space","left-4-dead","amnesia-the-dark-descent","alien-isolation","pt","subnautica","alan-wake-2","lethal-company"]},
-  {k:"sandbox",title:"🌍 Open Worlds & Player Chaos",sub:"Sandboxes where making your own fun beat following the rules.",ids:["elite","hunter","grand-theft-auto","grand-theft-auto-iii","grand-theft-auto-san-andreas","grand-theft-auto-v","battlefield-1942","the-elder-scrolls-iii-morrowind","the-elder-scrolls-v-skyrim","garrys-mod","minecraft","terraria","kerbal-space-program","the-legend-of-zelda-breath-of-the-wild","elden-ring","valheim","no-mans-sky"]}
+  {k:"sandbox",title:"🌍 Open Worlds & Player Chaos",sub:"Sandboxes where making your own fun beat following the rules.",ids:["elite","hunter","grand-theft-auto","grand-theft-auto-iii","grand-theft-auto-san-andreas","grand-theft-auto-v","battlefield-1942","the-elder-scrolls-iii-morrowind","the-elder-scrolls-v-skyrim","garrys-mod","minecraft","terraria","kerbal-space-program","the-legend-of-zelda-breath-of-the-wild","elden-ring","valheim","no-mans-sky"]},
+  {k:"sweat",title:"😤 Brutal Games That Made Us Sweat",sub:"Infamous jumps, palms-sweating bosses, and controller-gripping tests of willpower.",ids:["ghosts-n-goblins","battletoads","ninja-gaiden","contra","rick-dangerous","shadow-of-the-beast","the-lion-king","f-zero-gx","devil-may-cry-3-dantes-awakening","super-meat-boy","dark-souls","spelunky","darkest-dungeon","cuphead","getting-over-it-with-bennett-foddy","celeste","sekiro-shadows-die-twice","returnal","elden-ring"]},
+  {k:"harbor",title:"🛟 Worlds That Carried Us Through",sub:"Safe harbors, warm towns, and grand adventures that helped us weather rough seasons.",ids:["the-secret-of-monkey-island","chrono-trigger","final-fantasy-vii","the-legend-of-zelda-ocarina-of-time","pokemon-red-and-blue","simcity-2000","shenmue","animal-crossing","kingdom-hearts","world-of-warcraft","the-elder-scrolls-v-skyrim","minecraft","journey","undertale","stardew-valley","celeste","outer-wilds","animal-crossing-new-horizons"]}
 ];
 function packGames(pk){const seen=new Set(),out=[];(pk.ids||[]).forEach(x=>{const g=gameRef(x);if(g&&!seen.has(g.i)){seen.add(g.i);out.push(g)}});return out}
 
@@ -1071,7 +1097,9 @@ function connectPath(a,b){
    My timeline: storage, levels, memories, share links, sync
    ================================================================ */
 const LV={1:{m:"✓",label:"Played"},2:{m:"★",label:"Played a ton"},3:{m:"♥",label:"Favorite"}};
-const MEM_TAGS=["Couch co-op","With siblings","With friends","LAN party","After school","Summer break","Late nights","Arcade","Hand-me-down"];
+const MEM_TAGS=["Couch co-op","With siblings","With friends","LAN party","After school","Summer break","Late nights","Arcade","Hand-me-down","🛟 Carried me through","🏠 Safe harbor","✨ Shaped who I am","🎨 Pure art","😤 Made me sweat"];
+const HARBOR_TAGS=new Set(["🛟 Carried me through","🏠 Safe harbor","✨ Shaped who I am","🎨 Pure art"]);
+const SWEAT_TAG="😤 Made me sweat";
 const DEV_ROLES=["Design","Engineering","Art & Animation","Audio & Music","Narrative","Production","QA","Publishing & Ops"];
 const lvOf=e=>{const v=(e&&e.lv)|0;return v>=1&&v<=3?v:1};
 function blankHist(){return {birth:null,name:"",owned:[],years:{},workedStudios:[],top10:[],favOrder:[],sysDef:{},updated:0,stage:null}}
@@ -1089,7 +1117,7 @@ function cleanTimeline(raw){
       const x={t:e.t.slice(0,120),p:typeof e.p==="string"?e.p.slice(0,2):"",y:Number.isInteger(e.y)?e.y:null,lv:lvOf(e)};
       if(Array.isArray(e.systems))x.systems=strs(e.systems,8,40);if(typeof e.sys==="string")x.sys=e.sys.slice(0,40);
       if(typeof e.mem==="string"&&e.mem.trim())x.mem=e.mem.trim().slice(0,90);
-      if(Array.isArray(e.mtags)&&e.mtags.length)x.mtags=strs(e.mtags,4,24);
+      if(Array.isArray(e.mtags)&&e.mtags.length)x.mtags=strs(e.mtags,6,32);
       if(e.wk)x.wk=1;
       if(typeof e.role==="string"&&DEV_ROLES.includes(e.role))x.role=e.role;
       out.push(x)}
@@ -1187,7 +1215,7 @@ function encodeShare(d){
     else custom.push(String(y-1900).padStart(3,"0")+l+toHex(e.t,40));
     if(g&&g.code<65536&&e.wk&&g.year===y)notes.push("w"+hex4(g.code)+ri);
     if(g&&g.code<65536&&(e.mem||(e.mtags&&e.mtags.length))){
-      const ti=(e.mtags||[]).map(t=>MEM_TAGS.indexOf(t)).filter(k=>k>=0).join("");
+      const ti=(e.mtags||[]).map(t=>MEM_TAGS.indexOf(t)).filter(k=>k>=0&&k<36).map(k=>k.toString(36)).join("");
       notes.push("n"+hex4(g.code)+ti+"q"+toHex(e.mem||"",50));
     }
   }
@@ -1213,15 +1241,24 @@ function decodeShare(s){
   if(p[9]){(p[9]||"").split("z").filter(Boolean).forEach(x=>{
     if(x[0]==="w"&&x.length>=6){const g=byCode.get(parseInt(x.slice(1,5),16)),rk=+x[5];const e=g&&entryOf(d,g);if(e){e.wk=1;if(DEV_ROLES[rk])e.role=DEV_ROLES[rk]}return}
     if(x[0]==="s"&&x.length>2){const id=fromHex(x.slice(1));if(STUDIOS.has(id)&&!d.workedStudios.includes(id))d.workedStudios.push(id);return}
-    if(x[0]==="n"&&x.length>=6){const g=byCode.get(parseInt(x.slice(1,5),16)),qi=x.indexOf("q",5);if(!g||qi<0)return;const tags=[...x.slice(5,qi)].map(c=>MEM_TAGS[+c]).filter(Boolean),mem=fromHex(x.slice(qi+1));const e=entryOf(d,g);if(e){if(tags.length)e.mtags=tags;if(mem)e.mem=mem}return}
+    if(x[0]==="n"&&x.length>=6){const g=byCode.get(parseInt(x.slice(1,5),16)),qi=x.indexOf("q",5);if(!g||qi<0)return;const tags=[...x.slice(5,qi)].map(c=>MEM_TAGS[parseInt(c,36)]).filter(Boolean),mem=fromHex(x.slice(qi+1));const e=entryOf(d,g);if(e){if(tags.length)e.mtags=tags;if(mem)e.mem=mem}return}
     const g=byCode.get(parseInt(x.slice(0,3),36));if(!g)return;
     const qi=x.indexOf("q",3);if(qi<0)return;
-    const tags=[...x.slice(3,qi)].map(c=>MEM_TAGS[+c]).filter(Boolean),mem=fromHex(x.slice(qi+1));
+    const tags=[...x.slice(3,qi)].map(c=>MEM_TAGS[parseInt(c,36)]).filter(Boolean),mem=fromHex(x.slice(qi+1));
     const e=entryOf(d,g);if(e){if(tags.length)e.mtags=tags;if(mem)e.mem=mem}
   })}
   const c=cleanTimeline(d);c.years&&Object.values(c.years).forEach(sortPile);return c.birth?c:null;
 }
 const shareLink=d=>shareBase()+"#"+encodeShare(d);
+function encodeList(lst){
+  const items=(lst.items||[]).map(it=>{const g=byId.get(it.id);if(!g)return "";return hex4(g.code)+(it.note?"q"+toHex(it.note,60):"")}).filter(Boolean).join("z");
+  return ["list",toHex(lst.title||"My Game List",48),toHex(lst.sub||"",80),toHex(lst.author||hist.name||"",24),items].join("-");
+}
+function decodeList(s){
+  const p=String(s||"").split("-");if(p[0]!=="list"||p.length<5)return null;
+  const items=(p[4]||"").split("z").filter(Boolean).map(x=>{const qi=x.indexOf("q",4),code=parseInt(x.slice(0,4),16),g=byCode.get(code);if(!g)return null;return {id:g.id,g,note:qi>=4?fromHex(x.slice(qi+1)):""}}).filter(Boolean);
+  return {title:fromHex(p[1])||"Game List",sub:fromHex(p[2]),author:fromHex(p[3]),items};
+}
 
 /* ---------- capabilities: database sync and the friends wall ---------- */
 const CAPS={db:null,user:null,me:null,owner:false,canWrite:null,ok:false,comments:null};
@@ -1282,7 +1319,7 @@ function friendList(){
 /* ================================================================
    Router and views
    ================================================================ */
-const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),mechTab:"mechanics",genreSel:"",worldCC:"",worldMine:false,quizMode:"lineage",posterMode:"wall",mapMode:"pillars",mapStrong:true,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),showArtWhy:store.get("ib3-artwhy",1),makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),mechTab:"mechanics",genreSel:"",worldCC:"",worldMine:false,quizMode:"lineage",posterMode:"wall",mapMode:"pillars",mapStrong:true,listIdx:0,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
 state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
 const isDevMode=()=>!!(state.devMode||workedEntries(hist).length||(hist.workedStudios&&hist.workedStudios.length));
 function renderSandboxBar(){
@@ -1297,15 +1334,17 @@ function parseHash(){
   let h="";try{h=decodeURIComponent(location.hash.slice(1))}catch(e){h=location.hash.slice(1)}
   const home={view:hist.birth&&!hist.stage?"timeline":"start"};
   if(!h||h==="start")return home;
+  if(h==="picks"){if(hist.birth){hist.stage="picks";return {view:"start",picks:1}}return home}
   if(h==="timeline")return hist.birth&&!hist.stage?{view:"timeline"}:{view:"start"};
   if(h==="explore")return {view:"explore"};
   if(h==="mechanics"||h==="boardgames"||h==="genres"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":"mechanics";return {view:"mechanics"}}
   if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
   if(h==="world"){return {view:"world"}}
   if(h.startsWith("country-")&&/^[A-Za-z]{2}$/.test(h.slice(8))){state.worldCC=h.slice(8).toUpperCase();return {view:"world",cc:state.worldCC}}
-  if(h==="studios")return {view:"studios"};
+  if(h==="studios"||h==="gratitude"){if(h==="gratitude")state.stFilter="gratitude";return {view:"studios"}}
   if(h.startsWith("studio-")&&findStudio(h.slice(7)))return {view:"studio",st:findStudio(h.slice(7)).id};
   if(h==="friends")return {view:"friends"};
+  if(h.startsWith("list-"))return {view:"sharedList",payload:h};
   if(h.startsWith("t1-"))return {view:"shared",payload:h};
   if(h.startsWith("friend-"))return {view:"person",fk:h};
   if(h.startsWith("walk-")&&byId.has(h.slice(5)))return {view:"game",id:h.slice(5),walk:true};
@@ -1320,9 +1359,9 @@ addEventListener("hashchange",route);
 function render(){
   renderSandboxBar();
   const r=state.route,m=$("#main");
-  const tab=r.view==="start"?"timeline":(r.view==="shared"||r.view==="person")?"friends":r.view==="game"?"explore":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
+  const tab=r.view==="start"?"timeline":(r.view==="shared"||r.view==="person"||r.view==="sharedList")?"friends":r.view==="game"?"explore":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
   $$(".tab").forEach(a=>a.toggleAttribute("aria-current",a.dataset.tab===tab)),$$(".tab").forEach(a=>{if(a.dataset.tab===tab)a.setAttribute("aria-current","page")});
-  const key=r.view+(r.id||"")+(r.st||"")+(r.gen||"")+(r.cc||"")+(r.payload||"")+(r.fk||"");
+  const key=r.view+(r.id||"")+(r.st||"")+(r.gen||"")+(r.cc||"")+(r.payload||"")+(r.fk||"")+(r.picks||"");
   if(r.view==="start")renderStart(m);
   else if(r.view==="timeline")renderTimeline(m);
   else if(r.view==="explore")renderExplore(m);
@@ -1332,6 +1371,7 @@ function render(){
   else if(r.view==="studio")renderStudio(m,r.st);
   else if(r.view==="game")renderGame(m,r.id);
   else if(r.view==="friends")renderFriends(m);
+  else if(r.view==="sharedList")renderSharedList(m,r.payload);
   else if(r.view==="shared")renderShared(m,r.payload);
   else if(r.view==="person"){const f=friendList().find(x=>friendHash(x)===r.fk);
     if(f)renderPerson(m,f);else m.innerHTML=`<section class="wrap exhero"><h1 class="h1">Loading timeline…</h1><p class="lede">If nothing appears, this friend may have been removed from the friends wall.</p><a class="btn" href="#friends">◂ Back to friends</a></section>`}
@@ -1342,17 +1382,19 @@ const footer=()=>`<footer class="wrap foot-about">
   <div class="row" style="justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--line)">
     <div class="row" style="gap:6px">
       <a class="chip" href="#timeline">My timeline</a>
+      ${hist.birth?`<button type="button" class="chip" data-act="obAgain">➕ Pick games</button>`:""}
+      <button type="button" class="chip" data-act="listsSheet">📋 Custom lists</button>
       <a class="chip" href="#explore">Explore tree</a>
       <a class="chip" href="#mechanics">Genres & mechanics</a>
-      <a class="chip" href="#boardgames">🎲 Boardgame roots</a>
       <a class="chip" href="#world">🌍 World map</a>
-      <a class="chip" href="#studios">Makers</a>
+      <a class="chip" href="#gratitude">💌 Thank makers</a>
       <a class="chip" href="#friends">Friends</a>
     </div>
     <button type="button" class="btn sm ghost" data-act="scrollTop">↑ Back to top</button>
   </div>
-  <p><b>Inspired By is a tribute to the people who make games.</b> Every game stands on the craft of earlier teams, and every studio adds something of its own. Each link shows what changed, what it built on, how strong the evidence is, and its source.</p>
-  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles. <button class="link" data-act="suggest">Spot a missing link or better source?</button> · <button class="link" data-act="goGiveBack">Support youth in game creation & preservation ▸</button> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button> · Built ${esc(RAW.built||"")}.</p></footer>`;
+  <p><b>Played &amp; Made — your life in games, and the humans who built them.</b> For many of us, video games weren't a distraction — they were safe harbors growing up, bridges to friends, and living art built by designers, engineers, writers, painters, and musicians. Every link here honors what teams built on and what they added.</p>
+  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">💡 Suggest a feature or idea</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <button class="link" data-act="goGiveBack">Support youth &amp; preservation ▸</button> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button></p>
+  <p style="margin-top:6px;font-size:12px;opacity:.85">Created by <b>Johan Heurlin</b> · Built ${esc(RAW.built||"")}.</p></footer>`;
 
 function eraMomentsHTML(from,to){
   if(!state.eraMem)return "";
@@ -1372,11 +1414,21 @@ function gtaviSpotlight(){
     <p class="eyebrow" style="margin-bottom:4px">Launch week spotlight · Video games as cumulative art</p>
     <h2 class="h2">${esc(gta.title)}: ${yrs} years in the making</h2>
     <p class="sub" style="margin:4px 0 10px">Before the inevitable wave of fast-follows begins, trace the real craft behind ${esc(gta.title)}: ${plural(ch.length-1,"step")} across ${plural(studios.size,"studio")} in ${plural(countries.size,"country","countries")}, from 1960s lab mainframes and 1980s British space sims to modern Vice City.</p>
-    <div class="row"><button class="btn sm primary" data-act="walk" data-id="${gta.id}">Walk its ${yrs}-year roots ▸</button><button class="btn sm" data-act="game" data-id="${gta.id}">Open family tree</button><button class="btn sm" data-act="watchTv" data-id="${gta.id}">📺 Watch trailer in TV</button></div>
+    <div class="row"><button class="btn sm primary" data-act="walk" data-id="${gta.id}">Walk its ${yrs}-year roots ▸</button><button class="btn sm" data-act="game" data-id="${gta.id}">Open family tree</button><button class="btn sm" data-act="watchTv" data-id="${gta.id}">▶ Watch trailer</button></div>
   </div></div>
   ${hls.length?`<details class="gtadet"><summary>📰 From 1976 “moral panic” headlines & Senate hearings to the biggest launch on Earth (${hls.length} milestones)</summary>
     <div class="hlgrid">${hls.map(h=>{const gm=h.game&&byId.get(h.game);return `<div class="hlcard"><span class="hlyr">${esc(h.year)} · ${esc(h.kicker||"")}</span><b>“${esc(h.quote)}”</b><p>${esc(h.body)}</p>${gm?`<button type="button" class="link" style="font-size:11.5px;align-self:flex-start;margin-top:auto" data-act="game" data-id="${gm.id}">${esc(gm.title)} ▸</button>`:""}</div>`}).join("")}</div></details>`:""}
   </div>`;
+}
+function whyGamesSectionHTML(compact=false){
+  const pillars=CULT.artPillars||[
+    {icon:"🛟",eyebrow:"Safe harbor",title:"A lifeline through turbulent childhoods",body:"Just as an album, book, or film carried other kids through rough homes or lonely seasons, a glowing screen gave millions of us a safe harbor where curiosity mattered and the chaos outside paused."},
+    {icon:"🎨",eyebrow:"Living art",title:"Every human art form under one roof",body:"Painting, music composition, architecture, writing, psychology, and code woven together by real human teams into worlds you don't merely watch — you inhabit."},
+    {icon:"🔥",eyebrow:"Agency & grit",title:"Teaching us to adapt and keep going",body:"Games ask something back: reading maps, solving systems, laughing on a couch with friends, and getting back up twenty times until an impossible challenge gives way."},
+    {icon:"💌",eyebrow:"To the makers",title:"Even when studios close, your worlds stay open",body:"Logos change and credits scroll fast, yet decades later someone across the world still carries the melody, level, or safe room you stayed late to build."}
+  ];
+  return `<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">More than pastimes · Art & safe harbors</p><h2 class="h2">Why games stay with us for life — and why their makers matter</h2><p class="sub">For anyone who ever wondered why people care so deeply about the games they grew up with — and for every developer who ever wondered if their work was forgotten.</p></div>${compact?`<a class="btn sm" href="#gratitude">💌 Read & send letters to makers ▸</a>`:`<button type="button" class="btn sm love" data-act="gratSheet">💌 Write a thank-you to a maker</button>`}</div>
+    <div class="artgrid">${pillars.map(p=>`<div class="artcard"><span class="eyebrow" style="margin:0">${esc(p.icon||"✦")} ${esc(p.eyebrow||"")}</span><b style="font-family:var(--f-display);font-size:14.5px;line-height:1.25">${esc(p.title)}</b><p style="margin:2px 0 0;font-size:13px;color:var(--ink2);line-height:1.48">${esc(p.body)}</p></div>`).join("")}</div></section>`;
 }
 
 /* ---------- start: new visitors ---------- */
@@ -1389,11 +1441,11 @@ function renderStart(m){
   const fl=friendList();
   m.innerHTML=`<section class="wrap hero">
     <div>
-      <p class="eyebrow">Your life in games</p>
-      <h1 class="h1">What did you play growing up?</h1>
-      <p class="lede">Tap the games that raised you and get your gaming timeline in two minutes. Add childhood memories, compare timelines with friends, and trace your favorites back to the pioneers who inspired them.</p>
+      <p class="eyebrow">Played &amp; Made · Your life in games — and the humans who built them</p>
+      <h1 class="h1">What worlds raised you growing up?</h1>
+      <p class="lede">Tap the games and machines that carried you through childhood and get your gaming timeline in two minutes. Share memories with friends, trace favorites back to the 1950s, and send love to the human teams behind the art.</p>
       <form class="start" id="startForm" novalidate>
-        <label class="field" for="birthIn">Year you were born<input class="input" id="birthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1986" autocomplete="off"></label>
+        <label class="field" for="birthIn">Year you were born<input class="input" id="birthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1984" autocomplete="off"></label>
         <button class="btn primary" type="submit">Start my timeline</button>
       </form>
       <p class="sub" id="birthErr" style="margin-top:8px" hidden></p>
@@ -1406,6 +1458,7 @@ function renderStart(m){
     </div>`:""}
   </section>
   <section class="wrap">${gtaviSpotlight()}</section>
+  ${whyGamesSectionHTML(true)}
   <section class="wrap sec">
     <h2 class="h2">Or trace any game's family tree</h2>
     <p class="sub">Search any game to see what inspired it, what it went on to inspire, and the makers behind it.</p>
@@ -1528,8 +1581,8 @@ function renderPicks(m){
   const s=pickSummary();
   m.innerHTML=`<section class="wrap" style="padding-block:28px 0">
     <div class="row" style="justify-content:space-between">
-      <div class="steps" style="margin:0"><i class="on"></i><i class="on"></i><i class="on"></i><span>Step 3 of 3 · Auto-saved as you tap</span></div>
-      <div class="row"><button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button><button type="button" class="btn sm ghost" data-act="obSystems">◂ Edit systems (${own.length||"all"})</button></div>
+      <div class="steps" style="margin:0"><i class="on"></i><i class="on"></i><i class="on"></i><span>${s.n?"Game picker · Auto-saved":"Step 3 of 3 · Auto-saved as you tap"}</span></div>
+      <div class="row"><button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button><button type="button" class="btn sm" data-act="obSystems">🕹️ Systems (${own.length||"all"})</button>${s.n?`<button type="button" class="btn sm primary" data-act="obDone">Back to my timeline (${s.n}) ▸</button>`:""}</div>
     </div>
     <h1 class="h1" style="font-size:clamp(1.6rem,1.1rem + 2.5vw,2.4rem);margin-top:8px">Tap the games you played</h1>
     <div class="tap-hint"><span><b>✓</b>1 tap: played</span><span><b class="l2">★</b>2 taps: played a ton</span><span><b class="l3">♥</b>3 taps: all-time favorite</span><span class="muted">· tap <b>i</b> or title for game info · <b>⑂</b> for family tree</span></div>
@@ -1831,19 +1884,21 @@ function renderTimeline(m){
         <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.span}</b><span>${st.span===1?"year":"years"}${yrSpanTxt?` (${yrSpanTxt})`:""}</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge>=0?` (age ${peakAge})`:""}</span></div>`:`<div class="stat"><b>${d.birth}</b><span>born</span></div>`}</div>
         ${teaser}
       </div>
-      <div class="row"><button class="btn primary" data-act="share">Share & export</button><button class="btn" data-act="packSheet">✦ Memory packs</button>${isDevMode()?`<button class="btn ${mk?"craft":""}" data-act="makerSheet">🛠 ${mk?`Dev credits (${st.wk})`:`I worked in games`}</button>`:""}<button class="btn" data-act="poster">Poster & Box Pile</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
+      <div class="row"><button class="btn primary" data-act="obAgain">➕ Pick games</button><button class="btn primary" data-act="share">Share & export</button><button class="btn" data-act="listsSheet">📋 Custom lists</button>${isDevMode()?`<button class="btn ${mk?"craft":""}" data-act="makerSheet">🛠 ${mk?`Dev credits (${st.wk})`:`I worked in games`}</button>`:""}<button class="btn" data-act="poster">Poster & Box Pile</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
     </section>
     <div class="wrap"><nav class="subnav" aria-label="Jump to timeline section">
+      <button type="button" class="chip" data-act="obAgain">🕹️ Browse & pick games</button>
+      <button type="button" class="chip" data-act="packSheet">✦ Mood & sweat packs</button>
       <button type="button" class="chip" data-act="bandJump" data-to="tlLife">🗓️ Year-by-year</button>
       ${st.fav?`<button type="button" class="chip" data-act="bandJump" data-to="favSec">♥ Favorites (${st.fav})</button>`:""}
       ${dx?`<button type="button" class="chip" data-act="bandJump" data-to="dna">🧬 Gaming DNA & Next Up</button>`:""}
-      <button type="button" class="chip" data-act="bandJump" data-to="odeSec">🏛️ Studios & Machines</button>
+      <button type="button" class="chip" data-act="bandJump" data-to="odeSec">💌 Creators & Machines</button>
       ${!hasStash?`<button type="button" class="chip" data-act="sandboxEnter" title="Temporarily test onboarding as a brand-new visitor without losing your saved timeline">🧪 Test new-visitor flow</button>`:""}
     </nav></div>
-    ${first?`<section class="wrap"><div class="banner"><p><b>Your timeline is a living notebook —</b> send it to friends now, and come back anytime a forgotten childhood game pops into your head.</p><button class="btn primary" data-act="share">Share my timeline</button></div></section>`:""}
-    <section class="wrap" style="margin-top:8px"><div class="search"><input class="input" id="addq" type="search" placeholder="Add any game anytime (or open ✦ Memory packs above to browse by mood & vibe)" autocomplete="off" aria-label="Add a game"><div class="results" id="addr" hidden></div></div>
+    ${first?`<section class="wrap"><div class="banner"><p><b>Your timeline is a living notebook —</b> send it to friends now, and jump back into <b>➕ Pick games</b> anytime a forgotten childhood game pops into your head.</p><button class="btn primary" data-act="share">Share my timeline</button></div></section>`:""}
+    <section class="wrap" style="margin-top:8px"><div class="search"><input class="input" id="addq" type="search" placeholder="Add any game anytime (or tap ➕ Pick games above to browse eras, systems & mood packs)" autocomplete="off" aria-label="Add a game"><div class="results" id="addr" hidden></div></div>
       <div class="row" style="justify-content:space-between;margin-top:8px">
-        <div class="row" style="gap:8px"><p class="sync" id="syncmsg" style="margin:0">${esc(syncMsg||"Auto-saved · Drag ⠿ on any cover to move its year, or tap a cover for notes, info & CRT TV.")}</p>
+        <div class="row" style="gap:8px"><p class="sync" id="syncmsg" style="margin:0">${esc(syncMsg||"Auto-saved · Drag ⠿ on any cover to move its year, or tap a cover for notes, gratitude & video.")}</p>
           <button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button></div>
         ${mk?`<span class="seg" role="group" aria-label="Timeline filter"><button data-act="tlMode" data-m="all" aria-pressed="${!wkMode}">All games (${st.n})</button><button data-act="tlMode" data-m="worked" aria-pressed="${wkMode}">🛠 Worked on (${st.wk})</button></span>`:""}
       </div></section>
@@ -1852,9 +1907,11 @@ function renderTimeline(m){
     <section class="wrap life" id="tlLife">${lifeStrip(d,{mine:true,workedOnly:wkMode})}</section>
     ${!wkMode&&mk?makerSection(d,true,mk):""}
     ${favSection(d,true)}
+    ${specialShelvesSection(d,true)}
     ${pyramidSection(d,true,dx)}
     ${dnaSection(d,true,dx)}
     ${statsSection(d,true)}
+    ${state.showArtWhy?whyGamesSectionHTML(true):""}
     ${footer()}`;
   if(first)store.set("ib2-revealed",true);
   wireTimelineDrag(m);
@@ -1866,6 +1923,27 @@ function favSection(d,mine){
   const list=t10.length?t10:favs;
   return `<section class="wrap sec" id="favSec"><div class="sechead"><div><h2 class="h2">${t10.length?(mine?"My top "+t10.length:"Top "+t10.length):"All-time favorites"}</h2><p class="sub">${t10.length?"Ranked.":plural(favs.length,"favorite")+", in the order you played them."}</p></div>${mine?`<div class="row"><button class="btn sm" data-act="boxPile">📦 Shuffle in Box Pile</button><button class="btn sm" data-act="png" data-kind="favs">♥ Save favorites image</button><button class="btn sm" data-act="top10">${t10.length?"Edit top 10":"Rank a top 10"}</button></div>`:""}</div>
     <div class="grid">${list.map((x,i)=>{const g=x.g;return `<div class="tile lv3"><button class="art" data-act="${g?"quickLook":"noop"}" data-id="${g?g.id:""}">${coverOfEntry(x.e,x.y)}${t10.length?`<span class="lvb l3">${i+1}</span>`:""}</button><span class="tn">${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>`:esc(x.e.t)}</span><span class="ts">${x.y}${g?" · "+studioBtn(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div></section>`;
+}
+function specialShelvesSection(d,mine){
+  const es=entries(d);if(!es.length)return "";
+  const harbor=es.filter(x=>(x.e.mtags||[]).some(t=>HARBOR_TAGS.has(t))).sort((a,b)=>a.y-b.y);
+  const sweat=es.filter(x=>(x.e.mtags||[]).includes(SWEAT_TAG)).sort((a,b)=>a.y-b.y);
+  const myLists=mine?store.get("ib3-lists",[]):[];
+  const shelfGrid=arr=>`<div class="grid">${arr.map(x=>{const g=x.g;return `<div class="tile lv${x.lv}"><button class="art" data-act="entry" data-y="${x.y}" data-t="${esc(x.e.t)}" ${mine?"":"data-ro=\"1\""}>${coverOfEntry(x.e,x.y)}</button><span class="tn">${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>`:esc(x.e.t)}</span><span class="ts">${x.y}${g?" · "+studioBtn(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div>`;
+  let out="";
+  if(harbor.length){
+    out+=`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Safe harbors & lifelines</p><h2 class="h2">🛟 Worlds that carried ${mine?"me":"them"} through</h2><p class="sub">Games marked as safe harbors, lifelines in rough seasons, or worlds that shaped who ${mine?"you":"they"} became.</p></div>${mine?`<button type="button" class="btn sm love" data-act="gratSheet">💌 Thank a maker</button>`:""}</div>${shelfGrid(harbor)}</section>`;
+  }
+  if(sweat.length){
+    out+=`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Palms sweating · Controller survived</p><h2 class="h2">😤 Games that made ${mine?"me":"them"} sweat</h2><p class="sub">Infamous jumps, brutal bosses, and tests of pure stubbornness.</p></div>${mine?`<button type="button" class="btn sm" data-act="openSweatPack">+ Add more brutal classics</button>`:""}</div>${shelfGrid(sweat)}</section>`;
+  }
+  if(mine&&(!harbor.length||!sweat.length||myLists.length)){
+    out+=`<section class="wrap sec"><div class="card" style="padding:14px 16px"><div class="row" style="justify-content:space-between">
+      <div><b style="font-size:14px">Personal shelves & custom themed lists</b><p class="sub" style="margin:2px 0 0;font-size:12.5px">Tap any game on your timeline to tag <b>🛟 Carried me through</b> or <b>😤 Made me sweat</b> — or build & share your own themed lists${myLists.length?` (${plural(myLists.length,"saved list")})`:""}.</p></div>
+      <div class="row"><button type="button" class="btn sm" data-act="openSweatPack">😤 Browse brutal games</button><button type="button" class="btn sm" data-act="openHarborPack">🛟 Safe-harbor classics</button><button type="button" class="btn sm primary" data-act="listsSheet">📋 ${myLists.length?`My themed lists (${myLists.length})`:"Create a themed list"}</button></div>
+    </div></div></section>`;
+  }
+  return out;
 }
 /* the two halves meet: the ancestors behind the games you played + indie & classic discovery */
 function dnaOf(d){
@@ -1916,8 +1994,8 @@ function dnaSection(d,mine,pre){
     ${x.indies&&x.indies.length?`<h3 class="h3" style="margin-top:22px">💎 Under-the-radar indie gems for ${who} taste</h3>
       <p class="sub">Smaller, high-craft games in ${who} favorite traditions that deserve spotlight alongside mega-launches.</p>
       <div class="recs">${x.indies.map(r=>recTile(r.g,r.why,mine,{showStores:true})).join("")}</div>`:""}
-    ${x.nextUp.length?`<h3 class="h3" style="margin-top:22px">🚀 Spiritual successors to ${who} favorites</h3><p class="sub">Later games that borrowed directly from ${who} top picks${mine?" — tap + Played right here if you've played them":""}.</p>
-      <div class="recs">${x.nextUp.map(r=>recTile(r.g,`From ${r.because.title}`,mine,{showStores:false})).join("")}</div>`:""}
+    ${x.nextUp.length?`<h3 class="h3" style="margin-top:22px">🚀 Spiritual successors to ${who} favorites</h3><p class="sub">Later games that borrowed directly from ${who} top picks${mine?" — tap + Played right here if you've played them, or check GOG & Steam below":""}.</p>
+      <div class="recs">${x.nextUp.map(r=>recTile(r.g,`From ${r.because.title}`,mine,{showStores:true})).join("")}</div>`:""}
   </section>`;
 }
 function statsSection(d,mine=true){
@@ -1928,14 +2006,14 @@ function statsSection(d,mine=true){
   const topSt=top(st,8),maxSt=Math.max(1,topSt[0]?topSt[0][1]:1);
   const hwMap=new Map((CULT.hardware||[]).map(h=>[h.sys,h]));
   const sysList=top(sy,10);
-  return `<section class="wrap sec" id="odeSec"><div class="sechead"><div><p class="eyebrow">Ode to the makers</p><h2 class="h2">The studios, creators & machines that raised ${mine?"you":esc(d.name||"them")}</h2><p class="sub">Weighted by how deeply ${mine?"you":"they"} played (<b>♥</b> counts 3×, <b>★</b> counts 2×). Tap any studio or country to explore.</p></div><div class="row"><a class="btn sm ghost" href="#world">🌍 Open world map ▸</a>${mine&&sysList.length?`<button class="btn sm" data-act="png" data-kind="consoles">🕹️ Save consoles & favorites card</button>`:""}</div></div>
+  return `<section class="wrap sec" id="odeSec"><div class="sechead"><div><p class="eyebrow">Ode to the makers</p><h2 class="h2">The studios, creators & machines that raised ${mine?"you":esc(d.name||"them")}</h2><p class="sub">Weighted by how deeply ${mine?"you":"they"} played (<b>♥</b> counts 3×, <b>★</b> counts 2×). Many of these studios have closed or changed hands — send a thank-you postcard so their makers know their worlds still live on.</p></div><div class="row">${mine?`<button type="button" class="btn sm love" data-act="gratSheet">💌 Thank a maker</button>`:""}<a class="btn sm ghost" href="#world">🌍 Open world map ▸</a>${mine&&sysList.length?`<button class="btn sm" data-act="png" data-kind="consoles">🕹️ Save consoles & favorites card</button>`:""}</div></div>
     <div class="hgrid">
       <div class="card"><h3 class="h3">Most influential studios & creators in ${mine?"your":"their"} life</h3>
         <div style="margin-top:8px">${topSt.map(([n,v])=>{const sr=findStudio(n),pct=totW?Math.max(1,Math.round(v/totW*100)):0;
           const mks=sr&&sr.makers&&sr.makers.length?sr.makers.slice(0,3).join(", "):"";
           return `<div class="oderow"><div style="display:flex;align-items:center;gap:8px;min-width:0">${studioLogoHTML(sr)}<div style="min-width:0">${sr?`<button type="button" class="stbtn" style="font-weight:700" data-act="studio" data-st="${esc(sr.id)}">${flag(sr.cc)} ${esc(n)}</button>`:`<b>${esc(n)}</b>`}${mks?`<small class="muted" style="display:block;font-size:11.5px">${esc(mks)}</small>`:""}</div></div>
             <div class="odebar"><i style="width:${(v/maxSt*100).toFixed(1)}%"></i></div>
-            <span class="mono muted" style="font-size:12px">${pct}%</span></div>`}).join("")}</div>
+            <span class="row" style="gap:6px;flex-wrap:nowrap"><span class="mono muted" style="font-size:12px">${pct}%</span>${mine&&sr?`<button type="button" class="chip" style="padding:2px 7px;font-size:11px" data-act="gratSheet" data-st="${esc(sr.id)}" title="Write a thank-you note to ${esc(n)}">💌</button>`:""}</span></div>`}).join("")}</div>
         <h3 class="h3" style="margin-top:16px">Countries behind ${mine?"your":"their"} games <small class="muted" style="font-weight:400">(tap to browse country)</small></h3>
         <div class="makers" style="margin-top:6px">${top(cc,10).map(([c,v])=>`<button type="button" class="makerbtn" data-act="country" data-cc="${esc(c)}">${flag(c)} ${esc(countryName(c))}<span>${v}</span></button>`).join("")}</div>
       </div>
@@ -2071,9 +2149,30 @@ function hardwareCardHTML(h){
     <p style="margin:2px 0 0;font-size:13px;color:var(--ink2);line-height:1.45">${esc(h.bio||h.note||"")}</p>
   </div>`;
 }
+function allGratitudeNotes(){
+  const mine=store.get("ib3-gratitude",[]);
+  return [...mine.map(x=>({...x,mine:true})),...(CULT.gratitude||[])];
+}
+function gratitudeCardHTML(gItem){
+  const st=gItem.studio&&findStudio(gItem.studio),gm=gItem.game&&gameRef(gItem.game);
+  return `<article class="gratcard">
+    <div class="row" style="justify-content:space-between"><span class="pill" style="background:var(--love-soft);color:var(--love)">💌 ${esc(gItem.tag||"Thank you")}</span><small class="mono muted">${esc(gItem.who||(gItem.year?String(gItem.year):""))}</small></div>
+    <blockquote>“${esc(gItem.note||"")}”</blockquote>
+    <div class="row" style="margin-top:auto;padding-top:4px;justify-content:space-between">
+      <span class="row" style="gap:6px">${st?`<button type="button" class="stbtn" style="font-weight:700;font-size:12.5px" data-act="studio" data-st="${esc(st.id)}">${flag(st.cc)} ${esc(st.name)}</button>`:""}${gm?`<button type="button" class="chip" style="padding:2px 8px;font-size:11.5px" data-act="quickLook" data-id="${gm.id}">${esc(gm.title)}</button>`:""}</span>
+    </div>
+  </article>`;
+}
+function gratitudeSectionHTML(){
+  const notes=allGratitudeNotes();
+  return `${whyGamesSectionHTML(false)}
+    <section class="wrap sec" id="gratitudeWall"><div class="sechead"><div><p class="eyebrow">No vote counts · No rankings · Pure gratitude</p><h2 class="h2">💌 Letters to the makers who raised us</h2><p class="sub">Not a popularity contest — just personal stories for the studios, programmers, artists, and musicians whose worlds carried us through growing up. Write a note to create a shareable thank-you postcard or post to the community guestbook.</p></div><button type="button" class="btn primary" data-act="gratSheet">💌 Write a thank-you note</button></div>
+      <div class="gratgrid">${notes.map(gratitudeCardHTML).join("")}</div>
+    </section>`;
+}
 function giveBackSectionHTML(charities){
   if(!charities||!charities.length)return "";
-  return `<section class="wrap sec" id="giveback"><div class="sechead"><div><p class="eyebrow">Supporting the craft & next generation</p><h2 class="h2">Give back directly to game makers, youth & preservation</h2><p class="sub">100% direct links to verified non-profits — helping underrepresented youth enter game creation, supporting laid-off developers, preserving endangered game history, and bringing play to children's hospitals. Inspired By never touches donations or takes a cut.</p></div></div>
+  return `<section class="wrap sec" id="giveback"><div class="sechead"><div><p class="eyebrow">Supporting the craft & next generation</p><h2 class="h2">Give back directly to game makers, youth & preservation</h2><p class="sub">100% direct links to verified non-profits — helping underrepresented youth enter game creation, supporting laid-off developers, preserving endangered game history, and bringing play to children's hospitals. Played &amp; Made never touches donations or takes a cut.</p></div></div>
     <div class="stgrid">${charities.map(c=>`<a class="stcard" href="${esc(c.url)}" target="_blank" rel="noopener" style="text-decoration:none">
       <div class="row" style="justify-content:space-between;width:100%"><b>${esc(c.name)}</b><span class="ststatus active">${esc(c.focus||"Non-profit")} ↗</span></div>
       <p style="margin:4px 0 0;font-size:13px;color:var(--ink2);line-height:1.45">${esc(c.desc||"")}</p>
@@ -2082,17 +2181,18 @@ function giveBackSectionHTML(charities){
 function renderStudios(m){
   const f=state.stFilter||"all";
   const curated=[...STUDIOS.values()].filter(s=>s.curated).sort((a,b)=>(b.maxInf-a.maxInf)||(b.games.length-a.games.length));
-  const pioneers=CULT.pioneers||[],hardware=CULT.hardware||[],charities=CULT.charities||[];
+  const pioneers=CULT.pioneers||[],hardware=CULT.hardware||[],charities=CULT.charities||[],grats=allGratitudeNotes();
   const list=f==="closed"?curated.filter(s=>s.status!=="active"):f==="active"?curated.filter(s=>s.status==="active"):curated;
   const topOther=[...STUDIOS.values()].filter(s=>!s.curated&&s.games.length>=4).sort((a,b)=>b.games.length-a.games.length).slice(0,36);
   const wkN=workedEntries(hist).length;
   m.innerHTML=`<section class="wrap exhero">
-    <p class="eyebrow">The humans & machines behind the games</p>
+    <p class="eyebrow">Played &amp; Made · The humans & machines behind the art</p>
     <h1 class="h1">Studios change. Their people carry the art forward.</h1>
-    <p class="lede">Behind every box cover and console shell is a team of designers, silicon engineers, programmers, artists, and musicians. Even when studios close, their craft scatters into new teams and shapes decades of play.</p>
-    <div class="search bigsearch"><input class="input" id="stq" type="search" placeholder="Search studios, pioneers, or hardware leads — e.g. Looking Glass, Jay Miner, Shigeru Miyamoto, DICE" autocomplete="off" aria-label="Search studios, pioneers, and hardware"><div class="results" id="str" hidden></div></div>
+    <p class="lede">Behind every box cover and console shell is a team of designers, silicon engineers, programmers, writers, artists, and musicians. Even when studios close, the safe harbors they built stay with us for life.</p>
+    <div class="search bigsearch"><input class="input" id="stq" type="search" placeholder="Search studios, pioneers, or hardware leads — e.g. Looking Glass, Sensible Software, Jay Miner, DICE" autocomplete="off" aria-label="Search studios, pioneers, and hardware"><div class="results" id="str" hidden></div></div>
     <div class="row" style="margin-top:14px">
       <button class="chip" data-act="stFilt" data-f="all" aria-pressed="${f==="all"}">All featured (${curated.length})</button>
+      <button class="chip" data-act="stFilt" data-f="gratitude" aria-pressed="${f==="gratitude"}">💌 Letters & why games matter (${grats.length})</button>
       ${pioneers.length?`<button class="chip" data-act="stFilt" data-f="pioneers" aria-pressed="${f==="pioneers"}">🌟 Pioneers (${pioneers.length})</button>`:""}
       ${hardware.length?`<button class="chip" data-act="stFilt" data-f="hardware" aria-pressed="${f==="hardware"}">🕹️ Consoles & hardware (${hardware.length})</button>`:""}
       <button class="chip" data-act="stFilt" data-f="closed" aria-pressed="${f==="closed"}">Shuttered & scattered (${curated.filter(s=>s.status!=="active").length})</button>
@@ -2103,12 +2203,16 @@ function renderStudios(m){
         :`<button class="chip" data-act="devModeTog" title="Enable game-industry career & studio credit tools">🛠 Industry / dev mode</button>`}
     </div>
   </section>
-  ${f==="pioneers"?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Hall of pioneers · 1958–today</p><h2 class="h2">Designers, coders, composers & trailblazers</h2><p class="sub">Chronological milestones from lab oscilloscopes and ROM cartridges to modern indie breakthroughs.</p></div></div>
+  ${f==="gratitude"?gratitudeSectionHTML()
+  :f==="pioneers"?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Hall of pioneers · 1958–today</p><h2 class="h2">Designers, coders, composers & trailblazers</h2><p class="sub">Chronological milestones from lab oscilloscopes and ROM cartridges to modern indie breakthroughs.</p></div></div>
     <div class="piogrid">${pioneers.map(pioneerCardHTML).join("")}</div></section>`
   :f==="hardware"?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Silicon, sound chips & industrial design</p><h2 class="h2">The machines & hardware engineers who built our playgrounds</h2><p class="sub">Hover or tap any machine to tilt it. From Jay Miner's custom Amiga silicon and Bob Yannes's C64 SID synth to Gunpei Yokoi's Game Boy and Ken Kutaragi's PlayStation.</p></div></div>
     <div class="hwgrid">${hardware.map(hardwareCardHTML).join("")}</div></section>`
   :f==="giveback"?giveBackSectionHTML(charities)
-  :`<section class="wrap sec"><div class="stgrid">${list.map(studioCardHTML).join("")}</div></section>
+  :`${f==="all"?whyGamesSectionHTML(false):""}
+    <section class="wrap sec"><div class="stgrid">${list.map(studioCardHTML).join("")}</div></section>
+    ${f==="all"&&grats.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">No rankings · Pure human gratitude</p><h2 class="h2">💌 Letters to the makers</h2><p class="sub">Personal thank-you notes to studios and creators whose games carried players through growing up.</p></div><div class="row"><button type="button" class="btn sm love" data-act="gratSheet">💌 Write a thank-you</button><button class="btn sm" data-act="stFilt" data-f="gratitude">Read all ${grats.length} letters ▸</button></div></div>
+      <div class="gratgrid">${grats.slice(0,6).map(gratitudeCardHTML).join("")}</div></section>`:""}
     ${f==="all"&&pioneers.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Hall of pioneers · 1958–today</p><h2 class="h2">Trailblazers who shaped how we play</h2><p class="sub">Meet ${pioneers.length} influential human creators across seven decades of game history.</p></div><button class="btn sm" data-act="stFilt" data-f="pioneers">See all ${pioneers.length} pioneers ▸</button></div>
       <div class="piogrid">${pioneers.slice(0,9).map(pioneerCardHTML).join("")}</div></section>`:""}
     ${f==="all"&&hardware.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">The hardware makers</p><h2 class="h2">The consoles, home computers & silicon engineers</h2><p class="sub">Every era of game design stood on daring custom chips, sound synthesizers, and controllers.</p></div><button class="btn sm" data-act="stFilt" data-f="hardware">See all ${hardware.length} machines ▸</button></div>
@@ -2145,9 +2249,10 @@ function renderStudio(m,id){
       <p class="meta"><span class="mono">${esc(yrs)}</span>${st.hq?`<span>${esc(st.hq)}</span>`:""}${st.cc?`<button type="button" class="stbtn" data-act="country" data-cc="${esc(st.cc)}">${esc(countryName(st.cc))} ▸</button>`:""}</p>
       ${st.bio?`<p class="lede" style="margin-top:12px">${esc(st.bio)}</p>`:""}
       <div class="gstats"><span><b>${st.games.length}</b> game${st.games.length===1?"":"s"} in catalog</span><span><b>${st.treeCount}</b> in the family tree</span><span><b>${st.maxInf.toLocaleString()}</b> max descendant games</span></div>
-      <div class="row" style="margin-top:14px">${isDevMode()?`<button type="button" class="btn sm ${inSt?"craft":""}" data-act="toggleWkSt" data-st="${esc(st.id)}">🛠 ${inSt?"Worked here ✓":"I worked here"}</button>`:""}<a class="btn sm" href="${esc(mobyCompany)}" target="_blank" rel="noopener">Full company credits on MobyGames ↗</a><button class="btn sm ghost" data-act="suggest" data-subj="${esc("Studio note: "+st.name)}">Suggest studio or alumni note</button></div>
+      <div class="row" style="margin-top:14px"><button type="button" class="btn sm love" data-act="gratSheet" data-st="${esc(st.id)}">💌 Send thank-you to ${esc(st.name)} makers</button>${isDevMode()?`<button type="button" class="btn sm ${inSt?"craft":""}" data-act="toggleWkSt" data-st="${esc(st.id)}">🛠 ${inSt?"Worked here ✓":"I worked here"}</button>`:""}<a class="btn sm" href="${esc(mobyCompany)}" target="_blank" rel="noopener">Team roll call on MobyGames ↗</a><a class="btn sm ghost" href="https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(st.name+" game")}" target="_blank" rel="noopener">Find alumni on LinkedIn ↗</a><button class="btn sm ghost" data-act="suggest" data-subj="${esc("Studio note: "+st.name)}">Suggest studio note</button></div>
       ${inSt?`<div class="craftcard" style="margin-top:14px;padding:12px 16px"><p style="margin:0;font-size:14px">🛠 <b>${esc(st.name)}</b> is on your Maker Legacy. Tap <b>🛠 I worked on</b> under any game below to mark titles you helped ship, or <button type="button" class="link" data-act="makerSheet">log an unshipped / canceled project</button>.</p></div>`:""}
     </section>
+    ${(()=>{const sGrats=allGratitudeNotes().filter(x=>x.studio===st.id||(x.game&&st.games.some(g=>g.id===x.game)));return sGrats.length?`<section class="sec"><h2 class="h2">💌 Player letters to ${esc(st.name)}</h2><div class="gratgrid" style="margin-top:8px">${sGrats.map(gratitudeCardHTML).join("")}</div></section>`:""})()}
     ${st.makers&&st.makers.length?`<section class="sec"><h2 class="h2">Notable creators & team members</h2><p class="sub">Designers, programmers, writers, artists, and composers connected with ${esc(st.name)}.</p>
       <div class="makers">${st.makers.map(mk=>`<a class="makerbtn" href="https://www.mobygames.com/search/?q=${encodeURIComponent(mk)}&type=developer" target="_blank" rel="noopener">${esc(mk)} <span>↗</span></a>`).join("")}</div></section>`:""}
     ${st.diaspora&&st.diaspora.length?`<section class="sec"><h2 class="h2">Where the makers went next</h2><p class="sub">Studios and games shaped by ${esc(st.name)} alumni.</p>
@@ -2511,7 +2616,8 @@ function renderGame(m,id){
         <div class="mylv"><span class="sync">In my timeline:</span><span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="setlv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>${lv&&!wk?`<button class="btn sm ghost" data-act="setlv" data-id="${g.id}" data-lv="0">Remove</button>`:""}</div>
         ${isDevMode()?`<div class="mylv" style="margin-top:8px"><span class="sync">Industry credit:</span><button type="button" class="btn sm ${wk?"craft":""}" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on this ✓":"I worked on this"}</button>${wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="setWkRole" data-id="${g.id}" data-role="${esc(r)}" aria-pressed="${ent&&ent.role===r}">${esc(r)}</button>`).join(""):""}</div>`:""}
         <div class="row" style="margin-top:10px">
-          <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">📺 ${g.yt?"Insert media & watch CRT TV":"Gameplay in period TV"}</button>
+          <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button>
+          <button type="button" class="btn sm love" data-act="gratSheet" data-id="${g.id}">💌 Thank the makers</button>
           <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Box scans & screenshots ↗</a>
           <a class="btn sm" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Dev credits ↗</a>
           <button class="btn sm ghost" data-act="copyGame" data-id="${g.id}">Copy link</button>
@@ -2712,10 +2818,11 @@ function openCompare(f){
     </div></div></div>`;
 }
 
-/* ---------- sheets (native <dialog closedby="any"> + rich quick-look + tactile TV + slot reel) ---------- */
-let PILE=null,SUG_LAST=0;
-function openSheet(html,label){
+/* ---------- sheets (native <dialog closedby="any"> + rich quick-look + clean video player + gratitude + custom lists) ---------- */
+let PILE=null,SUG_LAST=0,GRAT_DRAFT={st:"",id:"",tag:"🛟 Carried me through",note:"",who:""};
+function openSheet(html,label,opts={}){
   const dlg=$("#sheetDlg");if(!dlg)return;
+  dlg.classList.toggle("wide",!!(opts&&opts.wide));
   let inner=html;
   if(inner.includes('class="sheethead"')){
     let tagged=false;
@@ -2738,7 +2845,7 @@ function clearLayer(){
   if(PILE){cancelAnimationFrame(PILE.raf);removeEventListener("resize",PILE.resize);PILE=null}
   $("#layer").innerHTML="";
   const dlg=$("#sheetDlg");
-  if(dlg){if(dlg.open)dlg.close();dlg.innerHTML="";dlg.returnValue=""}
+  if(dlg){if(dlg.open)dlg.close();dlg.classList.remove("wide");dlg.innerHTML="";dlg.returnValue=""}
 }
 function closeLayer(){
   const dlg=$("#sheetDlg"),wasDlg=!!(dlg&&dlg.open);
@@ -2761,23 +2868,12 @@ function eraBoxContext(g){
   if(g.year<2020)return g.pop<=3?"Digital / indie release · typical launch $15–$29":"Keep-case disc & digital storefront · typical launch MSRP $59";
   return g.pop<=3?"Digital / indie release · typical launch $15–$35":"Physical & digital edition · typical launch MSRP $59–$69";
 }
-function mediaInfoOf(g){
-  const ps=sysOfGame(g);
-  if(ps.some(p=>/Amiga|Commodore 64|Atari ST|Apple II|ZX Spectrum|Amstrad CPC|MSX/.test(p))||(ps.includes("PC")&&g.year<1994))
-    return {kind:"floppy",icon:"💾",label:'3.5" Floppy Diskette',slot:"DRIVE DF0: — DRAG FLOPPY HERE"};
-  if(ps.length===1&&ps[0]==="Arcade")
-    return {kind:"cart",icon:"🪙",label:"25¢ Arcade Token",slot:"COIN MECH — DROP QUARTER HERE"};
-  if(ps.some(p=>/Switch|Nintendo DS|Nintendo 3DS|PS Vita/.test(p)))
-    return {kind:"cart",icon:"🎴",label:"Game Card",slot:"GAME CARD SLOT — DRAG CARD HERE"};
-  if(g.year<1995||ps.some(p=>/NES|SNES|Game Boy|Nintendo 64|Genesis|Master System|Atari 2600|Neo Geo|TurboGrafx/.test(p)))
-    return {kind:"cart",icon:"🕹️",label:"ROM Cartridge",slot:"CARTRIDGE SLOT — DRAG CART HERE"};
-  return {kind:"disc",icon:"💿",label:g.year<2006?"CD-ROM / DVD-ROM":"Optical Disc",slot:"DISC TRAY — DRAG DISC HERE"};
-}
 function openQuickLook(g){
   if(!g)return;
-  const lv=levelOf(hist,g),py=entryYearOf(hist,g),ups=UP[g.i],downs=DOWN[g.i];
+  const lv=levelOf(hist,g),py=entryYearOf(hist,g),ent=entryOf(hist,g),mtags=(ent&&ent.mtags)||[],ups=UP[g.i],downs=DOWN[g.i];
   const topUp=ups.slice().sort((a,b)=>TIERS[b.t].w-TIERS[a.t].w)[0];
   const ps=sysOfGame(g),stObj=findStudio(studio(g));
+  const quickTags=["🛟 Carried me through","🏠 Safe harbor","😤 Made me sweat","Couch co-op"];
   openSheet(`<div class="sheethead"><div>
       <div class="row" style="gap:5px;margin-bottom:4px">${g.gen.length?g.gen.map(i=>`<button type="button" class="genpill" data-act="genre" data-g="${esc(GEN[i].k)}"><i style="width:7px;height:7px;border-radius:3px;background:${GEN[i].c};display:inline-block"></i>${esc(GEN[i].label)}</button>`).join(""):`<span class="eyebrow" style="margin:0">Game info</span>`}</div>
       <h2>${esc(g.title)}</h2>
@@ -2793,17 +2889,19 @@ function openQuickLook(g){
         ${playable(g)?`<div class="mylv" style="margin-top:6px"><span class="sync">${py?`On timeline (${py}):`:"Add to timeline:"}</span>
           <span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button type="button" class="${v===3?"l3":v===2?"l2":""}" data-act="qlSetLv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>
           ${lv?`<button type="button" class="btn sm ghost" data-act="qlSetLv" data-id="${g.id}" data-lv="0">Remove</button>`:""}
-        </div>`:""}
+        </div>
+        <div class="row" style="margin-top:8px;gap:6px"><span class="sync">Quick tag:</span>${quickTags.map(tg=>`<button type="button" class="chip" style="padding:3px 9px;font-size:12px" data-act="qlQuickTag" data-id="${g.id}" data-tag="${esc(tg)}" aria-pressed="${mtags.includes(tg)}">${esc(tg)}</button>`).join("")}</div>`:""}
         <div class="row" style="margin-top:12px">
           ${g.tree?`<button type="button" class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">⑂ Full family tree</button>`:""}
-          <button type="button" class="btn sm${g.tree?"":" primary"}" data-act="watchTv" data-id="${g.id}">📺 Insert media & watch TV</button>
+          <button type="button" class="btn sm${g.tree?"":" primary"}" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button>
+          <button type="button" class="btn sm love" data-act="gratSheet" data-id="${g.id}">💌 Thank makers</button>
           ${ups.length?`<button type="button" class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots ▸</button>`:""}
-          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Box back & screenshots ↗</a>
+          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Box scans & screenshots ↗</a>
           <a class="btn sm ghost" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Credits ↗</a>
         </div>
         ${playable(g)?`<div class="row" style="margin-top:8px"><span class="sync">Official stores:</span>${storeLinksHTML(g)}</div>`:""}
       </div>
-    </div>`,g.title);
+    </div>`,g.title,{wide:true});
 }
 function openSlotSheet(){
   const pool=TREE.filter(x=>x.pop>=3&&playable(x));
@@ -2825,7 +2923,7 @@ function openSlotSheet(){
         <div class="row">
           <button type="button" class="btn sm primary" data-act="slotSpin">🎰 Spin again</button>
           <button type="button" class="btn sm" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree</button>
-          <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">📺 Period TV</button>
+          <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button>
           <button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}" aria-pressed="${lv>0}">${lv?`${LV[lv].m} ${LV[lv].label}`:"+ Played"}</button>
         </div>
       </div>
@@ -2854,10 +2952,10 @@ function openGameSheet(y,t,ro){
        <div class="row">${presets.slice(0,6).map(([py,lbl])=>`<button type="button" class="chip" data-act="entryYr" data-y="${y}" data-t="${esc(e.t)}" data-to="${py}" aria-pressed="${py===y}">${esc(lbl)}</button>`).join("")}
          <input class="input" id="entryYrIn" inputmode="numeric" maxlength="4" value="${y}" style="width:78px;padding:5px 9px;font-size:13px" aria-label="Year played"><button type="button" class="btn sm" data-act="entryYrGo" data-y="${y}" data-t="${esc(e.t)}">Move</button></div>
        ${plats.length?`<p class="sub" style="margin:12px 0 6px">Played on</p><div class="row">${plats.map(n=>`<button class="chip" data-act="entrySys" data-y="${y}" data-t="${esc(e.t)}" data-sys="${esc(n)}" aria-pressed="${sys.includes(n)}">${esc(n)}</button>`).join("")}</div>`:""}
-       <p class="sub" style="margin:12px 0 6px">Memories & note</p>
+       <p class="sub" style="margin:12px 0 6px">Memories & tags (tap 🛟 safe harbor or 😤 made me sweat to add to your shelves)</p>
        <div class="row">${MEM_TAGS.map(tg=>`<button type="button" class="chip" data-act="entryTag" data-y="${y}" data-t="${esc(e.t)}" data-tag="${esc(tg)}" aria-pressed="${mtags.includes(tg)}">${esc(tg)}</button>`).join("")}</div>
        <form class="row" id="memForm" style="margin-top:8px"><input class="input" id="memIn" maxlength="80" style="flex:1;min-width:0;padding:7px 10px;font-size:13.5px" placeholder="Short memory, e.g. Summer '98 in the basement" value="${esc(e.mem||"")}" aria-label="Short memory"><button class="btn sm" type="submit">Save note</button></form>`}
-      <div class="row" style="margin-top:14px">${g?`<button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree</button><button class="btn sm" data-act="quickLook" data-id="${g.id}">ⓘ Game info</button><button class="btn sm" data-act="watchTv" data-id="${g.id}">📺 Period TV</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots</button>`:""}${ro?"":`<button class="btn sm ghost" data-act="entryRm" data-y="${y}" data-t="${esc(e.t)}">Remove</button>`}</div>
+      <div class="row" style="margin-top:14px">${g?`<button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree</button><button class="btn sm" data-act="quickLook" data-id="${g.id}">ⓘ Game info</button><button class="btn sm" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button><button class="btn sm love" data-act="gratSheet" data-id="${g.id}">💌 Thank makers</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots</button>`:""}${ro?"":`<button class="btn sm ghost" data-act="entryRm" data-y="${y}" data-t="${esc(e.t)}">Remove</button>`}</div>
       ${g&&playable(g)?`<div class="row" style="margin-top:8px"><span class="sync">Official stores:</span>${storeLinksHTML(g)}</div>`:""}
     </div></div>`,"Game");
   const mf=$("#memForm");if(mf)mf.onsubmit=ev=>{ev.preventDefault();const v=$("#memIn").value.trim().slice(0,80);if(v)e.mem=v;else delete e.mem;save();toast(v?"Note saved":"Note cleared");closeLayer()};
@@ -2868,91 +2966,259 @@ function extractYtId(s){
   const m=v.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
   return m?m[1]:"";
 }
-function openTvSheet(g,customVid,booted=false){
+const YT_LIVE_CACHE=new Map();
+async function tryLiveGameplayId(g){
+  if(YT_LIVE_CACHE.has(g.id))return YT_LIVE_CACHE.get(g.id);
+  const q=encodeURIComponent(`${g.title} ${g.year} gameplay`);
+  const hosts=["https://pipedapi.kavin.rocks","https://pipedapi.adminforge.de"];
+  for(const h of hosts){
+    try{
+      const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),3200);
+      const r=await fetch(`${h}/search?q=${q}&filter=videos`,{signal:ctrl.signal});
+      clearTimeout(tm);
+      if(!r.ok)continue;
+      const d=await r.json();
+      const hit=(d&&d.items||[]).find(it=>it&&typeof it.url==="string"&&it.url.includes("v="));
+      const id=hit?extractYtId(hit.url):"";
+      if(id){YT_LIVE_CACHE.set(g.id,id);return id}
+    }catch(e){}
+  }
+  YT_LIVE_CACHE.set(g.id,"");
+  return "";
+}
+function openVideoSheet(g,customVid,liveAuto=false){
   if(!g)return;
   const uyt=store.get("ib3-yt",{});
   const vid=customVid!==undefined&&customVid!==null?customVid:(uyt[g.id]||g.yt||"");
-  const cls=g.year<1990?"crt80":g.year<2001?"crt90":g.year<2013?"lcd00":"oled";
-  const eraLbl=g.year<1990?"1980s Woodgrain Living-Room CRT · CH 3":g.year<2001?"1990s Charcoal Trinitron / SVGA CRT":g.year<2013?"2000s Silver Widescreen HD Display":"Modern 4K OLED Display";
+  const isCustom=!!uyt[g.id]||(!!customVid&&!liveAuto);
+  const isAuto=!isCustom&&(!!g.ytAuto||!!liveAuto);
   const ytSearch="https://www.youtube.com/results?search_query="+encodeURIComponent(g.title+" "+g.year+" gameplay");
-  const med=mediaInfoOf(g);
+  const ytWatch=vid?`https://www.youtube.com/watch?v=${encodeURIComponent(vid)}`:ytSearch;
   if(SYNTH.on)toggleSynth();
-  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">📺 Period screen & tactile deck · ${g.year}</p><h2>${esc(g.title)}</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
-    <div class="mediatray">
-      ${!booted
-        ?`<button type="button" class="cartdrag" id="tvMediaDrag" aria-label="Drag ${esc(med.label)} into console slot, or press Enter to insert">${med.icon} ${esc(med.label)}</button>
-          <div class="tvslot" id="tvMediaSlot">${esc(med.slot)}</div>
-          <button type="button" class="btn sm primary" data-act="tvInsert" data-id="${g.id}" data-vid="${esc(vid)}">▶ Insert & Power On</button>`
-        :`<span class="mono" style="font-size:12px;color:var(--craft);font-weight:700">✓ ${med.icon} ${esc(med.label)} seated · Power ON</span>
-          <button type="button" class="btn sm ghost" data-act="tvEject" data-id="${g.id}">⏏ Eject media</button>`}
-    </div>
-    <div class="tvframe ${cls}">
-      <div class="tvscreen" id="tvScreenDrop">
-        ${booted&&vid?`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?rel=0&autoplay=1" title="${esc(g.title)} gameplay" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`
-        :!booted?`<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;color:#9CE8B5;font-family:var(--f-mono)">
-            <div style="width:74px">${cover(g,{showYear:false})}</div>
-            <b style="font-size:13px;letter-spacing:.06em">CH-03 · WAITING FOR ${esc(med.label.toUpperCase())}</b>
-            <p style="margin:0;font-size:12px;color:#AEB6C8;max-width:38ch;font-family:var(--f-body)">Drag the <b>${esc(med.label)}</b> above into the slot (or tap <b>Insert & Power On</b>) to boot ${esc(g.title)}.</p>
-            <button type="button" class="btn sm primary" data-act="tvInsert" data-id="${g.id}" data-vid="${esc(vid)}" style="position:relative;z-index:3">▶ Insert ${esc(med.label)} & Play</button>
-          </div>`
-        :`<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;color:#E8ECF6">
-            <div style="width:78px">${cover(g,{showYear:false})}</div>
-            <b style="font-size:15px">${esc(g.title)} (${g.year})</b>
-            <p style="margin:0;font-size:12.5px;color:#AEB6C8;max-width:40ch">Open gameplay & title-screen music on YouTube, or paste any YouTube clip below to watch inside this ${esc(eraLbl.split("·")[0].trim())}.</p>
-            <a class="btn sm primary" href="${esc(ytSearch)}" target="_blank" rel="noopener" style="position:relative;z-index:3">Find ${esc(g.title)} gameplay on YouTube ↗</a>
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">▶ Gameplay &amp; trailer player · ${g.year}</p><h2>${esc(g.title)}</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="vidplayer" data-vidgame="${esc(g.id)}">
+      <div class="vidscreen">
+        ${vid?`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?rel=0&autoplay=1" title="${esc(g.title)} gameplay" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`
+        :`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;max-width:44ch">
+            <div style="width:76px">${cover(g,{showYear:false})}</div>
+            <b style="font-size:16px;color:#EEF2FA">${esc(g.title)} (${g.year})</b>
+            <p style="margin:0;font-size:13px;color:#AEB6C8" id="vidLookupMsg">Looking up a best-effort gameplay clip… or open directly on YouTube below.</p>
+            <a class="btn sm primary" href="${esc(ytSearch)}" target="_blank" rel="noopener">Open ${esc(g.title)} gameplay on YouTube ↗</a>
           </div>`}
-        <div class="tvscan" aria-hidden="true"></div>
       </div>
-      <div class="tvdials"><span>${esc(eraLbl)}</span><span style="display:flex;align-items:center;gap:8px">${cls==="crt80"?'<i class="tvknob" aria-hidden="true"></i><i class="tvknob" aria-hidden="true"></i>':""}<i class="tvled" style="${booted?"":"background:#E05252;box-shadow:0 0 8px #E05252"}" aria-hidden="true"></i></span></div>
+      <div class="vidbar">
+        <span>${vid?(isAuto?`⚡ <b>Best-effort auto-matched clip</b> — picked automatically so you can watch right here; if it misses or is blocked, open YouTube directly:`
+          :isCustom?`✓ <b>Custom clip</b> saved on this device`
+          :`✓ <b>Curated trailer / gameplay</b> · ${esc(studio(g)||String(g.year))}`)
+          :`No pre-indexed clip stored yet — paste any YouTube link below or open YouTube search.`}</span>
+        <span class="row" style="gap:6px">
+          ${vid?`<a class="btn sm primary" href="${esc(ytWatch)}" target="_blank" rel="noopener">Open on YouTube ↗</a>`:""}
+          <a class="btn sm" href="${esc(ytSearch)}" target="_blank" rel="noopener" style="background:#1B2234;color:#EEF2FA;border-color:#323C54">Search YouTube ↗</a>
+        </span>
+      </div>
     </div>
     <div class="row" style="margin-top:12px;justify-content:space-between">
-      <div class="row">
-        ${vid?`<a class="btn sm" href="https://www.youtube.com/watch?v=${encodeURIComponent(vid)}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`:""}
-        <a class="btn sm ghost" href="${esc(ytSearch)}" target="_blank" rel="noopener">More longplays & OSTs ↗</a>
-      </div>
+      <form class="row" id="tvUrlForm" style="flex:1;min-width:240px"><input class="input" id="tvUrlIn" style="flex:1;min-width:160px;padding:6px 10px;font-size:13px" placeholder="Wrong video or want a different longplay? Paste any YouTube URL…" aria-label="YouTube URL"><button class="btn sm" type="submit">Swap clip</button></form>
       <div class="row"><button class="btn sm ghost" data-act="quickLook" data-id="${g.id}">ⓘ Game info</button><button class="btn sm ghost" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree ▸</button></div>
-    </div>
-    <form class="row" id="tvUrlForm" style="margin-top:10px"><input class="input" id="tvUrlIn" style="flex:1;min-width:160px;padding:6px 10px;font-size:13px" placeholder="Swap or paste a YouTube gameplay link for ${esc(g.title)}…" aria-label="YouTube URL"><button class="btn sm" type="submit">Load in TV</button></form>`,"Period TV — "+g.title);
-  const tf=$("#tvUrlForm");if(tf)tf.onsubmit=ev=>{ev.preventDefault();const id=extractYtId($("#tvUrlIn").value);if(!id){toast("Paste a standard YouTube video link");return}const m=store.get("ib3-yt",{});m[g.id]=id;store.set("ib3-yt",m);playInsertSound(med.kind);openTvSheet(g,id,true)};
-  const dragEl=$("#tvMediaDrag"),slotEl=$("#tvMediaSlot"),scrEl=$("#tvScreenDrop");
-  if(dragEl&&slotEl){
-    let st=null;
-    const bootNow=()=>{playInsertSound(med.kind);announceSR(`${med.label} inserted for ${g.title}`);openTvSheet(g,vid,true)};
-    const overTarget=(cx,cy)=>{
-      for(const el of [slotEl,scrEl]){if(!el)continue;const r=el.getBoundingClientRect();if(cx>=r.left-12&&cx<=r.right+12&&cy>=r.top-12&&cy<=r.bottom+12)return true}
-      return false;
-    };
-    dragEl.addEventListener("keydown",ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();bootNow()}});
-    dragEl.addEventListener("pointerdown",ev=>{
-      if(ev.button!==0)return;
-      st={id:ev.pointerId,x0:ev.clientX,y0:ev.clientY,moved:false};
-      dragEl.setPointerCapture(ev.pointerId);
+    </div>`,"Watch — "+g.title,{wide:true});
+  const tf=$("#tvUrlForm");if(tf)tf.onsubmit=ev=>{ev.preventDefault();const id=extractYtId($("#tvUrlIn").value);if(!id){toast("Paste a standard YouTube video link");return}const m=store.get("ib3-yt",{});m[g.id]=id;store.set("ib3-yt",m);playBlip(2);openVideoSheet(g,id,false)};
+  if(!vid){
+    tryLiveGameplayId(g).then(found=>{
+      const cur=$("#sheetDlg [data-vidgame]");
+      if(!cur||cur.dataset.vidgame!==g.id)return;
+      if(found)openVideoSheet(g,found,true);
+      else{const msg=$("#vidLookupMsg");if(msg)msg.textContent="Open YouTube directly below to watch longplays, title-screen music, or trailers — or paste a YouTube link to pin it here."}
     });
-    dragEl.addEventListener("pointermove",ev=>{
-      if(!st||ev.pointerId!==st.id||!dragEl.hasPointerCapture(ev.pointerId))return;
-      const dx=ev.clientX-st.x0,dy=ev.clientY-st.y0;
-      if(Math.hypot(dx,dy)>4)st.moved=true;
-      dragEl.classList.add("dragging");
-      dragEl.style.translate=`${dx}px ${dy}px`;
-      slotEl.classList.toggle("hot",overTarget(ev.clientX,ev.clientY));
-    });
-    dragEl.addEventListener("pointerup",ev=>{
-      if(!st||ev.pointerId!==st.id)return;
-      const hit=!st.moved||overTarget(ev.clientX,ev.clientY);
-      dragEl.style.translate="";dragEl.classList.remove("dragging");slotEl.classList.remove("hot");st=null;
-      if(hit)bootNow();
-    });
-    dragEl.addEventListener("lostpointercapture",()=>{dragEl.style.translate="";dragEl.classList.remove("dragging");slotEl.classList.remove("hot");st=null});
   }
+}
+const openTvSheet=openVideoSheet;
+const GRAT_TAGS=["🛟 Carried me through","🏠 Safe harbor","✨ Shaped who I am","🎨 Pure art","🕹️ Childhood magic","🙏 Never forgotten"];
+function openGratitudeSheet(opts={}){
+  if(opts.st!==undefined)GRAT_DRAFT.st=opts.st||"";
+  if(opts.id!==undefined){
+    GRAT_DRAFT.id=opts.id||"";
+    const gm=GRAT_DRAFT.id&&byId.get(GRAT_DRAFT.id);
+    if(gm&&!opts.st){const sr=findStudio(studio(gm));if(sr)GRAT_DRAFT.st=sr.id}
+  }
+  const gm=GRAT_DRAFT.id?byId.get(GRAT_DRAFT.id):null;
+  const st=GRAT_DRAFT.st?findStudio(GRAT_DRAFT.st):(gm?findStudio(studio(gm)):null);
+  const myTopStudios=(()=>{const m={};entries(hist).forEach(x=>{if(x.g){const s=findStudio(studio(x.g));if(s)m[s.id]=(m[s.id]||0)+x.lv}});return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([id])=>STUDIOS.get(id)).filter(Boolean)})();
+  const targetName=gm&&st?`${gm.title} (${st.name})`:gm?gm.title:st?st.name:"the makers who raised you";
+  const mobyLink=gm?mobyURL(gm):st?`https://www.mobygames.com/search/?q=${encodeURIComponent(st.name)}&type=company`:"";
+  const liLink=st?`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(st.name+" game")}`:gm?`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(studio(gm)+" "+gm.title)}`:"";
+  const bskyLink=(st||gm)?`https://bsky.app/search?q=${encodeURIComponent((st?st.name:studio(gm)||gm.title)+" gamedev")}`:"";
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">💌 Pure human gratitude · No likes or rankings</p><h2>Send love to ${esc(targetName)}</h2><p class="sub" style="margin:2px 0 0">Many developers from shuttered or older studios wonder if anyone still remembers the worlds they poured years into. Write a personal note, save a thank-you postcard to send them, or add it to the community guestbook.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    ${st||gm?`<div class="diascard" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+      <div class="row" style="gap:10px">${gm?`<div style="width:44px">${cover(gm,{showYear:false})}</div>`:studioLogoHTML(st)}<div><b>${st?`${flag(st.cc)} ${esc(st.name)}`:""}${gm?`${st?" · ":""}${esc(gm.title)} (${gm.year})`:""}</b>${st&&st.makers&&st.makers.length?`<small class="muted" style="display:block">Notable team members: ${esc(st.makers.slice(0,5).join(", "))}</small>`:""}</div></div>
+      <button type="button" class="btn sm ghost" data-act="gratClearPick">Change game / studio</button>
+    </div>`
+    :`<div style="margin-bottom:12px">
+      ${myTopStudios.length?`<span class="sync" style="display:block;margin-bottom:6px">Quick-pick from studios on your timeline:</span><div class="row" style="margin-bottom:8px">${myTopStudios.map(s=>`<button type="button" class="chip" data-act="gratSheet" data-st="${esc(s.id)}">${flag(s.cc)} ${esc(s.name)}</button>`).join("")}</div>`:""}
+      <div class="search"><input class="input" id="gratQ" type="search" placeholder="Search a game or studio (e.g. Bullfrog, Looking Glass, Monkey Island, Final Fantasy VII)…" autocomplete="off"><div class="results" id="gratR" hidden></div></div>
+    </div>`}
+    <span class="sync" style="display:block;margin-bottom:6px">What did their work mean to you?</span>
+    <div class="row" style="gap:6px;margin-bottom:12px">${GRAT_TAGS.map(tg=>`<button type="button" class="chip" data-act="gratTag" data-tag="${esc(tg)}" aria-pressed="${GRAT_DRAFT.tag===tg}">${esc(tg)}</button>`).join("")}</div>
+    <label class="field" for="gratNote">Your note or memory<textarea class="input" id="gratNote" rows="4" maxlength="360" placeholder="Example: Growing up in a chaotic house, booting up ${gm?esc(gm.title):st?esc(st.name+"'s games"):"this world"} after school gave me a calm, hilarious safe harbor I still carry with me today. Thank you to everyone on the team.">${esc(GRAT_DRAFT.note||"")}</textarea></label>
+    <label class="field" for="gratWho" style="margin-top:10px">Signed (optional — first name, platform, or era)<input class="input" id="gratWho" maxlength="48" placeholder="e.g. ${esc(hist.name||"A grateful player")} · Amiga & PC kid" value="${esc(GRAT_DRAFT.who||(hist.name?hist.name:""))}"></label>
+    <div class="row" style="margin-top:14px">
+      <button type="button" class="btn primary" data-act="gratPostcard">💌 Save note &amp; download Postcard (.png)</button>
+      <button type="button" class="btn" data-act="gratGh">Post to public Gratitude Guestbook ↗</button>
+    </div>
+    ${mobyLink||liLink?`<div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)"><span class="sync" style="display:block;margin-bottom:6px">Want to thank a creator directly? Find the real humans on the credits:</span>
+      <div class="row" style="gap:8px">
+        ${mobyLink?`<a class="btn sm" href="${esc(mobyLink)}" target="_blank" rel="noopener">Full team credits on MobyGames ↗</a>`:""}
+        ${liLink?`<a class="btn sm" href="${esc(liLink)}" target="_blank" rel="noopener">Find alumni on LinkedIn ↗</a>`:""}
+        ${bskyLink?`<a class="btn sm ghost" href="${esc(bskyLink)}" target="_blank" rel="noopener">Search makers on Bluesky ↗</a>`:""}
+      </div></div>`:""}
+    <div id="gratOut"></div>`,"Thank the makers");
+  const nEl=$("#gratNote"),wEl=$("#gratWho");
+  if(nEl)nEl.addEventListener("input",()=>{GRAT_DRAFT.note=nEl.value});
+  if(wEl)wEl.addEventListener("input",()=>{GRAT_DRAFT.who=wEl.value});
+  const gq=$("#gratQ"),gr=$("#gratR");
+  if(gq&&gr){
+    gq.addEventListener("input",()=>{
+      const q=norm(gq.value.trim());if(!q){gr.hidden=true;return}
+      const stHits=[...STUDIOS.values()].filter(s=>norm(s.name).includes(q)||s.aliases.some(a=>norm(a).includes(q))).sort((a,b)=>(b.curated-a.curated)||(b.games.length-a.games.length)).slice(0,4);
+      const gmHits=searchGames(gq.value,{limit:5});
+      gr.innerHTML=[
+        ...stHits.map(s=>`<button type="button" class="res" data-gst="${esc(s.id)}"><span>${flag(s.cc)}</span><span><b>${esc(s.name)}</b><small>Studio · ${plural(s.games.length,"game")}</small></span><span class="y">${s.founded||""}</span></button>`),
+        ...gmHits.map(g=>`<button type="button" class="res" data-ggm="${esc(g.id)}">${cover(g,{showYear:false})}<span><b>${esc(g.title)}</b><small>${esc(studio(g))}</small></span><span class="y">${g.year}</span></button>`)
+      ].join("")||`<p class="empty" style="padding:8px 10px">No studio or game match.</p>`;
+      gr.hidden=false;
+    });
+    gr.addEventListener("click",ev=>{
+      const b=ev.target.closest("[data-gst],[data-ggm]");if(!b)return;
+      if(b.dataset.gst)openGratitudeSheet({st:b.dataset.gst,id:""});
+      else if(b.dataset.ggm)openGratitudeSheet({id:b.dataset.ggm});
+    });
+  }
+}
+const LIST_TEMPLATES=[
+  {k:"sweat",title:"😤 Games That Made Me Sweat",sub:"Infamous jumps, palms-sweating bosses, and controller-gripping tests of stubbornness."},
+  {k:"harbor",title:"🛟 Worlds That Carried Me Through",sub:"Safe harbors, warm towns, and unforgettable worlds that helped me through rough seasons."},
+  {k:"coop",title:"🍕 All-Time Couch Co-op Chaos",sub:"Shoulder-to-shoulder laughs, screen-peeking, and rematches nobody agreed to end."},
+  {k:"ost",title:"🎵 Soundtracks Permanently in My Head",sub:"Title themes, sound-chip magic, and boss tracks I can still hum note-for-note."},
+  {k:"sibling",title:"💾 Older Sibling's Hand-Me-Down Gems",sub:"Floppies, cartridges, and cult classics I played way before I knew what I was doing."},
+  {k:"island",title:"🏝️ My Desert-Island Five",sub:"If I could only keep five games from my life, it would be these."}
+];
+function getSavedLists(){
+  const raw=store.get("ib3-lists",null);
+  if(Array.isArray(raw)&&raw.length)return raw;
+  const seedItems=entries(hist).filter(x=>x.g&&(x.e.mtags||[]).includes(SWEAT_TAG)).map(x=>({id:x.g.id,note:x.e.mem||""}));
+  const init=[{title:"😤 Games That Made Me Sweat",sub:"Infamous jumps, brutal bosses, and tests of pure stubbornness.",author:hist.name||"",items:seedItems}];
+  store.set("ib3-lists",init);
+  return init;
+}
+function saveLists(arr){store.set("ib3-lists",arr)}
+function openListsSheet(){
+  const lists=getSavedLists();
+  if(state.listIdx>=lists.length||state.listIdx<0)state.listIdx=0;
+  const cur=lists[state.listIdx];
+  const shareUrl=cur.items.length?shareBase()+"#"+encodeList(cur):"";
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">📋 Custom themed lists · Shareable via link or PNG</p><h2>Build &amp; share game lists</h2><p class="sub" style="margin:2px 0 0">Make lists for frustratingly hard games, safe-harbor worlds, couch co-op, or desert-island picks — and send friends a link with zero sign-in.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="row" style="justify-content:space-between;margin-bottom:10px">
+      <div class="row" style="gap:6px">${lists.map((l,i)=>`<button type="button" class="chip" data-act="listPick" data-i="${i}" aria-pressed="${i===state.listIdx}">${esc(l.title.slice(0,30))} <span class="mono muted">${(l.items||[]).length}</span></button>`).join("")}
+        <button type="button" class="chip" data-act="listNew">+ Blank list</button>
+      </div>
+      ${lists.length>1?`<button type="button" class="btn sm ghost" data-act="listDel">Delete list</button>`:""}
+    </div>
+    <div style="margin-bottom:12px"><span class="sync" style="display:block;margin-bottom:5px">Or start from a themed template:</span>
+      <div class="pickstrip" style="padding-top:0">${LIST_TEMPLATES.map(tp=>`<button type="button" class="chip" style="font-size:12px;padding:4px 10px" data-act="listTpl" data-k="${esc(tp.k)}">${esc(tp.title)}</button>`).join("")}</div>
+    </div>
+    <div class="hgrid" style="margin-bottom:10px">
+      <label class="field" for="lstTitle">List title<input class="input" id="lstTitle" maxlength="48" value="${esc(cur.title||"")}"></label>
+      <label class="field" for="lstAuthor">Byline (optional)<input class="input" id="lstAuthor" maxlength="24" placeholder="Your first name" value="${esc(cur.author||hist.name||"")}"></label>
+    </div>
+    <label class="field" for="lstSub">Short subtitle / theme<input class="input" id="lstSub" maxlength="80" value="${esc(cur.sub||"")}"></label>
+    <div class="search" style="margin-top:12px"><input class="input" id="lstGameQ" type="search" placeholder="Add a game to this list (e.g. Battletoads, Sekiro, Ghosts 'n Goblins, Outer Wilds)…" autocomplete="off"><div class="results" id="lstGameR" hidden></div></div>
+    <div style="margin-top:12px">
+      ${(cur.items||[]).length?cur.items.map((it,idx)=>{const g=byId.get(it.id);if(!g)return "";
+        return `<div class="anc" style="grid-template-columns:28px 44px minmax(0,1fr) auto;gap:10px"><span class="mono muted" style="text-align:right">${idx+1}</span>${cover(g,{showYear:false})}
+          <div style="min-width:0"><b>${esc(g.title)} <span class="mono muted" style="font-weight:400;font-size:12px">(${g.year})</span></b>
+            <input class="input" data-lstnote="${idx}" maxlength="60" style="margin-top:4px;padding:4px 8px;font-size:12.5px" placeholder="Optional quip, e.g. Turbo Tunnel broke me at age 9…" value="${esc(it.note||"")}">
+          </div>
+          <span class="row" style="gap:4px"><button type="button" class="btn sm" data-act="listUp" data-i="${idx}" ${idx===0?"disabled":""} aria-label="Move up">▲</button><button type="button" class="btn sm" data-act="listDown" data-i="${idx}" ${idx===cur.items.length-1?"disabled":""} aria-label="Move down">▼</button><button type="button" class="btn sm ghost" data-act="listRm" data-i="${idx}" aria-label="Remove">×</button></span></div>`}).join("")
+      :`<p class="empty" style="margin:12px 0">No games in this list yet — search above to add up to 16 games.</p>`}
+    </div>
+    ${cur.items.length?`<div class="sharebox" style="margin-top:14px"><input class="input" id="lstShareIn" readonly value="${esc(shareUrl)}" aria-label="Shareable list link"><button type="button" class="btn primary" data-act="listCopyLink">Copy list link</button><button type="button" class="btn" data-act="listPng">Save list card (.png)</button><button type="button" class="btn ghost" data-act="listOpenPage">Open page ▸</button></div>`:""}
+    <div id="lstImgOut"></div>`,"Custom themed lists",{wide:true});
+  const syncMeta=()=>{
+    cur.title=($("#lstTitle")||{}).value?.trim().slice(0,48)||"My Game List";
+    cur.author=($("#lstAuthor")||{}).value?.trim().slice(0,24)||"";
+    cur.sub=($("#lstSub")||{}).value?.trim().slice(0,80)||"";
+    saveLists(lists);
+    const si=$("#lstShareIn");if(si&&cur.items.length)si.value=shareBase()+"#"+encodeList(cur);
+  };
+  ["#lstTitle","#lstAuthor","#lstSub"].forEach(sel=>{const el=$(sel);if(el)el.addEventListener("input",syncMeta)});
+  $$("[data-lstnote]").forEach(inp=>inp.addEventListener("input",()=>{const idx=+inp.dataset.lstnote;if(cur.items[idx]){cur.items[idx].note=inp.value.slice(0,60);syncMeta()}}));
+  wireSearch($("#lstGameQ"),$("#lstGameR"),g=>{
+    if(!g||!g.id)return;
+    syncMeta();
+    if((cur.items||[]).some(x=>x.id===g.id)){toast(`${g.title} is already on this list`);return}
+    if((cur.items||[]).length>=16){toast("Lists hold up to 16 games so cards stay readable");return}
+    cur.items.push({id:g.id,note:""});saveLists(lists);playBlip(2);openListsSheet();
+  });
+}
+function renderSharedList(m,payload){
+  const lst=decodeList(payload);
+  if(!lst||!lst.items.length){m.innerHTML=`<section class="wrap exhero"><h1 class="h1">Couldn't open that themed list</h1><p class="lede">The link may have been truncated when copied.</p><a class="btn primary" href="#timeline">Go to my timeline</a></section>${footer()}`;return}
+  state.viewingList={...lst,payload};
+  m.innerHTML=`<section class="wrap exhero">
+    <nav class="trail" style="padding-top:0;margin-bottom:8px"><button type="button" class="navback" data-act="navBack" data-fb="timeline">◂ Back</button><span class="cur">Shared themed list</span></nav>
+    <p class="eyebrow">📋 Curated game list${lst.author?" · by "+esc(lst.author):""}</p>
+    <h1 class="h1">${esc(lst.title)}</h1>
+    ${lst.sub?`<p class="lede">${esc(lst.sub)}</p>`:""}
+    <div class="row" style="margin-top:14px">
+      <button type="button" class="btn primary" data-act="copyLink" data-payload="${esc(payload)}">Copy list link</button>
+      <button type="button" class="btn" data-act="listPng" data-shared="1">Save list image (.png)</button>
+      <button type="button" class="btn" data-act="listClone">Clone &amp; edit as my own list</button>
+    </div>
+  </section>
+  <section class="wrap sec">
+    <div class="mechgrid">${lst.items.map((it,idx)=>{const g=it.g,lv=levelOf(hist,g);
+      return `<article class="mechcard">
+        <div class="row" style="justify-content:space-between"><span class="mono muted" style="font-weight:700">#${idx+1} · ${g.year}</span><button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}" aria-pressed="${lv>0}">${lv?`${LV[lv].m} ${LV[lv].label}`:"+ Played"}</button></div>
+        <div class="today" style="grid-template-columns:76px minmax(0,1fr);gap:14px">${cover(g,{tag:"button",attrs:`data-act="quickLook" data-id="${g.id}"`,showYear:false})}
+          <div style="min-width:0"><h2 class="h2" style="font-size:17px"><button type="button" class="stbtn" style="font-weight:700;text-decoration:none" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button></h2>
+            <small class="muted">${flag(g.cc)} ${studioBtn(studio(g))}</small>
+            ${it.note?`<p class="memquote" style="margin-top:6px">“${esc(it.note)}”</p>`:`<p class="sub" style="margin:6px 0 0;font-size:12.5px">${esc((g.note||"").slice(0,110))}${(g.note||"").length>110?"…":""}</p>`}
+          </div>
+        </div>
+        <div class="row" style="margin-top:auto;padding-top:6px;justify-content:space-between">
+          <span class="row" style="gap:6px"><button type="button" class="btn sm ghost" data-act="watchTv" data-id="${g.id}">▶ Gameplay</button>${g.tree?`<button type="button" class="btn sm ghost" data-act="game" data-id="${g.id}">⑂ Tree</button>`:""}</span>
+          ${playable(g)?storeLinksHTML(g):""}
+        </div>
+      </article>`}).join("")}</div>
+  </section>${footer()}`;
+}
+let FEAT_DRAFT={title:"",cat:"Timeline & Memories",scope:"Let AI & maintainer decide",body:""};
+function openFeatureSheet(){
+  const repo=ghRepoURL()||"https://github.com/JohanHeurlin/inspired-by";
+  const cats=["Timeline & Memories","Makers & Gratitude","Family Tree & Visuals","Custom Lists & Sharing","Audio & Polish"];
+  const scopes=["Let AI & maintainer decide","Good for everyone (default)","Niche / power-user (Settings toggle)"];
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">💡 Community ideas · AI-triaged backlog</p><h2>Suggest a feature or improvement</h2><p class="sub" style="margin:2px 0 0">Every suggestion lands in our structured backlog and is evaluated on two tracks: <b>universal improvements</b> become calm defaults, while <b>niche or power-user workflows</b> (like Industry Maker Mode or Era Headlines) ship as clean toggles in <b>Settings</b> so the site never feels bloated.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <label class="field" for="featTitle">Short idea title<input class="input" id="featTitle" maxlength="80" placeholder="e.g. Compare 3+ friends side-by-side, Soundtrack radio mode…" value="${esc(FEAT_DRAFT.title||"")}"></label>
+    <span class="sync" style="display:block;margin:10px 0 5px">Area</span>
+    <div class="row" style="gap:6px">${cats.map(c=>`<button type="button" class="chip" data-act="featCat" data-v="${esc(c)}" aria-pressed="${FEAT_DRAFT.cat===c}">${esc(c)}</button>`).join("")}</div>
+    <span class="sync" style="display:block;margin:10px 0 5px">Should this be on for everyone or an optional Settings toggle?</span>
+    <div class="row" style="gap:6px">${scopes.map(s=>`<button type="button" class="chip" data-act="featScope" data-v="${esc(s)}" aria-pressed="${FEAT_DRAFT.scope===s}">${esc(s)}</button>`).join("")}</div>
+    <label class="field" for="featBody" style="margin-top:10px">How would it work, and why would it be fun or meaningful?<textarea class="input" id="featBody" rows="4" placeholder="Describe what you'd love to see…">${esc(FEAT_DRAFT.body||"")}</textarea></label>
+    <div class="row" style="margin-top:14px">
+      <button type="button" class="btn primary" data-act="featGh" data-repo="${esc(repo)}">Submit to Feature Backlog on GitHub ↗</button>
+      <button type="button" class="btn" data-act="featCopy">Copy formatted idea</button>
+    </div>`,"Suggest a feature");
+  const ft=$("#featTitle"),fb=$("#featBody");
+  if(ft)ft.addEventListener("input",()=>{FEAT_DRAFT.title=ft.value});
+  if(fb)fb.addEventListener("input",()=>{FEAT_DRAFT.body=fb.value});
 }
 function openPackSheet(){
   const cur=MEMORY_PACKS.find(p=>p.k===state.packKey)||MEMORY_PACKS[0];
   const gs=packGames(cur),ownSet=new Set(hist.owned||[]);
-  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">Casual browsing · Auto-saved</p><h2>✦ Add games by memory, vibe & mood</h2><p class="sub" style="margin:2px 0 0">No pressure to recall year-by-year — pick a mood below and tap any game you played (<b>✓</b> → <b>★</b> → <b>♥</b>).</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">Casual browsing · Auto-saved</p><h2>✦ Add games by memory, vibe & mood</h2><p class="sub" style="margin:2px 0 0">No pressure to recall year-by-year — pick a mood below (including <b>😤 Brutal Games</b> &amp; <b>🛟 Safe Harbors</b>) and tap any game you played (<b>✓</b> → <b>★</b> → <b>♥</b>).</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="pickstrip" style="margin-bottom:12px">${MEMORY_PACKS.map(pk=>{const n=packGames(pk).filter(g=>levelOf(hist,g)>0).length;return `<button type="button" class="chip" data-act="packSheetPick" data-k="${esc(pk.k)}" aria-pressed="${cur.k===pk.k}">${esc(pk.title)}${n?` · ${n}✓`:""}</button>`}).join("")}</div>
     <p class="sub" style="margin:0 0 10px"><b>${esc(cur.title)}</b> — ${esc(cur.sub)}</p>
     <div class="grid">${gs.map(g=>tileHTML(g,hist,{act:"packCycle",sub:pickTileSub(g,ownSet,"")})).join("")}</div>
-    <div class="sheetfoot"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><button class="btn primary" data-act="closeLayer">Done</button></div>`,"Memory & Vibe Packs");
+    <div class="sheetfoot"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><button class="btn primary" data-act="closeLayer">Done</button></div>`,"Memory & Vibe Packs",{wide:true});
 }
 function ensureBirthThen(cb){
   if(hist.birth){cb();return}
@@ -2990,7 +3256,7 @@ function openMakerSheet(){
     <form class="row" id="mkCustomForm"><input class="input" id="mkCustTitle" maxlength="70" style="flex:2;min-width:160px" placeholder="e.g. Project Ragtag (Canceled)" aria-label="Project title"><input class="input" id="mkCustYear" inputmode="numeric" maxlength="4" style="width:92px" placeholder="2017" value="${NOW-2}" aria-label="Year"><button class="btn sm craft" type="submit">+ Add credit</button></form>
     ${wk.length?`<h3 class="h3" style="margin-top:18px">Your credits (${wk.length})</h3>
       <div>${wk.map(x=>`<div class="anc" style="grid-template-columns:36px minmax(0,1fr) auto">${coverOfEntry(x.e,x.y,{showYear:false})}<span><b>${esc(x.g?x.g.title:x.e.t)}</b><small>${x.y}${x.e.role?" · 🛠 "+esc(x.e.role):""}${x.g?" · "+esc(studio(x.g)):" · Unshipped / custom"}</small></span><button type="button" class="btn sm ghost" data-act="mkRmWk" data-y="${x.y}" data-t="${esc(x.e.t)}" aria-label="Remove credit">×</button></div>`).join("")}</div>`:""}
-    <div class="sheetfoot"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><button type="button" class="btn craft" data-act="mkDone">View my Maker timeline ▸</button></div>`,"Games & studios I worked on");
+    <div class="sheetfoot"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><button type="button" class="btn craft" data-act="mkDone">View my Maker timeline ▸</button></div>`,"Games & studios I worked on",{wide:true});
   wireSearch($("#mkGameQ"),$("#mkGameR"),g=>{if(!g||!g.id)return;if(!syncHead())return;toggleWorked(g,state.makerRole||undefined);toast(`Added credit: ${g.title}`);openMakerSheet()},{playOnly:false});
   const stIn=$("#mkStQ"),stBox=$("#mkStR");
   stIn.addEventListener("input",()=>{
@@ -3012,7 +3278,7 @@ function openYearSheet(y,customTitle){
     <div class="tap-hint" style="margin-bottom:12px"><span><b>✓</b>played</span><span><b class="l2">★</b>played a ton</span><span><b class="l3">♥</b>favorite</span></div>
     <div class="grid" id="yeargrid">${list.map(g=>tileHTML(g,hist)).join("")||`<p class="empty">No games listed for ${y} yet.</p>`}</div>
     <h3 class="h3" style="margin-top:18px">Played an older or missing game in ${y}?</h3>
-    <form class="row" id="customForm"><input class="input" id="customIn" style="flex:1;min-width:0" placeholder="Type any game you played in ${y}" value="${esc(customTitle||"")}" aria-label="Game title"><button class="btn" type="submit">Add to ${y}</button></form>`,"Year "+y);
+    <form class="row" id="customForm"><input class="input" id="customIn" style="flex:1;min-width:0" placeholder="Type any game you played in ${y}" value="${esc(customTitle||"")}" aria-label="Game title"><button class="btn" type="submit">Add to ${y}</button></form>`,"Year "+y,{wide:true});
   $("#customForm").onsubmit=e=>{e.preventDefault();const t=$("#customIn").value.trim();if(!t)return;const g=findGame(t);if(g){setLevel(g,Math.max(1,levelOf(hist,g)),y);moveEntryYear(entryYearOf(hist,g)||y,g.title,y);toast(`Added ${g.title} to ${y}`)}else{addCustom(t,y);toast(`Added ${t} to ${y}`)}openYearSheet(y)};
 }
 function openShare(){
@@ -3026,9 +3292,10 @@ function openShare(){
       ${canWebShare?`<button class="btn sm" data-act="webShare">Share…</button>`:""}
       <button class="btn sm" data-act="emailSelf">Email link to myself</button>
       <button class="btn sm" data-act="dlJson">Download backup (.json)</button>
+      <button class="btn sm" data-act="listsSheet">📋 Create themed list</button>
     </div>
     <p class="sub" style="margin-top:8px">Tip: emailing the link to yourself keeps a permanent backup you can load on any phone or computer in one tap.</p>
-    <h3 class="h3" style="margin-top:16px">Images & interactive box pile</h3><p class="sub">Save a story card, your favorite games, your consoles paired with favorite games, a 4K timeline poster, or toss your boxes in the physics pile.</p>
+    <h3 class="h3" style="margin-top:16px">Images (with real box art) &amp; interactive box pile</h3><p class="sub">Save a story card, your favorite games, your consoles paired with favorite games, a 4K timeline poster, or toss your boxes in the physics pile.</p>
     <div class="row">
       <button class="btn" data-act="png" data-kind="card">Save story card</button>
       <button class="btn" data-act="png" data-kind="favs">♥ Save favorites grid</button>
@@ -3042,16 +3309,23 @@ function openShare(){
 function openSettings(){
   const artEra=document.documentElement.dataset.art==="era";
   const hasStash=!!store.get("ib3-stashed-hist");
-  openSheet(`<div class="sheethead"><h2>Timeline settings</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  openSheet(`<div class="sheethead"><h2>Timeline settings &amp; optional features</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <form id="setForm" class="row" style="align-items:flex-end"><label class="field" for="setBirth" style="flex:1">Year you were born<input class="input" id="setBirth" inputmode="numeric" maxlength="4" value="${hist.birth||""}"></label><label class="field" for="setName" style="flex:2">Name<input class="input" id="setName" maxlength="24" value="${esc(hist.name||"")}"></label><button class="btn primary" type="submit">Save</button></form>
-    <div class="row" style="margin-top:16px"><button class="btn" data-act="obSystems">Change systems</button><button class="btn" data-act="obAgain">Show quick picks again</button><button class="btn" data-act="theme">Switch light / dark</button><button class="btn" data-act="artToggle">${artEra?"Use real box art":"Use retro era spines"}</button></div>
-    <h3 class="h3" style="margin-top:16px">Modes & visitor preview</h3>
-    <p class="sub">Industry / maker mode unlocks "I worked on this game" career & studio credit tools. Visitor preview lets you test the fresh onboarding flow and switch right back to your saved timeline.</p>
+    <div class="row" style="margin-top:14px"><button class="btn primary" data-act="obAgain">➕ Pick games</button><button class="btn" data-act="obSystems">🕹️ Change systems</button><button class="btn" data-act="theme">Switch light / dark</button><button class="btn" data-act="artToggle">${artEra?"Use real box art":"Use retro era spines"}</button></div>
+    <h3 class="h3" style="margin-top:16px">Optional features &amp; toggles</h3>
+    <p class="sub">Turn niche or power-user views on or off anytime. Have an idea for another toggle? <button type="button" class="link" data-act="featureSheet">Suggest a feature ▸</button></p>
     <div class="row">
-      <button type="button" class="btn ${isDevMode()?"craft":""}" data-act="devModeTog" aria-pressed="${isDevMode()}">🛠 Industry / maker mode: ${isDevMode()?"On":"Off"}</button>
+      <button type="button" class="chip" data-act="sfxToggle" aria-pressed="${!!SYNTH.sfx}">${SYNTH.sfx?"🔊 Selection chimes: On":"🔇 Selection chimes: Off"}</button>
+      <button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era nostalgia headlines: ${state.eraMem?"On":"Off"}</button>
+      <button type="button" class="chip" data-act="artWhyTog" aria-pressed="${!!state.showArtWhy}">🛟 “Why games matter” reflection: ${state.showArtWhy?"Shown":"Hidden"}</button>
+      <button type="button" class="chip ${isDevMode()?"craftchip":""}" data-act="devModeTog" aria-pressed="${isDevMode()}">🛠 Industry / maker mode: ${isDevMode()?"On":"Off"}</button>
+    </div>
+    <h3 class="h3" style="margin-top:16px">Visitor onboarding preview</h3>
+    <p class="sub">Test the fresh visitor onboarding experience without losing your saved timeline.</p>
+    <div class="row">
       ${hasStash?`<button type="button" class="btn primary" data-act="sandboxExit">↩ Return to my saved timeline</button>`:`<button type="button" class="btn" data-act="sandboxEnter">🧪 Test new-visitor onboarding</button>`}
     </div>
-    <h3 class="h3" style="margin-top:16px">Backup & restore</h3>
+    <h3 class="h3" style="margin-top:16px">Backup &amp; restore</h3>
     <p class="sub">Your timeline saves automatically in this browser. You can also export or import a JSON backup file anytime.</p>
     <div class="row"><button class="btn sm" data-act="dlJson">Export backup (.json)</button><label class="btn sm" style="cursor:pointer">Import backup (.json)<input type="file" id="impJson" accept=".json,application/json" hidden></label></div>
     <h3 class="h3" style="margin-top:16px">Start over</h3><p class="sub">Removes every game from your timeline on this device.</p><button class="btn" data-act="resetAsk">Clear my timeline</button><div id="resetBox"></div>`,"Settings");
@@ -3215,10 +3489,49 @@ function canvasCover(x,title,year,h,glyph,bx,by,w,hh){
   const gi=GLYPH_IMG[glyph];if(gi){x.imageSmoothingEnabled=false;const s=Math.round(w*.22/8)*8||8;x.globalAlpha=.9;x.drawImage(gi,bx+w*.08,by+hh-s-w*.08,s,s);x.globalAlpha=1}
   x.fillStyle="#fff";const fs=Math.max(10,w*.11);x.font=`700 ${fs}px Unbounded, Arial Black, sans-serif`;wrapText(x,title,bx+w*.09,by+fs*1.5,w*.82,fs*1.14,4);
 }
+function preloadCoverImages(games,timeoutMs=4500){
+  if(document.documentElement.dataset.art==="era")return Promise.resolve(new Map());
+  const urls=[...new Set((games||[]).map(g=>g&&g.img).filter(Boolean))];
+  if(!urls.length)return Promise.resolve(new Map());
+  const map=new Map();
+  return new Promise(resolve=>{
+    let left=urls.length,done=false;
+    const finish=()=>{if(!done){done=true;resolve(map)}};
+    const tm=setTimeout(finish,timeoutMs);
+    urls.forEach(u=>{
+      const im=new Image();
+      im.crossOrigin="anonymous";
+      im.onload=()=>{if(im.naturalWidth>20&&im.naturalHeight>20)map.set(u,im);if(--left<=0){clearTimeout(tm);finish()}};
+      im.onerror=()=>{if(--left<=0){clearTimeout(tm);finish()}};
+      im.src=u;
+    });
+  });
+}
+function drawCoverOrBox(x,g,title,year,h,glyph,bx,by,w,hh,imgMap){
+  const im=g&&g.img&&imgMap&&imgMap.get(g.img);
+  if(im&&im.naturalWidth>20&&im.naturalHeight>20){
+    const r=Math.max(4,w*.05),iw=im.naturalWidth,ih=im.naturalHeight;
+    const isLogo=/\.svg\.png|Logo\.|_logo\./i.test(g.img);
+    x.save();x.imageSmoothingEnabled=true;
+    x.beginPath();x.roundRect(bx,by,w,hh,r);x.clip();
+    if(isLogo){
+      x.fillStyle="#EEF2FA";x.fillRect(bx,by,w,hh);
+      const pad=w*0.1,mw=w-pad*2,mh=hh-pad*2,sc=Math.min(mw/iw,mh/ih),dw=iw*sc,dh=ih*sc;
+      x.drawImage(im,bx+(w-dw)/2,by+(hh-dh)/2,dw,dh);
+    }else{
+      x.fillStyle="#0D111C";x.fillRect(bx,by,w,hh);
+      const sc=Math.max(w/iw,hh/ih),dw=iw*sc,dh=ih*sc;
+      x.drawImage(im,bx+(w-dw)/2,by+(hh-dh)*0.22,dw,dh);
+    }
+    x.restore();
+    return;
+  }
+  canvasCover(x,title,year,h,glyph,bx,by,w,hh);
+}
 function wrapText(x,text,px,py,maxW,lh,maxLines){const words=String(text).split(/\s+/);let line="",n=0;
   for(const w of words){const t=line?line+" "+w:w;if(x.measureText(t).width>maxW&&line){x.fillText(line,px,py+n*lh);n++;line=w;if(n>=maxLines-1&&words.indexOf(w)<words.length-1){line=w+"…";break}}else line=t}
   if(line&&n<maxLines)x.fillText(line,px,py+n*lh)}
-function drawWallpaper(d,name){
+function drawWallpaper(d,name,imgMap){
   const W=3840,H=2160,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const es=entries(d),byY={};es.forEach(e=>(byY[e.y]=byY[e.y]||[]).push(e));const ys=Object.keys(byY).map(Number);
   const from=Math.min(d.birth,...ys),to=Math.max(...ys),years=[];for(let y=from;y<=to;y++)years.push(y);
@@ -3232,15 +3545,15 @@ function drawWallpaper(d,name){
     x.fillStyle="#98A1B6";x.font=`500 ${Math.max(16,Math.min(26,colW*.28))}px IBM Plex Mono, monospace`;x.textAlign="center";x.fillText(String(y),cx,H-90);x.textAlign="left";
     x.strokeStyle="rgba(255,255,255,.07)";x.beginPath();x.moveTo(M+i*colW,260);x.lineTo(M+i*colW,H-130);x.stroke();
     (byY[y]||[]).sort((a,b)=>b.lv-a.lv).slice(0,7).forEach((e,j)=>{const s=j===0?1:j<3?.86:.72,w=tw*s,h=th*s,top=270+[0,1.04,1.94,2.84,3.6,4.36,5.12][j]*th*.92;if(top+h>H-130)return;
-      const bx=cx-w/2,g=e.g;canvasCover(x,g?g.title:e.e.t,y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,top,w,h);
+      const bx=cx-w/2,g=e.g;drawCoverOrBox(x,g,g?g.title:e.e.t,y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,top,w,h,imgMap);
       if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=7;x.beginPath();x.roundRect(bx,top,w,h,Math.max(4,w*.05));x.stroke()}else if(e.lv===2){x.strokeStyle="#8C9DFF";x.lineWidth=4;x.beginPath();x.roundRect(bx,top,w,h,Math.max(4,w*.05));x.stroke()}
       boxes[norm(e.e.t)]={x:bx,y:top,w,h}})});
   wallLinks(d).forEach(({a,b})=>{const A=boxes[a],B=boxes[b];if(!A||!B)return;const x1=A.x+A.w,y1=A.y+A.h/2,x2=B.x,y2=B.y+B.h/2,dx=Math.max(40,Math.abs(x2-x1)/2);
     x.strokeStyle="rgba(140,157,255,.8)";x.lineWidth=4;x.beginPath();x.moveTo(x1,y1);x.bezierCurveTo(x1+dx,y1,x2-dx,y2,x2,y2);x.stroke()});
-  x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillStyle="#B9C1D2";x.fillText("Inspired By · the family tree of games",M,H-40);
+  x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillStyle="#B9C1D2";x.fillText("Played & Made · your life in games & the humans who built them",M,H-40);
   return cv;
 }
-function drawCard(d,name){
+function drawCard(d,name,imgMap){
   const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0E1428");bg.addColorStop(1,"#23163C");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const st=timelineStats(d),es=entries(d),persona=gamerPersonaOf(d);
@@ -3251,14 +3564,14 @@ function drawCard(d,name){
   const stages=[["Childhood",0,12],["Teens",13,19],["Twenties",20,29],["Thirties",30,39],["Forties",40,49]];let yy=356;
   for(const [label,a,b] of stages){const xs=es.filter(e=>e.y-d.birth>=a&&e.y-d.birth<=b).sort((p,q)=>q.lv-p.lv||((q.g&&q.g.pop)||0)-((p.g&&p.g.pop)||0)).slice(0,5);if(!xs.length)continue;if(yy>1520)break;
     x.fillStyle="#8C9DFF";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText(label.toUpperCase(),72,yy);yy+=24;
-    xs.forEach((e,k)=>{const w=170,h=226,bx=72+k*(w+18);const g=e.g;canvasCover(x,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,yy,w,h);if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=6;x.beginPath();x.roundRect(bx,yy,w,h,8);x.stroke()}});
+    xs.forEach((e,k)=>{const w=170,h=226,bx=72+k*(w+18);const g=e.g;drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,yy,w,h,imgMap);if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=6;x.beginPath();x.roundRect(bx,yy,w,h,8);x.stroke()}});
     yy+=226+60}
   const dna=dnaOf(d);if(dna.top.length&&yy<1700){const a=dna.top[0];x.fillStyle="#8C9DFF";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText("MY GAMING DNA",72,yy);yy+=50;
     x.fillStyle="#F2F4F8";x.font="600 34px IBM Plex Sans, sans-serif";wrapText(x,`${a.n} of my games descend from ${a.g.title} (${a.g.year}).`,72,yy,936,44,2)}
-  x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("What did you play? · Inspired By",72,H-70);
+  x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Played & Made · your life in games & the humans who built them",72,H-70);
   return cv;
 }
-function drawFavsCard(d,name){
+function drawFavsCard(d,name,imgMap){
   const W=1080,H=1440,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#121629");bg.addColorStop(1,"#261533");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const es=entries(d),favs=es.filter(e=>e.lv===3).sort((a,b)=>a.y-b.y);
@@ -3271,17 +3584,17 @@ function drawFavsCard(d,name){
   const cols=4,w=212,h=282,gapX=29,gapY=54,startY=290;
   picks.forEach((e,idx)=>{
     const r=Math.floor(idx/cols),c=idx%cols,bx=72+c*(w+gapX),by=startY+r*(h+gapY),g=e.g;
-    canvasCover(x,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,w,h);
+    drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,w,h,imgMap);
     x.strokeStyle=e.lv===3?"#FF6E5A":"#8C9DFF";x.lineWidth=5;x.beginPath();x.roundRect(bx,by,w,h,10);x.stroke();
     if(t10.length){x.fillStyle="#FF6E5A";x.beginPath();x.roundRect(bx+10,by+10,44,36,8);x.fill();x.fillStyle="#fff";x.font="700 22px IBM Plex Mono, monospace";x.fillText("#"+(idx+1),bx+16,by+35)}
     x.fillStyle="#CBD2E1";x.font="500 21px IBM Plex Mono, monospace";x.fillText(String(e.y),bx,by+h+28);
   });
   const sys=(d.owned&&d.owned.length?d.owned:[...new Set(es.flatMap(e=>sysListOf(e.e,d)))]).slice(0,6);
   if(sys.length){x.fillStyle="#98A1B6";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played on: "+sys.join(" · "),72,H-115)}
-  x.fillStyle="#7B84A0";x.font="italic 400 26px IBM Plex Sans, sans-serif";x.fillText("Inspired By · the family tree of games",72,H-64);
+  x.fillStyle="#7B84A0";x.font="italic 400 26px IBM Plex Sans, sans-serif";x.fillText("Played & Made · your life in games & the humans who built them",72,H-64);
   return cv;
 }
-function drawConsolesCard(d,name){
+function drawConsolesCard(d,name,imgMap){
   const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0D1526");bg.addColorStop(1,"#1B1B34");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const es=entries(d),bySys=new Map();
@@ -3302,15 +3615,15 @@ function drawConsolesCard(d,name){
     x.fillStyle="#8C9DFF";x.font="600 22px IBM Plex Mono, monospace";x.fillText(plural(arr.length,"game")+" played",92,yy+226);
     top.forEach((e,k)=>{
       const cw=142,ch=190,bx=406+k*(cw+14),by=yy+33,g=e.g;
-      canvasCover(x,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,cw,ch);
+      drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,cw,ch,imgMap);
       if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=5;x.beginPath();x.roundRect(bx,by,cw,ch,8);x.stroke()}
     });
     yy+=288;
   });
-  x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Hardware & craft · Inspired By",72,H-66);
+  x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Hardware & craft · Played & Made",72,H-66);
   return cv;
 }
-function drawMakerCard(d,name){
+function drawMakerCard(d,name,imgMap){
   const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#14120E");bg.addColorStop(1,"#1B2030");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const mk=makerLegacyOf(d)||{wk:[],studios:[],reachCount:0,desc:[]};
@@ -3323,7 +3636,7 @@ function drawMakerCard(d,name){
     x.fillStyle="#E8A948";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText("GAMES I HELPED BUILD",72,yy);yy+=24;
     mk.wk.slice(0,10).forEach((e,idx)=>{
       const row=Math.floor(idx/5),col=idx%5,w=170,h=226,bx=72+col*(w+18),by=yy+row*(h+52);
-      const g=e.g;canvasCover(x,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,w,h);
+      const g=e.g;drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,w,h,imgMap);
       x.strokeStyle="#E8A948";x.lineWidth=5;x.beginPath();x.roundRect(bx,by,w,h,8);x.stroke();
       x.fillStyle="#CBD2E1";x.font="500 20px IBM Plex Mono, monospace";x.fillText(String(e.y),bx,by+h+28);
     });
@@ -3331,25 +3644,81 @@ function drawMakerCard(d,name){
   }
   if(mk.desc.length&&yy<1550){
     x.fillStyle="#8C9DFF";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText(`THE RIPPLE EFFECT · ${mk.reachCount} LATER GAMES`,72,yy);yy+=24;
-    mk.desc.slice(0,5).forEach((r,k)=>{const w=170,h=226,bx=72+k*(w+18);canvasCover(x,r.g.title,r.g.year,r.g.h,glyphOf(r.g),bx,yy,w,h)});
+    mk.desc.slice(0,5).forEach((r,k)=>{const w=170,h=226,bx=72+k*(w+18);drawCoverOrBox(x,r.g,r.g.title,r.g.year,r.g.h,glyphOf(r.g),bx,yy,w,h,imgMap)});
     yy+=226+50;
   }
-  x.fillStyle="#98A1B6";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Every game stands on earlier craft · Inspired By",72,H-70);
+  x.fillStyle="#98A1B6";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Every game stands on earlier craft · Played & Made",72,H-70);
   return cv;
+}
+function drawPostcard(item,imgMap){
+  const W=1200,H=675,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#14182B");bg.addColorStop(1,"#2B182D");x.fillStyle=bg;x.fillRect(0,0,W,H);
+  x.strokeStyle="rgba(255,110,90,.45)";x.lineWidth=3;x.beginPath();x.roundRect(32,32,W-64,H-64,22);x.stroke();
+  const gm=item.game&&byId.get(item.game),st=item.studio&&findStudio(item.studio);
+  const repGame=gm||(st&&st.games&&st.games.slice().sort((a,b)=>b.pop-a.pop)[0])||null;
+  let tx=76,tw=W-152;
+  if(repGame){
+    const cw=220,ch=294,bx=76,by=160;
+    drawCoverOrBox(x,repGame,repGame.title,repGame.year,repGame.h,glyphOf(repGame),bx,by,cw,ch,imgMap);
+    x.strokeStyle="#FF6E5A";x.lineWidth=5;x.beginPath();x.roundRect(bx,by,cw,ch,12);x.stroke();
+    tx=334;tw=W-tx-76;
+  }
+  x.fillStyle="#FF8A78";x.font="400 22px Silkscreen, IBM Plex Mono, monospace";x.fillText("THANK YOU TO THE MAKERS",76,102);
+  const heading=gm&&st?`To ${st.name} (${gm.title})`:st?`To everyone at ${st.name}`:gm?`To the team behind ${gm.title}`:"To the game makers who raised us";
+  x.fillStyle="#F2F4F8";x.font="700 42px Unbounded, Arial Black, sans-serif";wrapText(x,heading,tx,196,tw,50,2);
+  x.fillStyle="#8C9DFF";x.font="600 22px IBM Plex Mono, monospace";x.fillText(item.tag||"🛟 Carried me through",tx,276);
+  x.fillStyle="#EEF2FA";x.font="italic 400 29px IBM Plex Sans, sans-serif";wrapText(x,`“${item.note}”`,tx,334,tw,42,5);
+  if(item.who){x.fillStyle="#B8C1D6";x.font="600 23px IBM Plex Sans, sans-serif";x.fillText(`— ${item.who}`,tx,560)}
+  x.fillStyle="#8E98B0";x.font="400 21px IBM Plex Mono, monospace";x.fillText("Played & Made · No rankings, just human gratitude",76,H-58);
+  return cv;
+}
+function drawListCard(lst,imgMap){
+  const items=(lst.items||[]).map(it=>({g:byId.get(it.id)||it.g,note:it.note||""})).filter(x=>x.g).slice(0,12);
+  const cols=4,rows=Math.max(1,Math.ceil(items.length/cols));
+  const W=1080,H=380+rows*356,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0F1528");bg.addColorStop(1,"#241634");x.fillStyle=bg;x.fillRect(0,0,W,H);
+  x.fillStyle="#FF8A78";x.font="400 24px Silkscreen, IBM Plex Mono, monospace";x.fillText(`CURATED GAME LIST${lst.author?" · BY "+lst.author.toUpperCase():""}`,68,96);
+  x.fillStyle="#F2F4F8";x.font="700 52px Unbounded, Arial Black, sans-serif";wrapText(x,lst.title||"Game List",68,164,944,58,2);
+  if(lst.sub){x.fillStyle="#AEB6C8";x.font="400 25px IBM Plex Sans, sans-serif";wrapText(x,lst.sub,68,242,944,34,2)}
+  const w=214,h=284,gapX=28,gapY=68,startY=300;
+  items.forEach(({g,note},idx)=>{
+    const r=Math.floor(idx/cols),c=idx%cols,bx=68+c*(w+gapX),by=startY+r*(h+gapY);
+    drawCoverOrBox(x,g,g.title,g.year,g.h,glyphOf(g),bx,by,w,h,imgMap);
+    x.strokeStyle="rgba(255,255,255,.28)";x.lineWidth=4;x.beginPath();x.roundRect(bx,by,w,h,10);x.stroke();
+    x.fillStyle="#0E1428";x.beginPath();x.roundRect(bx+8,by+8,42,34,7);x.fill();
+    x.fillStyle="#FF8A78";x.font="700 20px IBM Plex Mono, monospace";x.fillText("#"+(idx+1),bx+14,by+31);
+    x.fillStyle="#E8ECF6";x.font="600 18px IBM Plex Sans, sans-serif";wrapText(x,note||g.title,bx,by+h+24,w,22,2);
+  });
+  x.fillStyle="#8E98B0";x.font="italic 400 24px IBM Plex Sans, sans-serif";x.fillText("Played & Made · your life in games & the humans who built them",68,H-42);
+  return cv;
+}
+async function exportCanvasPng(gamesToPreload,buildFn,fname,outSel){
+  toast("Rendering high-res image with box art…");
+  const imgMap=await preloadCoverImages(gamesToPreload);
+  let blob=null;
+  try{
+    const cv=buildFn(imgMap);
+    blob=await new Promise((res,rej)=>{try{cv.toBlob(b=>b?res(b):rej(new Error("empty")),"image/png")}catch(err){rej(err)}});
+  }catch(e){
+    const cv2=buildFn(null);
+    blob=await new Promise(r=>cv2.toBlob(r,"image/png"));
+  }
+  if(!blob){toast("Couldn't generate image");return}
+  try{const dl=window.claude&&claude.use?await claude.use("downloads"):null;
+    if(dl){await dl.save({filename:fname,data:blob});toast("Saved "+fname);return}}catch(e){if(e&&e.code==="declined")return}
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
+  toast(`Downloaded ${fname}`);
+  const out=outSel?$(outSel):null;
+  if(out)out.innerHTML=`<p class="sub" style="margin-top:12px">Downloaded <b>${esc(fname)}</b> (on phones, press and hold the preview below to save to Photos).</p><img class="imgprev" src="${url}" alt="${esc(fname)}">`;
 }
 async function saveImage(kind,who){
   const d=who==="friend"&&state.viewing?state.viewing.data:hist,name=who==="friend"&&state.viewing?state.viewing.name+"'s":null;
   const cleanName=name&&name.replace(/'s$/,"");
-  const cv=kind==="maker"?drawMakerCard(d,cleanName):kind==="consoles"?drawConsolesCard(d,cleanName):kind==="favs"?drawFavsCard(d,cleanName):kind==="card"?drawCard(d,cleanName):drawWallpaper(d,name);
-  const blob=await new Promise(r=>cv.toBlob(r,"image/png"));
+  const gs=entries(d).map(e=>e.g).filter(Boolean);
+  if(kind==="maker"){const mk=makerLegacyOf(d);if(mk)mk.desc.forEach(r=>gs.push(r.g))}
   const fname=kind==="maker"?"my-work-in-games.png":kind==="consoles"?"my-consoles-and-favorites.png":kind==="favs"?"my-favorite-games.png":kind==="card"?"my-life-in-games.png":"my-gaming-years-4k.png";
-  try{const dl=window.claude&&claude.use?await claude.use("downloads"):null;
-    if(dl){await dl.save({filename:fname,data:blob});toast("Saved");return}}catch(e){if(e&&e.code==="declined")return}
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
-  toast("Image downloaded");
-  const out=$("#imgout")||$("#posterBody");
-  if(out)out.insertAdjacentHTML("afterbegin",`<p class="sub" style="margin-top:12px">Downloaded <b>${esc(fname)}</b> (on phones, you can also press and hold the preview below).</p><img class="imgprev" src="${url}" alt="Your timeline image">`);
+  await exportCanvasPng(gs,imgMap=>kind==="maker"?drawMakerCard(d,cleanName,imgMap):kind==="consoles"?drawConsolesCard(d,cleanName,imgMap):kind==="favs"?drawFavsCard(d,cleanName,imgMap):kind==="card"?drawCard(d,cleanName,imgMap):drawWallpaper(d,name,imgMap),fname,"#imgout");
 }
 
 function updateArtBtn(){const b=$("#artBtn");if(b)b.textContent=document.documentElement.dataset.art==="era"?"Covers: Era spines":"Covers: Box art"}
@@ -3361,8 +3730,10 @@ const ACTIONS={
   noop(){},
   navBack(el){navBack(el&&el.dataset&&el.dataset.fb)},
   scrollTop(){window.scrollTo({top:0,behavior:"smooth"})},
+  sfxToggle(){toggleSfx();if($("#sheetDlg")&&$("#sheetDlg").open)openSettings()},
   synthToggle(){toggleSynth()},
-  eraMemTog(){state.eraMem=state.eraMem?0:1;store.set("ib3-eramem",state.eraMem);const y=window.scrollY;render();window.scrollTo({top:y})},
+  eraMemTog(){state.eraMem=state.eraMem?0:1;store.set("ib3-eramem",state.eraMem);if($("#sheetDlg")&&$("#sheetDlg").open)openSettings();else{const y=window.scrollY;render();window.scrollTo({top:y})}},
+  artWhyTog(){state.showArtWhy=state.showArtWhy?0:1;store.set("ib3-artwhy",state.showArtWhy);if($("#sheetDlg")&&$("#sheetDlg").open)openSettings();else{const y=window.scrollY;render();window.scrollTo({top:y})}},
   devModeTog(){
     state.devMode=state.devMode?0:1;store.set("ib3-devmode",state.devMode);
     toast(state.devMode?"🛠 Industry / maker mode enabled":"Industry / maker mode hidden");
@@ -3398,6 +3769,19 @@ const ACTIONS={
       toast(nl?`${LV[nl].label}: ${g.title}`:`Removed ${g.title}`);
     });
   },
+  qlQuickTag(el){
+    const g=byId.get(el.dataset.id);if(!g)return;
+    const tg=el.dataset.tag;
+    ensureBirthThen(()=>{
+      if(!levelOf(hist,g))setLevel(g,1);
+      const e=entryOf(hist,g);if(!e)return;
+      const cur=(e.mtags||[]).slice(),i=cur.indexOf(tg);
+      if(i>=0)cur.splice(i,1);else if(cur.length<5)cur.push(tg);
+      if(cur.length)e.mtags=cur;else delete e.mtags;
+      save();playBlip(i>=0?0:2);openQuickLook(g);
+      toast(i>=0?`Removed tag ${tg}`:`Tagged ${g.title}: ${tg}`);
+    });
+  },
   qtick(el){
     const g=byId.get(el.dataset.id);if(!g)return;
     ensureBirthThen(()=>{
@@ -3419,11 +3803,90 @@ const ACTIONS={
   pickMode(el){state.pickMode=el.dataset.m;render()},
   pickPack(el){state.packKey=el.dataset.k;const y=window.scrollY;render();window.scrollTo({top:y})},
   packSheet(){openPackSheet()},
+  openSweatPack(){state.packKey="sweat";openPackSheet()},
+  openHarborPack(){state.packKey="harbor";openPackSheet()},
   packSheetPick(el){state.packKey=el.dataset.k;openPackSheet()},
   packCycle(el){const g=byId.get(el.dataset.id);if(!g)return;ensureBirthThen(()=>{const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g)})},
-  watchTv(el){const g=byId.get(el.dataset.id);if(g)openTvSheet(g,null,false)},
-  tvInsert(el){const g=byId.get(el.dataset.id);if(!g)return;const med=mediaInfoOf(g);playInsertSound(med.kind);openTvSheet(g,el.dataset.vid||null,true)},
-  tvEject(el){const g=byId.get(el.dataset.id);if(g){playBlip(0);openTvSheet(g,null,false)}},
+  watchTv(el){const g=byId.get(el.dataset.id);if(g)openVideoSheet(g,null,false)},
+  gratSheet(el){
+    const o={};
+    if(el&&el.dataset){if(el.dataset.st!==undefined)o.st=el.dataset.st;if(el.dataset.id!==undefined)o.id=el.dataset.id}
+    openGratitudeSheet(o);
+  },
+  gratClearPick(){GRAT_DRAFT.st="";GRAT_DRAFT.id="";openGratitudeSheet()},
+  gratTag(el){GRAT_DRAFT.tag=el.dataset.tag;openGratitudeSheet()},
+  async gratPostcard(){
+    const note=(($("#gratNote")||{}).value||"").trim(),who=(($("#gratWho")||{}).value||"").trim();
+    if(note.length<6){toast("Write a short thank-you note first");const el=$("#gratNote");if(el)el.focus();return}
+    GRAT_DRAFT.note=note;GRAT_DRAFT.who=who;
+    const item={studio:GRAT_DRAFT.st||"",game:GRAT_DRAFT.id||"",tag:GRAT_DRAFT.tag||"🛟 Carried me through",note,who:who||"A grateful player",year:NOW};
+    const saved=store.get("ib3-gratitude",[]);
+    if(!saved.some(x=>x.note===item.note&&x.studio===item.studio))saved.unshift(item);
+    store.set("ib3-gratitude",saved.slice(0,50));
+    const gm=item.game&&byId.get(item.game),st=item.studio&&findStudio(item.studio);
+    const rep=gm||(st&&st.games&&st.games.slice().sort((a,b)=>b.pop-a.pop)[0])||null;
+    playBlip(3);
+    await exportCanvasPng(rep?[rep]:[],imgMap=>drawPostcard(item,imgMap),`thank-you-${slugStudio(st?st.name:gm?gm.title:"makers")}.png`,"#gratOut");
+  },
+  gratGh(){
+    const note=(($("#gratNote")||{}).value||"").trim(),who=(($("#gratWho")||{}).value||"").trim();
+    if(note.length<6){toast("Write a short thank-you note first");const el=$("#gratNote");if(el)el.focus();return}
+    const gm=GRAT_DRAFT.id&&byId.get(GRAT_DRAFT.id),st=GRAT_DRAFT.st&&findStudio(GRAT_DRAFT.st);
+    const target=gm&&st?`${gm.title} (${st.name})`:st?st.name:gm?gm.title:"Game makers";
+    const repo=ghRepoURL()||"https://github.com/JohanHeurlin/inspired-by";
+    const body=`### Studio or game\n${target}\n\n### What it meant\n${GRAT_DRAFT.tag||"🛟 Carried me through"}\n\n### Your thank-you note\n${note}\n\n### Signed\n${who||"Anonymous player"}`;
+    window.open(`${repo}/issues/new?template=gratitude-note.yml&labels=gratitude&title=${encodeURIComponent("[Thank You] "+target)}&body=${encodeURIComponent(body)}`,"_blank","noopener");
+  },
+  listsSheet(){openListsSheet()},
+  listPick(el){state.listIdx=+el.dataset.i;openListsSheet()},
+  listNew(){const ls=getSavedLists();ls.push({title:"My Custom Game List",sub:"",author:hist.name||"",items:[]});state.listIdx=ls.length-1;saveLists(ls);openListsSheet()},
+  listTpl(el){
+    const tp=LIST_TEMPLATES.find(x=>x.k===el.dataset.k);if(!tp)return;
+    const ls=getSavedLists();
+    let idx=ls.findIndex(x=>x.title===tp.title);
+    if(idx<0){
+      let seed=[];
+      if(tp.k==="sweat")seed=entries(hist).filter(x=>x.g&&(x.e.mtags||[]).includes(SWEAT_TAG)).map(x=>({id:x.g.id,note:x.e.mem||""}));
+      else if(tp.k==="harbor")seed=entries(hist).filter(x=>x.g&&(x.e.mtags||[]).some(t=>HARBOR_TAGS.has(t))).map(x=>({id:x.g.id,note:x.e.mem||""}));
+      else if(tp.k==="coop")seed=entries(hist).filter(x=>x.g&&(x.e.mtags||[]).some(t=>/co-op|friends|siblings/i.test(t))).map(x=>({id:x.g.id,note:x.e.mem||""}));
+      else if(tp.k==="island")seed=entries(hist).filter(x=>x.g&&x.lv===3).slice(0,5).map(x=>({id:x.g.id,note:x.e.mem||""}));
+      ls.push({title:tp.title,sub:tp.sub,author:hist.name||"",items:seed.slice(0,16)});
+      idx=ls.length-1;saveLists(ls);
+    }
+    state.listIdx=idx;openListsSheet();
+  },
+  listDel(){const ls=getSavedLists();if(ls.length<=1)return;ls.splice(state.listIdx,1);state.listIdx=0;saveLists(ls);openListsSheet()},
+  listUp(el){const ls=getSavedLists(),cur=ls[state.listIdx],i=+el.dataset.i;if(cur&&i>0){[cur.items[i-1],cur.items[i]]=[cur.items[i],cur.items[i-1]];saveLists(ls);openListsSheet()}},
+  listDown(el){const ls=getSavedLists(),cur=ls[state.listIdx],i=+el.dataset.i;if(cur&&i<cur.items.length-1){[cur.items[i+1],cur.items[i]]=[cur.items[i],cur.items[i+1]];saveLists(ls);openListsSheet()}},
+  listRm(el){const ls=getSavedLists(),cur=ls[state.listIdx],i=+el.dataset.i;if(cur){cur.items.splice(i,1);saveLists(ls);openListsSheet()}},
+  listCopyLink(){const inp=$("#lstShareIn");if(inp)copyText(inp.value,inp)},
+  listOpenPage(){const ls=getSavedLists(),cur=ls[state.listIdx];if(!cur||!cur.items.length)return;const p=encodeList(cur);clearLayer();go(p)},
+  async listPng(el){
+    const lst=el&&el.dataset&&el.dataset.shared&&state.viewingList?state.viewingList:getSavedLists()[state.listIdx];
+    if(!lst||!lst.items||!lst.items.length){toast("Add at least one game first");return}
+    const gs=lst.items.map(it=>byId.get(it.id)||it.g).filter(Boolean);
+    await exportCanvasPng(gs,imgMap=>drawListCard(lst,imgMap),`${slugStudio(lst.title||"game-list")}.png`,el&&el.dataset&&el.dataset.shared?null:"#lstImgOut");
+  },
+  listClone(){
+    const v=state.viewingList;if(!v)return;
+    const ls=getSavedLists();
+    ls.push({title:v.title,sub:v.sub||"",author:hist.name||"",items:v.items.map(it=>({id:it.id,note:it.note||""}))});
+    state.listIdx=ls.length-1;saveLists(ls);toast("Saved a copy to your Custom Lists");openListsSheet();
+  },
+  featureSheet(){openFeatureSheet()},
+  featCat(el){FEAT_DRAFT.cat=el.dataset.v;openFeatureSheet()},
+  featScope(el){FEAT_DRAFT.scope=el.dataset.v;openFeatureSheet()},
+  featGh(el){
+    const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
+    if(t.length<4){toast("Enter a short title for your idea first");const inp=$("#featTitle");if(inp)inp.focus();return}
+    const repo=el.dataset.repo||"https://github.com/JohanHeurlin/inspired-by";
+    const body=`### Idea summary\n${t}\n\n### Area\n${FEAT_DRAFT.cat}\n\n### Default vs. Settings Toggle\n${FEAT_DRAFT.scope}\n\n### Why it matters & how it works\n${b||"(No extra details provided)"}`;
+    window.open(`${repo}/issues/new?template=feature-request.yml&labels=feature-request&title=${encodeURIComponent("[Feature] "+t)}&body=${encodeURIComponent(body)}`,"_blank","noopener");
+  },
+  featCopy(){
+    const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
+    copyText(`Feature: ${t}\nArea: ${FEAT_DRAFT.cat}\nPlacement: ${FEAT_DRAFT.scope}\nDetails: ${b}`);closeLayer();
+  },
   goGiveBack(){state.stFilter="giveback";go("studios")},
   toDna(){const s=$("#dna");if(s)s.scrollIntoView({behavior:"smooth",block:"start"})},
   quizMode(el){state.quizMode=el.dataset.m||"lineage";quiz=newQuiz();renderQuiz()},
@@ -3468,7 +3931,7 @@ const ACTIONS={
   cycle(el){const g=byId.get(el.dataset.id);if(!g)return;const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g);updatePickBar()},
   own(el){const n=el.dataset.sys,o=new Set(hist.owned||[]);o.has(n)?o.delete(n):o.add(n);hist.owned=[...o];save();el.setAttribute("aria-pressed",o.has(n));const c=$("#ownCount");if(c)c.textContent=o.size?plural(o.size,"system")+" picked":"Pick a few, or skip"},
   obBack(){if(entries(hist).length){hist.stage=null;save();go("timeline");return}hist.birth=null;hist.stage=null;save();go("start")},
-  obPicks(){hist.stage="picks";save();render();window.scrollTo({top:0})},
+  obPicks(){hist.stage="picks";save();go("picks")},
   pickSys(el){const v=el.dataset.sys||"";state.pickSys=state.pickSys===v&&v?"":v;render();const on=$(`.pickstrip [data-act="pickSys"][aria-pressed="true"]`);if(on&&on.scrollIntoView)try{on.scrollIntoView({block:"nearest",inline:"nearest",container:"nearest"})}catch(e){on.scrollIntoView({block:"nearest",inline:"nearest"})}},
   pickMore(el){const k=el.dataset.band+":"+(state.pickSys||"");state.pickExtra[k]=(state.pickExtra[k]||0)+24;const y=window.scrollY;render();window.scrollTo({top:y})},
   pickAll(el){const k=el.dataset.band+":"+(state.pickSys||"");state.pickExtra[k]=9999;const y=window.scrollY;render();window.scrollTo({top:y})},
@@ -3476,7 +3939,7 @@ const ACTIONS={
   bandJump(el){const t=document.getElementById(el.dataset.to);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})},
   obDone(){hist.stage=null;save();go("timeline")},
   obSystems(){hist.stage="systems";save();clearLayer();go("start")},
-  obAgain(){hist.stage="picks";save();clearLayer();go("start")},
+  obAgain(){if(!hist.birth){clearLayer();go("start");return}hist.stage="picks";save();clearLayer();go("picks")},
   setlv(el){const g=byId.get(el.dataset.id);const v=+el.dataset.lv;const cur=levelOf(hist,g);if(!hist.birth&&v>0){ensureBirthThen(()=>{setLevel(g,v);playBlip(v);render();toast(`${LV[v].label}: ${g.title}`)});return}const nl=v===cur?0:v;setLevel(g,nl);playBlip(nl);render();toast(v&&v!==cur?`${LV[v].label}: ${g.title}`:`Removed ${g.title}`)},
   entry(el){openGameSheet(+el.dataset.y,el.dataset.t,!!el.dataset.ro)},
   entryLv(el){const y=+el.dataset.y,p=hist.years[y]||[],e=p.find(x=>norm(x.t)===norm(el.dataset.t));if(e){e.lv=+el.dataset.lv;playBlip(e.lv);sortPile(p);save();openGameSheet(y,e.t)}},
@@ -3493,9 +3956,9 @@ const ACTIONS={
   closeLayer(el,e){if(el&&el.dataset&&el.dataset.self&&e&&e.target!==el)return;closeLayer()},
   share(){if(!hist.birth||!entries(hist).length){toast("Add some games first");return}openShare()},
   copyShare(){const v=$("#shareLink").value;copyText(v,$("#shareLink"))},
-  webShare(){const u=shareLink(hist);if(navigator.share)navigator.share({title:`${hist.name?hist.name+"'s":"My"} life in games`,text:"Here's my gaming timeline — compare yours in two minutes:",url:u}).catch(()=>{})},
-  emailSelf(){const u=shareLink(hist),sub=`My life in games (${entries(hist).length} games)`;location.href=`mailto:?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent("Here is my Inspired By gaming timeline link (open it on any device to view or continue editing):\n\n"+u)}`},
-  dlJson(){const blob=new Blob([JSON.stringify(packHist(hist),null,2)],{type:"application/json"});const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=`inspired-by-timeline-${hist.name?slugStudio(hist.name):hist.birth||"backup"}.json`;document.body.appendChild(a);a.click();a.remove();toast("Backup downloaded")},
+  webShare(){const u=shareLink(hist);if(navigator.share)navigator.share({title:`${hist.name?hist.name+"'s":"My"} life in games · Played & Made`,text:"Here's my gaming timeline — compare yours in two minutes:",url:u}).catch(()=>{})},
+  emailSelf(){const u=shareLink(hist),sub=`My life in games (${entries(hist).length} games) · Played & Made`;location.href=`mailto:?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent("Here is my Played & Made gaming timeline link (open it on any device to view or continue editing):\n\n"+u)}`},
+  dlJson(){const blob=new Blob([JSON.stringify(packHist(hist),null,2)],{type:"application/json"});const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=`played-and-made-timeline-${hist.name?slugStudio(hist.name):hist.birth||"backup"}.json`;document.body.appendChild(a);a.click();a.remove();toast("Backup downloaded")},
   adoptAsk(){const f=state.viewing;if(!f||!f.data)return;if(!entries(hist).length){hist=JSON.parse(JSON.stringify(f.data));save();toast("Loaded as your timeline");go("timeline");return}$("#adoptBox").innerHTML=`<div class="banner"><p>Replace your current timeline on this device (${plural(entries(hist).length,"game")}) with <b>${esc(f.name)}'s</b> (${plural(entries(f.data).length,"game")})?</p><div class="row"><button class="btn primary" data-act="adoptDo">Yes, load it</button><button class="btn" data-act="adoptNo">Cancel</button></div></div>`},
   adoptDo(){const f=state.viewing;if(!f||!f.data)return;hist=JSON.parse(JSON.stringify(f.data));save();toast("Loaded as your timeline");go("timeline")},
   adoptNo(){const b=$("#adoptBox");if(b)b.innerHTML=""},
@@ -3543,10 +4006,11 @@ document.addEventListener("keydown",e=>{
   const t=store.get("ib2-theme");if(t)document.documentElement.dataset.theme=t;
   const a=store.get("ib3-art");if(a)document.documentElement.dataset.art=a;
   updateArtBtn();
+  updateAudioBtns();
   const dlg=$("#sheetDlg");
   if(dlg){
     dlg.addEventListener("close",()=>{
-      dlg.returnValue="";dlg.innerHTML="";
+      dlg.returnValue="";dlg.classList.remove("wide");dlg.innerHTML="";
       if(state.route.view==="timeline"||state.route.view==="start"){const y=window.scrollY;render();window.scrollTo({top:y})}
     });
     if(!("closedBy" in HTMLDialogElement.prototype)){

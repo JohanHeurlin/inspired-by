@@ -1,8 +1,8 @@
-Built 2026-11-18 13:54  ->  dist\inspired-by.html (2021 KB, data 1672 KB)
+Built 2026-11-18 14:51  ->  dist\inspired-by.html (2085 KB, data 1693 KB)
 Agent files: 73  |  games: 4190 (in family tree: 2005, in catalog: 3716, new from agents: 3339)
 Links: 2757  |  
 dev=780 team=570 series=719 critic=439 mech=217 disp=32
-Covers: 4159  |  YouTube IDs: 89  |  MobyGames IDs: 3216  |  Studios curated: 65
+Covers: 4159  |  YouTube IDs: 1187  |  MobyGames IDs: 3216  |  Studios curated: 65
 Updates applied: 953  |  games without genre: 0  |  unresolved link ids: 0
 
 Unresolved ids (count):

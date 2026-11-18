@@ -1,69 +1,57 @@
-# Inspired By — The Family Tree of Video Games
+# Played & Made — Your Life in Games & the Humans Who Built Them
 
 Live site: **<https://johanheurlin.github.io/inspired-by/>**
 
-An interactive family tree of video game history (1950s to today), a tribute to the human makers and studios behind the art, and a shareable two-minute **"My Life in Games"** childhood & industry-career timeline.
+An interactive family tree of video game history (1950s to today), a heartfelt tribute to the human makers, studios, and hardware engineers behind the art, and a shareable two-minute **"My Life in Games"** childhood & industry-career timeline.
 
 ## Features
 
-- **My Gaming Timeline:** Enter your birth year, pick the tactile 3D systems you played on, and tap games (`✓` Played · `★` Played a ton · `♥` All-Time Favorite) either by era/age or via **✦ Memory, Vibe & Mood Packs** (*Couch Co-op, Older Sibling's Floppy Box, Quarter-Munchers, 2 A.M. Strategy, Indie Gems*, etc.). Drag any cover's `⠿` grip directly between years (or use arrow keys), test onboarding safely via **🧪 Test new-visitor flow**, and tap **+ Played** right inside recommendations.
-- **Game Quick-Look ("Back of the Box") Card:** Tap `ⓘ` or any game's title/cover to inspect its story, clickable genres, studio logo, country, era launch format/MSRP context, lineage spark, MobyGames box scans & screenshots, and inline timeline badges without losing your place.
-- **Player Archetype, Pyramid of Craft & Visual Maker Ode:** Unlocks a custom **Gamer Profile & Core Play Loops**, a **Pyramid of Craft** + **Playfulness Across Life** curve, a **Visual Studio & Creator `%` Ode** (with studio logos) celebrating the human teams and hardware engineers who raised you, **Under-the-Radar Indie Gems**, and **Missed Roots** with official DRM-free GOG & Steam preservation links.
-- **Shareable Cards, 4K Poster & Interactive 2D Physics Box Pile:** Share your timeline via a serverless URL hash (`#t1-…`), vertical **Story Card**, **♥ Favorites Grid**, **🕹️ Consoles & Favorites Card**, **🛠 Maker Legacy Card**, **4K Desktop Poster**, or toss and fling your favorite boxes in the interactive **📦 Physics Box Pile** (with gravity, bounce, and `🪐 Zero-G`).
+- **My Gaming Timeline & Always-Accessible Game Picker (`➕ Pick games`):** Enter your birth year, pick the tactile 3D systems you played on, and tap games (`✓` Played · `★` Played a ton · `♥` All-Time Favorite) either by era/age or via **✦ Memory, Vibe & Mood Packs** (*Couch Co-op, Older Sibling's Floppy Box, Quarter-Munchers, 2 A.M. Strategy, Indie Gems, 😤 Brutal Games That Made Us Sweat, 🛟 Worlds That Carried Us Through*). Jump back into **➕ Pick games** (`#picks`) anytime, drag any cover's `⠿` grip between years, and test onboarding safely via **🧪 Test new-visitor flow**.
+- **Safe Harbors, Living Art & Non-Ranked Maker Gratitude (`#gratitude`):**
+  - **Why Games Matter:** Highlights video games as safe harbors through turbulent childhoods, living collaborative art combining music/painting/architecture/code, and lifelong touchstones.
+  - **Letters to the Makers & Thank-You Postcards:** Send love to studios and creators **without popularity-contest likes or rankings** — write personal thank-you notes, download a shareable **Thank-You Postcard (`.png`)**, post to the public Gratitude Guestbook, or jump directly to full team credits on MobyGames, LinkedIn alumni search, and Bluesky.
+- **Personal Shelves & Shareable Custom Themed Lists (`📋 Custom lists` / `#list-…`):**
+  - Tag games with **`🛟 Carried me through`** / **`🏠 Safe harbor`** or **`😤 Made me sweat`** to unlock dedicated shelves right on your timeline.
+  - Build custom themed lists (*Games That Made Me Sweat, Worlds That Carried Me Through, Couch Co-op Chaos, Soundtracks in My Head, Desert-Island Five*, or any custom theme) with per-game quips, serverless `#list-…` share URLs, and downloadable `.png` list cards.
+- **Shareable Cards (with Real Box Art), 4K Poster & Interactive 2D Physics Box Pile:** Share your timeline via a serverless URL hash (`#t1-…`), vertical **Story Card**, **♥ Favorites Grid**, **🕹️ Consoles & Favorites Card**, **🛠 Maker Legacy Card**, **4K Desktop Poster** (all preloading CORS-clean real box art onto the exported `.png` without disturbing the live poster wall), or toss your boxes in the interactive **📦 Physics Box Pile** (with gravity, bounce, and `🪐 Zero-G`).
+- **Clean Widescreen Video Player + Best-Effort Embedded Gameplay (`1,192` pre-indexed clips + live fallback):** Watch trailers and longplays right on-site in a clean cinema player, clearly labeled when a clip is a **⚡ best-effort auto-match** alongside one-click **Open on YouTube ↗** and custom URL swapping.
+- **Independent Audio Controls (`🔊 SFX` + `♪ Synth`):** Crisp tactile game-selection chimes are **ON by default** with their own mute button (`🔊 SFX`), paired with an opt-in **125-BPM *Tron*-inspired driving synthwave arpeggiator** (`♪ Synth`).
+- **Player Archetype, Pyramid of Craft, Maker Ode & Official Store Links:** Unlocks your **Gamer Profile & Core Play Loops**, **Pyramid of Craft** + **Playfulness Across Life** curve, **Visual Studio & Creator `%` Ode**, and **Missed Roots**, **Indie Gems**, and **Spiritual Successors** — all with official DRM-free GOG & Steam links.
 - **The Big Picture (5 Clean Views), Genres & Mechanics, and 46-Country World Map:**
-  - **The Big Picture:** Switch between **🌟 Landmarks (clean)**, **🏔️ Influence Skyline**, **🌊 Genre Rivers**, **🌍 Geography**, and **❤️ My Constellation** (plus `Primary / All` link filtering).
-  - **Genres, Mechanics & Tabletop Roots (`#mechanics` / `#genres` / `#boardgames`):** Explore **16 iconic game mechanics** that leaped across decades (*Double Jump, Fog of War, Rocket Jump, Z-Targeting, Bullet Time, Corpse Run*, etc.), **30 genres & how hybrid genres breed**, and **14 tabletop/wargame/boardgame roots** (*Kriegsspiel, Chainmail, D&D, Pentominoes, Magic: The Gathering, Dominion*, etc.).
-  - **World Map (`#world`):** Interactive map across **46 countries** (toggleable between the full catalog and your own timeline — explore *Finland, Sweden, Japan, UK, Poland*, and more).
+  - **The Big Picture:** Switch between **🌟 Landmarks (clean)**, **🏔️ Influence Skyline**, **🌊 Genre Rivers**, **🌍 Geography**, and **❤️ My Constellation**.
+  - **Genres, Mechanics & Tabletop Roots (`#mechanics` / `#genres` / `#boardgames`):** Explore **16 iconic game mechanics**, **30 genres & how hybrid genres breed**, and **14 tabletop/wargame/boardgame roots**.
+  - **World Map (`#world`):** Interactive map across **46 countries** (toggleable between the full catalog and your own timeline).
   - **5-Mode Arcade Trivia & 🎰 Lucky Reel:** Test yourself across **Lineage**, **Launch Year**, **Studio**, **Country**, and **System**, or pull the **3-Reel Lucky Slot Machine**.
-- **Tactile Period CRT / Monitor Deck & 1980s Synthwave:** Drag an era-accurate **3.5" Floppy Diskette**, **ROM Cartridge**, **Game Card**, or **Optical Disc** into the blinking deck slot (with Web Audio mechanical clunk/whir) inside **1980s Woodgrain CRT**, **1990s Trinitron**, **2000s HD**, or **Modern 4K OLED** cabinets, or toggle the zero-byte Web Audio **`♪ 80s synth`** ambience.
-- **Opt-In Industry Maker Legacy (`🛠 Industry / maker mode`):** Kept tucked out of the way for everyday players (toggleable in `Settings`, `Makers`, or footer), letting industry folks log shipped titles, studios, disciplines, and canceled projects to see their **Ripple Effect** across later games.
-- **Era Cultural Touchstones (`📻 Era memories`):** Optional "Meanwhile in the world" strips pairing each gaming era with the music, films, tech, and world headlines happening when you played (*Walkmans, Thriller, Berlin Wall, VHS stores, dial-up modems, Tamagotchis, iPods*).
-- **Makers, Hall of Pioneers, Hardware Engineers & Giving Back:** Explore curated studio histories & post-closure diaspora, **35 Hall of Pioneers** profiles (`1958–today`), **18 Console & Home-Computer Hardware Engineer** spotlights (*Jay Miner, Gunpei Yokoi, Bob Yannes, Ken Kutaragi*, etc.), and direct links to verified non-profits supporting underrepresented youth in game creation, laid-off devs, hospital play, and game preservation.
-- **Family Tree, Walk the Roots & GTA VI Marquee:** Trace any game back to early arcade, mainframe, and tabletop pioneers — including a 64-year *Grand Theft Auto VI* spotlight and expandable history of video game "moral panic" headlines from 1976 *Death Race* and the 1993 Senate hearings to today.
-- **Real Box Art + Procedural Fallback:** Lazy-loads official box art thumbnails over zero-latency procedural era covers (toggleable in Timeline `Settings`).
+- **Community Feature Backlog & AI Triage (`Settings` Optional Toggles):** Submit ideas in-app (`💡 Suggest a feature or idea`); `tools/ai-feature-triage.py` classifies community ideas into **universal defaults** vs. **optional `Settings` toggles** (*Selection chimes, Era nostalgia headlines, Why games matter reflection, Industry maker mode*) so the core experience stays calm and uncluttered.
 
 ## Project Structure
 
 - `src/app.html`: Single-file vanilla HTML/CSS/JS application template (`/*__DATA__*/` placeholder).
-- `data/base/`: Seed family-tree and catalog records.
-- `data/agents/`: Research slices (games, lineage links, genre tags, primary interview upgrades).
+- `data/base/` & `data/agents/`: Family-tree, catalog, genre, and sourced lineage records.
 - `data/studios.json`: Curated studio histories, human makers, and post-closure studio diaspora links.
-- `data/culture.json`: Hall of Pioneers (`1958–today`), console/computer hardware engineers, 12 era nostalgia windows, *GTA* cultural headline milestones, and verified non-profit links.
-- `data/mechanics_world.json`: 16 cross-era mechanics, 30 genre definitions & hybrid parent lineages, 14 tabletop/boardgame bridges, verified studio logos, and vertical box-art overrides.
-- `data/media.json` & `data/media_extra.json`: Resolved cover thumbnails (`wt:`/`w:` Wikimedia, `s:` Steam, `i:` IGDB), MobyGames IDs, and YouTube gameplay/trailer IDs.
-- `data/corrections.json`: Hand-checked overrides applied last during build.
-- `data/codes.json`: Append-only base-36 game code registry for permanent `#t1-…` share URLs (**never delete or reorder entries**).
-- `tools/build.ps1`: Validates and merges all data into `dist/index.html` (standalone web / GitHub Pages), `dist/inspired-by.html`, and `dist/data.json`.
-- `tools/triage-suggestions.py`: Automated source-URL, game-existence, and chronology validator for `.github/ISSUE_TEMPLATE/link-suggestion.yml` community issues.
+- `data/culture.json`: Why Games Matter pillars, 14 seeded Letters to the Makers, 35 Hall of Pioneers profiles, 18 hardware engineer spotlights, 12 era nostalgia windows, *GTA* cultural headlines, and verified non-profits.
+- `data/mechanics_world.json`: 16 cross-era mechanics, 30 genre definitions & hybrid lineages, 14 tabletop/boardgame bridges, verified studio logos, and cover overrides.
+- `data/media.json` & `data/media_extra.json`: Resolved cover thumbnails (`wt:`/`w:` Wikimedia, `s:` Steam, `i:` IGDB), MobyGames IDs, and `1,192` YouTube gameplay/trailer IDs (`~` prefix marks best-effort auto-matches).
+- `data/feature_backlog.json` & `tools/ai-feature-triage.py`: Structured feature backlog + AI placement classifier (`default` vs `settings-toggle`).
+- `data/codes.json`: Append-only base-36 game code registry for permanent `#t1-…` and `#list-…` share URLs (**never delete or reorder entries**).
+- `tools/build.ps1`: Validates and merges all data into `dist/index.html`, `dist/inspired-by.html`, and `dist/data.json`.
 - `tools/make-og-card.ps1`: Generates `dist/og-card.png` (`1200×630` social OpenGraph preview image).
-- `tools/fetch-media.py`: Zero-key Wikidata + Wikipedia + Steam cover & MobyGames ID resolver.
-- `tools/fetch-igdb-covers.py`: Optional IGDB `3:4` cover upgrader (uses free non-commercial Twitch Developer Client ID & Secret).
-- `.github/workflows/pages.yml`: Automatic GitHub Pages deployment from `./dist` on push to `main`.
+- `tools/fetch-media.py` & `tools/fetch-igdb-covers.py`: Cover art & MobyGames resolvers (`.env.local` is git-ignored and auto-loaded by `fetch-igdb-covers.py`).
 
-## Rebuild Locally
+## Rebuild & Preview Locally
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File tools\build.ps1
-```
-
-Preview locally on `http://localhost:8765`:
-
-```powershell
 powershell -ExecutionPolicy Bypass -File tools\serve.ps1
 ```
 
-## Refreshing Cover Art & MobyGames Links
+## Optional Local IGDB Cover Art Pass (`.env.local`)
 
-1. **Zero-key Wikipedia + Wikidata + Steam + MobyGames pass:**
-   ```powershell
-   python tools\fetch-media.py
-   powershell -ExecutionPolicy Bypass -File tools\build.ps1
-   ```
-2. **Optional full IGDB `3:4` box-art pass (free non-commercial API):**
-   Register a free app at <https://dev.twitch.tv/console>, then run:
-   ```powershell
-   $env:TWITCH_CLIENT_ID="your_client_id"
-   $env:TWITCH_CLIENT_SECRET="your_client_secret"
-   python tools\fetch-igdb-covers.py
-   powershell -ExecutionPolicy Bypass -File tools\build.ps1
-   ```
+Drop your Twitch Developer credentials into a local `.env.local` file in the repo root (git-ignored automatically):
+
+```ini
+TWITCH_CLIENT_ID=your_client_id
+TWITCH_CLIENT_SECRET=your_client_secret
+```
+
+Then run `python tools\fetch-igdb-covers.py` followed by `tools\build.ps1`.
