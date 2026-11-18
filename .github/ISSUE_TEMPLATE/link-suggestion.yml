@@ -1,0 +1,61 @@
+name: Suggest a Lineage Link, Source, or Studio Note
+description: Submit a documented inspiration link, primary developer interview/GDC talk, or studio note.
+title: "[Suggestion]: "
+labels: ["suggestion", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep **Inspired By** accurate! Every link in the family tree is grounded in primary developer interviews, GDC postmortems, shared team credits, or respected game-history scholarship.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Suggestion Type
+      options:
+        - New inspiration link (Earlier Game -> Later Game)
+        - Upgrade source / evidence on an existing link
+        - Disputed / debated claim (developer denied influence)
+        - Missing game or studio diaspora note
+    validations:
+      required: true
+  - type: input
+    id: from_game
+    attributes:
+      label: Earlier Game (Inspiration)
+      placeholder: e.g. Ultima Underworld (1992)
+    validations:
+      required: true
+  - type: input
+    id: to_game
+    attributes:
+      label: Later Game (Inspired Game)
+      placeholder: e.g. System Shock (1994)
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Evidence Strength
+      options:
+        - dev — Developer explicitly cited it (interview, GDC talk, postmortem)
+        - team — Same director, core team, or engine/codebase
+        - critic — Documented by game historians / contemporaneous critics
+        - mech — Clear shared mechanics & chronological lineage
+        - disp — Documented dispute / developer denial
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Primary Source URL (Required to prevent spam & unverified rumours)
+      description: Link to a developer interview, GDC Vault talk, book page, Wikipedia citation, or MobyGames credit.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What did it build on, and what did the newer game add or change?
+      placeholder: |
+        Built on: First-person real-time 3D dungeon exploration and physics.
+        Added: Cyberpunk audio logs, hacking cyberspace, and AI antagonist SHODAN.
+    validations:
+      required: true

@@ -1,0 +1,981 @@
+{
+  "mechanics": [
+    {
+      "id": "double-jump",
+      "name": "The Double Jump",
+      "icon": "🦘",
+      "year": 1984,
+      "origin": "dragon-buster",
+      "summary": "Pressing jump a second time in mid-air kicks you upward off thin air, letting you rescue a mistimed leap or reverse course on a dime. That split-second grace note makes aerial movement feel expressive and snappy instead of punishing.",
+      "spread": "Introduced in Namco's 1984 arcade slasher Dragon Buster, the mid-air kick spread across 16-bit action platformers and exploratory castles before becoming standard muscle memory in 3D action games and shooters.",
+      "games": [
+        "dragon-buster",
+        "super-ghouls-n-ghosts",
+        "shinobi-iii-return-of-the-ninja-master",
+        "castlevania-symphony-of-the-night",
+        "devil-may-cry",
+        "hollow-knight",
+        "astro-bot"
+      ]
+    },
+    {
+      "id": "fog-of-war",
+      "name": "Fog of War",
+      "icon": "🌫️",
+      "year": 1977,
+      "origin": "empire-1977",
+      "summary": "Shrouding unexplored terrain and out-of-sight enemies in darkness turns an ordinary map into a tense game of scouting, bluffing, and sudden ambushes. Every scout pushed into blacked-out territory carries a genuine jolt of discovery and danger.",
+      "spread": "Digitized from referee-screened tabletop wargames in Walter Bright's 1977 Empire, sight-radius shrouds became the tactical backbone of 4X empire builders, real-time strategy classics, and five-on-five lane vision wars in modern MOBAs.",
+      "games": [
+        "empire-1977",
+        "civilization",
+        "dune-ii",
+        "warcraft-ii",
+        "starcraft",
+        "age-of-empires-ii",
+        "league-of-legends"
+      ]
+    },
+    {
+      "id": "rocket-jump",
+      "name": "The Rocket Jump",
+      "icon": "🚀",
+      "year": 1996,
+      "origin": "quake",
+      "summary": "Aiming an explosive launcher straight at your feet and firing mid-hop trades a chunk of your own health for violent vertical launch speed. Turning self-damage into acrobatics feels delightfully rebellious, like outsmarting the mapmaker with raw physics.",
+      "spread": "Sparked by horizontal blast boosts in Doom and Marathon before crystallizing once Quake added full 3D mouselook in 1996, a speedrunner trick evolved into an official class signature across arena and hero shooters.",
+      "games": [
+        "doom",
+        "marathon-1994",
+        "quake",
+        "team-fortress",
+        "quake-iii-arena",
+        "team-fortress-2",
+        "overwatch"
+      ]
+    },
+    {
+      "id": "z-targeting",
+      "name": "Z-Targeting & Lock-On",
+      "icon": "🎯",
+      "year": 1998,
+      "origin": "the-legend-of-zelda-ocarina-of-time",
+      "summary": "Pulling a trigger snaps the 3D camera onto a single opponent and pivots your hero into a tight circling duel where dodges, parries, and strikes stay cleanly framed. It solved early 3D action's biggest frustration—wrestling the camera instead of fighting the monster.",
+      "spread": "Inspired by choreographed samurai stage fights and introduced in Ocarina of Time, lock-on targeting unlocked 3D swordplay and boss design for Metroid Prime, Devil May Cry, and FromSoftware's entire Dark Souls and Elden Ring lineage.",
+      "games": [
+        "the-legend-of-zelda-ocarina-of-time",
+        "devil-may-cry",
+        "metroid-prime",
+        "demon-s-souls",
+        "dark-souls",
+        "sekiro-shadows-die-twice",
+        "elden-ring"
+      ]
+    },
+    {
+      "id": "bullet-time",
+      "name": "Bullet Time",
+      "icon": "⏱️",
+      "year": 2001,
+      "origin": "max-payne",
+      "summary": "Slowing the world to a crawl while keeping your crosshairs nimble lets you dive sideways through doorways, read incoming fire, and pull off action-movie gunplay at human reaction speeds. Hearing gunshots drop an octave as brass casings float past makes every room breach feel choreographed on the fly.",
+      "spread": "Popularized by Remedy's 2001 noir thriller Max Payne, on-demand time dilation leaped from F.E.A.R. and Red Dead Redemption's Dead Eye to perfect-dodge Witch Time in Bayonetta and mid-air bow aiming in Breath of the Wild.",
+      "games": [
+        "max-payne",
+        "viewtiful-joe",
+        "f-e-a-r",
+        "bayonetta",
+        "red-dead-redemption",
+        "superhot",
+        "the-legend-of-zelda-breath-of-the-wild"
+      ]
+    },
+    {
+      "id": "active-reload",
+      "name": "The Active Reload",
+      "icon": "⚡",
+      "year": 2006,
+      "origin": "gears-of-war",
+      "summary": "Tapping reload a second time inside a narrow sweet spot on a sliding bar slams a fresh magazine home with bonus damage, while missing jams your gun under fire. It transforms three dead seconds crouched behind cover into a palms-sweating rhythm gamble.",
+      "spread": "Crafted at Epic Games for Gears of War in 2006, risk-reward reload timing jumped into arcade bullet-hell roguelikes like Enter the Gungeon, sci-fi blasters in Star Wars Battlefront, and high-tempo loops in Returnal.",
+      "games": [
+        "gears-of-war",
+        "gears-of-war-2",
+        "star-wars-battlefront-2015",
+        "enter-the-gungeon",
+        "returnal"
+      ]
+    },
+    {
+      "id": "corpse-run",
+      "name": "The Corpse Run",
+      "icon": "🪦",
+      "year": 2009,
+      "origin": "demon-s-souls",
+      "summary": "Dropping your hard-earned souls or gear on the exact spot where you died gives you one nerve-wracking trek back to reclaim everything—or lose it forever if you fall again. Suddenly a familiar hallway becomes the highest-stakes journey in the game.",
+      "spread": "Rooted in Diablo and EverQuest's punishing gear drops and crystallized into a single-chance bloodstain in Demon's Souls, corpse runs spread across Dark Souls, retro platformers like Shovel Knight, Metroidvanias like Hollow Knight, and survival hits like Valheim.",
+      "games": [
+        "diablo",
+        "everquest",
+        "demon-s-souls",
+        "dark-souls",
+        "shovel-knight",
+        "hollow-knight",
+        "valheim"
+      ]
+    },
+    {
+      "id": "coyote-time",
+      "name": "Coyote Time & Forgiving Jump Windows",
+      "icon": "🐾",
+      "year": 1994,
+      "origin": "donkey-kong-country",
+      "summary": "Allowing a jump for a handful of hidden frames after sprinting off a cliff—named after Wile E. Coyote hanging in thin air—honors what your hands meant to do instead of punishing late pixels. Paired with jump-input buffering just before touchdown, tough platforming feels crisp and fair.",
+      "spread": "Quietly pioneered when Rare let Donkey and Diddy Kong roll off ledges and leap out of mid-air in 1994, invisible forgiveness windows became essential craft across precision platformers from Super Meat Boy to Celeste.",
+      "games": [
+        "donkey-kong-country",
+        "super-meat-boy",
+        "rayman-origins",
+        "ori-and-the-blind-forest",
+        "dead-cells",
+        "celeste",
+        "astro-bot"
+      ]
+    },
+    {
+      "id": "permadeath-meta",
+      "name": "Permadeath + Meta-Progression",
+      "icon": "🔁",
+      "year": 2013,
+      "origin": "rogue-legacy",
+      "summary": "Wiping the dungeon clean when you die keeps every run electric, while carrying gold, heirlooms, or story threads into the next life ensures no defeat feels wasted. That 'just one more run' loop marries classic roguelike tension with steady RPG growth.",
+      "spread": "Evolving from Rogue's pure permadeath and Mystery Dungeon's town storage into Rogue Legacy's generational castle in 2013, the roguelite structure conquered action, narrative, and bullet-heaven hits from Hades to Vampire Survivors.",
+      "games": [
+        "rogue",
+        "tornekos-great-adventure-mystery-dungeon",
+        "spelunky",
+        "ftl-faster-than-light",
+        "rogue-legacy",
+        "hades",
+        "vampire-survivors"
+      ]
+    },
+    {
+      "id": "deckbuilding-synergy",
+      "name": "Deckbuilding Synergy",
+      "icon": "🃏",
+      "year": 2008,
+      "origin": "dominion",
+      "summary": "Starting with a scrappy handful of basic cards and drafting, pruning, and chaining new ones mid-game turns every reward pick into an engine-building puzzle. Few feelings in gaming beat stumbling onto two modest cards that loop into a screen-melting combo.",
+      "spread": "Born from Magic: The Gathering's combo craft and turned into a live in-match loop by tabletop classic Dominion in 2008, run-based deckbuilding leaped through Dream Quest and Slay the Spire into Inscryption and Balatro.",
+      "games": [
+        "magic-the-gathering",
+        "dominion",
+        "dream-quest",
+        "slay-the-spire",
+        "monster-train",
+        "inscryption",
+        "balatro"
+      ]
+    },
+    {
+      "id": "branching-dialogue",
+      "name": "Branching Dialogue & Morality",
+      "icon": "⚖️",
+      "year": 1985,
+      "origin": "ultima-iv-quest-of-the-avatar",
+      "summary": "Tracking how you speak to strangers, keep promises, and navigate messy moral trade-offs lets a story bend around your conscience rather than marching down one script. When a companion remembers a kindness or betrayal ten hours later, the world feels genuinely alive.",
+      "spread": "Sparked when Ultima IV replaced a final boss with tests of ethical virtue in 1985, reactive dialogue trees and reputation systems grew through Fallout and Planescape: Torment into Mass Effect, Disco Elysium, and Baldur's Gate 3.",
+      "games": [
+        "ultima-iv-quest-of-the-avatar",
+        "fallout",
+        "planescape-torment",
+        "star-wars-knights-of-the-old-republic",
+        "mass-effect",
+        "disco-elysium",
+        "baldur-s-gate-3"
+      ]
+    },
+    {
+      "id": "physics-gun",
+      "name": "Physics Manipulation Gun",
+      "icon": "🧲",
+      "year": 2004,
+      "origin": "half-life-2",
+      "summary": "Snatching barrels, sawblades, and crates out of the air and launching them at enemies turns an entire 3D room from static decoration into live ammo and improvised bridges. Every loose prop suddenly carries real weight, momentum, and slapstick creativity.",
+      "spread": "Foreshadowed by Trespasser's physics arm and perfected by Half-Life 2's Gravity Gun in 2004, object telekinesis fueled Garry's Mod, Portal's test chambers, Dead Space's Kinesis, Control's Launch, and Tears of the Kingdom's Ultrahand.",
+      "games": [
+        "trespasser",
+        "half-life-2",
+        "garrys-mod",
+        "portal",
+        "dead-space",
+        "control",
+        "the-legend-of-zelda-tears-of-the-kingdom"
+      ]
+    },
+    {
+      "id": "ghost-car",
+      "name": "Ghost Car Time Trials",
+      "icon": "👻",
+      "year": 1989,
+      "origin": "hard-drivin",
+      "summary": "Racing wheel-to-wheel against a translucent recording of your own fastest lap—or a friend's best run—reveals the exact corner where a tenth of a second slipped away. Because a ghost never blocks your lane, chasing perfection stays pure, legible, and endlessly addictive.",
+      "spread": "Introduced as Atari's 'Phantom Photon' replay in Hard Drivin' (1989) and brought into living rooms by Super Mario Kart and Gran Turismo, leaderboard ghosts now anchor Trackmania speedruns, Forza rivals, and speedrunning platformers.",
+      "games": [
+        "hard-drivin",
+        "super-mario-kart",
+        "mario-kart-64",
+        "gran-turismo",
+        "trackmania",
+        "forza-motorsport",
+        "forza-horizon-5"
+      ]
+    },
+    {
+      "id": "shrinking-safe-zone",
+      "name": "The Shrinking Safe Zone",
+      "icon": "⭕",
+      "year": 2013,
+      "origin": "dayz-battle-royale",
+      "summary": "A closing wall of storm, gas, or falling blocks steadily erases hiding spots across a sprawling arena, funneling cautious survivors into escalating showdowns until one team remains. It cures multiplayer camping automatically while guaranteeing a palm-sweating final circle.",
+      "spread": "Prefigured by Super Bomberman's sudden-death tiles and turned into a 100-player island pressure cooker by Brendan Greene's DayZ: Battle Royale mod and PUBG, the closing ring reshaped shooters, puzzle royales, and co-op action.",
+      "games": [
+        "super-bomberman",
+        "dayz-battle-royale",
+        "h1z1",
+        "pubg",
+        "fortnite-br",
+        "apex-legends",
+        "elden-ring-nightreign"
+      ]
+    },
+    {
+      "id": "grappling-hook",
+      "name": "Grappling Hook Momentum",
+      "icon": "🪝",
+      "year": 1988,
+      "origin": "bionic-commando",
+      "summary": "Firing a tether into an overhead beam and riding the pendulum arc converts gravity into slingshot velocity, turning flat corridors and city skylines into 3D playgrounds. Timing your release right at the top of the swing feels like flying on pure skill.",
+      "spread": "Born from Bionic Commando's bold decision to ditch the jump button for a swinging arm in 1988 and refined by Worms' Ninja Rope and Spider-Man 2's city-anchored webs, momentum grapples now energize shooters and stealth action alike.",
+      "games": [
+        "bionic-commando",
+        "worms",
+        "spider-man-2",
+        "just-cause-2",
+        "titanfall-2",
+        "sekiro-shadows-die-twice",
+        "halo-infinite"
+      ]
+    },
+    {
+      "id": "systemic-chemistry",
+      "name": "Systemic Chemistry",
+      "icon": "🔥",
+      "year": 1998,
+      "origin": "thief-the-dark-project",
+      "summary": "When fire ignites dry grass, water douses torches and conducts lightning, and wind carries sparks across a camp, consistent physical rules replace one-off scripted solutions. Experimenting with elements rewards player curiosity with 'I can't believe that actually worked' moments.",
+      "spread": "Seeded in Ultima Underworld and Thief's systemic water, moss, and fire arrows, elemental rulebooks grew through Far Cry 2's brushfires and Divinity: Original Sin's combo surfaces into Breath of the Wild, Noita, and Baldur's Gate 3.",
+      "games": [
+        "ultima-underworld-the-stygian-abyss",
+        "thief-the-dark-project",
+        "far-cry-2",
+        "divinity-original-sin",
+        "the-legend-of-zelda-breath-of-the-wild",
+        "noita",
+        "baldur-s-gate-3"
+      ]
+    }
+  ],
+  "genres": {
+    "roots": {
+      "born": 1824,
+      "parents": [],
+      "tagline": "Paper maps, wooden tiles, dice tables, and glowing lab oscilloscopes.",
+      "explain": "Long before home consoles existed, tabletop wargames, parlor puzzles, role-playing booklets, and university mainframe experiments worked out the core grammar of play. Rules for hidden maps, hit points, turn order, and physics vectors were all tested across kitchen tables and lab screens first. Almost every digital genre traces its deepest roots back to these tactile analog and academic originals.",
+      "pillars": [
+        "kriegsspiel",
+        "pentominoes",
+        "tennis-for-two",
+        "spacewar",
+        "dungeons-and-dragons"
+      ]
+    },
+    "arcade": {
+      "born": 1971,
+      "parents": [
+        "roots",
+        "space",
+        "sports"
+      ],
+      "tagline": "Instant rules, escalating speed, and chasing neighborhood high-score glory.",
+      "explain": "Born when coin-operated cabinets squeezed lab novelties like Spacewar! and table tennis into loud public hangouts, arcade games had to teach their rules in five seconds flat. Crisp one-screen clarity, rising wave speed, and three-letter leaderboards turned reflex mastery into a spectator sport. Even after arcades faded, that tight score-chasing loop stayed the heartbeat of pick-up-and-play game design.",
+      "pillars": [
+        "computer-space",
+        "pong",
+        "breakout",
+        "pac-man",
+        "frogger"
+      ]
+    },
+    "shmup": {
+      "born": 1978,
+      "parents": [
+        "space",
+        "arcade"
+      ],
+      "tagline": "Lone ships weaving through hypnotic curtains of incoming enemy fire.",
+      "explain": "Space Invaders took arcade target galleries and made the targets march back, birthing the shoot 'em up overnight. Scrolling backdrops in Defender, Xevious, and Gradius added weapon power-up chains and boss armadas before Japanese studios evolved the craft into 'danmaku' bullet-hell ballets. At its peak, dodging geometric patterns feels closer to playing an instrument than pulling a trigger.",
+      "pillars": [
+        "space-invaders",
+        "asteroids",
+        "defender",
+        "xevious",
+        "ikaruga"
+      ]
+    },
+    "platformer": {
+      "born": 1980,
+      "parents": [
+        "arcade"
+      ],
+      "tagline": "Running, leaping, and mastering momentum across suspended obstacle courses.",
+      "explain": "Growing out of ladder-climbing cabinets like Space Panic and Donkey Kong, platformers turned the simple act of jumping over gaps into video gaming's universal language. Super Mario Bros. unlocked smooth scrolling worlds full of secrets and inertia, before Super Mario 64 reinvented movement in 3D space. Today both cozy collectathons and razor-sharp indie climbs live on the joy of a great jump arc.",
+      "pillars": [
+        "donkey-kong",
+        "pitfall",
+        "super-mario-bros",
+        "super-mario-64",
+        "celeste"
+      ]
+    },
+    "metroidvania": {
+      "born": 1986,
+      "parents": [
+        "platformer",
+        "action-adventure",
+        "rpg"
+      ],
+      "tagline": "One interconnected labyrinth unlocked piece by piece through newfound movement powers.",
+      "explain": "Fusing Mario's agile jumping with Zelda's item-gated exploration, Metroid swapped linear stages for a lonely alien maze that folded back on itself. A decade later, Castlevania: Symphony of the Night wove RPG stats and loot into that blueprint, giving the hybrid its lasting nickname. Every upgrade doubles as both a combat tool and a skeleton key to doors you passed hours earlier.",
+      "pillars": [
+        "metroid",
+        "super-metroid",
+        "castlevania-symphony-of-the-night",
+        "cave-story",
+        "hollow-knight"
+      ]
+    },
+    "action-adventure": {
+      "born": 1980,
+      "parents": [
+        "adventure",
+        "arcade"
+      ],
+      "tagline": "Real-time combat married to curiosity, key items, and puzzle-box worlds.",
+      "explain": "When Warren Robinett shrank Colossal Cave Adventure's text rooms into graphical castles and dragons on the Atari 2600, exploration gained real-time reflexes. The Legend of Zelda perfected the formula with overworld secrets and dungeon tools, inspiring 3D epics from Tomb Raider and Ocarina of Time to Shadow of the Colossus. It remains gaming's broadest tent, balancing swordplay with wonder and discovery.",
+      "pillars": [
+        "adventure-atari-2600",
+        "zelda",
+        "tomb-raider",
+        "the-legend-of-zelda-ocarina-of-time",
+        "shadow-colossus"
+      ]
+    },
+    "open-world": {
+      "born": 1997,
+      "parents": [
+        "action-adventure",
+        "racing",
+        "sim"
+      ],
+      "tagline": "Go anywhere on the horizon and make your own trouble.",
+      "explain": "Blending action-adventure freedom with driving and city simulations, early 3D experiments like Hunter and Grand Theft Auto handed players an entire living map instead of a corridor. Grand Theft Auto III proved a bustling 3D metropolis could react dynamically to player chaos, sparking two decades of sprawling worlds. Modern landmarks like Breath of the Wild and Red Dead Redemption 2 trade icon checklists for unscripted discovery.",
+      "pillars": [
+        "hunter",
+        "grand-theft-auto",
+        "gta3",
+        "the-legend-of-zelda-breath-of-the-wild",
+        "red-dead-redemption-2"
+      ]
+    },
+    "fps": {
+      "born": 1992,
+      "parents": [
+        "shooter",
+        "arcade",
+        "space"
+      ],
+      "tagline": "Looking straight down the barrel inside fast, spatial three-dimensional arenas.",
+      "explain": "Prefigured by 1970s wireframe experiments like Maze War and cockpit sims, the first-person shooter erupted when id Software's Wolfenstein 3D and Doom sent players sprinting through texture-mapped corridors. Quake added true 3D rocket-jumping and internet clans, while GoldenEye 007 and Half-Life proved the perspective could anchor couch party nights and seamless narrative worlds alike.",
+      "pillars": [
+        "maze-war",
+        "wolfenstein-3d",
+        "doom",
+        "quake",
+        "half-life"
+      ]
+    },
+    "shooter": {
+      "born": 1975,
+      "parents": [
+        "arcade"
+      ],
+      "tagline": "Aiming, dodging, and controlling space with ranged firepower and cover.",
+      "explain": "Starting with Taito's 1975 duel cabinet Western Gun, shooters translated ranged positioning, ammo management, and line-of-fire tension onto the screen. Run-and-gun classics like Contra and light-gun cabinets like Virtua Cop gave way to tactical squads, waist-high cover in Kill Switch and Gears of War, and Resident Evil 4's over-the-shoulder camera.",
+      "pillars": [
+        "gun-fight",
+        "contra",
+        "virtua-cop",
+        "resident-evil-4",
+        "gears-of-war"
+      ]
+    },
+    "battle-royale": {
+      "born": 2013,
+      "parents": [
+        "shooter",
+        "survival"
+      ],
+      "tagline": "Drop in empty-handed, scavenge fast, and outlast everyone inside closing storms.",
+      "explain": "Born inside survival mods when Brendan Greene stripped DayZ's slow zombie persistence down into a 90-minute last-survivor match, battle royale turned scarcity and shrinking maps into a global phenomenon. PUBG codified the 100-player parachute drop while Fortnite added instant building and live cultural events. Alongside it, extraction shooters like Escape from Tarkov raised the stakes by letting survivors carry loot across raids.",
+      "pillars": [
+        "dayz-battle-royale",
+        "tarkov",
+        "pubg",
+        "fortnite-br",
+        "apex-legends"
+      ]
+    },
+    "immersive-sim": {
+      "born": 1992,
+      "parents": [
+        "fps",
+        "rpg",
+        "sim"
+      ],
+      "tagline": "Clockwork worlds where vents, shadows, and physics obey consistent rules.",
+      "explain": "Forged at Looking Glass Studios in Ultima Underworld, System Shock, and Thief, immersive sims blend first-person presence with RPG character skills and honest physical simulations. Rather than scripting one correct path past a locked door, the game lets you pick it, stack crates to a skylight, bribe a guard, or blow the hinges off. Deus Ex, BioShock, Dishonored, and Prey carried that player-authored philosophy across generations.",
+      "pillars": [
+        "metal-gear",
+        "ultima-underworld-the-stygian-abyss",
+        "system-shock",
+        "thief-the-dark-project",
+        "deus-ex"
+      ]
+    },
+    "horror": {
+      "born": 1981,
+      "parents": [
+        "adventure",
+        "action-adventure"
+      ],
+      "tagline": "Scarce ammo, creaking floorboards, and dread lurking just beyond sight.",
+      "explain": "Inverting action gaming's power fantasy, early chillers like 3D Monster Maze and Capcom's RPG Sweet Home made players fragile, cornered, and short on supplies. Alone in the Dark and Resident Evil framed claustrophobic mansions through fixed camera angles, while Silent Hill traded jump scares for fog-drenched psychological unease. From Amnesia's weaponless hide-and-seek to P.T.'s looping hallway, horror thrives on what you almost see.",
+      "pillars": [
+        "3d-monster-maze",
+        "alone-in-the-dark",
+        "resident-evil",
+        "silent-hill",
+        "pt"
+      ]
+    },
+    "rpg": {
+      "born": 1975,
+      "parents": [
+        "roots"
+      ],
+      "tagline": "Custom heroes, expressive character builds, and worlds shaped by choice.",
+      "explain": "Weeks after Dungeons & Dragons reached college campuses, students began wiring dungeon crawls onto PLATO mainframes before Ultima and Wizardry brought party creation to home computers. Western RPGs leaned hard into player agency, open-ended quests, and moral consequence across Fallout, Baldur's Gate, and Skyrim. Decades later, Disco Elysium and Baldur's Gate 3 proved tabletop freedom could shine with full cinematic voice and reactivity.",
+      "pillars": [
+        "akalabeth-world-of-doom",
+        "wizardry-proving-grounds-of-the-mad-overlord",
+        "fallout",
+        "the-elder-scrolls-v-skyrim",
+        "baldur-s-gate-3"
+      ]
+    },
+    "jrpg": {
+      "born": 1986,
+      "parents": [
+        "rpg",
+        "adventure"
+      ],
+      "tagline": "Unforgettable ensemble casts journeying through sweeping stories and tactical battles.",
+      "explain": "Inspired by Ultima's overworlds and Wizardry's first-person combat—and streamlined with adventure-game menus for Famicom controllers—Dragon Quest made role-playing welcoming to millions in Japan. Final Fantasy, Chrono Trigger, and Shin Megami Tensei turned turn-based party systems into vehicles for grand melodies, coming-of-age drama, and bold visual reinvention. Modern hits from Persona 5 to Clair Obscur keep turn-based ensemble storytelling thriving.",
+      "pillars": [
+        "dragon-quest",
+        "final-fantasy",
+        "chrono-trigger",
+        "final-fantasy-vii",
+        "persona-5"
+      ]
+    },
+    "arpg": {
+      "born": 1984,
+      "parents": [
+        "rpg",
+        "action-adventure"
+      ],
+      "tagline": "Visceral real-time strikes backed by deep stats, loot, and stamina.",
+      "explain": "Japanese pioneers like The Tower of Druaga, Dragon Slayer, and Hydlide first merged RPG stat sheets with direct arcade sword swings in 1984. Blizzard North's Diablo supercharged the formula into an addictive click-and-loot avalanche, while FromSoftware's Demon's Souls and Dark Souls slowed combat down into deliberate, stamina-driven duels. Today both isometric loot storms and vast soulslike worlds like Elden Ring share this lineage.",
+      "pillars": [
+        "the-tower-of-druaga",
+        "diablo",
+        "demon-s-souls",
+        "dark-souls",
+        "elden-ring"
+      ]
+    },
+    "roguelike": {
+      "born": 1980,
+      "parents": [
+        "roots",
+        "rpg"
+      ],
+      "tagline": "Freshly shuffled dungeons, high-stakes permadeath, and wild run-by-run improvisation.",
+      "explain": "Built on Unix terminals in 1980 so its creators could be surprised by their own dungeon, Rogue generated new rooms, potions, and monsters every time you died. NetHack and Angband deepened those emergent ASCII clockworks for decades until Spelunky, The Binding of Isaac, and FTL grafted procedural runs onto twitch platforming and tactics. Modern roguelites like Hades add narrative warmth without losing that 'every decision matters' edge.",
+      "pillars": [
+        "rogue",
+        "nethack",
+        "spelunky",
+        "the-binding-of-isaac",
+        "hades"
+      ]
+    },
+    "mmo": {
+      "born": 1978,
+      "parents": [
+        "adventure",
+        "rpg"
+      ],
+      "tagline": "Persistent shared worlds where thousands of strangers form real communities.",
+      "explain": "When Roy Trubshaw and Richard Bartle connected multiple teletypes to the same text adventure in 1978's MUD, dungeons stayed awake even after you logged off. Graphical pioneers like Habitat, Ultima Online, and EverQuest turned dial-up modems into bustling towns, player-run economies, and forty-person guild raids. World of Warcraft and EVE Online showed virtual societies could forge friendships and rivalries lasting decades.",
+      "pillars": [
+        "mud",
+        "ultima-online",
+        "everquest",
+        "eve-online",
+        "world-of-warcraft"
+      ]
+    },
+    "strategy": {
+      "born": 1977,
+      "parents": [
+        "roots",
+        "sim"
+      ],
+      "tagline": "Outthinking rivals across maps of scarce resources, positioning, and foresight.",
+      "explain": "Translating tabletop wargames like Kriegsspiel and Risk onto silicon freed commanders from paper bookkeeping and let computers referee hidden fog of war. Turn-based epics like Civilization and X-COM stretched planning across millennia and squad tactics, while Dune II and StarCraft compressed base-building into real-time adrenaline. Whether grand-scale or grid-tight, strategy rewards reading the board three moves ahead.",
+      "pillars": [
+        "empire-1977",
+        "civilization",
+        "dune-ii",
+        "ufo-enemy-unknown",
+        "starcraft"
+      ]
+    },
+    "moba": {
+      "born": 2003,
+      "parents": [
+        "strategy",
+        "arpg"
+      ],
+      "tagline": "Five-hero squads clashing down three lanes in snowballing tactical teamfights.",
+      "explain": "Hatched inside StarCraft and Warcraft III map editors by modders behind Aeon of Strife and Defense of the Ancients, MOBAs stripped base-building out of real-time strategy to focus each player on one leveling hero. League of Legends and Dota 2 turned that three-lane siege of towers, jungle objectives, and item spikes into the world's biggest esports. Years later, Dota Auto Chess spun the same modder spirit into tactical auto-battlers.",
+      "pillars": [
+        "aeon-of-strife",
+        "defense-of-the-ancients",
+        "league-of-legends",
+        "dota-2",
+        "dota-auto-chess"
+      ]
+    },
+    "sim": {
+      "born": 1964,
+      "parents": [
+        "roots"
+      ],
+      "tagline": "Tinkering with living systems, cockpits, cities, and cozy everyday routines.",
+      "explain": "From 1964 classroom grain-management teletype The Sumerian Game and early flight trainers, simulations invited players to poke at complex models without a single 'game over' screen. Will Wright's SimCity and The Sims turned urban zoning and household drama into expressive digital dollhouses, alongside tycoon classics like RollerCoaster Tycoon. Cozy life sims like Animal Crossing and Stardew Valley carry that gentle, self-directed craft forward.",
+      "pillars": [
+        "the-sumerian-game",
+        "flight-simulator",
+        "simcity",
+        "the-sims",
+        "stardew-valley"
+      ]
+    },
+    "survival": {
+      "born": 2009,
+      "parents": [
+        "sim",
+        "open-world",
+        "roguelike"
+      ],
+      "tagline": "Punching trees at dawn to build shelter before nightfall arrives.",
+      "explain": "Blending simulation needs like hunger and warmth with open-world freedom and roguelike vulnerability, survival sandboxes drop you into untamed wilderness with empty pockets. Early cult experiments like Robinson's Requiem and Survival Kids set the stage before Minecraft's blocky crafting exploded into a generational creative canvas. DayZ, Terraria, Don't Starve, and Rust proved gathering, building, and defending campfires works solo or with friends.",
+      "pillars": [
+        "survival-kids",
+        "minecraft",
+        "terraria",
+        "dayz",
+        "rust"
+      ]
+    },
+    "adventure": {
+      "born": 1976,
+      "parents": [
+        "roots",
+        "puzzle"
+      ],
+      "tagline": "Exploring evocative places through conversation, observation, and narrative curiosity.",
+      "explain": "Inspired by Kentucky caving and tabletop storytelling, Will Crowther's Colossal Cave Adventure let players navigate a world purely through typed words and observation. Zork, King's Quest, Portopia, and LucasArts classics like Monkey Island evolved text parsers into witty point-and-click mysteries and visual novels. Later milestones from Ico and Shenmue to Telltale's The Walking Dead shifted focus toward emotional pacing and human relationships.",
+      "pillars": [
+        "colossal-cave-adventure",
+        "zork",
+        "the-secret-of-monkey-island",
+        "ico",
+        "the-walking-dead"
+      ]
+    },
+    "puzzle": {
+      "born": 1953,
+      "parents": [
+        "roots"
+      ],
+      "tagline": "Clean rules yielding sudden 'aha!' flashes when patterns click together.",
+      "explain": "Descended from mathematical tile toys like Pentominoes and peg code-breakers like Mastermind, video puzzles distill play down to pure pattern recognition and logic. Alexey Pajitnov's Tetris proved falling geometry could captivate every age group on Earth, while Lemmings and Myst wove brainteasers into lively worlds. Modern classics from Portal to Baba Is You delight in letting players bend the rules themselves.",
+      "pillars": [
+        "pentominoes",
+        "tetris",
+        "lemmings",
+        "myst",
+        "portal"
+      ]
+    },
+    "fighting": {
+      "born": 1984,
+      "parents": [
+        "arcade",
+        "sports"
+      ],
+      "tagline": "Mind games, spacing, and split-second combos between two close-range rivals.",
+      "explain": "Growing out of arcade boxing and Karate Champ's dual-stick martial arts, one-on-one fighters came of age when Street Fighter II introduced distinct world warriors, special-move motions, and accidental combos in 1991. Mortal Kombat brought digitized spectacle, Virtua Fighter pioneered 3D martial arts, and Super Smash Bros. reimagined knockouts around ring-outs and platform recovery. Few genres capture human rivalry as cleanly as two players reading each other's habits.",
+      "pillars": [
+        "karate-champ",
+        "street-fighter-ii",
+        "mortal-kombat",
+        "virtua-fighter",
+        "super-smash-bros"
+      ]
+    },
+    "beat-em-up": {
+      "born": 1984,
+      "parents": [
+        "arcade",
+        "fighting"
+      ],
+      "tagline": "Shoulder-to-shoulder street brawls clearing waves of flashy neighborhood gangs.",
+      "explain": "Kung-Fu Master took martial-arts movie floors onto a scrolling walkway in 1984, before Renegade and Double Dragon widened the sidewalk into belt-scrolling turf wars with co-op partners and dropped baseball bats. Capcom's Final Fight and Sega's Streets of Rage turned crowd control, grapples, and turkey-leg health pickups into arcade staples. Later stylish action games like Devil May Cry and Viewtiful Joe grew directly out of those combo-juggling roots.",
+      "pillars": [
+        "kung-fu-master",
+        "renegade",
+        "double-dragon",
+        "final-fight",
+        "streets-of-rage"
+      ]
+    },
+    "racing": {
+      "born": 1974,
+      "parents": [
+        "arcade",
+        "sports"
+      ],
+      "tagline": "Threading apexes, drifting hairpins, and feeling pure speed through corners.",
+      "explain": "Atari's Gran Trak 10 put a steering wheel and pedals onto an arcade cabinet in 1974, kicking off a lifelong tug-of-war between breezy thrills and tire-physics realism. Namco's Pole Position and Sega's Out Run delivered blue-sky road-trip euphoria, while Super Mario Kart invented chaotic item-flinging couch rivalries. On the simulation side, Hard Drivin' and Gran Turismo turned braking points and car collecting into an obsession.",
+      "pillars": [
+        "gran-trak-10",
+        "pole-position",
+        "out-run",
+        "super-mario-kart",
+        "gran-turismo"
+      ]
+    },
+    "sports": {
+      "born": 1958,
+      "parents": [
+        "roots"
+      ],
+      "tagline": "Stadium drama, athletic timing, and friendly couch rivalries distilled.",
+      "explain": "Electronic gaming began with a sport when William Higinbotham wired Tennis for Two onto an oscilloscope in 1958 and Pong turned digital ping-pong into an industry fourteen years later. Early button-mashers like Track & Field evolved alongside statistical tabletop heirs like John Madden Football and FIFA's flowing team play. Meanwhile, Tony Hawk's Pro Skater proved extreme sports could double as high-combo rhythm sandboxes.",
+      "pillars": [
+        "tennis-for-two",
+        "pong",
+        "track-and-field",
+        "john-madden-football-1990",
+        "tony-hawk-s-pro-skater"
+      ]
+    },
+    "party": {
+      "born": 1974,
+      "parents": [
+        "roots",
+        "arcade"
+      ],
+      "tagline": "Rhythm highway grooves, parlor laughs, and living rooms cheering together.",
+      "explain": "Rooted in parlor games and electronic memory toys like Touch Me and Simon, party and music games put the social room ahead of solo mastery. PaRappa the Rapper and Beatmania sparked a wave of rhythm controllers from plastic guitars in Guitar Hero to glowing VR sabers in Beat Saber. Alongside Mario Party and social-deduction hits, these games turn spectators on the sofa into the main event.",
+      "pillars": [
+        "simon",
+        "parappa-the-rapper",
+        "beatmania",
+        "guitar-hero",
+        "beat-saber"
+      ]
+    },
+    "card": {
+      "born": 1993,
+      "parents": [
+        "roots",
+        "strategy",
+        "roguelike"
+      ],
+      "tagline": "Shuffled decks, mana curves, and outlandish combos built card by card.",
+      "explain": "Drawing on centuries of poker odds and Cosmic Encounter's rule-bending alien powers, Richard Garfield's Magic: The Gathering invented collectible deck construction in 1993. Dominion flipped deckbuilding into a live mid-match race, while Hearthstone proved digital cards could feel tactile, brisk, and playful on screens. When Dream Quest and Slay the Spire married drafting to roguelike runs, the roguelike deckbuilder exploded.",
+      "pillars": [
+        "magic-the-gathering",
+        "dominion",
+        "hearthstone",
+        "slay-the-spire",
+        "balatro"
+      ]
+    },
+    "space": {
+      "born": 1962,
+      "parents": [
+        "roots"
+      ],
+      "tagline": "Zero-gravity dogfights, starship cockpits, and charting open galactic frontiers.",
+      "explain": "MIT hackers built Spacewar! in 1962 to push a new PDP-1 minicomputer, complete with Newtonian thrusters and a central star's gravity well. Star Raiders moved the action inside a first-person cockpit with a galactic sector map, before Elite opened procedural star trading across thousands of worlds. From Wing Commander's cinematic squadrons and Star Fox's polygon rails to modern space sandboxes, outer space remains gaming's oldest frontier.",
+      "pillars": [
+        "spacewar",
+        "star-raiders",
+        "elite",
+        "wing-commander",
+        "star-fox"
+      ]
+    }
+  },
+  "boardgames": [
+    {
+      "id": "kriegsspiel",
+      "kind": "Wargame",
+      "bridge": "Prussian officer Georg von Reisswitz introduced hidden map knowledge, neutral umpires, and dice-driven combat tables in 1824 to model real battlefield uncertainty. Every digital strategy game with fog of war, hit-chance math, and an impartial computer referee stands directly on Kriegsspiel's shoulders.",
+      "heirs": [
+        "empire-1977",
+        "civilization",
+        "dune-ii",
+        "starcraft"
+      ]
+    },
+    {
+      "id": "little-wars",
+      "kind": "Wargame",
+      "bridge": "Novelist H.G. Wells brought wargaming out of military academies onto parlor floors in 1913 with toy soldiers, string-measured movement, and real line-of-sight aiming. Its playful miniatures rulebook inspired hobby wargaming from Chainmail and Warhammer straight into tactical PC classics.",
+      "heirs": [
+        "warcraft-orcs-humans",
+        "ufo-enemy-unknown",
+        "warhammer-40000-dawn-of-war",
+        "total-war-warhammer"
+      ]
+    },
+    {
+      "id": "monopoly",
+      "kind": "Board Game",
+      "bridge": "Rolling around a shared loop of properties taught generations how rent, scarcity, and lopsided player trades create table-flipping drama. Digital pioneers like Dani Bunten's M.U.L.E., tycoon builders, and board-driven party hits borrowed its economic tug-of-war wholesale.",
+      "heirs": [
+        "m-u-l-e",
+        "railroad-tycoon",
+        "mario-party",
+        "monopoly-go"
+      ]
+    },
+    {
+      "id": "pentominoes",
+      "kind": "Puzzle / Tile",
+      "bridge": "Mathematician Solomon Golomb popularized twelve geometric shapes made of five joined squares that fit snugly inside a wooden tray. Packing a favorite glass pentomino set back into its box in Moscow gave Alexey Pajitnov the spark for falling four-square pieces in Tetris.",
+      "heirs": [
+        "tetris",
+        "dr-mario",
+        "puyo-puyo",
+        "tetris-effect"
+      ]
+    },
+    {
+      "id": "braunstein",
+      "kind": "Wargame",
+      "bridge": "In 1969, referee David Wesely handed each wargamer a single individual character—mayor, banker, student, or spy—inside a Napoleonic town with conflicting secret goals. When players ignored the battle script to improvise duels and schemes, role-playing characters were born.",
+      "heirs": [
+        "akalabeth-world-of-doom",
+        "ultima-iv-quest-of-the-avatar",
+        "baldur-s-gate",
+        "disco-elysium"
+      ]
+    },
+    {
+      "id": "mastermind",
+      "kind": "Puzzle / Tile",
+      "bridge": "Mordecai Meirowitz distilled pure deduction into colored pegs where each guess returns exact-match and right-symbol-wrong-spot clues. That crisp feedback loop echoed across hacking minigames, deductive mysteries, and Josh Wardle's global daily ritual Wordle.",
+      "heirs": [
+        "fallout-3",
+        "return-of-the-obra-dinn",
+        "wordle",
+        "the-case-of-the-golden-idol"
+      ]
+    },
+    {
+      "id": "chainmail",
+      "kind": "Wargame",
+      "bridge": "Gary Gygax and Jeff Perren's 1971 medieval miniatures booklet tucked a fourteen-page 'Fantasy Supplement' in the back with fireballs, invisibility, armor classes, and Tolkiensque monsters. Those exact combat tables powered the first Dungeons & Dragons sets and every dungeon crawler that followed.",
+      "heirs": [
+        "wizardry-proving-grounds-of-the-mad-overlord",
+        "the-tower-of-druaga",
+        "gauntlet",
+        "diablo"
+      ]
+    },
+    {
+      "id": "dungeons-and-dragons",
+      "kind": "Tabletop RPG",
+      "bridge": "Gygax and Dave Arneson's 1974 boxed booklets invented experience points, character classes, hit points, and level-up progression around a storyteller's table. Within months, college programmers began translating those stat sheets onto mainframes, birthing Western RPGs, JRPGs, roguelikes, and MMOs alike.",
+      "heirs": [
+        "rogue",
+        "dragon-quest",
+        "final-fantasy",
+        "the-elder-scrolls-iii-morrowind",
+        "baldur-s-gate-3"
+      ]
+    },
+    {
+      "id": "traveller",
+      "kind": "Tabletop RPG",
+      "bridge": "Marc Miller's 1977 sci-fi RPG skipped chosen-one quests in favor of mortgage-strapped starship crews hauling cargo, dodging pirates, and jumping between procedurally rolled star systems. Ian Bell and David Braben lifted its free-trader spirit—and default hero Commander Jameson—directly into Elite.",
+      "heirs": [
+        "elite",
+        "star-control-ii",
+        "eve-online",
+        "no-mans-sky",
+        "starfield"
+      ]
+    },
+    {
+      "id": "civilization-board-game",
+      "kind": "Board Game",
+      "bridge": "British designer Francis Tresham shifted board wargaming away from pure battle toward guiding ancient cultures through trade, calamities, and gaming's first technology tree in 1980. Its sweeping arc of human progress inspired Sid Meier's Civilization and decades of grand strategy.",
+      "heirs": [
+        "civilization",
+        "age-of-empires",
+        "europa-universalis",
+        "stellaris"
+      ]
+    },
+    {
+      "id": "mafia-party-game",
+      "kind": "Social Deduction",
+      "bridge": "Created by Moscow psychology student Dimitry Davidoff in 1986, Mafia pitted a small informed minority of secret killers against an uninformed majority armed only with debate and daytime votes. Online lobbies and voice chat turned that parlor paranoia into sensation hits like Town of Salem and Among Us.",
+      "heirs": [
+        "garrys-mod",
+        "danganronpa-trigger-happy-havoc",
+        "town-of-salem",
+        "among-us"
+      ]
+    },
+    {
+      "id": "cyberpunk-2020",
+      "kind": "Tabletop RPG",
+      "bridge": "Mike Pondsmith's 1990 tabletop classic fleshed out Night City's chrome cyberware, corporate wars, netrunning, and lethal limb-by-limb trauma rules. Beyond directly anchoring CD Projekt Red's Cyberpunk 2077, its granular anatomy system even inspired Dwarf Fortress's legendary wound simulation.",
+      "heirs": [
+        "deus-ex",
+        "dwarf-fortress",
+        "shadowrun-returns",
+        "cyberpunk-2077"
+      ]
+    },
+    {
+      "id": "magic-the-gathering",
+      "kind": "Card Game",
+      "bridge": "Richard Garfield's 1993 trading card phenomenon taught designers how mana curves, card drafting, and thousands of modular rules create endless player-invented synergies. Virtually every digital card battler and roguelike deckbuilder borrows Magic's grammar of turns, keywords, and combos.",
+      "heirs": [
+        "pokemon-trading-card-game",
+        "hearthstone",
+        "slay-the-spire",
+        "inscryption",
+        "blue-prince"
+      ]
+    },
+    {
+      "id": "dominion",
+      "kind": "Card Game",
+      "bridge": "Donald X. Vaccarino flipped Magic on its head in 2008 by making deck construction the match itself—everyone starts with identical coppers and estates and buys an engine on the fly. That self-contained 30-minute arc became the direct blueprint for Dream Quest, Slay the Spire, and modern roguelike deckbuilders.",
+      "heirs": [
+        "dream-quest",
+        "slay-the-spire",
+        "monster-train",
+        "ufo-50",
+        "balatro"
+      ]
+    }
+  ],
+  "studioLogos": {
+    "nintendo": "wt:commons/thumb/0/0d/Nintendo.svg/250px-Nintendo.svg.png",
+    "sega": "wt:commons/thumb/1/13/SEGA_logo.svg/250px-SEGA_logo.svg.png",
+    "atari": "wt:commons/thumb/5/58/Atari_Official_2012_Logo.svg/250px-Atari_Official_2012_Logo.svg.png",
+    "capcom": "wt:commons/thumb/e/ef/Capcom_logo.svg/250px-Capcom_logo.svg.png",
+    "konami": "wt:commons/thumb/a/ab/Konami_4th_logo_1.svg/250px-Konami_4th_logo_1.svg.png",
+    "namco": "wt:commons/thumb/9/95/Namco_logo.svg/250px-Namco_logo.svg.png",
+    "square-enix": "wt:commons/thumb/a/af/Square_Enix_logo.svg/250px-Square_Enix_logo.svg.png",
+    "lucasarts": "wt:commons/thumb/f/fb/Lucasfilm_Games_logo.svg/250px-Lucasfilm_Games_logo.svg.png",
+    "sierra-on-line": "wt:commons/thumb/c/c2/Sierra_former_logo.svg/250px-Sierra_former_logo.svg.png",
+    "id-software": "wt:en/thumb/c/c9/Id_Software.svg/250px-Id_Software.svg.png",
+    "valve": "wt:commons/thumb/a/ab/Valve_logo.svg/250px-Valve_logo.svg.png",
+    "blizzard-entertainment": "wt:commons/thumb/2/23/Blizzard_Entertainment_Logo_2015.svg/250px-Blizzard_Entertainment_Logo_2015.svg.png",
+    "blizzard-north": "wt:en/thumb/f/f0/Blizzardnorth.png/250px-Blizzardnorth.png",
+    "rockstar-games": "wt:commons/thumb/5/53/Rockstar_Games_Logo.svg/250px-Rockstar_Games_Logo.svg.png",
+    "rockstar-north": "wt:commons/thumb/0/03/Rockstar_North_Logo.svg/250px-Rockstar_North_Logo.svg.png",
+    "dma-design": "wt:en/thumb/1/1e/DMA_Design_Logo_%281994-2001%29.svg/250px-DMA_Design_Logo_%281994-2001%29.svg.png",
+    "fromsoftware": "wt:commons/thumb/0/00/Fromsoftware_logo.svg/250px-Fromsoftware_logo.svg.png",
+    "bioware": "wt:commons/thumb/f/f8/BioWare_2018.svg/250px-BioWare_2018.svg.png",
+    "bungie": "wt:commons/thumb/5/5e/Bungie_Logo_-_Official.svg/250px-Bungie_Logo_-_Official.svg.png",
+    "dice": "wt:commons/thumb/0/00/DICE_logo.svg/250px-DICE_logo.svg.png",
+    "remedy-entertainment": "wt:commons/thumb/3/33/Remedy_Entertainment_logo_%282023-present%29.svg/250px-Remedy_Entertainment_logo_%282023-present%29.svg.png",
+    "larian-studios": "wt:en/thumb/1/1a/Larian_Studios_Logo_2012.png/250px-Larian_Studios_Logo_2012.png",
+    "supergiant-games": "wt:commons/thumb/5/59/Supergiant_Games_New_Logo.png/250px-Supergiant_Games_New_Logo.png",
+    "cd-projekt-red": "wt:en/thumb/0/00/CD_Projekt_Red.svg/250px-CD_Projekt_Red.svg.png",
+    "kojima-productions": "wt:en/thumb/8/81/Kojima_Productions_logo.svg/250px-Kojima_Productions_logo.svg.png",
+    "rare": "wt:en/thumb/d/d9/Rare_logo_2015.svg/250px-Rare_logo_2015.svg.png",
+    "bullfrog-productions": "wt:en/thumb/b/be/Bullfrog-logo.svg/250px-Bullfrog-logo.svg.png",
+    "westwood-studios": "wt:commons/thumb/2/24/Westwood_Studios_1994.svg/250px-Westwood_Studios_1994.svg.png",
+    "bethesda-game-studios": "wt:commons/thumb/2/22/Bethesda_Game_Studios_logo.svg/250px-Bethesda_Game_Studios_logo.svg.png",
+    "obsidian-entertainment": "wt:commons/thumb/9/9d/Obsidian_Entertainment_black.svg/250px-Obsidian_Entertainment_black.svg.png",
+    "arkane-studios": "wt:commons/thumb/d/db/Arkane_Studios_Logo_2020.svg/250px-Arkane_Studios_Logo_2020.svg.png",
+    "naughty-dog": "wt:en/thumb/e/ea/Naughty_Dog_Logo.svg/250px-Naughty_Dog_Logo.svg.png",
+    "insomniac-games": "wt:commons/thumb/c/c1/Insomniac_Games_logo.svg/250px-Insomniac_Games_logo.svg.png",
+    "looking-glass-studios": "wt:en/thumb/c/cf/Looking_Glass_Studios_logo.jpg/250px-Looking_Glass_Studios_logo.jpg",
+    "origin-systems": "wt:en/thumb/1/1e/Origin_Systems_logo.png/250px-Origin_Systems_logo.png",
+    "microprose": "wt:commons/thumb/d/d4/MicroProse.svg/250px-MicroProse.svg.png",
+    "maxis": "wt:en/thumb/a/aa/Maxis-logo-2022.svg/250px-Maxis-logo-2022.svg.png",
+    "irrational-games": "wt:en/thumb/4/49/Irrational_Games.svg/250px-Irrational_Games.svg.png",
+    "ion-storm": "wt:en/thumb/9/9d/Ion_storm_logo.jpg/250px-Ion_storm_logo.jpg",
+    "black-isle-studios": "w:en/9/9c/Black_Isle_logo%2C_1998.PNG",
+    "ensemble-studios": "wt:commons/thumb/6/68/Ensemble_Studios_Logo.svg/250px-Ensemble_Studios_Logo.svg.png",
+    "lionhead-studios": "wt:en/thumb/d/dc/Lionhead_Studios_Logo.png/250px-Lionhead_Studios_Logo.png",
+    "midway": "wt:commons/thumb/9/9a/Midway_Games_logo.svg/250px-Midway_Games_logo.svg.png",
+    "hudson-soft": "wt:en/thumb/8/89/Hudson_Soft_%28logo%29.svg/250px-Hudson_Soft_%28logo%29.svg.png",
+    "japan-studio": "wt:commons/thumb/a/a4/SIE_Japan_Studio_logo.svg/250px-SIE_Japan_Studio_logo.svg.png"
+  },
+  "coverFixes": {
+    "fortnite-br": "w:en/a/ae/Fortnite_Save_The_World.jpg",
+    "dead-space": "w:en/5/57/Dead_Space_Box_Art.jpg",
+    "doom-2016": "w:en/2/28/Doom_Cover.jpg"
+  }
+}

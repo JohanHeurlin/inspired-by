@@ -79,9 +79,8 @@ input,select{font:inherit;color:var(--ink)}
 .artbtn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:600;color:var(--ink2);white-space:nowrap}
 .artbtn:hover{border-color:var(--line2)}
 .sync{font-size:12px;color:var(--muted)}
-@media (max-width:740px){.logo small{display:none}.tab{padding:6px 9px;font-size:13px}}
-@media (max-width:580px){.topin{flex-wrap:wrap;gap:6px 8px;padding-block:8px}.tabs{width:100%;margin:0;order:3}.tab{flex:1;text-align:center;padding:6px 3px;font-size:13px}.artbtn{margin-left:auto}}
-@media (max-width:380px){.tab{font-size:11.5px;padding:6px 2px}.artbtn{font-size:11px;padding:4px 8px}.seg{flex-wrap:wrap}.seg button{padding:6px 8px;font-size:12px}}
+@media (max-width:880px){.logo small{display:none}.topin{flex-wrap:wrap;gap:6px 8px;padding-block:8px}.tabs{width:100%;max-width:100%;min-width:0;margin:0;order:3;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:1 0 auto;text-align:center;padding:6px 8px;font-size:12.5px}.artbtn{margin-left:auto}}
+@media (max-width:440px){.tab{font-size:11.5px;padding:5px 5px}.artbtn{font-size:11px;padding:4px 8px}.seg{flex-wrap:wrap}.seg button{padding:6px 8px;font-size:12px}}
 
 /* ---------- type & controls ---------- */
 .eyebrow{font-family:var(--f-pixel);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
@@ -164,6 +163,7 @@ button.chip:hover{border-color:var(--line2)}
 .cv.e6 .ct{top:auto;bottom:15%;font-size:clamp(5px,calc(10cqw * var(--k,1)),19px);-webkit-line-clamp:3}
 .cv.e6 .cy{bottom:5%}
 .cv .cimg{position:absolute;inset:0;z-index:4;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .18s ease-out;background:var(--card)}
+.cv .cimg[src*=".svg.png"],.cv .cimg[src*="Logo."],.cv .cimg[src*="_logo."]{object-fit:contain;padding:12%;box-sizing:border-box;background:linear-gradient(155deg,#F2F5FB,#D5DCEB)}
 .cv.hasimg .cimg{opacity:1}
 .cv.hasimg .ct,.cv.hasimg .gl,.cv.hasimg .cy,.cv.hasimg::before,.cv.hasimg::after{opacity:0;transition:opacity .15s}
 :root[data-art="era"] .cv .cimg{display:none}
@@ -591,6 +591,54 @@ details.gtadet[open] > summary::before{rotate:90deg}
 .tvbadge{margin-top:8px;display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:11px;color:#9BA3B5}
 .tvframe.lcd00 .tvbadge{color:#232832}
 .tvled{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3CE07A;box-shadow:0 0 8px #3CE07A;margin-right:6px}
+/* v32: synth horizon hairline, sandbox bar, quick-jump nav, native dialog, drag handles, cartridge slot, studio logos, world map & mechanics */
+body.synth-on .top{border-bottom-color:color-mix(in srgb,#FF4FD8 45%,var(--line));box-shadow:0 2px 18px rgb(255 79 216 / .12)}
+.sbar{background:var(--hook-soft);border-bottom:1px solid var(--hook);padding:7px 0;font-size:13px;color:var(--ink)}
+.sbar .in{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.subnav{display:flex;gap:6px;overflow-x:auto;max-width:100%;min-width:0;box-sizing:border-box;padding:8px 2px 4px;scrollbar-width:none;align-items:center}
+.subnav::-webkit-scrollbar{display:none}
+.subnav > *{flex:none}
+.tile .tinfo{position:absolute;left:4px;bottom:4px;z-index:6;width:24px;height:24px;border-radius:6px;border:1px solid rgb(255 255 255 / .28);background:rgb(15 20 28 / .78);color:#fff;font-family:var(--f-mono);font-size:12px;font-weight:700;line-height:1;display:grid;place-items:center;padding:0;backdrop-filter:blur(4px);opacity:.86}
+.tile .tinfo::after{content:"";position:absolute;inset:-5px}
+.tile .tinfo:hover{opacity:1;background:var(--accent);color:var(--accent-ink)}
+.tnbtn{border:0;background:none;padding:0;text-align:left;font-size:12.5px;line-height:1.25;font-weight:600;color:inherit;overflow-wrap:break-word;cursor:pointer}
+.tnbtn:hover{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.qtick{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line2);background:var(--card);border-radius:999px;padding:2px 8px;font-size:11px;font-weight:700;color:var(--ink2);align-self:flex-start}
+.qtick:hover{border-color:var(--accent);color:var(--accent)}
+.qtick.lv1{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.qtick.lv2{background:var(--hook);border-color:var(--hook);color:var(--hook-ink)}
+.qtick.lv3{background:var(--love);border-color:var(--love);color:var(--love-ink)}
+.ygrab{position:absolute;left:3px;top:3px;z-index:7;width:22px;height:22px;border-radius:5px;border:1px solid rgb(255 255 255 / .28);background:rgb(15 20 28 / .76);color:#fff;font-size:12px;line-height:1;display:grid;place-items:center;padding:0;cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;opacity:.82}
+.ygrab:is(:hover,:focus-visible){opacity:1;background:var(--accent);color:var(--accent-ink)}
+html.dragging,html.dragging *{cursor:grabbing!important}
+.yr.drop-target,.ygap.drop-target{outline:2px dashed var(--accent);background:var(--accent-soft);border-radius:10px}
+.tile.lifting{position:relative;z-index:35;scale:1.05;box-shadow:var(--shadow);pointer-events:none}
+dialog.sheetdlg{border:1px solid var(--line);background:var(--paper);color:var(--ink);width:calc(100% - 16px);max-width:700px;max-height:88vh;max-height:88dvh;margin:auto;padding:16px max(18px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));border-radius:18px;box-sizing:border-box;box-shadow:var(--shadow);container:sheetcol / inline-size}
+dialog.sheetdlg[open]{display:block}
+dialog.sheetdlg:modal{overscroll-behavior:contain;overflow:auto}
+dialog.sheetdlg::backdrop{background:rgb(6 9 18 / .54);backdrop-filter:blur(2px);overflow:hidden;overscroll-behavior:contain}
+.navback{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:600;color:var(--ink2);flex:none}
+.navback:hover{border-color:var(--accent);color:var(--accent)}
+.sheetfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding-top:12px;border-top:1px solid var(--line);flex-wrap:wrap}
+.stlogo{height:22px;max-width:76px;padding:2px 6px;border-radius:5px;background:#F4F6FA;border:1px solid var(--line);object-fit:contain;vertical-align:middle;flex:none}
+.mediatray{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;margin-bottom:10px;background:var(--card);border:1px dashed var(--line2);border-radius:12px;flex-wrap:wrap}
+.cartdrag{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:9px;border:1.5px solid var(--accent);background:var(--accent-soft);font-size:12.5px;font-weight:700;cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;translate:0px;scale:1}
+.cartdrag.dragging{cursor:grabbing;z-index:40;box-shadow:var(--shadow);scale:1.06}
+.tvslot{padding:7px 12px;border-radius:9px;border:2px dashed var(--line2);font-family:var(--f-mono);font-size:11.5px;color:var(--muted);transition:border-color .15s,background .15s}
+.tvslot.hot{border-color:var(--craft);background:var(--craft-soft);color:var(--craft);font-weight:700}
+.mechgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:14px}
+.mechcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.genpill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;color:var(--ink2);text-decoration:none}
+.genpill:hover{border-color:var(--accent);color:var(--accent)}
+.wmapbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;overflow:hidden}
+.wmapsvg{width:100%;height:auto;display:block;border-radius:10px;background:color-mix(in srgb,var(--accent-soft) 32%,var(--paper))}
+.wmapsvg circle.ccdot{cursor:pointer;transition:opacity .15s,stroke-width .15s}
+.wmapsvg circle.ccdot:hover{stroke-width:2.5;opacity:1}
+.slotreels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
+.slotcell{background:var(--card);border:1.5px solid var(--line2);border-radius:12px;padding:12px 10px;text-align:center}
+.slotcell small{display:block;font-family:var(--f-pixel);font-size:10px;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+.slotcell b{font-family:var(--f-display);font-size:14px;display:block;line-height:1.25}
+#toast[popover]{margin:0;inset:auto auto calc(22px + env(safe-area-inset-bottom,0px)) 50%;border:0}
 </style>
 
 <header class="top">
@@ -598,16 +646,20 @@ details.gtadet[open] > summary::before{rotate:90deg}
     <a class="logo" href="#explore" aria-label="Inspired By, family tree of games"><i aria-hidden="true"></i><b>Inspired By</b><small>GAME HISTORY</small></a>
     <nav class="tabs" aria-label="Sections">
       <a class="tab" href="#timeline" data-tab="timeline">My timeline</a>
-      <a class="tab" href="#explore" data-tab="explore">Family tree</a>
-      <a class="tab" href="#studios" data-tab="studios">Makers</a>
+      <a class="tab" href="#explore" data-tab="explore">Explore</a>
+      <a class="tab" href="#mechanics" data-tab="mechanics">Genres & craft</a>
+      <a class="tab" href="#studios" data-tab="studios">Makers & world</a>
       <a class="tab" href="#friends" data-tab="friends">Friends</a>
     </nav>
     <button class="artbtn" id="synthBtn" type="button" data-act="synthToggle" title="Toggle warm 1980s synthwave ambience & retro tap chimes">♪ 80s synth</button>
   </div>
 </header>
+<div id="sandboxBar"></div>
+<div class="sr" id="srLive" aria-live="polite"></div>
 <main id="main"></main>
 <div id="layer"></div>
-<div id="toast" role="status" hidden></div>
+<dialog id="sheetDlg" class="sheetdlg" closedby="any" aria-labelledby="sheetTitle"></dialog>
+<div id="toast" role="status" popover="manual" hidden></div>
 
 <script id="data" type="application/json">/*__DATA__*/</script>
 <script>
@@ -654,15 +706,26 @@ const cssVar=n=>getComputedStyle(document.documentElement).getPropertyValue(n).t
 let _rn=null;const countryName=cc=>{try{_rn=_rn||new Intl.DisplayNames(["en"],{type:"region"});return _rn.of(cc)}catch(e){return cc}};
 const flagEmoji=cc=>cc&&/^[A-Z]{2}$/.test(cc)?String.fromCodePoint(...[...cc].map(c=>0x1F1E6+c.charCodeAt(0)-65)):"";
 const flag=cc=>cc?`<span class="flag" title="${esc(countryName(cc))}" aria-label="${esc(countryName(cc))}">${flagEmoji(cc)}</span>`:"";
-const studio=g=>String(g&&g.dev||"").split(/\s+\/\s+/)[0];
-function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2800)}
+const studio=g=>String(g&&g.dev||"").split(/\s*(?:\/|;|,)\s*/)[0];
+function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;try{if(t.showPopover)t.showPopover()}catch(e){}clearTimeout(toast.t);toast.t=setTimeout(()=>{try{if(t.hidePopover)t.hidePopover()}catch(e){}t.hidden=true},2800)}
+function announceSR(m){const el=$("#srLive");if(!el)return;el.textContent="";setTimeout(()=>{el.textContent=m},60)}
 
 /* ---------- data ---------- */
-const imgURL=v=>{if(!v)return "";if(v.startsWith("i:"))return `https://images.igdb.com/igdb/image/upload/t_cover_big/${v.slice(2)}.webp`;if(v.startsWith("w:"))return `https://upload.wikimedia.org/wikipedia/${v.slice(2)}`;if(v.startsWith("wt:"))return `https://thumb.wikimedia.org/wikipedia/${v.slice(3)}`;if(v.startsWith("s:"))return `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${v.slice(2)}/library_600x900.jpg`;return v};
+const imgURL=v=>{if(!v)return "";if(v.startsWith("i:"))return `https://images.igdb.com/igdb/image/upload/t_cover_big/${v.slice(2)}.webp`;if(v.startsWith("wt:"))return `https://thumb.wikimedia.org/wikipedia/${v.slice(3)}`;if(v.startsWith("w:"))return `${v.includes("/thumb/")?"https://thumb.wikimedia.org/wikipedia/":"https://upload.wikimedia.org/wikipedia/"}${v.slice(2)}`;if(v.startsWith("s:"))return `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${v.slice(2)}/library_600x900.jpg`;return v};
+window._covErr=function(im){
+  if(!im||im.dataset.retried){if(im)im.remove();return}
+  im.dataset.retried="1";const u=im.src||"";
+  if(u.includes("/library_600x900.jpg")){im.src=u.replace("/library_600x900.jpg","/header.jpg");return}
+  const m=u.match(/^https:\/\/(?:thumb|upload)\.wikimedia\.org\/wikipedia\/(en|commons|fr|de|ru|ja)\/thumb\/([0-9a-f]\/[0-9a-f]{2}\/[^/]+?\.(?:jpg|jpeg|png|webp|gif))\/[^/]+$/i);
+  if(m){im.src=`https://upload.wikimedia.org/wikipedia/${m[1]}/${m[2]}`;return}
+  im.remove();
+};
 const CULT=RAW.culture||{};
+const MW=RAW.mw||{mechanics:[],genres:{},boardgames:[]};
 const G=RAW.g.map((r,i)=>({i,code:r[0],id:r[1],title:r[2],year:r[3],dev:r[4],cc:r[5],gen:r[6],plats:r[7].map(p=>PLATS[p]),pop:r[8],note:r[9],inf:r[10],aka:r[11],cat:!!(r[12]&1),img:imgURL(r[13]||""),moby:r[14]||0,yt:r[15]||"",n:norm(r[2]),nr:normR(r[2]),h:hueOf(r[1])}));
 const L=RAW.l.map((r,i)=>({i,from:r[0],to:r[1],t:r[2],tier:TIERS[r[2]].k,took:r[3],added:r[4],src:r[5],extra:r[6],minor:!!(r[7]&1),disputed:!!(r[7]&2),rel:RELS_K[r[8]||0]||""}));
 const mobyURL=g=>g.moby?`https://www.mobygames.com/game/${g.moby}/credits/`:`https://www.mobygames.com/search/?q=${encodeURIComponent(g.title)}&type=game`;
+const mobyCoversURL=g=>g.moby?`https://www.mobygames.com/game/${g.moby}/covers/`:`https://www.mobygames.com/search/?q=${encodeURIComponent(g.title)}&type=game`;
 const byId=new Map(G.map(g=>[g.id,g])),byCode=new Map(G.map(g=>[g.code,g])),byNorm=new Map(),byNorm1=new Map();
 G.forEach(g=>{if(!byNorm.has(g.n))byNorm.set(g.n,g);const k1=norm1(g.title);if(!byNorm1.has(k1))byNorm1.set(k1,g)});
 const UP=G.map(()=>[]),DOWN=G.map(()=>[]);L.forEach(l=>{UP[l.to].push(l);DOWN[l.from].push(l)});
@@ -676,28 +739,30 @@ const findGameY=(t,y)=>{const g=findGame(t);if(!g||!y||Math.abs(g.year-y)<=1)ret
 const tierOn=l=>!!state.tiers[l.tier]||(l.disputed&&!!state.tiers.disp);
 const srcHTML=(src,tier)=>(src||[]).map(([tt,u])=>{const isWiki=u&&/wikipedia\.org/i.test(u);const lbl=tt||u;const tag=(tier==="dev"&&isWiki&&!/wikipedia/i.test(lbl))?`${lbl} (via Wikipedia)`:lbl;return u&&/^https?:\/\//i.test(u)?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(tag)}</a>`:esc(tag)}).filter(Boolean).join(" · ");
 const genreOf=g=>g&&g.gen.length?GEN[g.gen[0]]:null;
+const GEN_BY_K=new Map(GEN.map(g=>[g.k,g]));
 
 /* ---------- studios & makers registry ---------- */
 const slugStudio=s=>fold(String(s||"")).toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"unknown";
 const STUDIOS=new Map(),STUDIO_ALIAS=new Map();
 (RAW.studios||[]).forEach(r=>{
-  const st={id:r[0],name:r[1],aliases:r[2]||[],cc:r[3]||"",founded:r[4]||0,closed:r[5]||0,status:r[6]||"active",hq:r[7]||"",makers:r[8]||[],bio:r[9]||"",diaspora:(r[10]||[]).map(([studio,note])=>({studio,note})),curated:true,games:[]};
+  const st={id:r[0],name:r[1],aliases:r[2]||[],cc:r[3]||"",founded:r[4]||0,closed:r[5]||0,status:r[6]||"active",hq:r[7]||"",makers:r[8]||[],bio:r[9]||"",diaspora:(r[10]||[]).map(([studio,note])=>({studio,note})),logo:imgURL(r[11]||""),curated:true,games:[]};
   STUDIOS.set(st.id,st);
   [st.name,...st.aliases].forEach(a=>{STUDIO_ALIAS.set(norm(a),st);STUDIO_ALIAS.set(slugStudio(a),st)});
 });
 G.forEach(g=>{
-  const names=String(g.dev||"").split(/\s+\/\s+/).map(s=>s.trim()).filter(Boolean);
+  const names=String(g.dev||"").split(/\s*(?:\/|;|,)\s*/).map(s=>s.trim()).filter(Boolean);
   names.forEach(nm=>{
     let st=STUDIO_ALIAS.get(norm(nm))||STUDIO_ALIAS.get(slugStudio(nm));
-    if(!st){const id=slugStudio(nm);st=STUDIOS.get(id);if(!st){st={id,name:nm,aliases:[],cc:g.cc||"",founded:0,closed:0,status:"active",hq:"",makers:[],bio:"",diaspora:[],curated:false,games:[]};STUDIOS.set(id,st);STUDIO_ALIAS.set(norm(nm),st)}}
+    if(!st){const id=slugStudio(nm);st=STUDIOS.get(id);if(!st){st={id,name:nm,aliases:[],cc:g.cc||"",founded:0,closed:0,status:"active",hq:"",makers:[],bio:"",diaspora:[],logo:"",curated:false,games:[]};STUDIOS.set(id,st);STUDIO_ALIAS.set(norm(nm),st)}}
     if(!st.cc&&g.cc)st.cc=g.cc;
     if(!st.games.includes(g))st.games.push(g);
   });
 });
 STUDIOS.forEach(st=>{st.games.sort((a,b)=>a.year-b.year||b.pop-a.pop);st.maxInf=st.games.reduce((m,g)=>Math.max(m,g.inf),0);st.treeCount=st.games.filter(g=>g.tree).length});
 const findStudio=x=>x?(STUDIOS.get(x)||STUDIO_ALIAS.get(norm(x))||STUDIO_ALIAS.get(slugStudio(x))||null):null;
+const studioLogoHTML=st=>st&&st.logo?`<img class="stlogo" src="${esc(st.logo)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">`:"";
 const studioBtn=(nm,cls="stbtn")=>{if(!nm)return "";const st=findStudio(nm);return st?`<button type="button" class="${cls}" data-act="studio" data-st="${esc(st.id)}">${esc(nm)}</button>`:esc(nm)};
-const studioLinks=dev=>String(dev||"").split(/\s+\/\s+/).filter(Boolean).map(nm=>studioBtn(nm)).join(" / ");
+const studioLinks=dev=>String(dev||"").split(/\s*(?:\/|;|,)\s*/).map(s=>s.trim()).filter(Boolean).map(nm=>studioBtn(nm)).join(" / ");
 
 /* systems: [brand, name, first year, last year]. Append only: share links store positions in this list. */
 const SYSTEMS=[["A","Arcade",1971,2026],
@@ -843,7 +908,17 @@ function toggleSynth(){
     SYNTH.step++};
   tick();SYNTH.timer=setInterval(tick,250);updateSynthBtn();toast("♪ 80s arcade synth on — click again anytime to pause");
 }
-function updateSynthBtn(){const b=$("#synthBtn");if(!b)return;b.textContent=SYNTH.on?"❚❚ Pause synth":"♪ 80s synth";b.classList.toggle("playing",SYNTH.on)}
+function playInsertSound(kind){
+  const ctx=ensureAudio();if(!ctx)return;
+  const t=ctx.currentTime;
+  const seq=kind==="floppy"?[[140,0,.04,"square"],[95,.05,.06,"sawtooth"],[320,.13,.09,"triangle"]]
+    :kind==="disc"?[[220,0,.04,"sine"],[440,.05,.12,"sine"],[660,.12,.14,"triangle"]]
+    :[[110,0,.045,"square"],[260,.045,.06,"triangle"],[523.25,.11,.12,"triangle"]];
+  seq.forEach(([f,dt,dur,tp])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type=tp;o.frequency.setValueAtTime(f,t+dt);
+    g.gain.setValueAtTime(0.001,t+dt);g.gain.linearRampToValueAtTime(0.055,t+dt+0.01);g.gain.exponentialRampToValueAtTime(0.0008,t+dt+dur);
+    o.connect(g);g.connect(ctx.destination);o.start(t+dt);o.stop(t+dt+dur+0.01)});
+}
+function updateSynthBtn(){const b=$("#synthBtn");if(!b)return;b.textContent=SYNTH.on?"❚❚ Pause synth":"♪ 80s synth";b.classList.toggle("playing",SYNTH.on);document.body.classList.toggle("synth-on",SYNTH.on)}
 
 /* ---------- curated mood, vibe & memory packs (casual timeline browsing) ---------- */
 const MEMORY_PACKS=[
@@ -902,7 +977,7 @@ const eraOf=y=>y<1977?0:y<1984?1:y<1990?2:y<1996?3:y<2002?4:y<2013?5:6;
 /* a generated box: the era sets the packaging style, the genre sets the pixel glyph; real box art fades in over it when available */
 function coverHTML(title,year,h,glyph,{tag="div",attrs="",cls="",showYear=true,img=""}={}){
   const ph=h%2?120:38,lw=Math.max(...String(title).split(/[\s\-–:]+/).map(w=>w.length)),k=lw>7?Math.max(.55,7.4/lw).toFixed(2):1;
-  const im=img?`<img class="cimg" src="${esc(img)}" alt="" loading="lazy" decoding="async" onload="if(this.naturalWidth>20)this.parentElement.classList.add('hasimg');else this.remove()" onerror="this.remove()">`:"";
+  const im=img?`<img class="cimg" src="${esc(img)}" alt="" loading="lazy" decoding="async" onload="if(this.naturalWidth>20)this.parentElement.classList.add('hasimg');else _covErr(this)" onerror="_covErr(this)">`:"";
   return `<${tag} class="cv e${eraOf(year||2000)} gl-${glyph} ${cls}" style="--h:${h};--ph:${ph};--k:${k}" ${attrs}>${im}<span class="ct">${esc(title)}</span><i class="gl" aria-hidden="true"></i>${showYear&&year?`<span class="cy">${year}</span>`:""}</${tag}>`}
 const cover=(g,o={})=>coverHTML(g.title,g.year,g.h,glyphOf(g),{img:g.img,...o});
 const coverOfEntry=(e,y,o={})=>{const g=findGameY(e.t,e.y||y);return g?cover(g,o):coverHTML(e.t,y,hueOf(norm(e.t)),"stick",o)};
@@ -1192,7 +1267,7 @@ let friendSig="";
 function refreshFriends(){
   const sig=friendList().map(f=>f.key+":"+(f.data.updated||0)+":"+(f.name||"")).join("|");if(sig===friendSig)return;
   const v=state.route&&state.route.view,ae=document.activeElement,typing=ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName);
-  if($("#layer").innerHTML||typing)return; // try again on the next change
+  if($("#layer").innerHTML||($("#sheetDlg")&&$("#sheetDlg").open)||typing)return; // try again on the next change
   if(v==="friends"||v==="person"||(v==="start"&&!hist.stage)){friendSig=sig;render()}
 }
 const friendHash=f=>"friend-"+String(f.key).replace(/[^A-Za-z0-9-]/g,"-");
@@ -1207,14 +1282,27 @@ function friendList(){
 /* ================================================================
    Router and views
    ================================================================ */
-const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),trail:[],tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),mechTab:"mechanics",genreSel:"",worldCC:"",worldMine:false,quizMode:"lineage",posterMode:"wall",mapMode:"pillars",mapStrong:true,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
 state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
+const isDevMode=()=>!!(state.devMode||workedEntries(hist).length||(hist.workedStudios&&hist.workedStudios.length));
+function renderSandboxBar(){
+  const sb=$("#sandboxBar");if(!sb)return;
+  const stashed=store.get("ib3-stashed-hist");
+  if(!stashed){sb.innerHTML="";return}
+  const n=entries(cleanTimeline(stashed)).length;
+  sb.innerHTML=`<div class="sbar"><div class="wrap in"><span>🧪 <b>New-visitor preview mode:</b> your real timeline (${plural(n,"game")}) is safely saved while you test onboarding.</span>
+    <span class="row"><button type="button" class="btn sm primary" data-act="sandboxExit">↩ Back to my saved timeline (${n})</button><button type="button" class="btn sm ghost" data-act="sandboxCommit">Replace saved with this one</button></span></div></div>`;
+}
 function parseHash(){
   let h="";try{h=decodeURIComponent(location.hash.slice(1))}catch(e){h=location.hash.slice(1)}
   const home={view:hist.birth&&!hist.stage?"timeline":"start"};
   if(!h||h==="start")return home;
   if(h==="timeline")return hist.birth&&!hist.stage?{view:"timeline"}:{view:"start"};
   if(h==="explore")return {view:"explore"};
+  if(h==="mechanics"||h==="boardgames"||h==="genres"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":"mechanics";return {view:"mechanics"}}
+  if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
+  if(h==="world"){return {view:"world"}}
+  if(h.startsWith("country-")&&/^[A-Za-z]{2}$/.test(h.slice(8))){state.worldCC=h.slice(8).toUpperCase();return {view:"world",cc:state.worldCC}}
   if(h==="studios")return {view:"studios"};
   if(h.startsWith("studio-")&&findStudio(h.slice(7)))return {view:"studio",st:findStudio(h.slice(7)).id};
   if(h==="friends")return {view:"friends"};
@@ -1224,30 +1312,47 @@ function parseHash(){
   if(byId.has(h))return {view:"game",id:h};
   return home;
 }
-function go(h){if(location.hash.slice(1)===h)route();else location.hash=h}
+function go(h){state.navCount++;if(location.hash.slice(1)===h)route();else location.hash=h}
+function navBack(fallbackHash){if(state.navCount>0){state.navCount=Math.max(0,state.navCount-1);history.back()}else go(fallbackHash||"explore")}
 let lastView="";
-function route(){if(story)closeStory();else if($("#layer").innerHTML)clearLayer();state.route=parseHash();render();}
+function route(){if(story)closeStory();else if($("#layer").innerHTML||($("#sheetDlg")&&$("#sheetDlg").open))clearLayer();state.route=parseHash();render();}
 addEventListener("hashchange",route);
 function render(){
+  renderSandboxBar();
   const r=state.route,m=$("#main");
-  const tab=r.view==="start"?"timeline":(r.view==="shared"||r.view==="person")?"friends":r.view==="game"?"explore":(r.view==="studios"||r.view==="studio")?"studios":r.view;
+  const tab=r.view==="start"?"timeline":(r.view==="shared"||r.view==="person")?"friends":r.view==="game"?"explore":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
   $$(".tab").forEach(a=>a.toggleAttribute("aria-current",a.dataset.tab===tab)),$$(".tab").forEach(a=>{if(a.dataset.tab===tab)a.setAttribute("aria-current","page")});
-  const key=r.view+(r.id||"")+(r.st||"")+(r.payload||"")+(r.fk||"");
+  const key=r.view+(r.id||"")+(r.st||"")+(r.gen||"")+(r.cc||"")+(r.payload||"")+(r.fk||"");
   if(r.view==="start")renderStart(m);
   else if(r.view==="timeline")renderTimeline(m);
   else if(r.view==="explore")renderExplore(m);
+  else if(r.view==="mechanics")renderMechanics(m);
+  else if(r.view==="world")renderWorld(m);
   else if(r.view==="studios")renderStudios(m);
   else if(r.view==="studio")renderStudio(m,r.st);
   else if(r.view==="game")renderGame(m,r.id);
   else if(r.view==="friends")renderFriends(m);
   else if(r.view==="shared")renderShared(m,r.payload);
   else if(r.view==="person"){const f=friendList().find(x=>friendHash(x)===r.fk);
-    if(f)renderPerson(m,f);else m.innerHTML=`<section class="wrap exhero"><h1 class="h1">Loading timeline…</h1><p class="lede">If nothing appears, this friend may have been removed from the friends wall.</p><a class="btn" href="#friends">Back to friends</a></section>`}
+    if(f)renderPerson(m,f);else m.innerHTML=`<section class="wrap exhero"><h1 class="h1">Loading timeline…</h1><p class="lede">If nothing appears, this friend may have been removed from the friends wall.</p><a class="btn" href="#friends">◂ Back to friends</a></section>`}
   if(key!==lastView){window.scrollTo({top:0});lastView=key}
   if(r.view==="game"&&r.walk){r.walk=false;openStory(rootsChain(byId.get(r.id).i))}
 }
-const footer=()=>`<footer class="wrap foot-about"><p><b>Inspired By is a tribute to the people who make games.</b> Every game stands on the craft of earlier teams, and every studio adds something of its own. Each link shows what changed, what it built on, how strong the evidence is, and its source.</p>
-  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles. <button class="link" data-act="suggest">Spot a missing link or better source?</button> · <button class="link" data-act="goGiveBack">Support youth in game creation & preservation ▸</button> · Built ${esc(RAW.built||"")}.</p></footer>`;
+const footer=()=>`<footer class="wrap foot-about">
+  <div class="row" style="justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--line)">
+    <div class="row" style="gap:6px">
+      <a class="chip" href="#timeline">My timeline</a>
+      <a class="chip" href="#explore">Explore tree</a>
+      <a class="chip" href="#mechanics">Genres & mechanics</a>
+      <a class="chip" href="#boardgames">🎲 Boardgame roots</a>
+      <a class="chip" href="#world">🌍 World map</a>
+      <a class="chip" href="#studios">Makers</a>
+      <a class="chip" href="#friends">Friends</a>
+    </div>
+    <button type="button" class="btn sm ghost" data-act="scrollTop">↑ Back to top</button>
+  </div>
+  <p><b>Inspired By is a tribute to the people who make games.</b> Every game stands on the craft of earlier teams, and every studio adds something of its own. Each link shows what changed, what it built on, how strong the evidence is, and its source.</p>
+  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles. <button class="link" data-act="suggest">Spot a missing link or better source?</button> · <button class="link" data-act="goGiveBack">Support youth in game creation & preservation ▸</button> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button> · Built ${esc(RAW.built||"")}.</p></footer>`;
 
 function eraMomentsHTML(from,to){
   if(!state.eraMem)return "";
@@ -1292,7 +1397,7 @@ function renderStart(m){
         <button class="btn primary" type="submit">Start my timeline</button>
       </form>
       <p class="sub" id="birthErr" style="margin-top:8px" hidden></p>
-      <p class="sub" style="margin-top:10px;font-size:13.5px">Work in the game industry? <button type="button" class="link" data-act="makerSheet">Build a dev / maker credits timeline ▸</button></p>
+      ${isDevMode()?`<p class="sub" style="margin-top:10px;font-size:13.5px">🛠 Industry mode active · <button type="button" class="link" data-act="makerSheet">Add dev / studio credits ▸</button></p>`:""}
     </div>
     ${chain.length?`<div class="shelf">
       <h2><b>${esc(hg.title)}</b> stands on ${span} years of game design</h2>
@@ -1305,7 +1410,7 @@ function renderStart(m){
     <h2 class="h2">Or trace any game's family tree</h2>
     <p class="sub">Search any game to see what inspired it, what it went on to inspire, and the makers behind it.</p>
     <div class="search bigsearch"><input class="input" id="q0" type="search" placeholder="Search a game, like Grand Theft Auto VI or Hollow Knight" autocomplete="off" aria-label="Search a game"><div class="results" id="r0" hidden></div></div>
-    <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","tetris","doom","2048","arc-raiders"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}</div>
+    <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","tetris","doom","2048","arc-raiders"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}<button class="chip" data-act="slotSpin">🎰 I'm feeling lucky</button></div>
   </section>
   ${fl.length?`<section class="wrap sec"><h2 class="h2">Timelines from friends</h2><p class="sub">Open one to compare it with yours.</p><div class="fgrid">${fl.slice(0,6).map(friendCard).join("")}</div></section>`:""}
   ${footer()}`;
@@ -1395,16 +1500,19 @@ function pickSysCounts(birth,owned){
   return out;
 }
 function pickTileSub(g,ownSet,sysFilter){
-  if(sysFilter&&sysFilter!=="__other__")return `${g.year} · ${esc(studio(g))}`;
+  if(sysFilter&&sysFilter!=="__other__")return `${g.year} · ${studioBtn(studio(g))}`;
   const ps=sysOfGame(g),hits=ownSet.size?ps.filter(p=>ownSet.has(p)):[];
   if(hits.length)return `${g.year} · ${esc(hits.slice(0,2).join(", "))}`;
-  return `${g.year} · ${esc(ps[0]||studio(g))}`;
+  return `${g.year} · ${ps[0]?esc(ps[0]):studioBtn(studio(g))}`;
 }
-function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false}={}){
+function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false,quickTick=false}={}){
   const lv=d?levelOf(d,g):0,ent=d?entryOf(d,g):null,wk=!!(ent&&ent.wk);
-  const jump=(act==="cycle"&&g.tree)?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" data-close="1" title="Open ${esc(g.title)} family tree" aria-label="Open ${esc(g.title)} family tree">⑂</button>`:"";
-  return `<div class="tile${lv?" lv"+lv:""}${wk?" worked":""} ${cls}"><div class="artwrap"><button class="art" data-act="${act}" data-id="${g.id}" aria-label="${esc(g.title)}, ${wk?"worked on it":lv?LV[lv].label:"not played"}">${cover(g)}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button>${jump}</div>
-    <span class="tn">${esc(g.title)}</span>${wk&&ent.role?`<span class="trole">🛠 ${esc(ent.role)}</span>`:""}${sub!==null?`<span class="ts">${sub}</span>`:`<span class="ts">${g.year} · ${esc(studio(g))}</span>`}${wkTog?`<button type="button" class="wktog" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on ✓":"I worked on"}</button>`:""}</div>`}
+  const showInfo=act==="cycle"||act==="packCycle";
+  const infoBtn=showInfo?`<button type="button" class="tinfo" data-act="quickLook" data-id="${g.id}" title="Game info, platforms & CRT TV" aria-label="More info about ${esc(g.title)}">i</button>`:"";
+  const jump=(showInfo&&g.tree)?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" data-close="1" title="Open ${esc(g.title)} family tree" aria-label="Open ${esc(g.title)} family tree">⑂</button>`:"";
+  const qt=quickTick&&playable(g)?`<button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}" aria-label="${esc(g.title)}: ${lv?LV[lv].label:"Mark as played"}">${lv?LV[lv].m+" "+LV[lv].label:"+ Played"}</button>`:"";
+  return `<div class="tile${lv?" lv"+lv:""}${wk?" worked":""} ${cls}"><div class="artwrap"><button class="art" data-act="${act}" data-id="${g.id}" aria-label="${esc(g.title)}, ${wk?"worked on it":lv?LV[lv].label:"not played"}">${cover(g)}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button>${infoBtn}${jump}</div>
+    <button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>${wk&&ent.role?`<span class="trole">🛠 ${esc(ent.role)}</span>`:""}${sub!==null?`<span class="ts">${sub}</span>`:`<span class="ts">${g.year} · ${studioBtn(studio(g))}</span>`}${qt}${wkTog&&isDevMode()?`<button type="button" class="wktog" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on ✓":"I worked on"}</button>`:""}</div>`}
 function histBars(d,from,to){const counts={},loves={};for(const {y,lv} of entries(d)){counts[y]=(counts[y]||0)+1;if(lv===3)loves[y]=1}
   const max=Math.max(1,...Object.values(counts));let h="";for(let y=from;y<=to;y++){const c=counts[y]||0;h+=`<i class="${c?(loves[y]?"l":""):"z"}" style="height:${c?Math.max(12,c/max*100):6}%" title="${y}: ${c}"></i>`}return h}
 function pickSummary(){const es=entries(hist);const ys=es.map(x=>x.y);return {n:es.length,from:ys.length?Math.min(...ys):hist.birth,to:ys.length?Math.max(...ys):hist.birth}}
@@ -1424,7 +1532,7 @@ function renderPicks(m){
       <div class="row"><button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button><button type="button" class="btn sm ghost" data-act="obSystems">◂ Edit systems (${own.length||"all"})</button></div>
     </div>
     <h1 class="h1" style="font-size:clamp(1.6rem,1.1rem + 2.5vw,2.4rem);margin-top:8px">Tap the games you played</h1>
-    <div class="tap-hint"><span><b>✓</b>1 tap: played</span><span><b class="l2">★</b>2 taps: played a ton</span><span><b class="l3">♥</b>3 taps: all-time favorite</span><span class="muted">· tap <b>⑂</b> on any cover to see its roots</span></div>
+    <div class="tap-hint"><span><b>✓</b>1 tap: played</span><span><b class="l2">★</b>2 taps: played a ton</span><span><b class="l3">♥</b>3 taps: all-time favorite</span><span class="muted">· tap <b>i</b> or title for game info · <b>⑂</b> for family tree</span></div>
     <p class="sub" style="margin-bottom:10px"><b>No need to do it all in one sitting:</b> everything saves automatically in this browser, and you can jump to your timeline anytime and add more games later whenever a memory hits.</p>
     <div class="pickpanel">
       <div class="row" style="justify-content:space-between;margin-bottom:10px">
@@ -1505,26 +1613,82 @@ function lifeStrip(d,{mine=true,workedOnly=false}={}){
   const ys=Object.keys(byY).map(Number);
   const from=workedOnly?Math.min(...ys):(mine?Math.min(d.birth||ys[0],...ys):Math.min(...ys)),to=workedOnly?Math.max(...ys):(mine?NOW:Math.max(...ys));
   let h="",stage="",gapFrom=null;
-  const flushGap=y=>{if(gapFrom!=null){if(!workedOnly){const a=gapFrom,b=y-1;h+=`<div class="ygap"><b>${a===b?a:a+"–"+b}</b><span>Nothing yet</span>${mine?`<button class="link" data-act="year" data-y="${a}">Add games from ${a===b?a:a+"–"+b}</button>`:""}</div>`}gapFrom=null}};
+  const flushGap=y=>{if(gapFrom!=null){if(!workedOnly){const a=gapFrom,b=y-1;h+=`<div class="ygap" data-yrow="${a}"><b>${a===b?a:a+"–"+b}</b><span>Nothing yet</span>${mine?`<button class="link" data-act="year" data-y="${a}">Add or drop games into ${a===b?a:a+"–"+b}</button>`:""}</div>`}gapFrom=null}};
   for(let y=from;y<=to;y++){
     const age=y-(d.birth||y),st=workedOnly?`${Math.floor(y/10)*10}s`:lifeStage(age);
     const xs=(byY[y]||[]).sort((a,b)=>(!!b.e.wk-!!a.e.wk)||b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
     if(!xs.length){if(gapFrom==null)gapFrom=y;continue}
     if(st!==stage){flushGap(y);const sr=!workedOnly&&stageYearRange(st,d.birth);h+=`<div class="stage">${st}</div>${sr?eraMomentsHTML(sr[0],sr[1]):""}`;stage=st}
     flushGap(y);
-    h+=`<div class="yr"><div class="yl"><b>${y}</b><span>${d.birth?(age<0?`${-age} before you`:age===0?"born":"age "+age):""}</span></div><div class="yt">${xs.map(x=>{const g=x.g,wk=!!x.e.wk;const ttl=g?g.title:x.e.t;
+    h+=`<div class="yr" data-yrow="${y}"><div class="yl"><b>${y}</b><span>${d.birth?(age<0?`${-age} before you`:age===0?"born":"age "+age):""}</span></div><div class="yt">${xs.map(x=>{const g=x.g,wk=!!x.e.wk;const ttl=g?g.title:x.e.t;
       const relDiff=g&&g.year!==y?`<span class="ts">Out ${g.year}</span>`:(!g&&wk?`<span class="ts">Custom / unshipped</span>`:"");
       const roleLine=wk?`<span class="trole">🛠 ${esc(x.e.role||"Worked on it")}</span>`:"";
       const memLine=x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:(x.e.mtags&&x.e.mtags.length?`<span class="ts">${esc(x.e.mtags[0])}</span>`:"");
-      return `<div class="tile lv${x.lv}${wk?" worked":""}"><div class="artwrap"><button class="art" data-act="entry" data-y="${y}" data-t="${esc(x.e.t)}" ${mine?"":`data-ro="1"`} aria-label="${esc(ttl)}, ${wk?"worked on it":LV[x.lv].label}">${coverOfEntry(x.e,y,{showYear:false})}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}" aria-hidden="true">${LV[x.lv].m}</span></button>${g&&g.tree?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" title="Open family tree" aria-label="Open ${esc(ttl)} family tree">⑂</button>`:""}</div><span class="tn">${esc(ttl)}</span>${roleLine}${relDiff}${memLine}</div>`}).join("")}
+      const grab=mine&&!workedOnly?`<button type="button" class="ygrab" data-y="${y}" data-t="${esc(x.e.t)}" title="Drag to another year (or use Up/Down arrow keys)" aria-label="Move ${esc(ttl)} from ${y}. Drag to another year or use Up and Down arrow keys.">⠿</button>`:"";
+      return `<div class="tile lv${x.lv}${wk?" worked":""}"><div class="artwrap">${grab}<button class="art" data-act="entry" data-y="${y}" data-t="${esc(x.e.t)}" ${mine?"":`data-ro="1"`} aria-label="${esc(ttl)}, ${wk?"worked on it":LV[x.lv].label}">${coverOfEntry(x.e,y,{showYear:false})}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}" aria-hidden="true">${LV[x.lv].m}</span></button>${g?`<button type="button" class="tinfo" data-act="quickLook" data-id="${g.id}" title="Game info" aria-label="More info about ${esc(ttl)}">i</button>`:""}${g&&g.tree?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" title="Open family tree" aria-label="Open ${esc(ttl)} family tree">⑂</button>`:""}</div><span class="tn">${esc(ttl)}</span>${roleLine}${relDiff}${memLine}</div>`}).join("")}
       ${mine&&(workedOnly?`<button class="yadd" data-act="makerSheet" aria-label="Add game credit">+ Credit</button>`:`<button class="yadd" data-act="year" data-y="${y}" aria-label="Add games from ${y}">+ Add</button>`)||""}</div></div>`;
   }
   flushGap(to+1);
   return h;
 }
+function wireTimelineDrag(root){
+  if(!root)return;
+  root.querySelectorAll(".ygrab").forEach(handle=>{
+    let pid=null,sx=0,sy=0,moved=false,targetRow=null,raf=0,lastY=0;
+    const tile=handle.closest(".tile"),fromY=+handle.dataset.y,title=handle.dataset.t;
+    const clearHi=()=>{root.querySelectorAll(".drop-target").forEach(r=>r.classList.remove("drop-target"));targetRow=null};
+    const updateDrop=cy=>{
+      clearHi();
+      for(const r of root.querySelectorAll("[data-yrow]")){
+        const b=r.getBoundingClientRect();
+        if(cy>=b.top-6&&cy<=b.bottom+6){if(+r.dataset.yrow!==fromY){r.classList.add("drop-target");targetRow=r}break}
+      }
+    };
+    const cleanup=()=>{
+      cancelAnimationFrame(raf);pid=null;moved=false;document.documentElement.classList.remove("dragging");
+      if(tile){tile.classList.remove("lifting");tile.style.translate=""}clearHi();
+    };
+    const edgeScroll=()=>{
+      if(pid==null)return;
+      const vh=window.innerHeight;
+      if(lastY<80)window.scrollBy(0,-10);else if(lastY>vh-80)window.scrollBy(0,10);
+      updateDrop(lastY);raf=requestAnimationFrame(edgeScroll);
+    };
+    handle.addEventListener("pointerdown",e=>{
+      if(e.button!==0||pid!=null)return;
+      pid=e.pointerId;sx=e.clientX;sy=e.clientY;lastY=e.clientY;moved=false;
+      handle.setPointerCapture(pid);
+    });
+    handle.addEventListener("pointermove",e=>{
+      if(e.pointerId!==pid||!handle.hasPointerCapture(pid))return;
+      const dx=e.clientX-sx,dy=e.clientY-sy;lastY=e.clientY;
+      if(!moved&&Math.hypot(dx,dy)>4){moved=true;document.documentElement.classList.add("dragging");if(tile)tile.classList.add("lifting");raf=requestAnimationFrame(edgeScroll)}
+      if(moved&&tile){tile.style.translate=`${dx}px ${dy}px`;updateDrop(e.clientY)}
+    });
+    const finish=(e,cancel)=>{
+      if(e.pointerId!==pid)return;
+      const toEl=!cancel&&moved?targetRow:null,toY=toEl?+toEl.dataset.yrow:null;
+      cleanup();
+      if(toY&&toY!==fromY){const ny=moveEntryYear(fromY,title,toY);toast(`Moved ${title} to ${ny}`);announceSR(`${title} moved to ${ny}`);const sc=window.scrollY;render();window.scrollTo({top:sc})}
+    };
+    handle.addEventListener("pointerup",e=>finish(e,false));
+    handle.addEventListener("pointercancel",e=>finish(e,true));
+    handle.addEventListener("lostpointercapture",()=>cleanup());
+    handle.addEventListener("keydown",e=>{
+      if(e.key==="Escape"&&pid!=null){e.preventDefault();cleanup();announceSR("Move cancelled");return}
+      if(e.key==="ArrowUp"||e.key==="ArrowDown"){
+        e.preventDefault();const toY=Math.max(1950,Math.min(NOW,fromY+(e.key==="ArrowUp"?-1:1)));
+        if(toY===fromY)return;const ny=moveEntryYear(fromY,title,toY);announceSR(`${title} moved to ${ny}`);
+        const sc=window.scrollY;render();window.scrollTo({top:sc});
+        const nh=$(`.ygrab[data-y="${ny}"][data-t="${CSS.escape(title)}"]`);if(nh)nh.focus({preventScroll:true});
+      }
+    });
+  });
+}
 function timelineStats(d){const es=entries(d),ys=new Set(es.map(x=>x.y));const sys=new Set(),yc={};es.forEach(x=>{yc[x.y]=(yc[x.y]||0)+1;sysListOf(x.e,d).forEach(s=>sys.add(s))});
   let peakY=null,peakN=0;for(const [y,n] of Object.entries(yc))if(n>peakN){peakN=n;peakY=+y}
-  return {n:es.length,wk:es.filter(x=>x.e.wk).length,years:ys.size,sys:sys.size,fav:es.filter(x=>x.lv===3).length,peakY,peakN,from:es.length?Math.min(...ys):null,to:es.length?Math.max(...ys):null}}
+  const from=es.length?Math.min(...ys):null,to=es.length?Math.max(...ys):null,span=es.length?(to-from+1):0;
+  return {n:es.length,wk:es.filter(x=>x.e.wk).length,years:ys.size,span,sys:sys.size,fav:es.filter(x=>x.lv===3).length,peakY,peakN,from,to}}
 function makerLegacyOf(d){
   const wk=workedEntries(d).sort((a,b)=>a.y-b.y);
   const stIds=new Set(d.workedStudios||[]);
@@ -1659,24 +1823,33 @@ function renderTimeline(m){
   const wkMode=state.tlMode==="worked"&&!!mk;
   const peakAge=st.peakY&&d.birth?st.peakY-d.birth:null;
   const teaser=dx&&dx.oldest?`<p class="lede" style="margin:14px 0 0;font-size:15px">Your games trace back to <b>${dx.allCount.toLocaleString()}</b> earlier games, all the way to <a href="#${dx.oldest.g.id}">${esc(dx.oldest.g.title)}</a> (${dx.oldest.g.year}).${dx.top[0]?` Your biggest root is <b>${esc(dx.top[0].g.title)}</b>.`:""} <button class="link" data-act="toDna">See your gaming DNA</button></p>`:"";
+  const hasStash=!!store.get("ib3-stashed-hist");
+  const yrSpanTxt=st.from&&st.from!==st.to?`${st.from}–${st.to}`:st.from?String(st.from):"";
   m.innerHTML=`<section class="wrap mehead">
       <div><p class="eyebrow">${first?"Here it is":wkMode?"My game industry career":"My gaming timeline · Saved on this device"}</p>
         <h1 class="h1" style="font-size:clamp(1.65rem,1.1rem + 2.8vw,2.5rem)">${first?"Your life in games":wkMode?esc(d.name?d.name+"'s work in games":"Games I helped build"):esc(d.name?d.name+"'s games":"My life in games")}</h1>
-        <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge>=0?` (age ${peakAge})`:""}</span></div>`:`<div class="stat"><b>${d.birth}</b><span>born</span></div>`}</div>
+        <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.span}</b><span>${st.span===1?"year":"years"}${yrSpanTxt?` (${yrSpanTxt})`:""}</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge>=0?` (age ${peakAge})`:""}</span></div>`:`<div class="stat"><b>${d.birth}</b><span>born</span></div>`}</div>
         ${teaser}
       </div>
-      <div class="row"><button class="btn primary" data-act="share">Share & export</button><button class="btn" data-act="packSheet">✦ Memory packs</button><button class="btn ${mk?"craft":""}" data-act="makerSheet">🛠 ${mk?`Dev credits (${st.wk})`:`I worked in games`}</button><button class="btn" data-act="poster">4K Poster</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
+      <div class="row"><button class="btn primary" data-act="share">Share & export</button><button class="btn" data-act="packSheet">✦ Memory packs</button>${isDevMode()?`<button class="btn ${mk?"craft":""}" data-act="makerSheet">🛠 ${mk?`Dev credits (${st.wk})`:`I worked in games`}</button>`:""}<button class="btn" data-act="poster">Poster & Box Pile</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
     </section>
+    <div class="wrap"><nav class="subnav" aria-label="Jump to timeline section">
+      <button type="button" class="chip" data-act="bandJump" data-to="tlLife">🗓️ Year-by-year</button>
+      ${st.fav?`<button type="button" class="chip" data-act="bandJump" data-to="favSec">♥ Favorites (${st.fav})</button>`:""}
+      ${dx?`<button type="button" class="chip" data-act="bandJump" data-to="dna">🧬 Gaming DNA & Next Up</button>`:""}
+      <button type="button" class="chip" data-act="bandJump" data-to="odeSec">🏛️ Studios & Machines</button>
+      ${!hasStash?`<button type="button" class="chip" data-act="sandboxEnter" title="Temporarily test onboarding as a brand-new visitor without losing your saved timeline">🧪 Test new-visitor flow</button>`:""}
+    </nav></div>
     ${first?`<section class="wrap"><div class="banner"><p><b>Your timeline is a living notebook —</b> send it to friends now, and come back anytime a forgotten childhood game pops into your head.</p><button class="btn primary" data-act="share">Share my timeline</button></div></section>`:""}
-    <section class="wrap"><div class="search"><input class="input" id="addq" type="search" placeholder="Add any game anytime (or open ✦ Memory packs above to browse by mood & vibe)" autocomplete="off" aria-label="Add a game"><div class="results" id="addr" hidden></div></div>
+    <section class="wrap" style="margin-top:8px"><div class="search"><input class="input" id="addq" type="search" placeholder="Add any game anytime (or open ✦ Memory packs above to browse by mood & vibe)" autocomplete="off" aria-label="Add a game"><div class="results" id="addr" hidden></div></div>
       <div class="row" style="justify-content:space-between;margin-top:8px">
-        <div class="row" style="gap:8px"><p class="sync" id="syncmsg" style="margin:0">${esc(syncMsg||"Auto-saved in this browser · Tap any cover below to adjust age, jot a memory, or watch CRT gameplay.")}</p>
+        <div class="row" style="gap:8px"><p class="sync" id="syncmsg" style="margin:0">${esc(syncMsg||"Auto-saved · Drag ⠿ on any cover to move its year, or tap a cover for notes, info & CRT TV.")}</p>
           <button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">📻 Era memories: ${state.eraMem?"On":"Off"}</button></div>
         ${mk?`<span class="seg" role="group" aria-label="Timeline filter"><button data-act="tlMode" data-m="all" aria-pressed="${!wkMode}">All games (${st.n})</button><button data-act="tlMode" data-m="worked" aria-pressed="${wkMode}">🛠 Worked on (${st.wk})</button></span>`:""}
       </div></section>
     ${!wkMode?personaSection(d,true,dx):""}
     ${wkMode?makerSection(d,true,mk):""}
-    <section class="wrap life">${lifeStrip(d,{mine:true,workedOnly:wkMode})}</section>
+    <section class="wrap life" id="tlLife">${lifeStrip(d,{mine:true,workedOnly:wkMode})}</section>
     ${!wkMode&&mk?makerSection(d,true,mk):""}
     ${favSection(d,true)}
     ${pyramidSection(d,true,dx)}
@@ -1684,14 +1857,15 @@ function renderTimeline(m){
     ${statsSection(d,true)}
     ${footer()}`;
   if(first)store.set("ib2-revealed",true);
+  wireTimelineDrag(m);
   wireSearch($("#addq"),$("#addr"),p=>{if(p.custom){openYearSheet(Math.min(NOW,hist.birth+10),p.custom);return}setLevel(p,Math.max(1,levelOf(hist,p)));playBlip(1);const py=entryYearOf(hist,p)||p.year;toast(`Added ${p.title} (${py})`);render()},{custom:true,catFirst:true,playOnly:true});
 }
 function favSection(d,mine){
   const favs=entries(d).filter(x=>x.lv===3).sort((a,b)=>a.y-b.y);if(!favs.length)return "";
   const t10=(d.top10||[]).map(k=>favs.find(f=>f.g&&(f.g.n===k||norm1(f.g.title)===k))).filter(Boolean);
   const list=t10.length?t10:favs;
-  return `<section class="wrap sec"><div class="sechead"><div><h2 class="h2">${t10.length?(mine?"My top "+t10.length:"Top "+t10.length):"All-time favorites"}</h2><p class="sub">${t10.length?"Ranked.":plural(favs.length,"favorite")+", in the order you played them."}</p></div>${mine?`<div class="row"><button class="btn sm" data-act="png" data-kind="favs">♥ Save favorites image</button><button class="btn sm" data-act="top10">${t10.length?"Edit top 10":"Rank a top 10"}</button></div>`:""}</div>
-    <div class="grid">${list.map((x,i)=>{const g=x.g;return `<div class="tile lv3"><button class="art" data-act="${g?"game":"noop"}" data-id="${g?g.id:""}">${coverOfEntry(x.e,x.y)}${t10.length?`<span class="lvb l3">${i+1}</span>`:""}</button><span class="tn">${esc(g?g.title:x.e.t)}</span><span class="ts">${x.y}${g?" · "+esc(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div></section>`;
+  return `<section class="wrap sec" id="favSec"><div class="sechead"><div><h2 class="h2">${t10.length?(mine?"My top "+t10.length:"Top "+t10.length):"All-time favorites"}</h2><p class="sub">${t10.length?"Ranked.":plural(favs.length,"favorite")+", in the order you played them."}</p></div>${mine?`<div class="row"><button class="btn sm" data-act="boxPile">📦 Shuffle in Box Pile</button><button class="btn sm" data-act="png" data-kind="favs">♥ Save favorites image</button><button class="btn sm" data-act="top10">${t10.length?"Edit top 10":"Rank a top 10"}</button></div>`:""}</div>
+    <div class="grid">${list.map((x,i)=>{const g=x.g;return `<div class="tile lv3"><button class="art" data-act="${g?"quickLook":"noop"}" data-id="${g?g.id:""}">${coverOfEntry(x.e,x.y)}${t10.length?`<span class="lvb l3">${i+1}</span>`:""}</button><span class="tn">${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>`:esc(x.e.t)}</span><span class="ts">${x.y}${g?" · "+studioBtn(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div></section>`;
 }
 /* the two halves meet: the ancestors behind the games you played + indie & classic discovery */
 function dnaOf(d){
@@ -1714,6 +1888,14 @@ function dnaOf(d){
   const missed=top.filter(a=>!a.played&&a.g.pop>=3&&a.n>=2).slice(0,8);
   return {top,oldest,genres,nextUp:nextUp.slice(0,8),indies,missed,count:mine.length,allCount};
 }
+function recTile(g,why,mine,{showStores=false}={}){
+  const lv=mine?levelOf(hist,g):0;
+  return `<div class="tile${lv?" lv"+lv:""}"><div class="artwrap"><button class="art" data-act="quickLook" data-id="${g.id}">${cover(g)}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button>${g.tree?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" title="Open family tree" aria-label="Open ${esc(g.title)} family tree">⑂</button>`:""}</div>
+    <button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>
+    <span class="why">${esc(why)}</span>
+    ${mine&&playable(g)?`<button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}">${lv?LV[lv].m+" "+LV[lv].label:"+ Played"}</button>`:""}
+    ${showStores?storeLinksHTML(g):""}</div>`;
+}
 function dnaSection(d,mine,pre){
   const x=pre||dnaOf(d);if(x.count<3||!x.top.length)return "";
   const tot=x.genres.reduce((a,b)=>a+b.w,0)||1;
@@ -1722,20 +1904,20 @@ function dnaSection(d,mine,pre){
     <p class="sub">${mine?"Your":"Their"} games trace back to ${x.allCount.toLocaleString()} earlier games. ${x.oldest?`The oldest root is <b>${esc(x.oldest.g.title)}</b> (${x.oldest.g.year}).`:""}</p>
     <div class="hgrid">
       <div class="card"><h3 class="h3">Biggest influences on ${who} games</h3><p class="sub">How many of ${who} games it inspired, directly or one step removed.</p>
-        ${x.top.slice(0,6).map(a=>`<button class="anc" data-act="game" data-id="${a.g.id}">${cover(a.g,{showYear:false})}<span><b>${esc(a.g.title)}</b><small>${a.g.year} · ${a.played?(mine?"you played it":"they played it"):"never played"}</small></span><span class="n">${a.n}<small>of ${x.count}</small></span></button>`).join("")}</div>
-      <div class="card"><h3 class="h3">${mine?"Your":"Their"} genres</h3><p class="sub">Weighted by how much ${mine?"you":"they"} played.</p>
+        ${x.top.slice(0,6).map(a=>`<button class="anc" data-act="quickLook" data-id="${a.g.id}">${cover(a.g,{showYear:false})}<span><b>${esc(a.g.title)}</b><small>${a.g.year} · ${a.played?(mine?"you played it":"they played it"):"never played"}</small></span><span class="n">${a.n}<small>of ${x.count}</small></span></button>`).join("")}</div>
+      <div class="card"><h3 class="h3">${mine?"Your":"Their"} genres</h3><p class="sub">Weighted by how much ${mine?"you":"they"} played · tap any genre to explore how it evolved.</p>
         <div class="genbar">${x.genres.map(g=>`<i style="width:${(g.w/tot*100).toFixed(2)}%;background:${g.gen.c}" title="${esc(g.gen.label)}"></i>`).join("")}</div>
-        <div class="legend">${x.genres.slice(0,9).map(g=>`<span><i style="--c:${g.gen.c}"></i>${esc(g.gen.label)} <span class="mono muted">${Math.round(g.w/tot*100)}%</span></span>`).join("")}</div>
+        <div class="row" style="gap:6px">${x.genres.slice(0,9).map(g=>`<button type="button" class="genpill" data-act="genre" data-g="${esc(g.gen.k)}"><i style="width:9px;height:9px;border-radius:3px;background:${g.gen.c};display:inline-block"></i>${esc(g.gen.label)} <span class="mono muted">${Math.round(g.w/tot*100)}%</span></button>`).join("")}</div>
       </div>
     </div>
     ${x.missed.length?`<h3 class="h3" style="margin-top:22px">🏛️ Roots ${mine?"you":"they"} never played — & where to play them officially today</h3>
-      <p class="sub">Foundational classics behind several of ${who} favorites, with official DRM-free preservation & store links.</p>
-      <div class="recs">${x.missed.slice(0,8).map(a=>`<div class="tile"><button class="art" data-act="game" data-id="${a.g.id}">${cover(a.g)}</button><span class="tn">${esc(a.g.title)}</span><span class="why">Behind ${plural(a.n,"of "+who+" games","of "+who+" games")}</span>${storeLinksHTML(a.g)}</div>`).join("")}</div>`:""}
+      <p class="sub">Foundational classics behind several of ${who} favorites. Tap <b>+ Played</b> if you did play one, or tap any cover for details.</p>
+      <div class="recs">${x.missed.slice(0,8).map(a=>recTile(a.g,`Behind ${plural(a.n,"of "+who+" games","of "+who+" games")}`,mine,{showStores:true})).join("")}</div>`:""}
     ${x.indies&&x.indies.length?`<h3 class="h3" style="margin-top:22px">💎 Under-the-radar indie gems for ${who} taste</h3>
       <p class="sub">Smaller, high-craft games in ${who} favorite traditions that deserve spotlight alongside mega-launches.</p>
-      <div class="recs">${x.indies.map(r=>`<div class="tile"><button class="art" data-act="game" data-id="${r.g.id}">${cover(r.g)}</button><span class="tn">${esc(r.g.title)}</span><span class="why">${esc(r.why)}</span>${storeLinksHTML(r.g)}</div>`).join("")}</div>`:""}
-    ${x.nextUp.length?`<h3 class="h3" style="margin-top:22px">🚀 Spiritual successors to ${who} favorites</h3><p class="sub">Later games that borrowed directly from ${who} top picks${mine?" and that you haven't ticked yet":""}.</p>
-      <div class="recs">${x.nextUp.map(r=>`<div class="tile"><button class="art" data-act="game" data-id="${r.g.id}">${cover(r.g)}</button><span class="tn">${esc(r.g.title)}</span><span class="why">From ${esc(r.because.title)}</span></div>`).join("")}</div>`:""}
+      <div class="recs">${x.indies.map(r=>recTile(r.g,r.why,mine,{showStores:true})).join("")}</div>`:""}
+    ${x.nextUp.length?`<h3 class="h3" style="margin-top:22px">🚀 Spiritual successors to ${who} favorites</h3><p class="sub">Later games that borrowed directly from ${who} top picks${mine?" — tap + Played right here if you've played them":""}.</p>
+      <div class="recs">${x.nextUp.map(r=>recTile(r.g,`From ${r.because.title}`,mine,{showStores:false})).join("")}</div>`:""}
   </section>`;
 }
 function statsSection(d,mine=true){
@@ -1746,16 +1928,16 @@ function statsSection(d,mine=true){
   const topSt=top(st,8),maxSt=Math.max(1,topSt[0]?topSt[0][1]:1);
   const hwMap=new Map((CULT.hardware||[]).map(h=>[h.sys,h]));
   const sysList=top(sy,10);
-  return `<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Ode to the makers</p><h2 class="h2">The studios, creators & machines that raised ${mine?"you":esc(d.name||"them")}</h2><p class="sub">Weighted by how deeply ${mine?"you":"they"} played (<b>♥</b> counts 3×, <b>★</b> counts 2×). Tap any studio to meet its human creators.</p></div>${mine&&sysList.length?`<button class="btn sm" data-act="png" data-kind="consoles">🕹️ Save consoles & favorites card</button>`:""}</div>
+  return `<section class="wrap sec" id="odeSec"><div class="sechead"><div><p class="eyebrow">Ode to the makers</p><h2 class="h2">The studios, creators & machines that raised ${mine?"you":esc(d.name||"them")}</h2><p class="sub">Weighted by how deeply ${mine?"you":"they"} played (<b>♥</b> counts 3×, <b>★</b> counts 2×). Tap any studio or country to explore.</p></div><div class="row"><a class="btn sm ghost" href="#world">🌍 Open world map ▸</a>${mine&&sysList.length?`<button class="btn sm" data-act="png" data-kind="consoles">🕹️ Save consoles & favorites card</button>`:""}</div></div>
     <div class="hgrid">
       <div class="card"><h3 class="h3">Most influential studios & creators in ${mine?"your":"their"} life</h3>
         <div style="margin-top:8px">${topSt.map(([n,v])=>{const sr=findStudio(n),pct=totW?Math.max(1,Math.round(v/totW*100)):0;
           const mks=sr&&sr.makers&&sr.makers.length?sr.makers.slice(0,3).join(", "):"";
-          return `<div class="oderow"><div>${sr?`<button type="button" class="stbtn" style="font-weight:700" data-act="studio" data-st="${esc(sr.id)}">${flag(sr.cc)} ${esc(n)}</button>`:`<b>${esc(n)}</b>`}${mks?`<small class="muted" style="display:block;font-size:11.5px">${esc(mks)}</small>`:""}</div>
+          return `<div class="oderow"><div style="display:flex;align-items:center;gap:8px;min-width:0">${studioLogoHTML(sr)}<div style="min-width:0">${sr?`<button type="button" class="stbtn" style="font-weight:700" data-act="studio" data-st="${esc(sr.id)}">${flag(sr.cc)} ${esc(n)}</button>`:`<b>${esc(n)}</b>`}${mks?`<small class="muted" style="display:block;font-size:11.5px">${esc(mks)}</small>`:""}</div></div>
             <div class="odebar"><i style="width:${(v/maxSt*100).toFixed(1)}%"></i></div>
             <span class="mono muted" style="font-size:12px">${pct}%</span></div>`}).join("")}</div>
-        <h3 class="h3" style="margin-top:16px">Countries behind ${mine?"your":"their"} games</h3>
-        <div class="makers" style="margin-top:6px">${top(cc,10).map(([c,v])=>`<span class="maker">${flag(c)} ${esc(countryName(c))}<span>${v}</span></span>`).join("")}</div>
+        <h3 class="h3" style="margin-top:16px">Countries behind ${mine?"your":"their"} games <small class="muted" style="font-weight:400">(tap to browse country)</small></h3>
+        <div class="makers" style="margin-top:6px">${top(cc,10).map(([c,v])=>`<button type="button" class="makerbtn" data-act="country" data-cc="${esc(c)}">${flag(c)} ${esc(countryName(c))}<span>${v}</span></button>`).join("")}</div>
       </div>
       <div class="card"><h3 class="h3">${mine?"Your":"Their"} hardware shelf</h3><p class="sub">The machines — and hardware engineers — that carried these worlds.</p>
         <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">${sysList.map(([n,v])=>{const hw=hwMap.get(n);
@@ -1809,26 +1991,35 @@ function renderExplore(m){
       <h1 class="h1">Where did your favorite game come from?</h1>
       <p class="lede">Every game borrows from the ones before it. Search one to see what inspired it, what it went on to inspire, and the human teams behind its lineage.</p>
       <div class="search bigsearch"><input class="input" id="q1" type="search" placeholder="Search a game, like Grand Theft Auto VI or Stardew Valley" autocomplete="off" aria-label="Search a game"><div class="results" id="r1" hidden></div></div>
-      <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","the-legend-of-zelda-breath-of-the-wild","doom","2048","Baldur's Gate 3"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}<button class="chip" data-act="random">Surprise me</button></div>
+      <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","the-legend-of-zelda-breath-of-the-wild","doom","2048","Baldur's Gate 3"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}<button class="chip" data-act="slotSpin">🎰 Spin lucky reel</button><button class="chip" data-act="random">Surprise me</button></div>
+      <nav class="subnav" aria-label="Explore sections" style="margin-top:10px">
+        <button type="button" class="chip" data-act="map">🗺️ Big Picture (5 views)</button>
+        <a class="chip" href="#mechanics">⚙️ Mechanics that stuck</a>
+        <a class="chip" href="#genres">🧬 How genres breed</a>
+        <a class="chip" href="#boardgames">🎲 Boardgame roots</a>
+        <a class="chip" href="#world">🌍 World map (46 countries)</a>
+        <button type="button" class="chip" data-act="bandJump" data-to="quizSec">🎮 Arcade trivia</button>
+        <button type="button" class="chip" data-act="bandJump" data-to="inflSec">🏆 Most influential</button>
+      </nav>
       ${gtaviSpotlight()}
     </section>
     ${js.length?`<section class="wrap sec"><div class="sechead"><div><h2 class="h2">Journeys</h2><p class="sub">Step back through a genre, one game at a time.</p></div></div>
       <div class="journeys">${js.map(j=>{const old=j.ch[j.ch.length-1].g;const picks=[j.ch[j.ch.length-1],j.ch[Math.floor(j.ch.length/2)],j.ch[0]].map(s=>s.g);
         return `<button class="jcard" data-act="walk" data-id="${j.g.id}"><span class="jstack">${picks.map((g,k)=>cover(g,{showYear:false,attrs:`style="--h:${g.h};--r:${(k-1)*5}deg"`})).join("")}</span><b>${esc(j.title)}</b><p>${esc(j.sub)}</p><small>${plural(j.ch.length-1,"step")} · ${old.year} → ${j.g.year}</small></button>`}).join("")}</div></section>`:""}
     ${cloneLensSection()}
-    ${shut.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">The humans behind the art</p><h2 class="h2">Studios close — their makers carry the craft forward</h2><p class="sub">When layoffs or closures shut a studio down, its people scatter and seed the next generation of games.</p></div><a class="btn sm" href="#studios">Explore all studios ▸</a></div>
+    ${shut.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">The humans behind the art</p><h2 class="h2">Studios close — their makers carry the craft forward</h2><p class="sub">When layoffs or closures shut a studio down, its people scatter and seed the next generation of games.</p></div><div class="row"><a class="btn sm" href="#world">🌍 Browse by country ▸</a><a class="btn sm" href="#studios">Explore all studios ▸</a></div></div>
       <div class="stgrid">${shut.map(studioCardHTML).join("")}</div></section>`:""}
     <section class="wrap sec"><div class="hgrid">
-      <div class="card"><p class="eyebrow">Today's rabbit hole</p><div class="today">${cover(tg)}<div><h2 class="h2">${esc(tg.title)}</h2><p class="sub" style="margin:2px 0 8px">${tg.year} · ${flag(tg.cc)} ${studioBtn(studio(tg))}</p><p style="margin:0 0 12px;font-size:14px">Built on ${plural(UP[tg.i].length,"earlier game")}, and ${plural(tg.inf,"later game")} trace back to it.</p><button class="btn sm primary" data-act="game" data-id="${tg.id}">Open its family tree</button></div></div></div>
+      <div class="card"><p class="eyebrow">Today's rabbit hole</p><div class="today">${cover(tg)}<div><h2 class="h2">${esc(tg.title)}</h2><p class="sub" style="margin:2px 0 8px">${tg.year} · ${flag(tg.cc)} ${studioBtn(studio(tg))}</p><p style="margin:0 0 12px;font-size:14px">Built on ${plural(UP[tg.i].length,"earlier game")}, and ${plural(tg.inf,"later game")} trace back to it.</p><div class="row"><button class="btn sm primary" data-act="game" data-id="${tg.id}">Family tree</button><button class="btn sm" data-act="slotSpin">🎰 Spin lucky reel</button></div></div></div></div>
       <div class="card"><p class="eyebrow">Six degrees of Pong</p><h2 class="h2">Connect any two games</h2><p class="sub">Find the shortest chain of inspiration between them.</p>
         <div class="connect"><div class="search"><input class="input" id="ca" type="search" placeholder="From" autocomplete="off" aria-label="First game"><div class="results" id="cra" hidden></div></div><div class="search"><input class="input" id="cb" type="search" placeholder="To" autocomplete="off" aria-label="Second game"><div class="results" id="crb" hidden></div></div><button class="btn" data-act="randomPair">Random pair</button></div>
         <div id="cpath"></div></div>
     </div></section>
-    <section class="wrap sec"><div class="hgrid">
+    <section class="wrap sec" id="quizSec"><div class="hgrid">
       <div class="card" id="quiz"></div>
-      <div class="card"><p class="eyebrow">The big picture</p><h2 class="h2">All of game history on one map</h2><p class="sub">Every game in the family tree, placed by year and genre, from the 1950s to today. Tap a game to light up what inspired it and what it inspired.</p>
+      <div class="card"><p class="eyebrow">The big picture · 5 interactive views</p><h2 class="h2">Explore game history from five angles</h2><p class="sub">Switch between <b>Clean Landmarks</b>, <b>Influence Skyline</b>, <b>Genre Rivers</b>, <b>World Regions</b>, and <b>My Constellation</b> — zero hairball clutter.</p>
         <canvas id="mapThumb" width="640" height="220" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:var(--paper);cursor:pointer" data-act="map" aria-label="Open the map"></canvas>
-        <div class="row" style="margin-top:10px"><button class="btn primary" data-act="map">Open the map</button></div></div>
+        <div class="row" style="margin-top:10px"><button class="btn primary" data-act="map">Open Big Picture (5 views)</button><a class="btn" href="#mechanics">Genres & Mechanics ▸</a></div></div>
     </div></section>
     <section class="wrap sec" id="inflSec"><div class="sechead"><div><h2 class="h2">The most influential games</h2><p class="sub">${direct?"Ranked by how many other games they directly inspired. Sequels don't count.":"Ranked by how many later games trace back to them, through any number of steps."}</p></div>
         <span class="seg" role="group" aria-label="Rank by"><button data-act="infMode" data-m="direct" aria-pressed="${direct}">Direct</button><button data-act="infMode" data-m="reach" aria-pressed="${!direct}">All descendants</button></span></div>
@@ -1856,7 +2047,7 @@ function studioCardHTML(st){
   const yrs=st.founded?(st.closed?`${st.founded}–${st.closed}`:`${st.founded}–present`):(st.games.length?`${st.games[0].year}–${st.games[st.games.length-1].year}`:"");
   const mySt=isWorkedStudio(hist,st.id);
   return `<button type="button" class="stcard" data-act="studio" data-st="${esc(st.id)}" ${mySt?`style="border-color:var(--craft)"`:""}>
-    <div class="row" style="justify-content:space-between;width:100%"><b>${flag(st.cc)} ${esc(st.name)}</b><span class="row" style="gap:6px">${mySt?`<span class="pill craft">🛠 Worked here</span>`:""}${statusLabel(st)}</span></div>
+    <div class="row" style="justify-content:space-between;width:100%"><span class="row" style="gap:7px;min-width:0">${studioLogoHTML(st)}<b>${flag(st.cc)} ${esc(st.name)}</b></span><span class="row" style="gap:6px">${mySt?`<span class="pill craft">🛠 Worked here</span>`:""}${statusLabel(st)}</span></div>
     <small class="mono muted">${esc(yrs)}${st.hq?" · "+esc(st.hq):""} · ${plural(st.games.length,"game")}</small>
     ${st.bio?`<p style="margin:2px 0;font-size:13px;color:var(--ink2);line-height:1.4">${esc(st.bio)}</p>`:""}
     ${st.diaspora&&st.diaspora.length?`<small class="muted">Seeded: <b>${esc(st.diaspora.map(d=>d.studio).join(", "))}</b></small>`:""}
@@ -1907,7 +2098,9 @@ function renderStudios(m){
       <button class="chip" data-act="stFilt" data-f="closed" aria-pressed="${f==="closed"}">Shuttered & scattered (${curated.filter(s=>s.status!=="active").length})</button>
       <button class="chip" data-act="stFilt" data-f="active" aria-pressed="${f==="active"}">Active studios (${curated.filter(s=>s.status==="active").length})</button>
       ${charities.length?`<button class="chip" data-act="stFilt" data-f="giveback" aria-pressed="${f==="giveback"}">❤️ Give back (${charities.length})</button>`:""}
-      <button class="chip craftchip" data-act="makerSheet" aria-pressed="${wkN>0||!!(hist.workedStudios&&hist.workedStudios.length)}">🛠 ${wkN?`My dev credits (${wkN})`:"Work in games? Add your studios & credits"}</button>
+      <a class="chip" href="#world">🌍 World map (46 countries)</a>
+      ${isDevMode()?`<button class="chip craftchip" data-act="makerSheet" aria-pressed="${wkN>0||!!(hist.workedStudios&&hist.workedStudios.length)}">🛠 ${wkN?`My dev credits (${wkN})`:"Add dev & studio credits"}</button>`
+        :`<button class="chip" data-act="devModeTog" title="Enable game-industry career & studio credit tools">🛠 Industry / dev mode</button>`}
     </div>
   </section>
   ${f==="pioneers"?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Hall of pioneers · 1958–today</p><h2 class="h2">Designers, coders, composers & trailblazers</h2><p class="sub">Chronological milestones from lab oscilloscopes and ROM cartridges to modern indie breakthroughs.</p></div></div>
@@ -1945,23 +2138,133 @@ function renderStudio(m,id){
   const inSt=isWorkedStudio(hist,st.id);
   const mobyCompany=`https://www.mobygames.com/search/?q=${encodeURIComponent(st.name)}&type=company`;
   m.innerHTML=`<div class="wrap">
-    <nav class="trail"><button data-act="goStudios">Makers</button><span aria-hidden="true">›</span><span class="cur">${esc(st.name)}</span></nav>
+    <nav class="trail"><button type="button" class="navback" data-act="navBack" data-fb="studios">◂ Back</button><button data-act="goStudios">Makers</button><span aria-hidden="true">›</span><span class="cur">${esc(st.name)}</span></nav>
     <section style="padding-block:16px 8px">
       <div class="row" style="gap:10px;margin-bottom:6px"><span class="eyebrow" style="margin:0">Studio & makers</span>${statusLabel(st)}</div>
-      <h1 class="h1" style="margin-bottom:8px">${flag(st.cc)} ${esc(st.name)}</h1>
-      <p class="meta"><span class="mono">${esc(yrs)}</span>${st.hq?`<span>${esc(st.hq)}</span>`:""}${st.cc?`<span class="muted">${esc(countryName(st.cc))}</span>`:""}</p>
+      <div class="row" style="gap:12px;margin-bottom:8px">${studioLogoHTML(st)}<h1 class="h1" style="margin:0">${flag(st.cc)} ${esc(st.name)}</h1></div>
+      <p class="meta"><span class="mono">${esc(yrs)}</span>${st.hq?`<span>${esc(st.hq)}</span>`:""}${st.cc?`<button type="button" class="stbtn" data-act="country" data-cc="${esc(st.cc)}">${esc(countryName(st.cc))} ▸</button>`:""}</p>
       ${st.bio?`<p class="lede" style="margin-top:12px">${esc(st.bio)}</p>`:""}
       <div class="gstats"><span><b>${st.games.length}</b> game${st.games.length===1?"":"s"} in catalog</span><span><b>${st.treeCount}</b> in the family tree</span><span><b>${st.maxInf.toLocaleString()}</b> max descendant games</span></div>
-      <div class="row" style="margin-top:14px"><button type="button" class="btn sm ${inSt?"craft":""}" data-act="toggleWkSt" data-st="${esc(st.id)}">🛠 ${inSt?"Worked here ✓":"I worked here"}</button><a class="btn sm" href="${esc(mobyCompany)}" target="_blank" rel="noopener">Full company credits on MobyGames ↗</a><button class="btn sm ghost" data-act="suggest" data-subj="${esc("Studio note: "+st.name)}">Suggest studio or alumni note</button></div>
+      <div class="row" style="margin-top:14px">${isDevMode()?`<button type="button" class="btn sm ${inSt?"craft":""}" data-act="toggleWkSt" data-st="${esc(st.id)}">🛠 ${inSt?"Worked here ✓":"I worked here"}</button>`:""}<a class="btn sm" href="${esc(mobyCompany)}" target="_blank" rel="noopener">Full company credits on MobyGames ↗</a><button class="btn sm ghost" data-act="suggest" data-subj="${esc("Studio note: "+st.name)}">Suggest studio or alumni note</button></div>
       ${inSt?`<div class="craftcard" style="margin-top:14px;padding:12px 16px"><p style="margin:0;font-size:14px">🛠 <b>${esc(st.name)}</b> is on your Maker Legacy. Tap <b>🛠 I worked on</b> under any game below to mark titles you helped ship, or <button type="button" class="link" data-act="makerSheet">log an unshipped / canceled project</button>.</p></div>`:""}
     </section>
     ${st.makers&&st.makers.length?`<section class="sec"><h2 class="h2">Notable creators & team members</h2><p class="sub">Designers, programmers, writers, artists, and composers connected with ${esc(st.name)}.</p>
       <div class="makers">${st.makers.map(mk=>`<a class="makerbtn" href="https://www.mobygames.com/search/?q=${encodeURIComponent(mk)}&type=developer" target="_blank" rel="noopener">${esc(mk)} <span>↗</span></a>`).join("")}</div></section>`:""}
     ${st.diaspora&&st.diaspora.length?`<section class="sec"><h2 class="h2">Where the makers went next</h2><p class="sub">Studios and games shaped by ${esc(st.name)} alumni.</p>
       <div class="diasgrid">${st.diaspora.map(d=>{const dst=findStudio(d.studio);return `<div class="diascard"><b>${dst?`<button type="button" class="stbtn" data-act="studio" data-st="${esc(dst.id)}">${esc(d.studio)} ▸</button>`:esc(d.studio)}</b><p style="margin:4px 0 0;font-size:13px;color:var(--ink2)">${esc(d.note)}</p></div>`}).join("")}</div></section>`:""}
-    <section class="sec"><h2 class="h2">Games by ${esc(st.name)} (${st.games.length})</h2><p class="sub">In chronological order. Tap any cover for its family tree, or mark titles you worked on.</p>
-      <div class="grid">${st.games.map(g=>tileHTML(g,hist,{act:"game",sub:`${g.year}${g.tree?" · in tree":""}`,wkTog:true})).join("")}</div></section>
+    <section class="sec"><h2 class="h2">Games by ${esc(st.name)} (${st.games.length})</h2><p class="sub">In chronological order. Tap any cover for its family tree, or tap <b>i</b> / title for game info.</p>
+      <div class="grid">${st.games.map(g=>tileHTML(g,hist,{act:"game",sub:`${g.year}${g.tree?" · in tree":""}`,wkTog:true,quickTick:!!hist.birth})).join("")}</div></section>
   </div>${footer()}`;
+}
+
+/* ---------- genres, mechanics that stuck & tabletop/boardgame roots ---------- */
+function renderMechanics(m){
+  const tab=state.mechTab||"mechanics";
+  const mechs=MW.mechanics||[],genMeta=MW.genres||{},bgs=MW.boardgames||[];
+  const selG=state.genreSel&&GEN_BY_K.has(state.genreSel)?GEN_BY_K.get(state.genreSel):GEN[1]||GEN[0];
+  const selInfo=genMeta[selG.k]||{};
+  const genGames=tab==="genres"?G.filter(g=>g.gen.includes(selG.i)).sort((a,b)=>b.pop-a.pop||b.inf-a.inf).slice(0,36):[];
+  m.innerHTML=`<section class="wrap exhero">
+    <p class="eyebrow">Design vocabulary & lineage</p>
+    <h1 class="h1">${tab==="genres"?"How game genres fit & breed":tab==="boardgames"?"From cardboard & dice to pixels":"The mechanics that stuck"}</h1>
+    <p class="lede">${tab==="genres"?"Genres aren't rigid boxes — new ones are born whenever designers cross-pollinate two earlier traditions into something fresh."
+      :tab==="boardgames"?"Long before GPUs, tabletop wargames, pen-and-paper RPGs, and physical deckbuilders invented hit points, fog of war, tech trees, and synergistic combos."
+      :"Players remember worlds, yet single tactile mechanics — a mid-air double jump, fog of war, or recovering lost souls — quietly leap across hundreds of games."}</p>
+    <div class="row" style="margin-top:12px">
+      <button type="button" class="chip" data-act="mechTab" data-t="mechanics" aria-pressed="${tab==="mechanics"}">⚙️ Mechanics that stuck (${mechs.length})</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="genres" aria-pressed="${tab==="genres"}">🧬 Genres & hybrids (${GEN.length})</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="boardgames" aria-pressed="${tab==="boardgames"}">🎲 Tabletop & boardgame roots (${bgs.length})</button>
+      <a class="chip" href="#world">🌍 World map ▸</a>
+    </div>
+  </section>
+  ${tab==="mechanics"?`<section class="wrap sec"><div class="mechgrid">${mechs.map(mc=>{
+      const og=mc.origin&&gameRef(mc.origin);
+      const exs=(mc.games||[]).map(gameRef).filter(Boolean);
+      return `<article class="mechcard">
+        <div class="row" style="justify-content:space-between"><span class="eyebrow" style="margin:0">${esc(mc.icon||"⚙️")} Crystallized c. ${mc.year||""}</span>${og?`<button type="button" class="link" style="font-size:12px" data-act="quickLook" data-id="${og.id}">Spark: ${esc(og.title)} ▸</button>`:""}</div>
+        <h2 class="h2" style="font-size:18px">${esc(mc.name)}</h2>
+        <p style="margin:0;font-size:13.5px;color:var(--ink2)">${esc(mc.summary||"")}</p>
+        ${mc.spread?`<p class="sub" style="margin:0;font-size:12.5px">${esc(mc.spread)}</p>`:""}
+        ${exs.length?`<div class="shelfrow" style="gap:8px;padding-top:6px;margin-top:auto">${exs.map((g,k)=>`${k?`<span class="sarrow" aria-hidden="true" style="margin-top:-24px">▸</span>`:""}<button type="button" class="sbook" style="width:62px" data-act="quickLook" data-id="${g.id}">${cover(g,{showYear:false})}<span class="yr">${g.year}</span><b style="font-size:10.5px">${esc(g.title)}</b></button>`).join("")}</div>`:""}
+      </article>`}).join("")}</div></section>`
+  :tab==="genres"?`<section class="wrap sec">
+      <div class="row" style="gap:6px;margin-bottom:16px">${GEN.map(gn=>`<button type="button" class="chip" data-act="genrePick" data-g="${esc(gn.k)}" aria-pressed="${gn.k===selG.k}"><i class="dot" style="--c:${gn.c}"></i>${esc(gn.label)}</button>`).join("")}</div>
+      <div class="personacard" style="margin-bottom:20px">
+        <div class="row" style="justify-content:space-between"><span class="eyebrow" style="margin:0">Genre spotlight · ${selInfo.born?"Est. "+selInfo.born:"Tradition"}</span>
+          ${(selInfo.parents||[]).length?`<span class="row" style="gap:5px"><span class="sync">Born by combining:</span>${selInfo.parents.map(pk=>{const pg=GEN_BY_K.get(pk);return pg?`<button type="button" class="genpill" data-act="genrePick" data-g="${esc(pg.k)}">${esc(pg.label)}</button>`:""}).join(" + ")}</span>`:`<span class="sync">Foundational root genre</span>`}
+        </div>
+        <h2 class="h1" style="font-size:clamp(1.4rem,1rem + 1.8vw,2.1rem);margin:6px 0">${esc(selG.label)}</h2>
+        ${selInfo.tagline?`<p style="margin:0 0 6px;font-weight:600;color:var(--accent)">${esc(selInfo.tagline)}</p>`:""}
+        <p style="margin:0;max-width:72ch;color:var(--ink2)">${esc(selInfo.explain||"Explore the landmark games and lineages within this genre below.")}</p>
+        ${(()=>{const kids=Object.entries(genMeta).filter(([,v])=>(v.parents||[]).includes(selG.k)).map(([k])=>GEN_BY_K.get(k)).filter(Boolean);
+          return kids.length?`<div class="row" style="margin-top:10px;gap:6px"><span class="sync">Helped breed later genres:</span>${kids.map(cg=>`<button type="button" class="genpill" data-act="genrePick" data-g="${esc(cg.k)}">→ ${esc(cg.label)}</button>`).join("")}</div>`:""})()}
+      </div>
+      <h3 class="h2" style="margin-bottom:10px">Top & foundational ${esc(selG.label)} games (${genGames.length})</h3>
+      <div class="grid">${genGames.map(g=>tileHTML(g,hist,{act:"quickLook",quickTick:!!hist.birth})).join("")}</div>
+    </section>`
+  :`<section class="wrap sec">
+      <div class="mechgrid">${bgs.map(b=>{const g=gameRef(b.id);if(!g)return "";const hs=(b.heirs||[]).map(gameRef).filter(Boolean);
+        return `<article class="mechcard">
+          <div class="row" style="justify-content:space-between"><span class="pill">${esc(b.kind||"Tabletop")} · ${g.year}</span><button type="button" class="link" style="font-size:12px" data-act="game" data-id="${g.id}">Open ${g.inf.toLocaleString()}-game tree ▸</button></div>
+          <div class="today" style="grid-template-columns:68px minmax(0,1fr);gap:12px">${cover(g,{showYear:false})}<div><h3 class="h2" style="font-size:17px">${esc(g.title)}</h3><small class="muted">${esc(g.dev||"")}</small></div></div>
+          <p style="margin:2px 0;font-size:13.5px;color:var(--ink2)">${esc(b.bridge||g.note||"")}</p>
+          ${hs.length?`<div style="margin-top:auto"><span class="sync" style="display:block;margin-bottom:4px">Digital heirs it shaped:</span><div class="row" style="gap:5px">${hs.map(hg=>`<button type="button" class="chip" style="padding:3px 8px;font-size:11.5px" data-act="quickLook" data-id="${hg.id}">${esc(hg.title)} (${hg.year})</button>`).join("")}</div></div>`:""}
+        </article>`}).join("")}</div>
+    </section>`}
+  ${footer()}`;
+}
+
+/* ---------- world map & country explorer ---------- */
+const CC_GEO={US:[39,-98],CA:[56,-106],MX:[23,-102],BR:[-14,-52],AR:[-34,-64],CL:[-33,-71],UY:[-33,-56],CO:[4,-73],
+  GB:[54,-2],IE:[53,-8],FR:[46,2],DE:[51,10],NL:[52.3,5.3],BE:[50.8,4.4],ES:[40,-4],PT:[39.5,-8],IT:[42,12.5],CH:[46.8,8.2],AT:[47.5,14.5],
+  SE:[62,15],FI:[64,26],NO:[61,8.5],DK:[56,10],IS:[65,-18],EE:[58.6,25],PL:[52,19],CZ:[49.8,15.5],SK:[48.7,19.7],HU:[47.2,19.5],HR:[45.1,15.5],RO:[45.9,25],BG:[42.7,25.5],GR:[39,22],
+  UA:[49,31],BY:[53.7,28],RU:[58,50],TR:[39,35],CY:[35,33],IL:[31.5,34.8],ZA:[-30,25],IN:[21,78],
+  CN:[35,104],HK:[22.3,114.2],TW:[23.7,121],KR:[36.5,127.8],JP:[36.2,138.2],SG:[1.3,103.8],VN:[16,108],ID:[-2,118],AU:[-25,134],NZ:[-41,174]};
+function renderWorld(m){
+  const hasMine=hist.birth&&entries(hist).length>=1;
+  const mineOnly=state.worldMine&&hasMine;
+  const srcGames=mineOnly?entries(hist).map(x=>x.g).filter(Boolean):G;
+  const byCC=new Map();
+  srcGames.forEach(g=>{if(!g.cc)return;if(!byCC.has(g.cc))byCC.set(g.cc,[]);byCC.get(g.cc).push(g)});
+  const ranked=[...byCC.entries()].sort((a,b)=>b[1].length-a[1].length);
+  const selCC=(state.worldCC&&byCC.has(state.worldCC))?state.worldCC:(ranked[0]?ranked[0][0]:"FI");
+  const ccGames=(byCC.get(selCC)||[]).slice().sort((a,b)=>b.pop-a.pop||b.inf-a.inf||a.year-b.year);
+  const ccStudios=[...STUDIOS.values()].filter(s=>s.cc===selCC&&s.games.length>=1).sort((a,b)=>(b.curated-a.curated)||(b.games.length-a.games.length)).slice(0,18);
+  const ccPio=(CULT.pioneers||[]).filter(p=>p.cc===selCC);
+  const maxCnt=Math.max(1,ranked[0]?ranked[0][1].length:1);
+  const proj=([lat,lon])=>[((lon+180)/360*900).toFixed(1),((90-lat)/180*420).toFixed(1)];
+  /* stylized simplified continent silhouettes */
+  const land=`<g fill="var(--line)" opacity=".65">
+    <path d="M55,65 L235,55 L285,115 L240,195 L185,215 L145,180 L85,140 Z"/>
+    <path d="M225,225 L315,245 L335,315 L285,395 L250,385 L235,295 Z"/>
+    <path d="M415,62 L525,52 L555,105 L530,158 L425,162 L408,120 Z"/>
+    <path d="M425,175 L545,175 L575,255 L525,355 L468,350 L435,245 Z"/>
+    <path d="M545,62 L795,68 L825,155 L755,225 L625,215 L555,155 Z"/>
+    <path d="M775,132 L798,136 L794,172 L772,168 Z"/>
+    <path d="M715,285 L825,285 L835,358 L735,365 Z"/>
+  </g>`;
+  const dots=ranked.map(([cc,arr])=>{const ll=CC_GEO[cc];if(!ll)return "";const [cx,cy]=proj(ll),r=(4+Math.pow(arr.length/maxCnt,0.38)*18).toFixed(1),isS=cc===selCC;
+    return `<circle class="ccdot" data-act="worldPick" data-cc="${esc(cc)}" cx="${cx}" cy="${cy}" r="${r}" fill="${isS?"var(--love)":"var(--accent)"}" fill-opacity="${isS?.92:.68}" stroke="var(--paper)" stroke-width="${isS?2.5:1.2}"><title>${esc(countryName(cc))}: ${arr.length} games</title></circle>
+      ${arr.length>=20||isS?`<text x="${cx}" y="${(+cy-r-4).toFixed(1)}" text-anchor="middle" font-size="10" font-weight="700" fill="var(--ink)" pointer-events="none">${esc(cc)}</text>`:""}`}).join("");
+  m.innerHTML=`<section class="wrap exhero">
+    <div class="row" style="justify-content:space-between;max-width:100%">
+      <div><p class="eyebrow">Global craft · ${ranked.length} countries</p><h1 class="h1">World map of games</h1></div>
+      ${hasMine?`<span class="seg" role="group" aria-label="Map source"><button data-act="worldMode" data-m="all" aria-pressed="${!mineOnly}">All catalog (${G.length.toLocaleString()})</button><button data-act="worldMode" data-m="mine" aria-pressed="${mineOnly}">My timeline (${entries(hist).length})</button></span>`:""}
+    </div>
+    <p class="lede">Great games come from bedrooms and studios all over the planet — from Kyoto, Guildford, and Austin to Stockholm, Helsinki, Warsaw, and Melbourne. Tap any beacon or country below (try <b>Finland 🇫🇮</b> or <b>Sweden 🇸🇪</b>!).</p>
+  </section>
+  <section class="wrap"><div class="wmapbox">
+    <svg class="wmapsvg" viewBox="0 0 900 420" role="img" aria-label="Interactive world map of video game origins">${land}${dots}</svg>
+    <div class="pickstrip" style="margin-top:10px">${ranked.map(([cc,arr])=>`<button type="button" class="chip" data-act="worldPick" data-cc="${esc(cc)}" aria-pressed="${cc===selCC}">${flag(cc)} ${esc(countryName(cc))} <span class="mono muted">${arr.length}</span></button>`).join("")}</div>
+  </div></section>
+  <section class="wrap sec" id="ccDetail">
+    <div class="sechead"><div><p class="eyebrow">Country spotlight</p><h2 class="h2">${flag(selCC)} ${esc(countryName(selCC))} · ${plural(ccGames.length,"game")}${mineOnly?" in your timeline":""}</h2></div></div>
+    ${ccStudios.length?`<h3 class="h3" style="margin-bottom:8px">Studios from ${esc(countryName(selCC))}</h3><div class="makers" style="margin-bottom:16px">${ccStudios.map(s=>`<button type="button" class="makerbtn" data-act="studio" data-st="${esc(s.id)}">${studioLogoHTML(s)} ${esc(s.name)}<span>${s.games.length}</span></button>`).join("")}</div>`:""}
+    ${ccPio.length?`<h3 class="h3" style="margin-bottom:8px">Pioneers from ${esc(countryName(selCC))}</h3><div class="piogrid" style="margin-bottom:18px">${ccPio.map(pioneerCardHTML).join("")}</div>`:""}
+    <h3 class="h3" style="margin-bottom:10px">Games made in ${esc(countryName(selCC))}</h3>
+    <div class="grid">${ccGames.slice(0,48).map(g=>tileHTML(g,hist,{act:"quickLook",quickTick:!!hist.birth})).join("")}</div>
+  </section>
+  ${footer()}`;
 }
 function pathHTML(A,B){
   const p=connectPath(A.i,B.i);
@@ -1974,10 +2277,40 @@ function pathHTML(A,B){
   return h+`</div>`;
 }
 
-/* ---------- quiz: which game inspired it? ---------- */
+/* ---------- arcade trivia mini-games (5 modes) ---------- */
 let quiz=null,quizStreak=0,quizBest=store.get("ib2-best",0);
+const QUIZ_MODES=[["lineage","⑂ Lineage"],["year","📅 Year"],["studio","🏢 Studio"],["country","🌍 Country"],["system","🕹️ System"]];
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 function newQuiz(){
+  const mode=state.quizMode||"lineage";
+  if(mode==="year"){
+    const pool=G.filter(g=>g.pop>=4&&g.year>=1978&&g.year<=NOW&&playable(g));
+    const g=pool[Math.floor(Math.random()*pool.length)];if(!g)return null;
+    const yrs=new Set([g.year]);
+    for(const d of shuffle([-6,-4,-3,-2,2,3,4,6,8])){const y=g.year+d;if(y>=1975&&y<=NOW&&yrs.size<4)yrs.add(y)}
+    return {mode,g,ans:String(g.year),opts:shuffle([...yrs]).sort((a,b)=>a-b).map(y=>({k:String(y),label:String(y)})),picked:null,fact:`${g.title} launched in ${g.year} from ${studio(g)||"its team"}.`};
+  }
+  if(mode==="studio"){
+    const pool=G.filter(g=>g.pop>=4&&studio(g)&&playable(g));
+    const g=pool[Math.floor(Math.random()*pool.length)],ans=studio(g);
+    const other=[...new Set(pool.map(studio).filter(s=>s&&s!==ans))];
+    const opts=shuffle([ans,...shuffle(other).slice(0,3)]).map(s=>({k:s,label:s}));
+    return {mode,g,ans,opts,picked:null,fact:`${g.title} (${g.year}) was crafted by ${g.dev}.`};
+  }
+  if(mode==="country"){
+    const pool=G.filter(g=>g.pop>=3&&g.cc&&playable(g));
+    const g=pool[Math.floor(Math.random()*pool.length)],ans=g.cc;
+    const other=[...new Set(pool.map(x=>x.cc).filter(c=>c&&c!==ans))];
+    const opts=shuffle([ans,...shuffle(other).slice(0,3)]).map(c=>({k:c,label:`${flagEmoji(c)} ${countryName(c)}`}));
+    return {mode,g,ans,opts,picked:null,fact:`${g.title} (${g.year}) was made in ${countryName(ans)} by ${studio(g)}.`};
+  }
+  if(mode==="system"){
+    const pool=G.filter(g=>g.pop>=3&&sysOfGame(g).length>=1&&sysOfGame(g).length<=3&&playable(g));
+    const g=pool[Math.floor(Math.random()*pool.length)],ps=sysOfGame(g),ans=ps[0];
+    const other=SYSTEMS.map(s=>s[1]).filter(s=>!ps.includes(s));
+    const opts=shuffle([ans,...shuffle(other).slice(0,3)]).map(s=>({k:s,label:s}));
+    return {mode,g,ans,opts,picked:null,fact:`${g.title} (${g.year}) launched on ${ps.join(", ")}.`};
+  }
   const pool=L.filter(l=>(l.tier==="dev"||l.tier==="team"||l.tier==="critic")&&G[l.to].pop>=3&&G[l.from].pop>=3&&G[l.to].year-G[l.from].year>=1);
   if(!pool.length)return null;
   for(let tries=0;tries<20;tries++){
@@ -1987,93 +2320,152 @@ function newQuiz(){
     const cand=TREE.filter(g=>!near.has(g.i)&&g.year<child.year&&g.year>=child.year-25&&g.pop>=3);
     const same=shuffle(cand.filter(g=>g.gen.some(x=>fam.has(x)))),other=shuffle(cand.filter(g=>!g.gen.some(x=>fam.has(x))));
     const decoys=[...same.slice(0,2),...other].slice(0,3);
-    if(decoys.length===3)return {l,child,parent,opts:shuffle([parent,...decoys]),picked:null};
+    if(decoys.length===3)return {mode:"lineage",l,child,parent,opts:shuffle([parent,...decoys]),picked:null};
   }
   return null;
 }
 function renderQuiz(){
-  const el=$("#quiz");if(!el)return;if(!quiz)quiz=newQuiz();if(!quiz){el.innerHTML="";return}
+  const el=$("#quiz");if(!el)return;if(!quiz||quiz.mode!==(state.quizMode||"lineage"))quiz=newQuiz();if(!quiz){el.innerHTML="";return}
+  const tabs=`<div class="pickstrip" style="padding-top:0;margin-bottom:8px">${QUIZ_MODES.map(([k,lbl])=>`<button type="button" class="chip" style="padding:3px 9px;font-size:12px" data-act="quizMode" data-m="${k}" aria-pressed="${(state.quizMode||"lineage")===k}">${lbl}</button>`).join("")}</div>`;
+  if(quiz.mode!=="lineage"){
+    const {g,ans,opts,picked,fact,mode}=quiz;
+    const qTitle=mode==="year"?`What year did ${g.title} launch?`:mode==="studio"?`Which studio built ${g.title}?`:mode==="country"?`Where was ${g.title} made?`:`Which system did ${g.title} launch on?`;
+    el.innerHTML=`<div class="sechead" style="margin:0"><div><p class="eyebrow">Arcade trivia</p><h2 class="h2">${esc(qTitle)}</h2></div><span class="streak">${quizStreak?`${quizStreak} in a row`:""}${quizBest?` · best ${quizBest}`:""}</span></div>
+      ${tabs}
+      <div class="today" style="grid-template-columns:76px minmax(0,1fr);gap:14px;margin-top:8px">${cover(g,{showYear:mode!=="year"})}
+        <div class="row" style="gap:8px">${opts.map(o=>`<button type="button" class="btn sm${picked!=null?(o.k===ans?" craft":o.k===picked?" love":""):""}" data-act="quizPickVal" data-v="${esc(o.k)}" ${picked!=null?"disabled":""}>${esc(o.label)}</button>`).join("")}</div>
+      </div>
+      ${picked!=null?`<div class="qres" style="--c:var(${picked===ans?"--t-mech":"--love"})"><p style="margin:0 0 4px;font-weight:700">${picked===ans?"Spot on!":"Close — "+esc(opts.find(o=>o.k===ans)?.label||ans)}</p><p class="sub" style="margin:0">${esc(fact)}</p></div>
+        <div class="row" style="margin-top:12px"><button class="btn primary" data-act="quizNext">Next question</button><button class="btn wrap" data-act="quickLook" data-id="${g.id}">Inspect ${esc(g.title)}</button></div>`:""}`;
+    return;
+  }
   const {child,parent,opts,picked,l}=quiz,t=TIERS[l.t];
-  el.innerHTML=`<div class="sechead" style="margin:0"><div><p class="eyebrow">Play</p><h2 class="h2">Which game inspired ${esc(child.title)}?</h2></div><span class="streak">${quizStreak?`${quizStreak} in a row`:""}${quizBest?` · best ${quizBest}`:""}</span></div>
+  el.innerHTML=`<div class="sechead" style="margin:0"><div><p class="eyebrow">Arcade trivia</p><h2 class="h2">Which game inspired ${esc(child.title)}?</h2></div><span class="streak">${quizStreak?`${quizStreak} in a row`:""}${quizBest?` · best ${quizBest}`:""}</span></div>
+    ${tabs}
     <p class="sub" style="margin:0">${esc(child.title)} came out in ${child.year}. One of these shaped it.</p>
     <div class="quizopts">${opts.map(g=>`<button class="qopt${picked!=null?(g===parent?" right":g.i===picked?" wrong":""):""}" data-act="quizPick" data-i="${g.i}" ${picked!=null?"disabled":""}>${cover(g)}<b>${esc(g.title)}</b><small>${g.year}</small></button>`).join("")}</div>
     ${picked!=null?`<div class="qres" style="--c:var(${t.c})"><p style="margin:0 0 4px;font-weight:700">${picked===parent.i?"Right.":"Not quite. It was "+esc(parent.title)+"."}</p><dl class="ta" style="margin:4px 0"><dt>Took</dt><dd>${esc(l.took)}</dd><dt>Added</dt><dd class="add">${esc(l.added)}</dd></dl><span class="tier">${t.label}</span></div>
       <div class="row" style="margin-top:12px"><button class="btn primary" data-act="quizNext">Next question</button><button class="btn wrap" data-act="game" data-id="${child.id}">Open ${esc(child.title)}</button></div>`:""}`;
 }
 
-/* ---------- the big picture: every game on one canvas ---------- */
+/* ---------- the big picture: 5 clean views of game history ---------- */
 const LANES=[["Roots",["roots"]],["Arcade",["arcade","shmup"]],["Platform",["platformer","metroidvania"]],["Adventure & open world",["action-adventure","open-world"]],["Shooters",["fps","shooter","battle-royale"]],["Stealth & horror",["immersive-sim","horror"]],["Role-playing",["rpg","jrpg","arpg","mmo"]],["Roguelike",["roguelike"]],["Strategy",["strategy","moba"]],["Sim & survival",["sim","survival"]],["Story & puzzle",["adventure","puzzle"]],["Fighting",["fighting","beat-em-up"]],["Racing & sports",["racing","sports"]],["Party & cards",["party","card"]],["Space",["space"]]];
+const REG_LANES=[["North America",c=>c==="US"||c==="CA"||c==="MX"],["Japan",c=>c==="JP"],["UK & Ireland",c=>c==="GB"||c==="IE"],["Nordics (SE·FI·DK·NO)",c=>["SE","FI","DK","NO","IS"].includes(c)],["W. & C. Europe",c=>["FR","DE","NL","BE","ES","PT","IT","CH","AT"].includes(c)],["E. Europe",c=>["PL","CZ","SK","HU","UA","RU","BY","EE","HR","RO","BG"].includes(c)],["Asia-Pacific & Global",()=>true]];
 const laneOfGenre={};LANES.forEach(([,gs],i)=>gs.forEach(k=>laneOfGenre[k]=i));
 const LANE_C=LANES.map((_,i)=>`hsl(${Math.round(i*360/LANES.length+200)%360} 62% 58%)`);
-/* x scale: a narrow zone for the tabletop ancestors (1800–1949), a wider one for 1950–74, the rest for 1975 on */
 const yearX=y=>y<1950?Math.max(0,(y-1800)/150)*0.06:y<1975?0.06+(y-1950)/25*0.10:0.16+(y-1975)/(NOW+1-1975)*0.84;
 let MAPN=null;
+function regLaneOf(cc){const idx=REG_LANES.findIndex(([,fn])=>fn(cc||""));return idx>=0?idx:6}
 function mapNodes(){
   if(MAPN)return MAPN;
-  MAPN=TREE.map(g=>{const gen=genreOf(g),lane=gen?laneOfGenre[gen.k]??1:1;const j1=(hueOf(g.id+"x")%1000)/1000,j2=(hueOf(g.id+"y")%1000)/1000;
-    return {g,lane,u:Math.min(.995,Math.max(.002,yearX(g.year)+(j1-.5)*0.006)),v:(lane+0.12+j2*0.76)/LANES.length,r:2.2+Math.min(10,Math.sqrt(g.inf)*0.55)}});
+  MAPN=TREE.map(g=>{const gen=genreOf(g),lane=gen?laneOfGenre[gen.k]??1:1,rlane=regLaneOf(g.cc);const j1=(hueOf(g.id+"x")%1000)/1000,j2=(hueOf(g.id+"y")%1000)/1000;
+    const skyV=0.92-Math.min(0.85,Math.log10(g.inf+1)/Math.log10(1100)*0.85)+(j2-.5)*0.015;
+    return {g,lane,rlane,u:Math.min(.995,Math.max(.002,yearX(g.year)+(j1-.5)*0.006)),v:(lane+0.12+j2*0.76)/LANES.length,wv:(rlane+0.15+j2*0.70)/REG_LANES.length,sv:Math.max(.04,Math.min(.95,skyV)),r:2.2+Math.min(10,Math.sqrt(g.inf)*0.55)}});
   return MAPN;
 }
 function drawMapThumb(c){
-  const x=c.getContext("2d"),W=c.width,H=c.height,ns=mapNodes(),pos=new Map(ns.map(n=>[n.g.i,n]));
-  x.clearRect(0,0,W,H);x.globalAlpha=.10;x.lineWidth=1;
-  L.forEach(l=>{const a=pos.get(l.from),b=pos.get(l.to);if(!a||!b)return;x.strokeStyle=LANE_C[a.lane];x.beginPath();x.moveTo(a.u*W,a.v*H);x.quadraticCurveTo((a.u+b.u)/2*W,Math.min(a.v,b.v)*H-12,b.u*W,b.v*H);x.stroke()});
-  x.globalAlpha=.9;ns.forEach(n=>{x.fillStyle=LANE_C[n.lane];x.beginPath();x.arc(n.u*W,n.v*H,Math.max(1.2,n.r*.45),0,7);x.fill()});x.globalAlpha=1;
+  const x=c.getContext("2d"),W=c.width,H=c.height,ns=mapNodes().filter(n=>n.g.pop>=4||n.g.inf>=35),pos=new Map(ns.map(n=>[n.g.i,n]));
+  x.clearRect(0,0,W,H);x.globalAlpha=.18;x.lineWidth=1;
+  L.forEach(l=>{if(l.tier!=="dev"&&l.tier!=="team")return;const a=pos.get(l.from),b=pos.get(l.to);if(!a||!b)return;x.strokeStyle=LANE_C[a.lane];x.beginPath();x.moveTo(a.u*W,a.v*H);x.quadraticCurveTo((a.u+b.u)/2*W,Math.min(a.v,b.v)*H-10,b.u*W,b.v*H);x.stroke()});
+  x.globalAlpha=.95;ns.forEach(n=>{x.fillStyle=LANE_C[n.lane];x.beginPath();x.arc(n.u*W,n.v*H,Math.max(1.8,n.r*.52),0,7);x.fill()});x.globalAlpha=1;
 }
 let MAP=null;
+const MAP_VIEWS=[["pillars","🌟 Landmarks (clean)"],["skyline","🏔️ Influence skyline"],["rivers","🌊 Genre rivers"],["world","🌍 Geography"],["mine","❤️ My constellation"],["all","All 2,005"]];
 function openMap(){
-  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Map of game history"><div class="wrap ovhead"><div><h2>The big picture</h2><p class="sync" style="margin:2px 0 0">${TREE.length.toLocaleString()} games, ${L.length.toLocaleString()} links. Drag to move, scroll or use + and − to zoom, tap a game to light up its family.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  const md=state.mapMode||"pillars";
+  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Map of game history"><div class="wrap ovhead" style="flex-wrap:wrap;gap:8px">
+      <div class="row" style="gap:10px"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><div><h2>The big picture</h2><p class="sync" style="margin:1px 0 0" id="mapSub">Drag to pan, scroll to zoom, tap any game to trace its family.</p></div></div>
+      <div class="row" style="gap:5px">
+        ${MAP_VIEWS.map(([k,lbl])=>`<button type="button" class="chip" style="padding:4px 9px;font-size:12px" data-act="mapView" data-m="${k}" aria-pressed="${md===k}">${lbl}</button>`).join("")}
+        <button type="button" class="chip" style="padding:4px 9px;font-size:12px" data-act="mapStrongTog" aria-pressed="${!!state.mapStrong}">Links: ${state.mapStrong?"Primary":"All"}</button>
+        <button class="x" data-act="closeLayer" aria-label="Close">×</button>
+      </div>
+    </div>
     <div class="mapwrap" id="mapwrap"><canvas id="mapc"></canvas><div class="maptip" id="maptip" hidden></div>
       <div class="mapctl"><button class="btn" data-act="mapZoom" data-z="1.4" aria-label="Zoom in">+</button><button class="btn" data-act="mapZoom" data-z="0.7" aria-label="Zoom out">−</button><button class="btn" data-act="mapReset" aria-label="Reset view" style="font-size:13px">⤢</button></div>
       <div id="mapcard"></div></div></div>`;
   const wrap=$("#mapwrap"),c=$("#mapc");
-  MAP={k:1,tx:0,ty:0,sel:null,hover:null,W:0,H:0,c,wrap,LW:110};
+  MAP={k:1,tx:0,ty:0,sel:null,hover:null,W:0,H:0,c,wrap,LW:132};
   const resize=()=>{const r=wrap.getBoundingClientRect(),dpr=Math.min(2,window.devicePixelRatio||1);MAP.W=r.width;MAP.H=r.height;c.width=r.width*dpr;c.height=r.height*dpr;MAP.dpr=dpr;drawMap()};
   MAP.resize=resize;resize();addEventListener("resize",resize);
   let drag=null,moved=false;
   c.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,tx:MAP.tx,ty:MAP.ty};moved=false;c.setPointerCapture(e.pointerId);wrap.classList.add("drag")});
   c.addEventListener("pointermove",e=>{if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)moved=true;MAP.tx=drag.tx+dx;MAP.ty=drag.ty+dy;drawMap();return}
-    const n=mapHit(e);if(n!==MAP.hover){MAP.hover=n;drawMap()}const tip=$("#maptip");if(n){const r=wrap.getBoundingClientRect();tip.hidden=false;tip.innerHTML=`<b>${esc(n.g.title)}</b>${n.g.year} · ${esc(studio(n.g))}`;tip.style.left=Math.min(r.width-240,e.clientX-r.left+12)+"px";tip.style.top=(e.clientY-r.top+12)+"px"}else tip.hidden=true});
+    const n=mapHit(e);if(n!==MAP.hover){MAP.hover=n;drawMap()}const tip=$("#maptip");if(n){const r=wrap.getBoundingClientRect();tip.hidden=false;tip.innerHTML=`<b>${esc(n.g.title)}</b>${n.g.year} · ${esc(studio(n.g))} · ${n.g.inf} descendants`;tip.style.left=Math.min(r.width-240,e.clientX-r.left+12)+"px";tip.style.top=(e.clientY-r.top+12)+"px"}else tip.hidden=true});
   c.addEventListener("pointerup",e=>{wrap.classList.remove("drag");if(drag&&!moved){const n=mapHit(e);MAP.sel=n?n.g.i:null;drawMap();mapCard()}drag=null});
   c.addEventListener("pointerleave",()=>{$("#maptip").hidden=true;MAP.hover=null});
   c.addEventListener("wheel",e=>{e.preventDefault();const r=c.getBoundingClientRect();mapZoomAt(e.deltaY<0?1.18:1/1.18,e.clientX-r.left,e.clientY-r.top)},{passive:false});
 }
 const mapX0=()=>MAP.LW+18,mapWW=()=>MAP.W-MAP.LW-36;
-function mapXY(n){const H=MAP.H-34;return {x:mapX0()+(n.u*mapWW())*MAP.k+MAP.tx,y:30+(n.v*H)*MAP.k+MAP.ty}}
-function mapHit(e){const r=MAP.c.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let best=null,bd=1e9;
-  for(const n of mapNodes()){const p=mapXY(n),d=(p.x-px)**2+(p.y-py)**2,rr=Math.max(8,n.r*Math.sqrt(MAP.k)+4);if(d<rr*rr&&d<bd){bd=d;best=n}}return best}
+function nodeV(n,md){return md==="skyline"?n.sv:md==="world"?n.wv:n.v}
+function nodeVisible(n,md,mySet,myAnc,sel,up,down){
+  if(sel!=null&&(n.g.i===sel||up.has(n.g.i)||down.has(n.g.i)))return true;
+  if(md==="pillars")return n.g.pop>=4||n.g.inf>=35;
+  if(md==="rivers")return n.g.pop>=4||n.g.inf>=45;
+  if(md==="mine")return mySet.size?(mySet.has(n.g.i)||myAnc.has(n.g.i)):(n.g.pop>=4||n.g.inf>=35);
+  return true;
+}
+function mapXY(n){const H=MAP.H-34,v=nodeV(n,state.mapMode||"pillars");return {x:mapX0()+(n.u*mapWW())*MAP.k+MAP.tx,y:30+(v*H)*MAP.k+MAP.ty}}
+function mapHit(e){const r=MAP.c.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top,md=state.mapMode||"pillars";
+  const mySet=new Set(entries(hist).filter(x=>x.g).map(x=>x.g.i)),myAnc=new Set();if(md==="mine")mySet.forEach(i=>ancestors(i).forEach(a=>myAnc.add(a)));
+  const sel=MAP.sel,up=new Set(),down=new Set();if(sel!=null){ancestors(sel).forEach(i=>up.add(i));const st=[sel],sn=new Set([sel]);while(st.length){const v=st.pop();for(const l of DOWN[v])if(!sn.has(l.to)){sn.add(l.to);down.add(l.to);st.push(l.to)}}}
+  let best=null,bd=1e9;
+  for(const n of mapNodes()){if(!nodeVisible(n,md,mySet,myAnc,sel,up,down))continue;const p=mapXY(n),d=(p.x-px)**2+(p.y-py)**2,rr=Math.max(8,n.r*Math.sqrt(MAP.k)+4);if(d<rr*rr&&d<bd){bd=d;best=n}}return best}
 function mapZoomAt(f,px,py){const k2=Math.max(.6,Math.min(14,MAP.k*f));f=k2/MAP.k;const x0=mapX0();MAP.tx=px-(px-MAP.tx-x0)*f-x0;MAP.ty=py-(py-MAP.ty-30)*f-30;MAP.k=k2;drawMap()}
 function drawMap(){
-  if(!MAP)return;const {c,W,H,dpr,k}=MAP,x=c.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);
-  const ns=mapNodes(),pos=new Map(ns.map(n=>[n.g.i,n])),ink=cssVar("--ink"),muted=cssVar("--muted"),line=cssVar("--line");
+  if(!MAP)return;const {c,W,H,dpr,k}=MAP,x=c.getContext("2d"),md=state.mapMode||"pillars";x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);
+  const ns=mapNodes(),ink=cssVar("--ink"),muted=cssVar("--muted"),line=cssVar("--line"),love=cssVar("--love");
+  const mySet=new Set(entries(hist).filter(x=>x.g).map(x=>x.g.i)),myAnc=new Set();if(md==="mine")mySet.forEach(i=>ancestors(i).forEach(a=>myAnc.add(a)));
   const sel=MAP.sel,up=new Set(),down=new Set();
-  if(sel!=null){const a=ancestors(sel);a.forEach(i=>up.add(i));const st=[sel],seen=new Set([sel]);while(st.length){const v=st.pop();for(const l of DOWN[v])if(!seen.has(l.to)){seen.add(l.to);down.add(l.to);st.push(l.to)}}}
-  const lh=(H-34)/LANES.length*k;
-  LANES.forEach(([name],i)=>{const y=30+i*lh+MAP.ty;if(i%2===0){x.fillStyle=line;x.globalAlpha=.25;x.fillRect(0,y,W,lh);x.globalAlpha=1}});
-  for(let yr=1950;yr<=NOW;yr+=5){if(yr<1975&&((k<2&&yr!==1950&&yr!==1970)||(yr%10&&k<4)))continue;const px=mapX0()+yearX(yr)*mapWW()*k+MAP.tx;if(px<MAP.LW+12||px>W-12)continue;x.strokeStyle=line;x.globalAlpha=.6;x.beginPath();x.moveTo(px,26);x.lineTo(px,H);x.stroke();x.globalAlpha=1;x.fillStyle=muted;x.font="500 11px IBM Plex Mono, monospace";x.textAlign="center";x.fillText(String(yr),px,18)}
+  if(sel!=null){ancestors(sel).forEach(i=>up.add(i));const st=[sel],seen=new Set([sel]);while(st.length){const v=st.pop();for(const l of DOWN[v])if(!seen.has(l.to)){seen.add(l.to);down.add(l.to);st.push(l.to)}}}
+  const vis=ns.filter(n=>nodeVisible(n,md,mySet,myAnc,sel,up,down)),pos=new Map(vis.map(n=>[n.g.i,n]));
+  const rows=md==="world"?REG_LANES:LANES,lh=(H-34)/rows.length*k;
+  if(md!=="skyline"){rows.forEach(([,],i)=>{const y=30+i*lh+MAP.ty;if(i%2===0){x.fillStyle=line;x.globalAlpha=.22;x.fillRect(0,y,W,lh);x.globalAlpha=1}})}
+  else{[1000,250,50,10,1].forEach(val=>{const sv=0.92-Math.min(0.85,Math.log10(val+1)/Math.log10(1100)*0.85),py=30+sv*(H-34)*k+MAP.ty;if(py<28||py>H)return;x.strokeStyle=line;x.globalAlpha=.55;x.beginPath();x.moveTo(MAP.LW,py);x.lineTo(W,py);x.stroke();x.globalAlpha=1})}
+  /* genre river bands */
+  if(md==="rivers"){
+    for(let li=0;li<LANES.length;li++){
+      const cyBase=30+(li+0.5)*lh+MAP.ty;x.fillStyle=LANE_C[li];x.globalAlpha=.20;x.beginPath();
+      const pts=[];for(let yr=1970;yr<=NOW;yr+=4){const cnt=G.filter(g=>g.year>=yr-2&&g.year<=yr+2&&g.gen.length&&(laneOfGenre[GEN[g.gen[0]].k]===li)).length;
+        pts.push([mapX0()+yearX(yr)*mapWW()*k+MAP.tx,Math.min(lh*0.46,2+cnt*0.55*k)])}
+      pts.forEach(([px,hw],idx)=>idx?x.lineTo(px,cyBase-hw):x.moveTo(px,cyBase-hw));
+      for(let idx=pts.length-1;idx>=0;idx--)x.lineTo(pts[idx][0],cyBase+pts[idx][1]);
+      x.closePath();x.fill();x.globalAlpha=1;
+    }
+  }
+  for(let yr=1950;yr<=NOW;yr+=5){if(yr<1975&&((k<2&&yr!==1950&&yr!==1970)||(yr%10&&k<4)))continue;const px=mapX0()+yearX(yr)*mapWW()*k+MAP.tx;if(px<MAP.LW+12||px>W-12)continue;x.strokeStyle=line;x.globalAlpha=.55;x.beginPath();x.moveTo(px,26);x.lineTo(px,H);x.stroke();x.globalAlpha=1;x.fillStyle=muted;x.font="500 11px IBM Plex Mono, monospace";x.textAlign="center";x.fillText(String(yr),px,18)}
   {const px=mapX0()+yearX(1870)*mapWW()*k+MAP.tx;if(px>MAP.LW+12&&px<W-12){x.fillStyle=muted;x.font="500 11px IBM Plex Mono, monospace";x.textAlign="center";x.fillText("1800s",px,18)}}
-  x.textAlign="left";
-  x.lineWidth=1;
-  for(const l of L){const a=pos.get(l.from),b=pos.get(l.to);if(!a||!b)continue;
-    let on=sel==null?.08:((up.has(l.from)&&(up.has(l.to)||l.to===sel))?.85:((l.from===sel||down.has(l.from))&&down.has(l.to))?.85:.025);
+  x.textAlign="left";x.lineWidth=1;
+  for(const l of L){
+    const isSelEdge=sel!=null&&((up.has(l.from)&&(up.has(l.to)||l.to===sel))||((l.from===sel||down.has(l.from))&&down.has(l.to)));
+    if(!isSelEdge&&state.mapStrong&&l.tier!=="dev"&&l.tier!=="team")continue;
+    const a=pos.get(l.from),b=pos.get(l.to);if(!a||!b)continue;
+    let on=sel==null?(md==="pillars"||md==="mine"?.22:.09):(isSelEdge?.88:.02);
     const A=mapXY(a),B=mapXY(b);if((A.x<0&&B.x<0)||(A.x>W&&B.x>W))continue;
-    x.globalAlpha=on;x.strokeStyle=sel==null?LANE_C[a.lane]:(up.has(l.from)&&(up.has(l.to)||l.to===sel)?cssVar("--t-dev"):cssVar("--t-mech"));x.lineWidth=sel!=null&&on>.5?1.6:1;
-    x.beginPath();x.moveTo(A.x,A.y);x.quadraticCurveTo((A.x+B.x)/2,Math.min(A.y,B.y)-Math.abs(B.x-A.x)*.12,B.x,B.y);x.stroke()}
+    x.globalAlpha=on;x.strokeStyle=sel==null?(md==="mine"&&mySet.has(b.g.i)?love:LANE_C[a.lane]):(up.has(l.from)&&(up.has(l.to)||l.to===sel)?cssVar("--t-dev"):cssVar("--t-mech"));
+    x.lineWidth=(sel!=null&&on>.5)||(md==="mine"&&mySet.has(b.g.i))?1.7:1;
+    x.beginPath();x.moveTo(A.x,A.y);x.quadraticCurveTo((A.x+B.x)/2,Math.min(A.y,B.y)-Math.abs(B.x-A.x)*.10,B.x,B.y);x.stroke()}
   x.globalAlpha=1;
   const labels=[];
-  for(const n of ns){const p=mapXY(n);if(p.x<-20||p.x>W+20||p.y<-20||p.y>H+20)continue;const r=n.r*Math.sqrt(k);
+  for(const n of vis){const p=mapXY(n);if(p.x<-20||p.x>W+20||p.y<-20||p.y>H+20)continue;const isMine=mySet.has(n.g.i);
+    const r=(isMine&&md==="mine"?n.r*1.25:n.r)*Math.sqrt(k);
     const hl=sel==null||n.g.i===sel||up.has(n.g.i)||down.has(n.g.i);
-    x.globalAlpha=hl?.95:.18;x.fillStyle=n.g.i===sel?cssVar("--love"):LANE_C[n.lane];x.beginPath();x.arc(p.x,p.y,r,0,7);x.fill();
-    if(n===MAP.hover){x.strokeStyle=ink;x.lineWidth=2;x.stroke()}
-    if(hl&&(n.g.inf*k>30||n.g.pop>=5||n.g.pop*k>=(sel==null?16:9)||n.g.i===sel))labels.push({n,p,r})}
+    x.globalAlpha=hl?.95:.16;x.fillStyle=n.g.i===sel||(md==="mine"&&isMine)?love:LANE_C[n.lane];x.beginPath();x.arc(p.x,p.y,r,0,7);x.fill();
+    if(n===MAP.hover||(md==="mine"&&isMine)){x.strokeStyle=n===MAP.hover?ink:"#fff";x.lineWidth=1.8;x.stroke()}
+    if(hl&&(md==="pillars"||md==="rivers"||(md==="mine"&&isMine)||n.g.inf*k>28||n.g.pop>=5||n.g.i===sel))labels.push({n,p,r,prio:(isMine?500:0)+n.g.inf})}
   x.globalAlpha=1;x.font="600 11.5px IBM Plex Sans, sans-serif";x.fillStyle=ink;const placed=[];
-  labels.sort((a,b)=>b.n.g.inf-a.n.g.inf).forEach(({n,p,r})=>{const t=n.g.title.length>26?n.g.title.slice(0,25)+"…":n.g.title,w=x.measureText(t).width,bx=p.x+r+3,by=p.y-7;
+  labels.sort((a,b)=>b.prio-a.prio).forEach(({n,p,r})=>{const t=n.g.title.length>26?n.g.title.slice(0,25)+"…":n.g.title,w=x.measureText(t).width,bx=p.x+r+3,by=p.y-7;
     if(placed.some(q=>bx<q.x+q.w&&bx+w>q.x&&by<q.y+14&&by+14>q.y))return;placed.push({x:bx,y:by,w});x.fillText(t,bx,p.y+4)});
   x.fillStyle=cssVar("--paper");x.fillRect(0,0,MAP.LW-6,H);x.font="600 11px IBM Plex Sans, sans-serif";
-  LANES.forEach(([name],i)=>{const y=30+i*lh+lh/2+MAP.ty;if(y<34||y>H)return;x.fillStyle=LANE_C[i];x.beginPath();x.arc(10,y,4,0,7);x.fill();x.fillStyle=muted;x.fillText(name,20,y+4)});
+  if(md==="skyline"){
+    [[1000,"1,000+ heirs"],[250,"250+ heirs"],[50,"50+ heirs"],[10,"10+ heirs"],[1,"1+ heirs"]].forEach(([val,lbl])=>{const sv=0.92-Math.min(0.85,Math.log10(val+1)/Math.log10(1100)*0.85),py=30+sv*(H-34)*k+MAP.ty;if(py<34||py>H)return;x.fillStyle=muted;x.fillText(lbl,10,py+4)});
+  }else{
+    rows.forEach(([name],i)=>{const y=30+i*lh+lh/2+MAP.ty;if(y<34||y>H)return;x.fillStyle=LANE_C[i%LANE_C.length];x.beginPath();x.arc(10,y,4,0,7);x.fill();x.fillStyle=muted;x.fillText(name,20,y+4)});
+  }
+  const sub=$("#mapSub");if(sub)sub.textContent=md==="pillars"?`Showing ${vis.length} landmark games (clean view) — zoom or tap any game to light up its family.`:md==="skyline"?"Height = total descendant games across history (log scale).":md==="rivers"?"Stream thickness = volume of games per genre in each 5-year era.":md==="world"?"Grouped by geographic region from 1950 to today.":md==="mine"?(mySet.size?`Your ${mySet.size} timeline games (coral) & their ${myAnc.size} ancestors.`:"Start your timeline to light up your personal constellation."):`Showing all ${vis.length.toLocaleString()} games.`;
 }
 function mapCard(){const el=$("#mapcard");if(!el)return;if(MAP.sel==null){el.innerHTML="";return}const g=G[MAP.sel];
-  el.innerHTML=`<div class="mapcard">${cover(g,{showYear:false})}<div style="min-width:0"><b>${esc(g.title)}</b><p>${g.year} · ${flag(g.cc)} ${esc(studio(g))} · built on ${UP[g.i].length}, inspired ${DOWN[g.i].length}</p><div class="row"><button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">Family tree</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk the roots</button></div></div></div>`}
+  el.innerHTML=`<div class="mapcard">${cover(g,{showYear:false})}<div style="min-width:0"><b>${esc(g.title)}</b><p>${g.year} · ${flag(g.cc)} ${studioBtn(studio(g))} · built on ${UP[g.i].length}, inspired ${DOWN[g.i].length}</p><div class="row"><button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">Family tree</button><button class="btn sm" data-act="quickLook" data-id="${g.id}">Game info</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots</button></div></div></div>`}
 
 /* ---------- game page ---------- */
 function linkCard(l,dir,focus){
@@ -2108,19 +2500,20 @@ function renderGame(m,id){
   const ups=UP[g.i],downs=DOWN[g.i];
   const age=hist.birth?g.year-hist.birth:null;
   m.innerHTML=`<div class="wrap">
-    ${state.trail.length>1?`<nav class="trail" aria-label="Games you've opened">${state.trail.map((t,k)=>k===state.trail.length-1?`<span class="cur">${esc(byId.get(t).title)}</span>`:`<button data-act="game" data-id="${t}">${esc(byId.get(t).title)}</button><span aria-hidden="true">›</span>`).join("")}</nav>`:""}
+    <nav class="trail" aria-label="Breadcrumb"><button type="button" class="navback" data-act="navBack" data-fb="explore">◂ Back</button>${state.trail.length>1?state.trail.map((t,k)=>k===state.trail.length-1?`<span class="cur">${esc(byId.get(t).title)}</span>`:`<button data-act="game" data-id="${t}">${esc(byId.get(t).title)}</button><span aria-hidden="true">›</span>`).join(""):`<span class="cur">${esc(g.title)}</span>`}</nav>
     <header class="gphead">${cover(g)}
-      <div style="min-width:0"><p class="eyebrow">${g.gen.map(i=>esc(GEN[i].label)).join(" · ")||"Game"}</p>
+      <div style="min-width:0"><div class="row" style="gap:5px;margin-bottom:6px">${g.gen.length?g.gen.map(i=>`<button type="button" class="genpill" data-act="genre" data-g="${esc(GEN[i].k)}"><i style="width:8px;height:8px;border-radius:3px;background:${GEN[i].c};display:inline-block"></i>${esc(GEN[i].label)}</button>`).join(""):`<span class="eyebrow" style="margin:0">Game</span>`}</div>
         <h1>${esc(g.title)}</h1>
-        <div class="meta"><span class="mono">${g.year}</span><span>${flag(g.cc)} ${studioLinks(g.dev||"")}</span>${g.cc?`<span class="muted">${esc(countryName(g.cc))}</span>`:""}</div>
+        <div class="meta"><span class="mono">${g.year}</span><span>${ studioLogoHTML(findStudio(studio(g))) } ${flag(g.cc)} ${studioLinks(g.dev||"")}</span>${g.cc?`<button type="button" class="stbtn" data-act="country" data-cc="${esc(g.cc)}">${esc(countryName(g.cc))} ▸</button>`:""}</div>
         ${g.plats.length?`<p class="sub" style="margin:6px 0 0">${esc(sysOfGame(g).join(" · "))}</p>`:""}
         ${g.note?`<p class="gnote">${esc(g.note)}</p>`:""}
         <div class="gstats">${g.tree?`<span><b>${ups.length}</b> direct inspiration${ups.length===1?"":"s"}</span><span><b>${downs.length}</b> game${downs.length===1?"":"s"} it inspired directly</span><span><b>${g.inf.toLocaleString()}</b> later game${g.inf===1?"":"s"} trace${g.inf===1?"s":""} back to it</span>`:""}${age!=null?`<span>${age>=0?`First released when you were <b>${age}</b>`:`Released <b>${-age}</b> years before you were born`}</span>`:""}</div>
         <div class="mylv"><span class="sync">In my timeline:</span><span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="setlv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>${lv&&!wk?`<button class="btn sm ghost" data-act="setlv" data-id="${g.id}" data-lv="0">Remove</button>`:""}</div>
-        <div class="mylv" style="margin-top:8px"><span class="sync">Industry credit:</span><button type="button" class="btn sm ${wk?"craft":""}" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on this ✓":"I worked on this"}</button>${wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="setWkRole" data-id="${g.id}" data-role="${esc(r)}" aria-pressed="${ent&&ent.role===r}">${esc(r)}</button>`).join(""):""}</div>
+        ${isDevMode()?`<div class="mylv" style="margin-top:8px"><span class="sync">Industry credit:</span><button type="button" class="btn sm ${wk?"craft":""}" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on this ✓":"I worked on this"}</button>${wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="setWkRole" data-id="${g.id}" data-role="${esc(r)}" aria-pressed="${ent&&ent.role===r}">${esc(r)}</button>`).join(""):""}</div>`:""}
         <div class="row" style="margin-top:10px">
-          <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">📺 ${g.yt?"Watch in period TV":"Gameplay in period TV"}</button>
-          <a class="btn sm" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Full dev credits on MobyGames ↗</a>
+          <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">📺 ${g.yt?"Insert media & watch CRT TV":"Gameplay in period TV"}</button>
+          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Box scans & screenshots ↗</a>
+          <a class="btn sm" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Dev credits ↗</a>
           <button class="btn sm ghost" data-act="copyGame" data-id="${g.id}">Copy link</button>
           <button class="btn sm ghost" data-act="suggest" data-subj="${esc("Missing link or correction for "+g.title)}">Suggest a link or source</button>
         </div>
@@ -2145,9 +2538,9 @@ function renderGame(m,id){
 function relatedSection(g){
   const fam=new Set(g.gen);const rel=TREE.filter(t=>t.gen.some(x=>fam.has(x))&&Math.abs(t.year-g.year)<=4).sort((a,b)=>(b.pop*10+Math.min(b.inf,300)/10)-(a.pop*10+Math.min(a.inf,300)/10)).slice(0,8);
   return `<section class="sec"><div class="card"><h2 class="h3">${esc(g.title)} isn't in the family tree yet</h2><p class="sub" style="margin:0">It's in the catalog, so you can add it to your timeline. Nobody has recorded what inspired it yet.</p></div>
-    ${rel.length?`<h2 class="h2" style="margin-top:22px">Related games in the family tree</h2><p class="sub">Same kind of game, from around the same time.</p><div class="recs">${rel.map(r=>`<div class="tile"><button class="art" data-act="game" data-id="${r.id}">${cover(r)}</button><span class="tn">${esc(r.title)}</span><span class="ts">${r.year} · ${esc(studio(r))}</span></div>`).join("")}</div>`:""}</section>`;
+    ${rel.length?`<h2 class="h2" style="margin-top:22px">Related games in the family tree</h2><p class="sub">Same kind of game, from around the same time.</p><div class="recs">${rel.map(r=>tileHTML(r,hist,{act:"game",quickTick:!!hist.birth})).join("")}</div>`:""}</section>`;
 }
-/* two generations each way, capped per column; ordered by year */
+/* two generations each way, capped per column; ordered by year, with real box art thumbnails */
 function treeSVG(g){
   const gen=new Map([[g.i,0]]),cols={"-2":[],"-1":[],"0":[g.i],"1":[],"2":[]};
   const imp=i=>G[i].pop*10+Math.min(G[i].inf,500)/10;
@@ -2162,14 +2555,17 @@ function treeSVG(g){
   more["-2"]=trim(-2);more["2"]=trim(2);
   const ks=[-2,-1,0,1,2].filter(k=>cols[k].length);
   ks.forEach(k=>cols[k].sort((a,b)=>G[a].year-G[b].year||G[a].title.localeCompare(G[b].title)));
-  const W=176,H=46,RG=10,CG=56,M=16,TOP=40;
+  const W=192,H=52,RG=10,CG=54,M=16,TOP=40;
   const maxRows=Math.max(...ks.map(k=>cols[k].length+(more[k]?1:0)));
   const pos=new Map();const colX={};ks.forEach((k,ci)=>colX[k]=M+ci*(W+CG));
   ks.forEach(k=>{const n=cols[k].length+(more[k]?1:0),off=(maxRows-n)/2*(H+RG);cols[k].forEach((i,r)=>pos.set(i,{x:colX[k],y:TOP+off+r*(H+RG)}))});
   const width=M*2+ks.length*(W+CG)-CG,height=TOP+maxRows*(H+RG)+10;
   const C=cssVar,ink=C("--ink"),muted=C("--muted"),line2=C("--line2"),card=C("--card"),paper=C("--paper"),acc=C("--accent"),accInk=C("--accent-ink"),upInk=C("--up-ink"),downInk=C("--down-ink");
-  let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="img" aria-label="Family tree of ${esc(g.title)}">`;
-  const lab={"-2":"Inspired its inspirations","-1":"Inspired it","0":"This game","1":"It inspired","2":"Which inspired"};
+  const useImg=document.documentElement.dataset.art!=="era";
+  let defs="";
+  for(const [i,p] of pos)if(useImg&&G[i].img)defs+=`<clipPath id="tc-${i}"><rect x="${p.x+7}" y="${p.y+6}" width="30" height="40" rx="4"/></clipPath>`;
+  let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="img" aria-label="Family tree of ${esc(g.title)}">${defs?`<defs>${defs}</defs>`:""}`;
+  const lab={"-2":"◂ Earlier ancestors","-1":"◂ Inspired it","0":"This game","1":"It inspired ▸","2":"Later descendants ▸"};
   ks.forEach(k=>{s+=`<text x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="11.5" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${lab[k]}</text>`});
   const edges=L.filter(l=>tierOn(l)&&pos.has(l.from)&&pos.has(l.to)&&gen.get(l.to)-gen.get(l.from)===1);
   edges.forEach(l=>{const A=pos.get(l.from),B=pos.get(l.to),t=TIERS[l.t];const x1=A.x+W,y1=A.y+H/2,x2=B.x,y2=B.y+H/2,dx=Math.max(22,(x2-x1)/2);
@@ -2179,41 +2575,45 @@ function treeSVG(g){
     const myl=levelOf(hist,n),myw=isWorked(hist,n);
     s+=`<g class="wnode" data-act="game" data-id="${n.id}" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link" aria-label="${esc(n.title)}, ${n.year}">
       <rect x="${p.x}" y="${p.y}" width="${W}" height="${H}" rx="10" fill="${isC?acc:card}" stroke="${myw?C("--craft"):isC?acc:line2}" stroke-width="${myw?2:1}"/>
-      <rect x="${p.x+8}" y="${p.y+9}" width="21" height="28" rx="3" fill="hsl(${n.h} 55% 40%)"/>
-      <text x="${p.x+37}" y="${p.y+19}" font-size="12.5" font-weight="700" fill="${isC?accInk:ink}">${esc(t1)}</text>
-      <text x="${p.x+37}" y="${p.y+34}" font-size="10.5" fill="${isC?accInk:muted}">${esc(t2)}</text>
+      <rect x="${p.x+7}" y="${p.y+6}" width="30" height="40" rx="4" fill="hsl(${n.h} 55% 40%)"/>
+      ${useImg&&n.img?`<image href="${esc(n.img)}" x="${p.x+7}" y="${p.y+6}" width="30" height="40" preserveAspectRatio="xMidYMid slice" clip-path="url(#tc-${i})"/>`:""}
+      <text x="${p.x+44}" y="${p.y+21}" font-size="12.5" font-weight="700" fill="${isC?accInk:ink}">${esc(t1)}</text>
+      <text x="${p.x+44}" y="${p.y+37}" font-size="10.5" fill="${isC?accInk:muted}">${esc(t2)}</text>
       ${myw||myl?`<circle cx="${p.x+W-10}" cy="${p.y+10}" r="7" fill="${myw?C("--craft"):myl===3?C("--love"):acc}"/><text x="${p.x+W-10}" y="${p.y+13.5}" text-anchor="middle" font-size="9" font-weight="700" fill="${myw?C("--craft-ink"):paper}">${myw?"✦":myl===3?"♥":"✓"}</text>`:""}</g>`}
   ks.forEach(k=>{if(more[k]){const n=cols[k].length,off=(maxRows-n-1)/2*(H+RG),y=TOP+off+n*(H+RG);
-    s+=`<g class="wnode" data-act="treeMore" data-col="${k}" tabindex="0" role="button"><rect x="${colX[k]}" y="${y}" width="${W}" height="${H}" rx="10" fill="none" stroke="${line2}" stroke-dasharray="4 3"/><text x="${colX[k]+W/2}" y="${y+28}" text-anchor="middle" font-size="12.5" font-weight="600" fill="${muted}">+${more[k]} more</text></g>`}});
+    s+=`<g class="wnode" data-act="treeMore" data-col="${k}" tabindex="0" role="button"><rect x="${colX[k]}" y="${y}" width="${W}" height="${H}" rx="10" fill="none" stroke="${line2}" stroke-dasharray="4 3"/><text x="${colX[k]+W/2}" y="${y+30}" text-anchor="middle" font-size="12.5" font-weight="600" fill="${muted}">+${more[k]} more</text></g>`}});
   return s+`</svg>`;
 }
 
-/* ---------- story mode: walk the roots ---------- */
+/* ---------- story mode: walk the roots (chronological left = older, right = newer) ---------- */
 let story=null;
-function openStory(chain){story={chain:compressChain(chain),total:chain.length-1,k:0};drawStory();document.addEventListener("keydown",storyKeys)}
+function openStory(chain){story={chain:compressChain(chain).slice().reverse(),total:chain.length-1,k:0};drawStory();document.addEventListener("keydown",storyKeys)}
 function closeStory(){story=null;$("#layer").innerHTML="";document.removeEventListener("keydown",storyKeys)}
 function storyKeys(e){if(!story)return;if(e.key==="ArrowRight"){storyStep(1)}else if(e.key==="ArrowLeft"){storyStep(-1)}else if(e.key==="Escape")closeStory()}
 function storyStep(d){if(!story)return;const n=story.chain.length;story.k=Math.max(0,Math.min(n,story.k+d));drawStory()}
 function drawStory(){
   const {chain,k}=story,n=chain.length;
+  const oldest=chain[0].g,newest=chain[n-1].g;
   const prog=`<div class="stprog">${chain.map((_,j)=>`<i class="${j<=k?"on":""}"></i>`).join("")}<i class="${k>=n?"on":""}"></i></div>`;
   let body;
-  if(k>=n){const a=chain[0].g,z=chain[n-1].g;const studios=new Set(chain.map(s=>studio(s.g)).filter(Boolean)),cs=new Set(chain.map(s=>s.g.cc).filter(Boolean));
-    body=`<div class="wrap"><p class="eyebrow">The end of the line, for now</p><h2 class="h1" style="font-size:clamp(26px,5vw,42px)">${esc(z.title)} (${z.year})</h2>
-      <p class="stsum">From ${esc(a.title)} back to ${esc(z.title)}: <b>${a.year-z.year} years</b>, ${plural(story.total,"step")}, ${plural(studios.size,"team")} in ${plural(cs.size,"country","countries")}. Every one of them added something of their own.</p>
-      <div class="row" style="margin-top:18px"><button class="btn primary wrap" data-act="game" data-id="${z.id}" data-close="1">Open ${esc(z.title)}</button><button class="btn" data-act="storyRestart">Start over</button><button class="btn" data-act="copyWalk" data-id="${a.id}">Copy link to this walk</button></div></div>`}
+  if(k>=n){const studios=new Set(chain.map(s=>studio(s.g)).filter(Boolean)),cs=new Set(chain.map(s=>s.g.cc).filter(Boolean));
+    body=`<div class="wrap"><p class="eyebrow">${oldest.year} → ${newest.year} · Lineage complete</p><h2 class="h1" style="font-size:clamp(26px,5vw,42px)">${esc(newest.title)} (${newest.year})</h2>
+      <p class="stsum">From <b>${esc(oldest.title)}</b> (${oldest.year}) forward to <b>${esc(newest.title)}</b> (${newest.year}): <b>${newest.year-oldest.year} years</b>, ${plural(story.total,"step")}, ${plural(studios.size,"team")} in ${plural(cs.size,"country","countries")}. Every team stood on earlier craft and added something of their own.</p>
+      <div class="row" style="margin-top:18px"><button class="btn primary wrap" data-act="game" data-id="${newest.id}" data-close="1">Open ${esc(newest.title)}</button><button class="btn wrap" data-act="game" data-id="${oldest.id}" data-close="1">Open ${esc(oldest.title)} (${oldest.year})</button><button class="btn" data-act="storyRestart">Replay from ${oldest.year}</button><button class="btn" data-act="copyWalk" data-id="${newest.id}">Copy walk link</button></div></div>`}
   else{const s=chain[k],g=s.g,l=s.link,p=l?G[l.from]:null,t=l?TIERS[l.t]:null;
     const srcs=l?srcHTML(l.src,l.tier):"";
     body=`<div class="wrap"><div class="stin" key="${k}">${cover(g)}<div style="min-width:0"><div class="styear">${g.year}</div><h2>${esc(g.title)}</h2>
-      <p class="sub" style="margin:0">${flag(g.cc)} ${esc(g.dev||"")}${hist.birth?` · ${g.year-hist.birth>=0?"first released when you were "+(g.year-hist.birth):(hist.birth-g.year)+" years before you were born"}`:""}</p>
+      <p class="sub" style="margin:0">${flag(g.cc)} ${studioLinks(g.dev||"")}${hist.birth?` · ${g.year-hist.birth>=0?"first released when you were "+(g.year-hist.birth):(hist.birth-g.year)+" years before you were born"}`:""}</p>
       ${g.note?`<p class="gnote" style="font-size:14px">${esc(g.note)}</p>`:""}
-      ${l?`<div class="stlink" style="--c:var(${t.c})"><p class="lead">It built on <b>${esc(p.title)}</b> (${p.year}) · <span class="tier">${t.label}</span></p><dl class="ta"><dt>${l.rel==="variant"||l.rel==="fast-follow"?"Changed":"Added"}</dt><dd class="add">${esc(l.added)}</dd><dt>Took</dt><dd>${esc(l.took)}</dd></dl>${srcs?`<div class="src">Source: ${srcs}</div>`:""}</div>`
-        :s.collapsed?`<div class="stlink" style="--c:var(--t-series)"><p class="lead">It built on its own series: ${plural(s.collapsed.n,"earlier game")} back to <b>${esc(s.collapsed.to.title)}</b> (${s.collapsed.to.year}) · <span class="tier">Same series</span></p><p class="src" style="margin:4px 0 0">${esc(s.collapsed.via.map(v=>v.title+" ("+v.year+")").join(" · "))}</p></div>`
-        :`<div class="stlink" style="--c:var(--line2)"><p class="lead">This is the oldest game in this chain.</p></div>`}
+      ${l?`<div class="stlink" style="--c:var(${t.c})"><p class="lead">Built on <b>${esc(p.title)}</b> (${p.year}) · <span class="tier">${t.label}</span></p><dl class="ta"><dt>${l.rel==="variant"||l.rel==="fast-follow"?"Changed":"Added"}</dt><dd class="add">${esc(l.added)}</dd><dt>Took</dt><dd>${esc(l.took)}</dd></dl>${srcs?`<div class="src">Source: ${srcs}</div>`:""}</div>`
+        :s.collapsed?`<div class="stlink" style="--c:var(--t-series)"><p class="lead">Built on its own series: ${plural(s.collapsed.n,"game")} from <b>${esc(s.collapsed.to.title)}</b> (${s.collapsed.to.year}) · <span class="tier">Same series</span></p><p class="src" style="margin:4px 0 0">${esc(s.collapsed.via.map(v=>v.title+" ("+v.year+")").join(" ▸ "))}</p></div>`
+        :`<div class="stlink" style="--c:var(--accent)"><p class="lead"><b>Origin point (${g.year}):</b> where the road to ${esc(newest.title)} (${newest.year}) begins.</p></div>`}
     </div></div></div>`}
-  $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="wrap sthead">${prog}<span class="mono muted" style="font-size:12px">${Math.min(k+1,n)} / ${n}</span><button class="x" data-act="closeStory" aria-label="Close">×</button></div>
+  const prevLbl=k>0&&k<=n?`◂ Earlier (${chain[k-1].g.year})`:"◂ Earlier";
+  const nextLbl=k<n-1?`Later (${chain[k+1].g.year}) ▸`:k===n-1?"Summary ▸":"Done";
+  $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="wrap sthead"><button type="button" class="navback" data-act="closeStory">◂ Exit walk</button>${prog}<span class="mono muted" style="font-size:12px">${oldest.year} → ${newest.year} · ${Math.min(k+1,n)}/${n}</span><button class="x" data-act="closeStory" aria-label="Close">×</button></div>
     <div class="stbody">${body}</div>
-    <div class="wrap stfoot"><button class="btn" data-act="storyPrev" ${k===0?"disabled":""}>◂ Newer</button><button class="btn primary" data-act="storyNext" ${k>=n?"disabled":""}>${k>=n-1?"Finish":"Older ▸"}</button></div></div>`;
+    <div class="wrap stfoot"><button class="btn" data-act="storyPrev" ${k===0?"disabled":""}>${prevLbl}</button><button class="btn ghost" data-act="closeStory">Close</button><button class="btn primary" data-act="storyNext" ${k>=n?"disabled":""}>${nextLbl}</button></div></div>`;
 }
 
 /* ---------- friends ---------- */
@@ -2259,8 +2659,9 @@ function renderShared(m,payload){
 function renderPerson(m,f){
   const d=f.data,st=timelineStats(d),mk=makerLegacyOf(d),wkMode=state.tlMode==="worked"&&!!mk,mine=hist.birth&&entries(hist).length;
   const ov=mine?overlap(hist,d):null;
+  const pSpanTxt=st.from&&st.from!==st.to?` (${st.from}–${st.to})`:"";
   m.innerHTML=`<section class="wrap mehead"><div><p class="eyebrow">${wkMode?"Game industry credits":"Gaming timeline"}</p><h1 class="h1" style="font-size:clamp(1.65rem,1.1rem + 2.8vw,2.5rem)">${esc(f.name)}'s ${wkMode?"work in games":"life in games"}</h1>
-      <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div><div class="stat"><b>${esc(d.birth)}</b><span>born</span></div>${ov?`<div class="stat"><b>${ov.pct}%</b><span>in common with you</span></div>`:""}</div></div>
+      <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.span}</b><span>${st.span===1?"year":"years"}${pSpanTxt}</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div><div class="stat"><b>${esc(d.birth)}</b><span>born</span></div>${ov?`<div class="stat"><b>${ov.pct}%</b><span>in common with you</span></div>`:""}</div></div>
       <div class="row">${mine?`<button class="btn primary" data-act="compare" data-key="${esc(f.key||"")}">Compare with mine</button>`:""}${f.payload?`<button class="btn" data-act="copyLink" data-payload="${esc(f.payload)}">Copy link</button><button class="btn ghost" data-act="adoptAsk" title="Load this saved link as your own editable timeline on this device">Load as mine</button>`:""}${CAPS.owner&&f.src!=="wall"?`<button class="btn" data-act="pin" data-key="${esc(f.key||"")}">Pin to friends wall</button>`:""}${CAPS.owner&&f.src==="wall"?`<button class="btn ghost" data-act="unpin" data-doc="${esc(f.docId)}">Unpin</button>`:""}${f.src==="seen"&&f.payload?`<button class="btn ghost" data-act="forget" data-payload="${esc(f.payload)}">Remove from this device</button>`:""}</div></section>
     <div class="wrap" id="adoptBox"></div>
     ${mine?"":`<section class="wrap"><div class="banner"><p><b>What did you play?</b> Make your own timeline in two minutes and see how much you have in common — or if this is your own backup link, click <b>Load as mine</b> above.</p><a class="btn primary" href="#timeline">Make mine</a></div></section>`}
@@ -2296,7 +2697,7 @@ function openCompare(f){
       if(la.length||lb.length)rows.push(`<div class="agerow"><b>${age}<small>${ya} · ${yb}</small></b><div class="agecell">${la.map(x=>mini(x)).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div><div class="agecell">${lb.map(x=>mini(x)).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div></div>`)}
   }
   const nm=f.name;
-  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Compare timelines"><div class="wrap ovhead"><h2>You and ${esc(nm)}</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Compare timelines"><div class="wrap ovhead"><div class="row" style="gap:10px"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><h2>You and ${esc(nm)}</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="ovbody"><div class="wrap" style="padding-block:18px 40px">
       <div class="stats"><div class="stat"><b>${ov.pct}%</b><span>in common</span></div><div class="stat"><b>${both.length}</b><span>games you both played</span></div><div class="stat"><b>${bothFav.length}</b><span>shared favorites</span></div>${bothWk.length?`<div class="stat"><b style="color:var(--craft)">${bothWk.length}</b><span>worked on together</span></div>`:""}<div class="stat"><b>${Math.abs(a.birth-b.birth)}</b><span>years apart</span></div></div>
       ${bothWk.length?`<section class="sec"><div class="craftcard"><p class="crafteyebrow">🛠 Shared trenches</p><h3 class="h2" style="margin-bottom:10px">Games you both worked on</h3><div class="grid">${bothWk.map(x=>mini(x.a,esc([x.a.e.role,x.b.e.role].filter(Boolean).join(" / ")||"Colleagues"))).join("")}</div></div></section>`:""}
@@ -2311,10 +2712,125 @@ function openCompare(f){
     </div></div></div>`;
 }
 
-/* ---------- sheets ---------- */
-function openSheet(html,label){$("#layer").innerHTML=`<div class="sheet" data-act="closeLayer" data-self="1"><div class="sheetin" role="dialog" aria-label="${esc(label)}">${html}</div></div>`;const f=$("#layer .sheetin button, #layer .sheetin input");if(f)f.focus({preventScroll:true})}
-function clearLayer(){if(MAP){removeEventListener("resize",MAP.resize);MAP=null}$("#layer").innerHTML=""}
-function closeLayer(){clearLayer();if(state.route.view==="timeline"||state.route.view==="start")render()}
+/* ---------- sheets (native <dialog closedby="any"> + rich quick-look + tactile TV + slot reel) ---------- */
+let PILE=null,SUG_LAST=0;
+function openSheet(html,label){
+  const dlg=$("#sheetDlg");if(!dlg)return;
+  let inner=html;
+  if(inner.includes('class="sheethead"')){
+    let tagged=false;
+    inner=inner.replace(/<h2(\s|>)/,(_,c)=>{tagged=true;return `<h2 id="sheetTitle"${c}`});
+    if(tagged){dlg.setAttribute("aria-labelledby","sheetTitle");dlg.removeAttribute("aria-label")}
+    else{dlg.removeAttribute("aria-labelledby");dlg.setAttribute("aria-label",label||"Details")}
+    if(!inner.includes('class="navback"'))inner=`<div style="margin-bottom:8px"><button type="button" class="navback" data-act="closeLayer">◂ Back</button></div>`+inner;
+  }else{
+    dlg.removeAttribute("aria-labelledby");dlg.setAttribute("aria-label",label||"Details");
+  }
+  if(!inner.includes('class="sheetfoot"')){
+    inner+=`<div class="sheetfoot"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><span class="sync">Press Esc or click outside to close</span></div>`;
+  }
+  dlg.innerHTML=inner;
+  if(!dlg.open)dlg.showModal();
+  dlg.scrollTop=0;
+}
+function clearLayer(){
+  if(MAP){removeEventListener("resize",MAP.resize);MAP=null}
+  if(PILE){cancelAnimationFrame(PILE.raf);removeEventListener("resize",PILE.resize);PILE=null}
+  $("#layer").innerHTML="";
+  const dlg=$("#sheetDlg");
+  if(dlg){if(dlg.open)dlg.close();dlg.innerHTML="";dlg.returnValue=""}
+}
+function closeLayer(){
+  const dlg=$("#sheetDlg"),wasDlg=!!(dlg&&dlg.open);
+  clearLayer();
+  if(!wasDlg&&(state.route.view==="timeline"||state.route.view==="start")){const y=window.scrollY;render();window.scrollTo({top:y})}
+}
+const F2P_IDS=new Set(["fortnite-br","lego-fortnite","free-fire","garena-free-fire","mobile-legends-bang-bang","league-of-legends","dota-2","apex-legends","valorant","genshin-impact","honkai-star-rail","roblox","candy-crush-saga","clash-of-clans","clash-royale","brawl-stars","hearthstone","pokemon-go","call-of-duty-warzone","counter-strike-2","marvel-rivals","pubg-mobile","honor-of-kings"]);
+function eraBoxContext(g){
+  if(!playable(g))return "Tabletop boxed set / rulebook";
+  if(F2P_IDS.has(g.id)||/free-to-play/i.test(g.note||""))return "Free-to-play live release · digital download";
+  const ps=sysOfGame(g);
+  if(ps.length===1&&ps[0]==="Arcade")return "Coin-operated arcade cabinet · typically 25¢ / credit";
+  if(ps.every(p=>p==="iPhone / iPad"||p==="Android"||p==="Browser"))return "Mobile / web release · digital storefront";
+  if(g.year<1984)return "Early big-box / ROM cartridge · typical launch MSRP $29–$39";
+  if(g.year<1995){
+    const comp=ps.some(p=>/Amiga|Commodore 64|Atari ST|ZX Spectrum|PC|Apple II/.test(p));
+    return comp?'Big-box floppy / cassette with printed manual · typical MSRP $39–$49':'Printed cardboard box & ROM cartridge · typical launch MSRP $49–$59';
+  }
+  if(g.year<2005)return "Jewel-case / big-box CD-ROM or console keep-case · typical MSRP $49";
+  if(g.year<2020)return g.pop<=3?"Digital / indie release · typical launch $15–$29":"Keep-case disc & digital storefront · typical launch MSRP $59";
+  return g.pop<=3?"Digital / indie release · typical launch $15–$35":"Physical & digital edition · typical launch MSRP $59–$69";
+}
+function mediaInfoOf(g){
+  const ps=sysOfGame(g);
+  if(ps.some(p=>/Amiga|Commodore 64|Atari ST|Apple II|ZX Spectrum|Amstrad CPC|MSX/.test(p))||(ps.includes("PC")&&g.year<1994))
+    return {kind:"floppy",icon:"💾",label:'3.5" Floppy Diskette',slot:"DRIVE DF0: — DRAG FLOPPY HERE"};
+  if(ps.length===1&&ps[0]==="Arcade")
+    return {kind:"cart",icon:"🪙",label:"25¢ Arcade Token",slot:"COIN MECH — DROP QUARTER HERE"};
+  if(ps.some(p=>/Switch|Nintendo DS|Nintendo 3DS|PS Vita/.test(p)))
+    return {kind:"cart",icon:"🎴",label:"Game Card",slot:"GAME CARD SLOT — DRAG CARD HERE"};
+  if(g.year<1995||ps.some(p=>/NES|SNES|Game Boy|Nintendo 64|Genesis|Master System|Atari 2600|Neo Geo|TurboGrafx/.test(p)))
+    return {kind:"cart",icon:"🕹️",label:"ROM Cartridge",slot:"CARTRIDGE SLOT — DRAG CART HERE"};
+  return {kind:"disc",icon:"💿",label:g.year<2006?"CD-ROM / DVD-ROM":"Optical Disc",slot:"DISC TRAY — DRAG DISC HERE"};
+}
+function openQuickLook(g){
+  if(!g)return;
+  const lv=levelOf(hist,g),py=entryYearOf(hist,g),ups=UP[g.i],downs=DOWN[g.i];
+  const topUp=ups.slice().sort((a,b)=>TIERS[b.t].w-TIERS[a.t].w)[0];
+  const ps=sysOfGame(g),stObj=findStudio(studio(g));
+  openSheet(`<div class="sheethead"><div>
+      <div class="row" style="gap:5px;margin-bottom:4px">${g.gen.length?g.gen.map(i=>`<button type="button" class="genpill" data-act="genre" data-g="${esc(GEN[i].k)}"><i style="width:7px;height:7px;border-radius:3px;background:${GEN[i].c};display:inline-block"></i>${esc(GEN[i].label)}</button>`).join(""):`<span class="eyebrow" style="margin:0">Game info</span>`}</div>
+      <h2>${esc(g.title)}</h2>
+    </div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="gsheet" style="align-items:start">${cover(g)}
+      <div style="min-width:0">
+        <p class="sub" style="margin:0 0 6px"><b class="mono">${g.year}</b> · ${studioLogoHTML(stObj)} ${flag(g.cc)} ${studioLinks(g.dev||"Unknown studio")}${g.cc?` · <button type="button" class="stbtn" data-act="country" data-cc="${esc(g.cc)}">${esc(countryName(g.cc))}</button>`:""}</p>
+        <p class="sub" style="margin:0 0 8px;font-size:12.5px">📦 ${esc(eraBoxContext(g))}</p>
+        ${ps.length?`<p class="sub" style="margin:0 0 10px;font-size:12.5px"><b>Systems:</b> ${esc(ps.join(" · "))}</p>`:""}
+        <p style="margin:0 0 10px;font-size:14.5px;line-height:1.5;color:var(--ink)">${esc(g.note||`${g.title} launched in ${g.year} from ${g.dev||"its development team"}.`)}</p>
+        ${topUp?`<div class="diascard" style="margin:0 0 10px;padding:9px 12px"><small class="muted" style="display:block">Key lineage spark: <b>${esc(G[topUp.from].title)} (${G[topUp.from].year})</b></small><span style="font-size:13px"><b>Built on:</b> ${esc(topUp.took)} · <b>Added:</b> ${esc(topUp.added)}</span></div>`:""}
+        ${g.tree?`<p class="sub" style="margin:0 0 10px;font-size:12.5px">⑂ Built on <b>${ups.length}</b> earlier ${ups.length===1?"game":"games"} · directly inspired <b>${downs.length}</b> · <b>${g.inf.toLocaleString()}</b> total descendants</p>`:""}
+        ${playable(g)?`<div class="mylv" style="margin-top:6px"><span class="sync">${py?`On timeline (${py}):`:"Add to timeline:"}</span>
+          <span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button type="button" class="${v===3?"l3":v===2?"l2":""}" data-act="qlSetLv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>
+          ${lv?`<button type="button" class="btn sm ghost" data-act="qlSetLv" data-id="${g.id}" data-lv="0">Remove</button>`:""}
+        </div>`:""}
+        <div class="row" style="margin-top:12px">
+          ${g.tree?`<button type="button" class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">⑂ Full family tree</button>`:""}
+          <button type="button" class="btn sm${g.tree?"":" primary"}" data-act="watchTv" data-id="${g.id}">📺 Insert media & watch TV</button>
+          ${ups.length?`<button type="button" class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots ▸</button>`:""}
+          <a class="btn sm" href="${esc(mobyCoversURL(g))}" target="_blank" rel="noopener">Box back & screenshots ↗</a>
+          <a class="btn sm ghost" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Credits ↗</a>
+        </div>
+        ${playable(g)?`<div class="row" style="margin-top:8px"><span class="sync">Official stores:</span>${storeLinksHTML(g)}</div>`:""}
+      </div>
+    </div>`,g.title);
+}
+function openSlotSheet(){
+  const pool=TREE.filter(x=>x.pop>=3&&playable(x));
+  const g=pool[Math.floor(Math.random()*pool.length)]||TREE[0];
+  const gen=genreOf(g),lv=levelOf(hist,g);
+  const dec=`${Math.floor(g.year/10)*10}s`;
+  playBlip(2);
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">🎰 Arcade discovery reel</p><h2>I'm feeling lucky</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="slotreels" aria-live="polite">
+      <div class="slotcell"><small>Era</small><b>${esc(dec)} · ${g.year}</b></div>
+      <div class="slotcell"><small>Genre</small><b>${esc(gen?gen.label:"Classic")}</b></div>
+      <div class="slotcell"><small>Origin</small><b>${flag(g.cc)} ${esc(g.cc?countryName(g.cc):"Global")}</b></div>
+    </div>
+    <div class="gsheet" style="margin-top:10px">${cover(g)}
+      <div style="min-width:0">
+        <h3 class="h2" style="margin-bottom:4px">${esc(g.title)}</h3>
+        <p class="sub" style="margin:0 0 8px">${g.year} · ${flag(g.cc)} ${studioLinks(g.dev||"")} · ${g.inf.toLocaleString()} descendants</p>
+        <p style="margin:0 0 12px;font-size:14px;color:var(--ink2)">${esc(g.note||"A landmark in the family tree of video games.")}</p>
+        <div class="row">
+          <button type="button" class="btn sm primary" data-act="slotSpin">🎰 Spin again</button>
+          <button type="button" class="btn sm" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree</button>
+          <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">📺 Period TV</button>
+          <button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}" aria-pressed="${lv>0}">${lv?`${LV[lv].m} ${LV[lv].label}`:"+ Played"}</button>
+        </div>
+      </div>
+    </div>`,"Lucky game reel");
+}
 function openGameSheet(y,t,ro){
   const p=(ro?state.viewing&&state.viewing.data.years[y]:hist.years[y])||[];const e=p.find(x=>norm(x.t)===norm(t));if(!e)return;
   const g=findGameY(e.t,e.y||y),lv=lvOf(e),d=ro?state.viewing.data:hist,sys=sysListOf(e,d);
@@ -2327,21 +2843,21 @@ function openGameSheet(y,t,ro){
   }
   openSheet(`<div class="sheethead"><h2>${esc(g?g.title:e.t)}</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="gsheet">${coverOfEntry(e,y)}<div style="min-width:0">
-      <p class="sub" style="margin:0 0 8px">${e.wk?"Shipped / worked on in ":"Played in "}<b>${y}</b>${d.birth?` (${y-d.birth>=0?"age "+(y-d.birth):(-y+d.birth)+" yrs before birth"})`:""}${g&&g.year!==y?` · first released ${g.year}`:""}${g?` · ${flag(g.cc)} ${esc(g.dev)}`:""}</p>
+      <p class="sub" style="margin:0 0 8px">${e.wk?"Shipped / worked on in ":"Played in "}<b>${y}</b>${d.birth?` (${y-d.birth>=0?"age "+(y-d.birth):(-y+d.birth)+" yrs before birth"})`:""}${g&&g.year!==y?` · first released ${g.year}`:""}${g?` · ${flag(g.cc)} ${studioLinks(g.dev||"")}`:""}</p>
       ${ro?`${e.wk?`<p style="margin:0 0 8px"><span class="pill craft">🛠 Worked on it${e.role?" · "+esc(e.role):""}</span></p>`:""}
         <p style="margin:0 0 10px"><b>${LV[lv].m} ${LV[lv].label}</b>${sys.length?" on "+esc(sys.join(", ")):""}</p>
         ${mtags.length?`<div class="row" style="margin:6px 0">${mtags.map(tg=>`<span class="pill">${esc(tg)}</span>`).join("")}</div>`:""}
         ${e.mem?`<p class="memquote">“${esc(e.mem)}”</p>`:""}`:
       `<div class="seg" role="group" aria-label="How much you played">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="entryLv" data-y="${y}" data-t="${esc(e.t)}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</div>
-       <div class="row" style="margin-top:10px"><button type="button" class="chip craftchip" data-act="entryWk" data-y="${y}" data-t="${esc(e.t)}" aria-pressed="${!!e.wk}">🛠 ${e.wk?"Worked on this game ✓":"I worked on this game"}</button>${e.wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="entryRole" data-y="${y}" data-t="${esc(e.t)}" data-role="${esc(r)}" aria-pressed="${e.role===r}">${esc(r)}</button>`).join(""):""}</div>
+       ${isDevMode()||e.wk?`<div class="row" style="margin-top:10px"><button type="button" class="chip craftchip" data-act="entryWk" data-y="${y}" data-t="${esc(e.t)}" aria-pressed="${!!e.wk}">🛠 ${e.wk?"Worked on this game ✓":"I worked on this game"}</button>${e.wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="entryRole" data-y="${y}" data-t="${esc(e.t)}" data-role="${esc(r)}" aria-pressed="${e.role===r}">${esc(r)}</button>`).join(""):""}</div>`:""}
        <p class="sub" style="margin:12px 0 6px">Year on timeline</p>
        <div class="row">${presets.slice(0,6).map(([py,lbl])=>`<button type="button" class="chip" data-act="entryYr" data-y="${y}" data-t="${esc(e.t)}" data-to="${py}" aria-pressed="${py===y}">${esc(lbl)}</button>`).join("")}
          <input class="input" id="entryYrIn" inputmode="numeric" maxlength="4" value="${y}" style="width:78px;padding:5px 9px;font-size:13px" aria-label="Year played"><button type="button" class="btn sm" data-act="entryYrGo" data-y="${y}" data-t="${esc(e.t)}">Move</button></div>
        ${plats.length?`<p class="sub" style="margin:12px 0 6px">Played on</p><div class="row">${plats.map(n=>`<button class="chip" data-act="entrySys" data-y="${y}" data-t="${esc(e.t)}" data-sys="${esc(n)}" aria-pressed="${sys.includes(n)}">${esc(n)}</button>`).join("")}</div>`:""}
        <p class="sub" style="margin:12px 0 6px">Memories & note</p>
        <div class="row">${MEM_TAGS.map(tg=>`<button type="button" class="chip" data-act="entryTag" data-y="${y}" data-t="${esc(e.t)}" data-tag="${esc(tg)}" aria-pressed="${mtags.includes(tg)}">${esc(tg)}</button>`).join("")}</div>
-       <form class="row" id="memForm" style="margin-top:8px"><input class="input" id="memIn" maxlength="80" style="flex:1;min-width:0;padding:7px 10px;font-size:13.5px" placeholder="Short memory, e.g. Summer '98 in the basement — or shipped v1.0 crunch" value="${esc(e.mem||"")}" aria-label="Short memory"><button class="btn sm" type="submit">Save note</button></form>`}
-      <div class="row" style="margin-top:14px">${g?`<button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">Family tree</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk its roots</button><button class="btn sm" data-act="watchTv" data-id="${g.id}">📺 Period TV</button>`:""}${ro?"":`<button class="btn sm ghost" data-act="entryRm" data-y="${y}" data-t="${esc(e.t)}">Remove</button>`}</div>
+       <form class="row" id="memForm" style="margin-top:8px"><input class="input" id="memIn" maxlength="80" style="flex:1;min-width:0;padding:7px 10px;font-size:13.5px" placeholder="Short memory, e.g. Summer '98 in the basement" value="${esc(e.mem||"")}" aria-label="Short memory"><button class="btn sm" type="submit">Save note</button></form>`}
+      <div class="row" style="margin-top:14px">${g?`<button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree</button><button class="btn sm" data-act="quickLook" data-id="${g.id}">ⓘ Game info</button><button class="btn sm" data-act="watchTv" data-id="${g.id}">📺 Period TV</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk roots</button>`:""}${ro?"":`<button class="btn sm ghost" data-act="entryRm" data-y="${y}" data-t="${esc(e.t)}">Remove</button>`}</div>
       ${g&&playable(g)?`<div class="row" style="margin-top:8px"><span class="sync">Official stores:</span>${storeLinksHTML(g)}</div>`:""}
     </div></div>`,"Game");
   const mf=$("#memForm");if(mf)mf.onsubmit=ev=>{ev.preventDefault();const v=$("#memIn").value.trim().slice(0,80);if(v)e.mem=v;else delete e.mem;save();toast(v?"Note saved":"Note cleared");closeLayer()};
@@ -2352,18 +2868,33 @@ function extractYtId(s){
   const m=v.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
   return m?m[1]:"";
 }
-function openTvSheet(g,customVid){
+function openTvSheet(g,customVid,booted=false){
   if(!g)return;
   const uyt=store.get("ib3-yt",{});
-  const vid=customVid||uyt[g.id]||g.yt||"";
+  const vid=customVid!==undefined&&customVid!==null?customVid:(uyt[g.id]||g.yt||"");
   const cls=g.year<1990?"crt80":g.year<2001?"crt90":g.year<2013?"lcd00":"oled";
   const eraLbl=g.year<1990?"1980s Woodgrain Living-Room CRT · CH 3":g.year<2001?"1990s Charcoal Trinitron / SVGA CRT":g.year<2013?"2000s Silver Widescreen HD Display":"Modern 4K OLED Display";
   const ytSearch="https://www.youtube.com/results?search_query="+encodeURIComponent(g.title+" "+g.year+" gameplay");
+  const med=mediaInfoOf(g);
   if(SYNTH.on)toggleSynth();
-  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">📺 Period screen · ${g.year}</p><h2>${esc(g.title)}</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">📺 Period screen & tactile deck · ${g.year}</p><h2>${esc(g.title)}</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="mediatray">
+      ${!booted
+        ?`<button type="button" class="cartdrag" id="tvMediaDrag" aria-label="Drag ${esc(med.label)} into console slot, or press Enter to insert">${med.icon} ${esc(med.label)}</button>
+          <div class="tvslot" id="tvMediaSlot">${esc(med.slot)}</div>
+          <button type="button" class="btn sm primary" data-act="tvInsert" data-id="${g.id}" data-vid="${esc(vid)}">▶ Insert & Power On</button>`
+        :`<span class="mono" style="font-size:12px;color:var(--craft);font-weight:700">✓ ${med.icon} ${esc(med.label)} seated · Power ON</span>
+          <button type="button" class="btn sm ghost" data-act="tvEject" data-id="${g.id}">⏏ Eject media</button>`}
+    </div>
     <div class="tvframe ${cls}">
-      <div class="tvscreen">
-        ${vid?`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?rel=0" title="${esc(g.title)} gameplay" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`
+      <div class="tvscreen" id="tvScreenDrop">
+        ${booted&&vid?`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?rel=0&autoplay=1" title="${esc(g.title)} gameplay" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`
+        :!booted?`<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;color:#9CE8B5;font-family:var(--f-mono)">
+            <div style="width:74px">${cover(g,{showYear:false})}</div>
+            <b style="font-size:13px;letter-spacing:.06em">CH-03 · WAITING FOR ${esc(med.label.toUpperCase())}</b>
+            <p style="margin:0;font-size:12px;color:#AEB6C8;max-width:38ch;font-family:var(--f-body)">Drag the <b>${esc(med.label)}</b> above into the slot (or tap <b>Insert & Power On</b>) to boot ${esc(g.title)}.</p>
+            <button type="button" class="btn sm primary" data-act="tvInsert" data-id="${g.id}" data-vid="${esc(vid)}" style="position:relative;z-index:3">▶ Insert ${esc(med.label)} & Play</button>
+          </div>`
         :`<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;color:#E8ECF6">
             <div style="width:78px">${cover(g,{showYear:false})}</div>
             <b style="font-size:15px">${esc(g.title)} (${g.year})</b>
@@ -2372,17 +2903,47 @@ function openTvSheet(g,customVid){
           </div>`}
         <div class="tvscan" aria-hidden="true"></div>
       </div>
-      <div class="tvdials"><span>${esc(eraLbl)}</span><span style="display:flex;align-items:center;gap:8px">${cls==="crt80"?'<i class="tvknob" aria-hidden="true"></i><i class="tvknob" aria-hidden="true"></i>':""}<i class="tvled" aria-hidden="true"></i></span></div>
+      <div class="tvdials"><span>${esc(eraLbl)}</span><span style="display:flex;align-items:center;gap:8px">${cls==="crt80"?'<i class="tvknob" aria-hidden="true"></i><i class="tvknob" aria-hidden="true"></i>':""}<i class="tvled" style="${booted?"":"background:#E05252;box-shadow:0 0 8px #E05252"}" aria-hidden="true"></i></span></div>
     </div>
     <div class="row" style="margin-top:12px;justify-content:space-between">
       <div class="row">
         ${vid?`<a class="btn sm" href="https://www.youtube.com/watch?v=${encodeURIComponent(vid)}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`:""}
         <a class="btn sm ghost" href="${esc(ytSearch)}" target="_blank" rel="noopener">More longplays & OSTs ↗</a>
       </div>
-      <button class="btn sm ghost" data-act="game" data-id="${g.id}" data-close="1">Open family tree ▸</button>
+      <div class="row"><button class="btn sm ghost" data-act="quickLook" data-id="${g.id}">ⓘ Game info</button><button class="btn sm ghost" data-act="game" data-id="${g.id}" data-close="1">⑂ Family tree ▸</button></div>
     </div>
     <form class="row" id="tvUrlForm" style="margin-top:10px"><input class="input" id="tvUrlIn" style="flex:1;min-width:160px;padding:6px 10px;font-size:13px" placeholder="Swap or paste a YouTube gameplay link for ${esc(g.title)}…" aria-label="YouTube URL"><button class="btn sm" type="submit">Load in TV</button></form>`,"Period TV — "+g.title);
-  const tf=$("#tvUrlForm");if(tf)tf.onsubmit=ev=>{ev.preventDefault();const id=extractYtId($("#tvUrlIn").value);if(!id){toast("Paste a standard YouTube video link");return}const m=store.get("ib3-yt",{});m[g.id]=id;store.set("ib3-yt",m);openTvSheet(g,id)};
+  const tf=$("#tvUrlForm");if(tf)tf.onsubmit=ev=>{ev.preventDefault();const id=extractYtId($("#tvUrlIn").value);if(!id){toast("Paste a standard YouTube video link");return}const m=store.get("ib3-yt",{});m[g.id]=id;store.set("ib3-yt",m);playInsertSound(med.kind);openTvSheet(g,id,true)};
+  const dragEl=$("#tvMediaDrag"),slotEl=$("#tvMediaSlot"),scrEl=$("#tvScreenDrop");
+  if(dragEl&&slotEl){
+    let st=null;
+    const bootNow=()=>{playInsertSound(med.kind);announceSR(`${med.label} inserted for ${g.title}`);openTvSheet(g,vid,true)};
+    const overTarget=(cx,cy)=>{
+      for(const el of [slotEl,scrEl]){if(!el)continue;const r=el.getBoundingClientRect();if(cx>=r.left-12&&cx<=r.right+12&&cy>=r.top-12&&cy<=r.bottom+12)return true}
+      return false;
+    };
+    dragEl.addEventListener("keydown",ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();bootNow()}});
+    dragEl.addEventListener("pointerdown",ev=>{
+      if(ev.button!==0)return;
+      st={id:ev.pointerId,x0:ev.clientX,y0:ev.clientY,moved:false};
+      dragEl.setPointerCapture(ev.pointerId);
+    });
+    dragEl.addEventListener("pointermove",ev=>{
+      if(!st||ev.pointerId!==st.id||!dragEl.hasPointerCapture(ev.pointerId))return;
+      const dx=ev.clientX-st.x0,dy=ev.clientY-st.y0;
+      if(Math.hypot(dx,dy)>4)st.moved=true;
+      dragEl.classList.add("dragging");
+      dragEl.style.translate=`${dx}px ${dy}px`;
+      slotEl.classList.toggle("hot",overTarget(ev.clientX,ev.clientY));
+    });
+    dragEl.addEventListener("pointerup",ev=>{
+      if(!st||ev.pointerId!==st.id)return;
+      const hit=!st.moved||overTarget(ev.clientX,ev.clientY);
+      dragEl.style.translate="";dragEl.classList.remove("dragging");slotEl.classList.remove("hot");st=null;
+      if(hit)bootNow();
+    });
+    dragEl.addEventListener("lostpointercapture",()=>{dragEl.style.translate="";dragEl.classList.remove("dragging");slotEl.classList.remove("hot");st=null});
+  }
 }
 function openPackSheet(){
   const cur=MEMORY_PACKS.find(p=>p.k===state.packKey)||MEMORY_PACKS[0];
@@ -2391,16 +2952,16 @@ function openPackSheet(){
     <div class="pickstrip" style="margin-bottom:12px">${MEMORY_PACKS.map(pk=>{const n=packGames(pk).filter(g=>levelOf(hist,g)>0).length;return `<button type="button" class="chip" data-act="packSheetPick" data-k="${esc(pk.k)}" aria-pressed="${cur.k===pk.k}">${esc(pk.title)}${n?` · ${n}✓`:""}</button>`}).join("")}</div>
     <p class="sub" style="margin:0 0 10px"><b>${esc(cur.title)}</b> — ${esc(cur.sub)}</p>
     <div class="grid">${gs.map(g=>tileHTML(g,hist,{act:"packCycle",sub:pickTileSub(g,ownSet,"")})).join("")}</div>
-    <div class="row" style="margin-top:16px;justify-content:flex-end"><button class="btn primary" data-act="closeLayer">Done</button></div>`,"Memory & Vibe Packs");
+    <div class="sheetfoot"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><button class="btn primary" data-act="closeLayer">Done</button></div>`,"Memory & Vibe Packs");
 }
 function ensureBirthThen(cb){
   if(hist.birth){cb();return}
-  openSheet(`<div class="sheethead"><div><h2>Start your Maker Legacy</h2><p class="sub" style="margin:2px 0 0">Enter your birth year once so your career & gaming timeline lines up by age.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  openSheet(`<div class="sheethead"><div><h2>Quick setup (10 seconds)</h2><p class="sub" style="margin:2px 0 0">Enter your birth year once so your gaming timeline lines up by age.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <form id="qbForm" class="row" style="align-items:flex-end;margin-top:8px">
-      <label class="field" for="qbBirth" style="flex:1;min-width:130px">Year you were born<input class="input" id="qbBirth" inputmode="numeric" maxlength="4" placeholder="1984" required></label>
+      <label class="field" for="qbBirth" style="flex:1;min-width:130px">Year you were born<input class="input" id="qbBirth" inputmode="numeric" maxlength="4" placeholder="1984" autofocus required></label>
       <label class="field" for="qbName" style="flex:2;min-width:160px">Your name (optional)<input class="input" id="qbName" maxlength="24" placeholder="First name"></label>
-      <button class="btn craft" type="submit">Save & add credit ▸</button>
-    </form><p class="sub" id="qbErr" style="margin-top:8px" hidden></p>`,"Start Maker Legacy");
+      <button class="btn primary" type="submit">Save & continue ▸</button>
+    </form><p class="sub" id="qbErr" style="margin-top:8px" hidden></p>`,"Start timeline");
   $("#qbForm").onsubmit=ev=>{ev.preventDefault();const y=parseInt($("#qbBirth").value,10);if(!(y>=1940&&y<=NOW-3)){const er=$("#qbErr");er.hidden=false;er.textContent="Enter a year like 1984.";return}
     hist.birth=y;hist.name=$("#qbName").value.trim().slice(0,24);hist.stage=null;save();clearLayer();cb()};
 }
@@ -2429,7 +2990,7 @@ function openMakerSheet(){
     <form class="row" id="mkCustomForm"><input class="input" id="mkCustTitle" maxlength="70" style="flex:2;min-width:160px" placeholder="e.g. Project Ragtag (Canceled)" aria-label="Project title"><input class="input" id="mkCustYear" inputmode="numeric" maxlength="4" style="width:92px" placeholder="2017" value="${NOW-2}" aria-label="Year"><button class="btn sm craft" type="submit">+ Add credit</button></form>
     ${wk.length?`<h3 class="h3" style="margin-top:18px">Your credits (${wk.length})</h3>
       <div>${wk.map(x=>`<div class="anc" style="grid-template-columns:36px minmax(0,1fr) auto">${coverOfEntry(x.e,x.y,{showYear:false})}<span><b>${esc(x.g?x.g.title:x.e.t)}</b><small>${x.y}${x.e.role?" · 🛠 "+esc(x.e.role):""}${x.g?" · "+esc(studio(x.g)):" · Unshipped / custom"}</small></span><button type="button" class="btn sm ghost" data-act="mkRmWk" data-y="${x.y}" data-t="${esc(x.e.t)}" aria-label="Remove credit">×</button></div>`).join("")}</div>`:""}
-    <div class="row" style="margin-top:18px;justify-content:flex-end"><button type="button" class="btn craft" data-act="mkDone">View my Maker timeline ▸</button></div>`,"Games & studios I worked on");
+    <div class="sheetfoot"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><button type="button" class="btn craft" data-act="mkDone">View my Maker timeline ▸</button></div>`,"Games & studios I worked on");
   wireSearch($("#mkGameQ"),$("#mkGameR"),g=>{if(!g||!g.id)return;if(!syncHead())return;toggleWorked(g,state.makerRole||undefined);toast(`Added credit: ${g.title}`);openMakerSheet()},{playOnly:false});
   const stIn=$("#mkStQ"),stBox=$("#mkStR");
   stIn.addEventListener("input",()=>{
@@ -2467,11 +3028,12 @@ function openShare(){
       <button class="btn sm" data-act="dlJson">Download backup (.json)</button>
     </div>
     <p class="sub" style="margin-top:8px">Tip: emailing the link to yourself keeps a permanent backup you can load on any phone or computer in one tap.</p>
-    <h3 class="h3" style="margin-top:16px">Images for group chats & desktops</h3><p class="sub">Save a story card, your favorite games, your consoles paired with favorite games, or a 4K timeline poster.</p>
+    <h3 class="h3" style="margin-top:16px">Images & interactive box pile</h3><p class="sub">Save a story card, your favorite games, your consoles paired with favorite games, a 4K timeline poster, or toss your boxes in the physics pile.</p>
     <div class="row">
       <button class="btn" data-act="png" data-kind="card">Save story card</button>
       <button class="btn" data-act="png" data-kind="favs">♥ Save favorites grid</button>
       <button class="btn" data-act="png" data-kind="consoles">🕹️ Save consoles & favorites</button>
+      <button class="btn" data-act="boxPile">📦 Open Physics Box Pile</button>
       ${st.wk?`<button class="btn craft" data-act="png" data-kind="maker">🛠 Save Maker Legacy card</button>`:""}
       <button class="btn" data-act="png" data-kind="wall">Save 4K poster</button>
     </div><div id="imgout"></div>`,"Share");
@@ -2479,9 +3041,16 @@ function openShare(){
 }
 function openSettings(){
   const artEra=document.documentElement.dataset.art==="era";
+  const hasStash=!!store.get("ib3-stashed-hist");
   openSheet(`<div class="sheethead"><h2>Timeline settings</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <form id="setForm" class="row" style="align-items:flex-end"><label class="field" for="setBirth" style="flex:1">Year you were born<input class="input" id="setBirth" inputmode="numeric" maxlength="4" value="${hist.birth||""}"></label><label class="field" for="setName" style="flex:2">Name<input class="input" id="setName" maxlength="24" value="${esc(hist.name||"")}"></label><button class="btn primary" type="submit">Save</button></form>
     <div class="row" style="margin-top:16px"><button class="btn" data-act="obSystems">Change systems</button><button class="btn" data-act="obAgain">Show quick picks again</button><button class="btn" data-act="theme">Switch light / dark</button><button class="btn" data-act="artToggle">${artEra?"Use real box art":"Use retro era spines"}</button></div>
+    <h3 class="h3" style="margin-top:16px">Modes & visitor preview</h3>
+    <p class="sub">Industry / maker mode unlocks "I worked on this game" career & studio credit tools. Visitor preview lets you test the fresh onboarding flow and switch right back to your saved timeline.</p>
+    <div class="row">
+      <button type="button" class="btn ${isDevMode()?"craft":""}" data-act="devModeTog" aria-pressed="${isDevMode()}">🛠 Industry / maker mode: ${isDevMode()?"On":"Off"}</button>
+      ${hasStash?`<button type="button" class="btn primary" data-act="sandboxExit">↩ Return to my saved timeline</button>`:`<button type="button" class="btn" data-act="sandboxEnter">🧪 Test new-visitor onboarding</button>`}
+    </div>
     <h3 class="h3" style="margin-top:16px">Backup & restore</h3>
     <p class="sub">Your timeline saves automatically in this browser. You can also export or import a JSON backup file anytime.</p>
     <div class="row"><button class="btn sm" data-act="dlJson">Export backup (.json)</button><label class="btn sm" style="cursor:pointer">Import backup (.json)<input type="file" id="impJson" accept=".json,application/json" hidden></label></div>
@@ -2491,14 +3060,16 @@ function openSettings(){
 }
 function openSuggestSheet(subj){
   if(CAPS.comments){const t=$(".gphead")||$("#main");CAPS.comments.openComposer({element:t}).then(r=>{if(r&&!r.opened)toast("Click into the page first, then try again")}).catch(()=>{});return}
-  const repo=ghRepoURL();
-  openSheet(`<div class="sheethead"><div><h2>Suggest a source, link, or studio note</h2><p class="sub" style="margin:2px 0 0">Disagree with a connection or have a developer interview / GDC talk URL? Send the receipt so we can keep the record accurate.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
-    <label class="field" for="sugSubj">Topic<input class="input" id="sugSubj" value="${esc(subj||"Suggested link or source")}"></label>
-    <label class="field" for="sugSrc" style="margin-top:10px">Interview, GDC talk, postmortem, or article URL<input class="input" id="sugSrc" placeholder="https://..."></label>
-    <label class="field" for="sugBody" style="margin-top:10px">What should be added or corrected?<textarea class="input" id="sugBody" rows="4" placeholder="Example: In a 2018 GDC talk, the lead designer cited X as the direct inspiration for Y..."></textarea></label>
+  const repo=ghRepoURL()||"https://github.com/JohanHeurlin/inspired-by";
+  openSheet(`<div class="sheethead"><div><h2>Suggest a source, link, or studio note</h2><p class="sub" style="margin:2px 0 0">Disagree with a connection or have a developer interview / GDC talk URL? Every public issue goes through source & chronology verification before merging.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <input id="sugHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+    <label class="field" for="sugSubj">Topic or game pair (Older → Newer)<input class="input" id="sugSubj" value="${esc(subj||"Suggested link or source")}"></label>
+    <label class="field" for="sugSrc" style="margin-top:10px">Primary source URL (interview, GDC talk, postmortem, or article — required for GitHub review)<input class="input" id="sugSrc" type="url" placeholder="https://www.gdcvault.com/... or interview URL"></label>
+    <label class="field" for="sugBody" style="margin-top:10px">What did it build on, and what did it add?<textarea class="input" id="sugBody" rows="4" placeholder="Example: In a 2018 GDC talk, the lead designer cited X as the direct inspiration for Y..."></textarea></label>
+    <p class="sub" id="sugErr" style="margin-top:8px;color:var(--love)" hidden></p>
     <div class="row" style="margin-top:14px">
-      ${repo?`<button class="btn primary" data-act="sugGh" data-repo="${esc(repo)}">Open GitHub issue ↗</button>`:""}
-      <button class="btn${repo?"":" primary"}" data-act="sugCopy">Copy formatted note</button>
+      <button class="btn primary" data-act="sugGh" data-repo="${esc(repo)}">Open structured GitHub issue ↗</button>
+      <button class="btn" data-act="sugCopy">Copy formatted note</button>
     </div>`,"Suggest an edit");
 }
 function openTop10(){
@@ -2511,17 +3082,127 @@ function openTop10(){
     ${rest.length?`<h3 class="h3" style="margin-top:16px">Other favorites</h3>${rest.map(f=>row(f,null)).join("")}`:""}`,"Top 10");
 }
 
-/* ---------- poster and images ---------- */
+/* ---------- poster wall & interactive 2D physics box pile ---------- */
 function openPoster(d,name){
   d=d||hist;
   const es=entries(d),byY={};es.forEach(x=>(byY[x.y]=byY[x.y]||[]).push(x));
   const ys=Object.keys(byY).map(Number);if(!ys.length){toast("Add some games first");return}
+  clearLayer();
+  const mode=state.posterMode||"wall";
   const from=Math.min(d.birth,...ys),to=Math.max(...ys);
-  let cols="";for(let y=from;y<=to;y++){const xs=(byY[y]||[]).sort((a,b)=>b.lv-a.lv);
-    cols+=`<div class="wcol${xs.length?"":" e"}"><div class="wh">${y}<small>${y-d.birth>=0?"age "+(y-d.birth):""}</small></div>${xs.slice(0,6).map((x,i)=>`<div class="tile lv${x.lv}${i>2?" s":""}">${coverOfEntry(x.e,y,{showYear:false,attrs:`data-k="${esc(norm(x.e.t))}"`})}${x.lv===3?`<span class="lvb l3">♥</span>`:""}</div>`).join("")}${xs.length>6?`<div class="rest">+${xs.length-6}</div>`:""}</div>`}
-  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Poster"><div class="wrap ovhead"><div><h2>${esc(name||(d.name?d.name+"'s":"My"))} gaming years</h2><p class="sync" style="margin:2px 0 0">Lines show where one of these games inspired another.</p></div><div class="row"><button class="btn sm" data-act="png" data-kind="wall" data-who="${name?"friend":"me"}">Save 4K poster</button><button class="x" data-act="closeLayer" aria-label="Close">×</button></div></div>
-    <div class="ovbody" id="posterBody" tabindex="0" role="region" aria-label="4K timeline poster"><div class="wall" id="wall"><svg class="lines" id="wallLines"></svg>${cols}</div></div></div>`;
-  requestAnimationFrame(()=>drawWallLines(d));
+  let cols="";
+  if(mode==="wall"){
+    for(let y=from;y<=to;y++){const xs=(byY[y]||[]).sort((a,b)=>b.lv-a.lv);
+      cols+=`<div class="wcol${xs.length?"":" e"}"><div class="wh">${y}<small>${y-d.birth>=0?"age "+(y-d.birth):""}</small></div>${xs.slice(0,6).map((x,i)=>`<div class="tile lv${x.lv}${i>2?" s":""}">${coverOfEntry(x.e,y,{showYear:false,attrs:`data-k="${esc(norm(x.e.t))}"`})}${x.lv===3?`<span class="lvb l3">♥</span>`:""}</div>`).join("")}${xs.length>6?`<div class="rest">+${xs.length-6}</div>`:""}</div>`}
+  }
+  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Poster and Box Pile"><div class="wrap ovhead" style="flex-wrap:wrap">
+      <div class="row" style="gap:10px"><button type="button" class="navback" data-act="closeLayer">◂ Back</button><div><h2>${esc(name||(d.name?d.name+"'s":"My"))} ${mode==="pile"?"game box pile":"gaming years"}</h2><p class="sync" style="margin:2px 0 0">${mode==="pile"?"Grab & fling your favorite boxes · Double-click any box to inspect it.":"Lines show where one of these games inspired another."}</p></div></div>
+      <div class="row" style="gap:6px">
+        <span class="seg" role="group" aria-label="View"><button type="button" data-act="posterMode" data-m="wall" aria-pressed="${mode==="wall"}">🗓️ Timeline Wall</button><button type="button" data-act="posterMode" data-m="pile" aria-pressed="${mode==="pile"}">📦 Physics Box Pile</button></span>
+        ${mode==="pile"?`<button type="button" class="btn sm" data-act="pileToss">🌪️ Toss pile</button><button type="button" class="btn sm" id="pileZeroBtn" data-act="pileZeroG" aria-pressed="false">🪐 Zero-G: Off</button>`:`<button class="btn sm" data-act="png" data-kind="wall" data-who="${name?"friend":"me"}">Save 4K poster</button>`}
+        <button class="x" data-act="closeLayer" aria-label="Close">×</button>
+      </div>
+    </div>
+    ${mode==="pile"
+      ?`<div class="ovbody" id="posterBody" style="overflow:hidden;display:flex;flex-direction:column"><canvas id="pileCanvas" style="flex:1;width:100%;height:100%;display:block;touch-action:none;cursor:grab"></canvas></div>`
+      :`<div class="ovbody" id="posterBody" tabindex="0" role="region" aria-label="4K timeline poster"><div class="wall" id="wall"><svg class="lines" id="wallLines"></svg>${cols}</div></div>`}
+  </div>`;
+  if(mode==="pile")requestAnimationFrame(()=>initBoxPile(d));
+  else requestAnimationFrame(()=>drawWallLines(d));
+}
+function initBoxPile(d){
+  const cv=$("#pileCanvas");if(!cv)return;
+  const x=cv.getContext("2d");
+  const sorted=entries(d).slice().sort((a,b)=>b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0)).slice(0,32);
+  let W=800,H=560,dpr=1,zeroG=false;
+  const resize=()=>{const r=cv.getBoundingClientRect();W=Math.max(300,r.width);H=Math.max(260,r.height);dpr=Math.min(2,window.devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr};
+  resize();addEventListener("resize",resize);
+  const bw=Math.max(66,Math.min(112,Math.round(Math.sqrt(W*H/Math.max(12,sorted.length*3.6))))),bh=Math.round(bw*1.34);
+  const bodies=sorted.map((it,idx)=>{
+    const g=it.g,im=g&&g.img?new Image():null;
+    if(im)im.src=g.img;
+    const cols=Math.max(3,Math.floor((W-80)/(bw+12)));
+    const cx=60+(idx%cols)*(bw+12)+bw/2+(Math.random()-.5)*18;
+    const cy=Math.max(bh,H*0.18-Math.floor(idx/cols)*(bh*0.92));
+    return {it,g,im,title:g?g.title:it.e.t,year:it.y,lv:it.lv,h:g?g.h:hueOf(norm(it.e.t)),gl:g?glyphOf(g):"stick",w:bw,hh:bh,x:Math.min(W-bw/2-12,Math.max(bw/2+12,cx)),y:cy,vx:(Math.random()-.5)*3,vy:Math.random()*2,ang:(Math.random()-.5)*0.28,va:(Math.random()-.5)*0.03};
+  });
+  let grab=null;
+  const hitBody=(px,py)=>{
+    for(let i=bodies.length-1;i>=0;i--){
+      const b=bodies[i],dx=px-b.x,dy=py-b.y,ca=Math.cos(-b.ang),sa=Math.sin(-b.ang);
+      const lx=dx*ca-dy*sa,ly=dx*sa+dy*ca;
+      if(Math.abs(lx)<=b.w/2&&Math.abs(ly)<=b.hh/2)return {b,i,lx,ly};
+    }
+    return null;
+  };
+  cv.addEventListener("pointerdown",ev=>{
+    if(ev.button!==0)return;
+    const r=cv.getBoundingClientRect(),px=ev.clientX-r.left,py=ev.clientY-r.top,h=hitBody(px,py);
+    if(!h)return;
+    bodies.splice(h.i,1);bodies.push(h.b);
+    grab={id:ev.pointerId,b:h.b,px,py,lx:px,ly:py};
+    cv.setPointerCapture(ev.pointerId);cv.style.cursor="grabbing";
+  });
+  cv.addEventListener("pointermove",ev=>{
+    if(!grab||ev.pointerId!==grab.id)return;
+    const r=cv.getBoundingClientRect();grab.lx=grab.px;grab.ly=grab.py;grab.px=ev.clientX-r.left;grab.py=ev.clientY-r.top;
+  });
+  const endGrab=ev=>{if(!grab||(ev&&ev.pointerId!==grab.id))return;grab=null;cv.style.cursor="grab"};
+  cv.addEventListener("pointerup",endGrab);
+  cv.addEventListener("lostpointercapture",()=>endGrab());
+  cv.addEventListener("dblclick",ev=>{const r=cv.getBoundingClientRect(),h=hitBody(ev.clientX-r.left,ev.clientY-r.top);if(h&&h.b.g)openQuickLook(h.b.g)});
+  const minDist=bw*0.78;
+  const step=()=>{
+    if(!PILE)return;
+    x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);
+    for(let i=0;i<bodies.length;i++){
+      const b=bodies[i];
+      if(grab&&grab.b===b){
+        b.vx=(grab.px-b.x)*0.38;b.vy=(grab.py-b.y)*0.38;
+        b.x=grab.px;b.y=grab.py;b.va+=(grab.px-grab.lx)*0.002;b.va*=0.82;b.ang+=b.va;
+        continue;
+      }
+      if(!zeroG)b.vy+=0.42;
+      b.vx*=zeroG?0.992:0.985;b.vy*=zeroG?0.992:0.985;b.va*=0.94;
+      b.x+=b.vx;b.y+=b.vy;b.ang+=b.va;
+      const rx=b.w*0.52,ry=b.hh*0.52;
+      if(b.x<rx){b.x=rx;b.vx=Math.abs(b.vx)*0.55}
+      if(b.x>W-rx){b.x=W-rx;b.vx=-Math.abs(b.vx)*0.55}
+      if(b.y<ry&&zeroG){b.y=ry;b.vy=Math.abs(b.vy)*0.65}
+      if(b.y>H-ry){b.y=H-ry;b.vy=-Math.abs(b.vy)*(zeroG?0.72:0.42);b.vx*=0.88;b.ang*=0.90;if(Math.abs(b.vy)<0.5&&!zeroG)b.vy=0}
+    }
+    for(let pass=0;pass<2;pass++){
+      for(let i=0;i<bodies.length;i++)for(let j=i+1;j<bodies.length;j++){
+        const a=bodies[i],b=bodies[j],dx=b.x-a.x,dy=b.y-a.y,d2=dx*dx+dy*dy;
+        if(d2>0.01&&d2<minDist*minDist){
+          const dist=Math.sqrt(d2),ov=(minDist-dist)*0.36,nx=dx/dist,ny=dy/dist;
+          if(!grab||grab.b!==a){a.x-=nx*ov;a.y-=ny*ov;a.vx-=nx*ov*0.18;a.vy-=ny*ov*0.18}
+          if(!grab||grab.b!==b){b.x+=nx*ov;b.y+=ny*ov;b.vx+=nx*ov*0.18;b.vy+=ny*ov*0.18}
+        }
+      }
+    }
+    bodies.forEach(b=>{
+      x.save();x.translate(b.x,b.y);x.rotate(b.ang);
+      const bx=-b.w/2,by=-b.hh/2;
+      x.fillStyle="rgba(0,0,0,.28)";x.beginPath();x.roundRect(bx+3,by+5,b.w,b.hh,7);x.fill();
+      if(b.im&&b.im.complete&&b.im.naturalWidth>20){
+        x.save();x.beginPath();x.roundRect(bx,by,b.w,b.hh,7);x.clip();
+        x.drawImage(b.im,bx,by,b.w,b.hh);x.restore();
+      }else{
+        canvasCover(x,b.title,b.year,b.h,b.gl,bx,by,b.w,b.hh);
+      }
+      x.strokeStyle=b.lv===3?"#FF6E5A":b.lv===2?"#8C9DFF":"rgba(255,255,255,.35)";
+      x.lineWidth=b.lv>=2?3:1.5;x.beginPath();x.roundRect(bx,by,b.w,b.hh,7);x.stroke();
+      x.restore();
+    });
+    PILE.raf=requestAnimationFrame(step);
+  };
+  PILE={
+    raf:requestAnimationFrame(step),
+    resize,
+    toss(){bodies.forEach(b=>{b.vy=-9-Math.random()*9;b.vx=(Math.random()-.5)*14;b.va=(Math.random()-.5)*0.22});playBlip(2)},
+    toggleZeroG(){zeroG=!zeroG;if(zeroG)bodies.forEach(b=>{b.vy=(Math.random()-.5)*5;b.vx=(Math.random()-.5)*5});const btn=$("#pileZeroBtn");if(btn){btn.setAttribute("aria-pressed",zeroG);btn.textContent=`🪐 Zero-G: ${zeroG?"On":"Off"}`}}
+  };
 }
 function wallLinks(d){const ks=new Map();entries(d).forEach(x=>{if(x.g)ks.set(x.g.i,norm(x.e.t))});return L.filter(l=>ks.has(l.from)&&ks.has(l.to)).map(l=>({l,a:ks.get(l.from),b:ks.get(l.to)}))}
 function drawWallLines(d){const wall=$("#wall"),svg=$("#wallLines");if(!wall||!svg)return;svg.setAttribute("width",wall.offsetWidth);svg.setAttribute("height",wall.offsetHeight);
@@ -2678,16 +3359,75 @@ function updateArtBtn(){const b=$("#artBtn");if(b)b.textContent=document.documen
    ================================================================ */
 const ACTIONS={
   noop(){},
+  navBack(el){navBack(el&&el.dataset&&el.dataset.fb)},
+  scrollTop(){window.scrollTo({top:0,behavior:"smooth"})},
   synthToggle(){toggleSynth()},
   eraMemTog(){state.eraMem=state.eraMem?0:1;store.set("ib3-eramem",state.eraMem);const y=window.scrollY;render();window.scrollTo({top:y})},
+  devModeTog(){
+    state.devMode=state.devMode?0:1;store.set("ib3-devmode",state.devMode);
+    toast(state.devMode?"🛠 Industry / maker mode enabled":"Industry / maker mode hidden");
+    const dlg=$("#sheetDlg");
+    if(dlg&&dlg.open)openSettings();
+    else{const y=window.scrollY;render();window.scrollTo({top:y})}
+  },
+  sandboxEnter(){
+    store.set("ib3-stashed-hist",packHist(hist));
+    hist=blankHist();save();clearLayer();
+    toast("🧪 Testing fresh visitor onboarding — your real timeline is safely stashed above");
+    go("start");
+  },
+  sandboxExit(){
+    const raw=store.get("ib3-stashed-hist");if(!raw)return;
+    const restored=cleanTimeline(raw);
+    if(restored.birth)hist=restored;
+    store.del("ib3-stashed-hist");save();clearLayer();
+    toast("↩ Welcome back to your saved timeline");
+    go("timeline");
+  },
+  sandboxCommit(){
+    store.del("ib3-stashed-hist");renderSandboxBar();
+    toast("Kept current timeline");
+  },
+  quickLook(el){const g=byId.get(el.dataset.id);if(g)openQuickLook(g)},
+  qlSetLv(el){
+    const g=byId.get(el.dataset.id);if(!g)return;
+    const v=+el.dataset.lv;
+    ensureBirthThen(()=>{
+      const cur=levelOf(hist,g),nl=v===cur?0:v;
+      setLevel(g,nl);playBlip(nl);openQuickLook(g);
+      toast(nl?`${LV[nl].label}: ${g.title}`:`Removed ${g.title}`);
+    });
+  },
+  qtick(el){
+    const g=byId.get(el.dataset.id);if(!g)return;
+    ensureBirthThen(()=>{
+      const nl=cycleLevel(g);playBlip(nl);
+      el.className="qtick"+(nl?" lv"+nl:"");
+      el.textContent=nl?`${LV[nl].m} ${LV[nl].label}`:"+ Played";
+      el.setAttribute("aria-pressed",nl>0);
+      if(el.closest(".tile"))refreshTile(el,g);
+      toast(nl?`${LV[nl].label}: ${g.title}`:`Removed ${g.title}`);
+    });
+  },
+  slotSpin(){openSlotSheet()},
+  mechTab(el){state.mechTab=el.dataset.t;go(el.dataset.t==="boardgames"?"boardgames":el.dataset.t==="genres"?"genres":"mechanics")},
+  genre(el){const k=el.dataset.g;if(!k)return;clearLayer();go("genre-"+k)},
+  genrePick(el){state.mechTab="genres";state.genreSel=el.dataset.g||"";render()},
+  country(el){const cc=el.dataset.cc;if(!cc)return;clearLayer();go("country-"+cc)},
+  worldPick(el){state.worldCC=el.dataset.cc||"";render();const d=$("#ccDetail");if(d)d.scrollIntoView({behavior:"smooth",block:"nearest"})},
+  worldMode(el){state.worldMine=el.dataset.m==="mine";render()},
   pickMode(el){state.pickMode=el.dataset.m;render()},
   pickPack(el){state.packKey=el.dataset.k;const y=window.scrollY;render();window.scrollTo({top:y})},
   packSheet(){openPackSheet()},
   packSheetPick(el){state.packKey=el.dataset.k;openPackSheet()},
   packCycle(el){const g=byId.get(el.dataset.id);if(!g)return;ensureBirthThen(()=>{const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g)})},
-  watchTv(el){const g=byId.get(el.dataset.id);if(g)openTvSheet(g)},
+  watchTv(el){const g=byId.get(el.dataset.id);if(g)openTvSheet(g,null,false)},
+  tvInsert(el){const g=byId.get(el.dataset.id);if(!g)return;const med=mediaInfoOf(g);playInsertSound(med.kind);openTvSheet(g,el.dataset.vid||null,true)},
+  tvEject(el){const g=byId.get(el.dataset.id);if(g){playBlip(0);openTvSheet(g,null,false)}},
   goGiveBack(){state.stFilter="giveback";go("studios")},
   toDna(){const s=$("#dna");if(s)s.scrollIntoView({behavior:"smooth",block:"start"})},
+  quizMode(el){state.quizMode=el.dataset.m||"lineage";quiz=newQuiz();renderQuiz()},
+  quizPickVal(el){if(!quiz||quiz.picked!=null)return;quiz.picked=el.dataset.v;if(quiz.picked===quiz.ans){quizStreak++;if(quizStreak>quizBest){quizBest=quizStreak;store.set("ib2-best",quizBest)}}else quizStreak=0;renderQuiz()},
   quizPick(el){if(!quiz||quiz.picked!=null)return;quiz.picked=+el.dataset.i;if(quiz.picked===quiz.parent.i){quizStreak++;if(quizStreak>quizBest){quizBest=quizStreak;store.set("ib2-best",quizBest)}}else quizStreak=0;renderQuiz()},
   quizNext(){quiz=newQuiz();renderQuiz()},
   infMode(el){state.infMode=el.dataset.m;store.set("ib2-inf",state.infMode);const y=window.scrollY;render();window.scrollTo({top:y})},
@@ -2704,15 +3444,26 @@ const ACTIONS={
   toggleWkSt(el){const id=el.dataset.st;if(!id)return;ensureBirthThen(()=>{const on=toggleWorkedStudio(id),st=STUDIOS.get(id);const y=window.scrollY;render();window.scrollTo({top:y});toast(on?`🛠 Added ${st?st.name:id} to your studios`:`Removed studio`)})},
   studio(el){const id=el.dataset.st;if(!id)return;clearLayer();go("studio-"+id)},
   goStudios(){go("studios")},
-  artToggle(){const r=document.documentElement;r.dataset.art=r.dataset.art==="era"?"real":"era";store.set("ib3-art",r.dataset.art);updateArtBtn();if($("#layer .sheet"))openSettings()},
+  artToggle(){const r=document.documentElement;r.dataset.art=r.dataset.art==="era"?"real":"era";store.set("ib3-art",r.dataset.art);updateArtBtn();if($("#sheetDlg")&&$("#sheetDlg").open)openSettings()},
   map(){openMap()},
+  mapView(el){state.mapMode=el.dataset.m||"pillars";if(MAP){MAP.k=1;MAP.tx=0;MAP.ty=0;$$("[data-act='mapView']",$("#layer")).forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===state.mapMode));drawMap();mapCard()}},
+  mapStrongTog(el){state.mapStrong=!state.mapStrong;el.setAttribute("aria-pressed",state.mapStrong);el.textContent="Links: "+(state.mapStrong?"Primary":"All");if(MAP)drawMap()},
   mapZoom(el){if(MAP)mapZoomAt(+el.dataset.z,MAP.W/2,MAP.H/2)},
   mapReset(){if(MAP){MAP.k=1;MAP.tx=0;MAP.ty=0;MAP.sel=null;drawMap();mapCard()}},
   suggest(el){openSuggestSheet(el&&el.dataset&&el.dataset.subj)},
-  sugGh(el){const repo=el.dataset.repo,t=($("#sugSubj")||{}).value||"Suggestion",s=($("#sugSrc")||{}).value||"",b=($("#sugBody")||{}).value||"";const body=`**Source URL:** ${s||"(none provided)"}\n\n**Details:**\n${b}`;window.open(`${repo}/issues/new?title=${encodeURIComponent(t)}&body=${encodeURIComponent(body)}`,"_blank","noopener")},
+  sugGh(el){
+    if(($("#sugHp")||{}).value)return;
+    const er=$("#sugErr"),s=(($("#sugSrc")||{}).value||"").trim(),t=(($("#sugSubj")||{}).value||"Suggestion").trim(),b=(($("#sugBody")||{}).value||"").trim();
+    if(!/^https?:\/\/\S+\.\S+/i.test(s)){if(er){er.hidden=false;er.textContent="Please paste an https:// source URL (interview, GDC talk, postmortem, or article) so suggestions stay verifiable and spam-free — or use 'Copy formatted note' below."}return}
+    if(Date.now()-SUG_LAST<15000){toast("Please wait a few seconds before opening another issue");return}
+    SUG_LAST=Date.now();if(er)er.hidden=true;
+    const repo=el.dataset.repo;
+    const body=`### Game pair or topic\n${t}\n\n### Primary source URL\n${s}\n\n### Details (built on / added)\n${b}`;
+    window.open(`${repo}/issues/new?template=link-suggestion.yml&labels=suggestion&title=${encodeURIComponent("[Suggestion] "+t)}&body=${encodeURIComponent(body)}`,"_blank","noopener");
+  },
   sugCopy(){const t=($("#sugSubj")||{}).value||"",s=($("#sugSrc")||{}).value||"",b=($("#sugBody")||{}).value||"";copyText(`Topic: ${t}\nSource: ${s}\nDetails: ${b}`);closeLayer()},
-  game(el){const id=el.dataset.id;if(!id)return;if(el.dataset.close||story){closeStory();clearLayer()}go(id)},
-  walk(el){const g=byId.get(el.dataset.id);if(!g)return;if(el.dataset.close)clearLayer();openStory(rootsChain(g.i))},
+  game(el){const id=el.dataset.id;if(!id)return;if(el.dataset.close||story||($("#sheetDlg")&&$("#sheetDlg").open)){closeStory();clearLayer()}go(id)},
+  walk(el){const g=byId.get(el.dataset.id);if(!g)return;if(el.dataset.close||($("#sheetDlg")&&$("#sheetDlg").open))clearLayer();openStory(rootsChain(g.i))},
   random(){const pool=TREE.filter(g=>g.pop>=3&&UP[g.i].length);go(pool[Math.floor(Math.random()*pool.length)].id)},
   cycle(el){const g=byId.get(el.dataset.id);if(!g)return;const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g);updatePickBar()},
   own(el){const n=el.dataset.sys,o=new Set(hist.owned||[]);o.has(n)?o.delete(n):o.add(n);hist.owned=[...o];save();el.setAttribute("aria-pressed",o.has(n));const c=$("#ownCount");if(c)c.textContent=o.size?plural(o.size,"system")+" picked":"Pick a few, or skip"},
@@ -2726,7 +3477,7 @@ const ACTIONS={
   obDone(){hist.stage=null;save();go("timeline")},
   obSystems(){hist.stage="systems";save();clearLayer();go("start")},
   obAgain(){hist.stage="picks";save();clearLayer();go("start")},
-  setlv(el){const g=byId.get(el.dataset.id);const v=+el.dataset.lv;const cur=levelOf(hist,g);if(!hist.birth&&v>0){toast("Start your timeline first, then add games");go("start");return}const nl=v===cur?0:v;setLevel(g,nl);playBlip(nl);render();toast(v&&v!==cur?`${LV[v].label}: ${g.title}`:`Removed ${g.title}`)},
+  setlv(el){const g=byId.get(el.dataset.id);const v=+el.dataset.lv;const cur=levelOf(hist,g);if(!hist.birth&&v>0){ensureBirthThen(()=>{setLevel(g,v);playBlip(v);render();toast(`${LV[v].label}: ${g.title}`)});return}const nl=v===cur?0:v;setLevel(g,nl);playBlip(nl);render();toast(v&&v!==cur?`${LV[v].label}: ${g.title}`:`Removed ${g.title}`)},
   entry(el){openGameSheet(+el.dataset.y,el.dataset.t,!!el.dataset.ro)},
   entryLv(el){const y=+el.dataset.y,p=hist.years[y]||[],e=p.find(x=>norm(x.t)===norm(el.dataset.t));if(e){e.lv=+el.dataset.lv;playBlip(e.lv);sortPile(p);save();openGameSheet(y,e.t)}},
   entryWk(el){const y=+el.dataset.y,p=hist.years[y]||[],e=p.find(x=>norm(x.t)===norm(el.dataset.t));if(!e)return;if(e.wk){delete e.wk;delete e.role}else e.wk=1;sortPile(p);save();openGameSheet(y,e.t)},
@@ -2739,7 +3490,7 @@ const ACTIONS={
   year(el){openYearSheet(+el.dataset.y)},
   yearNav(el){openYearSheet(+el.dataset.y,($("#customIn")||{}).value||"")},
   yearAll(el){state.showAllYear=!state.showAllYear;openYearSheet(+el.dataset.y,($("#customIn")||{}).value||"")},
-  closeLayer(el,e){if(el.dataset.self&&e.target!==el)return;closeLayer()},
+  closeLayer(el,e){if(el&&el.dataset&&el.dataset.self&&e&&e.target!==el)return;closeLayer()},
   share(){if(!hist.birth||!entries(hist).length){toast("Add some games first");return}openShare()},
   copyShare(){const v=$("#shareLink").value;copyText(v,$("#shareLink"))},
   webShare(){const u=shareLink(hist);if(navigator.share)navigator.share({title:`${hist.name?hist.name+"'s":"My"} life in games`,text:"Here's my gaming timeline — compare yours in two minutes:",url:u}).catch(()=>{})},
@@ -2752,7 +3503,11 @@ const ACTIONS={
   copyWalk(el){copyText(shareBase()+"#walk-"+el.dataset.id)},
   copyGame(el){copyText(shareBase()+"#"+el.dataset.id)},
   png(el){saveImage(el.dataset.kind,el.dataset.who)},
-  poster(){openPoster(hist)},
+  poster(){state.posterMode="wall";openPoster(hist)},
+  boxPile(){state.posterMode="pile";openPoster(hist)},
+  posterMode(el){state.posterMode=el.dataset.m||"wall";openPoster(state.viewing?state.viewing.data:hist,state.viewing?state.viewing.name+"'s":null)},
+  pileToss(){if(PILE&&PILE.toss)PILE.toss()},
+  pileZeroG(){if(PILE&&PILE.toggleZeroG)PILE.toggleZeroG()},
   settings(){openSettings()},
   top10(){openTop10()},
   t10add(el){if((hist.top10||[]).length>=10)return;hist.top10=[...(hist.top10||[]),el.dataset.k];save();openTop10()},
@@ -2762,7 +3517,7 @@ const ACTIONS={
   theme(){const r=document.documentElement,cur=r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");r.dataset.theme=cur==="dark"?"light":"dark";store.set("ib2-theme",r.dataset.theme)},
   resetAsk(){$("#resetBox").innerHTML=`<div class="banner"><p>Clear all ${plural(entries(hist).length,"game")} from your timeline?</p><div class="row"><button class="btn love" data-act="resetDo">Clear it</button><button class="btn" data-act="resetNo">Keep it</button></div></div>`},
   resetNo(){$("#resetBox").innerHTML=""},
-  resetDo(){hist=blankHist();save();store.del("ib2-revealed");$("#layer").innerHTML="";go("start");render();toast("Cleared")},
+  resetDo(){hist=blankHist();save();store.del("ib2-revealed");clearLayer();go("start");render();toast("Cleared")},
   tier(el){const k=el.dataset.tier;state.tiers[k]=state.tiers[k]?0:1;store.set("ib2-tiers",state.tiers);render()},
   allTiers(){TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);render()},
   moreLinks(el){state.treeMore[el.dataset.dir]=1;render()},
@@ -2783,8 +3538,25 @@ document.addEventListener("keydown",e=>{
   if((e.key==="Enter"||e.key===" ")&&e.target.matches&&e.target.matches("g.wnode")){e.preventDefault();e.target.dispatchEvent(new MouseEvent("click",{bubbles:true}))}
 });
 
-/* ---------- boot ---------- */
-(()=>{const t=store.get("ib2-theme");if(t)document.documentElement.dataset.theme=t;const a=store.get("ib3-art");if(a)document.documentElement.dataset.art=a;updateArtBtn()})();
+/* ---------- boot & native <dialog closedby="any"> Safari fallback ---------- */
+(()=>{
+  const t=store.get("ib2-theme");if(t)document.documentElement.dataset.theme=t;
+  const a=store.get("ib3-art");if(a)document.documentElement.dataset.art=a;
+  updateArtBtn();
+  const dlg=$("#sheetDlg");
+  if(dlg){
+    dlg.addEventListener("close",()=>{
+      dlg.returnValue="";dlg.innerHTML="";
+      if(state.route.view==="timeline"||state.route.view==="start"){const y=window.scrollY;render();window.scrollTo({top:y})}
+    });
+    if(!("closedBy" in HTMLDialogElement.prototype)){
+      const outside=(ev,d)=>{const r=d.getBoundingClientRect();return ev.clientX<r.left||ev.clientX>r.right||ev.clientY<r.top||ev.clientY>r.bottom};
+      let pressedOutside=false;
+      dlg.addEventListener("pointerdown",ev=>{pressedOutside=outside(ev,dlg)});
+      dlg.addEventListener("pointerup",ev=>{if(pressedOutside&&outside(ev,dlg))dlg.close()});
+    }
+  }
+})();
 route();
 initCaps();
 </script>

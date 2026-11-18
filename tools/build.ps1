@@ -312,7 +312,14 @@ $aka = @{
   'battlefield-1942'='bf1942 bf 1942'; 'age-of-empires-ii'='aoe2 aoe 2'; 'team-fortress-2'='tf2'; 'clair-obscur-expedition-33'='expedition 33 e33'
 }
 
-# ---------------- media, culture & studios ----------------
+# ---------------- media, culture, mechanics & studios ----------------
+function NormImg([string]$u) {
+  if (-not $u) { return '' }
+  if ($u.StartsWith('https://thumb.wikimedia.org/wikipedia/')) { return 'wt:' + $u.Substring(38) }
+  if ($u.StartsWith('https://upload.wikimedia.org/wikipedia/')) { $u = 'w:' + $u.Substring(39) }
+  if ($u.StartsWith('w:') -and $u.Contains('/thumb/')) { return 'wt:' + $u.Substring(2) }
+  return $u
+}
 $media = @{}; if (Test-Path 'data\media.json') { $media = ReadJson 'data\media.json' }
 $mediaExCovers = @{}; $mediaExYt = @{}
 if (Test-Path 'data\media_extra.json') {
@@ -321,10 +328,22 @@ if (Test-Path 'data\media_extra.json') {
   if (Get $mex 'yt') { $mediaExYt = Get $mex 'yt' }
 }
 $studiosRaw = @(); if (Test-Path 'data\studios.json') { $stDoc = ReadJson 'data\studios.json'; $studiosRaw = @(Get $stDoc 'studios') }
+$ser2 = New-Object System.Web.Script.Serialization.JavaScriptSerializer; $ser2.MaxJsonLength = 67108864
 $cultureJson = '{}'; if (Test-Path 'data\culture.json') {
   $cDoc = ReadJson 'data\culture.json'
-  $ser2 = New-Object System.Web.Script.Serialization.JavaScriptSerializer; $ser2.MaxJsonLength = 67108864
   $cultureJson = $ser2.Serialize($cDoc)
+}
+$mwCoverFixes = @{}; $mwStudioLogos = @{}; $mwJson = '{}'
+if (Test-Path 'data\mechanics_world.json') {
+  $mwDoc = ReadJson 'data\mechanics_world.json'
+  if (Get $mwDoc 'coverFixes') { $mwCoverFixes = Get $mwDoc 'coverFixes' }
+  if (Get $mwDoc 'studioLogos') { $mwStudioLogos = Get $mwDoc 'studioLogos' }
+  $mwExport = [ordered]@{
+    mechanics  = @(Get $mwDoc 'mechanics')
+    genres     = (Get $mwDoc 'genres')
+    boardgames = @(Get $mwDoc 'boardgames')
+  }
+  $mwJson = $ser2.Serialize($mwExport)
 }
 
 # ---------------- write compact JSON ----------------
@@ -332,7 +351,7 @@ function J([string]$s) { return '"' + [System.Web.HttpUtility]::JavaScriptString
 $platList = New-Object System.Collections.Generic.List[string]; $platIdx = @{}
 foreach ($g in $games) { foreach ($p in $g.plats) { if (-not $platIdx.ContainsKey($p)) { $platIdx[$p] = $platList.Count; $platList.Add($p) } } }
 $sb = New-Object System.Text.StringBuilder
-[void]$sb.Append('{"v":4,"built":' + (J ((Get-Date).ToString('yyyy-MM-dd'))) + ',"genres":[')
+[void]$sb.Append('{"v":5,"built":' + (J ((Get-Date).ToString('yyyy-MM-dd'))) + ',"genres":[')
 [void]$sb.Append((($GENRES | ForEach-Object { '[' + (J $_[0]) + ',' + (J $_[1]) + ']' }) -join ','))
 [void]$sb.Append('],"plats":[' + (($platList | ForEach-Object { J $_ }) -join ',') + '],"tiers":[' + (($TIERS | ForEach-Object { J $_ }) -join ',') + '],"rels":[' + (($RELS | ForEach-Object { J $_ }) -join ',') + '],"g":[')
 $coverCount = 0; $mobyCount = 0; $ytCount = 0
@@ -350,6 +369,8 @@ for ($i = 0; $i -lt $games.Count; $i++) {
     $yt = Str (Get $mrec 'yt')
   }
   if (-not $img -and (Get $mediaExCovers $g.id)) { $img = Str (Get $mediaExCovers $g.id) }
+  if (Get $mwCoverFixes $g.id) { $img = Str (Get $mwCoverFixes $g.id) }
+  $img = NormImg $img
   if (-not $yt -and (Get $mediaExYt $g.id)) { $yt = Str (Get $mediaExYt $g.id) }
   if ($img) { $coverCount++ }
   if ($yt) { $ytCount++ }
@@ -378,9 +399,11 @@ foreach ($st in $studiosRaw) {
   $dias = (@(Get $st 'diaspora') | Where-Object { $_ } | ForEach-Object { '[' + (J (Str (Get $_ 'studio'))) + ',' + (J (Str (Get $_ 'note'))) + ']' }) -join ','
   $fnd = if (Get $st 'founded') { [int](Get $st 'founded') } else { 0 }
   $cls = if (Get $st 'closed') { [int](Get $st 'closed') } else { 0 }
-  [void]$sb.Append('[' + (J (Str (Get $st 'id'))) + ',' + (J (Str (Get $st 'name'))) + ',[' + $als + '],' + (J (Str (Get $st 'cc'))) + ',' + $fnd + ',' + $cls + ',' + (J (Str (Get $st 'status'))) + ',' + (J (Str (Get $st 'hq'))) + ',[' + $mks + '],' + (J (Str (Get $st 'bio'))) + ',[' + $dias + ']]')
+  $stid = Str (Get $st 'id')
+  $stLogo = NormImg (Str (Get $mwStudioLogos $stid))
+  [void]$sb.Append('[' + (J $stid) + ',' + (J (Str (Get $st 'name'))) + ',[' + $als + '],' + (J (Str (Get $st 'cc'))) + ',' + $fnd + ',' + $cls + ',' + (J (Str (Get $st 'status'))) + ',' + (J (Str (Get $st 'hq'))) + ',[' + $mks + '],' + (J (Str (Get $st 'bio'))) + ',[' + $dias + '],' + (J $stLogo) + ']')
 }
-[void]$sb.Append('],"culture":' + $cultureJson + '}')
+[void]$sb.Append('],"culture":' + $cultureJson + ',"mw":' + $mwJson + '}')
 $json = $sb.ToString()
 [IO.File]::WriteAllText((Join-Path $root 'dist\data.json'), $json, $utf8)
 
