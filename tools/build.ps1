@@ -312,19 +312,30 @@ $aka = @{
   'battlefield-1942'='bf1942 bf 1942'; 'age-of-empires-ii'='aoe2 aoe 2'; 'team-fortress-2'='tf2'; 'clair-obscur-expedition-33'='expedition 33 e33'
 }
 
-# ---------------- media & studios ----------------
+# ---------------- media, culture & studios ----------------
 $media = @{}; if (Test-Path 'data\media.json') { $media = ReadJson 'data\media.json' }
+$mediaExCovers = @{}; $mediaExYt = @{}
+if (Test-Path 'data\media_extra.json') {
+  $mex = ReadJson 'data\media_extra.json'
+  if (Get $mex 'covers') { $mediaExCovers = Get $mex 'covers' }
+  if (Get $mex 'yt') { $mediaExYt = Get $mex 'yt' }
+}
 $studiosRaw = @(); if (Test-Path 'data\studios.json') { $stDoc = ReadJson 'data\studios.json'; $studiosRaw = @(Get $stDoc 'studios') }
+$cultureJson = '{}'; if (Test-Path 'data\culture.json') {
+  $cDoc = ReadJson 'data\culture.json'
+  $ser2 = New-Object System.Web.Script.Serialization.JavaScriptSerializer; $ser2.MaxJsonLength = 67108864
+  $cultureJson = $ser2.Serialize($cDoc)
+}
 
 # ---------------- write compact JSON ----------------
 function J([string]$s) { return '"' + [System.Web.HttpUtility]::JavaScriptStringEncode($s) + '"' }
 $platList = New-Object System.Collections.Generic.List[string]; $platIdx = @{}
 foreach ($g in $games) { foreach ($p in $g.plats) { if (-not $platIdx.ContainsKey($p)) { $platIdx[$p] = $platList.Count; $platList.Add($p) } } }
 $sb = New-Object System.Text.StringBuilder
-[void]$sb.Append('{"v":3,"built":' + (J ((Get-Date).ToString('yyyy-MM-dd'))) + ',"genres":[')
+[void]$sb.Append('{"v":4,"built":' + (J ((Get-Date).ToString('yyyy-MM-dd'))) + ',"genres":[')
 [void]$sb.Append((($GENRES | ForEach-Object { '[' + (J $_[0]) + ',' + (J $_[1]) + ']' }) -join ','))
 [void]$sb.Append('],"plats":[' + (($platList | ForEach-Object { J $_ }) -join ',') + '],"tiers":[' + (($TIERS | ForEach-Object { J $_ }) -join ',') + '],"rels":[' + (($RELS | ForEach-Object { J $_ }) -join ',') + '],"g":[')
-$coverCount = 0; $mobyCount = 0
+$coverCount = 0; $mobyCount = 0; $ytCount = 0
 for ($i = 0; $i -lt $games.Count; $i++) {
   $g = $games[$i]
   $ge = ($g.genres | ForEach-Object { $genreIdx[$_] }) -join ','
@@ -332,13 +343,18 @@ for ($i = 0; $i -lt $games.Count; $i++) {
   $ak = ''; if ($aka.ContainsKey($g.id)) { $ak = $aka[$g.id] }
   $flags = 0; if ($g.inCat) { $flags = 1 }
   $mrec = Get $media $g.id
-  $img = ''; $moby = 0
+  $img = ''; $moby = 0; $yt = ''
   if ($mrec) {
-    $img = Str (Get $mrec 'img'); if ($img) { $coverCount++ }
+    $img = Str (Get $mrec 'img')
     $mv = Get $mrec 'moby'; if ($mv) { $moby = [int]$mv; $mobyCount++ }
+    $yt = Str (Get $mrec 'yt')
   }
+  if (-not $img -and (Get $mediaExCovers $g.id)) { $img = Str (Get $mediaExCovers $g.id) }
+  if (-not $yt -and (Get $mediaExYt $g.id)) { $yt = Str (Get $mediaExYt $g.id) }
+  if ($img) { $coverCount++ }
+  if ($yt) { $ytCount++ }
   if ($i) { [void]$sb.Append(',') }
-  [void]$sb.Append('[' + $g.code + ',' + (J $g.id) + ',' + (J $g.title) + ',' + $g.year + ',' + (J $g.dev) + ',' + (J $g.cc) + ',[' + $ge + '],[' + $pl + '],' + $g.pop + ',' + (J $g.note) + ',' + $g.inf + ',' + (J $ak) + ',' + $flags + ',' + (J $img) + ',' + $moby + ']')
+  [void]$sb.Append('[' + $g.code + ',' + (J $g.id) + ',' + (J $g.title) + ',' + $g.year + ',' + (J $g.dev) + ',' + (J $g.cc) + ',[' + $ge + '],[' + $pl + '],' + $g.pop + ',' + (J $g.note) + ',' + $g.inf + ',' + (J $ak) + ',' + $flags + ',' + (J $img) + ',' + $moby + ',' + (J $yt) + ']')
 }
 [void]$sb.Append('],"l":[')
 $tierIdx = @{}; for ($i = 0; $i -lt $TIERS.Count; $i++) { $tierIdx[$TIERS[$i]] = $i }
@@ -364,7 +380,7 @@ foreach ($st in $studiosRaw) {
   $cls = if (Get $st 'closed') { [int](Get $st 'closed') } else { 0 }
   [void]$sb.Append('[' + (J (Str (Get $st 'id'))) + ',' + (J (Str (Get $st 'name'))) + ',[' + $als + '],' + (J (Str (Get $st 'cc'))) + ',' + $fnd + ',' + $cls + ',' + (J (Str (Get $st 'status'))) + ',' + (J (Str (Get $st 'hq'))) + ',[' + $mks + '],' + (J (Str (Get $st 'bio'))) + ',[' + $dias + ']]')
 }
-[void]$sb.Append(']}')
+[void]$sb.Append('],"culture":' + $cultureJson + '}')
 $json = $sb.ToString()
 [IO.File]::WriteAllText((Join-Path $root 'dist\data.json'), $json, $utf8)
 
@@ -384,7 +400,7 @@ $rep = @(
   "Built $(Get-Date -Format 'yyyy-MM-dd HH:mm')  ->  $Out ($([Math]::Round($html.Length/1KB)) KB, data $([Math]::Round($json.Length/1KB)) KB)",
   "Agent files: $($files.Count)  |  games: $($games.Count) (in family tree: $($inTree.Count), in catalog: $(($games | Where-Object { $_.inCat }).Count), new from agents: $agentGameCount)",
   "Links: $($links.Count)  |  " + (($TIERS | ForEach-Object { "$_=$([int]$tierCount[$_])" }) -join ' '),
-  "Covers: $coverCount  |  MobyGames IDs: $mobyCount  |  Studios curated: $($studiosRaw.Count)",
+  "Covers: $coverCount  |  YouTube IDs: $ytCount  |  MobyGames IDs: $mobyCount  |  Studios curated: $($studiosRaw.Count)",
   "Updates applied: $applied  |  games without genre: $noGenre  |  unresolved link ids: $($unresolved.Count)"
 )
 $rep | ForEach-Object { Write-Output $_ }

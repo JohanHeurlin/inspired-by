@@ -1,0 +1,671 @@
+{
+  "pioneers": [
+    {
+      "name": "William Higinbotham",
+      "year": 1958,
+      "role": "Physicist & creator of Tennis for Two",
+      "cc": "US",
+      "bio": "Wired an analog computer to a five-inch oscilloscope and two aluminum hand controllers for Brookhaven National Laboratory's 1958 visitor day. Hundreds lined up to bat a glowing ball over a net purely for fun, showing electronic screens could host lively two-player play.",
+      "games": ["tennis-for-two"]
+    },
+    {
+      "name": "Steve Russell",
+      "year": 1962,
+      "role": "MIT hacker & lead programmer of Spacewar!",
+      "cc": "US",
+      "bio": "Programmed Spacewar! on MIT's DEC PDP-1 alongside fellow Tech Model Railroad Club members Martin Graetz and Wayne Wiitanen, pitting two spaceships in a duel around a gravity-pulling star. Passed freely across university labs on paper tape, its code directly inspired the first coin-operated arcade cabinets.",
+      "games": ["spacewar"]
+    },
+    {
+      "name": "Ralph Baer",
+      "year": 1972,
+      "role": "Inventor of the home video game console",
+      "cc": "US",
+      "bio": "Sketched the idea of playing games on ordinary family televisions at a New York bus stop in 1966, then built the 'Brown Box' prototype at Sanders Associates with Bill Harrison and Bill Rusch. Licensed as the 1972 Magnavox Odyssey—and followed by his hit electronic memory game Simon—it turned the living-room TV set into a playground.",
+      "games": ["table-tennis-magnavox-odyssey", "simon"]
+    },
+    {
+      "name": "Al Alcorn",
+      "year": 1972,
+      "role": "Atari engineer & designer of Pong",
+      "cc": "US",
+      "bio": "Handed a simple warm-up assignment by Nolan Bushnell, he engineered Pong from off-the-shelf TTL logic chips, adding segmented paddles for angled shots and rallies that accelerated over time. When the prototype at Andy Capp's Tavern jammed from an overflowing quarter box, the commercial video game industry took flight.",
+      "games": ["pong"]
+    },
+    {
+      "name": "Jerry Lawson",
+      "year": 1976,
+      "role": "Chief hardware engineer of the ROM game cartridge",
+      "cc": "US",
+      "bio": "A self-taught Queens electronics tinkerer and one of the lone Black regulars at Silicon Valley's Homebrew Computer Club alongside Wozniak and Jobs, he led Fairchild's 1976 Channel F engineering team. His durable plastic Videocart let families swap microprocessor ROM games safely at will, establishing the cartridge model that powered consoles for decades.",
+      "games": []
+    },
+    {
+      "name": "Roberta Williams",
+      "year": 1980,
+      "role": "Co-founder of Sierra On-Line & graphic adventure pioneer",
+      "cc": "US",
+      "bio": "Sketched black-and-white rooms at her kitchen table for 1980's Mystery House on the Apple II, building the first graphic adventure game with her husband Ken. Across King's Quest and Phantasmagoria, she turned home computers into stages for fairy-tale exploration, animated heroes, and interactive mystery.",
+      "games": ["mystery-house", "kings-quest", "phantasmagoria"]
+    },
+    {
+      "name": "Toru Iwatani",
+      "year": 1980,
+      "role": "Namco designer & creator of Pac-Man",
+      "cc": "JP",
+      "bio": "Determined to make arcades welcoming to women and couples amid rows of dark space shooters, he built a bright maze chase around eating and gave each of its four ghosts distinct pursuit habits. Pac-Man became gaming's first crossover pop-culture character.",
+      "games": ["pac-man"]
+    },
+    {
+      "name": "Gunpei Yokoi",
+      "year": 1980,
+      "role": "Nintendo R&D1 head, creator of Game & Watch & Game Boy",
+      "cc": "JP",
+      "bio": "Guided by his motto of 'lateral thinking with withered technology,' he turned inexpensive calculator LCDs into Game & Watch, invented the cross-shaped D-pad, produced Metroid, and spearheaded the monochrome Game Boy. By prizing battery life, durability, and play feel over raw specs, he put handheld gaming in tens of millions of pockets.",
+      "games": ["ball-game-and-watch", "metroid", "super-mario-land"]
+    },
+    {
+      "name": "Dona Bailey",
+      "year": 1981,
+      "role": "Atari coin-op programmer & co-creator of Centipede",
+      "cc": "US",
+      "bio": "Left assembly-language engineering at General Motors to become the only woman programming inside Atari's coin-op division. Collaborating with designer Ed Logg on 1981's trackball shooter Centipede, she tuned its brisk insect-swarm pace and glowing pastel palette, drawing huge numbers of women to arcade cabinets.",
+      "games": ["centipede"]
+    },
+    {
+      "name": "Shigeru Miyamoto",
+      "year": 1981,
+      "role": "Nintendo industrial designer & creator of Mario and Zelda",
+      "cc": "JP",
+      "bio": "Hired by Nintendo as an industrial artist, he built Donkey Kong around slapstick character comedy before turning childhood memories of exploring Kyoto hillsides and caves into Super Mario Bros. and The Legend of Zelda. A decade later, Super Mario 64 wrote the handbook for moving a character and camera smoothly through 3D space.",
+      "games": ["donkey-kong", "super-mario-bros", "zelda", "super-mario-64"]
+    },
+    {
+      "name": "Carol Shaw",
+      "year": 1982,
+      "role": "First commercially published woman cartridge designer",
+      "cc": "US",
+      "bio": "Trained in computer science at UC Berkeley, she wrote 3-D Tic-Tac-Toe and Video Checkers at Atari before joining Activision to solo-design and program 1982's River Raid. Packing procedural canyon banks, fuel runs, and crisp enemy pacing into a 4 KB Atari 2600 ROM, she delivered a million-selling shooter.",
+      "games": ["river-raid"]
+    },
+    {
+      "name": "Dani Bunten Berry",
+      "year": 1983,
+      "role": "Multiplayer & economic simulation designer",
+      "cc": "US",
+      "bio": "Convinced that home computers shone brightest when friends laughed, bargained, and schemed in the same room, she created 1983's four-player supply-and-demand game M.U.L.E. and exploration sim The Seven Cities of Gold in Arkansas. Will Wright later dedicated The Sims to her memory.",
+      "games": ["m-u-l-e", "the-seven-cities-of-gold"]
+    },
+    {
+      "name": "Alexey Pajitnov",
+      "year": 1984,
+      "role": "Mathematician & creator of Tetris",
+      "cc": "RU",
+      "bio": "Adapted wooden pentomino puzzles into falling four-square tetrominoes on a text-only Elektronika 60 terminal at the Soviet Academy of Sciences in Moscow, drawing blocks out of bracket pairs. Copied from floppy to floppy before becoming the Game Boy's pack-in sensation, Tetris showed pure rules cross every border.",
+      "games": ["tetris", "hexic"]
+    },
+    {
+      "name": "David Braben & Ian Bell",
+      "year": 1984,
+      "role": "Cambridge undergrads & co-creators of Elite",
+      "cc": "GB",
+      "bio": "Squeezed eight galaxies of 256 procedurally generated star systems, wireframe 3D docking, cargo trading, and a saveable pilot career into 22 KB of BBC Micro memory. Elite traded arcade three-lives-and-out high scores for open-ended freedom in a simulated cosmos.",
+      "games": ["elite", "frontier-elite-ii"]
+    },
+    {
+      "name": "Koji Kondo",
+      "year": 1985,
+      "role": "Nintendo composer & pioneer of dynamic game music",
+      "cc": "JP",
+      "bio": "As the first person Nintendo hired specifically to write music, he crafted themes for Super Mario Bros. and The Legend of Zelda on four tiny Famicom audio channels that matched jump rhythms and sped up when timers ran low. Generations of players around the world can recognize his melodies in three notes.",
+      "games": ["super-mario-bros", "zelda", "the-legend-of-zelda-ocarina-of-time"]
+    },
+    {
+      "name": "Yu Suzuki",
+      "year": 1985,
+      "role": "Sega AM2 arcade showman & 3D pioneer",
+      "cc": "JP",
+      "bio": "Turned arcades into full-body theater with hydraulic tilt bikes and Ferrari convertibles in Hang-On and Out Run, then brought 3D polygon martial arts to life in Virtua Fighter. His 1999 Dreamcast epic Shenmue tracked weather, shopkeeper routines, and neighborhood detail years ahead of modern open worlds.",
+      "games": ["hang-on", "out-run", "virtua-fighter", "shenmue"]
+    },
+    {
+      "name": "Hironobu Sakaguchi",
+      "year": 1987,
+      "role": "Creator of Final Fantasy & JRPG storyteller",
+      "cc": "JP",
+      "bio": "Facing lean years at Square in 1987, he poured his ambitions into one make-or-break role-playing adventure—Final Fantasy—saving the studio and sparking a multi-decade anthology. Across Final Fantasy VI, VII, and Chrono Trigger, he wove ensemble character drama and operatic set pieces into turn-based play.",
+      "games": ["final-fantasy", "final-fantasy-vi", "chrono-trigger", "final-fantasy-vii"]
+    },
+    {
+      "name": "Sid Meier",
+      "year": 1987,
+      "role": "Co-founder of MicroProse & Firaxis, strategy architect",
+      "cc": "US",
+      "bio": "Defined games as 'a series of interesting choices,' distilling swashbuckling Caribbean voyages, rail empires, and 6,000 years of human history into Pirates!, Railroad Tycoon, and Civilization. His interlocking tech trees and 'one more turn' pacing set the standard for historical strategy.",
+      "games": ["pirates", "railroad-tycoon", "civilization"]
+    },
+    {
+      "name": "Will Wright",
+      "year": 1989,
+      "role": "Co-founder of Maxis & creator of SimCity and The Sims",
+      "cc": "US",
+      "bio": "Noticed while building island maps for Raid on Bungeling Bay that shaping towns was more absorbing than bombing them, turning urban-planning books into SimCity's open-ended 'software toy.' After losing his Oakland home in the 1991 firestorm, he asked how everyday possessions shape happiness—and created The Sims.",
+      "games": ["raid-on-bungeling-bay", "simcity", "the-sims"]
+    },
+    {
+      "name": "Jordan Mechner",
+      "year": 1989,
+      "role": "Filmmaker-programmer & creator of Prince of Persia",
+      "cc": "US",
+      "bio": "Filmed his karate teacher for college debut Karateka, then spent years rotoscoping home-video footage of his younger brother sprinting and vaulting across parking lots into 48 KB of Apple II memory for 1989's Prince of Persia. Its weighty momentum and sword-parry duels brought silent-film physicality to platformers.",
+      "games": ["karateka", "prince-of-persia"]
+    },
+    {
+      "name": "Ron Gilbert",
+      "year": 1990,
+      "role": "Co-creator of SCUMM & Monkey Island",
+      "cc": "US",
+      "bio": "Co-built the SCUMM scripting engine at Lucasfilm Games to replace frustrating text-parser guesswork with clickable verbs in Maniac Mansion, then vowed players in The Secret of Monkey Island shouldn't suffer unfair dead ends for exploring. His comic dialogue trees and fair puzzle logic reshaped narrative adventures.",
+      "games": ["maniac-mansion", "the-secret-of-monkey-island", "monkey-island-2-lechuck-s-revenge"]
+    },
+    {
+      "name": "John Carmack",
+      "year": 1993,
+      "role": "Co-founder of id Software & real-time 3D engine architect",
+      "cc": "US",
+      "bio": "Solved smooth tile scrolling on IBM PCs for Commander Keen before engineering the blazing raycasting, BSP-tree, and true networked 3D engines behind Wolfenstein 3D, Doom, and Quake. By building Doom for user WAD mods and releasing id's engine source code under open licenses, he seeded an entire generation of studios.",
+      "games": ["commander-keen", "wolfenstein-3d", "doom", "quake"]
+    },
+    {
+      "name": "Warren Spector",
+      "year": 1994,
+      "role": "Immersive-sim producer & director of Deus Ex",
+      "cc": "US",
+      "bio": "Championed first-person worlds governed by consistent simulations rather than single scripted answers, producing Ultima Underworld and System Shock before directing 2000's Deus Ex at Ion Storm Austin. Whether sneaking through air ducts, hacking turrets, or talking past guards, players authored their own solutions.",
+      "games": ["ultima-underworld-the-stygian-abyss", "system-shock", "deus-ex"]
+    },
+    {
+      "name": "Shinji Mikami",
+      "year": 1996,
+      "role": "Creator of Resident Evil & modern third-person action",
+      "cc": "JP",
+      "bio": "Popularized 'survival horror' in 1996's Resident Evil through scarce ammunition, creaking Spencer Mansion doors, and fixed-camera tension, then tore up his own playbook for 2005's Resident Evil 4. Its tight over-the-shoulder aiming view became the standard camera across modern third-person action games.",
+      "games": ["resident-evil", "resident-evil-2002-remake", "resident-evil-4"]
+    },
+    {
+      "name": "Satoshi Tajiri",
+      "year": 1996,
+      "role": "Founder of Game Freak & creator of Pokémon",
+      "cc": "JP",
+      "bio": "Combined childhood summers catching beetles in Tokyo's vanishing fields with the Game Boy Link Cable's ability to pass creatures between two kids sitting side by side. Splitting Pokémon Red and Green so friends had to trade to complete their Pokédex turned solitary handhelds into a schoolyard social network.",
+      "games": ["pok-mon-red-and-green", "pok-mon-gold-and-silver"]
+    },
+    {
+      "name": "Hideo Kojima",
+      "year": 1998,
+      "role": "Director of Metal Gear & Death Stranding",
+      "cc": "JP",
+      "bio": "Turned MSX2 hardware limits into stealth gameplay in 1987's Metal Gear—rewarding hiding over gunfire—before directing 1998's Metal Gear Solid like a playable espionage thriller full of fourth-wall surprises. Two decades later, Death Stranding reimagined open-world journeys around quiet aid left behind for strangers.",
+      "games": ["metal-gear", "metal-gear-solid", "metal-gear-solid-3", "death-stranding"]
+    },
+    {
+      "name": "Gabe Newell",
+      "year": 1998,
+      "role": "Co-founder of Valve, Half-Life producer & architect of Steam",
+      "cc": "US",
+      "bio": "Left Microsoft after thirteen years working on early Windows—noticing Doom sat on more PCs than the OS itself—to co-found Valve with Mike Harrington and ship Half-Life's unbroken first-person storytelling. By hiring mod teams behind Counter-Strike and Portal, building Steam, and backing Linux handhelds, Valve reshaped PC gaming.",
+      "games": ["half-life", "half-life-2", "portal"]
+    },
+    {
+      "name": "Fumito Ueda",
+      "year": 2001,
+      "role": "Director of Ico & Shadow of the Colossus",
+      "cc": "JP",
+      "bio": "Shaped his worlds through 'design by subtraction,' stripping away HUD bars, exposition dumps, and filler foes in Ico so holding Yorda's hand carried the whole emotional bond. Shadow of the Colossus pared an entire open land down to a rider, a horse, and sixteen solemn giants.",
+      "games": ["ico", "shadow-colossus", "last-guardian"]
+    },
+    {
+      "name": "Hidetaka Miyazaki",
+      "year": 2009,
+      "role": "FromSoftware president & director of Dark Souls and Elden Ring",
+      "cc": "JP",
+      "bio": "Switched from a corporate IT job at 29 to FromSoftware, rescuing a struggling fantasy prototype into 2009's Demon's Souls before directing Dark Souls, Bloodborne, and Elden Ring. Drawing on childhood memories of piecing together English fantasy books he could only half-read, he trusted players with demanding combat, quiet lore, and shared floor notes.",
+      "games": ["demon-s-souls", "dark-souls", "bloodborne", "elden-ring"]
+    },
+    {
+      "name": "Markus Persson & Jens Bergensten",
+      "year": 2009,
+      "role": "Creator & longtime lead designer of Minecraft",
+      "cc": "SE",
+      "bio": "Persson coded Minecraft's blocky procedural survival world in Java over a May 2009 weekend, blending ideas from Infiniminer and Dwarf Fortress and iterating openly with early buyers. Bergensten stepped in as lead designer in 2011, guiding fifteen years of updates that grew it into the best-selling game ever made.",
+      "games": ["minecraft"]
+    },
+    {
+      "name": "Lucas Pope",
+      "year": 2013,
+      "role": "Solo indie auteur of Papers, Please & Obra Dinn",
+      "cc": "US",
+      "bio": "Turned border-checkpoint rubber stamps into moral suspense in 2013's Papers, Please, asking how an ordinary clerk keeps a family warm inside an authoritarian state. Five years later, Return of the Obra Dinn rendered an 1807 maritime insurance mystery in crisp 1-bit dithering inspired by classic Macintosh screens.",
+      "games": ["papers-please", "return-of-the-obra-dinn"]
+    },
+    {
+      "name": "Toby Fox",
+      "year": 2015,
+      "role": "Solo creator & composer of Undertale and Deltarune",
+      "cc": "US",
+      "bio": "Wrote, coded, and scored Undertale largely solo after honing EarthBound hacks and webcomic music, letting RPG players joke with, befriend, or spare every monster instead of grinding for experience points. Its bullet-dodging mercy battles and leitmotif-rich soundtrack remembered player choices even across resets.",
+      "games": ["undertale", "deltarune"]
+    },
+    {
+      "name": "Eric Barone",
+      "year": 2016,
+      "role": "Solo developer ('ConcernedApe') of Stardew Valley",
+      "cc": "US",
+      "bio": "Started Stardew Valley in Seattle to sharpen his C# skills for job interviews, then spent four and a half years working ten-hour days to pixel-paint, compose, write, and code every season and villager himself. His earnest tribute to Harvest Moon ushered in a wave of gentle farming and life sims.",
+      "games": ["stardew-valley"]
+    },
+    {
+      "name": "Brendan Greene",
+      "year": 2017,
+      "role": "Modder ('PlayerUnknown') & pioneer of battle royale",
+      "cc": "IE",
+      "bio": "Working as a photographer and web designer in Ireland, he taught himself scripting to build the DayZ: Battle Royale mod—dropping scavengers onto a vast island inside a shrinking safe circle. Realized at full 100-player scale in 2017's PUBG: Battlegrounds, his survival-ring format reshaped online shooters.",
+      "games": ["dayz-battle-royale", "pubg"]
+    },
+    {
+      "name": "LocalThunk",
+      "year": 2024,
+      "role": "Pseudonymous solo creator of Balatro",
+      "cc": "CA",
+      "bio": "Built Balatro on vacation in Saskatchewan around Cantonese card game Big Two—despite not playing poker—using LÖVE2D and mischievous Joker cards that bend scoring math to wild heights. Refusing microtransactions and keeping his everyday privacy intact, his side project sold millions and swept year-end awards.",
+      "games": ["balatro"]
+    }
+  ],
+  "hardware": [
+    {
+      "sys": "Arcade",
+      "year": 1971,
+      "maker": "Nutting, Atari, Taito, Namco & Sega",
+      "cc": "US",
+      "engineers": "Nolan Bushnell, Ted Dabney, Al Alcorn, Tomohiro Nishikado & Yu Suzuki",
+      "headline": "Bespoke coin-op silicon, glowing CRTs & hydraulic sit-down cabinets",
+      "bio": "Starting with Bushnell and Dabney's fiberglass Computer Space in 1971 and Nishikado's microprocessor-powered Space Invaders, coin-op engineers built custom circuit boards that home hardware couldn't match for years. Dimly lit rooms of booming speakers, microswitch sticks, and quarters queued along the bezel turned gaming into a loud neighborhood hangout."
+    },
+    {
+      "sys": "Atari 2600",
+      "year": 1977,
+      "maker": "Atari",
+      "cc": "US",
+      "engineers": "Jay Miner, Joe Decuir, Steve Mayer & Ron Milner",
+      "headline": "128 bytes of RAM & 'racing the beam' on family televisions",
+      "bio": "Built around MOS Technology's stripped-down 6507 CPU and Jay Miner's custom TIA television chip with zero video framebuffer, it forced coders to paint every scanline live ahead of the moving CRT electron beam. Faux-woodgrain trim, one-button CX40 joysticks, and clever ROM tricks brought arcade thrills into 30 million homes."
+    },
+    {
+      "sys": "PC",
+      "year": 1981,
+      "maker": "IBM & open PC ecosystem",
+      "cc": "US",
+      "engineers": "Don Estridge, David Bradley & generations of sound-card and GPU builders",
+      "headline": "An open slot-based architecture born in IBM's 1981 Boca Raton skunkworks",
+      "bio": "Don Estridge's team assembled the IBM 5150 from off-the-shelf parts with published expansion specs, sparking a clone ecosystem later supercharged by Sound Blaster audio and 3dfx, ATI, and NVIDIA GPUs. Mouse-and-keyboard precision, user mods, indie storefronts, and decades of backward compatibility keep gaming's longest library alive on one desk."
+    },
+    {
+      "sys": "Commodore 64",
+      "year": 1982,
+      "maker": "Commodore International",
+      "cc": "US",
+      "engineers": "Bob Yannes, Al Charpentier & Charles Winterble",
+      "headline": "64 KB of RAM & Bob Yannes's synth-grade SID chip inside a breadbin keyboard",
+      "bio": "MOS Technology engineers crafted its VIC-II hardware sprites and three-voice analog-filtered SID synthesizer in weeks for a machine priced for department-store shelves rather than offices. Booting straight into BASIC—and carried by Rob Hubbard and Martin Galway's driving chiptunes—it turned millions of bedrooms into coding studios."
+    },
+    {
+      "sys": "NES",
+      "year": 1983,
+      "maker": "Nintendo",
+      "cc": "JP",
+      "engineers": "Masayuki Uemura, Ricoh silicon team & Lance Barr",
+      "headline": "Smooth tile scrolling & mapper cartridges that rebuilt console gaming",
+      "bio": "Masayuki Uemura's Famicom paired a custom Ricoh 2A03 processor and tile-scrolling Picture Processing Unit with cartridges wired to hold extra memory-mapper chips right inside the shell. Restyled by Lance Barr as a front-loading gray deck with a crisp D-pad, it revived North America's post-1983 console market."
+    },
+    {
+      "sys": "Amiga",
+      "year": 1985,
+      "maker": "Commodore / Amiga Corp.",
+      "cc": "US",
+      "engineers": "Jay Miner, RJ Mical, Dave Morse & Carl Sassenrath",
+      "headline": "Custom graphics & Paula 4-channel sound years ahead of its time",
+      "bio": "Developed in Santa Clara behind a surfboard-company alias, Jay Miner's Agnus, Denise, and Paula co-processors offloaded blitter animation and stereo 8-bit sampled audio from the Motorola 68000 while Sassenrath's Exec OS multitasked in 256 KB. European bedroom coders, demoscene crews, and pixel artists made the Amiga 500 feel like a home arcade."
+    },
+    {
+      "sys": "Mega Drive / Genesis",
+      "year": 1988,
+      "maker": "Sega",
+      "cc": "JP",
+      "engineers": "Hideki Sato & Masami Ishikawa",
+      "headline": "Arcade-bred Motorola 68000 speed & gritty Yamaha YM2612 FM synth",
+      "bio": "Hideki Sato's R&D team shrank Sega's System 16 arcade architecture around a 7.6 MHz Motorola 68000 CPU and six-channel FM synthesizer, complete with a stereo headphone jack and volume slider on the original black shell. Blistering horizontal speed, punchy basslines, Sonic, and tight sports games gave 16-bit consoles an arcade edge."
+    },
+    {
+      "sys": "Game Boy",
+      "year": 1989,
+      "maker": "Nintendo",
+      "cc": "JP",
+      "engineers": "Gunpei Yokoi & Satoru Okada",
+      "headline": "30-hour AA battery life & pocket toughness over flashy specs",
+      "bio": "Gunpei Yokoi and R&D1 co-lead Satoru Okada skipped battery-draining color screens for a sharp pea-green reflective LCD that ran up to thirty hours on four AA cells. Bundled with Tetris and joined by two-player Link Cables, the brick-tough handheld survived schoolbags and outlasted faster color rivals for over a decade."
+    },
+    {
+      "sys": "SNES",
+      "year": 1990,
+      "maker": "Nintendo",
+      "cc": "JP",
+      "engineers": "Masayuki Uemura & Ken Kutaragi (Sony SPC700 audio)",
+      "headline": "Mode 7 scaling, rich 32,768-color art & Sony's 8-channel sound chip",
+      "bio": "Uemura's Super Famicom added rotating Mode 7 backgrounds, translucent sprite layers, shoulder buttons on its rounded controller, and an 8-channel sample audio module quietly engineered for Nintendo by Sony's Ken Kutaragi. In-cartridge chips like the Super FX pushed 16-bit pixel craft and symphonic scores to lasting heights."
+    },
+    {
+      "sys": "PlayStation",
+      "year": 1994,
+      "maker": "Sony Computer Entertainment",
+      "cc": "JP",
+      "engineers": "Ken Kutaragi, Masakazu Suzoki & Teiyu Goto",
+      "headline": "Affordable 650 MB CD-ROMs & dedicated 3D geometry silicon",
+      "bio": "After a joint SNES CD project fell through, Ken Kutaragi persuaded Sony to build a dedicated 3D polygon console paired with CD-ROM discs that cost a fraction of ROM cartridges to press. Teiyu Goto's four-symbol dual-grip controller and welcoming third-party dev kits carried video games into late-night music and club culture."
+    },
+    {
+      "sys": "Nintendo 64",
+      "year": 1996,
+      "maker": "Nintendo / Silicon Graphics",
+      "cc": "JP",
+      "engineers": "Genyo Takeda, Silicon Graphics Reality team & Lance Barr",
+      "headline": "Thumb analog stick, snap-in Rumble Pak & four front controller ports",
+      "bio": "Co-built with Silicon Graphics around 64-bit Reality Co-Processor silicon for Z-buffered 3D and zero-load cartridges, its biggest leap rested under the player's left thumb. Genyo Takeda's three-pronged controller standardized analog 3D movement and force feedback, while four built-in ports made Mario Kart and GoldenEye split-screen staples."
+    },
+    {
+      "sys": "Dreamcast",
+      "year": 1998,
+      "maker": "Sega",
+      "cc": "JP",
+      "engineers": "Hideki Sato, Hitachi SH-4 & PowerVR2 engineering teams",
+      "headline": "Built-in online modem, razor-sharp 480p VGA & pocket VMU screens",
+      "bio": "Sega's final console packed a Hitachi SH-4 processor, clean tile-based PowerVR2 graphics capable of 60fps Naomi arcade ports, a memory card with its own mini LCD screen, and a modem right inside every box. Though its commercial run was brief, Phantasy Star Online, Jet Set Radio, and Shenmue sketched console gaming's connected future."
+    },
+    {
+      "sys": "PlayStation 2",
+      "year": 2000,
+      "maker": "Sony Computer Entertainment",
+      "cc": "JP",
+      "engineers": "Ken Kutaragi & Masaaki Oka",
+      "headline": "128-bit 'Emotion Engine,' built-in DVD player & 160 million sold",
+      "bio": "Kutaragi's vertical black monolith paired the wide-bandwidth Emotion Engine and Graphics Synthesizer with PlayStation 1 backward compatibility and a DVD movie player priced below standalone decks. Landing under 160 million televisions, it hosted one of gaming's broadest libraries—from Grand Theft Auto III and Ico to SingStar and Guitar Hero."
+    },
+    {
+      "sys": "Xbox",
+      "year": 2001,
+      "maker": "Microsoft",
+      "cc": "US",
+      "engineers": "Seamus Blackley, Kevin Bachus, Otto Berkes, Ted Hase & Boyd Multerer",
+      "headline": "Internal hard drive, broadband-only Ethernet & unified Xbox Live",
+      "bio": "Pitched by four DirectX engineers who gutted Dell laptops for their prototype, Microsoft's debut box paired Pentium III and custom NVIDIA NV2A silicon with two bold bets: a built-in hard drive and an Ethernet port with no dial-up fallback. Boyd Multerer's unified Xbox Live friend list and Halo: Combat Evolved defined modern console shooters."
+    },
+    {
+      "sys": "Xbox 360",
+      "year": 2005,
+      "maker": "Microsoft",
+      "cc": "US",
+      "engineers": "J Allard, Todd Holmdahl, ATI Xenos team & Jonathan Hayes",
+      "headline": "Unified shader GPU, wireless controllers, Achievements & Xbox Live Arcade",
+      "bio": "Built around ATI's custom Xenos GPU—introducing unified shaders and fast embedded eDRAM ahead of PC cards—every machine booted into a connected dashboard with cross-game party chat and Gamerscore Achievements. Despite early Red Ring thermal failures that prompted a $1 billion warranty repair drive, Xbox Live Arcade ignited the console indie wave."
+    },
+    {
+      "sys": "Wii",
+      "year": 2006,
+      "maker": "Nintendo",
+      "cc": "JP",
+      "engineers": "Genyo Takeda, Shigeru Miyamoto & Kenichiro Ashida",
+      "headline": "Whisper-quiet silicon & a TV-remote wand grandparents could swing",
+      "bio": "Stepping aside from the HD horsepower race, Genyo Takeda's team shrank low-wattage Broadway and Hollywood chips into a paperback-sized shell while Kenichiro Ashida shaped the one-handed Wii Remote around MEMS accelerometers and an infrared bar. Watching parents and retirees bowl strikes in Wii Sports turned living rooms into family courts overnight."
+    },
+    {
+      "sys": "Switch",
+      "year": 2017,
+      "maker": "Nintendo",
+      "cc": "JP",
+      "engineers": "Yoshiaki Koizumi, Kouichi Kawamoto & NVIDIA Tegra team",
+      "headline": "Snap-off Joy-Con rails uniting portable and TV play in one click",
+      "bio": "Merging Nintendo's home and handheld lineages around a custom NVIDIA Tegra chip, Koizumi and Kawamoto tuned every detail down to the crisp latch sound of sliding Joy-Con controllers and HD Rumble. Lifting Breath of the Wild straight out of a TV dock onto a morning train erased the old divide between pocket and living-room games."
+    },
+    {
+      "sys": "Steam Deck",
+      "year": 2022,
+      "maker": "Valve",
+      "cc": "US",
+      "engineers": "Pierre-Loup Griffais, Lawrence Yang, Greg Coomer & AMD Van Gogh team",
+      "headline": "Custom 15-watt AMD APU & Proton running Windows PC games on Linux",
+      "bio": "Years of Valve work on Steam Controllers, open-source Linux graphics drivers, and the Proton compatibility layer met a custom RDNA 2 AMD chip tuned specifically for 15-watt battery play. With dual trackpads, repairable parts, and zero walled garden, players carried decades of existing PC libraries wherever they went."
+    }
+  ],
+  "eras": [
+    {
+      "from": 1974,
+      "to": 1979,
+      "vibe": "Woodgrain TVs, roller-disco rinks & Star Wars blockbusters",
+      "moments": [
+        "🎬 Jaws, Star Wars (1977) & Close Encounters lines wrapping around the block",
+        "🕺 Disco mirror balls, Fleetwood Mac's Rumours, punk 45s & the first Sony Walkman (1979)",
+        "🎲 Boxed Dungeons & Dragons booklets, Apple II kits & rotary-dial kitchen phones",
+        "🛰️ Voyager's Golden Record launched into interstellar space & post-Watergate headlines"
+      ]
+    },
+    {
+      "from": 1980,
+      "to": 1983,
+      "vibe": "Pockets full of quarters, MTV's launch & BMX bikes on front lawns",
+      "moments": [
+        "📺 MTV's 1981 debut ('Video Killed the Radio Star') & Michael Jackson's Thriller",
+        "🚲 The Empire Strikes Back, Raiders of the Lost Ark, E.T. & WarGames",
+        "🧩 Rubik's Cube mania, type-in BASIC magazine listings & cassette boomboxes",
+        "🚀 Columbia's maiden Space Shuttle flight (1981) & 'Pac-Man Fever' on FM radio"
+      ]
+    },
+    {
+      "from": 1984,
+      "to": 1986,
+      "vibe": "Cassette Walkmans, VHS video stores & neon arcades",
+      "moments": [
+        "🎧 Foam-earpad Sony Walkmans, Prince's Purple Rain, Madonna & synth-pop cassettes",
+        "👻 Ghostbusters, Back to the Future, The Goonies & Saturday morning cartoons",
+        "💾 3.5-inch floppies, Apple's 1984 Macintosh, bedroom coding & rewinding VHS rentals",
+        "🌍 Live Aid's global concert broadcast (1985), Halley's Comet & Chernobyl headlines"
+      ]
+    },
+    {
+      "from": 1987,
+      "to": 1989,
+      "vibe": "Mall food courts, skateboards, CD towers & the fall of the Berlin Wall",
+      "moments": [
+        "📼 Die Hard, Akira, Tim Burton's Batman, Who Framed Roger Rabbit & The Simpsons' debut",
+        "🎤 Public Enemy, N.W.A, Guns N' Roses & Michael Jackson's Bad on tape and CD",
+        "☎️ Nintendo Power's first issue, 1-900 counselor tip lines & transparent bedroom phones",
+        "🧱 Glasnost, Tiananmen Square & crowds cheering atop the Berlin Wall (Nov 1989)"
+      ]
+    },
+    {
+      "from": 1990,
+      "to": 1992,
+      "vibe": "Flannel shirts, Super Soakers, 16-bit schoolyard debates & Blockbuster nights",
+      "moments": [
+        "🎸 Nirvana's Nevermind, A Tribe Called Quest, Dr. Dre's The Chronic & MTV Unplugged",
+        "🦖 Home Alone, Terminator 2, Wayne's World & Friday rows of Blockbuster boxes",
+        "📟 Clear-shell pagers, Rollerblades, Reebok Pumps & Windows 3.1 desktops",
+        "🌍 End of the Cold War, Hubble Space Telescope launch & Nelson Mandela walking free"
+      ]
+    },
+    {
+      "from": 1993,
+      "to": 1995,
+      "vibe": "Screaming dial-up modems, Jurassic Park CG & CD-ROM multimedia",
+      "moments": [
+        "🦕 Jurassic Park, Pulp Fiction, Pixar's Toy Story (1995) & Friday-night X-Files",
+        "💿 Oasis vs. Blur Britpop, Wu-Tang Clan, Green Day's Dookie & Alanis Morissette",
+        "🌐 14.4k modem handshakes, AOL trial floppies, midnight Doom LANs & Windows 95",
+        "🏛️ Early Mosaic/Netscape web pages & US Senate hearings creating ESRB ratings"
+      ]
+    },
+    {
+      "from": 1996,
+      "to": 1998,
+      "vibe": "Tamagotchi keychains, four-player N64 sleepovers & GeoCities pages",
+      "moments": [
+        "🚢 Titanic sweep, The Truman Show, Scream, Cowboy Bebop & South Park's cutout debut",
+        "📻 Radiohead's OK Computer, Spice Girls, Daft Punk's Homework & Lauryn Hill",
+        "🥚 Beeping Tamagotchis in class, Nokia 6110 Snake, ICQ 'uh-oh!' & 3dfx Voodoo cards",
+        "🔭 Mars Pathfinder's Sojourner rover, Dolly the cloned sheep & Google founded in a garage"
+      ]
+    },
+    {
+      "from": 1999,
+      "to": 2002,
+      "vibe": "Y2K chrome, Napster MP3s, bullet-time cinema & late-night LAN cafés",
+      "moments": [
+        "🕶️ The Matrix, Fight Club, Spirited Away & The Lord of the Rings: Fellowship",
+        "🎧 Napster & Winamp skins, Eminem, OutKast, The Strokes & stacks of burned CD-Rs",
+        "💻 Candy-colored iMac G3s, first scroll-wheel iPod (2001), Razor scooters & AIM away messages",
+        "🕯️ Y2K midnight countdown, dot-com crash, 9/11 & euro notes entering circulation"
+      ]
+    },
+    {
+      "from": 2003,
+      "to": 2006,
+      "vibe": "Razr flip phones, white iPod earbuds, MySpace Top 8 & broadband headsets",
+      "moments": [
+        "📺 Lost island theories, The Wire, Chappelle's Show, Shaun of the Dead & Batman Begins",
+        "🎵 White iPod earbuds on subways, Gorillaz's Demon Days, Kanye West & polyphonic ringtones",
+        "📱 Motorola Razr V3 flip phones, MySpace HTML profiles, Skype, Xbox Live & early YouTube",
+        "🪐 Mars rovers Spirit and Opportunity, Concorde's final flight & Pluto reclassified"
+      ]
+    },
+    {
+      "from": 2007,
+      "to": 2011,
+      "vibe": "Pinch-to-zoom iPhones, plastic living-room guitars & midnight launch queues",
+      "moments": [
+        "🎬 The Dark Knight, Iron Man's MCU kickoff, Inception, Breaking Bad & Avatar in 3D",
+        "🎸 Plastic Rock Band drum kits, Lady Gaga, LCD Soundsystem & MP3 music blogs",
+        "📱 Steve Jobs unveiling iPhone (2007), App Store hits, Netflix streaming & Justin.tv/Twitch",
+        "📉 2008 global financial crisis, Barack Obama's election & Bitcoin's 2009 genesis block"
+      ]
+    },
+    {
+      "from": 2012,
+      "to": 2018,
+      "vibe": "Twitch marathons, Discord voice channels, Pokémon Go parks & prestige TV",
+      "moments": [
+        "🐉 Sunday Game of Thrones watch parties, Mad Max: Fury Road, Stranger Things & Spider-Verse",
+        "🎧 Kendrick Lamar, Beyoncé's Lemonade, Daft Punk's Random Access Memories & lo-fi study streams",
+        "📲 Crowded parks playing Pokémon Go (2016), Vine 6-second loops, Discord & consumer VR",
+        "🌌 Curiosity touching down on Mars, Higgs boson confirmed & gravitational waves detected"
+      ]
+    },
+    {
+      "from": 2019,
+      "to": 2026,
+      "vibe": "Lockdown islands, backpack PC handhelds, short-form feeds & everyday AI",
+      "moments": [
+        "🍿 Parasite, Everything Everywhere All at Once, Barbenheimer, Dune: Part Two & Arcane",
+        "🏝️ Animal Crossing & Among Us keeping friends connected in 2020, Bad Bunny & Charli xcx",
+        "🎮 Couch-and-commute handheld PCs (Steam Deck), OLED displays, TikTok clips & cross-saves",
+        "🔭 Remote-work shift after 2020, James Webb deep-space photos & generative AI tools arriving"
+      ]
+    }
+  ],
+  "gtaStory": [
+    {
+      "year": 1976,
+      "kicker": "First Arcade Moral Panic",
+      "quote": "National Safety Council brands stick-figure 'gremlin' cabinet 'sick, sick, sick'",
+      "body": "Exidy's black-and-white driving cabinet let players steer into fleeing stick-figure gremlins that squeaked and turned into tiny crosses, sparking segments on CBS's 60 Minutes and parking-lot protests. While nervous operators pulled machines, tabloid notoriety sent Exidy's orders climbing—previewing decades of video game outrage cycles.",
+      "game": "death-race"
+    },
+    {
+      "year": 1993,
+      "kicker": "US Senate Hearings & Birth of the ESRB",
+      "quote": "Senators Lieberman and Kohl give game makers one year to rate themselves—or face federal regulation",
+      "body": "Digitized fatalities in Midway's Mortal Kombat and grainy FMV perils in Night Trap summoned Nintendo and Sega rivals to fiery December 1993 Capitol Hill hearings. Rather than submit to government censorship, the industry launched the Entertainment Software Rating Board in 1994—explicitly carving out adult age labels so games could grow up alongside their players.",
+      "game": "mortal-kombat"
+    },
+    {
+      "year": 1997,
+      "kicker": "UK Parliament & Tabloid Storm",
+      "quote": "A hyper-aggressive police AI bug saves a troubled prototype called 'Race'n'Chase'",
+      "body": "Dundee studio DMA Design nearly watched publishers cancel its top-down driving game until a pathfinding glitch made police cruisers ram players relentlessly, shifting the thrill toward unscripted getaways. Publicist Max Clifford deliberately stoked British tabloid and House of Lords outrage, turning an underdog PC and PlayStation disc into a word-of-mouth smash.",
+      "game": "grand-theft-auto"
+    },
+    {
+      "year": 2001,
+      "kicker": "3D Open-World Watershed",
+      "quote": "Liberty City puts a breathing 3D city, ten radio stations, and player improv on one PS2 DVD",
+      "body": "DMA Design—soon renamed Rockstar North—dropped the camera down to street level, letting players ignore mission markers to drive taxis, tune into satirical talk radio, or test clockwork city systems across three islands. Overnight, walled-off corridors felt small, and teams across nearly every genre began building open worlds.",
+      "game": "gta3"
+    },
+    {
+      "year": 2005,
+      "kicker": "'Hot Coffee' & Adult Expression Debate",
+      "quote": "Unused prototype code hidden on retail discs triggers an 'Adults Only' recall and FTC inquiry",
+      "body": "Modders unlocked an unfinished minigame dormant inside San Andreas's files, prompting Congressional hearings and temporary retail pulls until Rockstar shipped patched discs. Six years later, the US Supreme Court's landmark Brown v. Entertainment Merchants ruling affirmed that video games hold the exact same First Amendment protections as books and cinema.",
+      "game": "grand-theft-auto-san-andreas"
+    },
+    {
+      "year": 2013,
+      "kicker": "$1 Billion in 72 Hours",
+      "quote": "Fastest entertainment launch in history—outpacing every Hollywood box-office opening",
+      "body": "Rockstar's three-protagonist portrait of sun-bleached Los Santos grossed $800 million on day one and passed $1 billion in three days, eclipsing film industry records. Carried further by GTA Online's player-run roleplay communities, it went on to top 200 million copies across three console generations.",
+      "game": "grand-theft-auto-v"
+    },
+    {
+      "year": 2026,
+      "kicker": "64 Years After Spacewar!",
+      "quote": "Thousands of writers, artists, animators, and engineers build Leonida while fast-followers chase every frame",
+      "body": "Sixty-four years after MIT students shared Spacewar! on punched paper tape, modern open worlds unite thousands of specialists—from water-physics coders and Foley sound recordists to street-culture researchers and motion-capture actors. Even as opportunistic clones scramble to mimic each trailer beat, the soul of a living world still comes from patient human craft.",
+      "game": "grand-theft-auto-vi"
+    }
+  ],
+  "charities": [
+    {
+      "name": "Video Game History Foundation",
+      "focus": "Game preservation, source code & design archives",
+      "url": "https://gamehistory.org/",
+      "desc": "Founded by historian Frank Cifaldi, this non-profit research library rescues endangered source code, prototype builds, production sketches, and print magazines before media rot erases them. Its growing digital archive opens primary-source design history to students, developers, and players worldwide."
+    },
+    {
+      "name": "Urban Arts (School of Interactive Arts)",
+      "focus": "Game design education & college pathways for underrepresented youth",
+      "url": "https://www.urbanarts.org/",
+      "desc": "Teaches public-school students from underrepresented communities computer science, coding, digital art, music, and writing through hands-on game creation. Its multi-year School of Interactive Arts program pairs studio mentorship and portfolio prep with millions in college scholarship pathways."
+    },
+    {
+      "name": "Girls Make Games Scholarship Fund",
+      "focus": "Summer camps, mentorship & scholarships for young creators",
+      "url": "https://www.girlsmakegames.com/scholarshipfund",
+      "desc": "Empowers girls and non-binary youth ages 8–18 to design, code, and demo original video games through global workshops, summer camps, and industry mentorship. Its 501(c)(3) scholarship fund covers camp tuition and supports alumni pursuing college degrees in game development."
+    },
+    {
+      "name": "IGDA Foundation",
+      "focus": "Global creator grants, fellowships & career wellbeing",
+      "url": "https://igdafoundation.org/",
+      "desc": "Provides career fellowships, mentorship cohorts, and global grants so emerging creators from underrepresented backgrounds and regions can thrive in game development. Its programs also back developer wellbeing, leadership training, and practical support for laid-off peers."
+    },
+    {
+      "name": "Take This",
+      "focus": "Mental health & layoff support for game developers",
+      "url": "https://www.takethis.org/",
+      "desc": "The game industry's oldest mental-health non-profit, supporting studio teams, indie creators, and laid-off developers with clinical resources, peer-support programs, and studio consulting aimed at ending burnout and stigma."
+    },
+    {
+      "name": "Child's Play Charity",
+      "focus": "Consoles, games & therapeutic play in children's hospitals",
+      "url": "https://childsplaycharity.org/",
+      "desc": "Founded by gamers and developers in 2003, Child's Play partners with over 190 pediatric hospitals worldwide to fund gaming carts, adaptive controllers, and therapeutic play specialists that bring comfort and connection to hospitalized kids."
+    }
+  ]
+}
