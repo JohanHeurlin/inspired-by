@@ -1,0 +1,225 @@
+{
+  "games": [
+    {
+      "id": "grand-theft-auto-vi",
+      "title": "Grand Theft Auto VI",
+      "year": 2026,
+      "dev": "Rockstar Games",
+      "cc": "US",
+      "genres": ["open-world", "action-adventure"],
+      "plats": ["PlayStation 5", "Xbox Series X|S"],
+      "pop": 5,
+      "note": "Set in Leonida and Vice City, following criminal duo Lucia and Jason, built across Rockstar's worldwide studios."
+    }
+  ],
+  "links": [
+    {
+      "from": "grand-theft-auto-v",
+      "to": "grand-theft-auto-vi",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Switching between multiple protagonists, modern satirical America and heist-driven open-world crime.",
+      "added": "Criminal partners Lucia and Jason across Leonida's cities, highways and wetlands, with denser interiors.",
+      "src": [
+        {
+          "t": "Rockstar Games, Grand Theft Auto VI official site, 2025",
+          "u": "https://www.rockstargames.com/VI"
+        }
+      ],
+      "extra": "First mainline entry in the series since Grand Theft Auto V in 2013."
+    },
+    {
+      "from": "red-dead-redemption-2",
+      "to": "grand-theft-auto-vi",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Rockstar's upgraded RAGE engine, dense wildlife and weather ecosystems, and reactive NPC world simulation.",
+      "added": "Brought that living-world detail into a modern urban state of traffic, crowds and social media.",
+      "src": [
+        {
+          "t": "Rockstar Games, Grand Theft Auto VI official site, 2025",
+          "u": "https://www.rockstargames.com/VI"
+        }
+      ],
+      "extra": "Built by Rockstar's combined global studios following Red Dead Redemption 2."
+    },
+    {
+      "from": "grand-theft-auto-vice-city",
+      "to": "grand-theft-auto-vi",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Vice City's neon Miami-inspired streets, pastel beachfronts and sun-soaked coastal crime setting.",
+      "added": "Brought Vice City forward from 1986 into modern-day Leonida, surrounded by keys, swamps and highways.",
+      "src": [
+        {
+          "t": "Rockstar Games, Grand Theft Auto VI official site, 2025",
+          "u": "https://www.rockstargames.com/VI"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "max-payne-3",
+      "to": "grand-theft-auto-vi",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Smooth weighted gunplay transitions and character-driven crime drama across Rockstar's shared studio talent.",
+      "added": "Blended grounded third-person shooting and movement into a dual-protagonist open world across Leonida.",
+      "src": [
+        {
+          "t": "PC Gamer, Rockstar on sharing Max Payne 3 combat across studios, 2013",
+          "u": "https://www.pcgamer.com/grand-theft-auto-v-is-taking-the-best-parts-of-rockstars-previous-games"
+        }
+      ],
+      "extra": "Continues Rockstar Studios' shared animation and combat pipeline established on Max Payne 3."
+    },
+    {
+      "from": "pubg",
+      "to": "fortnite-br",
+      "tier": "dev",
+      "rel": "fast-follow",
+      "took": "Dropping 100 players from the sky onto a shrinking island to scavenge weapons until one survives.",
+      "added": "Instant wall-and-ramp building from Save the World, cartoon visuals and a free-to-play launch built in two months.",
+      "src": [
+        {
+          "t": "Ed Zobrist (Epic Games), GDC 2018 talk covered by IGN, Mar 2018",
+          "u": "https://www.ign.com/articles/2018/03/22/gdc-2018-how-fortnite-battle-royales-players-helped-epic-find-the-games-voice"
+        },
+        {
+          "t": "Eurogamer, Epic Games citing PUBG when unveiling Fortnite Battle Royale, Sep 2017",
+          "u": "https://www.eurogamer.net/pubg-fortnite-battle-royale-and-the-question-of-how-new-genres-form"
+        }
+      ],
+      "extra": "Epic's Unreal Tournament team built the mode in two months and made it free two weeks before release."
+    },
+    {
+      "from": "pubg",
+      "to": "pubg-mobile",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Hundred-player island drops, shrinking safe zones, Erangel's map and realistic ballistic gunfights.",
+      "added": "Touchscreen auto-pickup, visual sound cues, shorter arcade modes and free-to-play mobile progression.",
+      "src": [
+        {
+          "t": "Wikipedia: PUBG: Battlegrounds",
+          "u": "https://en.wikipedia.org/wiki/PUBG:_Battlegrounds"
+        }
+      ],
+      "extra": "Co-developed by Tencent's LightSpeed & Quantum Studio and PUBG Studios."
+    },
+    {
+      "from": "the-legend-of-zelda-ocarina-of-time",
+      "to": "gta3",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "A freely explorable 3D world with story missions, target locking and Nintendo 64 spatial design.",
+      "added": "Moved 3D exploration into a gritty Liberty City of stolen cars, radio stations and mobster errands.",
+      "src": [
+        {
+          "t": "Sam Houser (Rockstar), interview, IGN, Sep 2001",
+          "u": "https://www.ign.com/articles/2001/09/10/rockstars-sam-houser-mouths-off"
+        },
+        {
+          "t": "Dan Houser (Rockstar), New York Times interview via Kotaku, Nov 2012",
+          "u": "https://kotaku.com/grand-theft-autos-writer-talks-women-writing-and-creat-5959390"
+        }
+      ],
+      "extra": "Sam Houser called GTA III 'Zelda meets Goodfellas'; Dan Houser said every 3D game borrows from N64 Zelda and Mario."
+    },
+    {
+      "from": "super-mario-64",
+      "to": "gta3",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Moving a character and camera intuitively through a playful, open 3D space.",
+      "added": "Applied that 3D camera and movement freedom to an adult crime city of traffic and pedestrians.",
+      "src": [
+        {
+          "t": "Dan Houser (Rockstar), New York Times interview via Kotaku, Nov 2012",
+          "u": "https://kotaku.com/grand-theft-autos-writer-talks-women-writing-and-creat-5959390"
+        },
+        {
+          "t": "Sam Houser (Rockstar), interview, IGN, Sep 2001",
+          "u": "https://www.ign.com/articles/2001/09/10/rockstars-sam-houser-mouths-off"
+        }
+      ],
+      "extra": "Dan Houser stated that anyone making 3D games who claims not to have borrowed from N64 Mario or Zelda is lying."
+    },
+    {
+      "from": "elite",
+      "to": "grand-theft-auto",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Open-ended freedom to roam, trade or take morally grey jobs in whatever order you choose.",
+      "added": "Brought that open sandbox down from space into a living city of stolen cars and police chases.",
+      "src": [
+        {
+          "t": "Gary Penn (DMA Design), interview, Game Developer (Gamasutra), Jan 2011",
+          "u": "https://www.gamedeveloper.com/game-platforms/penn-first-i-grand-theft-auto-i-was-almost-canned-"
+        },
+        {
+          "t": "Game Informer, Gary Penn on Grand Theft Auto's troubled development, Feb 2011",
+          "u": "https://gameinformer.com/b/news/archive/2011/02/01/former-developer-grand-theft-auto-was-almost-canceled"
+        }
+      ],
+      "extra": "Creative director Gary Penn summed up DMA Design's vision for the game as 'Elite in a city'."
+    },
+    {
+      "from": "pac-man",
+      "to": "grand-theft-auto",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Darting through maze-like streets scoring points while relentless pursuers hunt you down.",
+      "added": "Turned the maze into top-down city blocks, the dots into pedestrians and the ghosts into police cars.",
+      "src": [
+        {
+          "t": "David Jones (DMA Design), Develop conference talk via Kotaku, Jul 2009",
+          "u": "https://kotaku.com/grand-theft-auto-and-pac-man-the-same-5315632"
+        },
+        {
+          "t": "Wikipedia: Grand Theft Auto (video game)",
+          "u": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game)"
+        }
+      ],
+      "extra": "Creator David Jones compared pedestrians and police cars directly to Pac-Man's dots and ghosts."
+    },
+    {
+      "from": "mercenary",
+      "to": "grand-theft-auto",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "A free-roaming world where you commandeer vehicles and choose which faction's jobs to take.",
+      "added": "Set faction errands inside busy 2D cities full of traffic, radio music and police roadblocks.",
+      "src": [
+        {
+          "t": "Gary Penn (DMA Design), interview, Game Developer (Gamasutra), Jan 2011",
+          "u": "https://www.gamedeveloper.com/game-platforms/penn-first-i-grand-theft-auto-i-was-almost-canned-"
+        },
+        {
+          "t": "Game Informer, Gary Penn on Grand Theft Auto's troubled development, Feb 2011",
+          "u": "https://gameinformer.com/b/news/archive/2011/02/01/former-developer-grand-theft-auto-was-almost-canceled"
+        }
+      ],
+      "extra": "Gary Penn recalled that DMA Design staff had Mercenary, Elite and Syndicate in mind while reshaping Race'n'Chase."
+    },
+    {
+      "from": "syndicate",
+      "to": "grand-theft-auto",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Overhead city streets populated by everyday pedestrians, cars and police patrols that react to gunfire.",
+      "added": "Shifted from commanding corporate cyborg squads to solo car theft, arcade score multipliers and phone-booth jobs.",
+      "src": [
+        {
+          "t": "Gary Penn (DMA Design), interview, Game Developer (Gamasutra), Jan 2011",
+          "u": "https://www.gamedeveloper.com/game-platforms/penn-first-i-grand-theft-auto-i-was-almost-canned-"
+        },
+        {
+          "t": "Game Informer, Gary Penn on Grand Theft Auto's troubled development, Feb 2011",
+          "u": "https://gameinformer.com/b/news/archive/2011/02/01/former-developer-grand-theft-auto-was-almost-canceled"
+        }
+      ],
+      "extra": "Named alongside Elite and Mercenary by Gary Penn among the DMA team's open-city touchstones."
+    }
+  ]
+}

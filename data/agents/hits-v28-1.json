@@ -1,0 +1,1106 @@
+{
+  "games": [
+    {
+      "id": "codename-eagle",
+      "title": "Codename Eagle",
+      "year": 1999,
+      "dev": "Refraction Games",
+      "cc": "SE",
+      "genres": [
+        "fps"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 2,
+      "note": "Alternate-history shooter built on the Refractor engine; DICE bought Refraction Games in 2000 to make Battlefield 1942."
+    },
+    {
+      "id": "petz",
+      "title": "Petz",
+      "year": 1995,
+      "dev": "PF.Magic",
+      "cc": "US",
+      "genres": [
+        "sim"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Mac"
+      ],
+      "pop": 3,
+      "note": "PF.Magic's desktop pet series began with Dogz in 1995, letting players stroke and train puppies with the mouse."
+    },
+    {
+      "id": "tamagotchi",
+      "title": "Tamagotchi",
+      "year": 1996,
+      "dev": "Bandai",
+      "cc": "JP",
+      "genres": [
+        "sim"
+      ],
+      "plats": [
+        "Tabletop"
+      ],
+      "pop": 5,
+      "note": "Keychain digital pet created by Aki Maita and Akihiro Yokoi that had owners feed, clean, and discipline creatures."
+    },
+    {
+      "id": "sexy-hiking",
+      "title": "Sexy Hiking",
+      "year": 2002,
+      "dev": "Jazzuo",
+      "cc": "CZ",
+      "genres": [
+        "platformer"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 2,
+      "note": "Made in Game Maker by Czech creator Jazzuo, using awkward mouse-swung hammer physics to scale steep cliffs."
+    },
+    {
+      "id": "candy-box",
+      "title": "Candy Box!",
+      "year": 2013,
+      "dev": "aniwey",
+      "cc": "FR",
+      "genres": [
+        "roguelike",
+        "sim"
+      ],
+      "plats": [
+        "Browser"
+      ],
+      "pop": 2,
+      "note": "ASCII browser RPG whose ticking candy counter and lollipop farm helped spark modern idle games."
+    },
+    {
+      "id": "the-impossible-game",
+      "title": "The Impossible Game",
+      "year": 2009,
+      "dev": "FlukeDude",
+      "cc": "GB",
+      "genres": [
+        "platformer",
+        "party"
+      ],
+      "plats": [
+        "Xbox 360",
+        "iPhone / iPad",
+        "Android",
+        "PC (Windows)"
+      ],
+      "pop": 3,
+      "note": "One-button rhythm platformer where an orange square jumps over spikes and blocks timed to electronic music."
+    },
+    {
+      "id": "papijump",
+      "title": "PapiJump",
+      "year": 2008,
+      "dev": "Sunflat",
+      "cc": "JP",
+      "genres": [
+        "arcade",
+        "platformer"
+      ],
+      "plats": [
+        "iPhone / iPad",
+        "Android"
+      ],
+      "pop": 2,
+      "note": "Early iPhone vertical jumper starring a red bouncing ball climbing endless platforms."
+    },
+    {
+      "id": "scrabble",
+      "title": "Scrabble",
+      "year": 1948,
+      "dev": "Alfred Mosher Butts",
+      "cc": "US",
+      "genres": [
+        "roots",
+        "puzzle"
+      ],
+      "plats": [
+        "Tabletop"
+      ],
+      "pop": 5,
+      "note": "Crossword letter-tile board game devised by architect Alfred Mosher Butts in 1938 and trademarked in 1948."
+    },
+    {
+      "id": "pictionary",
+      "title": "Pictionary",
+      "year": 1985,
+      "dev": "Rob Angel",
+      "cc": "US",
+      "genres": [
+        "roots",
+        "party"
+      ],
+      "plats": [
+        "Tabletop"
+      ],
+      "pop": 4,
+      "note": "Party drawing game created by Seattle waiter Rob Angel, turning charades into quick timed sketches."
+    },
+    {
+      "id": "crayon-physics-deluxe",
+      "title": "Crayon Physics Deluxe",
+      "year": 2009,
+      "dev": "Petri Purho",
+      "cc": "FI",
+      "genres": [
+        "puzzle"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Mac",
+        "Linux",
+        "iPhone / iPad"
+      ],
+      "pop": 3,
+      "note": "Won the 2008 IGF Grand Prize for turning hand-drawn crayon shapes into working 2D physics weights and ramps."
+    },
+    {
+      "id": "farming-simulator-2008",
+      "title": "Farming Simulator",
+      "year": 2008,
+      "dev": "Giants Software",
+      "cc": "CH",
+      "genres": [
+        "sim"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 3,
+      "note": "Debut entry in Giants Software's tractor, plowing, and crop-harvesting simulation series."
+    }
+  ],
+  "links": [
+    {
+      "from": "codename-eagle",
+      "to": "battlefield-1942",
+      "tier": "team",
+      "took": "Open combined-arms maps with tanks and planes on Refraction Games' Refractor engine.",
+      "added": "64-player World War II ticket-bleed Conquest battles after DICE acquired Refraction Games.",
+      "src": [
+        {
+          "t": "PC Gamer, Codename Eagle and Battlefield 1942 history",
+          "u": "https://www.pcgamer.com/games/fps/battlefield-had-a-messy-predecessor-codename-eagle-that-predates-even-dices-involvement-in-the-series/"
+        },
+        {
+          "t": "Rock Paper Shotgun, Codename Eagle retrospective",
+          "u": "https://www.rockpapershotgun.com/codename-eagle-reflections-on-the-real-battlefield-1"
+        }
+      ],
+      "extra": "Lars Gustavsson and Patrick Soderlund joined DICE through the 2000 Refraction acquisition."
+    },
+    {
+      "from": "battlefield-1942",
+      "to": "star-wars-battlefront",
+      "tier": "dev",
+      "took": "Class-based armies fighting over capture points with vehicles and reinforcement tickets.",
+      "added": "Third-person toggle, AI bot armies for consoles, and Star Wars factions and walkers.",
+      "src": [
+        {
+          "t": "IGN, Pandemic Studios Star Wars: Battlefront interview, May 2004",
+          "u": "https://www.ign.com/articles/2004/05/12/star-wars-battlefront-video-interview"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "battlefield-1942",
+      "to": "battlefield-2",
+      "tier": "series",
+      "took": "64-player combined-arms Conquest across land, sea, and air.",
+      "added": "Modern warfare, six-player squads, voice chat, persistent ranks, and a top-down Commander.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "battlefield-1942",
+      "to": "unreal-tournament-2004",
+      "tier": "mech",
+      "took": "Battlefield 1942 popularized large-team vehicle warfare built around capturing map points.",
+      "added": "Onslaught mode's linked power-node network, sci-fi hovercraft, and fast arena gunplay.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "unreal-tournament-2003",
+      "to": "unreal-tournament-2004",
+      "tier": "series",
+      "took": "Unreal Engine 2 arena movement, adrenaline combos, and tournament modes.",
+      "added": "Onslaught vehicle battles, the return of Assault mode, and twice as many maps.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-ocarina-of-time",
+      "to": "harry-potter-and-the-philosophers-stone",
+      "tier": "mech",
+      "took": "Ocarina of Time popularized 3D puzzle dungeons and context-sensitive action buttons.",
+      "added": "Auto-aimed wand spells, Hogwarts secret passages, and collectible wizard cards.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "harry-potter-and-the-philosophers-stone",
+      "to": "harry-potter-and-the-chamber-of-secrets",
+      "tier": "series",
+      "took": "Spell-unlocked Hogwarts classrooms, puzzle challenges, and bean collecting.",
+      "added": "Free broom flight around castle grounds, dueling clubs, and wider hub exploration.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "harry-potter-and-the-chamber-of-secrets",
+      "to": "hogwarts-legacy",
+      "tier": "critic",
+      "took": "Exploring a secret-filled Hogwarts castle and unlocking rooms with learned spells.",
+      "added": "An 1890s open-world Scottish Highlands, custom student RPG builds, and combo spell duels.",
+      "src": [
+        {
+          "t": "ESA, Alan Tew (Avalanche Software) interview",
+          "u": "https://www.theesa.com/magic-on-the-hill/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "disney-infinity",
+      "to": "hogwarts-legacy",
+      "tier": "team",
+      "took": "Avalanche Software's experience building large family-friendly 3D sandbox spaces.",
+      "added": "A seamless open-world action RPG with custom Room of Requirement building.",
+      "src": [
+        {
+          "t": "Unreal Engine, Avalanche Software Hogwarts Legacy interview",
+          "u": "https://www.unrealengine.com/developer-interviews/why-avalanche-worked-to-deliver-a-hogwarts-game-with-soul"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "ico",
+      "to": "stray",
+      "tier": "critic",
+      "took": "Wordless companionship and climbing quiet, towering ruins.",
+      "added": "Playing a stray cat guided by drone B-12 through a neon-lit robot city.",
+      "src": [
+        {
+          "t": "GamesRadar+, Stray inspirations and comparisons",
+          "u": "https://www.gamesradar.com/games-like-stray/"
+        },
+        {
+          "t": "Inverse, Swann Martin-Raget (BlueTwelve) interview",
+          "u": "https://www.inverse.com/gaming/stray-cat-game-robots-interview"
+        }
+      ],
+      "extra": "BlueTwelve Studio's founders first modeled the vertical city on Hong Kong's Kowloon Walled City."
+    },
+    {
+      "from": "half-life-2",
+      "to": "stray",
+      "tier": "critic",
+      "took": "Oppressive walled-city atmosphere, physics puzzles, and headcrab-like Zurk swarms.",
+      "added": "Context-sensitive cat leaps along pipes, air conditioners, and rooftops.",
+      "src": [
+        {
+          "t": "Unreal Engine, BlueTwelve Studio making of Stray",
+          "u": "https://www.unrealengine.com/developer-interviews/28-people-and-two-cats-inside-the-making-of-stray"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "tamagotchi",
+      "to": "nintendogs",
+      "tier": "mech",
+      "took": "Tamagotchi popularized feeding, washing, and checking in daily on a pocket pet.",
+      "added": "3D puppies petted on the DS touch screen and called by voice through the microphone.",
+      "src": [
+        {
+          "t": "Los Angeles Times, Shigeru Miyamoto interview, Jul 2010",
+          "u": "https://www.latimes.com/archives/la-xpm-2010-jul-04-la-fi-himi-miyamoto-20100704-story.html"
+        },
+        {
+          "t": "Wikipedia: Nintendogs",
+          "u": "https://en.wikipedia.org/wiki/Nintendogs"
+        }
+      ],
+      "extra": "Shigeru Miyamoto sparked the project after training his family's new Shetland Sheepdog."
+    },
+    {
+      "from": "petz",
+      "to": "nintendogs",
+      "tier": "mech",
+      "took": "Petz popularized stroking virtual puppies directly on screen and tossing toys.",
+      "added": "Stylus touch petting, voice-recognized tricks, and Bark Mode wireless dog meetups.",
+      "src": [
+        {
+          "t": "Wikipedia: Nintendogs",
+          "u": "https://en.wikipedia.org/wiki/Nintendogs"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "nintendogs",
+      "to": "nintendogs-cats",
+      "tier": "series",
+      "took": "Touch-screen puppy grooming, walks, and voice-taught tricks.",
+      "added": "Playable kittens, 3DS camera facial recognition, and StreetPass gift swaps.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "harry-potter-and-the-philosophers-stone",
+      "to": "lego-star-wars-the-video-game",
+      "tier": "dev",
+      "took": "Accessible puzzle-action levels built so children and parents could play a film story.",
+      "added": "Drop-in two-player co-op, wordless slapstick cutscenes, and Force-built LEGO bricks.",
+      "src": [
+        {
+          "t": "Pad & Pixel, Jonathan Smith and Tom Stone on LEGO Star Wars",
+          "u": "https://padandpixel.com/how-harry-potter-and-an-amazing-demo-led-to-lego%E2%80%AFstar-wars-the-video-game/"
+        }
+      ],
+      "extra": "Producer Tom Stone moved from EA's Harry Potter games to LEGO Interactive before pitching Star Wars."
+    },
+    {
+      "from": "lego-star-wars-the-video-game",
+      "to": "lego-star-wars-ii",
+      "tier": "series",
+      "took": "Drop-in co-op, character swapping in Free Play, and silent LEGO comedy.",
+      "added": "Original Trilogy films, buildable vehicles, and custom minifigure creator.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "lego-star-wars-ii",
+      "to": "lego-star-wars-the-complete-saga",
+      "tier": "series",
+      "took": "Both trilogies' levels, drop-in co-op, and Mos Eisley cantina hub.",
+      "added": "All six films unified in one campaign with online co-op and reworked vehicle stages.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "lego-star-wars-the-complete-saga",
+      "to": "lego-star-wars-the-skywalker-saga",
+      "tier": "series",
+      "took": "Co-op retellings of the Star Wars films with hundreds of unlockable characters.",
+      "added": "Nine films, an over-the-shoulder camera, combo melee, and open planetary hubs.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "rome-total-war",
+      "to": "totally-accurate-battle-simulator",
+      "tier": "mech",
+      "took": "Rome: Total War popularized deploying historic unit formations across a battlefield on a budget.",
+      "added": "Wobbly ragdoll physics turning phalanxes, mammoths, and catapults into slapstick chaos.",
+      "src": [
+        {
+          "t": "PC Gamer, Totally Accurate Battle Simulator Early Access",
+          "u": "https://www.pcgamer.com/totally-accurate-battle-simulator-makes-a-sneak-attack-on-early-access/"
+        }
+      ],
+      "extra": "Begun by Wilhelm Nylund and Landfall Games during a 2016 game jam in a Swedish castle."
+    },
+    {
+      "from": "garrys-mod",
+      "to": "totally-accurate-battle-simulator",
+      "tier": "mech",
+      "took": "Garry's Mod popularized pitting ragdoll characters against each other in sandbox experiments.",
+      "added": "Point-budget puzzle campaigns, slow-motion battle cameras, and a unit creator.",
+      "src": [
+        {
+          "t": "Game World Observer, Landfall Archives and TABS prototypes",
+          "u": "https://gameworldobserver.com/2023/04/03/landfall-archives-23-free-game-prototypes-tabs"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "diner-dash",
+      "to": "overcooked",
+      "tier": "mech",
+      "took": "Diner Dash popularized juggling restaurant orders and dishwashing against impatient timers.",
+      "added": "Four-player couch co-op in shifting kitchens that split apart, slide, or catch fire.",
+      "src": [
+        {
+          "t": "Game Developer, Phil Duncan & Oli De-Vine Road to the IGF",
+          "u": "https://www.gamedeveloper.com/design/road-to-the-igf-ghost-town-games-i-overcooked-i-"
+        },
+        {
+          "t": "MCV/Develop, The Develop Post-Mortem: Overcooked",
+          "u": "https://mcvuk.com/development-news/the-develop-post-mortem-overcooked/"
+        }
+      ],
+      "extra": "Co-creator Phil Duncan drew on his earlier jobs working in restaurant kitchens."
+    },
+    {
+      "from": "overcooked",
+      "to": "overcooked-2",
+      "tier": "series",
+      "took": "Four-player cooperative chopping, cooking, plating, and dishwashing in hazard-filled kitchens.",
+      "added": "Tossing raw ingredients across gaps, online multiplayer, and kitchens that change mid-shift.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pokemon-trading-card-game",
+      "to": "pokemon-tcg-pocket",
+      "tier": "series",
+      "took": "Booster packs, Pokemon evolutions, Energy attachment, and prize-point knockouts.",
+      "added": "20-card decks, three-point wins, Energy Zone auto-generation, and 3D immersive card art.",
+      "src": [
+        {
+          "t": "GamesRadar+, Pokemon Trading Card Game Pocket reveal",
+          "u": "https://www.gamesradar.com/pokemon-trading-card-game-pocket-reveal/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "marvel-snap",
+      "to": "pokemon-tcg-pocket",
+      "tier": "critic",
+      "took": "Five-minute portrait-screen card matches, tiny decks, and 3D parallax card collectibles.",
+      "added": "Two free daily booster packs, Wonder Pick friend pulls, and digital binder displays.",
+      "src": [
+        {
+          "t": "Kotaku, Pokemon TCG Pocket and Marvel Snap comparison, 2024",
+          "u": "https://kotaku.com/pokemon-tcg-pocket-marvel-snap-1851653373"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "wii-sports",
+      "to": "nintendo-switch-sports",
+      "tier": "series",
+      "took": "Pick-up-and-play motion-controlled tennis, bowling, and swordplay directed by Yoshikazu Yamashita.",
+      "added": "Joy-Con motion tracking, soccer, volleyball, badminton, online matchmaking, and Sportsmate avatars.",
+      "src": [
+        {
+          "t": "Eurogamer, Yoshikazu Yamashita Switch Sports interview, 2022",
+          "u": "https://www.eurogamer.net/nintendo-switch-sports-originally-had-players-as-robots-that-looked-like-burgers-and-bears"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "wii-sports",
+      "to": "wii-play",
+      "tier": "team",
+      "took": "Simple Mii minigames built by Nintendo EAD to teach Wii Remote motion and pointing.",
+      "added": "Nine quick pointer games including Tanks!, laser hockey, billiards, and shooting range.",
+      "src": [],
+      "extra": "Bundled with a spare Wii Remote, helping it sell nearly 30 million copies."
+    },
+    {
+      "from": "mario-party",
+      "to": "wii-party",
+      "tier": "team",
+      "took": "Four-player board-game turns punctuated by short family minigames.",
+      "added": "Mii characters and living-room modes that hide Wii Remotes around the real room.",
+      "src": [],
+      "extra": "Directed by Shuichiro Nishiya after key Hudson Soft Mario Party staff moved to NDcube."
+    },
+    {
+      "from": "mario-party",
+      "to": "super-mario-party",
+      "tier": "series",
+      "took": "Four-player turn-based Star hunting on interactive boards with post-turn minigames.",
+      "added": "Character-specific dice blocks, ally recruits, single-Joy-Con motion games, and co-op River Survival.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "monopoly",
+      "to": "monopoly-go",
+      "tier": "series",
+      "took": "Rolling dice around property streets, railroads, Chance cards, and Community Chest.",
+      "added": "Solo progression boards, friend Bank Heists, landmark upgrades, and timed sticker albums.",
+      "src": [
+        {
+          "t": "MobileGamer.biz, Monopoly Go and Coin Master analysis, 2023",
+          "u": "https://mobilegamer.biz/monopoly-go-is-topping-charts-worldwide-can-scopely-beat-coin-master-at-its-own-game/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "coin-master",
+      "to": "monopoly-go",
+      "tier": "critic",
+      "took": "Energy-limited spins funding sequential village upgrades plus raid-and-attack social sabotage.",
+      "added": "Dice multipliers on a 3D Monopoly board, cooperative partner events, and landmark Shutdowns.",
+      "src": [
+        {
+          "t": "MobileGamer.biz, Monopoly Go vs Coin Master, 2023",
+          "u": "https://mobilegamer.biz/monopoly-go-is-topping-charts-worldwide-can-scopely-beat-coin-master-at-its-own-game/"
+        },
+        {
+          "t": "Deconstructor of Fun, Coin Master after Monopoly Go, 2025",
+          "u": "https://www.deconstructoroffun.com/blog/2025/7/25/what-happened-to-coin-master-after-monopoly-go"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "sexy-hiking",
+      "to": "getting-over-it-with-bennett-foddy",
+      "tier": "dev",
+      "took": "Climbing one unforgiving mountain with no checkpoints by swinging a mouse-controlled hammer.",
+      "added": "A man in a cauldron, smoother physics leverage, and Bennett Foddy's voiceover on failure.",
+      "src": [
+        {
+          "t": "PC Gamer, Bennett Foddy and Derek Yu on Sexy Hiking, 2018",
+          "u": "https://www.pcgamer.com/the-creators-of-spelunky-and-getting-over-it-with-bennett-foddy-on-sexy-hiking-and-b-games/"
+        },
+        {
+          "t": "Game Developer, Bennett Foddy on Getting Over It",
+          "u": "https://www.gamedeveloper.com/design/pain-difficulty-and-getting-over-it"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "evolve",
+      "to": "dead-by-daylight",
+      "tier": "mech",
+      "took": "Evolve popularized four-versus-one asymmetrical online hunts against a player-controlled monster.",
+      "added": "Unarmed slasher-film survivors repairing generators in third person while a first-person Killer stalks them.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "left-4-dead",
+      "to": "dead-by-daylight",
+      "tier": "mech",
+      "took": "Left 4 Dead popularized four survivors rescuing pinned teammates to reach an exit gate.",
+      "added": "No weapons for survivors, meat-hook sacrifices, and a roster of horror Killers.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "spore",
+      "to": "agar-io",
+      "tier": "dev",
+      "took": "Spore's opening Cell Stage, where microscopic organisms eat smaller cells and flee larger ones.",
+      "added": "Dozens of live browser players splitting mass and setting virus traps on one shared grid.",
+      "src": [
+        {
+          "t": "VICE, Agar.io browser phenomenon, 2015",
+          "u": "https://www.vice.com/en/article/a-browser-game-called-agario-got-googled-more-in-2015-than-fallout-4/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "osmos",
+      "to": "agar-io",
+      "tier": "critic",
+      "took": "Circular motes absorbing smaller orbs to grow while slower movement raises risk.",
+      "added": "Instant drop-in browser multiplayer and splitting your cell in half to lunge at prey.",
+      "src": [
+        {
+          "t": "VICE, Agar.io feature, 2015",
+          "u": "https://www.vice.com/en/article/a-browser-game-called-agario-got-googled-more-in-2015-than-fallout-4/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "candy-box",
+      "to": "cookie-clicker",
+      "tier": "dev",
+      "took": "An ever-rising resource counter and passive farms that keep producing while idle.",
+      "added": "Clicking a giant cookie to buy grandmas, factories, time machines, and cosmic prestige upgrades.",
+      "src": [
+        {
+          "t": "Julien 'Orteil' Thiennot, Reddit AMA, 2020",
+          "u": "https://www.reddit.com/r/CookieClicker/comments/h9ldm7/hey_im_the_guy_who_makes_the_game_with_the_things/"
+        },
+        {
+          "t": "VICE, Cookie Clicker retrospective, 2021",
+          "u": "https://www.vice.com/en/article/cookie-clicker-wasnt-meant-to-be-fun-why-is-it-so-popular-8-years-later/"
+        }
+      ],
+      "extra": "Orteil called Candy Box! Cookie Clicker's most direct ancestor."
+    },
+    {
+      "from": "cookie-clicker",
+      "to": "adventure-capitalist",
+      "tier": "mech",
+      "took": "Cookie Clicker popularized buying automated generators, milestone multipliers, and prestige resets.",
+      "added": "Lemonade stands scaling into oil rigs, hired managers, and Angel Investor resets.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "the-impossible-game",
+      "to": "geometry-dash",
+      "tier": "dev",
+      "took": "One-touch rhythm jumping where a square clears spikes synced to electronic music.",
+      "added": "Ship, ball, and UFO gravity shifts plus a full level editor for player-made stages.",
+      "src": [
+        {
+          "t": "Robert Topala (RobTop), Game Developer",
+          "u": "https://www.gamedeveloper.com/business/prioritize-players-and-their-experience-to-succeed-in-gaming"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "fallout-3",
+      "to": "fallout-shelter",
+      "tier": "series",
+      "took": "Vault-Tec underground shelters, S.P.E.C.I.A.L. stats, radroaches, and wasteland scavenging.",
+      "added": "Free-to-play side-view vault management where you assign dwellers to power, water, and food rooms.",
+      "src": [
+        {
+          "t": "Game Developer, Todd Howard on Fallout Shelter's pitch",
+          "u": "https://www.gamedeveloper.com/design/how-a-i-fallout-3-i-trailer-inspired-the-pitch-for-i-fallout-shelter-i-"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "simtower",
+      "to": "fallout-shelter",
+      "tier": "dev",
+      "took": "A side-cutaway stack of floors connected by elevators with residents riding between rooms.",
+      "added": "Underground nuclear survival, raider attacks, dweller breeding, and wasteland expeditions.",
+      "src": [
+        {
+          "t": "Game Developer, Todd Howard on Fallout Shelter influences",
+          "u": "https://www.gamedeveloper.com/design/how-a-i-fallout-3-i-trailer-inspired-the-pitch-for-i-fallout-shelter-i-"
+        }
+      ],
+      "extra": "Todd Howard named SimTower, XCOM, and FTL among the management games that shaped Fallout Shelter."
+    },
+    {
+      "from": "ftl-faster-than-light",
+      "to": "fallout-shelter",
+      "tier": "dev",
+      "took": "Rushing crew members between cutaway rooms to put out fires and repel boarders.",
+      "added": "Long-term vault building, pregnancy and generational growth, and lunchbox gear cards.",
+      "src": [
+        {
+          "t": "Game Developer, Todd Howard on Fallout Shelter influences",
+          "u": "https://www.gamedeveloper.com/design/how-a-i-fallout-3-i-trailer-inspired-the-pitch-for-i-fallout-shelter-i-"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "canabalt",
+      "to": "jetpack-joyride",
+      "tier": "dev",
+      "took": "One-button endless side-scrolling speed across hazard-packed halls.",
+      "added": "Hold-to-thrust machine-gun jetpacks, rideable mech vehicles, and three-at-a-time mission goals.",
+      "src": [
+        {
+          "t": "Luke Muscat (Halfbrick), Game Developer Magazine Postmortem, Feb 2013",
+          "u": "https://media.gdcvault.com/GD_Mag_Archives/GDM_February_2013.pdf?_sp=1b571807-3536-4d9f-b669-5ef1d09d7baa"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "new-super-mario-bros",
+      "to": "super-mario-run",
+      "tier": "series",
+      "took": "Mario's wall jumps, ground pounds, coin courses, and Toad Kingdom visuals.",
+      "added": "Automatic forward running built for one-handed phone taps plus three-color challenge coins.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "canabalt",
+      "to": "super-mario-run",
+      "tier": "mech",
+      "took": "Canabalt popularized automatic forward running controlled with single-tap jumps on phones.",
+      "added": "Hand-crafted Mario courses with vaulting over Goombas, pause blocks, and Toad Rally.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "papijump",
+      "to": "doodle-jump",
+      "tier": "disp",
+      "took": "Bouncing upward endlessly from platform to platform by tilting the iPhone.",
+      "added": "Graph-paper notebook art, tap-to-shoot monsters, springs, and propeller hats.",
+      "src": [
+        {
+          "t": "Fast Company, Igor Pusenjak profile",
+          "u": "https://www.fastcompany.com/3018728/14-igor-pusenjak"
+        }
+      ],
+      "extra": "Critics noted the close mechanical match to PapiJump, though Igor Pusenjak said Lima Sky had not seen it beforehand."
+    },
+    {
+      "from": "scrabble",
+      "to": "words-with-friends",
+      "tier": "dev",
+      "took": "Crossword letter tiles placed on a bonus-square grid from a seven-tile rack.",
+      "added": "Push-notification asynchronous smartphone turns, built-in chat, and rearranged bonus squares.",
+      "src": [
+        {
+          "t": "Fast Company, Paul and David Bettner interview",
+          "u": "https://www.fastcompany.com/1810607/how-words-friends-beat-scrabble-its-own-game"
+        },
+        {
+          "t": "TechCrunch, Words with Friends profile, Jun 2010",
+          "u": "https://techcrunch.com/2010/06/10/a-look-behind-the-words-with-friends-iphone-gaming-phenomenon/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "pictionary",
+      "to": "draw-something",
+      "tier": "mech",
+      "took": "Pictionary popularized drawing a secret word without letters while a partner guesses it.",
+      "added": "Asynchronous finger-drawn replays on phones with scrambled letter tiles for guessing.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "elasto-mania",
+      "to": "hill-climb-racing",
+      "tier": "mech",
+      "took": "Elasto Mania popularized 2D suspension physics where leaning too far flips the rider.",
+      "added": "Two-pedal touchscreen controls, fuel canisters, coin-funded engine upgrades, and endless hills.",
+      "src": [
+        {
+          "t": "Fingersoft, 10 Years of Hill Climb Racing, Apr 2022",
+          "u": "https://fingersoft.com/news/2022/04/04/fingersoft-and-hill-climb-racing-turn-10/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "hill-climb-racing",
+      "to": "hill-climb-racing-2",
+      "tier": "series",
+      "took": "Two-button gas-and-brake physics balancing over steep 2D hills.",
+      "added": "Asynchronous four-car cup races, tuning parts, and driver and vehicle customization.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "line-rider",
+      "to": "crayon-physics-deluxe",
+      "tier": "mech",
+      "took": "Line Rider popularized drawing freehand lines that immediately turn into 2D physics surfaces.",
+      "added": "Goal-based ball-to-star puzzles with drawn weights, hinges, ropes, and rockets.",
+      "src": [
+        {
+          "t": "Game Developer, Q&A with Line Rider creator Bostjan Cadez",
+          "u": "https://www.gamedeveloper.com/game-platforms/q-a-riding-the-lines-with-bostjan-cadez"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "line-rider",
+      "to": "happy-wheels",
+      "tier": "mech",
+      "took": "Line Rider popularized browser-shared obstacle courses built to launch riders down wild stunts.",
+      "added": "Active vehicle controls, over-the-top ragdoll dismemberment, and an in-browser level browser.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "counter-strike",
+      "to": "world-of-tanks",
+      "tier": "dev",
+      "took": "Short no-respawn team matches where positioning and map control decide each round.",
+      "added": "Slow, deliberate 15v15 armored warfare with angled armor penetration and tank tech trees.",
+      "src": [
+        {
+          "t": "Slava Makarov (Wargaming) interview, Sep 2013",
+          "u": "http://overlord-wot.blogspot.com/2013/09/wg-interview-with-slava-makarov-whats.html"
+        }
+      ],
+      "extra": "Co-creator Slava Makarov described slowing shooter team rounds down so tactics mattered more than twitch reflexes."
+    },
+    {
+      "from": "pubg",
+      "to": "free-fire",
+      "tier": "mech",
+      "took": "PUBG popularized parachuting onto an island to scavenge weapons inside a shrinking safe zone.",
+      "added": "50-player 10-minute matches tuned for budget phones, plus deployable Gloo Wall cover.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "ultima-online",
+      "to": "habbo-hotel",
+      "tier": "mech",
+      "took": "Ultima Online popularized persistent isometric rooms where online avatars gather, chat, and trade.",
+      "added": "A browser teen hangout with no combat, pixel furniture decorating, and SMS micropayments.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "habbo-hotel",
+      "to": "club-penguin",
+      "tier": "mech",
+      "took": "Habbo Hotel popularized browser-based avatar chat rooms, room decorating, and social mini-games.",
+      "added": "Child-safe moderated penguin towns, igloo decorating, puffle pets, and secret-agent quests.",
+      "src": [
+        {
+          "t": "RocketSnail (Lance Priebe), Club Penguin origins",
+          "u": "https://rocketsnail.com/pages/about/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "spyro-the-dragon",
+      "to": "skylanders-spyros-adventure",
+      "tier": "series",
+      "took": "Spyro as headline mascot in a colorful fantasy action-platformer.",
+      "added": "Physical NFC toy figures placed on a USB Portal of Power that saved stats inside each toy.",
+      "src": [
+        {
+          "t": "Kotaku, Paul Reiche III (Toys for Bob) interview, Nov 2011",
+          "u": "https://kotaku.com/the-man-who-wants-to-re-invent-toys-before-video-games-5857232"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dungeons-and-dragons",
+      "to": "skylanders-spyros-adventure",
+      "tier": "dev",
+      "took": "Tabletop miniatures, elemental character classes, and leveling up individual heroes.",
+      "added": "Collectible figures children placed on a glowing portal to swap heroes mid-fight.",
+      "src": [
+        {
+          "t": "Kotaku, Paul Reiche III interview, Nov 2011",
+          "u": "https://kotaku.com/the-man-who-wants-to-re-invent-toys-before-video-games-5857232"
+        }
+      ],
+      "extra": "Toys for Bob co-founder Paul Reiche III wrote Dungeons & Dragons modules at TSR before making video games."
+    },
+    {
+      "from": "skylanders-spyros-adventure",
+      "to": "skylanders-giants",
+      "tier": "series",
+      "took": "Swapping NFC figures on the Portal of Power across elemental dungeon levels.",
+      "added": "Oversized light-up Giant figures that lift boulders and smash walls.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "skylanders-spyros-adventure",
+      "to": "disney-infinity",
+      "tier": "mech",
+      "took": "Skylanders popularized placing NFC toy figures onto a USB base to unlock playable characters.",
+      "added": "Disney and Pixar playsets plus an open Toy Box editor for building custom worlds.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "shining-force",
+      "to": "golden-sun",
+      "tier": "team",
+      "took": "Camelot's bright town exploration, expressive portrait icons, and dramatic battle camera angles.",
+      "added": "Traditional turn-based party battles, equippable Djinn spirits, and field Psynergy puzzles.",
+      "src": [],
+      "extra": "Brothers Hiroyuki and Shugo Takahashi led both Shining Force and Golden Sun at Camelot."
+    },
+    {
+      "from": "golden-sun",
+      "to": "golden-sun-the-lost-age",
+      "tier": "series",
+      "took": "Djinn class combinations, summon rushes, and Psynergy dungeon puzzles.",
+      "added": "A sailing ship opening the whole world map and password transfer uniting both parties.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "castlevania-symphony-of-the-night",
+      "to": "castlevania-aria-of-sorrow",
+      "tier": "series",
+      "took": "Koji Igarashi's interconnected castle map, RPG leveling, and ability-gated secrets.",
+      "added": "Tactical Soul system letting Soma Cruz absorb a unique power from nearly every enemy.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "castlevania-aria-of-sorrow",
+      "to": "castlevania-dawn-of-sorrow",
+      "tier": "series",
+      "took": "Soma Cruz collecting and equipping enemy Tactical Souls across a sprawling castle.",
+      "added": "Soul-forged weapon crafting and Nintendo DS touch-screen magic seals to finish bosses.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "resident-evil",
+      "to": "resident-evil-2002-remake",
+      "tier": "series",
+      "took": "Shinji Mikami's Spencer Mansion layout, fixed cameras, ink ribbons, and inventory puzzles.",
+      "added": "Unburned zombies reviving as fast Crimson Heads, defensive daggers, and the Lisa Trevor subplot.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "warcraft-iii",
+      "to": "warcraft-iii-the-frozen-throne",
+      "tier": "series",
+      "took": "Four-faction hero-led real-time strategy and the custom World Editor.",
+      "added": "Neutral tavern heroes, player-built item shops, Naga campaign stages, and richer custom-map triggers.",
+      "src": [],
+      "extra": "Most versions of DotA Allstars required The Frozen Throne's expanded World Editor."
+    },
+    {
+      "from": "diablo-ii",
+      "to": "diablo-ii-lord-of-destruction",
+      "tier": "series",
+      "took": "Randomized dark-fantasy loot hunting, skill trees, and Battle.net co-op.",
+      "added": "Assassin and Druid classes, Act V on Mount Arreat, socketed rune words, and inventory charms.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "command-conquer",
+      "to": "command-and-conquer-generals",
+      "tier": "series",
+      "took": "Fast base-building real-time tank and air warfare under the Command & Conquer banner.",
+      "added": "Full 3D SAGE engine, modern-day factions, bulldozer builders, and unlockable General powers.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "starcraft",
+      "to": "command-and-conquer-generals",
+      "tier": "mech",
+      "took": "StarCraft popularized three sharply asymmetric RTS factions built by map-roaming worker units.",
+      "added": "USA, China, and GLA modern arsenals with distinct power, supply, and tunnel networks.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "tom-clancy-s-rainbow-six",
+      "to": "socom-us-navy-seals",
+      "tier": "mech",
+      "took": "Rainbow Six popularized lethal tactical special-forces missions with AI squadmates.",
+      "added": "Third-person stealth and spoken USB-headset voice commands to direct your four-man SEAL team.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "counter-strike",
+      "to": "socom-us-navy-seals",
+      "tier": "mech",
+      "took": "Counter-Strike popularized round-based online team shootouts with no mid-round respawns.",
+      "added": "8v8 console online matches bundled with Sony's PlayStation 2 Network Adaptor launch.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "socom-us-navy-seals",
+      "to": "socom-ii-us-navy-seals",
+      "tier": "series",
+      "took": "Third-person SEAL stealth campaigns and 8v8 no-respawn online console firefights.",
+      "added": "Clan ladders, spectator chat, turret emplacements, and 12 new multiplayer maps.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "animal-crossing",
+      "to": "animal-crossing-wild-world",
+      "tier": "series",
+      "took": "Real-time seasons, Tom Nook loans, fishing, fossils, and animal neighbors.",
+      "added": "Portable DS play, rolling-log horizon view, and visiting friends' towns over Wi-Fi.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "animal-crossing-wild-world",
+      "to": "animal-crossing-new-leaf",
+      "tier": "series",
+      "took": "Handheld real-time village life and online town visits.",
+      "added": "Serving as town mayor to place public works projects and enact town ordinances.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "splatoon",
+      "to": "splatoon-2",
+      "tier": "series",
+      "took": "4v4 Turf War ink-painting shootouts and swimming through your own team's ink.",
+      "added": "Four-player cooperative Salmon Run horde waves, dual-pistol Splat Dualies, and portable Switch play.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "farming-simulator-2008",
+      "to": "farming-simulator-22",
+      "tier": "series",
+      "took": "First- and third-person licensed tractors, plowing, seeding, and selling harvests.",
+      "added": "Seasonal crop calendars, factory production chains, forestry, and cross-platform co-op farms.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "tomb-raider",
+      "to": "tomb-raider-legend",
+      "tier": "series",
+      "took": "Lara Croft's globetrotting tomb puzzles, dual pistols, and acrobatic traversal.",
+      "added": "Smooth analog pole-swinging, magnetic grappling hook, and Crystal Dynamics' physics puzzles.",
+      "src": [],
+      "extra": "Original Lara Croft designer Toby Gard returned as creative consultant."
+    },
+    {
+      "from": "guitar-hero",
+      "to": "guitar-hero-ii",
+      "tier": "series",
+      "took": "Five-fret plastic guitar controller notes scrolling in time with rock tracks.",
+      "added": "Three-note chords, dedicated Practice mode, and two-player lead-and-bass cooperative songs.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "burnout-3-takedown",
+      "to": "burnout-revenge",
+      "tier": "series",
+      "took": "High-speed arcade racing where slamming rivals into walls fills your boost bar.",
+      "added": "Traffic checking that launches same-direction commuter cars forward as bowling-ball projectiles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pikmin",
+      "to": "pikmin-2",
+      "tier": "series",
+      "took": "Whistling color-coded plant squads to carry treasures and swarm creatures.",
+      "added": "Dropped the 30-day deadline, added Olimar-and-Louie switching, Purple and White Pikmin, and caves.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "soulcalibur",
+      "to": "soulcalibur-ii",
+      "tier": "series",
+      "took": "Eight-Way Run 3D weapon dueling, ring-outs, and Guard Impact parries.",
+      "added": "Console-specific guest fighters Link, Heihachi, and Spawn plus wall-rebound combos.",
+      "src": [],
+      "extra": ""
+    }
+  ]
+}

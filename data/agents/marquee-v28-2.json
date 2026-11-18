@@ -1,0 +1,766 @@
+{
+  "games": [
+    {
+      "id": "1024",
+      "title": "1024",
+      "year": 2014,
+      "dev": "Veewo Studio",
+      "cc": "CN",
+      "genres": ["puzzle"],
+      "plats": ["iPhone / iPad", "Android"],
+      "pop": 2,
+      "note": "Released weeks after Threes with powers-of-two tiles and the tagline 'No need to pay for Threes'; it directly sparked 2048."
+    },
+    {
+      "id": "happy-farm",
+      "title": "Happy Farm",
+      "year": 2008,
+      "dev": "5 Minutes",
+      "cc": "CN",
+      "genres": ["sim"],
+      "plats": ["Browser"],
+      "pop": 2,
+      "note": "Shanghai studio 5 Minutes drew 23 million daily players in China with timed crops and playful neighbor crop-stealing."
+    },
+    {
+      "id": "farm-town",
+      "title": "Farm Town",
+      "year": 2009,
+      "dev": "Slashkey",
+      "cc": "US",
+      "genres": ["sim"],
+      "plats": ["Browser"],
+      "pop": 2,
+      "note": "Facebook farming hit launched four months before FarmVille, where friends met in town to hire harvest helpers."
+    },
+    {
+      "id": "backyard-monsters",
+      "title": "Backyard Monsters",
+      "year": 2010,
+      "dev": "Kixeye",
+      "cc": "US",
+      "genres": ["strategy"],
+      "plats": ["Browser"],
+      "pop": 2,
+      "note": "Facebook base-building strategy game where players fortified a yard with towers, hatched monsters and raided rivals."
+    },
+    {
+      "id": "helicopter-game",
+      "title": "Helicopter Game",
+      "year": 2002,
+      "dev": "Seethru.co.uk",
+      "cc": "GB",
+      "genres": ["arcade"],
+      "plats": ["Browser"],
+      "pop": 3,
+      "note": "One-button Flash game by Simon Eriksson on Seethru.co.uk where holding the mouse lifts a helicopter through caves."
+    },
+    {
+      "id": "piou-piou-vs-cactus",
+      "title": "Piou Piou vs. Cactus",
+      "year": 2011,
+      "dev": "Kek (Julienala)",
+      "cc": "FR",
+      "genres": ["arcade"],
+      "plats": ["iPhone / iPad", "Android"],
+      "pop": 1,
+      "note": "French mobile game by Kek where tapping flaps a small yellow bird past rows of green cacti."
+    },
+    {
+      "id": "klondike",
+      "title": "Klondike",
+      "year": 1907,
+      "dev": "Traditional",
+      "cc": "US",
+      "genres": ["card", "roots"],
+      "plats": ["Tabletop"],
+      "pop": 4,
+      "note": "Single-player patience card game named after the Klondike Gold Rush and recorded in Hoyle's Games in 1907."
+    },
+    {
+      "id": "jotto",
+      "title": "Jotto",
+      "year": 1955,
+      "dev": "Morton M. Rosenfeld",
+      "cc": "US",
+      "genres": ["puzzle", "roots"],
+      "plats": ["Tabletop"],
+      "pop": 1,
+      "note": "Paper-and-pencil deduction game from 1955 where two players guess secret five-letter words from letter-overlap counts."
+    },
+    {
+      "id": "mastermind",
+      "title": "Mastermind",
+      "year": 1970,
+      "dev": "Mordecai Meirowitz",
+      "cc": "IL",
+      "genres": ["puzzle", "roots"],
+      "plats": ["Tabletop"],
+      "pop": 4,
+      "note": "Code-breaking peg game invented by Israeli postmaster Mordecai Meirowitz, using black and white pegs for position clues."
+    },
+    {
+      "id": "full-tilt-pinball",
+      "title": "Full Tilt! Pinball",
+      "year": 1995,
+      "dev": "Cinematronics / Maxis",
+      "cc": "US",
+      "genres": ["arcade"],
+      "plats": ["PC (Windows)", "Mac"],
+      "pop": 2,
+      "note": "Three-table pre-rendered 3D pinball game whose Space Cadet table Microsoft bundled with Windows 95 Plus! and XP."
+    },
+    {
+      "id": "interactive-physics",
+      "title": "Interactive Physics",
+      "year": 1989,
+      "dev": "Knowledge Revolution (David Baszucki)",
+      "cc": "US",
+      "genres": ["sim", "roots"],
+      "plats": ["Mac", "PC (Windows)"],
+      "pop": 1,
+      "note": "Educational 2D physics lab by David and Greg Baszucki where students ended up crashing cars and building contraptions."
+    }
+  ],
+  "updates": [
+    {
+      "id": "wordle",
+      "field": "note",
+      "value": "Built by Josh Wardle during 2020 for his partner Palak Shah, who trimmed the list to familiar five-letter words."
+    },
+    {
+      "id": "fruit-ninja",
+      "field": "note",
+      "value": "Designer Luke Muscat pitched the game at Halfbrick after watching a chef-knife infomercial slice fruit in mid-air."
+    },
+    {
+      "id": "flappy-bird",
+      "field": "note",
+      "value": "Created in a few days by Hanoi developer Dong Nguyen, who pulled it at its peak in February 2014."
+    },
+    {
+      "id": "clash-of-clans",
+      "field": "note",
+      "value": "Built in six months by a small Supercell team in Helsinki adapting browser base-raiding strategy for touchscreens."
+    }
+  ],
+  "links": [
+    {
+      "from": "threes",
+      "to": "1024",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Swiping a four-by-four grid so every numbered tile slides at once and matching tiles merge.",
+      "added": "Replaced multiples of three with powers of two and released the game free on mobile.",
+      "src": [
+        {
+          "t": "IBTimes, Origin of Threes, 1024 and 2048, Mar 2014",
+          "u": "https://www.ibtimes.com/what-2048-convoluted-origin-threes-1024-game-clone-topping-app-store-charts-1568533"
+        },
+        {
+          "t": "Wikipedia: 2048 (video game)",
+          "u": "https://en.wikipedia.org/wiki/2048_(video_game)"
+        }
+      ],
+      "extra": "Veewo's App Store listing pitched 1024 directly as a free alternative to Threes."
+    },
+    {
+      "from": "1024",
+      "to": "2048",
+      "tier": "dev",
+      "rel": "variant",
+      "took": "Sliding powers-of-two tiles across a four-by-four board until matching numbers double toward a target tile.",
+      "added": "Doubled the target to 2048, smoothed the keyboard animations and shared the browser code free on GitHub.",
+      "src": [
+        {
+          "t": "Gabriele Cirulli, 2048 GitHub repository README, Mar 2014",
+          "u": "https://github.com/gabrielecirulli/2048"
+        },
+        {
+          "t": "IBTimes, Origin of Threes, 1024 and 2048, Mar 2014",
+          "u": "https://www.ibtimes.com/what-2048-convoluted-origin-threes-1024-game-clone-topping-app-store-charts-1568533"
+        }
+      ],
+      "extra": "Cirulli built 2048 in a weekend after playing Veewo's 1024 and Saming's 2048, before he had played Threes."
+    },
+    {
+      "from": "threes",
+      "to": "2048",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Moving every tile on a four-by-four grid together to combine numbers without letting the board fill.",
+      "added": "Reached millions as an unmonetized open-source browser game using powers of two via 1024.",
+      "src": [
+        {
+          "t": "Gabriele Cirulli, 2048 GitHub repository README, Mar 2014",
+          "u": "https://github.com/gabrielecirulli/2048"
+        },
+        {
+          "t": "Wikipedia: 2048 (video game)",
+          "u": "https://en.wikipedia.org/wiki/2048_(video_game)"
+        }
+      ],
+      "extra": "2048's page credits 1024 by Veewo Studio and notes it is conceptually similar to Threes by Asher Vollmer."
+    },
+    {
+      "from": "harvest-moon",
+      "to": "happy-farm",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Clearing plots, planting seasonal crops, tending livestock and checking back as harvests ripen.",
+      "added": "Real-time crop timers on Chinese social networks, where friends help water plots or steal ripe produce.",
+      "src": [
+        {
+          "t": "Wikipedia: Happy Farm (5 Minutes inspired by Harvest Moon)",
+          "u": "https://en.wikipedia.org/wiki/Happy_Farm"
+        },
+        {
+          "t": "PC Gamer, The 5 biggest PC games in China, 2014",
+          "u": "https://www.pcgamer.com/the-5-biggest-pc-games-in-china-that-youll-probably-never-play/"
+        }
+      ],
+      "extra": "5 Minutes designed Happy Farm in Shanghai after Japanese console farming games led by Harvest Moon."
+    },
+    {
+      "from": "happy-farm",
+      "to": "farm-town",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Isometric plots where timed crops wither if left unpicked, shared asynchronously with social-network friends.",
+      "added": "Brought the social farm loop onto Facebook and added a town square to hire real-time harvest helpers.",
+      "src": [
+        {
+          "t": "Wikipedia: Happy Farm",
+          "u": "https://en.wikipedia.org/wiki/Happy_Farm"
+        },
+        {
+          "t": "Wikipedia: FarmVille",
+          "u": "https://en.wikipedia.org/wiki/FarmVille"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "farm-town",
+      "to": "farmville",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Facebook farming plots, withering crop timers, coins-and-cash dual currency and neighbor farm visits.",
+      "added": "Streamlined one-click planting, news-feed gift requests and Zynga cross-promotion that reached 83 million monthly players.",
+      "src": [
+        {
+          "t": "Wikipedia: FarmVille",
+          "u": "https://en.wikipedia.org/wiki/FarmVille"
+        },
+        {
+          "t": "Wikipedia: Happy Farm",
+          "u": "https://en.wikipedia.org/wiki/Happy_Farm"
+        }
+      ],
+      "extra": "Launched on Facebook in June 2009, four months after Slashkey's Farm Town."
+    },
+    {
+      "from": "happy-farm",
+      "to": "farmville",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Planting timed crops, raising animals and visiting friends' farms inside a social network.",
+      "added": "Replaced neighbor crop-stealing with cooperative gifts, ribbons and Facebook feed viral loops.",
+      "src": [
+        {
+          "t": "Wikipedia: Happy Farm (citing Wired on social farm clones)",
+          "u": "https://en.wikipedia.org/wiki/Happy_Farm"
+        },
+        {
+          "t": "Wikipedia: FarmVille",
+          "u": "https://en.wikipedia.org/wiki/FarmVille"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "farmville",
+      "to": "farmville-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Crop timers, animal pens, neighbor help and seasonal farm decorations on Facebook.",
+      "added": "Full 3D visuals and a crafting loop turning water, crops and animal goods into bakery recipes.",
+      "src": [
+        {
+          "t": "Wikipedia: FarmVille",
+          "u": "https://en.wikipedia.org/wiki/FarmVille"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "desktop-tower-defense",
+      "to": "backyard-monsters",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Arranging defensive towers and walls to funnel incoming waves of attackers inside a browser.",
+      "added": "Persistent resource yards and player-versus-player monster raids at Kixeye, co-founded by Desktop TD creator Paul Preece.",
+      "src": [
+        {
+          "t": "Wikipedia: Desktop Tower Defense (Casual Collective / Kixeye)",
+          "u": "https://en.wikipedia.org/wiki/Desktop_Tower_Defense"
+        },
+        {
+          "t": "PocketGamer.biz, Kixeye and Backyard Monsters, 2013",
+          "u": "https://www.pocketgamer.biz/with-backyard-monsters-now-soft-launched-kixeye-prepares-to-go-big-on-mobile/"
+        }
+      ],
+      "extra": "Paul Preece and David Scott's Casual Collective rebranded as Kixeye while launching Backyard Monsters."
+    },
+    {
+      "from": "warcraft-iii",
+      "to": "backyard-monsters",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Warcraft III popularized real-time base building, resource harvesting and custom tower-defense maps.",
+      "added": "Asynchronous browser raids where your yard's towers defend automatically while you are offline.",
+      "src": [
+        {
+          "t": "PocketGamer.biz, Kixeye and Backyard Monsters, 2013",
+          "u": "https://www.pocketgamer.biz/with-backyard-monsters-now-soft-launched-kixeye-prepares-to-go-big-on-mobile/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "backyard-monsters",
+      "to": "clash-of-clans",
+      "tier": "dev",
+      "rel": "fast-follow",
+      "took": "Fortifying a persistent base with walls and towers, training troops on timers and raiding rivals.",
+      "added": "Touchscreen troop-drop controls, crisp fantasy silhouettes, clan wars and brisk mobile sessions.",
+      "src": [
+        {
+          "t": "Lasse Louhento (Supercell), Making of Clash of Clans, PocketGamer.biz",
+          "u": "https://www.pocketgamer.biz/chart-rush-making-of-clash-of-clans/"
+        },
+        {
+          "t": "PocketGamer.biz, Kixeye and Backyard Monsters, 2013",
+          "u": "https://www.pocketgamer.biz/with-backyard-monsters-now-soft-launched-kixeye-prepares-to-go-big-on-mobile/"
+        }
+      ],
+      "extra": "Product lead Lasse Louhento cited Backyard Monsters and Travian as key inspirations for Supercell's mobile strategy game."
+    },
+    {
+      "from": "clash-of-clans",
+      "to": "clash-royale",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Clash of Clans' barbarians, giants, archers and spells, built by a new cell inside Supercell.",
+      "added": "Live head-to-head two-lane tower duels driven by an eight-card elixir deck in three-minute matches.",
+      "src": [
+        {
+          "t": "Wikipedia: Clash Royale",
+          "u": "https://en.wikipedia.org/wiki/Clash_Royale"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "clash-of-clans",
+      "to": "brawl-stars",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Supercell's small-cell studio craft, club social structure, trophy progression and three-minute mobile sessions.",
+      "added": "Direct twin-stick arena shooting and hero supers across three-on-three objective and survival modes.",
+      "src": [
+        {
+          "t": "Wikipedia: Brawl Stars",
+          "u": "https://en.wikipedia.org/wiki/Brawl_Stars"
+        },
+        {
+          "t": "Wikipedia: Supercell (company)",
+          "u": "https://en.wikipedia.org/wiki/Supercell_(video_game_company)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "canabalt",
+      "to": "temple-run",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Automatic endless sprinting where a single mistimed jump ends the run and distance sets the score.",
+      "added": "Shifted from 2D rooftops to a behind-the-back 3D path with swipe turns, slides and tilt coins.",
+      "src": [
+        {
+          "t": "Macworld, Behind the success of Temple Run (Keith Shepherd), 2012",
+          "u": "https://www.macworld.com/article/223555/behind-the-success-of-temple-run.html"
+        },
+        {
+          "t": "Wikipedia: Temple Run",
+          "u": "https://en.wikipedia.org/wiki/Temple_Run"
+        }
+      ],
+      "extra": "Imangi co-founder Keith Shepherd set out to bring Canabalt's one-run tension into a 3D adventure camera."
+    },
+    {
+      "from": "temple-run",
+      "to": "subway-surfers",
+      "tier": "critic",
+      "rel": "fast-follow",
+      "took": "Behind-the-back 3D endless running with swipe jumps, rolls and lane switches while fleeing a pursuer.",
+      "added": "Three clear train-track lanes without tilt steering, crash-proof hoverboards, jetpacks and world-tour cities.",
+      "src": [
+        {
+          "t": "Wikipedia: Subway Surfers",
+          "u": "https://en.wikipedia.org/wiki/Subway_Surfers"
+        },
+        {
+          "t": "Wikipedia: Temple Run",
+          "u": "https://en.wikipedia.org/wiki/Temple_Run"
+        }
+      ],
+      "extra": "Released nine months after Temple Run by Danish studios SYBO Games and Kiloo."
+    },
+    {
+      "from": "temple-run",
+      "to": "temple-run-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Swipe-and-tilt endless fleeing along narrow temple walkways with coin magnets and score multipliers.",
+      "added": "Curving hills, zip-lines, minecart tracks and character-specific power-ups.",
+      "src": [
+        {
+          "t": "Wikipedia: Temple Run",
+          "u": "https://en.wikipedia.org/wiki/Temple_Run"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "super-mario-bros",
+      "to": "flappy-bird",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Bright green warp pipes and unforgiving 8-bit obstacle spacing from Nintendo's Famicom platformer.",
+      "added": "Reduced movement to one tap that bounces a heavy bird between endless vertical pipe gaps.",
+      "src": [
+        {
+          "t": "CNET, Dong Nguyen interview on Flappy Bird's Mario and paddleball roots",
+          "u": "https://www.cnet.com/tech/gaming/dong-nguyen-on-the-return-of-flappy-bird/"
+        }
+      ],
+      "extra": "Dong Nguyen grew up playing Super Mario Bros. in Hanoi and paired its look with a paddleball rhythm."
+    },
+    {
+      "from": "helicopter-game",
+      "to": "flappy-bird",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Helicopter Game popularized one-button gravity flight through endless narrow gaps where any touch ends the run.",
+      "added": "Discrete upward hops on each screen tap rather than hold-to-climb thrust, with instant portrait restarts.",
+      "src": [
+        {
+          "t": "IGN, History of Flappy Bird, Sep 2024",
+          "u": "https://www.ign.com/articles/10-years-after-it-was-pulled-offline-viral-mobile-game-flappy-bird-is-coming-back"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "piou-piou-vs-cactus",
+      "to": "flappy-bird",
+      "tier": "disp",
+      "rel": "variant",
+      "took": "Tapping a touchscreen to keep a round yellow bird with a big beak aloft between green hazards.",
+      "added": "Heavier gravity, tighter vertical pipe openings and one-point-per-gap arcade tension.",
+      "src": [
+        {
+          "t": "Mashable, Flappy Bird and Kek's Piou Piou comparison",
+          "u": "https://mashable.com/article/flappy-bird-returns"
+        },
+        {
+          "t": "IGN, Flappy Bird history and Kek's later involvement, Sep 2024",
+          "u": "https://www.ign.com/articles/10-years-after-it-was-pulled-offline-viral-mobile-game-flappy-bird-is-coming-back"
+        }
+      ],
+      "extra": "French developer Kek noted the resemblance in 2014; Dong Nguyen replied that he had not previously seen Piou Piou."
+    },
+    {
+      "from": "flappy-bird",
+      "to": "crossy-road",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Instant-restart endless score chasing, one-touch mobile controls and shareable short runs.",
+      "added": "Combined that endless structure with Frogger's traffic lanes, voxel mascots and fair cosmetic unlocks.",
+      "src": [
+        {
+          "t": "IBTimes UK, Matt Hall and Andy Sum on Crossy Road and Flappy Bird, Dec 2014",
+          "u": "https://www.ibtimes.co.uk/crossy-road-mobile-game-flappy-bird-wishes-it-was-1477524"
+        },
+        {
+          "t": "Wikipedia: Crossy Road",
+          "u": "https://en.wikipedia.org/wiki/Crossy_Road"
+        }
+      ],
+      "extra": "Hipster Whale co-founder Matt Hall described Crossy Road as blending endless Flappy Bird sessions with Frogger."
+    },
+    {
+      "from": "blockade",
+      "to": "snake",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Blockade popularized steering a growing line around a boxed screen without hitting walls or tails.",
+      "added": "Single-player pellet-chasing built into millions of pocket Nokia handsets starting in 1997.",
+      "src": [
+        {
+          "t": "Wikipedia: Snake (video game genre)",
+          "u": "https://en.wikipedia.org/wiki/Snake_(video_game_genre)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "snake",
+      "to": "slither-io",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Steering an ever-lengthening snake that eats pellets and dies the moment its head strikes a body.",
+      "added": "Hundreds of live online snakes in one arena where tiny newcomers can cut off and consume leaders.",
+      "src": [
+        {
+          "t": "Steve Howse, interview, Pocket Gamer, May 2016",
+          "u": "https://www.pocketgamer.com/slither-io/interview-the-future-of-slither-io-and-tips-direct-from-the-developer/"
+        },
+        {
+          "t": "Wikipedia: Slither.io",
+          "u": "https://en.wikipedia.org/wiki/Slither.io"
+        }
+      ],
+      "extra": "Solo developer Steve Howse combined classic Snake rules with Agar.io's drop-in browser multiplayer."
+    },
+    {
+      "from": "agar-io",
+      "to": "slither-io",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Drop-in browser and mobile arenas where hundreds of players eat glowing orbs to climb a live leaderboard.",
+      "added": "Swapped Agar.io's size-wins cells for Snake's head-crash rule, letting small players topple giants.",
+      "src": [
+        {
+          "t": "Steve Howse, interview, Pocket Gamer, May 2016",
+          "u": "https://www.pocketgamer.com/slither-io/interview-the-future-of-slither-io-and-tips-direct-from-the-developer/"
+        },
+        {
+          "t": "Wikipedia: Slither.io",
+          "u": "https://en.wikipedia.org/wiki/Slither.io"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "wii-sports-resort",
+      "to": "fruit-ninja",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Wii Sports Resort's Speed Slice popularized cleanly cleaving tossed fruit in mid-air with physical swings.",
+      "added": "Direct finger-swipe blade trails on glass touchscreens, multi-fruit combos and flying bombs to dodge.",
+      "src": [
+        {
+          "t": "IGN, Wii Sports Resort: Speed Slice",
+          "u": "https://www.ign.com/wikis/wii-sports-resort/Speed_Slice"
+        },
+        {
+          "t": "Wikipedia: Fruit Ninja",
+          "u": "https://en.wikipedia.org/wiki/Fruit_Ninja"
+        }
+      ],
+      "extra": "Luke Muscat also credited a late-night chef-knife infomercial showing pineapples sliced in mid-air."
+    },
+    {
+      "from": "warioware-touched",
+      "to": "fruit-ninja",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Immediate, tactile touchscreen slicing microgames anyone can grasp in seconds.",
+      "added": "Expanded one satisfying swipe action into a full arcade score-attack loop with juicy fruit physics.",
+      "src": [
+        {
+          "t": "PC Gamer, Profile of Fruit Ninja designer Luke Muscat",
+          "u": "https://www.pcgamer.com/games/roguelike/the-designer-of-mobile-hits-fruit-ninja-and-jetpack-joyride-is-making-a-deep-sea-lovecraftian-horror-game/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "klondike",
+      "to": "solitaire-windows",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Klondike's seven-column tableau, alternating-color cascades, three-card draw stock and four suit foundations.",
+      "added": "Mouse drag-and-drop card handling, automatic rule checks, pixel card backs and the bouncing victory cascade.",
+      "src": [
+        {
+          "t": "Wikipedia: List of solitaire games (Klondike)",
+          "u": "https://en.wikipedia.org/wiki/List_of_solitaire_games"
+        }
+      ],
+      "extra": "Shipped with Windows 3.0 in 1990, introducing millions of PC owners to mouse drag-and-drop."
+    },
+    {
+      "from": "klondike",
+      "to": "microsoft-solitaire",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Klondike's seven-pile patience layout, alternating red-and-black sequences and Ace-to-King suit foundations.",
+      "added": "Wes Cherry's Windows 3.0 program, Susan Kare's pixel card art and effortless digital shuffling.",
+      "src": [
+        {
+          "t": "Wikipedia: List of solitaire games (Klondike)",
+          "u": "https://en.wikipedia.org/wiki/List_of_solitaire_games"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "solitaire-windows",
+      "to": "balatro",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "A quiet, solo 52-card tabletop feel that welcomes players outside traditional strategy circles.",
+      "added": "Poker hand scoring, rule-breaking Joker multipliers, tarot deck edits and rising blind targets.",
+      "src": [
+        {
+          "t": "LocalThunk, 'Solitaire' blog post, Mar 2025",
+          "u": "https://localthunk.com/blog/solitaire"
+        },
+        {
+          "t": "GamesRadar+, LocalThunk on Solitaire inspiring Balatro, Mar 2025",
+          "u": "https://www.gamesradar.com/games/roguelike/balatro-dev-says-solitaire-exists-at-the-peak-of-game-culture-and-was-debatably-the-most-important-inspiration-for-his-poker-roguelike/"
+        }
+      ],
+      "extra": "LocalThunk wrote that Solitaire was arguably the single most important inspiration behind Balatro's cozy card feel."
+    },
+    {
+      "from": "jotto",
+      "to": "mastermind",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Jotto popularized deducing an opponent's hidden sequence in fixed turns using match-count clues.",
+      "added": "Colored plastic code pegs and separate black-and-white key pegs distinguishing exact spots from misplaced colors.",
+      "src": [
+        {
+          "t": "Wikipedia: Mastermind (board game)",
+          "u": "https://en.wikipedia.org/wiki/Mastermind_(board_game)"
+        },
+        {
+          "t": "Wikipedia: Jotto",
+          "u": "https://en.wikipedia.org/wiki/Jotto"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "mastermind",
+      "to": "wordle",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Six-row deductive guessing with color-coded feedback showing exact-position hits versus misplaced matches.",
+      "added": "Five-letter English words, one shared puzzle per day for everyone and spoiler-free emoji grids.",
+      "src": [
+        {
+          "t": "TechCrunch, Josh Wardle interview on Wordle's origins, Jan 2022",
+          "u": "https://techcrunch.com/2022/01/12/josh-wardle-interview-wordle/"
+        },
+        {
+          "t": "Wikipedia: Wordle",
+          "u": "https://en.wikipedia.org/wiki/Wordle"
+        }
+      ],
+      "extra": "Josh Wardle built his first 2013 Wordle prototype directly as a word-based take on Mastermind."
+    },
+    {
+      "from": "jotto",
+      "to": "wordle",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Jotto popularized testing valid five-letter English words to narrow down a hidden five-letter answer.",
+      "added": "Per-letter green and yellow tile colors instead of a single match count, played solo once daily.",
+      "src": [
+        {
+          "t": "Wikipedia: Jotto",
+          "u": "https://en.wikipedia.org/wiki/Jotto"
+        },
+        {
+          "t": "Wikipedia: Wordle",
+          "u": "https://en.wikipedia.org/wiki/Wordle"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "pinball-dreams",
+      "to": "full-tilt-pinball",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Pinball Dreams popularized realistic computer ball physics, table missions and multi-table home pinball sets.",
+      "added": "Full-view pre-rendered 3D tables with rank promotions across Space Cadet, Skulduggery and Dragon's Keep.",
+      "src": [
+        {
+          "t": "Wikipedia: Full Tilt! Pinball",
+          "u": "https://en.wikipedia.org/wiki/Full_Tilt!_Pinball"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "full-tilt-pinball",
+      "to": "3d-pinball-for-windows-space-cadet",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Cinematronics' Space Cadet table, mission ranks, wormhole bumpers and sound effects from Full Tilt! Pinball.",
+      "added": "Ported to Windows APIs by Dave Plummer and preinstalled for millions on Windows NT, 2000, Me and XP.",
+      "src": [
+        {
+          "t": "Wikipedia: Full Tilt! Pinball",
+          "u": "https://en.wikipedia.org/wiki/Full_Tilt!_Pinball"
+        }
+      ],
+      "extra": "Microsoft licensed the Space Cadet table from Maxis and Cinematronics at 640x480 resolution."
+    },
+    {
+      "from": "interactive-physics",
+      "to": "roblox",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "David Baszucki's open-ended physics lab where students built vehicles, ramps and crashes for fun.",
+      "added": "3D Lego-like blocks, Lua scripting and shared online servers where players publish games for others.",
+      "src": [
+        {
+          "t": "Game Developer, David Baszucki interview on Interactive Physics and Roblox, 2006",
+          "u": "https://www.gamedeveloper.com/game-platforms/interview-roblox-the-little-known-user-generated-lego-competitor"
+        },
+        {
+          "t": "Roblox Newsroom, David Baszucki on Knowledge Revolution and Interactive Physics",
+          "u": "https://about.roblox.com/newsroom/2026/11/david-baszucki-sits-down-with-bloxy-news"
+        }
+      ],
+      "extra": "Watching kids use Interactive Physics as a toy inspired Baszucki and Erik Cassel to build DynaBlocks, renamed Roblox."
+    },
+    {
+      "from": "second-life",
+      "to": "roblox",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Persistent cloud-hosted 3D worlds built and populated by users' own creations and avatars.",
+      "added": "Simulated rigid-body block physics and game-creation tools aimed at kids and teens.",
+      "src": [
+        {
+          "t": "David Baszucki, Stanford GSB View From The Top talk",
+          "u": "https://www.gsb.stanford.edu/insights/roblox-founder-ceo-says-trust-your-gut"
+        },
+        {
+          "t": "Wikipedia: David Baszucki",
+          "u": "https://en.wikipedia.org/wiki/David_Baszucki"
+        }
+      ],
+      "extra": ""
+    }
+  ]
+}

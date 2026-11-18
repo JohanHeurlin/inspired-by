@@ -1,0 +1,788 @@
+{
+  "games": [
+    {
+      "id": "laser-clay-shooting-system",
+      "title": "Laser Clay Shooting System",
+      "year": 1973,
+      "dev": "Nintendo",
+      "cc": "JP",
+      "genres": [
+        "arcade",
+        "shooter"
+      ],
+      "plats": [
+        "Arcade"
+      ],
+      "pop": 2,
+      "note": "Engineered by Gunpei Yokoi and Genyo Takeda to convert empty Japanese bowling alleys into projected skeet ranges."
+    },
+    {
+      "id": "in-the-hunt",
+      "title": "In the Hunt",
+      "year": 1993,
+      "dev": "Irem",
+      "cc": "JP",
+      "genres": [
+        "shmup"
+      ],
+      "plats": [
+        "Arcade",
+        "PlayStation",
+        "Saturn",
+        "PC (Windows)"
+      ],
+      "pop": 2,
+      "note": "Submarine shooter whose Irem team soon left to found Nazca Corporation and create Metal Slug."
+    },
+    {
+      "id": "gunforce-ii",
+      "title": "GunForce II",
+      "year": 1994,
+      "dev": "Irem",
+      "cc": "JP",
+      "genres": [
+        "shooter",
+        "arcade"
+      ],
+      "plats": [
+        "Arcade"
+      ],
+      "pop": 2,
+      "note": "Irem's final arcade run-and-gun, sharing designers, pixel artists, and sound effects with Metal Slug."
+    }
+  ],
+  "links": [
+    {
+      "from": "laser-clay-shooting-system",
+      "to": "duck-hunt",
+      "tier": "team",
+      "took": "Gunpei Yokoi's light-sensing gun hardware and clay-pigeon skeet-shooting mode.",
+      "added": "Home TV detection via the NES Zapper, flying ducks, and a laughing hunting dog.",
+      "src": [
+        {
+          "t": "Kotaku, Nintendo's Laser Clay Shooting System history",
+          "u": "https://kotaku.com/the-gun-game-that-nearly-broke-nintendo-5794640"
+        },
+        {
+          "t": "Before Mario, Nintendo Kousenjuu Duck Hunt (1976)",
+          "u": "http://blog.beforemario.com/2012/10/nintendo-kousenjuu-duck-hunt-how-it.html"
+        }
+      ],
+      "extra": "Nintendo also bridged the two with a 1976 electro-mechanical projector toy called Duck Hunt."
+    },
+    {
+      "from": "prince-of-persia",
+      "to": "aladdin",
+      "tier": "critic",
+      "took": "Fluid frame-by-frame swordplay, ledge hangs, and momentum across Arabian palace traps.",
+      "added": "Hand-drawn cels by Disney feature animators, thrown apples, and faster 16-bit scrolling.",
+      "src": [
+        {
+          "t": "Sega-16, David Perry interview, Jun 2005",
+          "u": "https://www.sega-16.com/2005/06/interview-david-perry/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "another-world",
+      "to": "aladdin",
+      "tier": "critic",
+      "took": "Treating fluid character animation and visual storytelling as the centerpiece of a 16-bit action game.",
+      "added": "Traditional pencil-on-paper Disney animation digitized frame by frame via Virgin's Digicel process.",
+      "src": [
+        {
+          "t": "Sega-16, David Perry interview, Jun 2005",
+          "u": "https://www.sega-16.com/2005/06/interview-david-perry/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "aladdin",
+      "to": "the-lion-king",
+      "tier": "team",
+      "took": "Virgin and Disney's Digicel pipeline turning studio pencil sheets into 16-bit sprites.",
+      "added": "Westwood's two-phase protagonist growing from tumbling cub Simba into a fighting adult lion.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "aladdin",
+      "to": "earthworm-jim",
+      "tier": "team",
+      "took": "David Perry and Virgin's Digicel animation team carrying over squash-and-stretch cartoon sprite work.",
+      "added": "An original surreal superhero worm using his own body as a whip.",
+      "src": [
+        {
+          "t": "Sega-16, David Perry interview, Jun 2005",
+          "u": "https://www.sega-16.com/2005/06/interview-david-perry/"
+        }
+      ],
+      "extra": "Perry left Virgin Games after Aladdin to found Shiny Entertainment."
+    },
+    {
+      "from": "out-run",
+      "to": "crazy-taxi",
+      "tier": "team",
+      "took": "Sega's sunny convertible arcade driving against a ticking clock that skilled play extends.",
+      "added": "An open San Francisco-style hill city where players pick any route to drop off fares.",
+      "src": [
+        {
+          "t": "IGN, Kenji Kanno interview, Feb 2000",
+          "u": "https://www.ign.com/articles/2000/02/05/the-crazy-interview-with-sojs-kenji-kanno"
+        },
+        {
+          "t": "Game Informer, Kenji Kanno on Crazy Taxi and The Offspring",
+          "u": "https://gameinformer.com/sgf-2026/2026/06/12/how-the-offspring-inspired-crazy-taxi-and-became-inseparable-from-the-franchise"
+        }
+      ],
+      "extra": "Director Kenji Kanno aimed to break Japan's '100 yen for 3 minutes' arcade rule by rewarding fast fares."
+    },
+    {
+      "from": "crazy-taxi",
+      "to": "crazy-taxi-2",
+      "tier": "series",
+      "took": "Open-city arcade fare hunting, drift boosts, and The Offspring punk soundtrack.",
+      "added": "New York-inspired streets, multi-passenger group fares, and the Crazy Hop jump button.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "in-the-hunt",
+      "to": "metal-slug",
+      "tier": "team",
+      "took": "Dense, hand-drawn mechanical pixel art and crumbling multi-piece bosses by Kazuma Kujo and Akio's team.",
+      "added": "On-foot soldiers, slapstick enemy animations, and the rideable SV-001 Metal Slug tank.",
+      "src": [
+        {
+          "t": "Time Extension, Kazuma Kujo on the making of Metal Slug",
+          "u": "https://www.timeextension.com/features/the-making-of-metal-slug-i-never-thought-that-it-would-have-sequels"
+        }
+      ],
+      "extra": "After Irem closed its arcade division in 1994, core staff formed Nazca Corporation."
+    },
+    {
+      "from": "gunforce-ii",
+      "to": "metal-slug",
+      "tier": "team",
+      "took": "Frantic run-and-gun action, rescued prisoners, rideable vehicles, and reused scream sound effects.",
+      "added": "One primary hero gun, melee knife slashes, grenade arcs, and Neo Geo cartoon polish.",
+      "src": [
+        {
+          "t": "Time Extension, The Making of Metal Slug",
+          "u": "https://www.timeextension.com/features/the-making-of-metal-slug-i-never-thought-that-it-would-have-sequels"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "contra",
+      "to": "metal-slug",
+      "tier": "mech",
+      "took": "Contra popularized two-player co-op run-and-gun shooting with one-hit deaths and weapon pickups.",
+      "added": "Close-range knife attacks, rescued POW item drops, and boarding armored tanks.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "metal-slug",
+      "to": "metal-slug-2",
+      "tier": "series",
+      "took": "Nazca's hand-animated run-and-gun action, rescued POWs, and SV-001 tank.",
+      "added": "Four playable soldiers, camel and mech mounts, and mummy transformations.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "virtua-cop",
+      "to": "time-crisis",
+      "tier": "critic",
+      "took": "3D polygon arcade light-gun stages with dynamic camera swoops and enemy hit reactions.",
+      "added": "A cabinet foot pedal to duck behind cover and reload while a strict timer ticks down.",
+      "src": [
+        {
+          "t": "Wikipedia: Time Crisis (video game)",
+          "u": "https://en.wikipedia.org/wiki/Time_Crisis_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "time-crisis",
+      "to": "time-crisis-ii",
+      "tier": "series",
+      "took": "Foot-pedal cover and reload gunplay against an unforgiving stage timer.",
+      "added": "Linked two-screen cabinets where two players cover each other from different angles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "sonic-the-hedgehog",
+      "to": "nights-into-dreams",
+      "tier": "team",
+      "took": "Sonic Team's momentum-driven loops and score-attack flow through bright stages.",
+      "added": "3D analog flight along looping dream tracks, Paraloop captures, and A-Life Nightopian creatures.",
+      "src": [
+        {
+          "t": "Shmuplations, Sonic Team 1996 NiGHTS into Dreams interview",
+          "u": "https://shmuplations.com/nights/"
+        }
+      ],
+      "extra": "Bundled with the Saturn 3D Control Pad so players could steer smooth aerial loops."
+    },
+    {
+      "from": "super-mario-64",
+      "to": "nights-into-dreams",
+      "tier": "disp",
+      "took": "Thumbstick-driven 3D analog flight, developed in parallel during 1995 and 1996.",
+      "added": "Constrained 2.5D aerial score-lap courses instead of open 3D sandbox exploration.",
+      "src": [
+        {
+          "t": "Shmuplations, Yuji Naka 1996 NiGHTS interview",
+          "u": "https://shmuplations.com/nights/"
+        }
+      ],
+      "extra": "Yuji Naka said seeing Mario fly at Space World 1995 briefly worried him until he saw Nintendo's different direction."
+    },
+    {
+      "from": "nights-into-dreams",
+      "to": "sonic-adventure",
+      "tier": "team",
+      "took": "Sonic Team's 3D camera tools and the A-Life creature-raising system.",
+      "added": "Full 3D Sonic action stages, six interwoven character campaigns, and Dreamcast VMU Chao Gardens.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "sonic-the-hedgehog-3",
+      "to": "sonic-adventure",
+      "tier": "series",
+      "took": "Sonic, Tails, and Knuckles, Master Emerald lore, and loop-de-loop speed stages.",
+      "added": "3D homing attacks, voiced story cutscenes, Adventure Fields hubs, and six playable viewpoints.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "sonic-adventure",
+      "to": "sonic-adventure-2",
+      "tier": "series",
+      "took": "High-speed 3D homing-attack stages, rail momentum, and Chao Garden pet raising.",
+      "added": "Hero versus Dark campaigns introducing Shadow and Rouge, rail grinding, and dropped hub fields.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "super-mario-64",
+      "to": "ape-escape",
+      "tier": "dev",
+      "took": "Open 3D sandbox stages explored to track down targets.",
+      "added": "Mandatory DualShock twin-stick controls swinging nets, clubs, and gadgets with the right stick.",
+      "src": [
+        {
+          "t": "GamesRadar+, Shuhei Yoshida and Japan Studio on Ape Escape",
+          "u": "https://www.gamesradar.com/games/platformer/how-ape-escapes-dualshock-legacy-lives-on-in-todays-ps5-games-well-never-make-it-compatible-with-regular-controls/"
+        }
+      ],
+      "extra": "First PlayStation game to require the DualShock analog controller."
+    },
+    {
+      "from": "banjo-kazooie",
+      "to": "donkey-kong-64",
+      "tier": "team",
+      "took": "Rare's 3D collectathon worlds packed with Golden Bananas, minigames, and boss arenas.",
+      "added": "Five swappable Kongs with color-coded collectibles, N64 Expansion Pak lighting, and four-player arenas.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "donkey-kong-country",
+      "to": "donkey-kong-64",
+      "tier": "series",
+      "took": "Donkey and Diddy Kong, King K. Rool, barrel cannons, and minecart rides.",
+      "added": "Large 3D hub islands, shooter weapons, musical instruments, and the DK Rap.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "wipeout",
+      "to": "star-wars-episode-i-racer",
+      "tier": "dev",
+      "took": "Breakneck anti-gravity hover racing studied as a benchmark by LucasArts.",
+      "added": "Twin-turbine podracers that overheat and catch fire, repair-pit upgrades, and wide branching canyons.",
+      "src": [
+        {
+          "t": "Time Extension, Jon Knoles on making Star Wars Episode I: Racer",
+          "u": "https://www.timeextension.com/features/the-making-of-star-wars-episode-1-racer-maybe-we-cant-make-a-great-racing-game-but-we-can-make-an-excellent-toy"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "spyro-the-dragon",
+      "to": "spyro-2-riptos-rage",
+      "tier": "series",
+      "took": "Insomniac's gliding, charging, and gem-hunting 3D worlds.",
+      "added": "End-of-glide hover jumps, swimming and climbing skills bought from Moneybags, and NPC minigames.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "spyro-2-riptos-rage",
+      "to": "spyro-year-of-the-dragon",
+      "tier": "series",
+      "took": "Gliding with hover, Moneybags skill unlocks, and challenge orbs.",
+      "added": "Four playable animal friends, skateboarding parks, and adaptive challenge tuning.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "resident-evil-2",
+      "to": "resident-evil-3-nemesis",
+      "tier": "series",
+      "took": "Raccoon City's zombie outbreak, pre-rendered streets, and the stalking Mr. X tyrant.",
+      "added": "Nemesis chasing Jill across rooms, gunpowder ammo crafting, quick dodges, and split-second story choices.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "starcraft",
+      "to": "starcraft-brood-war",
+      "tier": "series",
+      "took": "Three-way asymmetric Terran, Zerg, and Protoss real-time strategy.",
+      "added": "Medics, Lurkers, and Dark Templars whose counter-play defined competitive StarCraft for decades.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "worms",
+      "to": "worms-2",
+      "tier": "series",
+      "took": "Turn-based 2D artillery battles on destructible landscapes with dark British humor.",
+      "added": "Big-eyed cartoon sprites, Ninja Rope acrobatics, Holy Hand Grenade, and deep custom weapon editors.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "tekken-3",
+      "to": "tekken-tag-tournament",
+      "tier": "series",
+      "took": "Tekken 3's sidestepping 3D martial arts system and full fighter roster.",
+      "added": "Two-character tag switches mid-combo, tag throws, and upgraded 60-fps PlayStation 2 visuals.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "defender",
+      "to": "jetpac",
+      "tier": "critic",
+      "took": "Jet-thruster flight, horizontal laser fire, and wraparound screen edges against alien waves.",
+      "added": "Single-screen platforms where Jetman assembles and fuels a three-stage rocket between waves.",
+      "src": [
+        {
+          "t": "The Guardian, 40 Years of Ultimate Play the Game and Rare, Aug 2023",
+          "u": "https://www.theguardian.com/games/2023/aug/07/ultimate-rare-40-years-british-videogames-jet-pac-goldeneye-sea-of-thieves"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "jetpac",
+      "to": "atic-atac",
+      "tier": "team",
+      "took": "Chris and Tim Stamper's crisp 8-bit sprite speed and arcade shooting.",
+      "added": "A top-down 100-room castle labyrinth with three hero classes having exclusive secret passages.",
+      "src": [
+        {
+          "t": "The Guardian, Ultimate Play the Game retrospective, Aug 2023",
+          "u": "https://www.theguardian.com/games/2023/aug/07/ultimate-rare-40-years-british-videogames-jet-pac-goldeneye-sea-of-thieves"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "adventure-atari-2600",
+      "to": "atic-atac",
+      "tier": "mech",
+      "took": "Adventure popularized hunting colored keys and artifacts across flip-screen castle rooms.",
+      "added": "Reassembling the three-piece Golden Key of ACG before a roasting-chicken health meter runs out.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "atic-atac",
+      "to": "sabre-wulf",
+      "tier": "team",
+      "took": "Ultimate's flip-screen maze exploration hunting scattered artifact pieces.",
+      "added": "A 256-screen jungle, sword slashes, status-changing orchids, and an invincible pursuing wolf.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "atic-atac",
+      "to": "knight-lore",
+      "tier": "team",
+      "took": "Ultimate's room-by-room castle quest collecting items under time pressure.",
+      "added": "Isometric 3D Filmation rooms with stackable blocks and a hero who turns into a werewolf.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "knight-lore",
+      "to": "the-last-ninja",
+      "tier": "critic",
+      "took": "Flip-screen isometric 3D rooms combining exploration with item puzzles.",
+      "added": "Realistic human proportions, feudal Japanese gardens, martial-arts weapon duels, and SID music.",
+      "src": [
+        {
+          "t": "Super Chart Island, System 3 and The Last Ninja retrospective",
+          "u": "https://superchartisland.com/the-last-ninja-2/"
+        }
+      ],
+      "extra": "System 3 founder Mark Cale admired Ultimate's isometric adventures but wanted realistic combat and scenery."
+    },
+    {
+      "from": "the-last-ninja",
+      "to": "last-ninja-2",
+      "tier": "series",
+      "took": "Isometric exploration, item puzzles, and multi-weapon ninja duels.",
+      "added": "Modern-day New York streets, sewers, and skyscrapers.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "international-karate",
+      "to": "ik",
+      "tier": "series",
+      "took": "Archer MacLean's 16-move point-scoring karate bouts and crisp rotoscoped animation.",
+      "added": "A third simultaneous fighter turning matches into three-way free-for-alls, plus shield bonus games.",
+      "src": [
+        {
+          "t": "Den of Geek, Archer MacLean and International Karate Plus",
+          "u": "https://www.denofgeek.com/games/why-international-karate-plus-was-a-unique-fighting-game/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "karate-champ",
+      "to": "barbarian-the-ultimate-warrior",
+      "tier": "mech",
+      "took": "Karate Champ popularized one-on-one joystick-direction martial-arts duels.",
+      "added": "Sixteen sword strikes including a spinning neck chop that cleanly decapitates the opponent.",
+      "src": [
+        {
+          "t": "Eurogamer, Steve Brown on making Barbarian: The Ultimate Warrior",
+          "u": "https://www.eurogamer.net/the-making-of-barbarian-the-ultimate-warrior"
+        }
+      ],
+      "extra": "Designer Steve Brown filmed himself swinging a wooden sword to trace the animations."
+    },
+    {
+      "from": "manic-miner",
+      "to": "dizzy",
+      "tier": "dev",
+      "took": "Flip-screen 8-bit British platform rooms full of hazards.",
+      "added": "Forgiving health, tumbling egg somersaults, and fairy-tale item-trade puzzles.",
+      "src": [
+        {
+          "t": "Oliver Twins, Dizzy: The Ultimate Cartoon Adventure",
+          "u": "https://www.olivertwins.com/games/dizzy-the-ultimate-cartoon-adventure"
+        },
+        {
+          "t": "Wikipedia: Dizzy - The Ultimate Cartoon Adventure",
+          "u": "https://en.wikipedia.org/wiki/Dizzy_%E2%80%93_The_Ultimate_Cartoon_Adventure"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "zork",
+      "to": "dizzy",
+      "tier": "dev",
+      "took": "Multi-step inventory puzzles where each carried item unlocks a problem elsewhere.",
+      "added": "Visual platforming with a three-item pocket limit instead of typed text commands.",
+      "src": [
+        {
+          "t": "Oliver Twins, Dizzy: The Ultimate Cartoon Adventure",
+          "u": "https://www.olivertwins.com/games/dizzy-the-ultimate-cartoon-adventure"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "wanted-monty-mole",
+      "to": "monty-on-the-run",
+      "tier": "series",
+      "took": "Peter Harrap's flip-screen British platforming starring fugitive Monty Mole.",
+      "added": "Choosing a five-item Freedom Kit up front and Rob Hubbard's Commodore 64 theme.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "manic-miner",
+      "to": "nebulus",
+      "tier": "mech",
+      "took": "Manic Miner popularized precise 8-bit platform climbing against a strict stage timer.",
+      "added": "Rotating cylindrical towers where walking left or right spins the whole 3D column.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "colossal-cave-adventure",
+      "to": "where-in-the-world-is-carmen-sandiego",
+      "tier": "dev",
+      "took": "Exploring connected rooms through clues, adapted by programmer Dane Bigham for children.",
+      "added": "Menu-driven world capitals, warrant clues, and a bundled World Almanac reference book.",
+      "src": [
+        {
+          "t": "Smithsonian Magazine, Dane Bigham on Carmen Sandiego, 2019",
+          "u": "https://www.smithsonianmag.com/innovation/how-generation-became-obsessed-with-tracking-down-carmen-sandiego-180973333/"
+        },
+        {
+          "t": "Strong National Museum of Play, Where in the World Is Carmen Sandiego?",
+          "u": "https://www.museumofplay.org/games/where-in-the-world-is-carmen-sandiego/"
+        }
+      ],
+      "extra": "Broderbund co-founder Gary Carlston suggested bundling The World Almanac."
+    },
+    {
+      "from": "pitfall",
+      "to": "ghostbusters",
+      "tier": "team",
+      "took": "David Crane's brisk home-system action design at Activision.",
+      "added": "City-map cash management, car-upgrade shopping, proton-beam ghost trapping, and synthesized speech.",
+      "src": [
+        {
+          "t": "Retro Games Master, David Crane interview",
+          "u": "https://www.retrogamesmaster.co.uk/david-crane-interview/"
+        }
+      ],
+      "extra": "Crane adapted an unfinished strategy-driving prototype called Car Wars in six weeks."
+    },
+    {
+      "from": "ghostbusters",
+      "to": "defender-of-the-crown",
+      "tier": "mech",
+      "took": "Ghostbusters popularized weaving a strategic map screen together with separate action minigames.",
+      "added": "Norman-versus-Saxon territory conquest with jousting, swordplay, and catapult sieges.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "f-15-strike-eagle",
+      "to": "gunship",
+      "tier": "team",
+      "took": "MicroProse's 3D cockpit instrument flying, radar warnings, and mission medals.",
+      "added": "Low-altitude AH-64 Apache helicopter hovering behind hills to pop up and fire Hellfire missiles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "gunship",
+      "to": "gunship-2000",
+      "tier": "series",
+      "took": "MicroProse's tactical Apache combat simulation and nap-of-the-earth terrain masking.",
+      "added": "Seven flyable helicopters, filled-polygon 3D terrain, and commanding a five-chopper squad.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "the-seven-cities-of-gold",
+      "to": "pirates",
+      "tier": "dev",
+      "took": "Open-ended New World sailing, coastal map exploration, and trading with ports.",
+      "added": "Sixteenth-century Caribbean privateering blending ship duels, fencing, town raids, and romance.",
+      "src": [
+        {
+          "t": "Video Game History Foundation, Sid Meier interview (Ep. 8)",
+          "u": "https://gamehistory.org/ep-8-sid-meiers-episode-of-the-video-game-history-hour/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "pirates",
+      "to": "sid-meiers-pirates",
+      "tier": "series",
+      "took": "Open-ended Caribbean sailing, ship-to-ship broadsides, sword duels, and treasure maps.",
+      "added": "3D visuals, rhythm ballroom dancing, turn-based land battles, and aging captain stats.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "720",
+      "to": "skate-or-die",
+      "tier": "mech",
+      "took": "720° popularized skate-shop upgrades, half-pipe tricks, downhill runs, and the 'Skate or Die!' cry.",
+      "added": "Five standalone tournament events including inflatable-club pool jousting and alley races.",
+      "src": [
+        {
+          "t": "Wikipedia: Skate or Die!",
+          "u": "https://en.wikipedia.org/wiki/Skate_or_Die!"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "california-games",
+      "to": "skate-or-die",
+      "tier": "team",
+      "took": "Epyx's multi-event party-sports structure and half-pipe skateboarding.",
+      "added": "A punk skate-shop hub and five pure skateboarding events built as EA's first internal game.",
+      "src": [
+        {
+          "t": "Wikipedia: Skate or Die!",
+          "u": "https://en.wikipedia.org/wiki/Skate_or_Die!"
+        }
+      ],
+      "extra": "Electronic Arts hired former Epyx developers including Michael Kosaka and Stephen Landrum."
+    },
+    {
+      "from": "super-mario-bros-3",
+      "to": "commander-keen-in-invasion-of-the-vorticons",
+      "tier": "dev",
+      "took": "John Carmack and Tom Hall's rejected PC port of Super Mario Bros. 3's smooth scrolling.",
+      "added": "Pogo-stick bounces, raygun ammo, nonlinear Mars world map, and three-part PC shareware sales.",
+      "src": [
+        {
+          "t": "Game Developer, John Romero shares PC Super Mario Bros. 3 demo",
+          "u": "https://www.gamedeveloper.com/business/john-romero-shares-pc-i-super-mario-bros-3-i-demo-vid"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "skiing",
+      "to": "skifree",
+      "tier": "dev",
+      "took": "Top-down slalom and tree-dodging downhill runs from Activision's Atari 2600 Skiing.",
+      "added": "Mouse-steered Windows 3.0 graphics, freestyle jump tricks, and the Abominable Snow Monster.",
+      "src": [
+        {
+          "t": "Chris Pirih, The Most Officialest SkiFree Home Page",
+          "u": "https://ski.ihoc.net/"
+        }
+      ],
+      "extra": "Pirih first wrote a Fortran text-terminal version on a college VAX before porting it to Windows."
+    },
+    {
+      "from": "raiders-of-the-lost-ark",
+      "to": "et-the-extra-terrestrial",
+      "tier": "team",
+      "took": "Howard Scott Warshaw's multi-screen Atari 2600 item questing.",
+      "added": "Neck-stretching levitation out of pits and hunting three scattered phone pieces in five weeks.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "ecco-the-dolphin",
+      "to": "ecco-the-tides-of-time",
+      "tier": "series",
+      "took": "Ed Annunziata's sonar echolocation puzzles, dash attacks, and alien Vortex storyline.",
+      "added": "3D tube-ring stages, animal transformations into gulls and sharks, and time-traveling futures.",
+      "src": [
+        {
+          "t": "Old School Gamer Magazine, Ed Annunziata and the story of Ecco",
+          "u": "https://www.oldschoolgamermagazine.com/a-momentary-lapse-of-reason-the-story-of-ecco/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "ecco-the-dolphin",
+      "to": "abzu",
+      "tier": "dev",
+      "took": "Free 360-degree swimming alongside whales and dolphins through ancient sunken ruins.",
+      "added": "Meditative ocean exploration with no oxygen meter or game-over failure.",
+      "src": [
+        {
+          "t": "Business Insider, Matt Nava Abzu interview, May 2016",
+          "u": "https://www.businessinsider.com/abzu-interview-matt-nava-2016-5"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "street-fighter",
+      "to": "fatal-fury-king-of-fighters",
+      "tier": "team",
+      "took": "Special-move command inputs and world-tour martial arts created by director Takashi Nishiyama.",
+      "added": "Two-plane background-to-foreground dodging, co-op rounds against CPU bosses, and South Town lore.",
+      "src": [],
+      "extra": "Takashi Nishiyama directed the 1987 Street Fighter at Capcom before joining SNK."
+    },
+    {
+      "from": "teenage-mutant-ninja-turtles-arcade",
+      "to": "the-simpsons",
+      "tier": "team",
+      "took": "Konami's four-player coin-op brawler cabinet and lively Saturday-morning cartoon animation.",
+      "added": "Two-player team-up attacks where family members combine moves across Springfield.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "contra",
+      "to": "contra-iii-the-alien-wars",
+      "tier": "series",
+      "took": "Two-player run-and-gun shooting, Spread Gun pickups, and giant alien bosses.",
+      "added": "Two-weapon inventory switching, hand-over-hand rail climbing, and Mode 7 overhead stages.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "sonic-the-hedgehog-3",
+      "to": "sonic-and-knuckles",
+      "tier": "series",
+      "took": "Angel Island's momentum stages, elemental shields, and Sonic-versus-Knuckles rivalry.",
+      "added": "Playable wall-gliding Knuckles and a Lock-On pass-through slot that adds Knuckles to Sonic 2 and 3.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "phantasy-star",
+      "to": "phantasy-star-ii",
+      "tier": "series",
+      "took": "Algol star-system sci-fi RPG setting and turn-based party battles against Dark Force.",
+      "added": "16-bit cybernetic dystopia, permanent mid-story companion death, and sprawling multi-floor mazes.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "shinobi",
+      "to": "the-revenge-of-shinobi",
+      "tier": "series",
+      "took": "Joe Musashi's shuriken-and-katana action across modern crime syndicates.",
+      "added": "A multi-hit health bar, somersault eight-shuriken bursts, four ninjutsu spells, and Yuzo Koshiro's score.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "bubble-bobble",
+      "to": "the-new-zealand-story",
+      "tier": "team",
+      "took": "Taito's bright cute-animal arcade platforming and hidden secret warps.",
+      "added": "Multi-directional scrolling mazes, bow-and-arrow shooting, underwater swimming, and hijacked flying rides.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "kings-quest",
+      "to": "kings-quest-v-absence-makes-the-heart-go-yonder",
+      "tier": "series",
+      "took": "Roberta Williams's fairy-tale puzzle exploration starring King Graham of Daventry.",
+      "added": "Point-and-click action icons replacing typed text commands, painted 256-color VGA art, and CD speech.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pok-mon-red-and-green",
+      "to": "pokemon-yellow",
+      "tier": "series",
+      "took": "Kanto's eight gyms, 151 creatures, and link-cable trading and battling.",
+      "added": "A starter Pikachu walking behind the player with mood reactions, plus Team Rocket's Jessie and James.",
+      "src": [],
+      "extra": ""
+    }
+  ]
+}

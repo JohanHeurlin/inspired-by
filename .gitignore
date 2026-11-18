@@ -1,0 +1,7 @@
+# Backups & OS clutter
+*.bak.*
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+dist/test-hist.json

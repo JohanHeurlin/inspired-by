@@ -1,0 +1,843 @@
+year	title	brand	dev	country	platforms
+1980	Pac-Man	A	Namco	JP	Arcade, Atari 2600, Atari 8-bit, Intellivision, Apple II, Commodore 64, PC (DOS), ZX Spectrum, MSX, NES
+1980	Berzerk	A	Stern Electronics	US	Arcade, Atari 2600
+1980	Missile Command	A	Atari	US	Arcade, Atari 2600, Atari 8-bit
+1980	Defender	A	Williams	US	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, PC (DOS), ColecoVision, Intellivision
+1980	Battlezone	A	Atari	US	Arcade, Atari 2600, Apple II, Commodore 64, ZX Spectrum, PC (DOS), Atari 8-bit
+1980	Star Raiders	C	Atari	US	Atari 8-bit, Atari 2600, Atari ST
+1980	Rally-X	A	Namco	JP	Arcade, MSX
+1980	Zork I	C	Infocom	US	Apple II, Atari 8-bit, PC (DOS), Commodore 64, Mac, Atari ST, Amiga
+1981	Donkey Kong	A	Nintendo	JP	Arcade, Atari 2600, Intellivision, ColecoVision, Atari 8-bit, Apple II, Commodore 64, PC (DOS), NES, ZX Spectrum, Amstrad CPC, MSX, Atari 7800
+1981	Frogger	A	Konami	JP	Arcade, Atari 2600, Intellivision, Atari 8-bit, Commodore 64, ColecoVision, Apple II, PC (DOS), Mac
+1981	Galaga	A	Namco	JP	Arcade, MSX, NES, Atari 7800
+1981	Ms. Pac-Man	A	General Computer Corporation	US	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, PC (DOS), ZX Spectrum, Atari 7800
+1981	Centipede	A	Atari	US	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, PC (DOS), ColecoVision, Intellivision, Atari 7800
+1981	Ultima I: The First Age of Darkness	C	Richard Garriott	US	Apple II, Atari 8-bit, PC (DOS), Commodore 64
+1981	Castle Wolfenstein	C	Muse Software	US	Apple II, Atari 8-bit, Commodore 64, PC (DOS)
+1981	Scramble	A	Konami	JP	Arcade
+1982	Pitfall!	C	Activision	US	Atari 2600, Intellivision, ColecoVision, Atari 8-bit, Commodore 64, MSX
+1982	Dig Dug	A	Namco	JP	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, PC (DOS), MSX, NES, Atari 7800, Intellivision
+1982	Q*bert	A	Gottlieb	US	Arcade, Atari 2600, ColecoVision, Intellivision, Atari 8-bit, Commodore 64, ZX Spectrum, MSX, NES
+1982	Joust	A	Williams	US	Arcade, Atari 2600, Atari 8-bit, Apple II, Atari 7800, NES
+1982	Robotron: 2084	A	Williams	US	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, PC (DOS), Atari 7800
+1982	Pole Position	A	Namco	JP	Arcade, Atari 2600, Atari 8-bit, Commodore 64, ZX Spectrum, Intellivision, PC (DOS)
+1982	Choplifter	C	Dan Gorlin	US	Apple II, Atari 8-bit, Commodore 64, ColecoVision, Arcade, NES, Master System, Atari 7800, MSX
+1982	Moon Patrol	A	Irem	JP	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, PC (DOS), MSX, Atari ST
+1983	Mario Bros.	A	Nintendo	JP	Arcade, NES, Atari 2600, Commodore 64, ZX Spectrum, Amstrad CPC, Atari 7800, Atari 8-bit
+1983	Dragon's Lair	A	Advanced Microcomputer Systems	US	Arcade, Commodore 64, ZX Spectrum, Amstrad CPC, Amiga, Atari ST, PC (DOS), Mac, NES
+1983	Lode Runner	C	Doug Smith	US	Apple II, Atari 8-bit, Commodore 64, PC (DOS), NES, Arcade, Mac, MSX, ZX Spectrum
+1983	Manic Miner	C	Matthew Smith	GB	ZX Spectrum, Commodore 64, Amstrad CPC, MSX, Amiga
+1983	Star Wars	A	Atari	US	Arcade, Atari 2600, Atari 8-bit, ColecoVision, Commodore 64, ZX Spectrum, Amstrad CPC, Amiga, Atari ST, PC (DOS), Mac
+1983	Spy Hunter	A	Bally Midway	US	Arcade, Atari 2600, ColecoVision, Atari 8-bit, Commodore 64, Apple II, PC (DOS), ZX Spectrum, Amstrad CPC, NES
+1983	Track & Field	A	Konami	JP	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, MSX, NES, Amstrad CPC, ZX Spectrum
+1983	Archon	C	Free Fall Associates	US	Atari 8-bit, PC (DOS), Commodore 64, Apple II, Amstrad CPC, ZX Spectrum, Amiga, Mac, NES
+1983	M.U.L.E.	C	Ozark Softscape	US	Atari 8-bit, Commodore 64, PC (DOS), MSX, NES
+1983	Jungle Hunt	A	Taito	JP	Arcade, Atari 2600, Atari 8-bit, Apple II, Commodore 64, PC (DOS), ColecoVision
+1984	Tetris	C	Alexey Pajitnov	RU	PC (DOS), Amiga, Atari ST, Commodore 64, ZX Spectrum, Amstrad CPC, Apple II, Mac, MSX, Arcade, NES
+1984	Elite	C	David Braben & Ian Bell	GB	Commodore 64, ZX Spectrum, Amstrad CPC, Apple II, MSX, PC (DOS), Atari ST, Amiga, NES
+1984	Excitebike	N	Nintendo	JP	NES, Arcade
+1984	Duck Hunt	N	Nintendo	JP	NES, Arcade
+1984	Boulder Dash	C	First Star Software	US	Atari 8-bit, Commodore 64, Apple II, ColecoVision, Arcade, PC (DOS), ZX Spectrum, Amstrad CPC, MSX, NES, Game Boy
+1984	Impossible Mission	C	Epyx	US	Commodore 64, Apple II, ZX Spectrum, Amstrad CPC, Atari 7800, Master System
+1984	Karateka	C	Jordan Mechner	US	Apple II, Commodore 64, Atari 8-bit, NES, Amstrad CPC, PC (DOS), Atari 7800, Atari ST, MSX, ZX Spectrum
+1984	Kung-Fu Master	A	Irem	JP	Arcade, NES, Apple II, Commodore 64, Amstrad CPC, ZX Spectrum, MSX, Atari 2600, Atari 7800
+1984	Ghostbusters	C	Activision	US	Commodore 64, ZX Spectrum, Apple II, Atari 8-bit, PC (DOS), Amstrad CPC, Atari 2600, MSX, NES, Master System
+1984	Paperboy	A	Atari Games	US	Arcade, ZX Spectrum, Commodore 64, Amstrad CPC, Apple II, PC (DOS), NES, Amiga, Atari ST, Game Boy, Master System, Atari Lynx
+1984	1942	A	Capcom	JP	Arcade, NES, Commodore 64, Amstrad CPC, ZX Spectrum, MSX
+1984	King's Quest	C	Sierra On-Line	US	PC (DOS), Apple II, Atari ST, Amiga, Mac, Master System
+1984	Jet Set Willy	C	Matthew Smith	GB	ZX Spectrum, Commodore 64, Amstrad CPC, MSX
+1984	Knight Lore	C	Ultimate Play the Game	GB	ZX Spectrum, Amstrad CPC, MSX, NES
+1984	Marble Madness	A	Atari Games	US	Arcade, Amiga, Commodore 64, Apple II, PC (DOS), ZX Spectrum, Amstrad CPC, NES, Game Boy, Mega Drive / Genesis
+1984	Bomb Jack	A	Tehkan	JP	Arcade, Commodore 64, Amstrad CPC, ZX Spectrum, Amiga, Atari ST
+1984	Summer Games	C	Epyx	US	Commodore 64, Apple II, Atari 8-bit, Atari 2600, Atari 7800, ZX Spectrum, Amstrad CPC, Amiga, Atari ST
+1984	The Black Onyx	C	Bullet-Proof Software	JP	MSX, NES
+1985	Super Mario Bros.	N	Nintendo	JP	NES, Arcade
+1985	Gauntlet	A	Atari Games	US	Arcade, ZX Spectrum, Amstrad CPC, MSX, Commodore 64, Atari ST, Atari 8-bit, Apple II, NES, PC (DOS), Mac, Master System
+1985	Ghosts 'n Goblins	A	Capcom	JP	Arcade, NES, ZX Spectrum, Amstrad CPC, Commodore 64, PC (DOS), Amiga, Atari ST
+1985	Commando	A	Capcom	JP	Arcade, ZX Spectrum, Amstrad CPC, Commodore 64, NES, MSX, PC (DOS), Intellivision, Atari 2600, Apple II, Atari 7800, Amiga, Atari ST
+1985	Space Harrier	A	Sega	JP	Arcade, Master System, Amstrad CPC, ZX Spectrum, Commodore 64, Atari ST, Amiga, TurboGrafx-16, NES, PC (DOS), Game Gear
+1985	Hang-On	A	Sega	JP	Arcade, Master System, MSX
+1985	Gradius	A	Konami	JP	Arcade, NES, MSX, ZX Spectrum, Commodore 64, Amstrad CPC, TurboGrafx-16
+1985	Ice Climber	N	Nintendo	JP	NES, Arcade
+1985	Paradroid	C	Graftgold	GB	Commodore 64
+1985	The Way of the Exploding Fist	C	Beam Software	AU	Commodore 64, Amstrad CPC, ZX Spectrum
+1985	Little Computer People	C	Activision	US	Commodore 64, ZX Spectrum, Amstrad CPC, Apple II, Atari ST, Amiga, NES
+1985	Yie Ar Kung-Fu	A	Konami	JP	Arcade, MSX, NES, ZX Spectrum, Commodore 64, Amstrad CPC
+1985	Winter Games	C	Epyx	US	Commodore 64, Apple II, Amiga, Atari ST, Mac, Amstrad CPC, ZX Spectrum, PC (DOS), MSX, Atari 2600, Atari 7800, NES
+1985	Kung-Fu (NES)	N	Nintendo	JP	NES
+1985	Bard's Tale	C	Interplay	US	Apple II, Commodore 64, PC (DOS), Amiga, Mac, Amstrad CPC, ZX Spectrum, NES
+1985	Spy vs. Spy	C	First Star Software	US	Commodore 64, Atari 8-bit, Apple II, Amstrad CPC, ZX Spectrum, NES, Master System, Amiga, Atari ST, Game Boy
+1986	The Legend of Zelda	N	Nintendo	JP	NES
+1986	Metroid	N	Nintendo	JP	NES
+1986	Out Run	A	Sega	JP	Arcade, Master System, Commodore 64, Amstrad CPC, ZX Spectrum, Atari ST, Amiga, PC (DOS), MSX, TurboGrafx-16, Mega Drive / Genesis, Game Gear
+1986	Bubble Bobble	A	Taito	JP	Arcade, NES, Amstrad CPC, Atari ST, ZX Spectrum, Commodore 64, PC (DOS), Apple II, Amiga, MSX, Master System, Game Boy
+1986	Arkanoid	A	Taito	JP	Arcade, NES, Commodore 64, ZX Spectrum, Amstrad CPC, MSX, Mac, PC (DOS), Apple II, Atari ST, Atari 8-bit, Amiga
+1986	Castlevania	N	Konami	JP	NES, MSX, Arcade, Commodore 64, Amiga, PC (DOS)
+1986	Dragon Quest	N	Chunsoft	JP	NES, MSX
+1986	Kid Icarus	N	Nintendo	JP	NES
+1986	Rampage	A	Bally Midway	US	Arcade, Apple II, Atari 2600, Atari 7800, Atari 8-bit, Atari ST, Amiga, Commodore 64, PC (DOS), ZX Spectrum, Amstrad CPC, NES, Master System, Atari Lynx
+1986	Defender of the Crown	C	Cinemaware	US	Amiga, PC (DOS), Atari ST, Mac, Commodore 64, Amstrad CPC, NES
+1986	Uridium	C	Graftgold	GB	Commodore 64, ZX Spectrum, Atari ST, Amstrad CPC, PC (DOS), NES
+1986	Alex Kidd in Miracle World	S	Sega	JP	Master System
+1986	Wonder Boy	A	Westone	JP	Arcade, Master System, Commodore 64, Amstrad CPC, ZX Spectrum, Game Gear
+1986	Ikari Warriors	A	SNK	JP	Arcade, NES, Apple II, Commodore 64, PC (DOS), Amstrad CPC, MSX, ZX Spectrum, Amiga, Atari ST, Atari 2600, Atari 7800
+1986	Starglider	C	Argonaut Software	GB	Atari ST, Amiga, Amstrad CPC, ZX Spectrum, PC (DOS), Commodore 64
+1986	Head over Heels	C	Jon Ritman & Bernie Drummond	GB	ZX Spectrum, Amstrad CPC, Commodore 64, Atari 8-bit, MSX, Atari ST, Amiga
+1986	Leader Board	C	Access Software	US	Commodore 64, Atari 8-bit, Amstrad CPC, ZX Spectrum, Amiga, Atari ST, PC (DOS)
+1987	The Great Giana Sisters	C	Time Warp Software	DE	Commodore 64, Amiga, Atari ST, Amstrad CPC, MSX
+1987	Mega Man	N	Capcom	JP	NES
+1987	Final Fantasy	N	Square	JP	NES, MSX
+1987	Maniac Mansion	C	Lucasfilm Games	US	Commodore 64, Apple II, PC (DOS), Amiga, Atari ST, NES
+1987	Street Fighter	A	Capcom	JP	Arcade, ZX Spectrum, Commodore 64, Amstrad CPC, Amiga, Atari ST, TurboGrafx-16, PC (DOS)
+1987	Double Dragon	A	Technos Japan	JP	Arcade, NES, Master System, Commodore 64, PC (DOS), Amiga, Atari ST, Atari 2600, Atari 7800, ZX Spectrum, Amstrad CPC, Game Boy, Mega Drive / Genesis, Atari Lynx
+1987	Contra	A	Konami	JP	Arcade, NES, ZX Spectrum, Amstrad CPC, Commodore 64, PC (DOS), MSX
+1987	Metal Gear	C	Konami	JP	MSX, NES, Commodore 64, PC (DOS)
+1987	Mike Tyson's Punch-Out!!	N	Nintendo	JP	NES
+1987	Zelda II: The Adventure of Link	N	Nintendo	JP	NES
+1987	R-Type	A	Irem	JP	Arcade, TurboGrafx-16, Atari ST, Commodore 64, ZX Spectrum, Master System, MSX, Amiga, Amstrad CPC, Game Boy
+1987	After Burner	A	Sega	JP	Arcade, Master System, Amstrad CPC, Atari ST, Commodore 64, ZX Spectrum, MSX, Amiga, NES, PC (DOS)
+1987	Wizball	C	Sensible Software	GB	Commodore 64, ZX Spectrum, Amstrad CPC, Amiga, Atari ST, PC (DOS)
+1987	Phantasy Star	S	Sega	JP	Master System
+1987	Leisure Suit Larry	C	Sierra On-Line	US	PC (DOS), Apple II, Amiga, Atari ST, Mac
+1987	Dungeon Master	C	FTL Games	US	Atari ST, Amiga, SNES, PC (DOS), TurboGrafx-16
+1987	Operation Wolf	A	Taito	JP	Arcade, Amiga, Atari ST, Commodore 64, Amstrad CPC, ZX Spectrum, NES, Master System, PC (DOS), MSX, TurboGrafx-16
+1987	Shinobi	A	Sega	JP	Arcade, Master System, Commodore 64, Amiga, Atari ST, Amstrad CPC, ZX Spectrum, PC (DOS), TurboGrafx-16, NES, MSX
+1988	Super Mario Bros. 3	N	Nintendo	JP	NES
+1988	Mega Man 2	N	Capcom	JP	NES
+1988	Ninja Gaiden	N	Team Ninja	JP	NES, TurboGrafx-16
+1988	Bionic Commando	N	Capcom	JP	NES
+1988	Dragon Quest III	N	Chunsoft	JP	NES
+1988	Ghouls 'n Ghosts	A	Capcom	JP	Arcade, Mega Drive / Genesis, Amstrad CPC, Amiga, Atari ST, Commodore 64, ZX Spectrum, Master System
+1988	Pool of Radiance	C	SSI	US	Commodore 64, PC (DOS), Apple II, Amiga, Mac, NES
+1988	Wasteland	C	Interplay	US	Apple II, Commodore 64, PC (DOS)
+1988	Speedball	C	Bitmap Brothers	GB	Amiga, Atari ST, PC (DOS), Commodore 64, Master System
+1988	Xenon	C	Bitmap Brothers	GB	Atari ST, Amiga, Amstrad CPC, Commodore 64, PC (DOS), MSX, ZX Spectrum, Arcade
+1988	Zak McKracken	C	Lucasfilm Games	US	Commodore 64, PC (DOS), Amiga, Atari ST
+1988	Carrier Command	C	Realtime Games	GB	Atari ST, Amiga, PC (DOS), ZX Spectrum, Amstrad CPC, Commodore 64, Mac
+1988	Interceptor	C	Intellisoft	US	Amiga
+1988	Altered Beast	A	Sega	JP	Arcade, Mega Drive / Genesis, Master System, TurboGrafx-16, Amiga, Atari ST, Amstrad CPC, Commodore 64, ZX Spectrum, PC (DOS), NES
+1988	Chase H.Q.	A	Taito	JP	Arcade, ZX Spectrum, Amstrad CPC, Commodore 64, Amiga, Atari ST, NES, MSX, Master System, TurboGrafx-16, Game Boy, Game Gear
+1988	Last Ninja 2	C	System 3	GB	Commodore 64, ZX Spectrum, Amstrad CPC, Amiga, Atari ST, PC (DOS), NES
+1988	Pac-Mania	A	Namco	JP	Arcade, Amiga, Atari ST, Commodore 64, Amstrad CPC, MSX, ZX Spectrum, NES, Master System, Mega Drive / Genesis
+1989	Tetris (Game Boy)	N	Nintendo	JP	Game Boy
+1989	Prince of Persia	C	Jordan Mechner	US	Apple II, PC (DOS), Amiga, Atari ST, Amstrad CPC, Mac, TurboGrafx-16, Game Boy, NES, SNES, Master System, Game Gear, Sega CD, Mega Drive / Genesis
+1989	Populous	C	Bullfrog	GB	Amiga, Atari ST, PC (DOS), Mac, TurboGrafx-16, Mega Drive / Genesis, Master System, SNES, Game Boy
+1989	SimCity	C	Maxis	US	Mac, Amiga, PC (DOS), Commodore 64, Atari ST, ZX Spectrum, Amstrad CPC, SNES, PC (Windows)
+1989	Shadow of the Beast	C	Reflections	GB	Amiga, Atari ST, Commodore 64, ZX Spectrum, Amstrad CPC, Mega Drive / Genesis, TurboGrafx-16, Atari Lynx, Master System
+1989	Super Mario Land	N	Nintendo	JP	Game Boy
+1989	Xenon 2 Megablast	C	Bitmap Brothers	GB	Amiga, Atari ST, PC (DOS), Master System, Mega Drive / Genesis, Game Boy
+1989	Kick Off	C	Anco	GB	Atari ST, Amiga, Commodore 64, ZX Spectrum, Amstrad CPC
+1989	Indiana Jones and the Last Crusade	C	Lucasfilm Games	US	PC (DOS), Amiga, Atari ST, Mac
+1989	Golden Axe	A	Sega	JP	Arcade, Mega Drive / Genesis, Master System, TurboGrafx-16, Amiga, Atari ST, Amstrad CPC, Commodore 64, ZX Spectrum, PC (DOS)
+1989	Final Fight	A	Capcom	JP	Arcade, SNES, Amiga, Atari ST, Commodore 64, ZX Spectrum, Amstrad CPC, Sega CD
+1989	Strider	A	Capcom	JP	Arcade, Amiga, Atari ST, Amstrad CPC, PC (DOS), Commodore 64, ZX Spectrum, Mega Drive / Genesis, Master System, TurboGrafx-16
+1989	Teenage Mutant Ninja Turtles	N	Konami	JP	NES, ZX Spectrum, Amiga, Atari ST, Commodore 64, Amstrad CPC, PC (DOS), MSX
+1989	Batman: The Movie	C	Ocean	GB	Commodore 64, ZX Spectrum, Amstrad CPC, Amiga, Atari ST, PC (DOS), MSX
+1989	North & South	C	Infogrames	FR	Amiga, Atari ST, NES, Amstrad CPC, Commodore 64, PC (DOS), MSX, ZX Spectrum
+1989	Blood Money	C	DMA Design	GB	Amiga, Atari ST, PC (DOS), Commodore 64
+1989	Rick Dangerous	C	Core Design	GB	Amiga, Atari ST, Amstrad CPC, Commodore 64, ZX Spectrum, PC (DOS)
+1989	Turbo OutRun	A	Sega	JP	Arcade, Commodore 64, ZX Spectrum, Amstrad CPC, Amiga, Atari ST, PC (DOS), Mega Drive / Genesis
+1990	Super Mario World	N	Nintendo	JP	SNES
+1990	The Secret of Monkey Island	C	Lucasfilm Games	US	PC (DOS), Amiga, Atari ST, Mac, Sega CD
+1990	Turrican	C	Manfred Trenz	DE	Commodore 64, Amiga, Atari ST, Amstrad CPC, ZX Spectrum, Mega Drive / Genesis, TurboGrafx-16, Game Boy
+1990	Speedball 2	C	Bitmap Brothers	GB	Amiga, Atari ST, PC (DOS), Commodore 64, Mega Drive / Genesis, Master System, Game Boy
+1990	Kick Off 2	C	Anco	GB	Amiga, Atari ST, PC (DOS), Commodore 64, ZX Spectrum, Amstrad CPC
+1990	Wing Commander	C	Origin Systems	US	PC (DOS), SNES, Amiga, Sega CD, Mac
+1990	F-Zero	N	Nintendo	JP	SNES
+1990	Dr. Mario	N	Nintendo	JP	NES, Game Boy
+1990	Castle of Illusion	S	Sega	JP	Mega Drive / Genesis, Master System, Game Gear
+1990	Rainbow Islands	C	Taito	JP	Arcade, NES, ZX Spectrum, Amiga, Atari ST, Commodore 64, Amstrad CPC, Mega Drive / Genesis, TurboGrafx-16, Master System
+1990	Shadow of the Beast II	C	Reflections	GB	Amiga, Atari ST, Mega Drive / Genesis, Sega CD
+1990	Loom	C	Lucasfilm Games	US	PC (DOS), Amiga, Atari ST, Mac, TurboGrafx-16
+1990	Railroad Tycoon	C	MicroProse	US	PC (DOS), Amiga, Mac, Atari ST
+1990	Midwinter	C	Maelstrom Games	GB	Atari ST, PC (DOS), Amiga
+1990	Powermonger	C	Bullfrog	GB	Amiga, Atari ST, PC (DOS), Mega Drive / Genesis, SNES, Mac, Sega CD
+1990	Fire Emblem	N	Intelligent Systems	JP	NES
+1990	Days of Thunder	C			Amiga, PC (DOS), NES, Atari ST, Commodore 64, ZX Spectrum, Game Boy
+1991	Lemmings	C	DMA Design	GB	Amiga, PC (DOS), Mac, Atari ST, ZX Spectrum, SNES, Commodore 64, Amstrad CPC, TurboGrafx-16, Mega Drive / Genesis, Game Gear, Master System, NES, 3DO, Atari Lynx, Game Boy, PC (Windows)
+1991	Sonic the Hedgehog	S	Sonic Team	JP	Mega Drive / Genesis, Master System, Game Gear
+1991	Street Fighter II	A	Capcom	JP	Arcade, SNES, Mega Drive / Genesis, TurboGrafx-16, Amiga, Atari ST, Commodore 64, ZX Spectrum, PC (DOS), Game Boy
+1991	The Legend of Zelda: A Link to the Past	N	Nintendo	JP	SNES
+1991	Civilization	C	MicroProse	US	PC (DOS), Amiga, Atari ST, Mac, PC (Windows), SNES
+1991	Another World	C	Eric Chahi	FR	Amiga, Atari ST, PC (DOS), SNES, Mega Drive / Genesis, Mac, 3DO, Sega CD
+1991	Turrican II	C	Factor 5	US	Amiga, Commodore 64, Atari ST, Amstrad CPC, ZX Spectrum, PC (DOS)
+1991	Monkey Island 2: LeChuck's Revenge	C	LucasArts	US	PC (DOS), Amiga, Mac
+1991	Gods	C	Bitmap Brothers	GB	Amiga, Atari ST, PC (DOS), Mega Drive / Genesis, SNES
+1991	Streets of Rage	S	Sega	JP	Mega Drive / Genesis, Master System, Game Gear
+1991	Lotus Turbo Challenge 2	C	Magnetic Fields	GB	Amiga, Atari ST, Mega Drive / Genesis
+1991	Formula One Grand Prix	C	Geoff Crammond	GB	Amiga, Atari ST, PC (DOS)
+1991	Mega lo Mania	C	Sensible Software	GB	Amiga, Atari ST, PC (DOS), Mega Drive / Genesis, SNES
+1991	Eye of the Beholder	C	Westwood	US	PC (DOS), Amiga, SNES, Sega CD
+1991	Utopia	C	Celestial Software	GB	Amiga, Atari ST, PC (DOS), SNES
+1991	Toki	C	TAD Corporation	JP	Arcade, Amiga, Atari ST, Commodore 64, NES, Mega Drive / Genesis, Atari Lynx
+1991	Super Castlevania IV	N	Konami	JP	SNES
+1991	Alien Breed	C	Team17	GB	Amiga, PC (DOS)
+1992	Wolfenstein 3D	C	id Software	US	PC (DOS), SNES, Atari Jaguar, Mac, 3DO
+1992	Super Mario Kart	N	Nintendo	JP	SNES
+1992	Mortal Kombat	A	Midway	US	Arcade, SNES, Mega Drive / Genesis, Game Boy, Game Gear, Master System, Sega CD, PC (DOS), Amiga
+1992	Sonic the Hedgehog 2	S	Sega Technical Institute	US	Mega Drive / Genesis, Master System, Game Gear
+1992	Sensible Soccer	C	Sensible Software	GB	Amiga, Atari ST, PC (DOS), Mega Drive / Genesis, SNES, Master System, Game Gear, Sega CD, Atari Jaguar
+1992	Dune II	C	Westwood	US	PC (DOS), Amiga, Mega Drive / Genesis
+1992	Alone in the Dark	C	Infogrames	FR	PC (DOS), Mac, 3DO
+1992	Indiana Jones and the Fate of Atlantis	C	LucasArts	US	PC (DOS), Amiga, Mac
+1992	Zool	C	Gremlin Graphics	GB	Amiga, PC (DOS), Atari ST, Mega Drive / Genesis, SNES, Master System, Game Gear, Game Boy
+1992	Streets of Rage 2	S	Sega	JP	Mega Drive / Genesis, Master System, Game Gear
+1992	Flashback	C	Delphine Software	FR	Amiga, PC (DOS), Mega Drive / Genesis, SNES, Sega CD, Mac, 3DO, Atari Jaguar
+1992	Pinball Dreams	C	Digital Illusions	SE	Amiga, PC (DOS), SNES, Game Boy, Game Gear
+1992	Project-X	C	Team17	GB	Amiga
+1992	Ultima Underworld: The Stygian Abyss	C	Blue Sky Productions	US	PC (DOS), PlayStation
+1992	Kirby's Dream Land	N	HAL Laboratory	JP	Game Boy
+1992	Super Star Wars	N	Sculptured Software	US	SNES
+1992	Agony	C	Art & Magic	BE	Amiga
+1992	Catacomb 3-D	C	id Software	US	PC (DOS)
+1993	Doom	C	id Software	US	PC (DOS), Linux, Mac, Atari Jaguar, SNES, PlayStation, 3DO, Saturn
+1993	Myst	C	Cyan	US	Mac, PC (Windows), Sega CD, Saturn, PlayStation, 3DO, Atari Jaguar, Amiga
+1993	Cannon Fodder	C	Sensible Software	GB	Amiga, Atari ST, PC (DOS), Mega Drive / Genesis, SNES, Atari Jaguar, 3DO, Game Boy Color
+1993	The Settlers	C	Blue Byte	DE	Amiga, PC (DOS)
+1993	Day of the Tentacle	C	LucasArts	US	PC (DOS), Mac
+1993	Star Fox	N	Nintendo	JP	SNES
+1993	Secret of Mana	N	Square	JP	SNES
+1993	The Legend of Zelda: Link's Awakening	N	Nintendo	JP	Game Boy, Game Boy Color
+1993	Mortal Kombat II	A	Midway	US	Arcade, SNES, Mega Drive / Genesis, Game Boy, Game Gear, Master System, PC (DOS), Amiga, PlayStation, Saturn
+1993	Virtua Fighter	A	Sega	JP	Arcade, Saturn, PC (Windows)
+1993	Ridge Racer	A	Namco	JP	Arcade, PlayStation
+1993	NBA Jam	A	Midway	US	Arcade, SNES, Mega Drive / Genesis, Game Boy, Game Gear, Sega CD
+1993	Mega Man X	N	Capcom	JP	SNES, PC (DOS)
+1993	Aladdin	S	Virgin Games	GB	Mega Drive / Genesis, SNES, Game Boy, Master System, Game Gear, NES, PC (DOS), Amiga
+1993	Syndicate	C	Bullfrog	GB	PC (DOS), Amiga, Mac, Mega Drive / Genesis, SNES, Atari Jaguar, 3DO
+1993	Frontier: Elite II	C	David Braben	GB	Amiga, Atari ST, PC (DOS)
+1993	Sam & Max Hit the Road	C	LucasArts	US	PC (DOS), Mac
+1993	Simon the Sorcerer	C	Adventure Soft	GB	Amiga, PC (DOS)
+1993	Pinball Fantasies	C	Digital Illusions	SE	Amiga, PC (DOS), SNES, Game Boy, Atari Jaguar
+1993	X-Wing	C	Totally Games	US	PC (DOS), Mac
+1994	Super Metroid	N	Nintendo R&D1	JP	SNES
+1994	Donkey Kong Country	N	Rare	GB	SNES, Game Boy Color
+1994	Final Fantasy VI	N	Square	JP	SNES, PlayStation
+1994	Doom II	C	id Software	US	PC (DOS), Mac
+1994	Warcraft: Orcs & Humans	C	Blizzard	US	PC (DOS), Mac
+1994	Sonic the Hedgehog 3	S	Sega Technical Institute	US	Mega Drive / Genesis
+1994	Tekken	A	Namco	JP	Arcade, PlayStation
+1994	UFO: Enemy Unknown	C	Mythos Games	GB	PC (DOS), Amiga, PlayStation
+1994	Theme Park	C	Bullfrog	GB	PC (DOS), Amiga, Mac, 3DO, Mega Drive / Genesis, SNES, Atari Jaguar, Sega CD, Saturn, PlayStation
+1994	System Shock	C	Looking Glass	US	PC (DOS), Mac
+1994	Earthworm Jim	S	Shiny Entertainment	US	Mega Drive / Genesis, SNES, Game Boy, Game Gear, Sega CD, PC (Windows)
+1994	Sensible World of Soccer	C	Sensible Software	GB	Amiga, PC (DOS)
+1994	TIE Fighter	C	Totally Games	US	PC (DOS), Mac
+1994	Little Big Adventure	C	Adeline Software	FR	PC (DOS), PlayStation
+1994	Daytona USA	A	Sega AM2	JP	Arcade, Saturn, PC (Windows)
+1994	The Elder Scrolls: Arena	C	Bethesda	US	PC (DOS)
+1994	Ridge Racer (PlayStation)	P	Namco	JP	PlayStation
+1994	Super Street Fighter II Turbo	A	Capcom	JP	Arcade, 3DO, PC (DOS), Amiga
+1994	Earthbound	N	Ape	JP	SNES
+1995	Chrono Trigger	N	Square	JP	SNES, PlayStation
+1995	Command & Conquer	C	Westwood	US	PC (DOS), Mac, Saturn, PlayStation, PC (Windows), Nintendo 64
+1995	Worms	C	Team17	GB	Amiga, PC (DOS), PlayStation, Saturn, Mega Drive / Genesis, SNES, Game Boy, Atari Jaguar
+1995	Warcraft II	C	Blizzard	US	PC (DOS), Mac, PlayStation, Saturn, PC (Windows)
+1995	Super Mario World 2: Yoshi's Island	N	Nintendo EAD	JP	SNES, Game Boy Advance
+1995	Rayman	P	Ubi Pictures	FR	Atari Jaguar, PlayStation, Saturn, PC (DOS), Game Boy Advance
+1995	WipEout	P	Psygnosis	GB	PlayStation, PC (DOS), Saturn
+1995	Twisted Metal	P	SingleTrac	US	PlayStation
+1995	Destruction Derby	P	Reflections	GB	PlayStation, PC (DOS), Saturn
+1995	Full Throttle	C	LucasArts	US	PC (DOS), Mac
+1995	Heroes of Might and Magic	C	New World Computing	US	PC (DOS), PC (Windows), Mac, Game Boy Color
+1995	Tekken 2	A	Namco	JP	Arcade, PlayStation
+1995	Mortal Kombat 3	A	Midway	US	Arcade, PlayStation, Mega Drive / Genesis, SNES, Game Boy, Game Gear, PC (DOS)
+1995	Sega Rally Championship	A	Sega AM3	JP	Arcade, Saturn, PC (Windows)
+1995	Descent	C	Parallax Software	US	PC (DOS), Mac, PlayStation
+1995	Hexen	C	Raven Software	US	PC (DOS), Mac, PlayStation, Saturn, Nintendo 64
+1995	Star Wars: Dark Forces	C	LucasArts	US	PC (DOS), Mac, PlayStation
+1995	Discworld	C	Teeny Weeny Games	GB	PC (DOS), Mac, PlayStation, Saturn
+1995	Jagged Alliance	C	Madlab Software	CA	PC (DOS)
+1995	Need for Speed	C	EA Canada	CA	3DO, PC (DOS), PlayStation, Saturn
+1996	Super Mario 64	N	Nintendo EAD	JP	Nintendo 64
+1996	Quake	C	id Software	US	PC (DOS), PC (Windows), Mac, Linux, Saturn, Nintendo 64, Amiga
+1996	Tomb Raider	P	Crystal Dynamics	US	Saturn, PlayStation, PC (DOS), Mac
+1996	Resident Evil	P	Capcom	JP	PlayStation, Saturn, PC (Windows)
+1996	Pokémon Red and Green	N	Game Freak	JP	Game Boy
+1996	Diablo	C	Blizzard North	US	PC (Windows), Mac, PlayStation
+1996	Crash Bandicoot	P	Naughty Dog	US	PlayStation
+1996	Duke Nukem 3D	C	3D Realms	US	PC (DOS), Mac, Saturn, PlayStation, Nintendo 64, Mega Drive / Genesis
+1996	Civilization II	C	MicroProse	US	PC (Windows), Mac, PlayStation
+1996	Command & Conquer: Red Alert	C	Westwood	US	PC (DOS), PC (Windows), PlayStation
+1996	Mario Kart 64	N	Nintendo EAD	JP	Nintendo 64
+1996	Wave Race 64	N	Nintendo EAD	JP	Nintendo 64
+1996	The Elder Scrolls II: Daggerfall	C	Bethesda	US	PC (DOS)
+1996	Broken Sword	C	Revolution Software	GB	PC (DOS), PlayStation, Game Boy Advance
+1996	Pilotwings 64	N	Paradigm Simulation	US	Nintendo 64
+1996	Destruction Derby 2	P	Reflections	GB	PlayStation, PC (DOS)
+1996	Tekken 2 (PlayStation)	P	Namco	JP	PlayStation
+1996	Enemy Zero	S	Warp	JP	Saturn, PC (Windows)
+1997	Final Fantasy VII	P	Square	JP	PlayStation, PC (Windows)
+1997	GoldenEye 007	N	Rare	GB	Nintendo 64
+1997	Grand Theft Auto	C	DMA Design	GB	PC (DOS), PC (Windows), PlayStation, Game Boy Color
+1997	Fallout	C	Interplay	US	PC (DOS), PC (Windows), Mac
+1997	Age of Empires	C	Ensemble Studios	US	PC (Windows), Mac
+1997	Gran Turismo	P	Polyphony Digital	JP	PlayStation
+1997	Castlevania: Symphony of the Night	P	Konami	JP	PlayStation, Saturn
+1997	Quake II	C	id Software	US	PC (Windows), Linux, Mac, PlayStation, Nintendo 64, Amiga
+1997	Ultima Online	C	Origin Systems	US	PC (Windows)
+1997	Star Fox 64	N	Nintendo EAD	JP	Nintendo 64
+1997	Diddy Kong Racing	N	Rare	GB	Nintendo 64
+1997	Carmageddon	C	Stainless Software	GB	PC (DOS), Mac, PlayStation
+1997	Tomb Raider II	P	Core Design	GB	PC (Windows), PlayStation, Mac
+1997	Oddworld: Abe's Oddysee	P	Oddworld Inhabitants	US	PlayStation, PC (Windows)
+1997	Dungeon Keeper	C	Bullfrog	GB	PC (DOS), PC (Windows)
+1997	Total Annihilation	C	Cavedog	US	PC (Windows), Mac
+1997	Crash Bandicoot 2	P	Naughty Dog	US	PlayStation
+1997	Theme Hospital	C	Bullfrog	GB	PC (DOS), PC (Windows), PlayStation, Mac
+1997	Blade Runner	C	Westwood	US	PC (Windows)
+1998	Half-Life	C	Valve	US	PC (Windows), PlayStation 2
+1998	Delta Force	C	NovaLogic	US	PC (Windows)
+1998	The Legend of Zelda: Ocarina of Time	N	Nintendo EAD	JP	Nintendo 64
+1998	StarCraft	C	Blizzard	US	PC (Windows), Mac, Nintendo 64
+1998	Metal Gear Solid	P	Konami	JP	PlayStation, PC (Windows)
+1998	Baldur's Gate	C	BioWare	CA	PC (Windows), Mac
+1998	Banjo-Kazooie	N	Rare	GB	Nintendo 64
+1998	Thief: The Dark Project	C	Looking Glass	US	PC (Windows)
+1998	Grim Fandango	C	LucasArts	US	PC (Windows)
+1998	Unreal	C	Epic	US	PC (Windows), Mac
+1998	Spyro the Dragon	P	Insomniac	US	PlayStation
+1998	Tekken 3	P	Namco	JP	Arcade, PlayStation
+1998	Resident Evil 2	P	Capcom	JP	PlayStation, PC (Windows), Nintendo 64, Dreamcast, GameCube
+1998	Fallout 2	C	Black Isle	US	PC (Windows), Mac
+1998	Tom Clancy's Rainbow Six	C	Red Storm	US	PC (Windows), Mac, PlayStation, Nintendo 64, Dreamcast, Game Boy Color
+1998	Commandos: Behind Enemy Lines	C	Pyro Studios	ES	PC (Windows)
+1998	Colin McRae Rally	C	Codemasters	GB	PlayStation, PC (Windows)
+1998	Crash Bandicoot: Warped	P	Naughty Dog	US	PlayStation
+1998	Need for Speed III: Hot Pursuit	C	EA Canada	CA	PC (Windows), PlayStation
+1998	Starsiege: Tribes	C	Dynamix	US	PC (Windows)
+1998	Body Harvest	N	DMA Design	GB	Nintendo 64
+1999	Age of Empires II	C	Ensemble Studios	US	PC (Windows), Mac, PlayStation 2
+1999	Unreal Tournament	C	Epic	US	PC (Windows), Mac, Linux, PlayStation 2, Dreamcast
+1999	Quake III Arena	C	id Software	US	PC (Windows), Mac, Linux, Dreamcast, PlayStation 2
+1999	EverQuest	C	Verant Interactive	US	PC (Windows), Mac
+1999	Super Smash Bros.	N	HAL Laboratory	JP	Nintendo 64
+1999	Silent Hill	P	Team Silent	JP	PlayStation
+1999	System Shock 2	C	Irrational Games	US	PC (Windows)
+1999	Planescape: Torment	C	Black Isle	US	PC (Windows)
+1999	Homeworld	C	Relic	CA	PC (Windows)
+1999	Crash Team Racing	P	Naughty Dog	US	PlayStation
+1999	Tony Hawk's Pro Skater	P	Neversoft	US	PlayStation, Nintendo 64, Game Boy Color, PC (Windows), Dreamcast
+1999	Final Fantasy VIII	P	Square	JP	PlayStation, PC (Windows)
+1999	Gran Turismo 2	P	Polyphony Digital	JP	PlayStation
+1999	RollerCoaster Tycoon	C	Chris Sawyer	GB	PC (Windows), Xbox
+1999	Heroes of Might and Magic III	C	New World Computing	US	PC (Windows), Mac, Linux
+1999	Shenmue	S	Sega AM2	JP	Dreamcast
+1999	Soulcalibur	S	Namco	JP	Arcade, Dreamcast
+1999	Driver	P	Reflections	GB	PlayStation, PC (Windows), Mac, Game Boy Color
+1999	Medal of Honor	P	DreamWorks Interactive	US	PlayStation
+1999	Pokémon Gold and Silver	N	Game Freak	JP	Game Boy Color
+1999	Codename Eagle	C	Refraction Games	SE	PC (Windows)
+2000	Counter-Strike	C	Valve	US	PC (Windows), Xbox
+2000	The Sims	C	Maxis	US	PC (Windows), Mac, PlayStation 2, GameCube, Xbox
+2000	Deus Ex	C	Ion Storm	US	PC (Windows), Mac, PlayStation 2
+2000	Diablo II	C	Blizzard North	US	PC (Windows), Mac
+2000	The Legend of Zelda: Majora's Mask	N	Nintendo EAD	JP	Nintendo 64
+2000	Baldur's Gate II	C	BioWare	CA	PC (Windows), Mac
+2000	Perfect Dark	N	Rare	GB	Nintendo 64
+2000	Tony Hawk's Pro Skater 2	P	Neversoft	US	PlayStation, PC (Windows), Nintendo 64, Dreamcast, Game Boy Color, Game Boy Advance, Mac, Xbox
+2000	Final Fantasy IX	P	Square	JP	PlayStation
+2000	Jet Set Radio	S	Smilebit	JP	Dreamcast, Game Boy Advance
+2000	Hitman: Codename 47	C	IO Interactive	DK	PC (Windows)
+2000	Thief II	C	Looking Glass	US	PC (Windows)
+2000	Shogun: Total War	C	Creative Assembly	GB	PC (Windows)
+2000	Paper Mario	N	Intelligent Systems	JP	Nintendo 64
+2000	Banjo-Tooie	N	Rare	GB	Nintendo 64
+2000	Escape from Monkey Island	C	LucasArts	US	PC (Windows), Mac, PlayStation 2
+2000	American McGee's Alice	C	Rogue Entertainment	US	PC (Windows), Mac
+2000	Theme Park World	C	Bullfrog	GB	PC (Windows), PlayStation, Mac, PlayStation 2
+2001	Grand Theft Auto III	P	DMA Design	GB	PlayStation 2, PC (Windows), Xbox
+2001	Halo: Combat Evolved	X	Bungie	US	Xbox, PC (Windows), Mac
+2001	Metal Gear Solid 2	P	Konami	JP	PlayStation 2, Xbox, PC (Windows)
+2001	Ico	P	Team Ico	JP	PlayStation 2
+2001	Super Smash Bros. Melee	N	HAL Laboratory	JP	GameCube
+2001	Max Payne	C	Remedy	FI	PC (Windows), PlayStation 2, Xbox, Game Boy Advance, Mac
+2001	Silent Hill 2	P	Team Silent	JP	PlayStation 2, Xbox, PC (Windows)
+2001	Final Fantasy X	P	Square	JP	PlayStation 2
+2001	Devil May Cry	P	Capcom	JP	PlayStation 2
+2001	Black & White	C	Lionhead	GB	PC (Windows), Mac
+2001	Pikmin	N	Nintendo EAD	JP	GameCube
+2001	Gran Turismo 3	P	Polyphony Digital	JP	PlayStation 2
+2001	Operation Flashpoint: Cold War Crisis	C	Bohemia Interactive	CZ	PC (Windows), Xbox
+2001	Return to Castle Wolfenstein	C	Gray Matter	US	PC (Windows), Mac, Linux, PlayStation 2, Xbox
+2001	Advance Wars	N	Intelligent Systems	JP	Game Boy Advance
+2001	Jak and Daxter	P	Naughty Dog	US	PlayStation 2
+2001	Luigi's Mansion	N	Nintendo EAD	JP	GameCube
+2001	Red Faction	P	Volition	US	PlayStation 2, PC (Windows), Mac
+2001	Tony Hawk's Pro Skater 3	P	Neversoft	US	PlayStation 2, GameCube, Xbox, PC (Windows), PlayStation, Nintendo 64, Game Boy Color, Game Boy Advance
+2002	Battlefield 1942	C	DICE	SE	PC (Windows), Mac
+2002	Warcraft III	C	Blizzard	US	PC (Windows), Mac
+2002	Metroid Prime	N	Retro Studios	US	GameCube
+2002	Grand Theft Auto: Vice City	P	Rockstar North	GB	PlayStation 2, PC (Windows), Xbox
+2002	The Elder Scrolls III: Morrowind	C	Bethesda	US	PC (Windows), Xbox
+2002	Kingdom Hearts	P	Square	JP	PlayStation 2
+2002	Neverwinter Nights	C	BioWare	CA	PC (Windows), Linux, Mac
+2002	Super Mario Sunshine	N	Nintendo EAD	JP	GameCube
+2002	Medal of Honor: Allied Assault	C	2015 Inc.	US	PC (Windows), Mac
+2002	Ratchet & Clank	P	Insomniac	US	PlayStation 2
+2002	Tom Clancy's Splinter Cell	X	Ubisoft Montreal	CA	Xbox, PC (Windows), PlayStation 2, GameCube, Game Boy Advance, Mac
+2002	Mafia	C	Illusion Softworks	CZ	PC (Windows), PlayStation 2, Xbox
+2002	Hitman 2	C	IO Interactive	DK	PC (Windows), PlayStation 2, Xbox, GameCube
+2002	Age of Mythology	C	Ensemble Studios	US	PC (Windows), Mac
+2002	The Legend of Zelda: The Wind Waker	N	Nintendo EAD	JP	GameCube
+2002	Unreal Tournament 2003	C	Digital Extremes	CA	PC (Windows), Linux, Mac
+2002	Need for Speed: Hot Pursuit 2	P	EA Black Box	CA	PlayStation 2, Xbox, GameCube, PC (Windows)
+2002	Animal Crossing	N	Nintendo EAD	JP	Nintendo 64, GameCube
+2003	Star Wars: Knights of the Old Republic	X	BioWare	CA	Xbox, PC (Windows), Mac
+2003	Call of Duty	C	Infinity Ward	US	PC (Windows), Mac, PlayStation 3, Xbox 360
+2003	Prince of Persia: The Sands of Time	P	Ubisoft Montreal	CA	PlayStation 2, Xbox, GameCube, PC (Windows), Game Boy Advance
+2003	EVE Online	C	CCP	IS	PC (Windows), Mac, Linux
+2003	Max Payne 2	C	Remedy	FI	PC (Windows), PlayStation 2, Xbox
+2003	Beyond Good & Evil	P	Ubisoft Montpellier	FR	PlayStation 2, PC (Windows), Xbox, GameCube
+2003	Mario Kart: Double Dash!!	N	Nintendo EAD	JP	GameCube
+2003	Need for Speed: Underground	P	EA Black Box	CA	PlayStation 2, PC (Windows), Xbox, GameCube, Game Boy Advance
+2003	Final Fantasy X-2	P	Square	JP	PlayStation 2
+2003	Jak II	P	Naughty Dog	US	PlayStation 2
+2003	Ratchet & Clank: Going Commando	P	Insomniac	US	PlayStation 2
+2003	Silent Hill 3	P	Team Silent	JP	PlayStation 2, PC (Windows)
+2003	Star Wars Galaxies	C	Sony Online Entertainment	US	PC (Windows)
+2003	SimCity 4	C	Maxis	US	PC (Windows), Mac
+2003	Freelancer	C	Digital Anvil	US	PC (Windows)
+2003	Viewtiful Joe	N	Capcom	JP	GameCube, PlayStation 2
+2003	Disgaea	P	Nippon Ichi	JP	PlayStation 2, PSP, Nintendo DS
+2003	Homeworld 2	C	Relic	CA	PC (Windows), Mac
+2004	World of Warcraft	C	Blizzard	US	PC (Windows), Mac
+2004	Half-Life 2	C	Valve	US	PC (Windows), Xbox, Xbox 360, PlayStation 3, Mac
+2004	Grand Theft Auto: San Andreas	P	Rockstar North	GB	PlayStation 2, PC (Windows), Xbox, Mac
+2004	Halo 2	X	Bungie	US	Xbox, PC (Windows)
+2004	Doom 3	C	id Software	US	PC (Windows), Linux, Mac, Xbox
+2004	Far Cry	C	Crytek	DE	PC (Windows)
+2004	Metal Gear Solid 3	P	Konami	JP	PlayStation 2
+2004	The Sims 2	C	Maxis	US	PC (Windows), Mac, PlayStation 2, Xbox, GameCube, Nintendo DS, Game Boy Advance, PSP
+2004	Counter-Strike: Source	C	Valve	US	PC (Windows), Mac
+2004	Burnout 3: Takedown	P	Criterion	GB	PlayStation 2, Xbox
+2004	Paper Mario: The Thousand-Year Door	N	Intelligent Systems	JP	GameCube
+2004	Katamari Damacy	P	Namco	JP	PlayStation 2
+2004	Rome: Total War	C	Creative Assembly	GB	PC (Windows), Mac
+2004	Fable	X	Big Blue Box	GB	Xbox, PC (Windows), Mac
+2004	Star Wars Battlefront	P	DICE	SE	PlayStation 2, Xbox, PC (Windows), Mac
+2004	Ninja Gaiden	X	Team Ninja	JP	NES, TurboGrafx-16
+2004	Need for Speed: Underground 2	P	EA Black Box	CA	PlayStation 2, Xbox, GameCube, PC (Windows), Game Boy Advance, Nintendo DS
+2004	Pokémon FireRed and LeafGreen	N	Game Freak	JP	Game Boy Advance
+2004	Battlefield Vietnam	C	DICE	SE	PC (Windows)
+2005	Shadow of the Colossus	P	Team Ico	JP	PlayStation 2, PlayStation 3
+2005	Resident Evil 4	N	Capcom	JP	GameCube, PlayStation 2, PC (Windows), Wii
+2005	God of War	P	Santa Monica Studio	US	PlayStation 2, PlayStation 3
+2005	Guitar Hero	P	Harmonix	US	PlayStation 2
+2005	Civilization IV	C	Firaxis	US	PC (Windows), Mac
+2005	Battlefield 2	C	DICE	SE	PC (Windows)
+2005	F.E.A.R.	C	Monolith	US	PC (Windows), Xbox 360, PlayStation 3
+2005	Call of Duty 2	C	Infinity Ward	US	PC (Windows), Xbox 360, Mac
+2005	Nintendogs	N	Nintendo EAD	JP	Nintendo DS
+2005	Mario Kart DS	N	Nintendo EAD	JP	Nintendo DS
+2005	Psychonauts	C	Double Fine	US	Xbox, PC (Windows), PlayStation 2
+2005	Brain Age	N	Nintendo SPD	JP	Nintendo DS
+2005	Guild Wars	C	ArenaNet	US	PC (Windows)
+2005	Age of Empires III	C	Ensemble Studios	US	PC (Windows), Mac
+2005	Need for Speed: Most Wanted	P	EA Black Box	CA	PlayStation 2, PC (Windows), Xbox, Xbox 360, GameCube, Nintendo DS, Game Boy Advance
+2005	Star Wars Battlefront II	P	Pandemic	US	PlayStation 2, PC (Windows), Xbox, PSP
+2005	Project Gotham Racing 3	X	Bizarre Creations	GB	Xbox 360
+2005	Prince of Persia: The Two Thrones	P	Ubisoft Montreal	CA	PlayStation 2, Xbox, GameCube, PC (Windows), PSP, Wii
+2006	The Elder Scrolls IV: Oblivion	C	Bethesda Game Studios	US	PC (Windows), Xbox 360, PlayStation 3
+2006	Gears of War	X	Epic Games	US	Xbox 360, PC (Windows)
+2006	Wii Sports	N	Nintendo EAD	JP	Wii
+2006	The Legend of Zelda: Twilight Princess	N	Nintendo EAD	JP	Wii, GameCube
+2006	New Super Mario Bros.	N	Nintendo EAD	JP	Nintendo DS
+2006	Okami	P	Clover Studio	JP	PlayStation 2, Wii
+2006	Company of Heroes	C	Relic Entertainment	CA	PC (Windows)
+2006	Dead Rising	X	Capcom	JP	Xbox 360
+2006	Hitman: Blood Money	C	IO Interactive	DK	PC (Windows), PlayStation 2, Xbox, Xbox 360
+2006	Final Fantasy XII	P	Square Enix	JP	PlayStation 2
+2006	Pokémon Diamond and Pearl	N	Game Freak	JP	Nintendo DS
+2006	Lego Star Wars II	P	Traveller's Tales	GB	PlayStation 2, Xbox, Xbox 360, GameCube, PC (Windows), Nintendo DS, Game Boy Advance, PSP, Mac
+2006	Medieval II: Total War	C	Creative Assembly	GB	PC (Windows)
+2006	Bully	P	Rockstar Vancouver	CA	PlayStation 2, Xbox 360, Wii, PC (Windows)
+2006	Prey	C	Human Head Studios	US	PC (Windows), Xbox 360, Linux, Mac
+2006	Garry's Mod	C	Facepunch Studios	GB	PC (Windows), Mac
+2006	Titan Quest	C	Iron Lore Entertainment	US	PC (Windows)
+2006	Tom Clancy's Rainbow Six: Vegas	X	Ubisoft Montreal	CA	Xbox 360, PC (Windows), PlayStation 3
+2006	Arma: Armed Assault	C	Bohemia Interactive	CZ	PC (Windows)
+2007	Portal	C	Valve	US	PC (Windows), Xbox 360, PlayStation 3, Mac
+2007	BioShock	C	Irrational Games	US	Xbox 360, PC (Windows), PlayStation 3, Mac
+2007	Call of Duty 4: Modern Warfare	C	Infinity Ward	US	Xbox 360, PC (Windows), PlayStation 3, Nintendo DS, Mac, Wii
+2007	Halo 3	X	Bungie	US	Xbox 360
+2007	Mass Effect	X	BioWare	CA	Xbox 360, PC (Windows), PlayStation 3
+2007	Super Mario Galaxy	N	Nintendo EAD Tokyo	JP	Wii
+2007	The Witcher	C	CD Projekt Red	PL	PC (Windows), Mac
+2007	Crysis	C	Crytek	DE	PC (Windows), Xbox 360, PlayStation 3
+2007	S.T.A.L.K.E.R.: Shadow of Chernobyl	C	GSC Game World	UA	PC (Windows)
+2007	Team Fortress 2	C	Valve	US	PC (Windows), Xbox 360, PlayStation 3, Mac, Linux
+2007	Assassin's Creed	P	Ubisoft Montreal	CA	Xbox 360, PlayStation 3, PC (Windows)
+2007	Uncharted: Drake's Fortune	P	Naughty Dog	US	PlayStation 3
+2007	Rock Band	P	Harmonix	US	Xbox 360, PlayStation 3, PlayStation 2, Wii
+2007	Guitar Hero III	P	Neversoft	US	PlayStation 2, PlayStation 3, Xbox 360, Wii, PC (Windows), Mac
+2007	God of War II	P	Santa Monica Studio	US	PlayStation 2, PlayStation 3
+2007	Command & Conquer 3	C	EA Los Angeles	US	PC (Windows), Xbox 360, Mac
+2007	World in Conflict	C	Massive Entertainment	SE	PC (Windows)
+2007	Supreme Commander	C	Gas Powered Games	US	PC (Windows), Xbox 360
+2007	Wii Fit	N	Nintendo EAD	JP	Wii
+2008	Left 4 Dead	C	Turtle Rock Studios	US	PC (Windows), Xbox 360, Mac
+2008	Grand Theft Auto IV	P	Rockstar North	GB	Xbox 360, PlayStation 3, PC (Windows)
+2008	Fallout 3	C	Bethesda Game Studios	US	PC (Windows), Xbox 360, PlayStation 3
+2008	Super Smash Bros. Brawl	N	Sora Ltd.	JP	Wii
+2008	Mario Kart Wii	N	Nintendo EAD	JP	Wii
+2008	Metal Gear Solid 4	P	Kojima Productions	JP	PlayStation 3
+2008	Spore	C	Maxis	US	PC (Windows), Mac
+2008	Braid	X	Number None	US	Xbox 360, PC (Windows), Mac, PlayStation 3, Linux
+2008	Dead Space	C	EA Redwood Shores	US	Xbox 360, PlayStation 3, PC (Windows)
+2008	LittleBigPlanet	P	Media Molecule	GB	PlayStation 3, PSP
+2008	Gears of War 2	X	Epic Games	US	Xbox 360
+2008	Mirror's Edge	C	DICE	SE	Xbox 360, PlayStation 3, PC (Windows)
+2008	Fable II	X	Lionhead Studios	GB	Xbox 360
+2008	Burnout Paradise	P	Criterion Games	GB	PlayStation 3, Xbox 360, PC (Windows)
+2008	Far Cry 2	C	Ubisoft Montreal	CA	PC (Windows), Xbox 360, PlayStation 3
+2008	World of Goo	C	2D Boy	US	PC (Windows), Wii, Mac, Linux, iPhone / iPad, Android
+2008	Persona 4	P	Atlus	JP	PlayStation 2, PS Vita
+2008	Battlefield: Bad Company	X	DICE	SE	Xbox 360, PlayStation 3
+2008	Race Driver: GRID	C	Codemasters	GB	PC (Windows), Xbox 360, PlayStation 3, Nintendo DS
+2009	Minecraft	C	Mojang	SE	PC (Windows), Mac, Linux, Browser, Android, iPhone / iPad, Xbox 360, PlayStation 3, PS Vita, PlayStation 4, Xbox One, Wii U
+2009	Batman: Arkham Asylum	P	Rocksteady Studios	GB	PlayStation 3, Xbox 360, PC (Windows), Mac
+2009	Uncharted 2: Among Thieves	P	Naughty Dog	US	PlayStation 3
+2009	Call of Duty: Modern Warfare 2	C	Infinity Ward	US	Xbox 360, PlayStation 3, PC (Windows)
+2009	Demon's Souls	P	FromSoftware	JP	PlayStation 3
+2009	League of Legends	C	Riot Games	US	PC (Windows), Mac
+2009	Dragon Age: Origins	C	BioWare	CA	PC (Windows), Xbox 360, PlayStation 3, Mac
+2009	Borderlands	C	Gearbox Software	US	Xbox 360, PlayStation 3, PC (Windows), Mac
+2009	Assassin's Creed II	P	Ubisoft Montreal	CA	Xbox 360, PlayStation 3, PC (Windows), Mac
+2009	Left 4 Dead 2	C	Valve	US	PC (Windows), Xbox 360, Mac, Linux
+2009	Arma 2	C	Bohemia Interactive	CZ	PC (Windows)
+2009	Plants vs. Zombies	C	PopCap Games	US	PC (Windows), Mac, iPhone / iPad, Xbox 360, Nintendo DS, PlayStation 3, Android, PS Vita
+2009	New Super Mario Bros. Wii	N	Nintendo EAD	JP	Wii
+2009	Angry Birds	M	Rovio Entertainment	FI	iPhone / iPad, Android, PC (Windows), Mac, Browser, PSP, PlayStation 3
+2009	Street Fighter IV	P	Capcom	JP	Arcade, PlayStation 3, Xbox 360, PC (Windows)
+2009	Killzone 2	P	Guerrilla Games	NL	PlayStation 3
+2009	Torchlight	C	Runic Games	US	PC (Windows), Mac, Xbox 360
+2009	Wii Sports Resort	N	Nintendo EAD	JP	Wii
+2009	Machinarium	C	Amanita Design	CZ	PC (Windows), Mac, Linux, PlayStation 3, iPhone / iPad, Android, PS Vita
+2009	FarmVille	C	Zynga	US	Browser, iPhone / iPad
+2010	Red Dead Redemption	P	Rockstar San Diego	US	PlayStation 3, Xbox 360
+2010	Mass Effect 2	X	BioWare	CA	Xbox 360, PC (Windows), PlayStation 3
+2010	StarCraft II: Wings of Liberty	C	Blizzard Entertainment	US	PC (Windows), Mac
+2010	Super Mario Galaxy 2	N	Nintendo EAD Tokyo	JP	Wii
+2010	Halo: Reach	X	Bungie	US	Xbox 360
+2010	Call of Duty: Black Ops	C	Treyarch	US	Xbox 360, PlayStation 3, PC (Windows), Wii, Nintendo DS, Mac
+2010	Fallout: New Vegas	C	Obsidian Entertainment	US	PC (Windows), Xbox 360, PlayStation 3
+2010	Battlefield: Bad Company 2	C	DICE	SE	PC (Windows), Xbox 360, PlayStation 3
+2010	Limbo	X	Playdead	DK	Xbox 360, PlayStation 3, PC (Windows), Mac, iPhone / iPad, Linux, PS Vita, PlayStation 4, Xbox One, Android
+2010	Super Meat Boy	X	Team Meat	US	Xbox 360, PC (Windows), Mac, Linux, PlayStation 4, PS Vita, Wii U
+2010	Heavy Rain	P	Quantic Dream	FR	PlayStation 3, PlayStation 4
+2010	Darksiders	P	Vigil Games	US	Xbox 360, PlayStation 3, PC (Windows)
+2010	Amnesia: The Dark Descent	C	Frictional Games	SE	PC (Windows), Mac, Linux, PlayStation 4
+2010	Civilization V	C	Firaxis Games	US	PC (Windows), Mac, Linux
+2010	God of War III	P	Santa Monica Studio	US	PlayStation 3, PlayStation 4
+2010	Alan Wake	X	Remedy Entertainment	FI	Xbox 360, PC (Windows)
+2010	Just Cause 2	C	Avalanche Studios	SE	PC (Windows), Xbox 360, PlayStation 3
+2010	Cut the Rope	M	ZeptoLab	RU	iPhone / iPad, Android, Browser
+2011	The Elder Scrolls V: Skyrim	C	Bethesda Game Studios	US	PC (Windows), Xbox 360, PlayStation 3, PlayStation 4, Xbox One, Switch
+2011	Portal 2	C	Valve	US	PC (Windows), Mac, Xbox 360, PlayStation 3, Linux
+2011	Dark Souls	P	FromSoftware	JP	PlayStation 3, Xbox 360, PC (Windows)
+2011	Batman: Arkham City	P	Rocksteady Studios	GB	PlayStation 3, Xbox 360, PC (Windows), Wii U, Mac, PlayStation 4, Xbox One
+2011	Terraria	C	Re-Logic	US	PC (Windows), Xbox 360, PlayStation 3, PS Vita, iPhone / iPad, Android, PlayStation 4, Xbox One, Mac, Linux, Nintendo 3DS, Wii U
+2011	Battlefield 3	C	DICE	SE	PC (Windows), Xbox 360, PlayStation 3
+2011	Call of Duty: Modern Warfare 3	C	Infinity Ward	US	Xbox 360, PlayStation 3, PC (Windows), Wii, Mac
+2011	The Legend of Zelda: Skyward Sword	N	Nintendo EAD	JP	Wii
+2011	Deus Ex: Human Revolution	C	Eidos Montréal	CA	PC (Windows), Xbox 360, PlayStation 3, Mac, Wii U
+2011	Bastion	C	Supergiant Games	US	Xbox 360, PC (Windows), Browser, Mac, iPhone / iPad, Linux, PlayStation 4, PS Vita, Xbox One
+2011	The Witcher 2	C	CD Projekt Red	PL	PC (Windows), Xbox 360, Mac, Linux
+2011	Super Mario 3D Land	N	Nintendo EAD Tokyo	JP	Nintendo 3DS
+2011	Uncharted 3	P	Naughty Dog	US	PlayStation 3, PlayStation 4
+2011	L.A. Noire	P	Team Bondi	AU	PlayStation 3, Xbox 360, PC (Windows)
+2011	Rayman Origins	C	Ubisoft Montpellier	FR	Wii, Xbox 360, PlayStation 3, PC (Windows), PS Vita, Nintendo 3DS
+2011	Saints Row: The Third	C	Volition	US	PC (Windows), Xbox 360, PlayStation 3
+2011	Mario Kart 7	N	Nintendo EAD	JP	Nintendo 3DS
+2011	Gears of War 3	X	Epic Games	US	Xbox 360
+2011	Temple Run	M	Imangi Studios	US	iPhone / iPad, Android
+2012	Journey	P	thatgamecompany	US	PlayStation 3, PlayStation 4
+2012	Dishonored	C	Arkane Studios	FR	PC (Windows), Xbox 360, PlayStation 3, PlayStation 4, Xbox One
+2012	The Walking Dead	C	Telltale Games	US	PC (Windows), Mac, Xbox 360, PlayStation 3, iPhone / iPad, PS Vita, Android, PlayStation 4, Xbox One
+2012	Mass Effect 3	X	BioWare	CA	PC (Windows), Xbox 360, PlayStation 3, Wii U
+2012	FTL: Faster Than Light	C	Subset Games	CN	PC (Windows), Mac, Linux, iPhone / iPad
+2012	XCOM: Enemy Unknown	C	Firaxis Games	US	PC (Windows), Xbox 360, PlayStation 3, Mac, iPhone / iPad, Android, Linux, PS Vita
+2012	Far Cry 3	C	Ubisoft Montreal	CA	PC (Windows), Xbox 360, PlayStation 3, PlayStation 4, Xbox One
+2012	Counter-Strike: Global Offensive	C	Valve	US	PC (Windows), Mac, Xbox 360, PlayStation 3, Linux
+2012	Borderlands 2	C	Gearbox Software	US	PC (Windows), Xbox 360, PlayStation 3, Mac, PS Vita, Linux, PlayStation 4, Xbox One
+2012	Diablo III	C	Blizzard Entertainment	US	PC (Windows), Mac, PlayStation 3, Xbox 360, PlayStation 4, Xbox One
+2012	Guild Wars 2	C	ArenaNet	US	PC (Windows), Mac
+2012	DayZ (mod)	C	Dean Hall	CZ	PC (Windows)
+2012	Hotline Miami	C	Dennaton Games	SE	PC (Windows), Mac, Linux, PlayStation 3, PS Vita, PlayStation 4
+2012	Halo 4	X	343 Industries	US	Xbox 360
+2012	Max Payne 3	C	Rockstar Studios	US	PlayStation 3, Xbox 360, PC (Windows), Mac
+2012	Spec Ops: The Line	C	Yager Development	DE	PC (Windows), Xbox 360, PlayStation 3
+2012	Mark of the Ninja	C	Klei Entertainment	CA	Xbox 360, PC (Windows)
+2012	Fez	X	Polytron Corporation	CA	Xbox 360, PC (Windows), Mac, Linux, PlayStation 3, PlayStation 4, PS Vita
+2012	Contract Wars	C	Absolutsoft	RU	Browser
+2012	Candy Crush Saga	M	King	SE	Browser, iPhone / iPad, Android
+2012	Sleeping Dogs	C	United Front Games	CA	PC (Windows), Xbox 360, PlayStation 3, PlayStation 4, Xbox One, Mac
+2013	Grand Theft Auto V	P	Rockstar North	GB	PlayStation 3, Xbox 360, PlayStation 4, Xbox One, PC (Windows)
+2013	The Last of Us	P	Naughty Dog	US	PlayStation 3, PlayStation 4
+2013	BioShock Infinite	C	Irrational Games	US	PC (Windows), PlayStation 3, Xbox 360, Mac, Linux, PlayStation 4, Xbox One
+2013	Tomb Raider	C	Crystal Dynamics	US	Saturn, PlayStation, PC (DOS), Mac
+2013	Papers, Please	C	Lucas Pope	JP	PC (Windows), Mac, Linux, iPhone / iPad, PS Vita
+2013	Gone Home	C	The Fullbright Company	US	PC (Windows), Mac, Linux, PlayStation 4, Xbox One, Switch
+2013	Dota 2	C	Valve	US	PC (Windows), Mac, Linux
+2013	Arma 3	C	Bohemia Interactive	CZ	PC (Windows)
+2013	Rust	C	Facepunch Studios	GB	PC (Windows), Mac, Linux
+2013	Super Mario 3D World	N	Nintendo EAD Tokyo	JP	Wii U
+2013	The Legend of Zelda: A Link Between Worlds	N	Nintendo EAD	JP	Nintendo 3DS
+2013	Assassin's Creed IV: Black Flag	P	Ubisoft Montreal	CA	PlayStation 3, Xbox 360, PlayStation 4, Xbox One, PC (Windows), Wii U
+2013	Battlefield 4	C	DICE	SE	PC (Windows), PlayStation 3, Xbox 360, PlayStation 4, Xbox One
+2013	Pokémon X and Y	N	Game Freak	JP	Nintendo 3DS
+2013	Brothers: A Tale of Two Sons	C	Starbreeze Studios	SE	Xbox 360, PC (Windows), PlayStation 3, PlayStation 4, Xbox One
+2013	The Stanley Parable	C	Galactic Cafe	US	PC (Windows), Mac
+2013	Don't Starve	C	Klei Entertainment	CA	PC (Windows), Mac, Linux, PlayStation 4, PS Vita, PlayStation 3, Xbox One, iPhone / iPad, Android, Wii U, Switch
+2013	Final Fantasy XIV: A Realm Reborn	C	Square Enix	JP	PC (Windows), PlayStation 3, PlayStation 4, Mac
+2013	Path of Exile	C	Grinding Gear Games	NZ	PC (Windows), Xbox One, PlayStation 4
+2013	Warframe	C	Digital Extremes	CA	PC (Windows), PlayStation 4, Xbox One, Switch
+2014	Hearthstone	C	Blizzard Entertainment	US	PC (Windows), Mac, iPhone / iPad, Android
+2014	Destiny	P	Bungie	US	PlayStation 3, PlayStation 4, Xbox 360, Xbox One
+2014	Dark Souls II	P	FromSoftware	JP	PlayStation 3, Xbox 360, PC (Windows), PlayStation 4, Xbox One
+2014	Mario Kart 8	N	Nintendo EAD	JP	Wii U
+2014	Middle-earth: Shadow of Mordor	P	Monolith Productions	US	PC (Windows), PlayStation 4, Xbox One, PlayStation 3, Xbox 360, Mac, Linux
+2014	Dragon Age: Inquisition	P	BioWare	CA	PC (Windows), PlayStation 3, PlayStation 4, Xbox 360, Xbox One
+2014	Alien: Isolation	P	Creative Assembly	GB	PC (Windows), PlayStation 3, PlayStation 4, Xbox 360, Xbox One, Mac, Linux, Switch, iPhone / iPad, Android
+2014	Super Smash Bros. for Wii U	N	Sora Ltd.	JP	Wii U
+2014	Shovel Knight	C	Yacht Club Games	US	PC (Windows), Wii U, Nintendo 3DS, Mac, Linux, PlayStation 3, PlayStation 4, PS Vita, Xbox One, Switch
+2014	Divinity: Original Sin	C	Larian Studios	BE	PC (Windows), Mac, Linux, PlayStation 4, Xbox One
+2014	Wolfenstein: The New Order	C	MachineGames	SE	PC (Windows), PlayStation 3, PlayStation 4, Xbox 360, Xbox One
+2014	Titanfall	X	Respawn Entertainment	US	Xbox One, PC (Windows), Xbox 360
+2014	Monument Valley	M	ustwo games	GB	iPhone / iPad, Android, PC (Windows)
+2014	Five Nights at Freddy's	C	Scott Cawthon	US	PC (Windows), Android, iPhone / iPad, Switch, PlayStation 4, Xbox One
+2014	Far Cry 4	C	Ubisoft Montreal	CA	PC (Windows), PlayStation 3, PlayStation 4, Xbox 360, Xbox One
+2014	The Elder Scrolls Online	C	ZeniMax Online Studios	US	PC (Windows), Mac, PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S
+2014	Transistor	C	Supergiant Games	US	PC (Windows), PlayStation 4, Mac, Linux, iPhone / iPad, Switch
+2014	Bayonetta 2	N	PlatinumGames	JP	Wii U, Switch
+2014	Watch Dogs	P	Ubisoft Montreal	CA	PC (Windows), PlayStation 3, PlayStation 4, Xbox 360, Xbox One, Wii U
+2015	The Witcher 3: Wild Hunt	C	CD Projekt Red	PL	PC (Windows), PlayStation 4, Xbox One, Switch, PlayStation 5, Xbox Series X|S
+2015	Bloodborne	P	FromSoftware	JP	PlayStation 4
+2015	Fallout 4	C	Bethesda Game Studios	US	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S, Switch 2
+2015	Undertale	C	Toby Fox	US	PC (Windows), Mac, Linux, PlayStation 4, PS Vita, Switch, Xbox One
+2015	Rocket League	C	Psyonix	US	PC (Windows), PlayStation 4, Xbox One, Mac, Linux, Switch
+2015	Metal Gear Solid V: The Phantom Pain	P	Kojima Productions	JP	PC (Windows), PlayStation 4, Xbox One, PlayStation 3, Xbox 360
+2015	Splatoon	N	Nintendo EAD	JP	Wii U
+2015	Tom Clancy's Rainbow Six Siege	C	Ubisoft Montreal	CA	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S
+2015	Life Is Strange	C	Dontnod Entertainment	FR	PC (Windows), PlayStation 3, PlayStation 4, Xbox 360, Xbox One, Mac, Linux, iPhone / iPad, Android
+2015	Ori and the Blind Forest	X	Moon Studios	AT	Xbox One, PC (Windows), Switch
+2015	Cities: Skylines	C	Colossal Order	FI	PC (Windows), Mac, Linux, Xbox One, PlayStation 4, Switch, PlayStation 5, Xbox Series X|S
+2015	Super Mario Maker	N	Nintendo EAD	JP	Wii U, Nintendo 3DS
+2015	Rise of the Tomb Raider	X	Crystal Dynamics	US	Xbox One, Xbox 360, PC (Windows), PlayStation 4, Mac, Linux
+2015	Until Dawn	P	Supermassive Games	GB	PlayStation 4
+2015	Pillars of Eternity	C	Obsidian Entertainment	US	PC (Windows), Mac, Linux, PlayStation 4, Xbox One, Switch
+2015	Star Wars Battlefront	P	DICE	SE	PlayStation 2, Xbox, PC (Windows), Mac
+2015	H1Z1	C	Daybreak Game Company	US	PC (Windows), PlayStation 4
+2015	Her Story	C	Sam Barlow	GB	PC (Windows), Mac, iPhone / iPad, Android
+2015	Batman: Arkham Knight	P	Rocksteady Studios	GB	PlayStation 4, Xbox One, PC (Windows), Switch
+2015	Warhammer: End Times – Vermintide	C	Fatshark	SE	PC (Windows), Xbox One
+2016	Overwatch	C	Blizzard Entertainment	US	PC (Windows), PlayStation 4, Xbox One, Switch
+2016	Stardew Valley	C	ConcernedApe	US	PC (Windows), Mac, Linux, PlayStation 4, Xbox One, Switch, PS Vita, iPhone / iPad, Android
+2016	Doom (2016)	C	id Software	US	PC (Windows), PlayStation 4, Xbox One, Switch
+2016	Uncharted 4: A Thief's End	P	Naughty Dog	US	PlayStation 4, PlayStation 5, PC (Windows)
+2016	Pokémon Go	M	Niantic	US	iPhone / iPad, Android
+2016	Inside	C	Playdead	DK	Xbox One, PC (Windows), PlayStation 4, iPhone / iPad, Switch, Mac
+2016	Dark Souls III	P	FromSoftware	JP	PlayStation 4, Xbox One, PC (Windows)
+2016	Firewatch	C	Campo Santo	US	PC (Windows), Mac, Linux, PlayStation 4, Xbox One, Switch
+2016	Titanfall 2	C	Respawn Entertainment	US	PlayStation 4, Xbox One, PC (Windows)
+2016	Battlefield 1	C	DICE	SE	PC (Windows), PlayStation 4, Xbox One
+2016	The Last Guardian	P	Japan Studio / genDESIGN	JP	PlayStation 4
+2016	Dishonored 2	C	Arkane Lyon	FR	PC (Windows), PlayStation 4, Xbox One
+2016	Hitman	C	IO Interactive	DK	PC (Windows), PlayStation 4, Xbox One, Mac, Linux
+2016	Civilization VI	C	Firaxis Games	US	PC (Windows), Mac, Linux, iPhone / iPad, Switch, PlayStation 4, Xbox One, Android
+2016	No Man's Sky	C	Hello Games	GB	PlayStation 4, PC (Windows), Xbox One, PlayStation 5, Xbox Series X|S, Switch, Mac, Switch 2
+2016	Final Fantasy XV	P	Square Enix	JP	PlayStation 4, Xbox One, PC (Windows)
+2016	Escape from Tarkov	C	Battlestate Games	RU	PC (Windows)
+2016	Clash Royale	M	Supercell	FI	iPhone / iPad, Android
+2016	The Witness	C	Thekla, Inc.	US	PC (Windows), PlayStation 4, Xbox One, Mac, iPhone / iPad
+2016	Superhot	C	Superhot Team	PL	PC (Windows), Mac, Linux, Xbox One, PlayStation 4, Switch
+2017	The Legend of Zelda: Breath of the Wild	N	Nintendo EPD	JP	Wii U, Switch, Switch 2
+2017	PUBG: Battlegrounds	C	PUBG Corporation	KR	PC (Windows), Xbox One, Android, iPhone / iPad, PlayStation 4
+2017	Fortnite Battle Royale	C	Epic Games	US	PC (Windows), Mac, PlayStation 4, Xbox One, iPhone / iPad, Switch, Android, PlayStation 5, Xbox Series X|S, Switch 2
+2017	Super Mario Odyssey	N	Nintendo EPD	JP	Switch
+2017	Horizon Zero Dawn	P	Guerrilla Games	NL	PlayStation 4, PC (Windows), PlayStation 5
+2017	Persona 5	P	Atlus	JP	PlayStation 3, PlayStation 4
+2017	Hollow Knight	C	Team Cherry	AU	PC (Windows), Mac, Linux, Switch, PlayStation 4, Xbox One
+2017	Cuphead	C	Studio MDHR	CA	PC (Windows), Xbox One, Mac, Switch, PlayStation 4
+2017	Nier: Automata	P	PlatinumGames	JP	PlayStation 4, PC (Windows), Xbox One, Switch
+2017	Divinity: Original Sin II	C	Larian Studios	BE	PC (Windows), PlayStation 4, Xbox One, Mac, iPhone / iPad, Switch
+2017	What Remains of Edith Finch	C	Giant Sparrow	US	PC (Windows), PlayStation 4, Xbox One, Switch, iPhone / iPad, PlayStation 5, Xbox Series X|S
+2017	Resident Evil 7: Biohazard	P	Capcom	JP	PlayStation 4, Xbox One, PC (Windows), PlayStation 5, Xbox Series X|S, iPhone / iPad, Mac, Switch 2
+2017	Prey (2017)	C	Arkane Austin	US	PC (Windows), PlayStation 4, Xbox One
+2017	Mario Kart 8 Deluxe	N	Nintendo EPD	JP	Switch
+2017	Destiny 2	C	Bungie	US	PlayStation 4, Xbox One, PC (Windows), PlayStation 5, Xbox Series X|S
+2017	Hellblade: Senua's Sacrifice	C	Ninja Theory	GB	PlayStation 4, PC (Windows), Xbox One, Switch
+2017	Assassin's Creed Origins	C	Ubisoft Montreal	CA	PlayStation 4, Xbox One, PC (Windows)
+2017	Night in the Woods	C	Infinite Fall	US	PC (Windows), Mac, Linux, PlayStation 4, Xbox One, Switch, iPhone / iPad, Android
+2017	Doki Doki Literature Club!	C	Team Salvato	US	PC (Windows), Mac, Linux, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch
+2018	Red Dead Redemption 2	P	Rockstar Games	US	PlayStation 4, Xbox One, PC (Windows)
+2018	God of War (2018)	P	Santa Monica Studio	US	PlayStation 4, PC (Windows)
+2018	Celeste	C	Maddy Makes Games	CA	PC (Windows), Mac, Linux, Switch, PlayStation 4, Xbox One
+2018	Marvel's Spider-Man	P	Insomniac Games	US	PlayStation 4, PlayStation 5, PC (Windows)
+2018	Monster Hunter: World	P	Capcom	JP	PlayStation 4, Xbox One, PC (Windows)
+2018	Super Smash Bros. Ultimate	N	Bandai Namco Studios / Sora Ltd.	JP	Switch
+2018	Return of the Obra Dinn	C	Lucas Pope	JP	PC (Windows), Mac, Switch, PlayStation 4, Xbox One
+2018	Subnautica	C	Unknown Worlds Entertainment	US	PC (Windows), Mac, Xbox One, PlayStation 4, Switch, PlayStation 5, Xbox Series X|S
+2018	Among Us	M	Innersloth	US	iPhone / iPad, Android, PC (Windows), Switch, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2018	Dead Cells	C	Motion Twin	FR	PC (Windows), Switch, PlayStation 4, Xbox One, Mac, Linux, iPhone / iPad, Android
+2018	Hunt: Showdown	C	Crytek	DE	PC (Windows), Xbox One, PlayStation 4, PlayStation 5, Xbox Series X|S
+2018	Into the Breach	C	Subset Games	CN	PC (Windows), Mac, Switch, iPhone / iPad, Android
+2018	Sea of Thieves	X	Rare	GB	Xbox One, PC (Windows), Xbox Series X|S, PlayStation 5
+2018	Frostpunk	C	11 bit studios	PL	PC (Windows), Mac, PlayStation 4, Xbox One
+2018	Forza Horizon 4	X	Playground Games	GB	Xbox One, PC (Windows), Xbox Series X|S
+2018	Detroit: Become Human	P	Quantic Dream	FR	PlayStation 4, PC (Windows)
+2018	Beat Saber	C	Beat Games	CZ	PC (Windows), PlayStation 4
+2018	Assassin's Creed Odyssey	C	Ubisoft Quebec	CA	PlayStation 4, Xbox One, PC (Windows)
+2018	Battlefield V	C	DICE	SE	PC (Windows), PlayStation 4, Xbox One
+2019	Sekiro: Shadows Die Twice	P	FromSoftware	JP	PC (Windows), PlayStation 4, Xbox One
+2019	Hell Let Loose	C	Black Matter	AU	PC (Windows), PlayStation 5, Xbox Series X|S
+2019	Apex Legends	C	Respawn Entertainment	US	PC (Windows), PlayStation 4, Xbox One, Switch, PlayStation 5, Xbox Series X|S
+2019	Disco Elysium	C	ZA/UM	EE	PC (Windows), Mac, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch
+2019	Outer Wilds	C	Mobius Digital	US	PC (Windows), Xbox One, PlayStation 4, Switch, PlayStation 5, Xbox Series X|S
+2019	Death Stranding	P	Kojima Productions	JP	PlayStation 4, PC (Windows), PlayStation 5, Mac, iPhone / iPad, Xbox Series X|S
+2019	Resident Evil 2 (2019)	P	Capcom	JP	PlayStation 4, Xbox One, PC (Windows), PlayStation 5, Xbox Series X|S, iPhone / iPad, Mac, Switch 2
+2019	Control	C	Remedy Entertainment	FI	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S
+2019	Fire Emblem: Three Houses	N	Intelligent Systems	JP	Switch
+2019	Call of Duty: Modern Warfare (2019)	C	Infinity Ward	US	PC (Windows), PlayStation 4, Xbox One
+2019	The Outer Worlds	C	Obsidian Entertainment	US	PC (Windows), PlayStation 4, Xbox One, Switch, PlayStation 5, Xbox Series X|S
+2019	Untitled Goose Game	C	House House	AU	PC (Windows), Mac, Switch, PlayStation 4, Xbox One
+2019	Pokémon Sword and Shield	N	Game Freak	JP	Switch
+2019	Luigi's Mansion 3	N	Next Level Games	CA	Switch
+2019	Slay the Spire	C	Mega Crit	US	PC (Windows), Mac, Linux, PlayStation 4, Switch, Xbox One, iPhone / iPad, Android
+2019	Star Wars Jedi: Fallen Order	C	Respawn Entertainment	US	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S
+2019	Devil May Cry 5	P	Capcom	JP	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S, Switch 2
+2019	Risk of Rain 2	C	Hopoo Games	US	PC (Windows), Switch, PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S
+2019	Baba Is You	C	Hempuli	FI	PC (Windows), Switch, Mac, Linux, iPhone / iPad, Android
+2019	A Plague Tale: Innocence	C	Asobo Studio	FR	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S
+2019	Teamfight Tactics	C	Riot Games	US	PC (Windows), Mac, iPhone / iPad, Android
+2020	Animal Crossing: New Horizons	N	Nintendo EPD	JP	Switch, Switch 2
+2020	Hades	C	Supergiant Games	US	PC (Windows), Mac, Switch, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, iPhone / iPad
+2020	The Last of Us Part II	P	Naughty Dog	US	PlayStation 4, PlayStation 5, PC (Windows)
+2020	Valorant	C	Riot Games	US	PC (Windows), PlayStation 5, Xbox Series X|S
+2020	Call of Duty: Warzone	C	Infinity Ward / Raven Software	US	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S
+2020	Fall Guys	C	Mediatonic	GB	PC (Windows), PlayStation 4, Switch, Xbox One, Xbox Series X|S, PlayStation 5
+2020	Genshin Impact	C	miHoYo	CN	PC (Windows), iPhone / iPad, Android, PlayStation 4, PlayStation 5, Xbox Series X|S
+2020	Half-Life: Alyx	C	Valve	US	PC (Windows), Linux
+2020	Doom Eternal	C	id Software	US	PC (Windows), PlayStation 4, Xbox One, Switch, PlayStation 5, Xbox Series X|S
+2020	Ghost of Tsushima	P	Sucker Punch Productions	US	PlayStation 4, PlayStation 5, PC (Windows)
+2020	Cyberpunk 2077	C	CD Projekt Red	PL	PC (Windows), PlayStation 4, Xbox One, PlayStation 5, Xbox Series X|S, Switch 2, Mac
+2020	Final Fantasy VII Remake	P	Square Enix	JP	PlayStation 4, PlayStation 5, PC (Windows), Switch 2, Xbox Series X|S
+2020	Microsoft Flight Simulator	C	Asobo Studio	FR	PC (Windows), Xbox Series X|S
+2020	Phasmophobia	C	Kinetic Games	GB	PC (Windows), PlayStation 5, Xbox Series X|S
+2020	Ori and the Will of the Wisps	X	Moon Studios	AT	Xbox One, PC (Windows), Xbox Series X|S, Switch
+2020	Demon's Souls (2020)	P	Bluepoint Games	US	PlayStation 5
+2020	Marvel's Spider-Man: Miles Morales	P	Insomniac Games	US	PlayStation 4, PlayStation 5, PC (Windows)
+2020	Deep Rock Galactic	C	Ghost Ship Games	DK	PC (Windows), Xbox One, Xbox Series X|S, PlayStation 4, PlayStation 5
+2020	Spiritfarer	C	Thunder Lotus Games	CA	PC (Windows), Mac, Linux, Switch, Xbox One, PlayStation 4
+2020	Crusader Kings III	C	Paradox Development Studio	SE	PC (Windows), Mac, Linux, PlayStation 5, Xbox Series X|S
+2020	Immortals Fenyx Rising	C	Ubisoft Quebec	CA	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch
+2021	Valheim	C	Iron Gate Studio	SE	PC (Windows), Linux, Xbox One, Xbox Series X|S, Mac, PlayStation 5, Switch 2
+2021	It Takes Two	C	Hazelight Studios	SE	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch, Switch 2
+2021	Resident Evil Village	P	Capcom	JP	PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, PC (Windows), Mac, iPhone / iPad, Switch 2
+2021	Forza Horizon 5	X	Playground Games	GB	Xbox One, Xbox Series X|S, PC (Windows), PlayStation 5
+2021	Halo Infinite	X	343 Industries	US	Xbox One, Xbox Series X|S, PC (Windows)
+2021	Psychonauts 2	C	Double Fine	US	PC (Windows), PlayStation 4, Xbox One, Xbox Series X|S, Mac, Linux
+2021	Deathloop	C	Arkane Lyon	FR	PC (Windows), PlayStation 5, Xbox Series X|S
+2021	Inscryption	C	Daniel Mullins Games	CA	PC (Windows), Mac, Linux, PlayStation 4, PlayStation 5, Switch, Xbox One, Xbox Series X|S
+2021	Metroid Dread	N	MercurySteam	ES	Switch
+2021	Ratchet & Clank: Rift Apart	P	Insomniac Games	US	PlayStation 5, PC (Windows)
+2021	Returnal	P	Housemarque	FI	PlayStation 5, PC (Windows)
+2021	Loop Hero	C	Four Quarters	RU	PC (Windows), Mac, Linux, Switch, iPhone / iPad, Android
+2021	Back 4 Blood	C	Turtle Rock Studios	US	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2021	Hitman 3	C	IO Interactive	DK	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch 2
+2021	New World	C	Amazon Games	US	PC (Windows), PlayStation 5, Xbox Series X|S
+2021	Death's Door	C	Acid Nerve	GB	Xbox One, Xbox Series X|S, PC (Windows), Switch, PlayStation 4, PlayStation 5
+2021	Monster Hunter Rise	N	Capcom	JP	Switch, PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2021	Unpacking	C	Witch Beam	AU	PC (Windows), Mac, Linux, Switch, Xbox One, PlayStation 4, PlayStation 5, iPhone / iPad, Android
+2021	Tales of Arise	P	Bandai Namco Studios	JP	PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, PC (Windows)
+2022	Elden Ring	C	FromSoftware	JP	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch 2
+2022	Vampire Survivors	C	poncle	GB	PC (Windows), Mac, Xbox One, Xbox Series X|S, iPhone / iPad, Android, Switch, PlayStation 4, PlayStation 5
+2022	God of War Ragnarök	P	Santa Monica Studio	US	PlayStation 4, PlayStation 5, PC (Windows)
+2022	Horizon Forbidden West	P	Guerrilla Games	NL	PlayStation 4, PlayStation 5, PC (Windows)
+2022	Stray	C	BlueTwelve Studio	FR	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Mac, Switch
+2022	Tunic	C	Isometricorp Games	CA	PC (Windows), Xbox One, Xbox Series X|S, Mac, Switch, PlayStation 4, PlayStation 5
+2022	Pokémon Legends: Arceus	N	Game Freak	JP	Switch
+2022	Xenoblade Chronicles 3	N	Monolith Soft	JP	Switch
+2022	Kirby and the Forgotten Land	N	HAL Laboratory	JP	Switch, Switch 2
+2022	Splatoon 3	N	Nintendo EPD	JP	Switch
+2022	Cult of the Lamb	C	Massive Monster	AU	PC (Windows), Mac, Switch, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2022	Marvel Snap	M	Second Dinner	US	iPhone / iPad, Android, PC (Windows)
+2022	Warhammer 40,000: Darktide	C	Fatshark	SE	PC (Windows), Xbox Series X|S, PlayStation 5
+2022	Neon White	C	Angel Matrix	US	Switch, PC (Windows), PlayStation 4, PlayStation 5
+2022	Sifu	C	Sloclap	FR	PlayStation 4, PlayStation 5, PC (Windows), Switch, Xbox One, Xbox Series X|S
+2022	Overwatch 2	C	Blizzard Entertainment	US	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch
+2022	Pentiment	C	Obsidian Entertainment	US	Xbox One, Xbox Series X|S, PC (Windows), PlayStation 4, PlayStation 5, Switch
+2022	Pokémon Scarlet and Violet	N	Game Freak	JP	Switch
+2022	Call of Duty: Modern Warfare II	C	Infinity Ward	US	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2023	The Legend of Zelda: Tears of the Kingdom	N	Nintendo EPD	JP	Switch, Switch 2
+2023	Baldur's Gate 3	C	Larian Studios	BE	PC (Windows), Mac, PlayStation 5, Xbox Series X|S
+2023	Hogwarts Legacy	C	Avalanche Software	US	PC (Windows), PlayStation 5, Xbox Series X|S, PlayStation 4, Xbox One, Switch, Switch 2
+2023	Resident Evil 4 (2023)	P	Capcom	JP	PC (Windows), PlayStation 4, PlayStation 5, Xbox Series X|S, iPhone / iPad, Mac, Switch 2
+2023	Starfield	X	Bethesda Game Studios	US	Xbox Series X|S, PC (Windows), PlayStation 5
+2023	Lethal Company	C	Zeekerss	US	PC (Windows)
+2023	Armored Core VI: Fires of Rubicon	C	FromSoftware	JP	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2023	Super Mario Bros. Wonder	N	Nintendo EPD	JP	Switch, Switch 2
+2023	Alan Wake 2	C	Remedy Entertainment	FI	PC (Windows), PlayStation 5, Xbox Series X|S
+2023	Marvel's Spider-Man 2	P	Insomniac Games	US	PlayStation 5, PC (Windows)
+2023	Diablo IV	C	Blizzard Entertainment	US	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2023	Street Fighter 6	C	Capcom	JP	PC (Windows), PlayStation 4, PlayStation 5, Xbox Series X|S, Switch 2
+2023	Counter-Strike 2	C	Valve	US	PC (Windows), Linux
+2023	Dave the Diver	C	Mintrocket	KR	PC (Windows), Mac, Switch, PlayStation 4, PlayStation 5
+2023	Sea of Stars	C	Sabotage Studio	CA	PC (Windows), Switch, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2023	Lies of P	C	Round8 Studio	KR	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Mac, Switch 2
+2023	Dark and Darker	C	Ironmace	KR	PC (Windows)
+2023	The Finals	C	Embark Studios	SE	PC (Windows), PlayStation 5, Xbox Series X|S
+2023	Cocoon	C	Geometric Interactive	DK	PC (Windows), Xbox One, Xbox Series X|S, Switch, PlayStation 4, PlayStation 5
+2023	Hi-Fi Rush	X	Tango Gameworks	JP	Xbox Series X|S, PC (Windows), PlayStation 5
+2023	Dredge	C	Black Salt Games	NZ	PC (Windows), Mac, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch
+2024	Palworld	C	Pocketpair	JP	PC (Windows), Xbox One, Xbox Series X|S, PlayStation 5, Mac
+2024	Helldivers 2	C	Arrowhead Game Studios	SE	PlayStation 5, PC (Windows), Xbox Series X|S
+2024	Balatro	C	LocalThunk	CA	PC (Windows), Mac, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch, iPhone / iPad, Android
+2024	Black Myth: Wukong	C	Game Science	CN	PC (Windows), PlayStation 5, Xbox Series X|S
+2024	Final Fantasy VII Rebirth	P	Square Enix	JP	PlayStation 5, PC (Windows), Switch 2, Xbox Series X|S
+2024	Astro Bot	P	Team Asobi	JP	PlayStation 5
+2024	Elden Ring: Shadow of the Erdtree	C	FromSoftware	JP	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch 2
+2024	Satisfactory	C	Coffee Stain Studios	SE	PC (Windows), PlayStation 5, Xbox Series X|S
+2024	Animal Well	C	Shared Memory	US	PC (Windows), PlayStation 5, Switch, Xbox Series X|S
+2024	UFO 50	C	Mossmouth	US	PC (Windows), Switch
+2024	Metaphor: ReFantazio	C	Atlus	JP	PC (Windows), PlayStation 4, PlayStation 5, Xbox Series X|S
+2024	Prince of Persia: The Lost Crown	C	Ubisoft Montpellier	FR	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Switch, Mac, iPhone / iPad, Android
+2024	Dragon's Dogma 2	C	Capcom	JP	PC (Windows), PlayStation 5, Xbox Series X|S, Switch 2
+2024	Indiana Jones and the Great Circle	C	MachineGames	SE	Xbox Series X|S, PC (Windows), PlayStation 5, Switch 2
+2024	Marvel Rivals	C	NetEase Games	CN	PC (Windows), PlayStation 5, Xbox Series X|S
+2024	Manor Lords	C	Slavic Magic	PL	PC (Windows)
+2024	Stellar Blade	P	Shift Up	KR	PlayStation 5, PC (Windows), Switch 2
+2024	Silent Hill 2 (2024)	P	Bloober Team	PL	PlayStation 5, PC (Windows), Xbox Series X|S
+2024	Warhammer 40,000: Space Marine 2	C	Saber Interactive	US	PC (Windows), PlayStation 5, Xbox Series X|S
+2024	Gray Zone Warfare	C	Madfinger Games	CZ	PC (Windows)
+2024	Arena Breakout: Infinite	C	MoreFun Studios	CN	PC (Windows)
+2025	ARC Raiders	C	Embark Studios	SE	PC (Windows), PlayStation 5, Xbox Series X|S
+2025	Kingdom Come: Deliverance II	C	Warhorse Studios	CZ	PC (Windows), PlayStation 5, Xbox Series X|S
+2025	Clair Obscur: Expedition 33	C	Sandfall Interactive	FR	PC (Windows), PlayStation 5, Xbox Series X|S
+2025	Monster Hunter Wilds	C	Capcom	JP	PlayStation 5, Xbox Series X|S, PC (Windows)
+2025	Split Fiction	C	Hazelight Studios	SE	PC (Windows), PlayStation 5, Xbox Series X|S, Switch 2
+2025	Hollow Knight: Silksong	C	Team Cherry	AU	PC (Windows), Mac, Linux, Switch, Switch 2, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2025	Death Stranding 2: On the Beach	P	Kojima Productions	JP	PlayStation 5, PC (Windows)
+2025	Mario Kart World	N	Nintendo EPD	JP	Switch 2
+2025	Donkey Kong Bananza	N	Nintendo EPD	JP	Switch 2
+2025	Battlefield 6	C	Battlefield Studios	SE	PC (Windows), PlayStation 5, Xbox Series X|S
+2025	Ghost of Yōtei	P	Sucker Punch Productions	US	PlayStation 5
+2025	Assassin's Creed Shadows	C	Ubisoft Quebec	CA	PC (Windows), PlayStation 5, Xbox Series X|S, Mac, iPhone / iPad, Switch 2
+2025	Blue Prince	C	Dogubomb	US	PC (Windows), PlayStation 5, Xbox Series X|S, Switch 2
+2025	Hades II	C	Supergiant Games	US	PC (Windows), Mac, Switch, Switch 2, PlayStation 5, Xbox Series X|S
+2025	Doom: The Dark Ages	C	id Software	US	PC (Windows), PlayStation 5, Xbox Series X|S
+2025	Elden Ring Nightreign	C	FromSoftware	JP	PC (Windows), PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S
+2025	R.E.P.O.	C	semiwork	SE	PC (Windows)
+2025	Peak	C	Aggro Crab / Landfall	US	PC (Windows), PlayStation 5, Xbox Series X|S, Switch 2
+2025	Schedule I	C	TVGS	AU	PC (Windows)
+2025	Pokémon Legends: Z-A	N	Game Freak	JP	Switch, Switch 2
+2025	Silent Hill f	P	NeoBards Entertainment	HK	PlayStation 5, Xbox Series X|S, PC (Windows)
+2025	The Outer Worlds 2	C	Obsidian Entertainment	US	Xbox Series X|S, PlayStation 5, PC (Windows)
+2026	Resident Evil Requiem	P	Capcom	JP	PlayStation 5, Xbox Series X|S, PC (Windows), Switch 2
+2026	Marathon	C	Bungie	US	PC (Windows), PlayStation 5, Xbox Series X|S
+2026	Crimson Desert	C	Pearl Abyss	KR	PC (Windows), PlayStation 5, Xbox Series X|S, Mac
+2026	Nioh 3	P	Team Ninja	JP	PlayStation 5, PC (Windows)
+2026	Saros	P	Housemarque	FI	PlayStation 5
+2026	007 First Light	C	IO Interactive	DK	PC (Windows), PlayStation 5, Xbox Series X|S
+2026	Slay the Spire 2	C	Mega Crit	US	PC (Windows), Mac, Linux

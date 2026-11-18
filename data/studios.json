@@ -1,0 +1,2385 @@
+{
+  "studios": [
+    {
+      "id": "looking-glass-studios",
+      "name": "Looking Glass Studios",
+      "aliases": [
+        "Looking Glass",
+        "Looking Glass Technologies",
+        "Blue Sky Productions",
+        "BlueSky Productions",
+        "Blue Sky Productions / Origin Systems"
+      ],
+      "cc": "US",
+      "founded": 1990,
+      "closed": 2000,
+      "status": "closed",
+      "hq": "Cambridge, Massachusetts",
+      "makers": [
+        "Paul Neurath",
+        "Doug Church",
+        "Warren Spector",
+        "Ken Levine",
+        "Terri Brosius",
+        "Eric Brosius",
+        "Seamus Blackley",
+        "Tim Stellmach"
+      ],
+      "bio": "Pioneered first-person immersive simulations with Ultima Underworld, System Shock and Thief, where light, sound and physics let players solve problems their own way. Cash-flow trouble closed the studio in May 2000, scattering its designers across dozens of teams.",
+      "diaspora": [
+        {
+          "studio": "Ion Storm",
+          "note": "Warren Spector, Harvey Smith and Austin colleagues made Deus Ex and Thief: Deadly Shadows."
+        },
+        {
+          "studio": "Irrational Games",
+          "note": "Ken Levine, Jonathan Chey and Robert Fermier founded Irrational (System Shock 2, BioShock)."
+        },
+        {
+          "studio": "Arkane Studios",
+          "note": "Carried the immersive-sim craft forward with Arx Fatalis, Dishonored and Prey alongside Looking Glass alumni."
+        },
+        {
+          "studio": "Harmonix",
+          "note": "Eric Brosius, Terri Brosius and Greg LoPiccolo helped build Frequency, Guitar Hero and Rock Band."
+        },
+        {
+          "studio": "OtherSide Entertainment",
+          "note": "Paul Neurath and Warren Spector reunited years later to revisit Underworld."
+        }
+      ]
+    },
+    {
+      "id": "bullfrog-productions",
+      "name": "Bullfrog Productions",
+      "aliases": [
+        "Bullfrog",
+        "Bullfrog Productions (Peter Molyneux)"
+      ],
+      "cc": "GB",
+      "founded": 1987,
+      "closed": 2001,
+      "status": "closed",
+      "hq": "Guildford, England",
+      "makers": [
+        "Peter Molyneux",
+        "Les Edgar",
+        "Glenn Corpes",
+        "Sean Cooper",
+        "Mark Webley",
+        "Gary Carr",
+        "Demis Hassabis"
+      ],
+      "bio": "Turned Guildford into a British game-making hub with god games and humorous management sims including Populous, Syndicate, Theme Park, Magic Carpet, Theme Hospital and Dungeon Keeper. Acquired by Electronic Arts in 1995 and folded into EA UK by 2001.",
+      "diaspora": [
+        {
+          "studio": "Lionhead Studios",
+          "note": "Peter Molyneux, Mark Webley, Tim Rance and Steve Jackson founded Lionhead (Black & White, Fable)."
+        },
+        {
+          "studio": "Mucky Foot Productions",
+          "note": "Mike Diskett, Fin McGechie and Guy Simmons left to build Urban Chaos and Startopia."
+        },
+        {
+          "studio": "Media Molecule",
+          "note": "Bullfrog and Lionhead alumni Mark Healey, Alex Evans, Dave Smith and Kareem Ettouney created LittleBigPlanet."
+        },
+        {
+          "studio": "Two Point Studios",
+          "note": "Theme Hospital veterans Mark Webley and Gary Carr reunited to build Two Point Hospital and Two Point Campus."
+        }
+      ]
+    },
+    {
+      "id": "westwood-studios",
+      "name": "Westwood Studios",
+      "aliases": [
+        "Westwood",
+        "Westwood Associates",
+        "Westwood Pacific"
+      ],
+      "cc": "US",
+      "founded": 1985,
+      "closed": 2003,
+      "status": "closed",
+      "hq": "Las Vegas, Nevada",
+      "makers": [
+        "Brett Sperry",
+        "Louis Castle",
+        "Joe Bostic",
+        "Frank Klepacki",
+        "Eydie Laramore",
+        "Erik Yeo"
+      ],
+      "bio": "Founded in a Las Vegas garage as Westwood Associates, building Eye of the Beholder, The Legend of Kyrandia, Blade Runner and the real-time strategy template of Dune II and Command & Conquer. Purchased by Electronic Arts in 1998 and liquidated in March 2003.",
+      "diaspora": [
+        {
+          "studio": "Petroglyph Games",
+          "note": "Joe Bostic, Michael Legg, Steve Tall and Frank Klepacki stayed in Las Vegas to make Star Wars: Empire at War and Command & Conquer Remastered."
+        },
+        {
+          "studio": "EA Los Angeles",
+          "note": "Absorbed Westwood employees who relocated to California for Command & Conquer: Generals and Command & Conquer 3."
+        },
+        {
+          "studio": "Jet Set Games",
+          "note": "Brett Sperry, Adam Isgreen and Rade Stojsavljevic reunited in Las Vegas."
+        }
+      ]
+    },
+    {
+      "id": "origin-systems",
+      "name": "Origin Systems",
+      "aliases": [
+        "Origin",
+        "Origin Systems (Paul Neurath)",
+        "Origin Systems (Richard Garriott)",
+        "Origin Systems (Chris Roberts)",
+        "Chris Roberts (Origin Systems)"
+      ],
+      "cc": "US",
+      "founded": 1983,
+      "closed": 2004,
+      "status": "closed",
+      "hq": "Austin, Texas",
+      "makers": [
+        "Richard Garriott",
+        "Robert Garriott",
+        "Chuck Bueche",
+        "Chris Roberts",
+        "Warren Spector",
+        "Raph Koster",
+        "Sheri Graner Ray"
+      ],
+      "bio": "Built under the motto 'We Create Worlds', shaping computer RPGs, space combat and early graphical MMOs through Ultima, Wing Commander, Crusader and Ultima Online. Acquired by Electronic Arts in 1992 and shut down in Austin in February 2004.",
+      "diaspora": [
+        {
+          "studio": "Looking Glass Studios",
+          "note": "Paul Neurath's Space Rogue relationship with Origin led directly to Ultima Underworld and System Shock."
+        },
+        {
+          "studio": "Digital Anvil",
+          "note": "Chris Roberts, Erin Roberts and Tony Zurovec left in 1996 to make Starlancer and Freelancer."
+        },
+        {
+          "studio": "Ion Storm",
+          "note": "Warren Spector opened Ion Storm's Austin office with former Origin producers and designers."
+        },
+        {
+          "studio": "Sony Online Entertainment",
+          "note": "Raph Koster and Rich Vogel took their Ultima Online experience straight into Star Wars Galaxies."
+        }
+      ]
+    },
+    {
+      "id": "sierra-on-line",
+      "name": "Sierra On-Line",
+      "aliases": [
+        "Sierra",
+        "On-Line Systems",
+        "Sierra Entertainment",
+        "Roberta & Ken Williams / On-Line Systems",
+        "Roberta & Ken Williams (On-Line Systems)",
+        "Sierra On-Line (Al Lowe)",
+        "Sierra On-Line (Roberta Williams)",
+        "Sierra On-Line (Scott Murphy & Mark Crowe)",
+        "Sierra On-Line (Jim Walls)",
+        "Sierra On-Line (Jane Jensen)",
+        "Roberta Williams (Sierra On-Line)"
+      ],
+      "cc": "US",
+      "founded": 1979,
+      "closed": 2008,
+      "status": "closed",
+      "hq": "Oakhurst, California",
+      "makers": [
+        "Roberta Williams",
+        "Ken Williams",
+        "Al Lowe",
+        "Jane Jensen",
+        "Corey Cole",
+        "Lori Ann Cole",
+        "Scott Murphy",
+        "Mark Crowe"
+      ],
+      "bio": "Started on a Simi Valley kitchen table with Mystery House and grew in the Sierra Nevada foothills into the home of King's Quest, Space Quest, Quest for Glory, Gabriel Knight and Phantasmagoria, while also publishing Half-Life. Cendant accounting fraud, layoffs in 1999 and the 2008 Activision-Vivendi merger ended original development.",
+      "diaspora": [
+        {
+          "studio": "Dynamix",
+          "note": "Sister studio in Eugene, Oregon where Jeff Tunnell and Damon Slye built The Incredible Machine, Red Baron and Starsiege: Tribes."
+        },
+        {
+          "studio": "Pinkerton Road",
+          "note": "Jane Jensen and composer Robert Holmes continued making narrative mysteries including Moebius."
+        },
+        {
+          "studio": "Transolar Games",
+          "note": "Lori Ann and Corey Cole returned to adventure-RPG hybrids with Hero-U."
+        },
+        {
+          "studio": "Cygnus Entertainment",
+          "note": "Roberta and Ken Williams came out of retirement to reimagine Colossal Cave in 3D."
+        }
+      ]
+    },
+    {
+      "id": "lucasarts",
+      "name": "LucasArts",
+      "aliases": [
+        "Lucasfilm Games",
+        "Lucasfilm Games (David Fox)",
+        "Lucasfilm Games (Lawrence Holland)",
+        "Lucasfilm Games (Brian Moriarty)",
+        "LucasArts (Tim Schafer)",
+        "LucasArts (Sean Clark)",
+        "LucasArts (Larry Ahern & Jonathan Ackley)"
+      ],
+      "cc": "US",
+      "founded": 1982,
+      "closed": 2013,
+      "status": "closed",
+      "hq": "San Rafael, California",
+      "makers": [
+        "Ron Gilbert",
+        "Tim Schafer",
+        "Dave Grossman",
+        "David Fox",
+        "Noah Falstein",
+        "Brian Moriarty",
+        "Lawrence Holland",
+        "Clint Bajakian"
+      ],
+      "bio": "Founded inside George Lucas's Skywalker Ranch ecosystem as Lucasfilm Games, inventing SCUMM and the no-dead-ends adventure philosophy of Maniac Mansion, The Secret of Monkey Island, Day of the Tentacle and Grim Fandango alongside X-Wing and Dark Forces. Disney shut down internal game development in April 2013, laying off roughly 150 staff.",
+      "diaspora": [
+        {
+          "studio": "Humongous Entertainment",
+          "note": "Ron Gilbert and Shelley Day left in 1992 to make Putt-Putt, Pajama Sam and Backyard Sports."
+        },
+        {
+          "studio": "Double Fine Productions",
+          "note": "Tim Schafer founded Double Fine in San Francisco in 2000 (Psychonauts, Brütal Legend, Broken Age)."
+        },
+        {
+          "studio": "Telltale Games",
+          "note": "Kevin Bruner, Dan Connors and Troy Molander left cancelled Sam & Max sequel work in 2004 to start Telltale."
+        },
+        {
+          "studio": "Totally Games",
+          "note": "Lawrence Holland's independent studio built the X-Wing and TIE Fighter flight sims."
+        },
+        {
+          "studio": "Terrible Toybox",
+          "note": "Ron Gilbert and Dave Grossman reunited for Thimbleweed Park and Return to Monkey Island."
+        }
+      ]
+    },
+    {
+      "id": "microprose",
+      "name": "MicroProse",
+      "aliases": [
+        "MicroProse Software",
+        "MicroProse (Arnold Hendrick)",
+        "MicroProse (Sid Meier)",
+        "MicroProse (Sid Meier, Bruce Shelley)"
+      ],
+      "cc": "US",
+      "founded": 1982,
+      "closed": 2003,
+      "status": "closed",
+      "hq": "Hunt Valley, Maryland",
+      "makers": [
+        "Sid Meier",
+        "Bill Stealey",
+        "Bruce Shelley",
+        "Jeff Briggs",
+        "Brian Reynolds",
+        "Arnold Hendrick",
+        "Soren Johnson"
+      ],
+      "bio": "Founded after air-force pilot Bill Stealey met programmer Sid Meier over an arcade cabinet of Red Baron, turning military flight sims into deep historical sandboxes like Pirates!, Railroad Tycoon, Civilization, Darklands and Master of Orion. Debt after Spectrum HoloByte and Hasbro buyouts led Infogrames to close the Hunt Valley studio in 2003.",
+      "diaspora": [
+        {
+          "studio": "Firaxis Games",
+          "note": "Sid Meier, Jeff Briggs and Brian Reynolds left in 1996 to found Firaxis just down the road in Maryland (Alpha Centauri, Civilization III–VII, XCOM)."
+        },
+        {
+          "studio": "Ensemble Studios",
+          "note": "Civilization co-designer Bruce Shelley joined Tony Goodman in Dallas to help shape Age of Empires."
+        },
+        {
+          "studio": "Big Huge Games",
+          "note": "Brian Reynolds, Tim Train, David Inscore and Jason Coleman founded Big Huge Games in 2000 (Rise of Nations)."
+        }
+      ]
+    },
+    {
+      "id": "clover-studio",
+      "name": "Clover Studio",
+      "aliases": [
+        "Clover"
+      ],
+      "cc": "JP",
+      "founded": 2004,
+      "closed": 2007,
+      "status": "closed",
+      "hq": "Osaka, Japan",
+      "makers": [
+        "Atsushi Inaba",
+        "Hideki Kamiya",
+        "Shinji Mikami",
+        "Mari Shimazaki",
+        "Sawaki Takeyasu"
+      ],
+      "bio": "Established by Capcom as a semi-autonomous team dedicated to original worlds rather than sequels, shipping Viewtiful Joe 2, the ink-painted adventure Okami and the slapstick brawler God Hand in under three years. Capcom dissolved the studio in March 2007 after its three core leads resigned to stay independent.",
+      "diaspora": [
+        {
+          "studio": "PlatinumGames",
+          "note": "Atsushi Inaba, Hideki Kamiya and Shinji Mikami formed Seeds Inc., merging with ODD to become PlatinumGames (Bayonetta, Vanquish, NieR: Automata)."
+        },
+        {
+          "studio": "Tango Gameworks",
+          "note": "Shinji Mikami later founded Tango Gameworks in Tokyo in 2010."
+        },
+        {
+          "studio": "CLOVERS Inc.",
+          "note": "Hideki Kamiya opened CLOVERS in 2024 and partnered with Capcom to direct an Okami sequel."
+        }
+      ]
+    },
+    {
+      "id": "pandemic-studios",
+      "name": "Pandemic Studios",
+      "aliases": [
+        "Pandemic",
+        "Pandemic Australia"
+      ],
+      "cc": "US",
+      "founded": 1998,
+      "closed": 2009,
+      "status": "closed",
+      "hq": "Los Angeles, California",
+      "makers": [
+        "Josh Resnick",
+        "Andrew Goldman",
+        "Greg Borrud",
+        "Eric Gewirtz",
+        "Brad Welch",
+        "Tom French"
+      ],
+      "bio": "Spun out of Activision veterans to make open-ended action and combined-arms games including Battlezone II, Full Spectrum Warrior, Star Wars: Battlefront I & II, Destroy All Humans!, Mercenaries and WWII stealth sandbox The Saboteur. Electronic Arts bought the studio in 2007 and shut it down in November 2009.",
+      "diaspora": [
+        {
+          "studio": "343 Industries",
+          "note": "Several Pandemic designers and engineers moved to Microsoft's Halo team."
+        },
+        {
+          "studio": "Respawn Entertainment",
+          "note": "Los Angeles neighbors at Respawn hired former Pandemic developers on Titanfall and Star Wars Jedi."
+        },
+        {
+          "studio": "Seismic Games",
+          "note": "Greg Borrud and Chris Miller co-founded Seismic Games in Los Angeles."
+        }
+      ]
+    },
+    {
+      "id": "volition",
+      "name": "Volition",
+      "aliases": [
+        "Parallax Software",
+        "Deep Silver Volition",
+        "THQ Volition"
+      ],
+      "cc": "US",
+      "founded": 1993,
+      "closed": 2023,
+      "status": "closed",
+      "hq": "Champaign, Illinois",
+      "makers": [
+        "Mike Kulas",
+        "Matt Toschlog",
+        "Adam Pletcher",
+        "Steve Jaros",
+        "Alan Lawrance",
+        "Jim Boone"
+      ],
+      "bio": "Founded in Champaign as Parallax Software for six-degrees-of-freedom shooter Descent before becoming Volition in 1996 and building FreeSpace, Red Faction's Geo-Mod destruction and the Saints Row open-world comedies. Embracer Group closed the 30-year studio in August 2023 during corporate cost cuts.",
+      "diaspora": [
+        {
+          "studio": "Outrage Entertainment",
+          "note": "Co-founder Matt Toschlog split amicably in 1996 to open Outrage in Ann Arbor (Descent 3)."
+        },
+        {
+          "studio": "Shapeshifter Games",
+          "note": "Veterans Matt Madigan, Brian Traficante and Rob Loftus founded Shapeshifter in Champaign in 2024, co-developing Clockwork Revolution with inXile."
+        }
+      ]
+    },
+    {
+      "id": "visceral-games",
+      "name": "Visceral Games",
+      "aliases": [
+        "EA Redwood Shores",
+        "EA Redwood Shores (Glen Schofield)"
+      ],
+      "cc": "US",
+      "founded": 1998,
+      "closed": 2017,
+      "status": "closed",
+      "hq": "Redwood City, California",
+      "makers": [
+        "Glen Schofield",
+        "Michael Condrey",
+        "Bret Robbins",
+        "Ian Milham",
+        "Wright Bagwell",
+        "Chuck Beaver",
+        "Zach Wilson"
+      ],
+      "bio": "Grew from EA Redwood Shores' licensed action teams (James Bond, The Lord of the Rings) into the studio behind Dead Space, where diegetic HUDs and limb-cutting turned sci-fi survival horror tactile. Electronic Arts closed Visceral in October 2017 while cancelling Amy Hennig's single-player Star Wars project.",
+      "diaspora": [
+        {
+          "studio": "Sledgehammer Games",
+          "note": "Glen Schofield and Michael Condrey left in 2009 to found Sledgehammer (Call of Duty: Advanced Warfare, WWII)."
+        },
+        {
+          "studio": "Striking Distance Studios",
+          "note": "Schofield and Dead Space alumni later built The Callisto Protocol."
+        },
+        {
+          "studio": "Ascendant Studios",
+          "note": "Dead Space creative director Bret Robbins founded Ascendant to ship Immortals of Aveum."
+        },
+        {
+          "studio": "Motive Studio",
+          "note": "EA's Montreal studio rebuilt Dead Space (2023) in consultation with fans and series veterans."
+        }
+      ]
+    },
+    {
+      "id": "tango-gameworks",
+      "name": "Tango Gameworks",
+      "aliases": [
+        "Tango",
+        "Tango Gameworks (Shinji Mikami)"
+      ],
+      "cc": "JP",
+      "founded": 2010,
+      "closed": 2024,
+      "status": "revived",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Shinji Mikami",
+        "John Johanas",
+        "Kenji Kimura",
+        "Ikumi Nakamura",
+        "Masato Kimura",
+        "Masaaki Yamada"
+      ],
+      "bio": "Founded by Shinji Mikami to mentor younger directors in Tokyo, producing The Evil Within, Ghostwire: Tokyo and John Johanas's rhythm-action hit Hi-Fi Rush. Microsoft abruptly shut the studio in May 2024, before Krafton stepped in that August to acquire the Hi-Fi Rush rights and rehire roughly half the staff to reopen Tango in Tokyo.",
+      "diaspora": [
+        {
+          "studio": "Unseen",
+          "note": "Art and creative director Ikumi Nakamura founded Tokyo indie studio Unseen in 2022 (Kemuri)."
+        },
+        {
+          "studio": "Kamuy Inc.",
+          "note": "Shinji Mikami left Tango in 2023 and established Kamuy to back smaller, faster-cycle teams."
+        }
+      ]
+    },
+    {
+      "id": "arkane-austin",
+      "name": "Arkane Austin",
+      "aliases": [],
+      "cc": "US",
+      "founded": 2006,
+      "closed": 2024,
+      "status": "closed",
+      "hq": "Austin, Texas",
+      "makers": [
+        "Raphaël Colantonio",
+        "Harvey Smith",
+        "Ricardo Bare",
+        "Susan Kath",
+        "Seth Shain",
+        "Danielle Shoemaker"
+      ],
+      "bio": "Opened in Texas by Arkane founder Raphaël Colantonio to tap Austin's Looking Glass and Ion Storm heritage, co-developing Dishonored with Arkane Lyon before leading the Talos I immersive sim Prey (2017) and co-op shooter Redfall. Microsoft closed the Austin studio in May 2024 alongside Tango Gameworks.",
+      "diaspora": [
+        {
+          "studio": "WolfEye Studios",
+          "note": "Raphaël Colantonio and executive producer Julien Roby left in 2017 and founded WolfEye in 2019 (Weird West)."
+        },
+        {
+          "studio": "Arkane Studios",
+          "note": "Sister studio Arkane Lyon continues operating in France on Dishonored, Deathloop and Marvel's Blade."
+        }
+      ]
+    },
+    {
+      "id": "lionhead-studios",
+      "name": "Lionhead Studios",
+      "aliases": [
+        "Lionhead",
+        "Lionhead Studios (Peter Molyneux)"
+      ],
+      "cc": "GB",
+      "founded": 1997,
+      "closed": 2016,
+      "status": "closed",
+      "hq": "Guildford, England",
+      "makers": [
+        "Peter Molyneux",
+        "Mark Webley",
+        "Tim Rance",
+        "Steve Jackson",
+        "Dene Carter",
+        "Simon Carter",
+        "John McCormack"
+      ],
+      "bio": "Named after Mark Webley's hamster after breaking away from EA-owned Bullfrog, creating creature-AI god game Black & White, studio sim The Movies and the fairytale RPG trilogy Fable. Acquired by Microsoft in 2006 and closed in April 2016 following the cancellation of live-service spin-off Fable Legends.",
+      "diaspora": [
+        {
+          "studio": "Media Molecule",
+          "note": "Mark Healey, Alex Evans, Dave Smith and Kareem Ettouney left Lionhead in 2006 to make LittleBigPlanet and Dreams."
+        },
+        {
+          "studio": "Hello Games",
+          "note": "Sean Murray and colleagues from Guildford's Lionhead/Criterion circle founded Hello Games (Joe Danger, No Man's Sky)."
+        },
+        {
+          "studio": "Two Point Studios",
+          "note": "Co-founder Mark Webley teamed up with Gary Carr to launch Two Point Hospital."
+        },
+        {
+          "studio": "Playground Games",
+          "note": "Took up the Fable mantle in Leamington Spa, hiring several former Lionhead developers."
+        }
+      ]
+    },
+    {
+      "id": "ensemble-studios",
+      "name": "Ensemble Studios",
+      "aliases": [
+        "Ensemble"
+      ],
+      "cc": "US",
+      "founded": 1995,
+      "closed": 2009,
+      "status": "closed",
+      "hq": "Dallas, Texas",
+      "makers": [
+        "Tony Goodman",
+        "Rick Goodman",
+        "Bruce Shelley",
+        "Brian Sullivan",
+        "Dave Pottinger",
+        "Greg Street",
+        "Stephen Rippy"
+      ],
+      "bio": "Combined MicroProse's historical sweep with Warcraft's real-time controls to create Age of Empires, Age of Mythology and console RTS Halo Wars. Microsoft bought Ensemble in 2001 and closed it in January 2009 right as Halo Wars wrapped.",
+      "diaspora": [
+        {
+          "studio": "Stainless Steel Studios",
+          "note": "Co-founder Rick Goodman left after Age of Empires I to make Empire Earth."
+        },
+        {
+          "studio": "Iron Lore Entertainment",
+          "note": "Co-founder Brian Sullivan left after Age of Empires II to create Titan Quest."
+        },
+        {
+          "studio": "Robot Entertainment",
+          "note": "Tony Goodman and dozens of Ensemble staff immediately formed Robot Entertainment in Plano (Orcs Must Die!, Age of Empires Online)."
+        },
+        {
+          "studio": "Bonfire Studios",
+          "note": "Ensemble veterans later joined Zynga Dallas, Boss Fight Entertainment and other North Texas studios."
+        }
+      ]
+    },
+    {
+      "id": "troika-games",
+      "name": "Troika Games",
+      "aliases": [
+        "Troika"
+      ],
+      "cc": "US",
+      "founded": 1998,
+      "closed": 2005,
+      "status": "closed",
+      "hq": "Irvine, California",
+      "makers": [
+        "Tim Cain",
+        "Leonard Boyarsky",
+        "Jason Anderson",
+        "Brian Mitsoda",
+        "Chad Moore",
+        "Rik Schaffer"
+      ],
+      "bio": "Named for the Russian word for a trio after Fallout creators Tim Cain, Leonard Boyarsky and Jason Anderson left Interplay in 1998. In seven years they shipped three deep, reactive RPGs—Arcanum, The Temple of Elemental Evil and Vampire: The Masquerade – Bloodlines—before closing in February 2005 when publisher funding dried up.",
+      "diaspora": [
+        {
+          "studio": "Obsidian Entertainment",
+          "note": "Tim Cain and Leonard Boyarsky eventually reunited at Obsidian to direct The Outer Worlds."
+        },
+        {
+          "studio": "Blizzard Entertainment",
+          "note": "Leonard Boyarsky spent a decade at Blizzard as lead world designer on Diablo III."
+        },
+        {
+          "studio": "DoubleBear Productions",
+          "note": "Bloodlines writer Brian Mitsoda founded DoubleBear to make Dead State."
+        },
+        {
+          "studio": "inXile Entertainment",
+          "note": "Jason Anderson and Chad Moore contributed to Wasteland 2 and Clockwork Revolution."
+        }
+      ]
+    },
+    {
+      "id": "black-isle-studios",
+      "name": "Black Isle Studios",
+      "aliases": [
+        "Black Isle",
+        "Interplay",
+        "Interplay Productions",
+        "Interplay (Michael Cranford)",
+        "Michael Cranford (Interplay)",
+        "Interplay (Alan Pavlish, Brian Fargo)"
+      ],
+      "cc": "US",
+      "founded": 1996,
+      "closed": 2003,
+      "status": "closed",
+      "hq": "Irvine, California",
+      "makers": [
+        "Feargus Urquhart",
+        "Brian Fargo",
+        "Chris Avellone",
+        "Josh Sawyer",
+        "Tim Cain",
+        "Colin McComb",
+        "Scott Everts"
+      ],
+      "bio": "Grew out of Brian Fargo's Interplay RPG heritage (The Bard's Tale, Wasteland, Fallout) into Feargus Urquhart's internal RPG division, developing Fallout 2, Planescape: Torment and Icewind Dale while publishing BioWare's Baldur's Gate. Parent company Interplay laid off the entire Black Isle staff in December 2003, cancelling their original Fallout 3 ('Van Buren').",
+      "diaspora": [
+        {
+          "studio": "Troika Games",
+          "note": "Fallout leads Tim Cain, Leonard Boyarsky and Jason Anderson departed in 1998 to form Troika."
+        },
+        {
+          "studio": "Obsidian Entertainment",
+          "note": "Feargus Urquhart, Chris Avellone, Chris Parker, Darren Monahan and Chris Jones founded Obsidian in 2003, later making Fallout: New Vegas."
+        },
+        {
+          "studio": "inXile Entertainment",
+          "note": "Interplay founder Brian Fargo launched inXile in 2002 (Wasteland 2 & 3, Torment: Tides of Numenera)."
+        }
+      ]
+    },
+    {
+      "id": "blizzard-north",
+      "name": "Blizzard North",
+      "aliases": [
+        "Condor"
+      ],
+      "cc": "US",
+      "founded": 1993,
+      "closed": 2005,
+      "status": "closed",
+      "hq": "San Mateo, California",
+      "makers": [
+        "David Brevik",
+        "Erich Schaefer",
+        "Max Schaefer",
+        "Bill Roper",
+        "Matt Uelmen",
+        "Stieg Hedlund",
+        "Michio Okamura"
+      ],
+      "bio": "Founded in the Bay Area as Condor before Blizzard acquired it nine months prior to shipping Diablo in 1996, turning roguelike dungeon crawls into fast mouse-driven action RPGs with Diablo and Diablo II. Vivendi conflicts prompted its founders to walk out in 2003, and Blizzard shuttered the San Mateo office in August 2005.",
+      "diaspora": [
+        {
+          "studio": "ArenaNet",
+          "note": "Blizzard and Battle.net engineers Mike O'Brien, Patrick Wyatt and Jeff Strain left in 2000 to build Guild Wars."
+        },
+        {
+          "studio": "Flagship Studios",
+          "note": "Brevik, the Schaefers and Bill Roper founded Flagship in 2003 (Hellgate: London)."
+        },
+        {
+          "studio": "Runic Games",
+          "note": "Max Schaefer, Erich Schaefer, Travis Baldree and composer Matt Uelmen created Torchlight I & II."
+        },
+        {
+          "studio": "Moon Beast Productions",
+          "note": "Erich Schaefer, Phil Shenk and Peter Hu teamed up again to reimagine action RPGs."
+        }
+      ]
+    },
+    {
+      "id": "irrational-games",
+      "name": "Irrational Games",
+      "aliases": [
+        "2K Boston",
+        "2K Australia"
+      ],
+      "cc": "US",
+      "founded": 1997,
+      "closed": 2017,
+      "status": "closed",
+      "hq": "Quincy, Massachusetts",
+      "makers": [
+        "Ken Levine",
+        "Jonathan Chey",
+        "Robert Fermier",
+        "Nate Wells",
+        "Shawn Robertson",
+        "Robb Waters",
+        "Garry Schyman"
+      ],
+      "bio": "Founded near Boston by three Looking Glass veterans, building System Shock 2, Freedom Force, SWAT 4, the underwater dystopia of BioShock and BioShock Infinite. In February 2014 Ken Levine wound down the large studio—laying off all but 15 staff—before reorganizing that small core as Ghost Story Games in 2017.",
+      "diaspora": [
+        {
+          "studio": "Ghost Story Games",
+          "note": "Ken Levine and 15 Irrational colleagues formed a small narrative team inside Take-Two to build Judas."
+        },
+        {
+          "studio": "Fullbright",
+          "note": "BioShock 2: Minerva's Den leads Steve Gaynor, Johnnemann Nordhagen and Karla Zimonja founded Fullbright (Gone Home, Tacoma)."
+        },
+        {
+          "studio": "The Molasses Flood",
+          "note": "BioShock Infinite veterans Forrest Dowling, Gwen Frey and Damian Isla built The Flame in the Flood."
+        },
+        {
+          "studio": "Question",
+          "note": "Jordan Thomas and Stephen Alexander formed Question (The Magic Circle, The Blackout Club)."
+        }
+      ]
+    },
+    {
+      "id": "ion-storm",
+      "name": "Ion Storm",
+      "aliases": [
+        "Ion Storm Austin",
+        "Ion Storm Dallas",
+        "Ion Storm (John Romero)"
+      ],
+      "cc": "US",
+      "founded": 1996,
+      "closed": 2005,
+      "status": "closed",
+      "hq": "Dallas & Austin, Texas",
+      "makers": [
+        "John Romero",
+        "Tom Hall",
+        "Warren Spector",
+        "Harvey Smith",
+        "Sheldon Pacotti",
+        "Chris Norden",
+        "Randy Smith"
+      ],
+      "bio": "Started in a glass penthouse in Dallas by id Software co-founders John Romero and Tom Hall (Daikatana, Anachronox), while Warren Spector's quieter Austin branch shipped cyberpunk immersive sim Deus Ex and Thief: Deadly Shadows. Owner Eidos closed Dallas in 2001 and shut down Austin in February 2005.",
+      "diaspora": [
+        {
+          "studio": "Junction Point Studios",
+          "note": "Warren Spector founded Junction Point in Austin (Epic Mickey)."
+        },
+        {
+          "studio": "Arkane Austin",
+          "note": "Harvey Smith and several Deus Ex and Thief designers joined Raphaël Colantonio on Dishonored and Prey."
+        },
+        {
+          "studio": "Monkeystone Games",
+          "note": "John Romero and Tom Hall formed a small mobile and handheld team in Texas in 2001."
+        },
+        {
+          "studio": "Eidos Montréal",
+          "note": "Revived the Deus Ex and Thief series in Quebec with Deus Ex: Human Revolution."
+        }
+      ]
+    },
+    {
+      "id": "free-radical-design",
+      "name": "Free Radical Design",
+      "aliases": [
+        "Crytek UK"
+      ],
+      "cc": "GB",
+      "founded": 1999,
+      "closed": 2023,
+      "status": "closed",
+      "hq": "Nottingham, England",
+      "makers": [
+        "David Doak",
+        "Steve Ellis",
+        "Karl Hilton",
+        "Graeme Norgate",
+        "Lee Ray"
+      ],
+      "bio": "Founded in Nottingham by GoldenEye 007 and Perfect Dark leads who left Rare to make the fast, split-screen TimeSplitters trilogy and psychic stealth game Second Sight. Administration in 2008 turned the studio into Crytek UK and later Dambuster Studios; a 2021 TimeSplitters reformation under Deep Silver was shut down by Embracer in December 2023.",
+      "diaspora": [
+        {
+          "studio": "Dambuster Studios",
+          "note": "Nottingham successor studio formed from Crytek UK staff in 2014, later shipping Dead Island 2."
+        },
+        {
+          "studio": "Rare",
+          "note": "Origin studio where the founders first built GoldenEye 007 before striking out on their own."
+        }
+      ]
+    },
+    {
+      "id": "bizarre-creations",
+      "name": "Bizarre Creations",
+      "aliases": [
+        "Raising Hell Software"
+      ],
+      "cc": "GB",
+      "founded": 1988,
+      "closed": 2011,
+      "status": "closed",
+      "hq": "Liverpool, England",
+      "makers": [
+        "Martyn Chudley",
+        "Sarah Chudley",
+        "Stephen Cakebread",
+        "Gareth Wilson",
+        "Ben Ward",
+        "Craig Howard"
+      ],
+      "bio": "Founded in Liverpool by Martyn Chudley as Raising Hell Software before adopting Bizarre Creations in 1994, pairing precision driving with style points ('Kudos') across Formula 1, Metropolis Street Racer, Project Gotham Racing and Blur, plus twin-stick hit Geometry Wars. Activision bought the studio in 2007 and closed it in February 2011.",
+      "diaspora": [
+        {
+          "studio": "Playground Games",
+          "note": "Recruited Bizarre Creations, Codemasters and Criterion driving veterans in Leamington Spa to build Forza Horizon."
+        },
+        {
+          "studio": "Lucid Games",
+          "note": "Pete Wallace, Craig Howard and Liverpool colleagues immediately formed Lucid Games in 2011."
+        },
+        {
+          "studio": "Hogrocket",
+          "note": "Ben Ward, Stephen Cakebread and Peter Collier formed a small indie studio after the shutdown."
+        }
+      ]
+    },
+    {
+      "id": "psygnosis",
+      "name": "Psygnosis",
+      "aliases": [
+        "Studio Liverpool",
+        "SCE Studio Liverpool"
+      ],
+      "cc": "GB",
+      "founded": 1984,
+      "closed": 2012,
+      "status": "closed",
+      "hq": "Liverpool, England",
+      "makers": [
+        "Ian Hetherington",
+        "Jonathan Ellis",
+        "David Lawson",
+        "Nick Burcombe",
+        "Jim Bowers",
+        "Tim Wright (CoLD SToRAGE)",
+        "Graeme Ankers"
+      ],
+      "bio": "Born from the ashes of Liverpool's Imagine Software under Roger Dean's owl logo, publishing Amiga landmarks Shadow of the Beast and Lemmings before helping define PlayStation's club-culture identity with WipEout, Destruction Derby and Colony Wars. Sony renamed it Studio Liverpool in 2000 and closed it in August 2012 after 28 years.",
+      "diaspora": [
+        {
+          "studio": "Firesprite",
+          "note": "Graeme Ankers, Lee Carus, Chris Roberts, Stuart Tilley and Stuart Lovegrove kept the Liverpool team spirit alive by founding Firesprite in 2012 (later acquired by Sony)."
+        },
+        {
+          "studio": "Playrise Digital",
+          "note": "WipEout co-creator Nick Burcombe founded Playrise Digital in 2012 (Table Top Racing)."
+        },
+        {
+          "studio": "R8 Games",
+          "note": "Former Psygnosis veterans built futuristic anti-gravity racer Pacer."
+        }
+      ]
+    },
+    {
+      "id": "japan-studio",
+      "name": "Japan Studio",
+      "aliases": [
+        "Sony Japan Studio",
+        "SCE Japan Studio",
+        "SIE Japan Studio",
+        "SCE Japan Studio (Jun Fujiki)",
+        "SCE Japan Studio (Keiichiro Toyama)",
+        "SIE Japan Studio (Team Asobi)",
+        "Japan Studio (Team Asobi)",
+        "Team Ico",
+        "genDESIGN / Japan Studio"
+      ],
+      "cc": "JP",
+      "founded": 1993,
+      "closed": 2021,
+      "status": "closed",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Fumito Ueda",
+        "Kenji Kaido",
+        "Keiichiro Toyama",
+        "Tsutomu Kouno",
+        "Hiroyuki Kotani",
+        "Nicolas Doucet",
+        "Takeshi Miyazaki"
+      ],
+      "bio": "Sony's oldest internal game studio in Tokyo backed offbeat, auteur-driven experiments from Ape Escape, LocoRoco, Patapon, Echochrome and Gravity Rush to Team Ico's Ico and Shadow of the Colossus, while co-producing Demon's Souls and Bloodborne with FromSoftware. Sony wound down most of Japan Studio in April 2021, folding remaining hardware-play staff into Team Asobi.",
+      "diaspora": [
+        {
+          "studio": "Team Asobi",
+          "note": "Nicolas Doucet's internal Astro Bot group spun out as a standalone PlayStation studio in Tokyo, winning Game of the Year with Astro Bot (2024)."
+        },
+        {
+          "studio": "genDESIGN",
+          "note": "Fumito Ueda and Team Ico colleagues formed independent studio genDESIGN in 2014, completing The Last Guardian."
+        },
+        {
+          "studio": "Bokeh Game Studio",
+          "note": "Silent Hill, Siren and Gravity Rush creator Keiichiro Toyama left in 2020 with Kazunobu Sato and Junya Okura to make Slitterhead."
+        }
+      ]
+    },
+    {
+      "id": "team-bondi",
+      "name": "Team Bondi",
+      "aliases": [],
+      "cc": "AU",
+      "founded": 2003,
+      "closed": 2011,
+      "status": "closed",
+      "hq": "Sydney, Australia",
+      "makers": [
+        "Brendan McNamara",
+        "Simon Wood",
+        "Naresh Hirani",
+        "Oliver Bao",
+        "Andrew Hale"
+      ],
+      "bio": "Founded in Sydney by The Getaway director Brendan McNamara, spending seven years building 1947 Los Angeles and full-performance facial capture for detective thriller L.A. Noire. Exhausting crunch, unpaid-credit disputes and debt pushed the studio into liquidation in October 2011 just months after L.A. Noire topped charts.",
+      "diaspora": [
+        {
+          "studio": "Kennedy Miller Mitchell Interactive",
+          "note": "George Miller's Sydney production house absorbed much of the staff before cancelling Whore of the Orient."
+        },
+        {
+          "studio": "Video Games Deluxe",
+          "note": "Brendan McNamara opened Video Games Deluxe in Sydney in 2013 for L.A. Noire: The VR Case Files; Rockstar acquired it in March 2025 as Rockstar Australia."
+        }
+      ]
+    },
+    {
+      "id": "united-front-games",
+      "name": "United Front Games",
+      "aliases": [
+        "UFG"
+      ],
+      "cc": "CA",
+      "founded": 2007,
+      "closed": 2016,
+      "status": "closed",
+      "hq": "Vancouver, British Columbia",
+      "makers": [
+        "Stephen van der Mescht",
+        "Mike Skupa",
+        "Jeff O'Connell",
+        "William Ho",
+        "Dan Sochan"
+      ],
+      "bio": "Formed in Vancouver by open-world and racing veterans from EA Black Box, Radical Entertainment and Rockstar Vancouver, shipping kart-creator ModNation Racers and rescuing Activision's cancelled True Crime: Hong Kong with Square Enix to release martial-arts crime drama Sleeping Dogs. Abruptly closed its doors in October 2016.",
+      "diaspora": [
+        {
+          "studio": "Brass Token",
+          "note": "Sleeping Dogs design director Mike Skupa and Vancouver colleagues founded boutique horror studio Brass Token (The Chant)."
+        },
+        {
+          "studio": "The Coalition",
+          "note": "Many Vancouver engineers and artists moved across town to Microsoft's Gears of War team and Klei Entertainment."
+        }
+      ]
+    },
+    {
+      "id": "midway",
+      "name": "Midway",
+      "aliases": [
+        "Midway Games",
+        "Bally Midway",
+        "Midway Manufacturing",
+        "Midway Chicago",
+        "Midway Studios Los Angeles",
+        "Midway (Mark Turmell)",
+        "Dave Nutting Associates (Midway)",
+        "Williams",
+        "Williams Electronics",
+        "Williams (Eugene Jarvis and Mark Turmell)",
+        "Williams (Eugene Jarvis, Larry DeMar)",
+        "Williams (Eugene Jarvis, Mark Turmell)",
+        "Vid Kidz (Eugene Jarvis, Larry DeMar)",
+        "Vid Kidz (Eugene Jarvis and Larry DeMar) / Williams",
+        "Eugene Jarvis & Larry DeMar (Williams)",
+        "Eugene Jarvis & Larry DeMar (Vid Kidz / Williams)",
+        "Eugene Jarvis & Mark Turmell (Williams)",
+        "John Newcomer (Williams)"
+      ],
+      "cc": "US",
+      "founded": 1958,
+      "closed": 2009,
+      "status": "closed",
+      "hq": "Chicago, Illinois",
+      "makers": [
+        "Eugene Jarvis",
+        "Larry DeMar",
+        "Ed Boon",
+        "John Tobias",
+        "Mark Turmell",
+        "Sal Divita",
+        "George Petro",
+        "John Newcomer"
+      ],
+      "bio": "Anchored Chicago's coin-op arcade scene alongside corporate sibling Williams Electronics, licensing Space Invaders and Pac-Man in America before creating Defender, Robotron: 2084, Joust, Spy Hunter, Rampage, Smash TV, Mortal Kombat and NBA Jam. Struggled with the transition away from arcades and liquidated in Chapter 11 bankruptcy in 2009.",
+      "diaspora": [
+        {
+          "studio": "NetherRealm Studios",
+          "note": "Warner Bros. bought the Chicago Mortal Kombat team under Ed Boon in 2009, rebranding it NetherRealm Studios (Mortal Kombat 9–1, Injustice)."
+        },
+        {
+          "studio": "Raw Thrills",
+          "note": "Defender and Cruis'n creator Eugene Jarvis founded arcade maker Raw Thrills outside Chicago in 2001."
+        },
+        {
+          "studio": "Iron Galaxy",
+          "note": "Chicago studio led by Dave Lang that hired numerous Midway veterans."
+        }
+      ]
+    },
+    {
+      "id": "hudson-soft",
+      "name": "Hudson Soft",
+      "aliases": [
+        "Hudson",
+        "Hudson Soft / Creatures"
+      ],
+      "cc": "JP",
+      "founded": 1973,
+      "closed": 2012,
+      "status": "closed",
+      "hq": "Sapporo, Japan",
+      "makers": [
+        "Yuji Kudo",
+        "Hiroshi Kudo",
+        "Toshiyuki Takahashi (Takahashi Meijin)",
+        "Shinichi Nakamoto",
+        "Shoji Mizuno",
+        "Toshiyuki Sasagawa"
+      ],
+      "bio": "Founded in Sapporo by brothers Yuji and Hiroshi Kudo as an amateur-radio and microcomputer shop, becoming the first third-party Famicom licensee, co-designing the PC Engine (TurboGrafx-16) with NEC, and creating Bomberman, Star Soldier, Adventure Island, Military Madness and Mario Party 1–8. Absorbed into Konami in March 2012, retiring the Hudson name.",
+      "diaspora": [
+        {
+          "studio": "NDcube",
+          "note": "Nintendo's Sapporo/Tokyo party-game subsidiary hired core Hudson Mario Party staff led by Hidetoshi Endo, continuing Super Mario Party."
+        },
+        {
+          "studio": "Konami",
+          "note": "Absorbed remaining Hudson staff and took over Bomberman and Momotaro Dentetsu."
+        }
+      ]
+    },
+    {
+      "id": "alphadream",
+      "name": "AlphaDream",
+      "aliases": [
+        "AlphaStar"
+      ],
+      "cc": "JP",
+      "founded": 2000,
+      "closed": 2019,
+      "status": "closed",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Tetsuo Mizuno",
+        "Chihiro Fujioka",
+        "Yoshihiko Maekawa",
+        "Hiroyuki Kubota",
+        "Masanori Sato",
+        "Yoko Shimomura"
+      ],
+      "bio": "Founded in Tokyo by former Square president Tetsuo Mizuno with Super Mario RPG co-director Chihiro Fujioka and Yoshihiko Maekawa, turning slapstick pixel animation and timed button presses into the handheld Mario & Luigi RPG series. Rising 3D development costs and sluggish late-era 3DS remake sales forced bankruptcy in October 2019.",
+      "diaspora": [
+        {
+          "studio": "Monolith Soft",
+          "note": "Longtime Mario & Luigi writer/director Hiroyuki Kubota and several colleagues moved to Nintendo's Monolith Soft."
+        },
+        {
+          "studio": "Acquire",
+          "note": "Partnered with Nintendo and returning AlphaDream veterans including Yoshihiko Maekawa to revive the series with Mario & Luigi: Brothership (2024)."
+        }
+      ]
+    },
+    {
+      "id": "cing",
+      "name": "Cing",
+      "aliases": [
+        "Cing Inc."
+      ],
+      "cc": "JP",
+      "founded": 1999,
+      "closed": 2010,
+      "status": "closed",
+      "hq": "Fukuoka, Japan",
+      "makers": [
+        "Takuya Miyagawa",
+        "Rika Suzuki",
+        "Taisuke Kanasaki",
+        "Satoshi Okubo"
+      ],
+      "bio": "Founded in Fukuoka by former Riverhillsoft producer Takuya Miyagawa and scenario writer Rika Suzuki, crafting rotoscoped, novel-like Nintendo DS mysteries held sideways like a paperback—Another Code (Trace Memory), Hotel Dusk: Room 215 and Last Window—plus co-developing Little King's Story. Filed for bankruptcy in March 2010.",
+      "diaspora": [
+        {
+          "studio": "Bellwood",
+          "note": "Co-founder Rika Suzuki continued writing mystery scenarios and visual novels through Bellwood Inc."
+        },
+        {
+          "studio": "Arc System Works",
+          "note": "Acquired Cing's library and reunited artist/director Taisuke Kanasaki on Chase: Cold Case Investigations and Nintendo's Another Code: Recollection (2024)."
+        }
+      ]
+    },
+    {
+      "id": "neversoft",
+      "name": "Neversoft",
+      "aliases": [
+        "Neversoft Entertainment"
+      ],
+      "cc": "US",
+      "founded": 1994,
+      "closed": 2014,
+      "status": "closed",
+      "hq": "Woodland Hills, California",
+      "makers": [
+        "Joel Jewett",
+        "Mick West",
+        "Chris Ward",
+        "Scott Pease",
+        "Jason Uyeda",
+        "Chad Findley",
+        "Ralph D'Amato"
+      ],
+      "bio": "Started by three Malibu Interactive refugees in Los Angeles, rescuing the Apocalypse engine to build Spider-Man (2000) and the combo-chaining skateboarding phenomenon of Tony Hawk's Pro Skater 1–4, Tony Hawk's Underground, Western shooter Gun and Guitar Hero III. Activision folded Neversoft into Infinity Ward in July 2014, where staff burned a giant eyeball effigy in the parking lot.",
+      "diaspora": [
+        {
+          "studio": "Infinity Ward",
+          "note": "Absorbed the remaining Woodland Hills team directly into Call of Duty development."
+        },
+        {
+          "studio": "Vicarious Visions",
+          "note": "Rebuilt Tony Hawk's Pro Skater 1 + 2 in 2020 with reverence for Neversoft's original physics code before also being merged into Blizzard."
+        }
+      ]
+    },
+    {
+      "id": "maxis",
+      "name": "Maxis",
+      "aliases": [
+        "Maxis Software",
+        "Maxis Emeryville",
+        "The Sims Studio"
+      ],
+      "cc": "US",
+      "founded": 1987,
+      "closed": 2015,
+      "status": "closed",
+      "hq": "Emeryville, California",
+      "makers": [
+        "Will Wright",
+        "Jeff Braun",
+        "Lucy Bradshaw",
+        "Ocean Quigley",
+        "Stone Librande",
+        "Claire Curtin",
+        "Rod Humble"
+      ],
+      "bio": "Co-founded by Will Wright and Jeff Braun when no publisher wanted a city builder with no win state, shipping SimCity, SimEarth, SimAnt, SimCity 2000, dollhouse life sim The Sims and evolutionary sandbox Spore. Electronic Arts bought Maxis in 1997 and shuttered the original Emeryville flagship studio in March 2015 after SimCity (2013), keeping the Maxis label for The Sims teams elsewhere.",
+      "diaspora": [
+        {
+          "studio": "Stupid Fun Club",
+          "note": "Will Wright left in 2009 to run an experimental toy and game lab, later co-founding Gallium Studios."
+        },
+        {
+          "studio": "Riot Games",
+          "note": "Lead designer Stone Librande took his tabletop-first prototyping workshops from Emeryville to Riot."
+        }
+      ]
+    },
+    {
+      "id": "ultimate-play-the-game",
+      "name": "Ultimate Play the Game",
+      "aliases": [
+        "Ashby Computers and Graphics"
+      ],
+      "cc": "GB",
+      "founded": 1982,
+      "closed": 1985,
+      "status": "closed",
+      "hq": "Ashby-de-la-Zouch, England",
+      "makers": [
+        "Tim Stamper",
+        "Chris Stamper",
+        "Carole Ward",
+        "John Lathbury"
+      ],
+      "bio": "Founded in a Leicestershire townhouse by arcade-conversion veterans Tim and Chris Stamper, pushing the 48K ZX Spectrum with Jetpac, Atic Atac, Sabre Wulf and the isometric Filmation 3D rooms of Knight Lore. Realizing British 8-bit tape sales were peaking while the NES rose abroad, the Stampers wound down original Ultimate development in 1985 to form Rare.",
+      "diaspora": [
+        {
+          "studio": "Rare",
+          "note": "Tim and Chris Stamper moved down the road to Twycross manor to reverse-engineer the NES and build Rare into a console powerhouse."
+        }
+      ]
+    },
+    {
+      "id": "dma-design",
+      "name": "DMA Design",
+      "aliases": [
+        "DMA"
+      ],
+      "cc": "GB",
+      "founded": 1987,
+      "closed": 2002,
+      "status": "closed",
+      "hq": "Dundee & Edinburgh, Scotland",
+      "makers": [
+        "David Jones",
+        "Mike Dailly",
+        "Russell Kay",
+        "Steve Hammond",
+        "Gary Timmons",
+        "Brian Baglow",
+        "Leslie Benzies",
+        "Aaron Garbut"
+      ],
+      "bio": "Started in a Dundee computer club by student David Jones, shipping Amiga shooters Menace and Blood Money before Mike Dailly's tiny animated sprites sparked Lemmings, followed by Body Harvest, Space Station Silicon Valley, Grand Theft Auto and Grand Theft Auto III. After Take-Two acquired the studio, Dundee closed and the Edinburgh team was renamed Rockstar North in 2002.",
+      "diaspora": [
+        {
+          "studio": "Rockstar North",
+          "note": "DMA's Edinburgh team became Rockstar North directly after Grand Theft Auto III, making Vice City, San Andreas, GTA IV and GTA V."
+        },
+        {
+          "studio": "Realtime Worlds",
+          "note": "Founder David Jones stayed in Dundee to form Realtime Worlds in 2002, creating open-world superhero sandbox Crackdown and APB."
+        },
+        {
+          "studio": "4J Studios",
+          "note": "Chris van der Kuyl and Paddy Burns helped turn Dundee into a console-port hub known for Minecraft Console Edition."
+        }
+      ]
+    },
+    {
+      "id": "rockstar-north",
+      "name": "Rockstar North",
+      "aliases": [],
+      "cc": "GB",
+      "founded": 2002,
+      "closed": null,
+      "status": "active",
+      "hq": "Edinburgh, Scotland",
+      "makers": [
+        "Leslie Benzies",
+        "Aaron Garbut",
+        "Obbe Vermeij",
+        "Adam Fowler",
+        "Imran Sarwar",
+        "Rob Nelson"
+      ],
+      "bio": "Formed when DMA Design's Edinburgh studio took the Rockstar North name in 2002, turning Grand Theft Auto III's streaming 3D city tech into Vice City, San Andreas, Manhunt, Grand Theft Auto IV and Grand Theft Auto V while co-developing Red Dead Redemption 2 and Grand Theft Auto VI.",
+      "diaspora": [
+        {
+          "studio": "Build A Rocket Boy",
+          "note": "Longtime Rockstar North president and producer Leslie Benzies founded Build A Rocket Boy in Edinburgh."
+        },
+        {
+          "studio": "Rockstar Games",
+          "note": "Works as flagship production partner across Rockstar's international studio network."
+        }
+      ]
+    },
+    {
+      "id": "rockstar-games",
+      "name": "Rockstar Games",
+      "aliases": [
+        "Rockstar Studios",
+        "Rockstar San Diego",
+        "Angel Studios",
+        "Rockstar Vancouver",
+        "Rockstar Leeds",
+        "Rockstar Toronto",
+        "Rockstar London"
+      ],
+      "cc": "US",
+      "founded": 1998,
+      "closed": null,
+      "status": "active",
+      "hq": "New York, New York",
+      "makers": [
+        "Sam Houser",
+        "Dan Houser",
+        "Terry Donovan",
+        "Jamie King",
+        "Lazlow Jones",
+        "Rupert Humphries",
+        "Michael Unsworth",
+        "Diego Angel"
+      ],
+      "bio": "Established in New York in December 1998 inside Take-Two by Sam and Dan Houser, uniting DMA Design in Scotland with Diego Angel's Angel Studios in California (Midtown Madness, Midnight Club, Red Dead Redemption) and Barking Dog in Vancouver (Bully) into a single global development network on Red Dead Redemption 2.",
+      "diaspora": [
+        {
+          "studio": "Absurd Ventures",
+          "note": "Co-founder and lead writer Dan Houser left in 2020 and launched Absurd Ventures with longtime audio/radio collaborator Lazlow Jones and Michael Unsworth."
+        }
+      ]
+    },
+    {
+      "id": "dice",
+      "name": "DICE",
+      "aliases": [
+        "Digital Illusions",
+        "Digital Illusions CE",
+        "EA DICE"
+      ],
+      "cc": "SE",
+      "founded": 1992,
+      "closed": null,
+      "status": "active",
+      "hq": "Stockholm, Sweden",
+      "makers": [
+        "Olof Gustafsson",
+        "Andreas Axelsson",
+        "Fredrik Liliegren",
+        "Ulf Mandorff",
+        "Patrick Söderlund",
+        "Johan Andersson",
+        "Lars Gustavsson",
+        "Stefan Strandberg"
+      ],
+      "bio": "Started in a Växjö dorm room by Amiga demoscene group The Silents (Pinball Dreams), merging with Stockholm's Refraction Games in 2000 to create 64-player combined-arms shooter Battlefield 1942, first-person parkour runner Mirror's Edge and the Frostbite engine. Acquired by Electronic Arts in 2006, with generations of Stockholm departures seeding new Swedish studios.",
+      "diaspora": [
+        {
+          "studio": "Embark Studios",
+          "note": "Patrick Söderlund, Stefan Strandberg, Johan Andersson and DICE veterans left to found Embark in Stockholm in 2018 (The Finals, ARC Raiders)."
+        },
+        {
+          "studio": "The Outsiders",
+          "note": "Battlefield: Bad Company 2 lead designer David Goldfarb and Ben Cousins formed The Outsiders in Stockholm (Metal: Hellsinger)."
+        },
+        {
+          "studio": "TTK Games",
+          "note": "Longtime 'Mr. Battlefield' creative director Lars Gustavsson and DICE colleagues formed Time To Kill Games in 2023."
+        }
+      ]
+    },
+    {
+      "id": "embark-studios",
+      "name": "Embark Studios",
+      "aliases": [
+        "Embark"
+      ],
+      "cc": "SE",
+      "founded": 2018,
+      "closed": null,
+      "status": "active",
+      "hq": "Stockholm, Sweden",
+      "makers": [
+        "Patrick Söderlund",
+        "Stefan Strandberg",
+        "Johan Andersson",
+        "Magnus Nordin",
+        "Jenny Huldschiner",
+        "Sven Grundberg"
+      ],
+      "bio": "Founded in Stockholm in November 2018 by former DICE and EA technical and creative leads looking to build systemic multiplayer worlds with smaller, faster procedural pipelines. Shipped server-side structural destruction shooter The Finals (2023) and retro-futuristic machine-scavenging extraction shooter ARC Raiders (2025).",
+      "diaspora": []
+    },
+    {
+      "id": "nintendo",
+      "name": "Nintendo",
+      "aliases": [
+        "Nintendo EAD",
+        "Nintendo EAD Tokyo",
+        "Nintendo EPD",
+        "Nintendo R&D1",
+        "Nintendo R&D1 (Yoshio Sakamoto)",
+        "Nintendo R&D2",
+        "Nintendo R&D3",
+        "Nintendo R&D3 (Genyo Takeda)",
+        "Nintendo R&D4",
+        "Nintendo R&D4 (Shigeru Miyamoto)",
+        "Nintendo SPD",
+        "Nintendo Software Technology",
+        "Nichimen Graphics / Nintendo EAD",
+        "Nintendo (Satoru Iwata)"
+      ],
+      "cc": "JP",
+      "founded": 1889,
+      "closed": null,
+      "status": "active",
+      "hq": "Kyoto, Japan",
+      "makers": [
+        "Gunpei Yokoi",
+        "Shigeru Miyamoto",
+        "Takashi Tezuka",
+        "Satoru Iwata",
+        "Koji Kondo",
+        "Yoshio Sakamoto",
+        "Eiji Aonuma",
+        "Yoshiaki Koizumi"
+      ],
+      "bio": "Founded in Kyoto as a handmade hanafuda card workshop before maintenance engineer Gunpei Yokoi's 'lateral thinking with withered technology' and young industrial artist Shigeru Miyamoto reshaped video games across Donkey Kong, Super Mario, The Legend of Zelda, Metroid, Animal Crossing and Splatoon. Internal R&D divisions (R&D1–4, later EAD and SPD) consolidated into Nintendo EPD in 2015.",
+      "diaspora": [
+        {
+          "studio": "Koto Laboratory",
+          "note": "Game Boy and Metroid producer Gunpei Yokoi left in 1996 to found Koto, designing Bandai's WonderSwan handheld before his death in 1997."
+        },
+        {
+          "studio": "Good-Feel",
+          "note": "Former Konami and Nintendo collaborators led by Etsunobu Ebisu partnered closely with Kyoto producers on Kirby's Epic Yarn and Yoshi's Crafted World."
+        }
+      ]
+    },
+    {
+      "id": "capcom",
+      "name": "Capcom",
+      "aliases": [
+        "Capcom (Tokuro Fujiwara)",
+        "Capcom (Shu Takumi)",
+        "Capcom (Shinji Mikami)",
+        "Capcom (Yoshiki Okamoto)",
+        "Capcom (Hideaki Itsuno)",
+        "Yoshiki Okamoto (Capcom)",
+        "Capcom Vancouver"
+      ],
+      "cc": "JP",
+      "founded": 1979,
+      "closed": null,
+      "status": "active",
+      "hq": "Osaka, Japan",
+      "makers": [
+        "Tokuro Fujiwara",
+        "Yoshiki Okamoto",
+        "Akira Nishitani",
+        "Akira Yasuda (Akiman)",
+        "Shinji Mikami",
+        "Hideki Kamiya",
+        "Shu Takumi",
+        "Kaname Fujioka"
+      ],
+      "bio": "Founded in Osaka by Kenzo Tsujimoto ('Capsule Computers'), forging frame-tight arcade action in Ghosts 'n Goblins, Mega Man and Street Fighter II before defining survival horror with Resident Evil, stylish action with Devil May Cry, courtroom drama with Ace Attorney and co-op hunting with Monster Hunter.",
+      "diaspora": [
+        {
+          "studio": "Clover Studio",
+          "note": "Internal Osaka studio spun up for Viewtiful Joe, Okami and God Hand, whose leads went on to found PlatinumGames and Tango Gameworks."
+        },
+        {
+          "studio": "Dimps",
+          "note": "Street Fighter co-creators Takashi Nishiyama and Hiroshi Matsumoto founded Dimps in Osaka, later co-developing Street Fighter IV."
+        },
+        {
+          "studio": "Arika",
+          "note": "Street Fighter II planner Akira Nishitani left in 1995 to form Arika (Street Fighter EX, Tetris: The Grand Master)."
+        },
+        {
+          "studio": "GP Track50",
+          "note": "Producer Hiroyuki Kobayashi and later Dragon's Dogma / Devil May Cry director Hideaki Itsuno moved to new Osaka/Tokyo studios in the 2020s."
+        }
+      ]
+    },
+    {
+      "id": "konami",
+      "name": "Konami",
+      "aliases": [
+        "Konami (Hideo Kojima)",
+        "Konami (Bemani)",
+        "Konami (Yoshitaka Murayama)",
+        "Yoshiki Okamoto (Konami)",
+        "Hiroyasu Machiguchi (Konami)",
+        "Konami Computer Entertainment Tokyo",
+        "KCET",
+        "Team Silent"
+      ],
+      "cc": "JP",
+      "founded": 1969,
+      "closed": null,
+      "status": "active",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Hitoshi Akamatsu",
+        "Koji Igarashi",
+        "Hideo Kojima",
+        "Yoshitaka Murayama",
+        "Keiichiro Toyama",
+        "Akira Yamaoka",
+        "Masahiro Ito",
+        "Michiru Yamane"
+      ],
+      "bio": "Began as an Osaka jukebox repair business before building 1980s–2000s arcade and console staples including Frogger, Gradius, Castlevania, Contra, Suikoden, Beatmania, Pro Evolution Soccer, Team Silent's Silent Hill and Hideo Kojima's Metal Gear. Corporate shifts toward mobile and pachislot in the 2010s drove a major wave of senior creators to form independent studios.",
+      "diaspora": [
+        {
+          "studio": "Treasure",
+          "note": "Masato Maegawa and frustrated Konami programmers left in 1992 to make original action games starting with Gunstar Heroes, Radiant Silvergun and Ikaruga."
+        },
+        {
+          "studio": "Kojima Productions",
+          "note": "Hideo Kojima and Yoji Shinkawa re-established Kojima Productions independently in December 2015 after Metal Gear Solid V."
+        },
+        {
+          "studio": "ArtPlay",
+          "note": "Castlevania: Symphony of the Night producer/writer Koji Igarashi left in 2014 to crowdfund Bloodstained: Ritual of the Night."
+        },
+        {
+          "studio": "Rabbit & Bear Studios",
+          "note": "Late Suikoden creator Yoshitaka Murayama reunited Suikoden veterans to build Eiyuden Chronicle: Hundred Heroes."
+        }
+      ]
+    },
+    {
+      "id": "sega",
+      "name": "Sega",
+      "aliases": [
+        "Sega AM1",
+        "Sega AM2",
+        "Sega AM2 (Yu Suzuki)",
+        "Sega AM2 (Toshihiro Nagoshi)",
+        "Sega (Yu Suzuki)",
+        "Sega (Makoto Uchida)",
+        "Sega AM3",
+        "Sega AM5",
+        "Sega CS1",
+        "Sega Studio USA",
+        "Sega Technical Institute",
+        "Sonic Team",
+        "United Game Artists (Tetsuya Mizuguchi)"
+      ],
+      "cc": "JP",
+      "founded": 1960,
+      "closed": null,
+      "status": "active",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Yu Suzuki",
+        "Yuji Naka",
+        "Naoto Ohshima",
+        "Rieko Kodama",
+        "Tetsuya Mizuguchi",
+        "Toshihiro Nagoshi",
+        "Hisao Oguchi",
+        "Makoto Uchida"
+      ],
+      "bio": "Grew from Tokyo coin-op distributor Service Games into an arcade and console powerhouse organized into fiercely competitive internal teams: Yu Suzuki's AM2 (Out Run, Virtua Fighter, Daytona USA, Shenmue), Sonic Team (Sonic the Hedgehog, NiGHTS, Phantasy Star Online), AM3/Hitmaker (Sega Rally, Crazy Taxi), UGA (Rez) and RGG Studio (Yakuza / Like a Dragon). Exited console hardware after the Dreamcast in 2001.",
+      "diaspora": [
+        {
+          "studio": "Q Entertainment / Enhance",
+          "note": "Sega Rally and Rez producer Tetsuya Mizuguchi left in 2003 to make Lumines, Child of Eden and Tetris Effect."
+        },
+        {
+          "studio": "Ys Net",
+          "note": "AM2 pioneer Yu Suzuki founded Ys Net in Tokyo in 2008, later directing Shenmue III."
+        },
+        {
+          "studio": "Nagoshi Studio",
+          "note": "Super Monkey Ball and Yakuza creator Toshihiro Nagoshi left in 2021 to start Nagoshi Studio in Shibuya."
+        }
+      ]
+    },
+    {
+      "id": "namco",
+      "name": "Namco",
+      "aliases": [
+        "Bandai Namco",
+        "Bandai Namco Studios",
+        "Bandai Namco Games",
+        "Namco Bandai Games",
+        "Bandai",
+        "Namco (Masanobu Endo)",
+        "Namco (Masanobu Endō)",
+        "Masanobu Endo (Namco)",
+        "Namco (Keita Takahashi)",
+        "Namco (Kazunori Sawano)",
+        "Kazunori Sawano (Namco)",
+        "Shigeru Yokoyama (Namco)",
+        "Toru Iwatani (Namco)",
+        "Project Soul (Namco)",
+        "Namco Hometek",
+        "Namco Tales Studio"
+      ],
+      "cc": "JP",
+      "founded": 1955,
+      "closed": null,
+      "status": "active",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Masaya Nakamura",
+        "Toru Iwatani",
+        "Shigeichi Ishimura",
+        "Masanobu Endo",
+        "Seiichi Ishii",
+        "Katsuhiro Harada",
+        "Keita Takahashi",
+        "Hirokazu Yasuhara"
+      ],
+      "bio": "Started by Masaya Nakamura with two mechanical rocking horses on a Yokohama department-store roof, ushering in color arcade character design with Galaxian, Pac-Man, Dig Dug, Xevious and The Tower of Druaga before leading 3D arcade hardware with Ridge Racer, Tekken, Soulcalibur, Ace Combat and Katamari Damacy. Merged with Bandai in 2005–2006.",
+      "diaspora": [
+        {
+          "studio": "Game Studio",
+          "note": "Xevious and Tower of Druaga creator Masanobu Endo founded independent Tokyo developer Game Studio in 1985."
+        },
+        {
+          "studio": "DreamFactory",
+          "note": "Virtua Fighter and Tekken designer Seiichi Ishii left to found DreamFactory (Tobal No. 1, Ehrgeiz)."
+        },
+        {
+          "studio": "Monolith Soft",
+          "note": "Tetsuya Takahashi and Hirohide Sugiura founded Monolith Soft (Xenosaga, Xenoblade) with Namco capital in 1999 before Nintendo acquired it in 2007."
+        },
+        {
+          "studio": "uvula",
+          "note": "Katamari Damacy creator Keita Takahashi went independent (Wattam, To a T)."
+        }
+      ]
+    },
+    {
+      "id": "atari",
+      "name": "Atari",
+      "aliases": [
+        "Atari, Inc.",
+        "Atari Games",
+        "Kee Games",
+        "Kee Games (Atari)",
+        "Doug Neubauer / Atari",
+        "Warren Robinett (Atari)",
+        "Warren Robinett / Atari",
+        "Steve Bristow & Michael Albaugh (Atari)",
+        "Atari (Allan Alcorn)",
+        "Atari (Nolan Bushnell, Steve Bristow, Steve Wozniak)",
+        "Atari (Joe Decuir, Larry Wagner)",
+        "Ed Rotberg (Atari)",
+        "Atari (Ed Rotberg)",
+        "Atari (Rich Moore, Wendi Allen)",
+        "Lyle Rains & Ed Logg (Atari)",
+        "Atari (Lyle Rains, Ed Logg)",
+        "Dave Theurer (Atari)",
+        "Atari (Dave Theurer)",
+        "Dona Bailey & Ed Logg (Atari)",
+        "Atari Games (Ed Logg)",
+        "Atari Games (Rick Moncrief)",
+        "Atari (James Andreasen)",
+        "Atari (Larry Emmons, Allan Alcorn)",
+        "Atari (Dave Shepperd)",
+        "Atari (Steve Bristow)"
+      ],
+      "cc": "US",
+      "founded": 1972,
+      "closed": null,
+      "status": "active",
+      "hq": "Sunnyvale, California",
+      "makers": [
+        "Nolan Bushnell",
+        "Ted Dabney",
+        "Allan Alcorn",
+        "Steve Bristow",
+        "Warren Robinett",
+        "Ed Logg",
+        "Dona Bailey",
+        "Dave Theurer"
+      ],
+      "bio": "Kickstarted commercial video games in Sunnyvale with Pong, Breakout, Asteroids, Centipede, Missile Command, Tempest, Star Raiders and the Atari 2600, before Warner split consumer hardware from coin-op division Atari Games (Marble Madness, Gauntlet, Paperboy) in 1984. Warner's refusal to credit or pay royalties to programmers sparked the industry's first third-party studio walkouts.",
+      "diaspora": [
+        {
+          "studio": "Activision",
+          "note": "Atari 2600 programmers David Crane, Larry Kaplan, Alan Miller and Bob Whitehead walked out in 1979 to become the first third-party publisher and put developer names on boxes."
+        },
+        {
+          "studio": "Imagic",
+          "note": "Rob Fulop, Dennis Koble, Bill Grubb and Bob Smith followed suit in 1981 (Demon Attack, Cosmic Ark)."
+        },
+        {
+          "studio": "Electronic Arts",
+          "note": "Several early Atari computer designers, including Ozark Softscape's Dani Bunten and Star Raiders programmer Doug Neubauer, published milestone work beyond Atari."
+        }
+      ]
+    },
+    {
+      "id": "id-software",
+      "name": "id Software",
+      "aliases": [
+        "id Software / Softdisk"
+      ],
+      "cc": "US",
+      "founded": 1991,
+      "closed": null,
+      "status": "active",
+      "hq": "Richardson, Texas",
+      "makers": [
+        "John Carmack",
+        "John Romero",
+        "Tom Hall",
+        "Adrian Carmack",
+        "Kevin Cloud",
+        "American McGee",
+        "Hugo Martin",
+        "Marty Stratton"
+      ],
+      "bio": "Formed in Shreveport, Louisiana by four coworkers borrowing Softdisk PCs after hours to write smooth side-scrolling Commander Keen, then moving to Texas to build Wolfenstein 3D, Doom and Quake while open-sourcing their engines for modders and rival studios alike. Joined ZeniMax in 2009 and reinvented fast arena combat in Doom (2016) and Doom Eternal.",
+      "diaspora": [
+        {
+          "studio": "Apogee / 3D Realms",
+          "note": "Creative director Tom Hall left during Doom to make Rise of the Triad and guide Terminal Velocity and Prey."
+        },
+        {
+          "studio": "Ion Storm",
+          "note": "John Romero and Tom Hall reunited in Dallas in 1996 to found Ion Storm."
+        },
+        {
+          "studio": "Romero Games",
+          "note": "Brenda Romero and John Romero founded independent studio Romero Games in Galway, Ireland in 2015."
+        }
+      ]
+    },
+    {
+      "id": "valve",
+      "name": "Valve",
+      "aliases": [
+        "Valve Corporation",
+        "Minh Le, Jess Cliffe / Valve",
+        "Day of Defeat team (mod), later Valve",
+        "Turtle Rock / Valve"
+      ],
+      "cc": "US",
+      "founded": 1996,
+      "closed": null,
+      "status": "active",
+      "hq": "Bellevue, Washington",
+      "makers": [
+        "Gabe Newell",
+        "Mike Harrington",
+        "Marc Laidlaw",
+        "Viktor Antonov",
+        "Robin Walker",
+        "Kim Swift",
+        "Erik Wolpaw",
+        "Chet Faliszek"
+      ],
+      "bio": "Founded by former Microsoft engineers Gabe Newell and Mike Harrington, licensing id's Quake engine to build seamless first-person storytelling in Half-Life, then hiring student modders and DigiPen graduates to ship Counter-Strike, Team Fortress 2, Portal, Left 4 Dead, Dota 2 and Half-Life: Alyx alongside PC storefront Steam and the Steam Deck.",
+      "diaspora": [
+        {
+          "studio": "Airtight Games",
+          "note": "Portal lead designer Kim Swift left in 2009 to direct Quantum Conundrum before later leading teams at Motive and Xbox."
+        },
+        {
+          "studio": "Arkane Studios",
+          "note": "Late Half-Life 2 art director Viktor Antonov shaped the industrial visual architecture of Dishonored in Lyon."
+        },
+        {
+          "studio": "Stray Bombay",
+          "note": "Left 4 Dead writer Chet Faliszek and Kimberly Voll founded co-op studio Stray Bombay (The Anacrusis)."
+        }
+      ]
+    },
+    {
+      "id": "blizzard-entertainment",
+      "name": "Blizzard Entertainment",
+      "aliases": [
+        "Blizzard",
+        "Silicon & Synapse",
+        "Chaos Studios"
+      ],
+      "cc": "US",
+      "founded": 1991,
+      "closed": null,
+      "status": "active",
+      "hq": "Irvine, California",
+      "makers": [
+        "Michael Morhaime",
+        "Allen Adham",
+        "Frank Pearce",
+        "Chris Metzen",
+        "Samwise Didier",
+        "Rob Pardo",
+        "Jeff Kaplan",
+        "Ben Brode"
+      ],
+      "bio": "Founded in Irvine by three UCLA graduates as Silicon & Synapse (The Lost Vikings, Rock n' Roll Racing) before polishing real-time strategy, MMOs, card battlers and hero shooters in Warcraft, StarCraft, World of Warcraft, Hearthstone and Overwatch. Decades of ownership changes through Vivendi, Activision and Microsoft (2023) prompted wave after wave of spin-off studios across Orange County.",
+      "diaspora": [
+        {
+          "studio": "ArenaNet",
+          "note": "Mike O'Brien, Patrick Wyatt and Jeff Strain left in 2000 to create Guild Wars in Bellevue."
+        },
+        {
+          "studio": "Ready at Dawn",
+          "note": "Didier Malenfant left Blizzard with Naughty Dog alumni Ru Weerasuriya and Andrea Pessino in 2003 (Daxter, The Order: 1886)."
+        },
+        {
+          "studio": "Second Dinner",
+          "note": "Hearthstone director Ben Brode and Hamilton Chu left in 2018 to build Marvel Snap."
+        },
+        {
+          "studio": "Dreamhaven",
+          "note": "Co-founder Mike Morhaime launched Dreamhaven (Moonshot Games, Secret Door) in Irvine in 2020 with longtime Blizzard leads."
+        },
+        {
+          "studio": "Frost Giant Studios",
+          "note": "StarCraft II and Warcraft III veterans Tim Morten and Tim Campbell left in 2020 to keep real-time strategy alive with Stormgate."
+        }
+      ]
+    },
+    {
+      "id": "fromsoftware",
+      "name": "FromSoftware",
+      "aliases": [
+        "From Software"
+      ],
+      "cc": "JP",
+      "founded": 1986,
+      "closed": null,
+      "status": "active",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Naotoshi Zin",
+        "Hidetaka Miyazaki",
+        "Masanori Takeuchi",
+        "Toshifumi Nabeshima",
+        "Yui Tanimura",
+        "Masaru Yamamura",
+        "Yuka Kitamura"
+      ],
+      "bio": "Spent eight years writing agricultural and business software in Tokyo before shipping PlayStation launch dungeon crawler King's Field (1994) and mech builder Armored Core (1997). Former Oracle account manager Hidetaka Miyazaki joined at 29, took over a struggling fantasy prototype called Demon's Souls, and led the studio through Dark Souls, Bloodborne, Sekiro and Elden Ring.",
+      "diaspora": []
+    },
+    {
+      "id": "square-enix",
+      "name": "Square Enix",
+      "aliases": [
+        "Square",
+        "Squaresoft",
+        "Square Co.",
+        "Square (Koichi Ishii)",
+        "Square (Akitoshi Kawazu)",
+        "G-Craft / Square",
+        "Enix",
+        "Yuji Horii (Enix)",
+        "Yuji Horii / Enix",
+        "Square Enix (Creative Business Unit III)",
+        "Square Enix Montreal",
+        "Square Enix Montréal"
+      ],
+      "cc": "JP",
+      "founded": 1975,
+      "closed": null,
+      "status": "active",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Hironobu Sakaguchi",
+        "Yuji Horii",
+        "Nobuo Uematsu",
+        "Yoshinori Kitase",
+        "Tetsuya Nomura",
+        "Yasumi Matsuno",
+        "Koichi Ishii",
+        "Naoki Yoshida"
+      ],
+      "bio": "Unites two foundational Japanese RPG lineages that merged in April 2003: Enix (founded 1975, home of Yuji Horii, Akira Toriyama and Koichi Sugiyama's Dragon Quest) and Square (founded 1986, home of Final Fantasy, Chrono Trigger, Secret of Mana, Xenogears and Kingdom Hearts), later rebuilt online around Naoki Yoshida's Final Fantasy XIV turnaround.",
+      "diaspora": [
+        {
+          "studio": "Monolith Soft",
+          "note": "Xenogears director Tetsuya Takahashi and Soraya Saga left Square in 1999 to build Xenosaga and Xenoblade Chronicles."
+        },
+        {
+          "studio": "AlphaDream",
+          "note": "Former Square president Tetsuo Mizuno and Super Mario RPG veterans founded AlphaDream in 2000."
+        },
+        {
+          "studio": "Mistwalker",
+          "note": "Final Fantasy creator Hironobu Sakaguchi founded Mistwalker in 2004 after The Spirits Within (Blue Dragon, Lost Odyssey, Fantasian)."
+        },
+        {
+          "studio": "Grezzo",
+          "note": "Mana creator Koichi Ishii opened Grezzo in 2006 (Ever Oasis, Zelda remakes, Echoes of Wisdom)."
+        }
+      ]
+    },
+    {
+      "id": "bioware",
+      "name": "BioWare",
+      "aliases": [
+        "BioWare Edmonton",
+        "BioWare Austin",
+        "BioWare Montreal"
+      ],
+      "cc": "CA",
+      "founded": 1995,
+      "closed": null,
+      "status": "active",
+      "hq": "Edmonton, Alberta",
+      "makers": [
+        "Ray Muzyka",
+        "Greg Zeschuk",
+        "James Ohlen",
+        "Drew Karpyshyn",
+        "Casey Hudson",
+        "David Gaider",
+        "Preston Watamaniuk"
+      ],
+      "bio": "Founded in Edmonton by newly graduated medical doctors Ray Muzyka, Greg Zeschuk and Augustine Yip, reviving party-based computer RPGs with the Infinity Engine on Baldur's Gate I & II before building Neverwinter Nights, Star Wars: Knights of the Old Republic, Jade Empire, Mass Effect and Dragon Age. Acquired by Electronic Arts in 2007.",
+      "diaspora": [
+        {
+          "studio": "Beamdog",
+          "note": "Co-founder Trent Oster and Cameron Tofer formed Beamdog in Edmonton in 2009 to restore Baldur's Gate, Planescape: Torment and Neverwinter Nights."
+        },
+        {
+          "studio": "Stoic Studio",
+          "note": "BioWare Austin veterans Arnie Jorgensen, Alex Thomas and John Watson left to make tactical trilogy The Banner Saga."
+        },
+        {
+          "studio": "Archetype Entertainment",
+          "note": "Baldur's Gate and KOTOR creative leads James Ohlen, Chad Robertson and Drew Karpyshyn reunited in Austin on sci-fi RPG Exodus."
+        },
+        {
+          "studio": "Summerfall Studios",
+          "note": "Dragon Age creator and lead writer David Gaider co-founded Summerfall in Melbourne (Stray Gods)."
+        }
+      ]
+    },
+    {
+      "id": "bethesda-game-studios",
+      "name": "Bethesda Game Studios",
+      "aliases": [
+        "Bethesda",
+        "Bethesda Softworks"
+      ],
+      "cc": "US",
+      "founded": 1986,
+      "closed": null,
+      "status": "active",
+      "hq": "Rockville, Maryland",
+      "makers": [
+        "Christopher Weaver",
+        "Julian LeFay",
+        "Ted Peterson",
+        "Ken Rolston",
+        "Todd Howard",
+        "Kurt Kuhlmann",
+        "Bruce Nesmith",
+        "Matt Carofano"
+      ],
+      "bio": "Founded by Christopher Weaver as Bethesda Softworks (Gridiron!, Wayne Gretzky Hockey) before Julian LeFay and Ted Peterson created first-person open-world RPGs Arena and Daggerfall, and Todd Howard and Ken Rolston bet the studio's survival on hand-crafted Morrowind (2002). Followed with Oblivion, Fallout 3, Skyrim, Fallout 4 and Starfield; acquired by Microsoft in 2021.",
+      "diaspora": [
+        {
+          "studio": "OnceLost Games",
+          "note": "Arena and Daggerfall architects Ted Peterson, Julian LeFay and Vijay Lakshman reunited in 2019 to build spiritual successor The Wayward Realms."
+        },
+        {
+          "studio": "Something Wicked Games",
+          "note": "Fallout 3/4/76 project lead Jeff Gardiner and Skyrim/Fallout artist Nate Purkeypile left to start indie teams (Wyrdsong, Just Purkey Games)."
+        }
+      ]
+    },
+    {
+      "id": "obsidian-entertainment",
+      "name": "Obsidian Entertainment",
+      "aliases": [
+        "Obsidian",
+        "Obsidian Entertainment (Josh Sawyer)"
+      ],
+      "cc": "US",
+      "founded": 2003,
+      "closed": null,
+      "status": "active",
+      "hq": "Irvine, California",
+      "makers": [
+        "Feargus Urquhart",
+        "Chris Parker",
+        "Darren Monahan",
+        "Chris Jones",
+        "Chris Avellone",
+        "Josh Sawyer",
+        "Carrie Patel",
+        "Tim Cain",
+        "Leonard Boyarsky"
+      ],
+      "bio": "Founded in an attic office in June 2003 as Black Isle Studios collapsed at Interplay, building reactive RPG sequels Knights of the Old Republic II, Neverwinter Nights 2 and the 18-month desert political drama of Fallout: New Vegas. Saved itself from near-closure in 2012 through the Pillars of Eternity Kickstarter, later shipping Grounded, Pentiment, The Outer Worlds and Avowed under Xbox.",
+      "diaspora": []
+    },
+    {
+      "id": "arkane-studios",
+      "name": "Arkane Studios",
+      "aliases": [
+        "Arkane Lyon",
+        "Arkane Studios (Raphaël Colantonio)"
+      ],
+      "cc": "FR",
+      "founded": 1999,
+      "closed": null,
+      "status": "active",
+      "hq": "Lyon, France",
+      "makers": [
+        "Raphaël Colantonio",
+        "Harvey Smith",
+        "Sébastien Mitton",
+        "Dinga Bakaba",
+        "Dana Nightingale",
+        "Christophe Carrier",
+        "Viktor Antonov"
+      ],
+      "bio": "Founded in Lyon in October 1999 by former Electronic Arts France staffer Raphaël Colantonio out of admiration for Ultima Underworld, making subterranean RPG Arx Fatalis, physics brawler Dark Messiah of Might and Magic, clockwork stealth series Dishonored and time-loop assassination puzzle Deathloop. While sister branch Arkane Austin was closed in 2024, Arkane Lyon continues in France.",
+      "diaspora": [
+        {
+          "studio": "WolfEye Studios",
+          "note": "Founder Raphaël Colantonio and Julien Roby formed WolfEye Studios in 2019 to make smaller systemic RPGs starting with Weird West."
+        }
+      ]
+    },
+    {
+      "id": "larian-studios",
+      "name": "Larian Studios",
+      "aliases": [
+        "Larian"
+      ],
+      "cc": "BE",
+      "founded": 1996,
+      "closed": null,
+      "status": "active",
+      "hq": "Ghent, Belgium",
+      "makers": [
+        "Swen Vincke",
+        "Kirill Pokrovsky",
+        "Borislav Slavov",
+        "Sarah Baylus",
+        "Adam Smith",
+        "Nick Pechenin",
+        "David Walgrave"
+      ],
+      "bio": "Named after founder Swen Vincke's dog Lar, surviving nearly two decades of publisher cancellations and contract work on Divine Divinity and Divinity II before betting the studio on self-published, systemic co-op RPGs Divinity: Original Sin I & II and scaling across seven international studios to ship Baldur's Gate 3 (2023).",
+      "diaspora": []
+    },
+    {
+      "id": "cd-projekt-red",
+      "name": "CD Projekt Red",
+      "aliases": [
+        "CD Projekt"
+      ],
+      "cc": "PL",
+      "founded": 2002,
+      "closed": null,
+      "status": "active",
+      "hq": "Warsaw, Poland",
+      "makers": [
+        "Marcin Iwiński",
+        "Michał Kiciński",
+        "Adam Badowski",
+        "Konrad Tomaszkiewicz",
+        "Mateusz Tomaszkiewicz",
+        "Marcin Blacha",
+        "Paweł Sasko"
+      ],
+      "bio": "Grew out of Marcin Iwiński and Michał Kiciński's Warsaw PC localization company (which translated Baldur's Gate into Polish with full local voice acting), opening a Łódź and Warsaw development team in 2002 to adapt Andrzej Sapkowski's Witcher novels into The Witcher trilogy and Mike Pondsmith's tabletop RPG into Cyberpunk 2077.",
+      "diaspora": [
+        {
+          "studio": "11 bit studios",
+          "note": "Former CD Projekt and Metropolis Software colleagues Grzegorz Miechowski, Przemysław Marszał and Michał Drozdowski founded 11 bit in Warsaw (This War of Mine, Frostpunk)."
+        },
+        {
+          "studio": "Fool's Theory",
+          "note": "Witcher 2 & 3 veteran Jakub Rokosz founded Fool's Theory in Bielsko-Biała (The Thaumaturge, The Witcher Remake)."
+        },
+        {
+          "studio": "Rebel Wolves",
+          "note": "Witcher 3 game director Konrad Tomaszkiewicz and quest director Mateusz Tomaszkiewicz formed Rebel Wolves in Warsaw (The Blood of Dawnwalker)."
+        },
+        {
+          "studio": "Blank. Game Studios",
+          "note": "Cyberpunk 2077 and Witcher veterans Mateusz Kanik, Jędrzej Mróz and Marcin Jefimow launched Blank. in Warsaw in 2023."
+        }
+      ]
+    },
+    {
+      "id": "remedy-entertainment",
+      "name": "Remedy Entertainment",
+      "aliases": [
+        "Remedy"
+      ],
+      "cc": "FI",
+      "founded": 1995,
+      "closed": null,
+      "status": "active",
+      "hq": "Espoo, Finland",
+      "makers": [
+        "Sam Lake (Sami Järvi)",
+        "Markus Mäki",
+        "Samuli Syvähuoko",
+        "Sami Vanhatalo",
+        "Petri Järvilehto",
+        "Mikael Kasurinen",
+        "Kyle Rowley",
+        "Janne Pulkkinen"
+      ],
+      "bio": "Started in a house basement in Espoo by members of Finnish PC demoscene group Future Crew (Death Rally), bringing literature student Sam Lake aboard to write and lend his own grimacing face to bullet-time noir shooter Max Payne, followed by weird-fiction connected universe games Alan Wake, Quantum Break, Control and Alan Wake 2.",
+      "diaspora": [
+        {
+          "studio": "Futuremark",
+          "note": "Remedy's benchmark tool 3DMark spun out into sister hardware-testing company Futuremark in 1997."
+        },
+        {
+          "studio": "Seriously",
+          "note": "Co-founder Petri Järvilehto later co-founded Helsinki mobile studio Seriously (Best Fiends)."
+        }
+      ]
+    },
+    {
+      "id": "housemarque",
+      "name": "Housemarque",
+      "aliases": [
+        "Bloodhouse",
+        "Terramarque"
+      ],
+      "cc": "FI",
+      "founded": 1995,
+      "closed": null,
+      "status": "active",
+      "hq": "Helsinki, Finland",
+      "makers": [
+        "Ilari Kuittinen",
+        "Harri Tikkanen",
+        "Harry Krueger",
+        "Gregory Louden",
+        "Mikael Haveri",
+        "Ari Pulkkinen"
+      ],
+      "bio": "Finland's oldest still-active game studio, formed in 1995 when Amiga shoot-'em-up pioneers Bloodhouse (Stardust) and Terramarque (Elfmania) merged in Helsinki. Kept pure arcade bullet-curtain design alive through Super Stardust HD, Resogun and Nex Machina (co-designed with Eugene Jarvis) before translating that craft into third-person roguelike Returnal and Saros.",
+      "diaspora": []
+    },
+    {
+      "id": "hazelight-studios",
+      "name": "Hazelight Studios",
+      "aliases": [
+        "Hazelight",
+        "Hazelight Studios (Josef Fares)"
+      ],
+      "cc": "SE",
+      "founded": 2014,
+      "closed": null,
+      "status": "active",
+      "hq": "Stockholm, Sweden",
+      "makers": [
+        "Josef Fares",
+        "Oskar Wolontis",
+        "Filip Coulianos",
+        "Claes Engdal",
+        "Lucas de Vries"
+      ],
+      "bio": "Founded in Stockholm in 2014 by Lebanese-Swedish film director Josef Fares and core Starbreeze Studios colleagues after making Brothers: A Tale of Two Sons, dedicating the studio solely to split-screen and Friend's Pass co-op adventures where mechanics change every chapter: A Way Out, It Takes Two and Split Fiction.",
+      "diaspora": []
+    },
+    {
+      "id": "supergiant-games",
+      "name": "Supergiant Games",
+      "aliases": [
+        "Supergiant"
+      ],
+      "cc": "US",
+      "founded": 2009,
+      "closed": null,
+      "status": "active",
+      "hq": "San Francisco, California",
+      "makers": [
+        "Amir Rao",
+        "Gavin Simon",
+        "Greg Kasavin",
+        "Darren Korb",
+        "Jen Zee",
+        "Andrew Wang",
+        "Logan Cunningham"
+      ],
+      "bio": "Started in the living room of Amir Rao's father's San Jose house after Rao and Gavin Simon left EA Los Angeles following Command & Conquer 3, recording Bastion's acoustic soundtrack and narration in a bedroom closet. Across Bastion, Transistor, Pyre, Hades and Hades II, the roughly 25-person team has kept mandatory vacation, no crunch and almost zero staff turnover.",
+      "diaspora": []
+    },
+    {
+      "id": "team-cherry",
+      "name": "Team Cherry",
+      "aliases": [],
+      "cc": "AU",
+      "founded": 2014,
+      "closed": null,
+      "status": "active",
+      "hq": "Adelaide, Australia",
+      "makers": [
+        "Ari Gibson",
+        "William Pellen",
+        "Jack Vine",
+        "Christopher Larkin",
+        "David Kazi"
+      ],
+      "bio": "Grew out of 2013 Ludum Dare game jam prototype Hungry Knight in Adelaide, where animator Ari Gibson and designer William Pellen raised AU$57,000 on Kickstarter to hand-draw the vast subterranean insect kingdom of Hollow Knight (2017) and its seven-year follow-up Hollow Knight: Silksong (2025) as a tiny three-to-four-person studio.",
+      "diaspora": []
+    },
+    {
+      "id": "kojima-productions",
+      "name": "Kojima Productions",
+      "aliases": [
+        "7780s Studio (Kojima Productions)"
+      ],
+      "cc": "JP",
+      "founded": 2005,
+      "closed": null,
+      "status": "active",
+      "hq": "Tokyo, Japan",
+      "makers": [
+        "Hideo Kojima",
+        "Yoji Shinkawa",
+        "Ken-ichiro Imaizumi",
+        "Ludvig Forssell",
+        "Ayako Terashima",
+        "Masaki Saito"
+      ],
+      "bio": "First created inside Konami in 2005 for Metal Gear Solid 4, Peace Walker, hallway horror teaser P.T. and Metal Gear Solid V, then dissolved during Hideo Kojima's 2015 split with Konami and immediately reborn that December as an independent Tokyo studio with character artist Yoji Shinkawa. Partnered with Guerrilla Games on the Decima engine to ship asynchronous traversal dramas Death Stranding and Death Stranding 2.",
+      "diaspora": []
+    },
+    {
+      "id": "rare",
+      "name": "Rare",
+      "aliases": [
+        "Rareware",
+        "Rare (Martin Hollis)"
+      ],
+      "cc": "GB",
+      "founded": 1985,
+      "closed": null,
+      "status": "active",
+      "hq": "Twycross, England",
+      "makers": [
+        "Tim Stamper",
+        "Chris Stamper",
+        "Gregg Mayles",
+        "Martin Hollis",
+        "David Wise",
+        "Grant Kirkhope",
+        "Chris Seavor",
+        "Joe Neate"
+      ],
+      "bio": "Evolved directly out of Ultimate Play the Game on a Leicestershire manor farm after the Stamper brothers reverse-engineered the NES, delivering Battletoads, Donkey Kong Country, Killer Instinct, GoldenEye 007, Banjo-Kazooie, Perfect Dark and Conker's Bad Fur Day for Nintendo before Microsoft bought Rare in 2002 (Viva Piñata, Sea of Thieves).",
+      "diaspora": [
+        {
+          "studio": "Free Radical Design",
+          "note": "GoldenEye 007 and Perfect Dark leads David Doak, Steve Ellis, Karl Hilton and Graeme Norgate left in 1999 to make TimeSplitters in Nottingham."
+        },
+        {
+          "studio": "Zoonami",
+          "note": "GoldenEye 007 director Martin Hollis founded Zoonami in Cambridge in 2000."
+        },
+        {
+          "studio": "Playtonic Games",
+          "note": "Banjo-Kazooie and Donkey Kong Country veterans Gavin Price, Chris Sutherland, Steve Mayles and Grant Kirkhope reunited near Twycross for Yooka-Laylee."
+        }
+      ]
+    },
+    {
+      "id": "bungie",
+      "name": "Bungie",
+      "aliases": [
+        "Bungie Studios"
+      ],
+      "cc": "US",
+      "founded": 1991,
+      "closed": null,
+      "status": "active",
+      "hq": "Bellevue, Washington",
+      "makers": [
+        "Jason Jones",
+        "Alex Seropian",
+        "Marcus Lehto",
+        "Joseph Staten",
+        "Jaime Griesemer",
+        "Marty O'Donnell",
+        "Luke Smith"
+      ],
+      "bio": "Started in a Chicago apartment by University of Chicago undergrads Alex Seropian and Jason Jones, shipping Mac sci-fi shooter Marathon and real-time tactics game Myth before Microsoft acquired the team in 2000 to turn Halo: Combat Evolved into the dual-stick template for console FPS games. Bought back its independence in 2007, launched shared-world shooter Destiny and joined Sony in 2022.",
+      "diaspora": [
+        {
+          "studio": "Wideload Games",
+          "note": "Co-founder Alex Seropian left in 2002 to start Wideload in Chicago (Stubbs the Zombie) and later Industrial Toys."
+        },
+        {
+          "studio": "Certain Affinity",
+          "note": "Halo 2 multiplayer lead Max Hoberman founded Certain Affinity in Austin in 2006."
+        },
+        {
+          "studio": "343 Industries",
+          "note": "Took over Halo stewardship at Microsoft in 2007 alongside several Bungie alumni."
+        },
+        {
+          "studio": "Highwire Games",
+          "note": "Marty O'Donnell, Jaime Griesemer and Jared Noftle formed Highwire in Seattle."
+        }
+      ]
+    },
+    {
+      "id": "naughty-dog",
+      "name": "Naughty Dog",
+      "aliases": [
+        "JAM Software"
+      ],
+      "cc": "US",
+      "founded": 1984,
+      "closed": null,
+      "status": "active",
+      "hq": "Santa Monica, California",
+      "makers": [
+        "Andy Gavin",
+        "Jason Rubin",
+        "Evan Wells",
+        "Stephen White",
+        "Amy Hennig",
+        "Bruce Straley",
+        "Neil Druckmann",
+        "Kurt Margenau"
+      ],
+      "bio": "Founded in Virginia by 14-year-old high-school friends Andy Gavin and Jason Rubin as JAM Software before moving to Universal's backlot in California to squeeze Crash Bandicoot onto the original PlayStation, followed by Jak and Daxter, Amy Hennig's pulp adventure Uncharted and Bruce Straley and Neil Druckmann's The Last of Us. Joined Sony in 2001.",
+      "diaspora": [
+        {
+          "studio": "Skydance New Media",
+          "note": "Uncharted 1–3 creative director and writer Amy Hennig leads narrative adventures at Skydance (Marvel 1943: Rise of Hydra)."
+        },
+        {
+          "studio": "Wildflower Interactive",
+          "note": "Uncharted 2/4 and The Last of Us game director Bruce Straley returned to games in 2022 to found indie team Wildflower."
+        }
+      ]
+    },
+    {
+      "id": "insomniac-games",
+      "name": "Insomniac Games",
+      "aliases": [
+        "Insomniac",
+        "Xtreme Software"
+      ],
+      "cc": "US",
+      "founded": 1994,
+      "closed": null,
+      "status": "active",
+      "hq": "Burbank, California",
+      "makers": [
+        "Ted Price",
+        "Alex Hastings",
+        "Brian Hastings",
+        "Bryan Intihar",
+        "Marcus Smith",
+        "Brian Horton",
+        "Cameron Christian"
+      ],
+      "bio": "Founded in Burbank by Ted Price and brothers Alex and Brian Hastings right next door to longtime friends and engine-sharing neighbors Naughty Dog, building Spyro the Dragon, gadget platformer Ratchet & Clank, Resistance, Sunset Overdrive and Marvel's Spider-Man across three decades before joining PlayStation Studios in 2019.",
+      "diaspora": []
+    }
+  ]
+}

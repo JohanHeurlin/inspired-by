@@ -1,0 +1,38 @@
+{
+  "_about": "Hand-checked fixes applied after merging. games: field overrides by id. dropLinks: [from,to] pairs to remove. addLinks: links to add.",
+  "games": [
+    {"id": "tomb-raider", "set": {"dev": "Core Design", "cc": "GB", "plats": ["Saturn", "PlayStation", "PC (DOS)", "Mac"]}},
+    {"id": "tomb-raider-2013", "set": {"title": "Tomb Raider (2013)", "dev": "Crystal Dynamics", "cc": "US", "plats": ["PC (Windows)", "PlayStation 3", "Xbox 360"], "genres": ["action-adventure"]}},
+    {"id": "star-wars-battlefront", "set": {"dev": "Pandemic Studios", "cc": "US", "plats": ["PlayStation 2", "Xbox", "PC (Windows)", "Mac"]}},
+    {"id": "star-wars-battlefront-2015", "set": {"title": "Star Wars Battlefront (2015)", "dev": "DICE", "cc": "SE", "plats": ["PC (Windows)", "PlayStation 4", "Xbox One"], "genres": ["shooter"]}},
+    {"id": "ninja-gaiden", "set": {"dev": "Tecmo", "cc": "JP", "plats": ["Arcade", "NES"]}},
+    {"id": "ninja-gaiden-2004", "set": {"title": "Ninja Gaiden (2004)", "dev": "Team Ninja", "cc": "JP", "plats": ["Xbox"], "genres": ["arpg"]}},
+    {"id": "madden-nfl-25-2024", "set": {"title": "Madden NFL 25 (2024)"}},
+    {"id": "utopia", "set": {"title": "Utopia: The Creation of a Nation"}},
+    {"id": "marathon", "set": {"title": "Marathon (2026)"}},
+    {"id": "zoo-keeper-2003", "set": {"title": "Zoo Keeper (2003)"}},
+    {"id": "punch-out-2009", "set": {"title": "Punch-Out!! (2009)"}},
+    {"id": "warhawk-2007", "set": {"title": "Warhawk (2007)"}},
+    {"id": "super-monkey-ball-2008", "set": {"title": "Super Monkey Ball (2008)"}}
+  ],
+  "dropLinks": [
+    ["tomb-raider-ii", "rise-of-the-tomb-raider"]
+  ],
+  "editLinks": [
+    {"from": "world-of-warcraft", "to": "hearthstone", "took": "Warcraft's nine character classes, its best-known heroes and its art style."},
+    {"from": "pok-mon-red-and-green", "to": "palworld", "rel": "synthesis", "disputed": true, "extra": "Mizobe called Pokémon a great predecessor while likening Palworld's mechanics to ARK; Nintendo sued Pocketpair over gameplay patents in 2024."}
+  ],
+  "_minor": "Real, sourced links that are not about game design (pricing, business model). Shown on pages, skipped when picking a game's main line of roots.",
+  "minor": [
+    ["helldivers-2", "arc-raiders"],
+    ["fortnite-save-the-world", "fortnite-br"]
+  ],
+  "addLinks": [
+    {"from": "tomb-raider", "to": "tomb-raider-2013", "tier": "series", "took": "Lara Croft, tombs, climbing and ancient puzzles.", "added": "A grittier origin story with survival, crafting and cinematic set pieces.", "src": [], "extra": "A reboot of the series by Crystal Dynamics."},
+    {"from": "tomb-raider-2013", "to": "rise-of-the-tomb-raider", "tier": "series", "took": "The rebooted Lara, her survival skills and the hub-based world.", "added": "Bigger hubs, optional tombs and a Siberian expedition.", "src": [], "extra": ""},
+    {"from": "street-fighter-ii", "to": "street-fighter-ii-the-world-warrior", "tier": "series", "took": "Eight world warriors, six-button specials and combo timing from the 1991 arcade cabinet.", "added": "Brought arcade head-to-head fighting home on the SNES, selling over six million cartridges.", "src": [{"t": "Wikipedia: Street Fighter II", "u": "https://en.wikipedia.org/wiki/Street_Fighter_II"}], "extra": ""},
+    {"from": "elite", "to": "mercenary", "tier": "critic", "rel": "evolution", "took": "Wireframe 3D spaceflight and free-roaming player freedom pioneered on 8-bit home computers.", "added": "Brought the free-roaming 3D world down onto a planet surface with buildings, vehicles and rival factions.", "src": [{"t": "Wikipedia: Mercenary (cites Retro Gamer)", "u": "https://en.wikipedia.org/wiki/Mercenary_(video_game)"}], "extra": ""},
+    {"from": "tom-clancy-s-rainbow-six", "to": "operation-flashpoint-cold-war-crisis", "tier": "mech", "rel": "evolution", "took": "Tom Clancy's Rainbow Six popularized realistic squad tactics where one bullet can end a mission.", "added": "Moved tactical infantry combat out of tight buildings onto open islands with tanks and helicopters.", "src": [{"t": "Wikipedia: Tactical shooter", "u": "https://en.wikipedia.org/wiki/Tactical_shooter"}], "extra": ""},
+    {"from": "delta-force", "to": "operation-flashpoint-cold-war-crisis", "tier": "critic", "rel": "evolution", "took": "Long-range outdoor military firefights across wide open terrain.", "added": "Combined-arms Cold War simulation with vehicles, squad orders and a mission editor.", "src": [{"t": "Wikipedia: Operation Flashpoint: Cold War Crisis", "u": "https://en.wikipedia.org/wiki/Operation_Flashpoint:_Cold_War_Crisis"}], "extra": ""}
+  ]
+}

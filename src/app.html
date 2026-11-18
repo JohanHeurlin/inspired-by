@@ -1,0 +1,1924 @@
+<title>Inspired By</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Silkscreen&family=Noto+Color+Emoji&display=swap">
+<style>
+/* Layout: a game designer's notebook. Graph-paper ground; your life runs down the page year by year;
+   family trees read left (older) to right (newer); every link card leads with what the newer team added. */
+:root{
+  --paper:#EAF0F7; --grid:rgb(43 69 224 / .048); --card:#FFFFFF; --ink:#131726; --ink2:#363D50; --muted:#5D667A; --line:#D5DCE6; --line2:#A5AEBF;
+  --accent:#1A63D8; --accent-ink:#FFFFFF; --accent-soft:#E1ECFF;
+  --hook:#C8780A; --hook-ink:#FFFFFF; --hook-soft:#FEF1D8;
+  --love:#DF3F2C; --love-ink:#FFFFFF; --love-soft:#FCE5E1;
+  --up:#E4ECFF; --up-ink:#1F3A8A; --down:#DCF1E6; --down-ink:#1B6244;
+  --t-dev:#1A63D8; --t-team:#7A3FD1; --t-series:#69738D; --t-critic:#B06C0A; --t-mech:#0D8577; --t-disp:#C2332B;
+  --shadow:0 10px 30px rgb(20 26 50 / .12);
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --f-pixel:"Silkscreen","IBM Plex Mono",ui-monospace,monospace;
+  --f-emoji:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F141C; --grid:rgb(138 180 248 / .05); --card:#171F2C; --ink:#E8ECF6; --ink2:#C6CCDB; --muted:#95A0B5; --line:#263144; --line2:#46536B;
+  --accent:#8AB4F8; --accent-ink:#0A101D; --accent-soft:#1C283E;
+  --hook:#F5B041; --hook-ink:#1D1202; --hook-soft:#352710;
+  --love:#FF6E5A; --love-ink:#1A0806; --love-soft:#3A1D1B;
+  --up:#182338; --up-ink:#ADC6FA; --down:#132920; --down-ink:#8FD7B4;
+  --t-dev:#8AB4F8; --t-team:#B78DF6; --t-series:#A4AEC4; --t-critic:#E6A63F; --t-mech:#3EC4B1; --t-disp:#F26B61;
+  --shadow:0 10px 30px rgb(0 0 0 / .45); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F141C; --grid:rgb(138 180 248 / .05); --card:#171F2C; --ink:#E8ECF6; --ink2:#C6CCDB; --muted:#95A0B5; --line:#263144; --line2:#46536B;
+  --accent:#8AB4F8; --accent-ink:#0A101D; --accent-soft:#1C283E;
+  --hook:#F5B041; --hook-ink:#1D1202; --hook-soft:#352710;
+  --love:#FF6E5A; --love-ink:#1A0806; --love-soft:#3A1D1B;
+  --up:#182338; --up-ink:#ADC6FA; --down:#132920; --down-ink:#8FD7B4;
+  --t-dev:#8AB4F8; --t-team:#B78DF6; --t-series:#A4AEC4; --t-critic:#E6A63F; --t-mech:#3EC4B1; --t-disp:#F26B61;
+  --shadow:0 10px 30px rgb(0 0 0 / .45); color-scheme:dark}
+html,body{background-color:var(--paper);color:var(--ink)}
+body{font-family:var(--f-body);font-size:15px;line-height:1.5;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--paper)}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));box-sizing:border-box}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance}
+input,select{font:inherit;color:var(--ink)}
+.flag{font-family:var(--f-emoji);font-style:normal;font-weight:400;letter-spacing:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
+.topin{display:flex;align-items:center;gap:14px;padding-block:10px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex:none}
+.logo i{width:22px;height:22px;background:var(--accent);border-radius:5px;position:relative;flex:none}
+.logo i::before,.logo i::after{content:"";position:absolute;background:var(--accent-ink);border-radius:1px}
+.logo i::before{left:5px;top:5px;width:4px;height:12px}
+.logo i::after{left:9px;top:9px;width:8px;height:4px}
+.logo b{font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.logo small{font-family:var(--f-pixel);font-size:10px;color:var(--muted);letter-spacing:.06em}
+.tabs{display:flex;gap:3px;margin-left:auto;align-items:center}
+.tab{border-radius:999px;padding:6px 12px;font-weight:600;font-size:13.5px;color:var(--ink2);text-decoration:none;white-space:nowrap}
+.tab:hover{background:var(--accent-soft)}
+.tab[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.artbtn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:600;color:var(--ink2);white-space:nowrap}
+.artbtn:hover{border-color:var(--line2)}
+.sync{font-size:12px;color:var(--muted)}
+@media (max-width:740px){.logo small{display:none}.tab{padding:6px 9px;font-size:13px}}
+@media (max-width:580px){.topin{flex-wrap:wrap;gap:6px 8px;padding-block:8px}.tabs{width:100%;margin:0;order:3}.tab{flex:1;text-align:center;padding:6px 3px;font-size:13px}.artbtn{margin-left:auto}}
+
+/* ---------- type & controls ---------- */
+.eyebrow{font-family:var(--f-pixel);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,5.6vw,46px);line-height:1.06;letter-spacing:-.02em;margin:0 0 12px}
+.h2{font-family:var(--f-display);font-weight:700;font-size:clamp(18px,3.2vw,22px);line-height:1.2;margin:0 0 4px}
+.h3{font-weight:700;font-size:15px;margin:0 0 4px}
+.lede{font-size:clamp(15px,2.2vw,17px);color:var(--ink2);max-width:58ch;margin:0 0 18px}
+.sub{font-size:13.5px;color:var(--muted);margin:0 0 12px;max-width:68ch}
+.sec{padding-block:26px 6px}
+.sechead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.sechead > div{min-width:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line2);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 14px;font-weight:600;font-size:14px;line-height:1.2;white-space:nowrap;text-decoration:none}
+.btn:hover{border-color:var(--ink2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.love{background:var(--love);border-color:var(--love);color:var(--love-ink)}
+.btn.ghost{background:none;border-color:transparent}
+.btn.ghost:hover{background:var(--accent-soft)}
+.btn.sm{padding:6px 10px;font-size:13px;border-radius:8px}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn.wrap{white-space:normal;text-align:center;max-width:100%}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 11px;font-size:13px;color:var(--ink);text-decoration:none;white-space:nowrap}
+button.chip:hover{border-color:var(--line2)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .dot{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.chip.tierchip[aria-pressed="false"]{opacity:.55}
+.chip.tierchip[aria-pressed="false"] .dot{background:transparent;box-shadow:inset 0 0 0 1.5px var(--c)}
+.chip.tierchip[aria-pressed="true"]{background:var(--card);color:var(--ink);border-color:var(--c)}
+.field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--ink2)}
+.input{width:100%;box-sizing:border-box;border:1px solid var(--line2);background:var(--card);border-radius:10px;padding:11px 13px;font-size:16px}
+.input:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.empty{color:var(--muted);font-size:14px;margin:6px 0}
+.link{border:0;background:none;padding:0;color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-size:inherit}
+
+/* ---------- search ---------- */
+.search{position:relative;width:100%}
+.search .input{padding-left:40px}
+.search::before{content:"";position:absolute;left:14px;top:50%;width:13px;height:13px;border:2px solid var(--muted);border-radius:50%;transform:translateY(-62%);pointer-events:none}
+.search::after{content:"";position:absolute;left:26px;top:50%;width:7px;height:2px;background:var(--muted);transform:translateY(5px) rotate(45deg);pointer-events:none}
+.results{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);max-height:min(60vh,420px);overflow:auto;z-index:20;padding:4px}
+.res{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;width:100%;border:0;background:none;padding:7px 8px;border-radius:8px;text-align:left}
+.res:hover,.res.on{background:var(--accent-soft)}
+.res .cv{width:30px}
+.res b{font-weight:600;font-size:14.5px;display:block;line-height:1.25}
+.res small{font-size:12px;color:var(--muted)}
+.res .y{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.res .tag{font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+
+/* ---------- covers ---------- */
+.cv{--h:220;--ph:120;position:relative;display:block;aspect-ratio:3/4;width:100%;max-width:100%;border-radius:5px;overflow:hidden;color:#fff;container-type:inline-size;isolation:isolate;flex:none;
+  border:0;padding:0;text-align:left;box-shadow:inset 0 0 0 1px rgb(255 255 255 / .12),0 1px 2px rgb(0 0 0 / .18);
+  background:linear-gradient(160deg,hsl(var(--h) 55% 40%),hsl(calc(var(--h) + 35) 60% 17%))}
+.cv .ct{position:absolute;left:9%;right:9%;top:9%;z-index:2;font-family:var(--f-display);font-weight:700;line-height:1.08;font-size:clamp(5px,calc(11.5cqw * var(--k,1)),22px);
+  overflow-wrap:anywhere;hyphens:auto;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 1px 2px rgb(0 0 0 / .35)}
+.cv .cy{position:absolute;right:8%;bottom:6%;z-index:2;font-family:var(--f-mono);font-size:clamp(5px,8cqw,13px);opacity:.85}
+.cv .gl{position:absolute;left:8%;bottom:7%;z-index:2;width:21%;aspect-ratio:1;background:var(--gl) center/contain no-repeat;image-rendering:pixelated;opacity:.9}
+@container (max-width:58px){.cv .ct,.cv .cy{display:none}.cv .gl{left:50%;top:50%;bottom:auto;width:44%;transform:translate(-50%,-50%)}}
+.cv.e0{background:radial-gradient(120% 85% at 50% 38%,hsl(var(--ph) 65% 17%),#020503)}
+.cv.e0 .ct{font-family:var(--f-pixel);font-weight:400;text-transform:uppercase;line-height:1.2;color:hsl(var(--ph) 95% 68%);text-shadow:0 0 6px hsl(var(--ph) 95% 50% / .6)}
+.cv.e0 .gl{filter:drop-shadow(0 0 3px hsl(var(--ph) 95% 55%))}
+.cv.e0::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,rgb(0 0 0 / .35) 0 1px,transparent 1px 3px)}
+.cv.e1{background:hsl(var(--h) 22% 13%)}
+.cv.e1::before{content:"";position:absolute;left:0;right:0;top:63%;height:17%;background:linear-gradient(180deg,hsl(var(--h) 85% 56%) 0 25%,hsl(calc(var(--h) + 28) 85% 56%) 25% 50%,hsl(calc(var(--h) + 56) 85% 56%) 50% 75%,hsl(calc(var(--h) + 84) 85% 56%) 75%)}
+.cv.e2{background:hsl(var(--h) 58% 37%)}
+.cv.e2::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgb(0 0 0 / .17) 1px,transparent 1px),linear-gradient(90deg,rgb(0 0 0 / .17) 1px,transparent 1px);background-size:12.5% 9.375%}
+.cv.e2::after{content:"";position:absolute;left:0;right:0;top:0;height:6%;background:#101014}
+.cv.e2 .ct{top:13%;font-family:var(--f-pixel);font-weight:400;text-transform:uppercase;line-height:1.18}
+@container (max-width:96px){.cv.e2 .ct{font-family:var(--f-display);font-weight:700;text-transform:none;line-height:1.08}}
+.cv.e3::before{content:"";position:absolute;left:0;right:0;top:66%;height:2px;background:hsl(calc(var(--h) + 50) 95% 72%);box-shadow:0 0 14px 3px hsl(calc(var(--h) + 50) 95% 60% / .8)}
+.cv.e4::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10%;background:#0B0C11;box-shadow:1px 0 0 rgb(255 255 255 / .22)}
+.cv.e4 .ct{left:17%}
+.cv.e4 .gl{left:17%}
+.cv.e5::before{content:"";position:absolute;left:0;right:0;top:0;height:11%;background:linear-gradient(90deg,hsl(var(--h) 18% 93%),hsl(var(--h) 12% 80%))}
+.cv.e5 .ct{top:18%}
+.cv.e6{background:hsl(var(--h) 60% 45%);border-radius:7px}
+.cv.e6 .gl{left:50%;top:40%;bottom:auto;width:42%;transform:translate(-50%,-50%);opacity:.95}
+.cv.e6 .ct{top:auto;bottom:15%;font-size:clamp(5px,calc(10cqw * var(--k,1)),19px);-webkit-line-clamp:3}
+.cv.e6 .cy{bottom:5%}
+.cv .cimg{position:absolute;inset:0;z-index:4;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .18s ease-out;background:var(--card)}
+.cv.hasimg .cimg{opacity:1}
+.cv.hasimg .ct,.cv.hasimg .gl,.cv.hasimg .cy,.cv.hasimg::before,.cv.hasimg::after{opacity:0;transition:opacity .15s}
+:root[data-art="era"] .cv .cimg{display:none}
+:root[data-art="era"] .cv.hasimg .ct,:root[data-art="era"] .cv.hasimg .gl,:root[data-art="era"] .cv.hasimg .cy,:root[data-art="era"] .cv.hasimg::before,:root[data-art="era"] .cv.hasimg::after{opacity:1}
+
+/* ---------- tiles ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:18px 12px}
+@media (max-width:520px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 10px}}
+.tile{position:relative;display:flex;flex-direction:column;gap:6px;border:0;background:none;padding:0;text-align:left;color:inherit;min-width:0}
+.tile .artwrap{position:relative;width:100%}
+.tile .art{position:relative;display:block;border:0;background:none;padding:0;width:100%;cursor:pointer;border-radius:6px}
+.tile .tjump{position:absolute;right:4px;bottom:4px;z-index:6;width:23px;height:23px;border-radius:6px;border:1px solid rgb(255 255 255 / .28);background:rgb(15 20 28 / .76);color:#fff;font-size:12px;line-height:1;display:grid;place-items:center;padding:0;backdrop-filter:blur(4px);opacity:.86}
+.tile .tjump:hover{opacity:1;background:var(--accent);color:var(--accent-ink)}
+.tile .tn{font-size:12.5px;line-height:1.25;font-weight:600;overflow-wrap:anywhere}
+.tile .ts{font-size:11.5px;color:var(--muted);line-height:1.3}
+.tile .tmem{font-size:11px;color:var(--accent);line-height:1.25;font-style:italic;overflow-wrap:anywhere}
+.tile.lv1 .cv{box-shadow:0 0 0 2px var(--accent)}
+.tile.lv2 .cv{box-shadow:0 0 0 2px var(--paper),0 0 0 4.5px var(--hook)}
+.tile.lv3 .cv{box-shadow:0 0 0 2px var(--paper),0 0 0 4.5px var(--love)}
+.lvb{position:absolute;top:-7px;right:-7px;z-index:6;min-width:24px;height:24px;box-sizing:border-box;border-radius:12px;padding:0 6px;display:grid;place-items:center;
+  background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;box-shadow:0 0 0 2px var(--paper)}
+.lv2 > .art .lvb,.lv2 > .artwrap .lvb,.lvb.l2{background:var(--hook);color:var(--hook-ink)}
+.lv3 > .art .lvb,.lv3 > .artwrap .lvb,.lvb.l3{background:var(--love);color:var(--love-ink)}
+.tile .art:active .cv{transform:scale(.97)}
+.tap-hint{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink2);margin:6px 0 2px}
+.tap-hint b{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:11px;background:var(--accent);color:var(--accent-ink);font-size:11.5px;padding:0 5px;margin-right:4px}
+.tap-hint b.l2{background:var(--hook);color:var(--hook-ink)}
+.tap-hint b.l3{background:var(--love);color:var(--love-ink)}
+
+/* ---------- start / hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:36px;align-items:center;padding-block:44px 22px}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:26px;padding-block:28px 10px}}
+.start{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;max-width:460px}
+.start .field{flex:1 1 170px}
+.start .input{font-family:var(--f-mono);font-size:22px;letter-spacing:.04em;padding-block:10px}
+.start .btn{padding:13px 18px;font-size:15px}
+.shelf{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px 14px;box-shadow:var(--shadow)}
+.shelf h2{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 12px}
+.shelf h2 b{color:var(--ink)}
+.shelfrow{display:flex;align-items:flex-end;gap:10px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:thin}
+.sbook{flex:none;width:76px;display:flex;flex-direction:column;gap:5px;border:0;background:none;padding:0;color:inherit;text-align:left}
+.sbook .yr{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.sbook b{font-size:11.5px;line-height:1.2;font-weight:600;overflow-wrap:anywhere}
+.sarrow{flex:none;align-self:center;color:var(--line2);font-size:13px;margin-top:-34px}
+.shelf .foot{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px dashed var(--line);padding-top:10px;font-size:12.5px;color:var(--muted)}
+.trybar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-size:13px;color:var(--muted)}
+.bigsearch .input{font-size:17px;padding-block:13px}
+
+/* ---------- onboarding ---------- */
+.steps{display:flex;gap:6px;align-items:center;font-family:var(--f-pixel);font-size:11px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.steps i{width:26px;height:4px;border-radius:2px;background:var(--line)}
+.steps i.on{background:var(--accent)}
+.sysgroups{display:flex;flex-direction:column;gap:14px;margin:16px 0}
+.sysgroup h3{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+.syschip{display:inline-flex;flex-direction:column;align-items:flex-start;gap:0;border:1px solid var(--line2);background:var(--card);border-radius:10px;padding:7px 12px;text-align:left;margin:0 6px 6px 0}
+.syschip b{font-size:14px;font-weight:600}
+.syschip small{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.syschip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.syschip[aria-pressed="true"] small{color:var(--accent-ink);opacity:.8}
+.band{padding-block:20px 4px}
+.band h2{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pickbar{position:sticky;bottom:0;z-index:15;margin-top:24px;background:var(--paper);border-top:1px solid var(--line);
+  padding-block:10px calc(10px + env(safe-area-inset-bottom,0px))}
+.pickbar .in{display:flex;align-items:center;gap:14px}
+.pickbar .count{font-weight:700;font-size:15px;white-space:nowrap}
+.pickbar .count small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.minihist{flex:1;min-width:60px;display:flex;align-items:flex-end;gap:1px;height:30px}
+.minihist i{flex:1;background:var(--accent);border-radius:1px 1px 0 0;min-height:1px;opacity:.85}
+.minihist i.z{background:var(--line);opacity:1}
+.minihist i.l{background:var(--love)}
+
+/* ---------- my timeline ---------- */
+.mehead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;padding-block:30px 6px}
+@media (max-width:640px){.mehead{grid-template-columns:1fr}}
+.stats{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:8px}
+.stat b{font-family:var(--f-display);font-size:22px;display:block;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.life{margin-top:8px}
+.stage{display:flex;align-items:baseline;gap:10px;margin:22px 0 2px;font-family:var(--f-pixel);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.stage::after{content:"";flex:1;border-top:1px solid var(--line)}
+.yr{display:grid;grid-template-columns:70px minmax(0,1fr);gap:12px;align-items:start;padding-block:10px;border-top:1px dashed var(--line)}
+.stage + .yr{border-top:0}
+.yl{padding-top:4px}
+.yl b{font-family:var(--f-display);font-size:16px;display:block;font-variant-numeric:tabular-nums;line-height:1.2}
+.yl span{font-size:12px;color:var(--muted)}
+.yt{display:flex;gap:12px;overflow-x:auto;padding:8px 8px 8px 2px;scrollbar-width:thin}
+.yt .tile{width:74px;flex:none}
+.yadd{flex:none;width:74px;aspect-ratio:3/4;border:1.5px dashed var(--line2);border-radius:6px;background:none;color:var(--muted);font-size:13px;font-weight:600;display:grid;place-items:center;align-self:start}
+.yadd:hover{border-color:var(--accent);color:var(--accent)}
+.ygap{display:flex;align-items:center;gap:12px;padding-block:8px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted)}
+.ygap b{font-family:var(--f-mono);font-weight:500;color:var(--ink2);min-width:70px}
+.ygap .link{font-size:13px}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
+.genbar{display:flex;height:16px;border-radius:8px;overflow:hidden;margin:6px 0 10px;background:var(--line)}
+.genbar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:3px;background:var(--c);display:inline-block}
+.legend i.line{width:18px;height:0;border-radius:0;border-top:2.5px solid var(--c);background:none}
+.legend i.line.dash{border-top-style:dashed}
+.anc{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line);width:100%;border-left:0;border-right:0;border-bottom:0;background:none;text-align:left;color:inherit}
+.anc:first-child{border-top:0}
+.anc .cv{width:40px}
+.anc b{font-size:14px;display:block;line-height:1.25}
+.anc small{font-size:12px;color:var(--muted)}
+.anc .n{font-family:var(--f-display);font-size:18px;text-align:right}
+.anc .n small{display:block;font-family:var(--f-body);font-size:11px}
+.makers{display:flex;flex-wrap:wrap;gap:6px}
+.maker{display:inline-flex;gap:7px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13.5px}
+.maker span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:16px 12px}
+.why{font-size:11px;color:var(--muted);line-height:1.3}
+
+/* ---------- explore ---------- */
+.exhero{padding-block:36px 8px}
+.exhero > *{max-width:760px}
+.journeys{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.jcard{flex:none;width:250px;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left;color:inherit}
+.jcard:hover{border-color:var(--line2);box-shadow:var(--shadow)}
+.jstack{display:flex;align-items:flex-end;height:86px}
+.jstack .cv{width:54px;margin-right:-14px;box-shadow:0 2px 8px rgb(0 0 0 / .25);transform:rotate(var(--r))}
+.jcard b{font-family:var(--f-display);font-size:15px;line-height:1.2}
+.jcard p{margin:0;font-size:13px;color:var(--ink2)}
+.jcard small{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.inf{display:grid;grid-template-columns:28px 36px minmax(0,1fr) minmax(70px,30%);gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--line);width:100%;border-left:0;border-right:0;border-bottom:0;background:none;text-align:left;color:inherit}
+.inf .rk{font-family:var(--f-display);font-size:15px;color:var(--muted);text-align:right}
+.inf .cv{width:36px}
+.inf b{font-size:14px;line-height:1.25;display:block}
+.inf small{font-size:12px;color:var(--muted)}
+.inf .bar{height:8px;border-radius:4px;background:var(--line);overflow:hidden;position:relative}
+.inf .bar i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:4px}
+.inf .bar + span{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.infcell{display:flex;flex-direction:column;gap:3px}
+.connect{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:10px;align-items:end}
+@media (max-width:640px){.connect{grid-template-columns:1fr}}
+.path{margin-top:14px;display:flex;flex-direction:column}
+.pstep{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;align-items:center;border:0;background:none;padding:6px 0;text-align:left;color:inherit;width:100%}
+.pstep .cv{width:48px}
+.pstep b{display:block;font-size:15px}
+.pstep small{color:var(--muted);font-size:12.5px}
+.pedge{margin-left:23px;border-left:2px solid var(--c);padding:6px 0 6px 21px;font-size:13px;color:var(--ink2)}
+.pedge .dir{font-weight:700;color:var(--c);font-size:12px;letter-spacing:.03em}
+.today{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;align-items:center}
+.today .cv{width:110px}
+@media (max-width:520px){.today{grid-template-columns:84px minmax(0,1fr)}.today .cv{width:84px}}
+.factline{font-size:12.5px;color:var(--muted);margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}
+
+/* ---------- game page ---------- */
+.trail{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center;padding-top:14px;font-size:13px;color:var(--muted)}
+.trail button{border:0;background:none;padding:2px 4px;border-radius:4px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;font-size:13px}
+.trail .cur{color:var(--ink);font-weight:600;padding:2px 4px}
+.gphead{display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;align-items:start;padding-block:14px 8px}
+.gphead > .cv{width:170px;box-shadow:0 12px 30px rgb(0 0 0 / .3)}
+@media (max-width:560px){.gphead{grid-template-columns:112px minmax(0,1fr);gap:16px}.gphead > .cv{width:112px}}
+.gphead h1{font-family:var(--f-display);font-weight:700;font-size:clamp(24px,5vw,40px);line-height:1.08;margin:2px 0 8px;letter-spacing:-.015em}
+.meta{font-size:14px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.meta .mono{color:var(--muted)}
+.gnote{font-size:15px;color:var(--ink2);max-width:62ch;margin:10px 0 0}
+.gstats{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:13px;color:var(--muted)}
+.gstats b{color:var(--ink);font-weight:700}
+.mylv{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.seg{display:inline-flex;border:1px solid var(--line2);border-radius:10px;overflow:hidden;background:var(--card)}
+.seg button{border:0;background:none;padding:8px 12px;font-size:13.5px;font-weight:600;color:var(--ink2);white-space:nowrap}
+@media (max-width:420px){.seg button{padding:8px 9px;font-size:13px}}
+.seg button + button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.seg button.l2[aria-pressed="true"]{background:var(--hook);color:var(--hook-ink)}
+.seg button.l3[aria-pressed="true"]{background:var(--love);color:var(--love-ink)}
+.roots{display:flex;align-items:flex-start;overflow-x:auto;padding:10px 2px 12px;scrollbar-width:thin}
+.rs{flex:none;width:86px;display:flex;flex-direction:column;align-items:center;gap:5px;border:0;background:none;padding:0;color:inherit}
+.rs .cv{width:62px}
+.rs b{font-size:11.5px;line-height:1.2;text-align:center;font-weight:600;overflow-wrap:anywhere}
+.rs span{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.rs.cur .cv{box-shadow:0 0 0 2px var(--paper),0 0 0 4.5px var(--accent)}
+.rarr{flex:none;width:18px;align-self:flex-start;margin-top:36px;height:2px;background:var(--c,var(--line2));position:relative}
+.rarr::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left-color:var(--c,var(--line2));border-right:0}
+.rfold{flex:none;align-self:flex-start;margin-top:26px;padding:4px 9px;border:1px dashed var(--line2);border-radius:999px;font-size:11px;color:var(--muted);white-space:nowrap;margin-inline:4px}
+.treebox{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:auto;max-height:min(70vh,640px);-webkit-overflow-scrolling:touch}
+.wnode{cursor:pointer}
+.wnode:focus-visible rect{stroke:var(--accent);stroke-width:3}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.panel{border-radius:14px;padding:16px}
+.panel.up{background:var(--up)}
+.panel.down{background:var(--down)}
+.panel > h2{font-family:var(--f-display);font-size:16px;margin:0;display:flex;gap:8px;align-items:center}
+.panel.up > h2{color:var(--up-ink)} .panel.down > h2{color:var(--down-ink)}
+.panel > p{margin:2px 0 10px;font-size:13px;color:var(--muted)}
+.lk{display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;padding:12px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;margin-top:8px}
+.lk .cv{width:54px;cursor:pointer}
+.lk .hd{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline}
+.lk .nm{border:0;background:none;padding:0;font-weight:700;font-size:15.5px;text-align:left;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px;color:var(--ink)}
+.lk .yr{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.tier{display:inline-flex;align-items:center;gap:5px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--c);font-weight:700}
+.tier::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+dl.ta{margin:8px 0 4px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;font-size:14px}
+dl.ta dt{color:var(--muted);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding-top:3px;font-weight:600}
+dl.ta dd{margin:0;min-width:0}
+dl.ta dd.add{font-weight:600;color:var(--ink)}
+.xtra{font-size:13px;color:var(--muted);margin:4px 0}
+.src{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.src a{color:var(--muted)}
+.more{border:1px dashed var(--line2);background:none;border-radius:10px;padding:10px 12px;text-align:left;color:var(--muted);font-size:13.5px;width:100%;margin-top:8px}
+.more b{color:var(--ink)}
+
+/* ---------- friends ---------- */
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
+.fcard{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left;color:inherit}
+.fcard:hover{border-color:var(--line2)}
+.fcard .who{display:flex;align-items:center;gap:10px}
+.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:14px;color:#fff;flex:none;background:hsl(var(--h) 55% 45%)}
+.fcard .who b{font-size:16px;display:block}
+.fcard .who small{font-size:12.5px;color:var(--muted)}
+.fcard .covers{display:flex;gap:6px}
+.fcard .covers .cv{width:44px}
+.fcard .foot{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600;background:var(--accent-soft);color:var(--accent)}
+.pill.love{background:var(--love-soft);color:var(--love)}
+.banner{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--accent-soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:18px}
+.banner p{margin:0;font-size:14px;color:var(--ink2);max-width:60ch}
+.agerow{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start;padding:10px 0;border-top:1px dashed var(--line)}
+.agerow > b{font-family:var(--f-display);font-size:14px;padding-top:4px}
+.agerow > b small{display:block;font-family:var(--f-mono);font-weight:400;font-size:11px;color:var(--muted)}
+.agecell{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 6px}
+.agecell .tile{width:58px;flex:none}
+.agecell .tile .tn{font-size:11px}
+.agehead{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1fr);gap:12px;font-weight:700;font-size:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 56px);background:var(--paper);padding:8px 0;z-index:2}
+
+/* ---------- overlays ---------- */
+.sheet{position:fixed;inset:0;z-index:50;background:rgb(6 9 18 / .5);display:flex;align-items:flex-end;justify-content:center}
+.sheetin{background:var(--paper);width:100%;max-width:680px;max-height:90vh;overflow:auto;border-radius:18px 18px 0 0;box-sizing:border-box;box-shadow:var(--shadow);
+  padding:16px max(18px,env(safe-area-inset-right,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
+@media (min-width:760px){.sheet{align-items:center}.sheetin{border-radius:18px;max-height:86vh}}
+.sheethead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.sheethead h2{font-family:var(--f-display);font-size:18px;margin:0;line-height:1.2}
+.x{border:0;background:var(--card);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:18px;line-height:1;flex:none;color:var(--ink2)}
+.gsheet{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:start}
+.gsheet .cv{width:96px}
+.story > .wrap,.ov > .wrap,.stbody > .wrap{width:100%}
+.ov{position:fixed;inset:0;z-index:45;background:var(--paper);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.ovhead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-block:12px;border-bottom:1px solid var(--line)}
+.ovhead h2{font-family:var(--f-display);font-size:16px;margin:0}
+.ovbody{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;position:relative}
+.sharebox{display:flex;gap:8px;align-items:stretch;margin:8px 0}
+.sharebox input{flex:1;min-width:0;font-family:var(--f-mono);font-size:13px}
+.imgprev{max-width:100%;border-radius:10px;border:1px solid var(--line);display:block;margin:10px auto}
+
+/* story mode */
+.story{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--paper);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sthead{display:flex;align-items:center;gap:12px;padding-block:12px}
+.stprog{flex:1;display:flex;gap:3px}
+.stprog i{flex:1;height:4px;border-radius:2px;background:var(--line)}
+.stprog i.on{background:var(--accent)}
+.stbody{flex:1;overflow:auto;display:flex;align-items:center}
+.stin{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center;width:100%;padding-block:12px}
+@media (max-width:640px){.stin{grid-template-columns:1fr;gap:16px;justify-items:start}}
+.stin .cv{width:min(220px,46vw);box-shadow:0 18px 40px rgb(0 0 0 / .35)}
+.styear{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,11vw,92px);line-height:.9;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+.stin h2{font-family:var(--f-display);font-size:clamp(22px,4.4vw,34px);margin:8px 0 4px;line-height:1.1}
+.stlink{margin-top:16px;border-left:4px solid var(--c);padding:4px 0 4px 14px}
+.stlink .lead{font-size:13px;color:var(--muted);margin:0 0 6px}
+.stfoot{display:flex;justify-content:space-between;gap:10px;padding-block:12px;border-top:1px solid var(--line)}
+.stsum{font-size:clamp(17px,3vw,22px);line-height:1.4;max-width:46ch}
+@media (prefers-reduced-motion:no-preference){
+  .stin{animation:stin .35s ease-out}
+  @keyframes stin{from{transform:translateX(18px)}to{transform:none}}
+  .tile .art .cv{transition:transform .12s ease-out}
+}
+
+/* poster wall */
+.wall{position:relative;display:flex;align-items:flex-start;width:max-content;padding:22px max(40px,env(safe-area-inset-right,0px)) 30px max(16px,env(safe-area-inset-left,0px));transform-origin:0 0}
+.wall svg.lines{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.wcol{width:116px;flex:none;display:flex;flex-direction:column;align-items:center;gap:8px;border-left:1px dashed var(--line)}
+.wcol.e{width:40px}
+.wcol .wh{font-family:var(--f-mono);font-size:12px;font-weight:500;text-align:center;line-height:1.2}
+.wcol .wh small{display:block;color:var(--muted);font-size:10.5px}
+.wcol .tile{width:90px}
+.wcol .tile.s{width:66px}
+.wcol .rest{font-size:11px;color:var(--muted)}
+
+/* quiz */
+.quizopts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+@media (max-width:520px){.quizopts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qopt{display:flex;flex-direction:column;gap:6px;border:2px solid transparent;background:none;padding:4px;border-radius:10px;text-align:left;color:inherit}
+.qopt:hover{border-color:var(--line2)}
+.qopt b{font-size:13px;line-height:1.25}
+.qopt small{font-size:11.5px;color:var(--muted)}
+.qopt.right{border-color:var(--t-mech);background:color-mix(in srgb,var(--t-mech) 12%,transparent)}
+.qopt.wrong{border-color:var(--love);opacity:.75}
+.qopt[disabled]{cursor:default}
+.qres{margin-top:14px;border-left:4px solid var(--c);padding:4px 0 4px 14px}
+.streak{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+
+/* big picture map */
+.mapwrap{position:relative;flex:1;min-height:0;touch-action:none;cursor:grab;overflow:hidden}
+.mapwrap.drag{cursor:grabbing}
+.mapwrap canvas{display:block;width:100%;height:100%}
+.maptip{position:absolute;pointer-events:none;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12.5px;box-shadow:var(--shadow);max-width:240px;z-index:3}
+.maptip b{display:block;font-size:13px}
+.mapctl{position:absolute;right:max(12px,env(safe-area-inset-right,0px));bottom:12px;display:flex;flex-direction:column;gap:6px;z-index:3}
+.mapctl .btn{width:40px;height:40px;padding:0;font-size:18px}
+.mapcard{position:absolute;left:max(12px,env(safe-area-inset-left,0px));bottom:12px;right:72px;max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);z-index:3;display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:center}
+.mapcard .cv{width:52px}
+.mapcard b{font-size:15px;display:block}
+.mapcard p{margin:2px 0 8px;font-size:12.5px;color:var(--muted)}
+
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:80;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px;font-size:14px;max-width:calc(100% - 32px);box-shadow:var(--shadow)}
+.foot-about{margin-top:44px;padding-block:18px 40px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.foot-about p{max-width:72ch;margin:0 0 8px}
+
+/* ---------- marquee spotlight, studios & clone lens ---------- */
+.marquee{background:var(--card);border:1.5px solid var(--accent);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);margin-top:18px}
+.marquee-in{display:grid;grid-template-columns:92px minmax(0,1fr);gap:18px;align-items:center}
+.marquee-in > .cv{width:92px;box-shadow:0 8px 22px rgb(0 0 0 / .28)}
+@media (max-width:560px){.marquee-in{grid-template-columns:72px minmax(0,1fr);gap:14px}.marquee-in > .cv{width:72px}}
+.relbadge{display:inline-flex;align-items:center;gap:4px;border-radius:6px;padding:1px 7px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);margin-left:6px}
+.relbadge.warn{background:var(--hook-soft);color:var(--hook)}
+.relbadge.disp{background:var(--love-soft);color:var(--love)}
+.stbtn{border:0;background:none;padding:0;color:var(--ink2);font:inherit;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px;cursor:pointer;text-align:left}
+.stbtn:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.makerbtn{display:inline-flex;gap:7px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13.5px;color:var(--ink);text-decoration:none}
+.makerbtn:hover{border-color:var(--accent);color:var(--accent)}
+.makerbtn span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.stgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:14px}
+.stcard{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;text-align:left;color:inherit}
+.stcard:hover{border-color:var(--line2);box-shadow:var(--shadow)}
+.ststatus{display:inline-flex;align-items:center;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.ststatus.closed{background:var(--love-soft);color:var(--love)}
+.ststatus.revived{background:var(--hook-soft);color:var(--hook)}
+.ststatus.active{background:var(--down);color:var(--down-ink)}
+.diasgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:12px;margin-top:10px}
+.diascard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px}
+.memquote{margin:8px 0 0;padding:8px 12px;background:var(--accent-soft);border-radius:8px;font-size:13px;color:var(--ink);font-style:italic}
+.lensgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.lenscol{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+</style>
+
+<header class="top">
+  <div class="wrap topin">
+    <a class="logo" href="#explore" aria-label="Inspired By, family tree of games"><i aria-hidden="true"></i><b>Inspired By</b><small>GAME HISTORY</small></a>
+    <nav class="tabs" aria-label="Sections">
+      <a class="tab" href="#timeline" data-tab="timeline">My timeline</a>
+      <a class="tab" href="#explore" data-tab="explore">Family tree</a>
+      <a class="tab" href="#studios" data-tab="studios">Makers</a>
+      <a class="tab" href="#friends" data-tab="friends">Friends</a>
+    </nav>
+    <button class="artbtn" id="artBtn" data-act="artToggle" title="Switch between real box art and era-styled covers">Covers: Box art</button>
+  </div>
+</header>
+<main id="main"></main>
+<div id="layer"></div>
+<div id="toast" role="status" hidden></div>
+
+<script id="data" type="application/json">/*__DATA__*/</script>
+<script>
+"use strict";
+/* ================================================================
+   Inspired By v2 — a family tree of video games + your gaming timeline
+   ================================================================ */
+const RAW=JSON.parse(document.getElementById("data").textContent);
+const NOW=Math.max(new Date().getFullYear(),2026);
+const shareBase=()=>location.protocol.startsWith("http")?location.origin+location.pathname:"https://inspired-by.github.io/";
+const ghRepoURL=()=>{if(location.hostname.endsWith(".github.io")){const u=location.hostname.slice(0,-10),r=location.pathname.split("/").filter(Boolean)[0];if(u&&r)return `https://github.com/${u}/${r}`}return ""};
+const TIERS=[
+  {k:"dev",label:"Developer said so",c:"--t-dev",w:3},
+  {k:"team",label:"Same team or code",c:"--t-team",w:2.5},
+  {k:"series",label:"Same series",c:"--t-series",w:1},
+  {k:"critic",label:"Critics & historians",c:"--t-critic",w:2},
+  {k:"mech",label:"Shared mechanics",c:"--t-mech",w:1.5},
+  {k:"disp",label:"Debated / disputed",c:"--t-disp",w:.5,dash:1}];
+const RELS_K=RAW.rels||["","synthesis","evolution","mod","fast-follow","variant"];
+const REL_META={
+  synthesis:{label:"Creative synthesis",cls:""},
+  evolution:{label:"Genre evolution",cls:""},
+  mod:{label:"Born from a mod",cls:""},
+  "fast-follow":{label:"Fast-follow",cls:"warn"},
+  variant:{label:"Direct variant / clone",cls:"warn"}
+};
+const GEN=RAW.genres.map(([k,label],i)=>({k,label,i,c:`hsl(${Math.round(i*360/RAW.genres.length*7)%360} 58% 52%)`}));
+const PLATS=RAW.plats;
+
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fold=s=>String(s).normalize("NFD").replace(/[̀-ͯ]/g,"");
+const ROMAN={ii:2,iii:3,iv:4,v:5,vi:6,vii:7,viii:8,ix:9,x:10,xi:11,xii:12,xiii:13,xiv:14,xv:15,xvi:16};
+const deroman=s=>fold(s).toLowerCase().replace(/\b(ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii|xiii|xiv|xv|xvi)\b/g,m=>ROMAN[m]);
+const norm=t=>{const n=fold(t).toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"");return n||"~"+String(t).trim().toLowerCase()};
+const norm1=t=>String(t).toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,""); // keys saved by version 1
+const normR=t=>norm(deroman(t));
+const hueOf=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))%360;return h};
+const plural=(n,w,ws)=>`${n} ${n===1?w:(ws||w+"s")}`;
+const store={get(k,d=null){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+const cssVar=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let _rn=null;const countryName=cc=>{try{_rn=_rn||new Intl.DisplayNames(["en"],{type:"region"});return _rn.of(cc)}catch(e){return cc}};
+const flagEmoji=cc=>cc&&/^[A-Z]{2}$/.test(cc)?String.fromCodePoint(...[...cc].map(c=>0x1F1E6+c.charCodeAt(0)-65)):"";
+const flag=cc=>cc?`<span class="flag" title="${esc(countryName(cc))}" aria-label="${esc(countryName(cc))}">${flagEmoji(cc)}</span>`:"";
+const studio=g=>String(g&&g.dev||"").split(/\s+\/\s+/)[0];
+function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2800)}
+
+/* ---------- data ---------- */
+const imgURL=v=>{if(!v)return "";if(v.startsWith("i:"))return `https://images.igdb.com/igdb/image/upload/t_cover_big/${v.slice(2)}.webp`;if(v.startsWith("w:"))return `https://upload.wikimedia.org/wikipedia/${v.slice(2)}`;if(v.startsWith("wt:"))return `https://thumb.wikimedia.org/wikipedia/${v.slice(3)}`;if(v.startsWith("s:"))return `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${v.slice(2)}/library_600x900.jpg`;return v};
+const G=RAW.g.map((r,i)=>({i,code:r[0],id:r[1],title:r[2],year:r[3],dev:r[4],cc:r[5],gen:r[6],plats:r[7].map(p=>PLATS[p]),pop:r[8],note:r[9],inf:r[10],aka:r[11],cat:!!(r[12]&1),img:imgURL(r[13]||""),moby:r[14]||0,n:norm(r[2]),nr:normR(r[2]),h:hueOf(r[1])}));
+const L=RAW.l.map((r,i)=>({i,from:r[0],to:r[1],t:r[2],tier:TIERS[r[2]].k,took:r[3],added:r[4],src:r[5],extra:r[6],minor:!!(r[7]&1),disputed:!!(r[7]&2),rel:RELS_K[r[8]||0]||""}));
+const mobyURL=g=>g.moby?`https://www.mobygames.com/game/${g.moby}/credits/`:`https://www.mobygames.com/search/?q=${encodeURIComponent(g.title)}&type=game`;
+const byId=new Map(G.map(g=>[g.id,g])),byCode=new Map(G.map(g=>[g.code,g])),byNorm=new Map(),byNorm1=new Map();
+G.forEach(g=>{if(!byNorm.has(g.n))byNorm.set(g.n,g);const k1=norm1(g.title);if(!byNorm1.has(k1))byNorm1.set(k1,g)});
+const UP=G.map(()=>[]),DOWN=G.map(()=>[]);L.forEach(l=>{UP[l.to].push(l);DOWN[l.from].push(l)});
+G.forEach(g=>{g.tree=UP[g.i].length+DOWN[g.i].length>0});
+const TREE=G.filter(g=>g.tree);
+const findGame=t=>t?(byNorm.get(norm(t))||byNorm1.get(norm1(t))||null):null;
+const gameRef=x=>byId.get(x)||findGame(x);
+const playable=g=>!(g.plats.length&&g.plats.every(p=>p==="Tabletop")); // board games are ancestors, not timeline picks
+/* same-named games (Tomb Raider 1996 / 2013): use the entry's year to pick the right one */
+const findGameY=(t,y)=>{const g=findGame(t);if(!g||!y||Math.abs(g.year-y)<=1)return g;return byNorm.get(norm(t+" ("+y+")"))||g};
+const tierOn=l=>!!state.tiers[l.tier]||(l.disputed&&!!state.tiers.disp);
+const srcHTML=(src,tier)=>(src||[]).map(([tt,u])=>{const isWiki=u&&/wikipedia\.org/i.test(u);const lbl=tt||u;const tag=(tier==="dev"&&isWiki&&!/wikipedia/i.test(lbl))?`${lbl} (via Wikipedia)`:lbl;return u&&/^https?:\/\//i.test(u)?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(tag)}</a>`:esc(tag)}).filter(Boolean).join(" · ");
+const genreOf=g=>g&&g.gen.length?GEN[g.gen[0]]:null;
+
+/* ---------- studios & makers registry ---------- */
+const slugStudio=s=>fold(String(s||"")).toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"unknown";
+const STUDIOS=new Map(),STUDIO_ALIAS=new Map();
+(RAW.studios||[]).forEach(r=>{
+  const st={id:r[0],name:r[1],aliases:r[2]||[],cc:r[3]||"",founded:r[4]||0,closed:r[5]||0,status:r[6]||"active",hq:r[7]||"",makers:r[8]||[],bio:r[9]||"",diaspora:(r[10]||[]).map(([studio,note])=>({studio,note})),curated:true,games:[]};
+  STUDIOS.set(st.id,st);
+  [st.name,...st.aliases].forEach(a=>{STUDIO_ALIAS.set(norm(a),st);STUDIO_ALIAS.set(slugStudio(a),st)});
+});
+G.forEach(g=>{
+  const names=String(g.dev||"").split(/\s+\/\s+/).map(s=>s.trim()).filter(Boolean);
+  names.forEach(nm=>{
+    let st=STUDIO_ALIAS.get(norm(nm))||STUDIO_ALIAS.get(slugStudio(nm));
+    if(!st){const id=slugStudio(nm);st=STUDIOS.get(id);if(!st){st={id,name:nm,aliases:[],cc:g.cc||"",founded:0,closed:0,status:"active",hq:"",makers:[],bio:"",diaspora:[],curated:false,games:[]};STUDIOS.set(id,st);STUDIO_ALIAS.set(norm(nm),st)}}
+    if(!st.cc&&g.cc)st.cc=g.cc;
+    if(!st.games.includes(g))st.games.push(g);
+  });
+});
+STUDIOS.forEach(st=>{st.games.sort((a,b)=>a.year-b.year||b.pop-a.pop);st.maxInf=st.games.reduce((m,g)=>Math.max(m,g.inf),0);st.treeCount=st.games.filter(g=>g.tree).length});
+const findStudio=x=>x?(STUDIOS.get(x)||STUDIO_ALIAS.get(norm(x))||STUDIO_ALIAS.get(slugStudio(x))||null):null;
+const studioBtn=(nm,cls="stbtn")=>{if(!nm)return "";const st=findStudio(nm);return st?`<button type="button" class="${cls}" data-act="studio" data-st="${esc(st.id)}">${esc(nm)}</button>`:esc(nm)};
+const studioLinks=dev=>String(dev||"").split(/\s+\/\s+/).filter(Boolean).map(nm=>studioBtn(nm)).join(" / ");
+
+/* systems: [brand, name, first year, last year]. Append only: share links store positions in this list. */
+const SYSTEMS=[["A","Arcade",1971,2026],
+ ["C","PC",1981,2026],["C","Amiga",1985,1997],["C","Commodore 64",1982,1994],["C","Atari ST",1985,1995],["C","ZX Spectrum",1982,1993],["C","Amstrad CPC",1984,1992],["C","MSX",1983,1992],["C","Apple II",1977,1993],["C","Mac",1984,2026],["C","Steam Deck",2022,2026],
+ ["N","NES",1983,1995],["N","Game Boy",1989,2003],["N","SNES",1990,2000],["N","Nintendo 64",1996,2002],["N","Game Boy Advance",2001,2008],["N","GameCube",2001,2007],["N","Nintendo DS",2004,2014],["N","Wii",2006,2013],["N","Nintendo 3DS",2011,2020],["N","Wii U",2012,2017],["N","Switch",2017,2026],["N","Switch 2",2025,2026],
+ ["S","Master System",1985,1996],["S","Mega Drive / Genesis",1988,1998],["S","Game Gear",1990,1997],["S","Saturn",1994,2000],["S","Dreamcast",1998,2002],
+ ["P","PlayStation",1994,2006],["P","PlayStation 2",2000,2013],["P","PSP",2004,2014],["P","PlayStation 3",2006,2017],["P","PS Vita",2011,2019],["P","PlayStation 4",2013,2026],["P","PlayStation 5",2020,2026],
+ ["X","Xbox",2001,2008],["X","Xbox 360",2005,2016],["X","Xbox One",2013,2022],["X","Xbox Series X|S",2020,2026],
+ ["M","iPhone / iPad",2008,2026],["M","Android",2009,2026],["M","Browser",1995,2026],
+ ["O","Atari 2600",1977,1992],["O","Atari 7800",1986,1992],["O","Intellivision",1979,1990],["O","ColecoVision",1982,1985],["C","Atari 8-bit",1979,1992],["C","Linux",1995,2026],
+ ["N","Game Boy Color",1998,2003],["S","Sega CD",1991,1996],["O","TurboGrafx-16",1987,1994],["O","Neo Geo",1990,2004],["O","Atari Lynx",1989,1995],["O","3DO",1993,1996],["O","Atari Jaguar",1993,1996],
+ ["M","Mobile (feature phone)",1997,2010],["N","Game & Watch",1980,1991],["O","VR",2016,2026]];
+const SYS_IDX=new Map(SYSTEMS.map((s,i)=>[s[1],i]));
+const BRANDS={A:"Arcades",C:"Computers",N:"Nintendo",S:"Sega",P:"PlayStation",X:"Xbox",M:"Phones & browser",O:"Other consoles"};
+const canonSys=n=>/^PC \((DOS|Windows)\)$/.test(n)?"PC":n;
+const sysOfGame=g=>[...new Set(g.plats.map(canonSys))];
+const brandOfSys=n=>(SYSTEMS[SYS_IDX.get(n)]||["O"])[0];
+const brandOf=g=>g&&g.plats.length?brandOfSys(canonSys(g.plats[0])):"";
+
+/* ---------- pixel glyphs for covers (8×8, one per genre family) ---------- */
+const GLYPH_ART={
+ pawn:["...##...","..####..","...##...","..####..","...##...","..####..",".######.","########"],
+ stick:["...##...","...##...","....#...","....#...","..####..",".######.","########","########"],
+ ship:["...##...","...##...","..####..","..####..",".######.","########","##.##.##","#..##..#"],
+ jump:["...##...","...##...","..####..",".#.##.#.","...##...","..#..#..","########","#.##.##."],
+ rooms:["####.###","#..#.#.#","#..###.#","#......#","##.#####",".#.#....",".###....","........"],
+ shield:["########","###..###","###..###","#......#",".##..##.",".##..##.","..#..#..","...##..."],
+ globe:["..####..",".#..#.#.","#...#..#","########","#...#..#","#...#..#",".#..#.#.","..####.."],
+ target:["..####..",".#....#.","#..##..#","#.####.#","#.####.#","#..##..#",".#....#.","..####.."],
+ chute:[".######.","########","#.#..#.#",".#....#.","..#..#..","...##...","...##...","..#..#.."],
+ eye:["........","...##...",".##..##.","#..##..#","#..##..#",".##..##.","...##...","........"],
+ skull:[".######.","########","#..##..#","#..##..#","########",".##..##.","..####..","..#..#.."],
+ sword:["......##",".....###","....###.","#..###..",".####...","..##....",".#.##...","#...#..."],
+ gem:["...##...","..#.##..",".#.####.","#.######",".######.","..####..","...##...","........"],
+ dice:["########","#......#","#.##...#","#.##...#","#...##.#","#...##.#","#......#","########"],
+ people:[".##...##",".##...##","........","####.###","####.###","####.###",".##...##",".##...##"],
+ castle:["#.#..#.#","########",".######.",".######.",".######.",".##..##.",".##..##.","########"],
+ swords:["#......#",".#....#.","..#..#..","...##...","...##...","..#..#..",".##..##.","##....##"],
+ house:["...##...","..####..",".######.","########",".#....#.",".#.##.#.",".#.##.#.",".######."],
+ tree:["...##...","..####..",".######.","########",".######.","...##...","...##...","..####.."],
+ key:[".###....","#...#...","#...#...",".###....","..#.....","..###...","..#.....","..##...."],
+ blocks:["##......","##......","........","##.##...","##.##...","........","##.##.##","##.##.##"],
+ bolt:["....###.","...###..","..###...",".######.","...###..","..###...",".###....",".#......"],
+ flag:["#.#.#.#.",".#.#.#.#","#.#.#.#.",".#.#.#.#","#.......","#.......","#.......","#......."],
+ ball:["..####..",".##..##.","##.##.##","#.####.#","#.####.#","##.##.##",".##..##.","..####.."],
+ note:["...##...","...###..","...#.##.","...#..#.","...#....",".###....","####....",".##....."],
+ card:[".######.",".#....#.",".#.##.#.",".######.",".######.",".#.##.#.",".#....#.",".######."],
+ rocket:["...##...","..####..","..#..#..","..####..","..####..",".######.","##.##.##","...##..."]};
+const GENRE_GLYPH={roots:"pawn",arcade:"stick",shmup:"ship",platformer:"jump",metroidvania:"rooms","action-adventure":"shield","open-world":"globe",fps:"target",shooter:"target","battle-royale":"chute","immersive-sim":"eye",horror:"skull",rpg:"sword",jrpg:"gem",arpg:"sword",roguelike:"dice",mmo:"people",strategy:"castle",moba:"swords",sim:"house",survival:"tree",adventure:"key",puzzle:"blocks",fighting:"bolt","beat-em-up":"bolt",racing:"flag",sports:"ball",party:"note",card:"card",space:"rocket"};
+const GLYPH_IMG={};
+(function makeGlyphs(){let css="";
+  for(const [k,rows] of Object.entries(GLYPH_ART)){const c=document.createElement("canvas");c.width=8;c.height=8;const x=c.getContext("2d");x.fillStyle="#fff";
+    rows.forEach((r,y)=>[...r].forEach((ch,xx)=>{if(ch==="#")x.fillRect(xx,y,1,1)}));
+    GLYPH_IMG[k]=c;css+=`.gl-${k}{--gl:url(${c.toDataURL()})}`}
+  const s=document.createElement("style");s.textContent=css;document.head.appendChild(s)})();
+const glyphOf=g=>{const gen=genreOf(g);return GENRE_GLYPH[gen?gen.k:"arcade"]||"stick"};
+const eraOf=y=>y<1977?0:y<1984?1:y<1990?2:y<1996?3:y<2002?4:y<2013?5:6;
+
+/* a generated box: the era sets the packaging style, the genre sets the pixel glyph; real box art fades in over it when available */
+function coverHTML(title,year,h,glyph,{tag="div",attrs="",cls="",showYear=true,img=""}={}){
+  const ph=h%2?120:38,lw=Math.max(...String(title).split(/[\s\-–:]+/).map(w=>w.length)),k=lw>7?Math.max(.55,7.4/lw).toFixed(2):1;
+  const im=img?`<img class="cimg" src="${esc(img)}" alt="" loading="lazy" decoding="async" onload="if(this.naturalWidth>20)this.parentElement.classList.add('hasimg');else this.remove()" onerror="this.remove()">`:"";
+  return `<${tag} class="cv e${eraOf(year||2000)} gl-${glyph} ${cls}" style="--h:${h};--ph:${ph};--k:${k}" ${attrs}>${im}<span class="ct">${esc(title)}</span><i class="gl" aria-hidden="true"></i>${showYear&&year?`<span class="cy">${year}</span>`:""}</${tag}>`}
+const cover=(g,o={})=>coverHTML(g.title,g.year,g.h,glyphOf(g),{img:g.img,...o});
+const coverOfEntry=(e,y,o={})=>{const g=findGameY(e.t,e.y||y);return g?cover(g,o):coverHTML(e.t,y,hueOf(norm(e.t)),"stick",o)};
+
+/* ---------- search ---------- */
+function searchGames(q,{limit=8,treeOnly=false,catFirst=false,playOnly=false}={}){
+  const v=norm(q),vr=normR(q);if(!v)return [];
+  const words=fold(q).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+  const out=[];
+  for(const g of G){
+    if(treeOnly&&!g.tree)continue;
+    if(playOnly&&!playable(g))continue;
+    let s=-1;
+    if(g.n===v||g.nr===vr)s=120;
+    else if(g.n.startsWith(v)||g.nr.startsWith(vr))s=88;
+    else if(g.aka&&g.aka.split(" ").some(a=>a===q.trim().toLowerCase()||norm(a)===v))s=110;
+    else if(g.n.includes(v)||g.nr.includes(vr))s=60;
+    else if(words.length>1){const tw=fold(g.title).toLowerCase().split(/[^a-z0-9]+/);if(words.every(w=>tw.some(t=>t.startsWith(w)||(ROMAN[t]&&String(ROMAN[t])===w))))s=55}
+    if(s<0)continue;
+    s+=g.pop*4+Math.min(g.inf,400)/50+(g.tree?6:0)+(catFirst&&g.cat?4:0);
+    out.push([s,g]);
+  }
+  return out.sort((a,b)=>b[0]-a[0]).slice(0,limit).map(x=>x[1]);
+}
+/* attach a type-ahead to an input; onPick(game | {custom:title}) */
+function wireSearch(input,box,onPick,opts={}){
+  let items=[],on=0;
+  const draw=()=>{const v=input.value.trim();if(!v){box.hidden=true;return}
+    items=searchGames(v,opts);on=0;
+    box.innerHTML=items.map((g,i)=>`<button type="button" class="res${i===0?" on":""}" data-i="${i}">${cover(g,{showYear:false})}<span><b>${esc(g.title)}</b><small>${flag(g.cc)} ${esc(studio(g)||"")}${g.tree?` · <span class="tag">in the family tree</span>`:""}</small></span><span class="y">${g.year}</span></button>`).join("")
+      +(opts.custom&&!items.some(g=>g.n===norm(v))?`<button type="button" class="res" data-custom="1"><span></span><span><b>Add “${esc(v)}”</b><small>As your own entry</small></span><span class="y">+</span></button>`:"")
+      +(!items.length&&!opts.custom?`<p class="empty" style="padding:8px 10px">No match yet. ${G.length.toLocaleString()} games so far.</p>`:"");
+    box.hidden=false};
+  input.addEventListener("input",draw);
+  input.addEventListener("focus",()=>{if(input.value.trim())draw()});
+  input.addEventListener("keydown",e=>{
+    const bs=$$(".res",box);
+    if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();if(!bs.length)return;on=(on+(e.key==="ArrowDown"?1:-1)+bs.length)%bs.length;bs.forEach((b,i)=>b.classList.toggle("on",i===on));bs[on].scrollIntoView({block:"nearest"})}
+    else if(e.key==="Enter"){e.preventDefault();if(box.hidden||!input.value.trim())return;const b=bs[on]||bs[0];if(b)b.click()}
+    else if(e.key==="Escape"){box.hidden=true}});
+  box.addEventListener("click",e=>{const b=e.target.closest(".res");if(!b)return;
+    const pick=b.dataset.custom?{custom:input.value.trim()}:items[+b.dataset.i];input.value="";box.hidden=true;onPick(pick)});
+}
+/* one listener for every search box: a click outside closes its results */
+document.addEventListener("click",e=>{$$(".results").forEach(b=>{if(!b.hidden&&b.parentElement&&!b.parentElement.contains(e.target))b.hidden=true})});
+
+/* ---------- graph: roots, family tree, connections ---------- */
+/* the main line back in time: strongest evidence, staying within the genre family where possible,
+   so a minor borrowing (a space-combat scene in an RPG) doesn't hijack an RPG's lineage */
+const ROOT_W={dev:3,team:2.5,critic:2,mech:1.4,series:.9,disp:0};
+/* fold runs of 3+ sequels into one step: keep the newest and oldest of the run */
+function compressChain(chain){const out=[];let i=0;
+  while(i<chain.length){let r=0;while(i+r<chain.length-1&&chain[i+r].link&&chain[i+r].link.tier==="series")r++;
+    if(r>=3){out.push({g:chain[i].g,link:null,collapsed:{n:r-1,to:chain[i+r].g,via:chain.slice(i+1,i+r).map(s=>s.g)}});i+=r}
+    else{out.push(chain[i]);i++}}
+  return out}
+const famOf=g=>new Set(g.gen.map(gi=>laneOfGenre[GEN[gi].k]));
+/* step by step: at each game take the most relevant inspiration (strong evidence, same kind of game),
+   with a bonus for branches whose ancestry reaches further back in time */
+function rootsChain(i){
+  const fam=new Map(),minY=new Map(),visiting=new Set();
+  const F=v=>{if(!fam.has(v))fam.set(v,famOf(G[v]));return fam.get(v)};
+  const ok=l=>tierOn(l)&&l.tier!=="disp"&&!l.minor;
+  const reach=v=>{if(minY.has(v))return minY.get(v);if(visiting.has(v))return G[v].year;visiting.add(v);let m=G[v].year;
+    for(const l of UP[v])if(ok(l))m=Math.min(m,reach(l.from));visiting.delete(v);minY.set(v,m);return m};
+  const steps=[];let v=i;const seen=new Set();
+  while(steps.length<70&&!seen.has(v)){
+    seen.add(v);const fv=F(v),gv=G[v],sv=studio(gv).toLowerCase();let best=null,bs=-1e9;
+    for(const l of UP[v]){if(!ok(l)||seen.has(l.from))continue;const p=G[l.from],fp=F(l.from);
+      const aff=(p.gen.length===0||[...fp].some(x=>fv.has(x)))?1:fp.has(0)?.7:.25;
+      const prim=p.gen.length&&gv.gen.length?(p.gen[0]===gv.gen[0]?.6:(gv.gen.includes(p.gen[0])||p.gen.includes(gv.gen[0]))?.25:0):0;
+      const same=sv&&studio(p).toLowerCase()===sv?.5:0;
+      const s=ROOT_W[l.tier]*aff+0.25*Math.min(6,(gv.year-reach(l.from))/10)+prim+same+0.05*p.pop;
+      if(s>bs){bs=s;best=l}}
+    steps.push({g:G[v],link:best});if(!best)break;v=best.from;
+  }
+  return steps; // newest first; each step's link points to the next (older) step
+}
+function ancestors(i){const seen=new Set([i]),st=[i];while(st.length){const v=st.pop();for(const l of UP[v])if(!seen.has(l.from)){seen.add(l.from);st.push(l.from)}}seen.delete(i);return seen}
+/* parents and grandparents only: the influences you'd actually feel in a game */
+function nearAncestors(i){const out=new Set();for(const l of UP[i]){out.add(l.from);for(const l2 of UP[l.from])out.add(l2.from)}out.delete(i);return out}
+function connectPath(a,b){
+  if(a===b)return [];const prev=new Map([[a,null]]),q=[a];let h=0;
+  while(h<q.length){const v=q[h++];if(v===b)break;
+    const ls=[...UP[v],...DOWN[v]].sort((x,y)=>TIERS[y.t].w-TIERS[x.t].w);
+    for(const l of ls){const w=l.from===v?l.to:l.from;if(!prev.has(w)){prev.set(w,{v,l});q.push(w)}}}
+  if(!prev.has(b))return null;const path=[];let x=b;while(x!==a){const p=prev.get(x);path.unshift({a:p.v,b:x,l:p.l});x=p.v}return path;
+}
+
+/* ================================================================
+   My timeline: storage, levels, memories, share links, sync
+   ================================================================ */
+const LV={1:{m:"✓",label:"Played"},2:{m:"★",label:"Played a ton"},3:{m:"♥",label:"Favorite"}};
+const MEM_TAGS=["Couch co-op","With siblings","With friends","LAN party","After school","Summer break","Late nights","Arcade","Hand-me-down"];
+const lvOf=e=>{const v=(e&&e.lv)|0;return v>=1&&v<=3?v:1};
+function blankHist(){return {birth:null,name:"",owned:[],years:{},top10:[],favOrder:[],sysDef:{},updated:0,stage:null}}
+/* everything that arrives from someone else (a share link, another viewer's saved doc) goes through here */
+function cleanTimeline(raw){
+  const d=blankHist();if(!raw||typeof raw!=="object")return d;
+  const by=parseInt(raw.birth,10);d.birth=by>=1900&&by<=NOW?by:null;
+  d.name=typeof raw.name==="string"?raw.name.slice(0,24):"";
+  const strs=(a,n,m)=>Array.isArray(a)?a.filter(s=>typeof s==="string").slice(0,n).map(s=>s.slice(0,m)):[];
+  d.owned=strs(raw.owned,60,40);d.top10=strs(raw.top10,10,120);
+  const ys=raw.years&&typeof raw.years==="object"?raw.years:{};
+  for(const [k,arr] of Object.entries(ys)){const y=parseInt(k,10);if(!(y>=1800&&y<=NOW)||String(y)!==String(k).trim()||!Array.isArray(arr))continue;
+    const out=[];for(const e of arr.slice(0,400)){if(!e||typeof e.t!=="string"||!e.t.trim())continue;
+      const x={t:e.t.slice(0,120),p:typeof e.p==="string"?e.p.slice(0,2):"",y:Number.isInteger(e.y)?e.y:null,lv:lvOf(e)};
+      if(Array.isArray(e.systems))x.systems=strs(e.systems,8,40);if(typeof e.sys==="string")x.sys=e.sys.slice(0,40);
+      if(typeof e.mem==="string"&&e.mem.trim())x.mem=e.mem.trim().slice(0,90);
+      if(Array.isArray(e.mtags)&&e.mtags.length)x.mtags=strs(e.mtags,4,24);
+      out.push(x)}
+    if(out.length)d.years[y]=out}
+  d.updated=Number(raw.updated)||0;return d;
+}
+let hist=Object.assign(blankHist(),store.get("ib-history")||{});
+if(!hist.years)hist.years={};
+if(hist.birth&&hist.onboard===true&&!hist.stage)hist.stage=null; // version 1 flag: treat as finished
+delete hist.onboard;
+const pileOf=(d,y)=>(d.years[y]||(d.years[y]=[]));
+function entries(d){const out=[];for(const [y,p] of Object.entries(d.years||{}))for(const e of p)out.push({e,y:+y,g:findGameY(e.t,e.y||+y),lv:lvOf(e)});return out}
+function entryOf(d,g){for(const [y,p] of Object.entries(d.years||{})){const e=p.find(x=>{const k=norm(x.t);return k===g.n||norm1(x.t)===norm1(g.title)});if(e)return e}return null}
+function entryYearOf(d,g){for(const [y,p] of Object.entries(d.years||{})){const e=p.find(x=>{const k=norm(x.t);return k===g.n||norm1(x.t)===norm1(g.title)});if(e)return +y}return null}
+const levelOf=(d,g)=>{const e=entryOf(d,g);return e?lvOf(e):0};
+const sortPile=p=>p.sort((a,b)=>lvOf(b)-lvOf(a));
+/* default year when picking a game: if it came out before you turned 5, place it in early childhood (age 6) so you aren't playing NES at age 1 */
+function defaultPlayedYear(g){
+  if(hist.birth&&g.year<hist.birth+5)return Math.min(NOW,Math.max(g.year,hist.birth+6));
+  return g.year;
+}
+function setLevel(g,lv,forceYear=null){
+  for(const [y,p] of Object.entries(hist.years)){const i=p.findIndex(x=>norm(x.t)===g.n||norm1(x.t)===norm1(g.title));
+    if(i>=0){if(lv<=0)p.splice(i,1);else p[i].lv=lv;sortPile(p);save();return}}
+  if(lv>0){const py=forceYear||defaultPlayedYear(g);const p=pileOf(hist,py);p.push({t:g.title,p:brandOf(g),y:g.year,lv});sortPile(p);save()}
+}
+function moveEntryYear(fromY,title,toY){
+  if(fromY===toY||!(toY>=1950&&toY<=NOW))return fromY;
+  const p=hist.years[fromY];if(!p)return fromY;
+  const i=p.findIndex(x=>norm(x.t)===norm(title));if(i<0)return fromY;
+  const [e]=p.splice(i,1);
+  const dst=pileOf(hist,toY);
+  if(!dst.some(x=>norm(x.t)===norm(title)))dst.push(e);
+  sortPile(dst);save();return toY;
+}
+function cycleLevel(g){const cur=levelOf(hist,g),nl=cur>=3?0:cur+1;setLevel(g,nl);return nl}
+function addCustom(title,y,lv=1){const p=pileOf(hist,y);if(!p.some(x=>norm(x.t)===norm(title)))p.push({t:title,p:"",y:null,lv});sortPile(p);save()}
+function removeEntry(y,t){const p=hist.years[y];if(!p)return;const i=p.findIndex(x=>norm(x.t)===norm(t));if(i>=0)p.splice(i,1);save()}
+/* systems a game was played on: chosen, else the first of its platforms you said you owned */
+function sysListOf(e,d){if(Array.isArray(e.systems))return [...new Set(e.systems.map(canonSys))];if(e.sys)return [canonSys(e.sys)];
+  const g=findGame(e.t);if(!g)return [];const ps=sysOfGame(g);const own=(d&&d.owned)||[];const hit=ps.find(p=>own.includes(p));return hit?[hit]:ps.slice(0,1)}
+
+let syncMsg="";
+function save(){hist.updated=Date.now();store.set("ib-history",hist);queueSync()}
+
+/* share links carry the whole timeline in the hash: t1-name-birth-systems-played-alot-favorites-top10-custom(-notes) */
+const b36=(n,w)=>n.toString(36).padStart(w,"0");
+const toHex=(s,max)=>[...new TextEncoder().encode(String(s)).slice(0,max)].map(b=>b.toString(16).padStart(2,"0")).join("");
+const fromHex=h=>{try{return new TextDecoder().decode(new Uint8Array((h.match(/../g)||[]).map(x=>parseInt(x,16))))}catch(e){return ""}};
+function encodeShare(d){
+  const lv={1:[],2:[],3:[]},custom=[],notes=[];
+  for(const {e,y,g,lv:l} of entries(d)){
+    if(g&&g.year===y&&g.code<46656)lv[l].push(b36(g.code,3));
+    else if(g&&g.code<46656)custom.push("g"+String(y-1900).padStart(3,"0")+l+b36(g.code,3));
+    else custom.push(String(y-1900).padStart(3,"0")+l+toHex(e.t,40));
+    if(g&&g.code<46656&&(e.mem||(e.mtags&&e.mtags.length))){
+      const ti=(e.mtags||[]).map(t=>MEM_TAGS.indexOf(t)).filter(k=>k>=0).join("");
+      notes.push(b36(g.code,3)+ti+"q"+toHex(e.mem||"",50));
+    }
+  }
+  const owned=(d.owned||[]).map(n=>SYS_IDX.get(n)).filter(i=>i!=null).map(i=>b36(i,2)).join("");
+  const t10=(d.top10||[]).map(k=>{const g=byNorm.get(k)||byNorm1.get(k);return g?b36(g.code,3):""}).join("");
+  const parts=["t1",toHex(d.name||"",24),d.birth||0,owned,lv[1].join(""),lv[2].join(""),lv[3].join(""),t10,custom.join("z")];
+  if(notes.length)parts.push(notes.join("z"));
+  return parts.join("-");
+}
+function decodeShare(s){
+  const p=s.split("-");if(p[0]!=="t1"||p.length<8)return null;
+  const d=Object.assign(blankHist(),{name:fromHex(p[1]),birth:+p[2]||null});
+  for(let i=0;i+2<=p[3].length;i+=2){const sy=SYSTEMS[parseInt(p[3].substr(i,2),36)];if(sy)d.owned.push(sy[1])}
+  [4,5,6].forEach((k,j)=>{const seg=p[k]||"";for(let i=0;i+3<=seg.length;i+=3){const g=byCode.get(parseInt(seg.substr(i,3),36));if(g)pileOf(d,g.year).push({t:g.title,p:brandOf(g),y:g.year,lv:j+1})}});
+  const t=p[7]||"";for(let i=0;i+3<=t.length;i+=3){const g=byCode.get(parseInt(t.substr(i,3),36));if(g)d.top10.push(g.n)}
+  (p[8]||"").split("z").filter(Boolean).forEach(x=>{
+    if(x[0]==="g"&&x.length>=8){const y=1900+parseInt(x.slice(1,4),10),l=+x[4]||1,g=byCode.get(parseInt(x.slice(5,8),36));if(g&&y>1900)pileOf(d,y).push({t:g.title,p:brandOf(g),y:g.year,lv:l})}
+    else{const y=1900+parseInt(x.slice(0,3),10),l=+x[3]||1,title=fromHex(x.slice(4));if(title&&y>1900)pileOf(d,y).push({t:title,p:"",y:null,lv:l})}
+  });
+  if(p[9]){(p[9]||"").split("z").filter(Boolean).forEach(x=>{
+    const g=byCode.get(parseInt(x.slice(0,3),36));if(!g)return;
+    const qi=x.indexOf("q",3);if(qi<0)return;
+    const tags=[...x.slice(3,qi)].map(c=>MEM_TAGS[+c]).filter(Boolean),mem=fromHex(x.slice(qi+1));
+    const e=entryOf(d,g);if(e){if(tags.length)e.mtags=tags;if(mem)e.mem=mem}
+  })}
+  const c=cleanTimeline(d);c.years&&Object.values(c.years).forEach(sortPile);return c.birth?c:null;
+}
+const shareLink=d=>shareBase()+"#"+encodeShare(d);
+
+/* ---------- capabilities: database sync and the friends wall ---------- */
+const CAPS={db:null,user:null,me:null,owner:false,canWrite:null,ok:false,comments:null};
+let FRIENDS={db:[],wall:[]};
+let seen=store.get("ib2-seen",[]); // timelines opened from links on this device
+const DEC=new Map(); // decoded share links, by payload
+let syncT=null,syncing=false,syncAgain=false;
+function queueSync(){if(!CAPS.db||!CAPS.me||CAPS.canWrite===false)return;clearTimeout(syncT);syncT=setTimeout(flush,1200)}
+function packHist(h){const years={};for(const [y,p] of Object.entries(h.years||{}))if(p.length)years[y]=p;
+  return {v:2,birth:h.birth,name:h.name||"",owned:h.owned||[],years,sysDef:h.sysDef||{},favOrder:h.favOrder||[],top10:h.top10||[],updated:h.updated||Date.now()}}
+async function flush(){
+  if(syncing){syncAgain=true;return}syncing=true;
+  try{await CAPS.db.doc("timelines/"+CAPS.me).set(packHist(hist));syncMsg="Saved to your account"}
+  catch(e){if(e&&e.code==="invalid_argument")CAPS.canWrite=false;syncMsg="Saved on this device"}
+  syncing=false;const el=$("#syncmsg");if(el)el.textContent=syncMsg;if(syncAgain){syncAgain=false;flush()}
+}
+async function initCaps(){
+  try{
+    if(!window.claude||!claude.use)return;
+    claude.use("comments").then(cm=>{CAPS.comments=cm;const b=$("#suggestBtn");if(b&&cm)b.hidden=false}).catch(()=>{});
+    const [db,user]=await Promise.all([claude.use("db"),claude.use("user")]);
+    CAPS.db=db;CAPS.user=user;if(!db||!user)return;
+    CAPS.me=await user.id();CAPS.owner=await user.isOwner();
+    const cw=await user.can("data.write");CAPS.canWrite=cw;CAPS.ok=true;
+    if(CAPS.me){
+      const snap=await db.doc("timelines/"+CAPS.me).get();
+      if(snap.exists){const r=snap.data();
+        if(!hist.updated||(r.updated||0)>hist.updated){hist=Object.assign(blankHist(),hist,JSON.parse(JSON.stringify(r)));hist.stage=null;store.set("ib-history",hist);if(["start","timeline"].includes(state.route.view))route()}
+        else if(hist.updated>(r.updated||0)&&hist.birth&&cw!==false)flush()}
+      else if(hist.birth&&cw!==false)flush();
+    }
+    db.collection("timelines").onSnapshot(s=>{FRIENDS.db=s.docs.filter(d=>d.exists&&d.id!==CAPS.me).map(d=>({key:"db-"+d.id,uid:d.id,src:"db",data:cleanTimeline(d.data())})).filter(f=>f.data.birth);resolveNames()},()=>{});
+    db.collection("crew").onSnapshot(s=>{FRIENDS.wall=s.docs.filter(d=>d.exists).map(d=>({key:"wall-"+d.id,docId:d.id,src:"wall",data:cleanTimeline(d.data())})).filter(f=>f.data.birth);refreshFriends()},()=>{});
+  }catch(e){CAPS.ok=false}
+}
+async function resolveNames(){
+  const ids=FRIENDS.db.map(f=>f.uid);
+  if(ids.length&&CAPS.user){try{const ps=await CAPS.user.profiles(ids);FRIENDS.db.forEach(f=>{f.pname=(ps[f.uid]&&ps[f.uid].name)||""})}catch(e){}}
+  refreshFriends();
+}
+/* only redraw when the friends list really changed, and never under someone's fingers */
+let friendSig="";
+function refreshFriends(){
+  const sig=friendList().map(f=>f.key+":"+(f.data.updated||0)+":"+(f.name||"")).join("|");if(sig===friendSig)return;
+  const v=state.route&&state.route.view,ae=document.activeElement,typing=ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName);
+  if($("#layer").innerHTML||typing)return; // try again on the next change
+  if(v==="friends"||v==="person"||(v==="start"&&!hist.stage)){friendSig=sig;render()}
+}
+const friendHash=f=>"friend-"+String(f.key).replace(/[^A-Za-z0-9-]/g,"-");
+function friendList(){
+  const out=[];
+  FRIENDS.wall.forEach(f=>out.push({key:f.key,name:f.data.name||"A friend",data:f.data,src:"wall",docId:f.docId}));
+  FRIENDS.db.forEach(f=>out.push({key:f.key,name:f.data.name||f.pname||"Someone",data:f.data,src:"db"}));
+  seen.forEach(s=>{if(!DEC.has(s.payload))DEC.set(s.payload,decodeShare(s.payload));const d=DEC.get(s.payload);if(d&&!out.some(o=>o.data.name===d.name&&o.data.birth===d.birth))out.push({key:"seen-"+s.payload.slice(0,40),name:d.name||"A friend",data:d,src:"seen",payload:s.payload})});
+  return out;
+}
+
+/* ================================================================
+   Router and views
+   ================================================================ */
+const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",trail:[],tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
+function parseHash(){
+  let h="";try{h=decodeURIComponent(location.hash.slice(1))}catch(e){h=location.hash.slice(1)}
+  const home={view:hist.birth&&!hist.stage?"timeline":"start"};
+  if(!h||h==="start")return home;
+  if(h==="timeline")return hist.birth&&!hist.stage?{view:"timeline"}:{view:"start"};
+  if(h==="explore")return {view:"explore"};
+  if(h==="studios")return {view:"studios"};
+  if(h.startsWith("studio-")&&findStudio(h.slice(7)))return {view:"studio",st:findStudio(h.slice(7)).id};
+  if(h==="friends")return {view:"friends"};
+  if(h.startsWith("t1-"))return {view:"shared",payload:h};
+  if(h.startsWith("friend-"))return {view:"person",fk:h};
+  if(h.startsWith("walk-")&&byId.has(h.slice(5)))return {view:"game",id:h.slice(5),walk:true};
+  if(byId.has(h))return {view:"game",id:h};
+  return home;
+}
+function go(h){if(location.hash.slice(1)===h)route();else location.hash=h}
+let lastView="";
+function route(){if(story)closeStory();else if($("#layer").innerHTML)clearLayer();state.route=parseHash();render();}
+addEventListener("hashchange",route);
+function render(){
+  const r=state.route,m=$("#main");
+  const tab=r.view==="start"?"timeline":(r.view==="shared"||r.view==="person")?"friends":r.view==="game"?"explore":(r.view==="studios"||r.view==="studio")?"studios":r.view;
+  $$(".tab").forEach(a=>a.toggleAttribute("aria-current",a.dataset.tab===tab)),$$(".tab").forEach(a=>{if(a.dataset.tab===tab)a.setAttribute("aria-current","page")});
+  const key=r.view+(r.id||"")+(r.st||"")+(r.payload||"")+(r.fk||"");
+  if(r.view==="start")renderStart(m);
+  else if(r.view==="timeline")renderTimeline(m);
+  else if(r.view==="explore")renderExplore(m);
+  else if(r.view==="studios")renderStudios(m);
+  else if(r.view==="studio")renderStudio(m,r.st);
+  else if(r.view==="game")renderGame(m,r.id);
+  else if(r.view==="friends")renderFriends(m);
+  else if(r.view==="shared")renderShared(m,r.payload);
+  else if(r.view==="person"){const f=friendList().find(x=>friendHash(x)===r.fk);
+    if(f)renderPerson(m,f);else m.innerHTML=`<section class="wrap exhero"><h1 class="h1">Loading timeline…</h1><p class="lede">If nothing appears, this friend may have been removed from the friends wall.</p><a class="btn" href="#friends">Back to friends</a></section>`}
+  if(key!==lastView){window.scrollTo({top:0});lastView=key}
+  if(r.view==="game"&&r.walk){r.walk=false;openStory(rootsChain(byId.get(r.id).i))}
+}
+const footer=()=>`<footer class="wrap foot-about"><p><b>Inspired By is a tribute to the people who make games.</b> Every game stands on the craft of earlier teams, and every studio adds something of its own. Each link shows what changed, what it built on, how strong the evidence is, and its source.</p>
+  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles. <button class="link" data-act="suggest">Spot a missing link or better source?</button> · Built ${esc(RAW.built||"")}.</p></footer>`;
+
+function gtaviSpotlight(){
+  const gta=byId.get("grand-theft-auto-vi")||byId.get("grand-theft-auto-v");if(!gta)return "";
+  const ch=rootsChain(gta.i),old=ch.length?ch[ch.length-1].g:null,yrs=old?gta.year-old.year:64;
+  const studios=new Set(ch.map(s=>studio(s.g)).filter(Boolean)),countries=new Set(ch.map(s=>s.g.cc).filter(Boolean));
+  return `<div class="marquee"><div class="marquee-in">${cover(gta,{showYear:false})}<div>
+    <p class="eyebrow" style="margin-bottom:4px">Launch week spotlight · Video games as cumulative art</p>
+    <h2 class="h2">${esc(gta.title)}: ${yrs} years in the making</h2>
+    <p class="sub" style="margin:4px 0 10px">Before the inevitable wave of fast-follows begins, trace the real craft behind ${esc(gta.title)}: ${plural(ch.length-1,"step")} across ${plural(studios.size,"studio")} in ${plural(countries.size,"country","countries")}, from 1960s lab mainframes and 1980s British space sims to modern Vice City.</p>
+    <div class="row"><button class="btn sm primary" data-act="walk" data-id="${gta.id}">Walk its ${yrs}-year roots ▸</button><button class="btn sm" data-act="game" data-id="${gta.id}">Open family tree</button></div>
+  </div></div></div>`;
+}
+
+/* ---------- start: new visitors ---------- */
+const HERO_IDS=["grand-theft-auto-vi","elden-ring","Fortnite Battle Royale","minecraft","the-legend-of-zelda-breath-of-the-wild","hades","Baldur's Gate 3","half-life","arc-raiders"];
+function heroGame(){const gta=byId.get("grand-theft-auto-vi");if(gta&&rootsChain(gta.i).length>=4)return gta;const ok=HERO_IDS.map(gameRef).filter(g=>g&&rootsChain(g.i).length>=5);const day=Math.floor(Date.now()/864e5);return ok.length?ok[day%ok.length]:TREE.slice().sort((a,b)=>b.pop-a.pop||b.inf-a.inf)[0]}
+function renderStart(m){
+  if(hist.birth&&hist.stage){renderOnboard(m);return}
+  const hg=heroGame(),full=hg?rootsChain(hg.i):[],chain=compressChain(full).reverse();
+  const span=chain.length?hg.year-chain[0].g.year:0;
+  const fl=friendList();
+  m.innerHTML=`<section class="wrap hero">
+    <div>
+      <p class="eyebrow">Your life in games</p>
+      <h1 class="h1">What did you play growing up?</h1>
+      <p class="lede">Tap the games that raised you and get your gaming timeline in two minutes. Add childhood memories, compare timelines with friends, and trace your favorites back to the pioneers who inspired them.</p>
+      <form class="start" id="startForm" novalidate>
+        <label class="field" for="birthIn">Year you were born<input class="input" id="birthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1986" autocomplete="off"></label>
+        <button class="btn primary" type="submit">Start my timeline</button>
+      </form>
+      <p class="sub" id="birthErr" style="margin-top:8px" hidden></p>
+    </div>
+    ${chain.length?`<div class="shelf">
+      <h2><b>${esc(hg.title)}</b> stands on ${span} years of game design</h2>
+      <div class="shelfrow" id="heroShelf">${chain.map((s,k)=>`${k?(s.collapsed?`<span class="rfold" style="margin-top:0;align-self:center">… ${s.collapsed.n} more …</span>`:`<span class="sarrow" aria-hidden="true">▸</span>`):""}<button class="sbook" data-act="game" data-id="${s.g.id}">${cover(s.g)}<span class="yr">${s.g.year}</span><b>${esc(s.g.title)}</b></button>`).join("")}</div>
+      <div class="foot"><span>${plural(full.length-1,"step")} from ${esc(chain[0].g.title)}</span><button class="btn sm primary" data-act="walk" data-id="${hg.id}">Walk the roots ▸</button></div>
+    </div>`:""}
+  </section>
+  <section class="wrap">${gtaviSpotlight()}</section>
+  <section class="wrap sec">
+    <h2 class="h2">Or trace any game's family tree</h2>
+    <p class="sub">Search any game to see what inspired it, what it went on to inspire, and the makers behind it.</p>
+    <div class="search bigsearch"><input class="input" id="q0" type="search" placeholder="Search a game, like Grand Theft Auto VI or Hollow Knight" autocomplete="off" aria-label="Search a game"><div class="results" id="r0" hidden></div></div>
+    <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","tetris","doom","2048","arc-raiders"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}</div>
+  </section>
+  ${fl.length?`<section class="wrap sec"><h2 class="h2">Timelines from friends</h2><p class="sub">Open one to compare it with yours.</p><div class="fgrid">${fl.slice(0,6).map(friendCard).join("")}</div></section>`:""}
+  ${footer()}`;
+  requestAnimationFrame(()=>{const sh=$("#heroShelf");if(sh)sh.scrollLeft=sh.scrollWidth});
+  wireSearch($("#q0"),$("#r0"),g=>g&&g.id&&go(g.id),{});
+  $("#startForm").onsubmit=e=>{e.preventDefault();const y=parseInt($("#birthIn").value,10);
+    if(y>=1940&&y<=NOW-3){hist.birth=y;hist.stage="systems";save();renderOnboard(m);window.scrollTo({top:0})}
+    else{const er=$("#birthErr");er.hidden=false;er.textContent="Enter a year like 1986."}};
+}
+
+/* ---------- onboarding: systems, then quick picks ---------- */
+function relevantSystems(birth){const a=birth+3,b=Math.min(NOW,birth+40);return SYSTEMS.filter(([,n,f,t])=>t>=a&&f<=b&&n!=="Steam Deck")}
+function renderOnboard(m){
+  if(hist.stage==="systems")return renderSystems(m);
+  return renderPicks(m);
+}
+function renderSystems(m){
+  const sys=relevantSystems(hist.birth),own=new Set(hist.owned||[]);
+  const groups={};sys.forEach(s=>(groups[s[0]]=groups[s[0]]||[]).push(s));
+  const order=["A","C","N","S","P","X","M","O"];
+  m.innerHTML=`<section class="wrap" style="padding-block:28px 10px;max-width:860px">
+    <div class="steps"><i class="on"></i><i class="on"></i><i></i><span>Step 2 of 3</span></div>
+    <h1 class="h1" style="font-size:clamp(26px,5vw,38px)">What did you play on?</h1>
+    <p class="lede">Pick everything you played on: at home, at a friend's place, or at the arcade. We'll show the games you're most likely to know.</p>
+    <div class="sysgroups">${order.filter(b=>groups[b]).map(b=>`<div class="sysgroup"><h3>${BRANDS[b]}</h3><div>${groups[b].map(([,n,f,t])=>`<button class="syschip" data-act="own" data-sys="${esc(n)}" aria-pressed="${own.has(n)}"><b>${esc(n)}</b><small>${f}${t>=NOW?"–now":"–"+t}</small></button>`).join("")}</div></div>`).join("")}</div>
+    <div class="pickbar"><div class="in"><button class="btn ghost" data-act="obBack">Back</button><span class="sync" style="flex:1" id="ownCount">${own.size?plural(own.size,"system")+" picked":"Pick a few, or skip"}</span><button class="btn primary" data-act="obPicks">Next: pick games ▸</button></div></div>
+  </section>`;
+}
+function quickBands(birth,owned){
+  const own=new Set(owned||[]),useOwn=own.size>0;
+  const spec=[[-9,-1,"Before you were born","Older siblings, cousins, hand-me-downs and arcades",8],[3,6,"Ages 3–6","",10],[7,9,"Ages 7–9","",14],[10,12,"Ages 10–12","",16],[13,15,"Ages 13–15","",16],[16,19,"Ages 16–19","",16],[20,24,"Ages 20–24","",16],[25,29,"Ages 25–29","",14],[30,39,"Your thirties","",16],[40,49,"Your forties","",14],[50,90,"Since you turned 50","",12]];
+  const bands=[];
+  for(const [a,b,label,sub,n] of spec){
+    const from=Math.max(1950,birth+a),to=Math.min(NOW,birth+b);if(from>to)continue;
+    const pool=G.filter(g=>g.year>=from&&g.year<=to&&(g.cat||g.pop>=3)&&playable(g));
+    const scored=pool.map(g=>{const ps=sysOfGame(g),hit=ps.some(p=>own.has(p)),arc=ps.includes("Arcade");
+      const s=g.pop*10+(hit?26:0)+(arc&&g.year<1996?6:0)+Math.min(g.inf,300)/25+(g.cat?3:0);return {g,s,ok:!useOwn||hit||g.pop>=5||(arc&&g.year<1992&&g.pop>=4)}}).filter(x=>x.ok).sort((x,y)=>y.s-x.s);
+    const extra=state.pickExtra[label]||0;
+    const games=scored.slice(0,n+extra).map(x=>x.g);
+    if(games.length)bands.push({label,sub,from,to,games,more:scored.length>n+extra});
+  }
+  return bands;
+}
+function tileHTML(g,d,{act="cycle",sub=null,cls=""}={}){
+  const lv=d?levelOf(d,g):0;
+  const jump=(act==="cycle"&&g.tree)?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" data-close="1" title="Open ${esc(g.title)} family tree" aria-label="Open ${esc(g.title)} family tree">⑂</button>`:"";
+  return `<div class="tile${lv?" lv"+lv:""} ${cls}"><div class="artwrap"><button class="art" data-act="${act}" data-id="${g.id}" aria-label="${esc(g.title)}, ${lv?LV[lv].label:"not played"}">${cover(g)}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button>${jump}</div>
+    <span class="tn">${esc(g.title)}</span>${sub!==null?`<span class="ts">${sub}</span>`:`<span class="ts">${g.year} · ${esc(studio(g))}</span>`}</div>`}
+function histBars(d,from,to){const counts={},loves={};for(const {y,lv} of entries(d)){counts[y]=(counts[y]||0)+1;if(lv===3)loves[y]=1}
+  const max=Math.max(1,...Object.values(counts));let h="";for(let y=from;y<=to;y++){const c=counts[y]||0;h+=`<i class="${c?(loves[y]?"l":""):"z"}" style="height:${c?Math.max(12,c/max*100):6}%" title="${y}: ${c}"></i>`}return h}
+function pickSummary(){const es=entries(hist);const ys=es.map(x=>x.y);return {n:es.length,from:ys.length?Math.min(...ys):hist.birth,to:ys.length?Math.max(...ys):hist.birth}}
+function pickBars(){const s=pickSummary();return histBars(hist,Math.max(1950,Math.min(hist.birth-9,s.from)),Math.min(NOW,Math.max(hist.birth+40,s.to)))}
+function renderPicks(m){
+  const bands=quickBands(hist.birth,hist.owned);
+  const s=pickSummary();
+  m.innerHTML=`<section class="wrap" style="padding-block:28px 0">
+    <div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i><span>Step 3 of 3</span></div>
+    <h1 class="h1" style="font-size:clamp(26px,5vw,38px)">Tap the games you played</h1>
+    <div class="tap-hint"><span><b>✓</b>1 tap: played</span><span><b class="l2">★</b>2 taps: played a ton</span><span><b class="l3">♥</b>3 taps: all-time favorite</span><span class="muted">· tap <b>⑂</b> on any cover to see its roots</span></div>
+    <p class="sub">Picked from ${hist.owned&&hist.owned.length?"the systems you chose, plus games everyone knew":"the best-known games of each year"}. Early releases automatically land in your childhood, and you can move any game's year later.</p>
+    ${bands.map(b=>`<section class="band"><h2 class="h2">${b.label} <span class="mono muted" style="font-size:13px;font-weight:500">${b.from===b.to?b.from:b.from+"–"+b.to}</span></h2>${b.sub?`<p class="sub">${b.sub}</p>`:""}
+      <div class="grid">${b.games.map(g=>tileHTML(g,hist)).join("")}</div>
+      ${b.more?`<button class="btn sm" style="margin-top:12px" data-act="pickMore" data-band="${esc(b.label)}">Show more from ${b.from===b.to?b.from:b.from+"–"+b.to}</button>`:""}</section>`).join("")}
+    <div class="pickbar"><div class="in">
+      <span class="count" id="pcount">${plural(s.n,"game")}<small>${s.n?`${s.from}–${s.to}`:"Nothing yet"}</small></span>
+      <span class="minihist" id="phist" aria-hidden="true">${pickBars()}</span>
+      <button class="btn primary" data-act="obDone">See my timeline ▸</button></div></div>
+  </section>`;
+}
+function updatePickBar(){const s=pickSummary(),c=$("#pcount"),h=$("#phist");if(c)c.innerHTML=`${plural(s.n,"game")}<small>${s.n?`${s.from}–${s.to}`:"Nothing yet"}</small>`;if(h)h.innerHTML=pickBars()}
+function refreshTile(btn,g){const tile=btn.closest(".tile");if(!tile)return;const lv=levelOf(hist,g);
+  tile.classList.remove("lv1","lv2","lv3");if(lv)tile.classList.add("lv"+lv);
+  const old=btn.querySelector(".lvb");if(old)old.remove();
+  if(lv)btn.insertAdjacentHTML("beforeend",`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`);
+  btn.setAttribute("aria-label",`${g.title}, ${lv?LV[lv].label:"not played"}`)}
+
+/* ---------- my timeline ---------- */
+function lifeStage(age){return age<0?"Before you were born":age<=12?"Childhood":age<=19?"Teens":age<=29?"Your twenties":age<=39?"Your thirties":age<=49?"Your forties":"Fifty and up"}
+function lifeStrip(d,{mine=true}={}){
+  const es=entries(d);if(!es.length)return `<p class="empty">No games yet.</p>`;
+  const byY={};es.forEach(x=>(byY[x.y]=byY[x.y]||[]).push(x));
+  const ys=Object.keys(byY).map(Number);const from=mine?Math.min(d.birth||ys[0],...ys):Math.min(...ys),to=mine?NOW:Math.max(...ys);
+  let h="",stage="",gapFrom=null;
+  const flushGap=y=>{if(gapFrom!=null){const a=gapFrom,b=y-1;h+=`<div class="ygap"><b>${a===b?a:a+"–"+b}</b><span>Nothing yet</span>${mine?`<button class="link" data-act="year" data-y="${a}">Add games from ${a===b?a:a+"–"+b}</button>`:""}</div>`;gapFrom=null}};
+  for(let y=from;y<=to;y++){
+    const age=y-(d.birth||y),st=lifeStage(age);
+    if(st!==stage){flushGap(y);h+=`<div class="stage">${st}</div>`;stage=st}
+    const xs=(byY[y]||[]).sort((a,b)=>b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
+    if(!xs.length){if(gapFrom==null)gapFrom=y;continue}
+    flushGap(y);
+    h+=`<div class="yr"><div class="yl"><b>${y}</b><span>${age<0?`${-age} before you`:age===0?"born":"age "+age}</span></div><div class="yt">${xs.map(x=>{const g=x.g;const ttl=g?g.title:x.e.t;
+      const relDiff=g&&g.year!==y?`<span class="ts">Out ${g.year}</span>`:"";
+      const memLine=x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:(x.e.mtags&&x.e.mtags.length?`<span class="ts">${esc(x.e.mtags[0])}</span>`:"");
+      return `<div class="tile lv${x.lv}"><div class="artwrap"><button class="art" data-act="entry" data-y="${y}" data-t="${esc(x.e.t)}" ${mine?"":`data-ro="1"`} aria-label="${esc(ttl)}, ${LV[x.lv].label}">${coverOfEntry(x.e,y,{showYear:false})}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}" aria-hidden="true">${LV[x.lv].m}</span></button>${g&&g.tree?`<button type="button" class="tjump" data-act="game" data-id="${g.id}" title="Open family tree" aria-label="Open ${esc(ttl)} family tree">⑂</button>`:""}</div><span class="tn">${esc(ttl)}</span>${relDiff}${memLine}</div>`}).join("")}
+      ${mine?`<button class="yadd" data-act="year" data-y="${y}" aria-label="Add games from ${y}">+ Add</button>`:""}</div></div>`;
+  }
+  flushGap(to+1);
+  return h;
+}
+function timelineStats(d){const es=entries(d),ys=new Set(es.map(x=>x.y));const sys=new Set(),yc={};es.forEach(x=>{yc[x.y]=(yc[x.y]||0)+1;sysListOf(x.e,d).forEach(s=>sys.add(s))});
+  let peakY=null,peakN=0;for(const [y,n] of Object.entries(yc))if(n>peakN){peakN=n;peakY=+y}
+  return {n:es.length,years:ys.size,sys:sys.size,fav:es.filter(x=>x.lv===3).length,peakY,peakN,from:es.length?Math.min(...ys):null,to:es.length?Math.max(...ys):null}}
+function renderTimeline(m){
+  const d=hist,st=timelineStats(d);
+  const first=store.get("ib2-revealed")!==true&&st.n>0;
+  const dx=st.n>=3?dnaOf(d):null;
+  const peakAge=st.peakY&&d.birth?st.peakY-d.birth:null;
+  const teaser=dx&&dx.oldest?`<p class="lede" style="margin:14px 0 0;font-size:15px">Your games trace back to <b>${dx.allCount.toLocaleString()}</b> earlier games, all the way to <a href="#${dx.oldest.g.id}">${esc(dx.oldest.g.title)}</a> (${dx.oldest.g.year}).${dx.top[0]?` Your biggest root is <b>${esc(dx.top[0].g.title)}</b>.`:""} <button class="link" data-act="toDna">See your gaming DNA</button></p>`:"";
+  m.innerHTML=`<section class="wrap mehead">
+      <div><p class="eyebrow">${first?"Here it is":"My gaming timeline"}</p>
+        <h1 class="h1" style="font-size:clamp(26px,5vw,40px)">${first?"Your life in games":esc(d.name?d.name+"'s games":"My life in games")}</h1>
+        <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div><div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.sys}</b><span>systems</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${st.peakY?`<div class="stat"><b>${st.peakY}</b><span>peak year${peakAge>=0?` (age ${peakAge})`:""}</span></div>`:`<div class="stat"><b>${d.birth}</b><span>born</span></div>`}</div>
+        ${teaser}
+      </div>
+      <div class="row"><button class="btn primary" data-act="share">Share & save</button><button class="btn" data-act="poster">4K Poster</button><button class="btn ghost" data-act="settings" aria-label="Timeline settings">Settings</button></div>
+    </section>
+    ${first?`<section class="wrap"><div class="banner"><p><b>Send it to your friends — and tap any game on your timeline to adjust the year you played it or jot a childhood memory.</b></p><button class="btn primary" data-act="share">Share my timeline</button></div></section>`:""}
+    <section class="wrap"><div class="search"><input class="input" id="addq" type="search" placeholder="Add any game (tap a cover afterward to move the year you played it or add a memory)" autocomplete="off" aria-label="Add a game"><div class="results" id="addr" hidden></div></div>
+      <p class="sync" id="syncmsg" style="margin-top:6px">${esc(syncMsg||"Tap any game below to change the age you played it or add a memory note.")}</p></section>
+    <section class="wrap life">${lifeStrip(d)}</section>
+    ${favSection(d,true)}
+    ${dnaSection(d,true,dx)}
+    ${statsSection(d)}
+    ${footer()}`;
+  if(first)store.set("ib2-revealed",true);
+  wireSearch($("#addq"),$("#addr"),p=>{if(p.custom){openYearSheet(Math.min(NOW,hist.birth+10),p.custom);return}setLevel(p,Math.max(1,levelOf(hist,p)));const py=entryYearOf(hist,p)||p.year;toast(`Added ${p.title} (${py})`);render()},{custom:true,catFirst:true,playOnly:true});
+}
+function favSection(d,mine){
+  const favs=entries(d).filter(x=>x.lv===3).sort((a,b)=>a.y-b.y);if(!favs.length)return "";
+  const t10=(d.top10||[]).map(k=>favs.find(f=>f.g&&(f.g.n===k||norm1(f.g.title)===k))).filter(Boolean);
+  const list=t10.length?t10:favs;
+  return `<section class="wrap sec"><div class="sechead"><div><h2 class="h2">${t10.length?(mine?"My top "+t10.length:"Top "+t10.length):"All-time favorites"}</h2><p class="sub">${t10.length?"Ranked.":plural(favs.length,"favorite")+", in the order you played them."}</p></div>${mine?`<button class="btn sm" data-act="top10">${t10.length?"Edit top 10":"Rank a top 10"}</button>`:""}</div>
+    <div class="grid">${list.map((x,i)=>{const g=x.g;return `<div class="tile lv3"><button class="art" data-act="${g?"game":"noop"}" data-id="${g?g.id:""}">${coverOfEntry(x.e,x.y)}${t10.length?`<span class="lvb l3">${i+1}</span>`:""}</button><span class="tn">${esc(g?g.title:x.e.t)}</span><span class="ts">${x.y}${g?" · "+esc(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div></section>`;
+}
+/* the two halves meet: the ancestors behind the games you played */
+function dnaOf(d){
+  const mine=entries(d).filter(x=>x.g);const set=new Set(mine.map(x=>x.g.i));const anc=new Map(),all=new Set();
+  for(const x of mine){ancestors(x.g.i).forEach(a=>all.add(a));for(const a of nearAncestors(x.g.i)){const o=anc.get(a)||{n:0,w:0,kids:[]};o.n++;o.w+=x.lv;if(o.kids.length<3)o.kids.push(x.g);anc.set(a,o)}}
+  const top=[...anc.entries()].map(([i,o])=>({g:G[i],...o,played:set.has(i)})).sort((a,b)=>b.n-a.n||b.w-a.w||a.g.year-b.g.year);
+  let oldest=null;all.forEach(i=>{if(!oldest||G[i].year<oldest.g.year)oldest={g:G[i]}});
+  const allCount=all.size;
+  const gw={};mine.forEach(x=>x.g.gen.forEach((gi,k)=>{gw[gi]=(gw[gi]||0)+x.lv*(k?0.5:1)}));
+  const genres=Object.entries(gw).map(([i,w])=>({gen:GEN[i],w})).sort((a,b)=>b.w-a.w);
+  const nextUp=[];const seenNext=new Set();
+  mine.filter(x=>x.lv>=2).sort((a,b)=>b.lv-a.lv||b.g.pop-a.g.pop).forEach(x=>DOWN[x.g.i].forEach(l=>{const c=G[l.to];if(set.has(c.i)||seenNext.has(c.i)||c.year>NOW)return;seenNext.add(c.i);nextUp.push({g:c,because:x.g,s:c.pop*10+Math.min(c.inf,200)/20+(x.lv===3?8:0)+(l.tier==="dev"?4:0)})}));
+  nextUp.sort((a,b)=>b.s-a.s);
+  const missed=top.filter(a=>!a.played&&a.g.pop>=3&&a.n>=2).slice(0,8);
+  return {top,oldest,genres,nextUp:nextUp.slice(0,8),missed,count:mine.length,allCount};
+}
+function dnaSection(d,mine,pre){
+  const x=pre||dnaOf(d);if(x.count<3||!x.top.length)return "";
+  const tot=x.genres.reduce((a,b)=>a+b.w,0)||1;
+  const who=mine?"your":"their";
+  return `<section class="wrap sec" id="dna"><p class="eyebrow">Gaming DNA</p><h2 class="h2">The games behind ${mine?"your":"their"} games</h2>
+    <p class="sub">${mine?"Your":"Their"} games trace back to ${x.allCount.toLocaleString()} earlier games. ${x.oldest?`The oldest root is <b>${esc(x.oldest.g.title)}</b> (${x.oldest.g.year}).`:""}</p>
+    <div class="hgrid">
+      <div class="card"><h3 class="h3">Biggest influences on ${who} games</h3><p class="sub">How many of ${who} games it inspired, directly or one step removed.</p>
+        ${x.top.slice(0,6).map(a=>`<button class="anc" data-act="game" data-id="${a.g.id}">${cover(a.g,{showYear:false})}<span><b>${esc(a.g.title)}</b><small>${a.g.year} · ${a.played?(mine?"you played it":"they played it"):"never played"}</small></span><span class="n">${a.n}<small>of ${x.count}</small></span></button>`).join("")}</div>
+      <div class="card"><h3 class="h3">${mine?"Your":"Their"} genres</h3><p class="sub">Weighted by how much ${mine?"you":"they"} played.</p>
+        <div class="genbar">${x.genres.map(g=>`<i style="width:${(g.w/tot*100).toFixed(2)}%;background:${g.gen.c}" title="${esc(g.gen.label)}"></i>`).join("")}</div>
+        <div class="legend">${x.genres.slice(0,9).map(g=>`<span><i style="--c:${g.gen.c}"></i>${esc(g.gen.label)} <span class="mono muted">${Math.round(g.w/tot*100)}%</span></span>`).join("")}</div>
+        ${x.missed.length?`<h3 class="h3" style="margin-top:18px">Roots ${mine?"you":"they"} never played</h3><p class="sub">Earlier games that shaped several of ${who} games.</p><div class="recs">${x.missed.slice(0,6).map(a=>`<div class="tile"><button class="art" data-act="game" data-id="${a.g.id}">${cover(a.g)}</button><span class="tn">${esc(a.g.title)}</span><span class="why">Behind ${plural(a.n,"of "+who+" games","of "+who+" games")}</span></div>`).join("")}</div>`:""}
+      </div>
+    </div>
+    ${x.nextUp.length?`<h3 class="h3" style="margin-top:20px">What came next</h3><p class="sub">Games that borrowed from ${mine?"your":"their"} favorites${mine?" and that you haven't ticked yet":""}.</p>
+      <div class="recs">${x.nextUp.map(r=>`<div class="tile"><button class="art" data-act="game" data-id="${r.g.id}">${cover(r.g)}</button><span class="tn">${esc(r.g.title)}</span><span class="why">From ${esc(r.because.title)}</span></div>`).join("")}</div>`:""}
+  </section>`;
+}
+function statsSection(d){
+  const es=entries(d);if(es.length<3)return "";
+  const st={},cc={},sy={};
+  es.forEach(x=>{const g=x.g;if(g){const s=studio(g);if(s)st[s]=(st[s]||0)+x.lv;if(g.cc)cc[g.cc]=(cc[g.cc]||0)+1}sysListOf(x.e,d).forEach(s=>sy[s]=(sy[s]||0)+1)});
+  const top=(o,n)=>Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,n);
+  return `<section class="wrap sec"><div class="hgrid">
+    <div><h3 class="h3">The makers behind it</h3><p class="sub">Tap any studio to see its people, games, and legacy. Favorites count three times.</p><div class="makers">${top(st,12).map(([n,v])=>{const sr=findStudio(n);return sr?`<button type="button" class="makerbtn" data-act="studio" data-st="${esc(sr.id)}">${esc(n)}<span>${v}</span></button>`:`<span class="maker">${esc(n)}<span>${v}</span></span>`}).join("")}</div></div>
+    <div><h3 class="h3">Where the games came from</h3><p class="sub">Countries of the studios.</p><div class="makers">${top(cc,12).map(([c,v])=>`<span class="maker">${flag(c)} ${esc(countryName(c))}<span>${v}</span></span>`).join("")}</div>
+      <h3 class="h3" style="margin-top:14px">Systems</h3><div class="makers">${top(sy,14).map(([n,v])=>`<span class="maker">${esc(n)}<span>${v}</span></span>`).join("")}</div></div>
+  </div></section>`;
+}
+
+/* ---------- family tree home ---------- */
+const JOURNEYS=[
+  {id:"grand-theft-auto-vi",title:"64 years to Vice City: GTA VI's roots",sub:"From 1962 mainframes and British space sims to modern Leonida."},
+  {id:"2048",title:"Inspired or cloned? Where the line sits",sub:"From Threes! to 1024 to 2048 — evolution vs. direct variants."},
+  {id:"pubg",title:"How the battle royale was born",sub:"Military sims, a zombie mod and 100 players on an island."},
+  {id:"the-finals",title:"From the arcades to The Finals",sub:"Robotron, Smash TV and a Stockholm game show."},
+  {id:"arc-raiders",title:"ARC Raiders' roots",sub:"Giant machines, scavenging and risky extraction."},
+  {id:"Fortnite Battle Royale",title:"The road to Fortnite",sub:"From PUBG's island to building, shooting and UGC."},
+  {id:"elden-ring",title:"The Souls family",sub:"Dungeon crawlers, hidden lore and very hard bosses."},
+  {id:"hades",title:"From Rogue to Hades",sub:"Fifty years of dying, learning and trying again."},
+  {id:"minecraft",title:"Minecraft's family",sub:"Infiniminer, Dwarf Fortress and theme parks behind a phenomenon."},
+  {id:"Baldur's Gate 3",title:"From D&D to Baldur's Gate 3",sub:"Pen-and-paper rules that became a genre."},
+  {id:"hollow-knight",title:"Metroidvania",sub:"Maps you open up by finding new abilities."},
+  {id:"undertale",title:"Undertale's family",sub:"Dragon Quest, Mother and a bullet-hell shooter."},
+  {id:"no-mans-sky",title:"To the stars",sub:"From Spacewar! to a universe of planets."},
+  {id:"candy-crush-saga",title:"Match three",sub:"From Russian DOS puzzles to Bejeweled and Candy Crush."},
+  {id:"league-of-legends",title:"The MOBA family",sub:"A custom StarCraft map that grew into an esport."},
+  {id:"half-life-2",title:"Birth of the shooter",sub:"From mazes on mainframes to physics guns."},
+  {id:"rocket-league",title:"Rocket League's family",sub:"Skateboards, car mods and a giant ball."},
+  {id:"grand-theft-auto-v",title:"The open-world road",sub:"Cities you can go anywhere in."},
+  {id:"stardew-valley",title:"Life on the farm",sub:"Calm, seasons and a town that remembers you."}];
+function journeyList(){return JOURNEYS.map(j=>{const g=gameRef(j.id);if(!g)return null;const ch=rootsChain(g.i);return ch.length>=3?{...j,g,ch}:null}).filter(Boolean)}
+function todayGame(){const pool=TREE.filter(g=>g.pop>=3&&UP[g.i].length>=2&&DOWN[g.i].length>=1);if(!pool.length)return TREE[0];const day=Math.floor(Date.now()/864e5);return pool[(day*7919)%pool.length]}
+function cloneLensSection(){
+  const synth=[["infiniminer","minecraft"],["magic-survival","vampire-survivors"],["half-life","counter-strike"],["harvest-moon","stardew-valley"]].map(([a,b])=>[byId.get(a),byId.get(b)]).filter(([a,b])=>a&&b);
+  const fast=[["threes","2048"],["happy-farm","farmville"],["pubg","fortnite-br"],["tarkov","arena-breakout-infinite"]].map(([a,b])=>[byId.get(a),byId.get(b)]).filter(([a,b])=>a&&b);
+  if(!synth.length&&!fast.length)return "";
+  const pairRow=([a,b])=>{const lk=L.find(x=>x.from===a.i&&x.to===b.i);return `<button class="anc" data-act="game" data-id="${b.id}">${cover(b,{showYear:false})}<span><b>${esc(a.title)} → ${esc(b.title)}</b><small>${a.year} → ${b.year}${lk&&lk.added?` · ${esc(lk.added.slice(0,68))}${lk.added.length>68?"…":""}`:""}</small></span><span class="mono muted" style="font-size:12px">▸</span></button>`};
+  return `<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Art inspiring art vs. fast-follows</p><h2 class="h2">How game design evolves — and where the line sits</h2><p class="sub">Every studio builds on earlier work. The difference lies in whether a game transforms what it borrows into a new voice, or closely recreates an existing hit's loop.</p></div></div>
+    <div class="lensgrid">
+      <div class="lenscol"><h3 class="h3">Creative synthesis & genre leaps</h3><p class="sub">Borrowed a spark or engine, then built a distinct world or ruleset.</p>${synth.map(pairRow).join("")}</div>
+      <div class="lenscol"><h3 class="h3">Fast-follows, direct variants & debates</h3><p class="sub">Closely recreated a breakout format, sparking debate over credit and craft.</p>${fast.map(pairRow).join("")}</div>
+    </div></section>`;
+}
+function renderExplore(m){
+  const js=journeyList(),tg=todayGame();
+  const direct=state.infMode==="direct",dcount=new Map(TREE.map(g=>[g.i,DOWN[g.i].filter(l=>l.tier!=="series").length])),val=g=>direct?dcount.get(g.i):g.inf;
+  const infl=TREE.slice().sort((a,b)=>val(b)-val(a)||b.pop-a.pop).slice(0,25),maxInf=Math.max(1,infl.length?val(infl[0]):1);
+  const tc={};L.forEach(l=>tc[l.tier]=(tc[l.tier]||0)+1);
+  const shut=[...STUDIOS.values()].filter(s=>s.curated&&(s.status==="closed"||s.status==="revived"||s.status==="absorbed")).slice(0,6);
+  m.innerHTML=`<section class="wrap exhero">
+      <p class="eyebrow">The family tree of games</p>
+      <h1 class="h1">Where did your favorite game come from?</h1>
+      <p class="lede">Every game borrows from the ones before it. Search one to see what inspired it, what it went on to inspire, and the human teams behind its lineage.</p>
+      <div class="search bigsearch"><input class="input" id="q1" type="search" placeholder="Search a game, like Grand Theft Auto VI or Stardew Valley" autocomplete="off" aria-label="Search a game"><div class="results" id="r1" hidden></div></div>
+      <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","the-legend-of-zelda-breath-of-the-wild","doom","2048","Baldur's Gate 3"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}<button class="chip" data-act="random">Surprise me</button></div>
+      ${gtaviSpotlight()}
+    </section>
+    ${js.length?`<section class="wrap sec"><div class="sechead"><div><h2 class="h2">Journeys</h2><p class="sub">Step back through a genre, one game at a time.</p></div></div>
+      <div class="journeys">${js.map(j=>{const old=j.ch[j.ch.length-1].g;const picks=[j.ch[j.ch.length-1],j.ch[Math.floor(j.ch.length/2)],j.ch[0]].map(s=>s.g);
+        return `<button class="jcard" data-act="walk" data-id="${j.g.id}"><span class="jstack">${picks.map((g,k)=>cover(g,{showYear:false,attrs:`style="--h:${g.h};--r:${(k-1)*5}deg"`})).join("")}</span><b>${esc(j.title)}</b><p>${esc(j.sub)}</p><small>${plural(j.ch.length-1,"step")} · ${old.year} → ${j.g.year}</small></button>`}).join("")}</div></section>`:""}
+    ${cloneLensSection()}
+    ${shut.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">The humans behind the art</p><h2 class="h2">Studios close — their makers carry the craft forward</h2><p class="sub">When layoffs or closures shut a studio down, its people scatter and seed the next generation of games.</p></div><a class="btn sm" href="#studios">Explore all studios ▸</a></div>
+      <div class="stgrid">${shut.map(studioCardHTML).join("")}</div></section>`:""}
+    <section class="wrap sec"><div class="hgrid">
+      <div class="card"><p class="eyebrow">Today's rabbit hole</p><div class="today">${cover(tg)}<div><h2 class="h2">${esc(tg.title)}</h2><p class="sub" style="margin:2px 0 8px">${tg.year} · ${flag(tg.cc)} ${studioBtn(studio(tg))}</p><p style="margin:0 0 12px;font-size:14px">Built on ${plural(UP[tg.i].length,"earlier game")}, and ${plural(tg.inf,"later game")} trace back to it.</p><button class="btn sm primary" data-act="game" data-id="${tg.id}">Open its family tree</button></div></div></div>
+      <div class="card"><p class="eyebrow">Six degrees of Pong</p><h2 class="h2">Connect any two games</h2><p class="sub">Find the shortest chain of inspiration between them.</p>
+        <div class="connect"><div class="search"><input class="input" id="ca" type="search" placeholder="From" autocomplete="off" aria-label="First game"><div class="results" id="cra" hidden></div></div><div class="search"><input class="input" id="cb" type="search" placeholder="To" autocomplete="off" aria-label="Second game"><div class="results" id="crb" hidden></div></div><button class="btn" data-act="randomPair">Random pair</button></div>
+        <div id="cpath"></div></div>
+    </div></section>
+    <section class="wrap sec"><div class="hgrid">
+      <div class="card" id="quiz"></div>
+      <div class="card"><p class="eyebrow">The big picture</p><h2 class="h2">All of game history on one map</h2><p class="sub">Every game in the family tree, placed by year and genre, from the 1950s to today. Tap a game to light up what inspired it and what it inspired.</p>
+        <canvas id="mapThumb" width="640" height="220" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:var(--paper);cursor:pointer" data-act="map" aria-label="Open the map"></canvas>
+        <div class="row" style="margin-top:10px"><button class="btn primary" data-act="map">Open the map</button></div></div>
+    </div></section>
+    <section class="wrap sec" id="inflSec"><div class="sechead"><div><h2 class="h2">The most influential games</h2><p class="sub">${direct?"Ranked by how many other games they directly inspired. Sequels don't count.":"Ranked by how many later games trace back to them, through any number of steps."}</p></div>
+        <span class="seg" role="group" aria-label="Rank by"><button data-act="infMode" data-m="direct" aria-pressed="${direct}">Direct</button><button data-act="infMode" data-m="reach" aria-pressed="${!direct}">All descendants</button></span></div>
+      <div>${infl.map((g,i)=>`<button class="inf" data-act="game" data-id="${g.id}"><span class="rk">${i+1}</span>${cover(g,{showYear:false})}<span><b>${esc(g.title)}</b><small>${g.year} · ${flag(g.cc)} ${esc(studio(g))}</small></span><span class="infcell"><span class="bar"><i style="width:${(val(g)/maxInf*100).toFixed(1)}%"></i></span><span>${val(g).toLocaleString()} ${direct?(val(g)===1?"game it inspired":"games it inspired"):(val(g)===1?"later game":"later games")}</span></span></button>`).join("")}</div>
+      <p class="factline">${L.length.toLocaleString()} links: ${TIERS.map(t=>`${(tc[t.k]||0).toLocaleString()} ${t.label.toLowerCase()}`).join(" · ")}.</p>
+    </section>
+    ${footer()}`;
+  wireSearch($("#q1"),$("#r1"),g=>g&&g.id&&go(g.id),{treeOnly:false});
+  renderQuiz();
+  requestAnimationFrame(()=>{const c=$("#mapThumb");if(c)drawMapThumb(c)});
+  let A=null,B=null;const drawPath=()=>{if(A&&B)$("#cpath").innerHTML=pathHTML(A,B)};
+  wireSearch($("#ca"),$("#cra"),g=>{if(!g||!g.id)return;A=g;$("#ca").value=g.title;drawPath()},{treeOnly:true});
+  wireSearch($("#cb"),$("#crb"),g=>{if(!g||!g.id)return;B=g;$("#cb").value=g.title;drawPath()},{treeOnly:true});
+  ACTIONS.randomPair=()=>{const pool=TREE.filter(g=>g.pop>=4);for(let k=0;k<30;k++){const a=pool[Math.floor(Math.random()*pool.length)],b=pool[Math.floor(Math.random()*pool.length)];if(a&&b&&a!==b&&Math.abs(a.year-b.year)>8&&connectPath(a.i,b.i)){A=a.year<b.year?a:b;B=a.year<b.year?b:a;$("#ca").value=A.title;$("#cb").value=B.title;drawPath();return}}};
+}
+
+/* ---------- studios & makers pages ---------- */
+function statusLabel(st){
+  if(st.status==="closed")return `<span class="ststatus closed">Closed${st.closed?" "+st.closed:""}</span>`;
+  if(st.status==="absorbed")return `<span class="ststatus closed">Merged${st.closed?" "+st.closed:""}</span>`;
+  if(st.status==="revived")return `<span class="ststatus revived">Shuttered & revived</span>`;
+  return st.founded?`<span class="ststatus active">Est. ${st.founded}</span>`:"";
+}
+function studioCardHTML(st){
+  const yrs=st.founded?(st.closed?`${st.founded}–${st.closed}`:`${st.founded}–present`):(st.games.length?`${st.games[0].year}–${st.games[st.games.length-1].year}`:"");
+  return `<button type="button" class="stcard" data-act="studio" data-st="${esc(st.id)}">
+    <div class="row" style="justify-content:space-between;width:100%"><b>${flag(st.cc)} ${esc(st.name)}</b>${statusLabel(st)}</div>
+    <small class="mono muted">${esc(yrs)}${st.hq?" · "+esc(st.hq):""} · ${plural(st.games.length,"game")}</small>
+    ${st.bio?`<p style="margin:2px 0;font-size:13px;color:var(--ink2);line-height:1.4">${esc(st.bio)}</p>`:""}
+    ${st.diaspora&&st.diaspora.length?`<small class="muted">Seeded: <b>${esc(st.diaspora.map(d=>d.studio).join(", "))}</b></small>`:""}
+  </button>`;
+}
+function renderStudios(m){
+  const f=state.stFilter||"all";
+  const curated=[...STUDIOS.values()].filter(s=>s.curated).sort((a,b)=>(b.maxInf-a.maxInf)||(b.games.length-a.games.length));
+  const list=f==="closed"?curated.filter(s=>s.status!=="active"):f==="active"?curated.filter(s=>s.status==="active"):curated;
+  const topOther=[...STUDIOS.values()].filter(s=>!s.curated&&s.games.length>=4).sort((a,b)=>b.games.length-a.games.length).slice(0,36);
+  m.innerHTML=`<section class="wrap exhero">
+    <p class="eyebrow">The humans behind the games</p>
+    <h1 class="h1">Studios change. Their people carry the art forward.</h1>
+    <p class="lede">Behind every box cover is a team of designers, programmers, artists, and musicians. Even when studios are shuttered or laid off, their craft scatters into new teams and shapes decades of games.</p>
+    <div class="search bigsearch"><input class="input" id="stq" type="search" placeholder="Search any studio, like Looking Glass, Bullfrog, DICE, or Capcom" autocomplete="off" aria-label="Search studios"><div class="results" id="str" hidden></div></div>
+    <div class="row" style="margin-top:14px">
+      <button class="chip" data-act="stFilt" data-f="all" aria-pressed="${f==="all"}">All featured (${curated.length})</button>
+      <button class="chip" data-act="stFilt" data-f="closed" aria-pressed="${f==="closed"}">Shuttered & scattered (${curated.filter(s=>s.status!=="active").length})</button>
+      <button class="chip" data-act="stFilt" data-f="active" aria-pressed="${f==="active"}">Active pioneers (${curated.filter(s=>s.status==="active").length})</button>
+    </div>
+  </section>
+  <section class="wrap sec"><div class="stgrid">${list.map(studioCardHTML).join("")}</div></section>
+  ${topOther.length?`<section class="wrap sec"><h2 class="h2">More studios across the catalog</h2><p class="sub">Every studio in the database (${STUDIOS.size.toLocaleString()} total) has a page.</p>
+    <div class="makers">${topOther.map(s=>`<button type="button" class="makerbtn" data-act="studio" data-st="${esc(s.id)}">${flag(s.cc)} ${esc(s.name)}<span>${s.games.length}</span></button>`).join("")}</div></section>`:""}
+  ${footer()}`;
+  const inp=$("#stq"),box=$("#str");
+  inp.addEventListener("input",()=>{
+    const q=norm(inp.value.trim());if(!q){box.hidden=true;return}
+    const hits=[...STUDIOS.values()].filter(s=>norm(s.name).includes(q)||s.aliases.some(a=>norm(a).includes(q))||s.makers.some(mk=>norm(mk).includes(q))).sort((a,b)=>(b.curated-a.curated)||(b.games.length-a.games.length)).slice(0,10);
+    box.innerHTML=hits.map(s=>`<button type="button" class="res" data-act="studio" data-st="${esc(s.id)}"><span>${flag(s.cc)}</span><span><b>${esc(s.name)}</b><small>${plural(s.games.length,"game")}${s.makers.length?" · "+esc(s.makers.slice(0,3).join(", ")):""}</small></span><span class="y">${s.founded||""}</span></button>`).join("")||`<p class="empty" style="padding:8px 10px">No studio match.</p>`;
+    box.hidden=false;
+  });
+}
+function renderStudio(m,id){
+  const st=findStudio(id);if(!st){go("studios");return}
+  const yrs=st.founded?(st.closed?`${st.founded}–${st.closed}`:`${st.founded}–present`):(st.games.length?`${st.games[0].year}–${st.games[st.games.length-1].year}`:"");
+  const descReach=new Set();st.games.forEach(g=>{DOWN[g.i].forEach(l=>descReach.add(l.to))});
+  const mobyCompany=`https://www.mobygames.com/search/?q=${encodeURIComponent(st.name)}&type=company`;
+  m.innerHTML=`<div class="wrap">
+    <nav class="trail"><button data-act="goStudios">Makers</button><span aria-hidden="true">›</span><span class="cur">${esc(st.name)}</span></nav>
+    <section style="padding-block:16px 8px">
+      <div class="row" style="gap:10px;margin-bottom:6px"><span class="eyebrow" style="margin:0">Studio & makers</span>${statusLabel(st)}</div>
+      <h1 class="h1" style="margin-bottom:8px">${flag(st.cc)} ${esc(st.name)}</h1>
+      <p class="meta"><span class="mono">${esc(yrs)}</span>${st.hq?`<span>${esc(st.hq)}</span>`:""}${st.cc?`<span class="muted">${esc(countryName(st.cc))}</span>`:""}</p>
+      ${st.bio?`<p class="lede" style="margin-top:12px">${esc(st.bio)}</p>`:""}
+      <div class="gstats"><span><b>${st.games.length}</b> game${st.games.length===1?"":"s"} in catalog</span><span><b>${st.treeCount}</b> in the family tree</span><span><b>${st.maxInf.toLocaleString()}</b> max descendant games</span></div>
+      <div class="row" style="margin-top:14px"><a class="btn sm" href="${esc(mobyCompany)}" target="_blank" rel="noopener">Full company credits on MobyGames ↗</a><button class="btn sm ghost" data-act="suggest" data-subj="${esc("Studio note: "+st.name)}">Suggest studio or alumni note</button></div>
+    </section>
+    ${st.makers&&st.makers.length?`<section class="sec"><h2 class="h2">Notable creators & team members</h2><p class="sub">Designers, programmers, writers, artists, and composers connected with ${esc(st.name)}.</p>
+      <div class="makers">${st.makers.map(mk=>`<a class="makerbtn" href="https://www.mobygames.com/search/?q=${encodeURIComponent(mk)}&type=developer" target="_blank" rel="noopener">${esc(mk)} <span>↗</span></a>`).join("")}</div></section>`:""}
+    ${st.diaspora&&st.diaspora.length?`<section class="sec"><h2 class="h2">Where the makers went next</h2><p class="sub">Studios and games shaped by ${esc(st.name)} alumni.</p>
+      <div class="diasgrid">${st.diaspora.map(d=>{const dst=findStudio(d.studio);return `<div class="diascard"><b>${dst?`<button type="button" class="stbtn" data-act="studio" data-st="${esc(dst.id)}">${esc(d.studio)} ▸</button>`:esc(d.studio)}</b><p style="margin:4px 0 0;font-size:13px;color:var(--ink2)">${esc(d.note)}</p></div>`}).join("")}</div></section>`:""}
+    <section class="sec"><h2 class="h2">Games by ${esc(st.name)} (${st.games.length})</h2><p class="sub">In chronological order. Tap any game to open its family tree or add it to your timeline.</p>
+      <div class="grid">${st.games.map(g=>tileHTML(g,hist,{act:"game",sub:`${g.year}${g.tree?" · in tree":""}`})).join("")}</div></section>
+  </div>${footer()}`;
+}
+function pathHTML(A,B){
+  const p=connectPath(A.i,B.i);
+  if(p===null)return `<p class="empty" style="margin-top:12px">No chain between them yet.</p>`;
+  if(!p.length)return `<p class="empty" style="margin-top:12px">Same game.</p>`;
+  const node=g=>`<button class="pstep" data-act="game" data-id="${g.id}">${cover(g,{showYear:false})}<span><b>${esc(g.title)}</b><small>${g.year} · ${esc(studio(g))}</small></span></button>`;
+  let h=`<p class="sub" style="margin:14px 0 4px"><b>${plural(p.length,"step")}</b> from ${esc(A.title)} to ${esc(B.title)}.</p><div class="path">${node(A)}`;
+  p.forEach(s=>{const fwd=s.l.from===s.a;const t=TIERS[s.l.t];
+    h+=`<div class="pedge" style="--c:var(${t.c})"><span class="dir">${fwd?"▼ inspired":"▲ was inspired by"}</span> · ${esc(fwd?s.l.added:s.l.took)}</div>${node(G[s.b])}`});
+  return h+`</div>`;
+}
+
+/* ---------- quiz: which game inspired it? ---------- */
+let quiz=null,quizStreak=0,quizBest=store.get("ib2-best",0);
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function newQuiz(){
+  const pool=L.filter(l=>(l.tier==="dev"||l.tier==="team"||l.tier==="critic")&&G[l.to].pop>=3&&G[l.from].pop>=3&&G[l.to].year-G[l.from].year>=1);
+  if(!pool.length)return null;
+  for(let tries=0;tries<20;tries++){
+    const l=pool[Math.floor(Math.random()*pool.length)],child=G[l.to],parent=G[l.from];
+    const near=new Set([child.i,...UP[child.i].map(x=>x.from),...DOWN[child.i].map(x=>x.to)]);
+    const fam=new Set(child.gen.concat(parent.gen));
+    const cand=TREE.filter(g=>!near.has(g.i)&&g.year<child.year&&g.year>=child.year-25&&g.pop>=3);
+    const same=shuffle(cand.filter(g=>g.gen.some(x=>fam.has(x)))),other=shuffle(cand.filter(g=>!g.gen.some(x=>fam.has(x))));
+    const decoys=[...same.slice(0,2),...other].slice(0,3);
+    if(decoys.length===3)return {l,child,parent,opts:shuffle([parent,...decoys]),picked:null};
+  }
+  return null;
+}
+function renderQuiz(){
+  const el=$("#quiz");if(!el)return;if(!quiz)quiz=newQuiz();if(!quiz){el.innerHTML="";return}
+  const {child,parent,opts,picked,l}=quiz,t=TIERS[l.t];
+  el.innerHTML=`<div class="sechead" style="margin:0"><div><p class="eyebrow">Play</p><h2 class="h2">Which game inspired ${esc(child.title)}?</h2></div><span class="streak">${quizStreak?`${quizStreak} in a row`:""}${quizBest?` · best ${quizBest}`:""}</span></div>
+    <p class="sub" style="margin:0">${esc(child.title)} came out in ${child.year}. One of these shaped it.</p>
+    <div class="quizopts">${opts.map(g=>`<button class="qopt${picked!=null?(g===parent?" right":g.i===picked?" wrong":""):""}" data-act="quizPick" data-i="${g.i}" ${picked!=null?"disabled":""}>${cover(g)}<b>${esc(g.title)}</b><small>${g.year}</small></button>`).join("")}</div>
+    ${picked!=null?`<div class="qres" style="--c:var(${t.c})"><p style="margin:0 0 4px;font-weight:700">${picked===parent.i?"Right.":"Not quite. It was "+esc(parent.title)+"."}</p><dl class="ta" style="margin:4px 0"><dt>Took</dt><dd>${esc(l.took)}</dd><dt>Added</dt><dd class="add">${esc(l.added)}</dd></dl><span class="tier">${t.label}</span></div>
+      <div class="row" style="margin-top:12px"><button class="btn primary" data-act="quizNext">Next question</button><button class="btn wrap" data-act="game" data-id="${child.id}">Open ${esc(child.title)}</button></div>`:""}`;
+}
+
+/* ---------- the big picture: every game on one canvas ---------- */
+const LANES=[["Roots",["roots"]],["Arcade",["arcade","shmup"]],["Platform",["platformer","metroidvania"]],["Adventure & open world",["action-adventure","open-world"]],["Shooters",["fps","shooter","battle-royale"]],["Stealth & horror",["immersive-sim","horror"]],["Role-playing",["rpg","jrpg","arpg","mmo"]],["Roguelike",["roguelike"]],["Strategy",["strategy","moba"]],["Sim & survival",["sim","survival"]],["Story & puzzle",["adventure","puzzle"]],["Fighting",["fighting","beat-em-up"]],["Racing & sports",["racing","sports"]],["Party & cards",["party","card"]],["Space",["space"]]];
+const laneOfGenre={};LANES.forEach(([,gs],i)=>gs.forEach(k=>laneOfGenre[k]=i));
+const LANE_C=LANES.map((_,i)=>`hsl(${Math.round(i*360/LANES.length+200)%360} 62% 58%)`);
+/* x scale: a narrow zone for the tabletop ancestors (1800–1949), a wider one for 1950–74, the rest for 1975 on */
+const yearX=y=>y<1950?Math.max(0,(y-1800)/150)*0.06:y<1975?0.06+(y-1950)/25*0.10:0.16+(y-1975)/(NOW+1-1975)*0.84;
+let MAPN=null;
+function mapNodes(){
+  if(MAPN)return MAPN;
+  MAPN=TREE.map(g=>{const gen=genreOf(g),lane=gen?laneOfGenre[gen.k]??1:1;const j1=(hueOf(g.id+"x")%1000)/1000,j2=(hueOf(g.id+"y")%1000)/1000;
+    return {g,lane,u:Math.min(.995,Math.max(.002,yearX(g.year)+(j1-.5)*0.006)),v:(lane+0.12+j2*0.76)/LANES.length,r:2.2+Math.min(10,Math.sqrt(g.inf)*0.55)}});
+  return MAPN;
+}
+function drawMapThumb(c){
+  const x=c.getContext("2d"),W=c.width,H=c.height,ns=mapNodes(),pos=new Map(ns.map(n=>[n.g.i,n]));
+  x.clearRect(0,0,W,H);x.globalAlpha=.10;x.lineWidth=1;
+  L.forEach(l=>{const a=pos.get(l.from),b=pos.get(l.to);if(!a||!b)return;x.strokeStyle=LANE_C[a.lane];x.beginPath();x.moveTo(a.u*W,a.v*H);x.quadraticCurveTo((a.u+b.u)/2*W,Math.min(a.v,b.v)*H-12,b.u*W,b.v*H);x.stroke()});
+  x.globalAlpha=.9;ns.forEach(n=>{x.fillStyle=LANE_C[n.lane];x.beginPath();x.arc(n.u*W,n.v*H,Math.max(1.2,n.r*.45),0,7);x.fill()});x.globalAlpha=1;
+}
+let MAP=null;
+function openMap(){
+  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Map of game history"><div class="wrap ovhead"><div><h2>The big picture</h2><p class="sync" style="margin:2px 0 0">${TREE.length.toLocaleString()} games, ${L.length.toLocaleString()} links. Drag to move, scroll or use + and − to zoom, tap a game to light up its family.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="mapwrap" id="mapwrap"><canvas id="mapc"></canvas><div class="maptip" id="maptip" hidden></div>
+      <div class="mapctl"><button class="btn" data-act="mapZoom" data-z="1.4" aria-label="Zoom in">+</button><button class="btn" data-act="mapZoom" data-z="0.7" aria-label="Zoom out">−</button><button class="btn" data-act="mapReset" aria-label="Reset view" style="font-size:13px">⤢</button></div>
+      <div id="mapcard"></div></div></div>`;
+  const wrap=$("#mapwrap"),c=$("#mapc");
+  MAP={k:1,tx:0,ty:0,sel:null,hover:null,W:0,H:0,c,wrap,LW:110};
+  const resize=()=>{const r=wrap.getBoundingClientRect(),dpr=Math.min(2,window.devicePixelRatio||1);MAP.W=r.width;MAP.H=r.height;c.width=r.width*dpr;c.height=r.height*dpr;MAP.dpr=dpr;drawMap()};
+  MAP.resize=resize;resize();addEventListener("resize",resize);
+  let drag=null,moved=false;
+  c.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,tx:MAP.tx,ty:MAP.ty};moved=false;c.setPointerCapture(e.pointerId);wrap.classList.add("drag")});
+  c.addEventListener("pointermove",e=>{if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)moved=true;MAP.tx=drag.tx+dx;MAP.ty=drag.ty+dy;drawMap();return}
+    const n=mapHit(e);if(n!==MAP.hover){MAP.hover=n;drawMap()}const tip=$("#maptip");if(n){const r=wrap.getBoundingClientRect();tip.hidden=false;tip.innerHTML=`<b>${esc(n.g.title)}</b>${n.g.year} · ${esc(studio(n.g))}`;tip.style.left=Math.min(r.width-240,e.clientX-r.left+12)+"px";tip.style.top=(e.clientY-r.top+12)+"px"}else tip.hidden=true});
+  c.addEventListener("pointerup",e=>{wrap.classList.remove("drag");if(drag&&!moved){const n=mapHit(e);MAP.sel=n?n.g.i:null;drawMap();mapCard()}drag=null});
+  c.addEventListener("pointerleave",()=>{$("#maptip").hidden=true;MAP.hover=null});
+  c.addEventListener("wheel",e=>{e.preventDefault();const r=c.getBoundingClientRect();mapZoomAt(e.deltaY<0?1.18:1/1.18,e.clientX-r.left,e.clientY-r.top)},{passive:false});
+}
+const mapX0=()=>MAP.LW+18,mapWW=()=>MAP.W-MAP.LW-36;
+function mapXY(n){const H=MAP.H-34;return {x:mapX0()+(n.u*mapWW())*MAP.k+MAP.tx,y:30+(n.v*H)*MAP.k+MAP.ty}}
+function mapHit(e){const r=MAP.c.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let best=null,bd=1e9;
+  for(const n of mapNodes()){const p=mapXY(n),d=(p.x-px)**2+(p.y-py)**2,rr=Math.max(8,n.r*Math.sqrt(MAP.k)+4);if(d<rr*rr&&d<bd){bd=d;best=n}}return best}
+function mapZoomAt(f,px,py){const k2=Math.max(.6,Math.min(14,MAP.k*f));f=k2/MAP.k;const x0=mapX0();MAP.tx=px-(px-MAP.tx-x0)*f-x0;MAP.ty=py-(py-MAP.ty-30)*f-30;MAP.k=k2;drawMap()}
+function drawMap(){
+  if(!MAP)return;const {c,W,H,dpr,k}=MAP,x=c.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);
+  const ns=mapNodes(),pos=new Map(ns.map(n=>[n.g.i,n])),ink=cssVar("--ink"),muted=cssVar("--muted"),line=cssVar("--line");
+  const sel=MAP.sel,up=new Set(),down=new Set();
+  if(sel!=null){const a=ancestors(sel);a.forEach(i=>up.add(i));const st=[sel],seen=new Set([sel]);while(st.length){const v=st.pop();for(const l of DOWN[v])if(!seen.has(l.to)){seen.add(l.to);down.add(l.to);st.push(l.to)}}}
+  const lh=(H-34)/LANES.length*k;
+  LANES.forEach(([name],i)=>{const y=30+i*lh+MAP.ty;if(i%2===0){x.fillStyle=line;x.globalAlpha=.25;x.fillRect(0,y,W,lh);x.globalAlpha=1}});
+  for(let yr=1950;yr<=NOW;yr+=5){if(yr<1975&&((k<2&&yr!==1950&&yr!==1970)||(yr%10&&k<4)))continue;const px=mapX0()+yearX(yr)*mapWW()*k+MAP.tx;if(px<MAP.LW+12||px>W-12)continue;x.strokeStyle=line;x.globalAlpha=.6;x.beginPath();x.moveTo(px,26);x.lineTo(px,H);x.stroke();x.globalAlpha=1;x.fillStyle=muted;x.font="500 11px IBM Plex Mono, monospace";x.textAlign="center";x.fillText(String(yr),px,18)}
+  {const px=mapX0()+yearX(1870)*mapWW()*k+MAP.tx;if(px>MAP.LW+12&&px<W-12){x.fillStyle=muted;x.font="500 11px IBM Plex Mono, monospace";x.textAlign="center";x.fillText("1800s",px,18)}}
+  x.textAlign="left";
+  x.lineWidth=1;
+  for(const l of L){const a=pos.get(l.from),b=pos.get(l.to);if(!a||!b)continue;
+    let on=sel==null?.08:((up.has(l.from)&&(up.has(l.to)||l.to===sel))?.85:((l.from===sel||down.has(l.from))&&down.has(l.to))?.85:.025);
+    const A=mapXY(a),B=mapXY(b);if((A.x<0&&B.x<0)||(A.x>W&&B.x>W))continue;
+    x.globalAlpha=on;x.strokeStyle=sel==null?LANE_C[a.lane]:(up.has(l.from)&&(up.has(l.to)||l.to===sel)?cssVar("--t-dev"):cssVar("--t-mech"));x.lineWidth=sel!=null&&on>.5?1.6:1;
+    x.beginPath();x.moveTo(A.x,A.y);x.quadraticCurveTo((A.x+B.x)/2,Math.min(A.y,B.y)-Math.abs(B.x-A.x)*.12,B.x,B.y);x.stroke()}
+  x.globalAlpha=1;
+  const labels=[];
+  for(const n of ns){const p=mapXY(n);if(p.x<-20||p.x>W+20||p.y<-20||p.y>H+20)continue;const r=n.r*Math.sqrt(k);
+    const hl=sel==null||n.g.i===sel||up.has(n.g.i)||down.has(n.g.i);
+    x.globalAlpha=hl?.95:.18;x.fillStyle=n.g.i===sel?cssVar("--love"):LANE_C[n.lane];x.beginPath();x.arc(p.x,p.y,r,0,7);x.fill();
+    if(n===MAP.hover){x.strokeStyle=ink;x.lineWidth=2;x.stroke()}
+    if(hl&&(n.g.inf*k>30||n.g.pop>=5||n.g.pop*k>=(sel==null?16:9)||n.g.i===sel))labels.push({n,p,r})}
+  x.globalAlpha=1;x.font="600 11.5px IBM Plex Sans, sans-serif";x.fillStyle=ink;const placed=[];
+  labels.sort((a,b)=>b.n.g.inf-a.n.g.inf).forEach(({n,p,r})=>{const t=n.g.title.length>26?n.g.title.slice(0,25)+"…":n.g.title,w=x.measureText(t).width,bx=p.x+r+3,by=p.y-7;
+    if(placed.some(q=>bx<q.x+q.w&&bx+w>q.x&&by<q.y+14&&by+14>q.y))return;placed.push({x:bx,y:by,w});x.fillText(t,bx,p.y+4)});
+  x.fillStyle=cssVar("--paper");x.fillRect(0,0,MAP.LW-6,H);x.font="600 11px IBM Plex Sans, sans-serif";
+  LANES.forEach(([name],i)=>{const y=30+i*lh+lh/2+MAP.ty;if(y<34||y>H)return;x.fillStyle=LANE_C[i];x.beginPath();x.arc(10,y,4,0,7);x.fill();x.fillStyle=muted;x.fillText(name,20,y+4)});
+}
+function mapCard(){const el=$("#mapcard");if(!el)return;if(MAP.sel==null){el.innerHTML="";return}const g=G[MAP.sel];
+  el.innerHTML=`<div class="mapcard">${cover(g,{showYear:false})}<div style="min-width:0"><b>${esc(g.title)}</b><p>${g.year} · ${flag(g.cc)} ${esc(studio(g))} · built on ${UP[g.i].length}, inspired ${DOWN[g.i].length}</p><div class="row"><button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">Family tree</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk the roots</button></div></div></div>`}
+
+/* ---------- game page ---------- */
+function linkCard(l,dir,focus){
+  const o=G[dir==="up"?l.from:l.to],t=TIERS[l.t];
+  const srcs=srcHTML(l.src,l.tier);
+  const rm=l.rel&&REL_META[l.rel];
+  const isCloneLike=l.rel==="variant"||l.rel==="fast-follow"||l.tier==="disp";
+  const addVerb=isCloneLike?(dir==="up"?esc(focus.title)+" changed":"Changed"):(dir==="up"?esc(focus.title)+" added":"It added");
+  const pairTitle=`${G[l.from].title} → ${G[l.to].title}`;
+  return `<article class="lk" style="--c:var(${t.c})">${cover(o,{tag:"button",attrs:`data-act="game" data-id="${o.id}" aria-label="Open ${esc(o.title)}"`,showYear:false})}
+    <div style="min-width:0"><div class="hd"><button class="nm" data-act="game" data-id="${o.id}">${esc(o.title)}</button><span class="yr">${o.year} · ${flag(o.cc)} ${studioBtn(studio(o))}</span></div>
+      <div><span class="tier">${t.label}</span>${rm?`<span class="relbadge ${rm.cls}">${esc(rm.label)}</span>`:""}${l.disputed&&l.tier!=="disp"?`<span class="relbadge disp">Debated</span>`:""}</div>
+      <dl class="ta"><dt>${addVerb}</dt><dd class="add">${esc(l.added||"Not specified in the source.")}</dd><dt>Built on</dt><dd>${esc(l.took||"Not specified.")}</dd></dl>
+      ${l.extra?`<p class="xtra">${esc(l.extra)}</p>`:""}
+      <div class="src">${srcs?"Source: "+srcs:"Source: not recorded yet"} · <button type="button" class="link" style="font-size:12px" data-act="suggest" data-subj="${esc("Link feedback: "+pairTitle)}">Have a better source or disagree?</button></div></div></article>`;
+}
+function panelHTML(dir,ls,g){
+  const shown=ls.filter(tierOn).sort((a,b)=>TIERS[b.t].w-TIERS[a.t].w||(G[dir==="up"?b.from:b.to].pop-G[dir==="up"?a.from:a.to].pop)),hid=ls.length-shown.length;
+  const cap=state.treeMore[dir]?999:8;
+  return `<section class="panel ${dir}"><h2>${dir==="up"?"▲ Inspired by":"▼ Went on to inspire"} <span class="mono" style="font-size:13px;font-weight:500">${shown.length}</span></h2>
+    <p>${dir==="up"?`Earlier games ${esc(g.title)} built on`:`Later games that borrowed from ${esc(g.title)}`}</p>
+    ${ls.length?"":`<p class="empty">Nothing recorded yet.</p>`}
+    ${shown.slice(0,cap).map(l=>linkCard(l,dir,g)).join("")}
+    ${shown.length>cap?`<button class="more" data-act="moreLinks" data-dir="${dir}"><b>${shown.length-cap} more</b>. Show all</button>`:""}
+    ${hid?`<button class="more" data-act="allTiers"><b>${hid} hidden</b> with evidence types you've turned off. Show them</button>`:""}</section>`;
+}
+function renderGame(m,id){
+  const g=byId.get(id);if(!g){go("explore");return}
+  if(state.trail[state.trail.length-1]!==id){const k=state.trail.indexOf(id);if(k>=0)state.trail=state.trail.slice(0,k+1);else state.trail.push(id);state.trail=state.trail.slice(-8)}
+  const chain=compressChain(rootsChain(g.i)),ch=chain.slice().reverse(),lv=levelOf(hist,g);
+  const nSteps=rootsChain(g.i).length-1;
+  const ups=UP[g.i],downs=DOWN[g.i];
+  const age=hist.birth?g.year-hist.birth:null;
+  m.innerHTML=`<div class="wrap">
+    ${state.trail.length>1?`<nav class="trail" aria-label="Games you've opened">${state.trail.map((t,k)=>k===state.trail.length-1?`<span class="cur">${esc(byId.get(t).title)}</span>`:`<button data-act="game" data-id="${t}">${esc(byId.get(t).title)}</button><span aria-hidden="true">›</span>`).join("")}</nav>`:""}
+    <header class="gphead">${cover(g)}
+      <div style="min-width:0"><p class="eyebrow">${g.gen.map(i=>esc(GEN[i].label)).join(" · ")||"Game"}</p>
+        <h1>${esc(g.title)}</h1>
+        <div class="meta"><span class="mono">${g.year}</span><span>${flag(g.cc)} ${studioLinks(g.dev||"")}</span>${g.cc?`<span class="muted">${esc(countryName(g.cc))}</span>`:""}</div>
+        ${g.plats.length?`<p class="sub" style="margin:6px 0 0">${esc(sysOfGame(g).join(" · "))}</p>`:""}
+        ${g.note?`<p class="gnote">${esc(g.note)}</p>`:""}
+        <div class="gstats">${g.tree?`<span><b>${ups.length}</b> direct inspiration${ups.length===1?"":"s"}</span><span><b>${downs.length}</b> game${downs.length===1?"":"s"} it inspired directly</span><span><b>${g.inf.toLocaleString()}</b> later game${g.inf===1?"":"s"} trace${g.inf===1?"s":""} back to it</span>`:""}${age!=null?`<span>${age>=0?`First released when you were <b>${age}</b>`:`Released <b>${-age}</b> years before you were born`}</span>`:""}</div>
+        <div class="mylv"><span class="sync">In my timeline:</span><span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="setlv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>${lv?`<button class="btn sm ghost" data-act="setlv" data-id="${g.id}" data-lv="0">Remove</button>`:""}</div>
+        <div class="row" style="margin-top:10px">
+          <a class="btn sm" href="${esc(mobyURL(g))}" target="_blank" rel="noopener">Full dev credits on MobyGames ↗</a>
+          <button class="btn sm ghost" data-act="copyGame" data-id="${g.id}">Copy link</button>
+          <button class="btn sm ghost" data-act="suggest" data-subj="${esc("Missing link or correction for "+g.title)}">Suggest a link or source</button>
+        </div>
+        ${(()=>{const fw=friendsWhoPlayed(g);return fw.length?`<p class="sub" style="margin:10px 0 0">Friends who played it: ${fw.slice(0,6).map(f=>`<b>${esc(f.name)}</b> ${LV[f.lv].m}`).join(", ")}${fw.length>6?` and ${fw.length-6} more`:""}</p>`:""})()}
+      </div></header>
+    ${!g.tree?relatedSection(g):""}
+    ${!g.tree?"":ch.length>1?`<section class="sec"><div class="sechead"><div><h2 class="h2">Roots: ${g.year-ch[0].g.year} years in ${plural(nSteps,"step")}</h2><p class="sub">The main line back from ${esc(g.title)}: the strongest evidence, staying with the same kind of game where it can.</p></div><button class="btn primary" data-act="walk" data-id="${g.id}">Walk the roots ▸</button></div>
+      <div class="roots" id="rootsRow">${ch.map((s,k)=>{const nx=ch[k+1];
+        const arrow=!nx?"":nx.collapsed?`<span class="rfold" title="${esc(nx.collapsed.via.map(v=>v.title).join(", "))}">… ${nx.collapsed.n} more in the series …</span>`:(()=>{const lk=nx.link;return lk?`<span class="rarr" style="--c:var(${TIERS[lk.t].c})" title="${esc(TIERS[lk.t].label)}" aria-hidden="true"></span>`:""})();
+        return `<button class="rs${s.g.i===g.i?" cur":""}" data-act="game" data-id="${s.g.id}">${cover(s.g,{showYear:false})}<b>${esc(s.g.title)}</b><span>${s.g.year}</span></button>${arrow}`}).join("")}</div></section>`
+      :`<section class="sec"><p class="sub">No recorded roots yet.</p></section>`}
+    ${g.tree?`<section class="sec"><div class="sechead"><div><h2 class="h2">Family tree</h2><p class="sub">Two generations back and forward. Tap a game to move the tree to it.</p></div></div>
+      <div class="row" style="margin-bottom:10px">${TIERS.map(t=>`<button class="chip tierchip" style="--c:var(${t.c})" data-act="tier" data-tier="${t.k}" aria-pressed="${!!state.tiers[t.k]}"><span class="dot"></span>${t.label}</button>`).join("")}</div>
+      <div class="treebox" id="treebox">${treeSVG(g)}</div></section>
+    <section class="sec"><div class="cols">${panelHTML("up",ups,g)}${panelHTML("down",downs,g)}</div></section>`:""}
+  </div>${footer()}`;
+  requestAnimationFrame(()=>{const rr=$("#rootsRow");if(rr)rr.scrollLeft=rr.scrollWidth;
+    const tb=$("#treebox");if(tb){const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx;tb.scrollLeft=Math.max(0,x-tb.clientWidth/2)}}});
+}
+/* catalog-only games: no dead end, point to nearby games that are in the family tree */
+function relatedSection(g){
+  const fam=new Set(g.gen);const rel=TREE.filter(t=>t.gen.some(x=>fam.has(x))&&Math.abs(t.year-g.year)<=4).sort((a,b)=>(b.pop*10+Math.min(b.inf,300)/10)-(a.pop*10+Math.min(a.inf,300)/10)).slice(0,8);
+  return `<section class="sec"><div class="card"><h2 class="h3">${esc(g.title)} isn't in the family tree yet</h2><p class="sub" style="margin:0">It's in the catalog, so you can add it to your timeline. Nobody has recorded what inspired it yet.</p></div>
+    ${rel.length?`<h2 class="h2" style="margin-top:22px">Related games in the family tree</h2><p class="sub">Same kind of game, from around the same time.</p><div class="recs">${rel.map(r=>`<div class="tile"><button class="art" data-act="game" data-id="${r.id}">${cover(r)}</button><span class="tn">${esc(r.title)}</span><span class="ts">${r.year} · ${esc(studio(r))}</span></div>`).join("")}</div>`:""}</section>`;
+}
+/* two generations each way, capped per column; ordered by year */
+function treeSVG(g){
+  const gen=new Map([[g.i,0]]),cols={"-2":[],"-1":[],"0":[g.i],"1":[],"2":[]};
+  const imp=i=>G[i].pop*10+Math.min(G[i].inf,500)/10;
+  const add=(i,k)=>{if(!gen.has(i)){gen.set(i,k);cols[k].push(i)}};
+  UP[g.i].filter(tierOn).forEach(l=>add(l.from,-1));
+  DOWN[g.i].filter(tierOn).forEach(l=>add(l.to,1));
+  const cap=k=>state.treeMore["c"+k]?60:9;
+  const trim=k=>{cols[k].sort((a,b)=>imp(b)-imp(a));const more=cols[k].length-cap(k);if(more>0){cols[k].slice(cap(k)).forEach(i=>gen.delete(i));cols[k]=cols[k].slice(0,cap(k))}return Math.max(0,more)};
+  const more={"-1":trim(-1),"1":trim(1)};
+  cols["-1"].forEach(i=>UP[i].filter(tierOn).forEach(l=>add(l.from,-2)));
+  cols["1"].forEach(i=>DOWN[i].filter(tierOn).forEach(l=>add(l.to,2)));
+  more["-2"]=trim(-2);more["2"]=trim(2);
+  const ks=[-2,-1,0,1,2].filter(k=>cols[k].length);
+  ks.forEach(k=>cols[k].sort((a,b)=>G[a].year-G[b].year||G[a].title.localeCompare(G[b].title)));
+  const W=176,H=46,RG=10,CG=56,M=16,TOP=40;
+  const maxRows=Math.max(...ks.map(k=>cols[k].length+(more[k]?1:0)));
+  const pos=new Map();const colX={};ks.forEach((k,ci)=>colX[k]=M+ci*(W+CG));
+  ks.forEach(k=>{const n=cols[k].length+(more[k]?1:0),off=(maxRows-n)/2*(H+RG);cols[k].forEach((i,r)=>pos.set(i,{x:colX[k],y:TOP+off+r*(H+RG)}))});
+  const width=M*2+ks.length*(W+CG)-CG,height=TOP+maxRows*(H+RG)+10;
+  const C=cssVar,ink=C("--ink"),muted=C("--muted"),line2=C("--line2"),card=C("--card"),paper=C("--paper"),acc=C("--accent"),accInk=C("--accent-ink"),upInk=C("--up-ink"),downInk=C("--down-ink");
+  let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="img" aria-label="Family tree of ${esc(g.title)}">`;
+  const lab={"-2":"Inspired its inspirations","-1":"Inspired it","0":"This game","1":"It inspired","2":"Which inspired"};
+  ks.forEach(k=>{s+=`<text x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="11.5" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${lab[k]}</text>`});
+  const edges=L.filter(l=>tierOn(l)&&pos.has(l.from)&&pos.has(l.to)&&gen.get(l.to)-gen.get(l.from)===1);
+  edges.forEach(l=>{const A=pos.get(l.from),B=pos.get(l.to),t=TIERS[l.t];const x1=A.x+W,y1=A.y+H/2,x2=B.x,y2=B.y+H/2,dx=Math.max(22,(x2-x1)/2);
+    const touch=l.from===g.i||l.to===g.i;
+    s+=`<path d="M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}" fill="none" stroke="${C(t.c)}" stroke-width="${touch?2.4:1.4}" ${t.dash?'stroke-dasharray="5 4"':""} opacity="${touch?.9:.45}"/>`});
+  for(const [i,p] of pos){const n=G[i],isC=i===g.i;const t1=n.title.length>22?n.title.slice(0,21)+"…":n.title;const st=studio(n),t2=`${n.year} · ${st.length>16?st.slice(0,15)+"…":st}`;
+    const myl=levelOf(hist,n);
+    s+=`<g class="wnode" data-act="game" data-id="${n.id}" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link" aria-label="${esc(n.title)}, ${n.year}">
+      <rect x="${p.x}" y="${p.y}" width="${W}" height="${H}" rx="10" fill="${isC?acc:card}" stroke="${isC?acc:line2}" stroke-width="1"/>
+      <rect x="${p.x+8}" y="${p.y+9}" width="21" height="28" rx="3" fill="hsl(${n.h} 55% 40%)"/>
+      <text x="${p.x+37}" y="${p.y+19}" font-size="12.5" font-weight="700" fill="${isC?accInk:ink}">${esc(t1)}</text>
+      <text x="${p.x+37}" y="${p.y+34}" font-size="10.5" fill="${isC?accInk:muted}">${esc(t2)}</text>
+      ${myl?`<circle cx="${p.x+W-10}" cy="${p.y+10}" r="7" fill="${myl===3?C("--love"):acc}"/><text x="${p.x+W-10}" y="${p.y+13.5}" text-anchor="middle" font-size="9" font-weight="700" fill="${paper}">${myl===3?"♥":"✓"}</text>`:""}</g>`}
+  ks.forEach(k=>{if(more[k]){const n=cols[k].length,off=(maxRows-n-1)/2*(H+RG),y=TOP+off+n*(H+RG);
+    s+=`<g class="wnode" data-act="treeMore" data-col="${k}" tabindex="0" role="button"><rect x="${colX[k]}" y="${y}" width="${W}" height="${H}" rx="10" fill="none" stroke="${line2}" stroke-dasharray="4 3"/><text x="${colX[k]+W/2}" y="${y+28}" text-anchor="middle" font-size="12.5" font-weight="600" fill="${muted}">+${more[k]} more</text></g>`}});
+  return s+`</svg>`;
+}
+
+/* ---------- story mode: walk the roots ---------- */
+let story=null;
+function openStory(chain){story={chain:compressChain(chain),total:chain.length-1,k:0};drawStory();document.addEventListener("keydown",storyKeys)}
+function closeStory(){story=null;$("#layer").innerHTML="";document.removeEventListener("keydown",storyKeys)}
+function storyKeys(e){if(!story)return;if(e.key==="ArrowRight"){storyStep(1)}else if(e.key==="ArrowLeft"){storyStep(-1)}else if(e.key==="Escape")closeStory()}
+function storyStep(d){if(!story)return;const n=story.chain.length;story.k=Math.max(0,Math.min(n,story.k+d));drawStory()}
+function drawStory(){
+  const {chain,k}=story,n=chain.length;
+  const prog=`<div class="stprog">${chain.map((_,j)=>`<i class="${j<=k?"on":""}"></i>`).join("")}<i class="${k>=n?"on":""}"></i></div>`;
+  let body;
+  if(k>=n){const a=chain[0].g,z=chain[n-1].g;const studios=new Set(chain.map(s=>studio(s.g)).filter(Boolean)),cs=new Set(chain.map(s=>s.g.cc).filter(Boolean));
+    body=`<div class="wrap"><p class="eyebrow">The end of the line, for now</p><h2 class="h1" style="font-size:clamp(26px,5vw,42px)">${esc(z.title)} (${z.year})</h2>
+      <p class="stsum">From ${esc(a.title)} back to ${esc(z.title)}: <b>${a.year-z.year} years</b>, ${plural(story.total,"step")}, ${plural(studios.size,"team")} in ${plural(cs.size,"country","countries")}. Every one of them added something of their own.</p>
+      <div class="row" style="margin-top:18px"><button class="btn primary wrap" data-act="game" data-id="${z.id}" data-close="1">Open ${esc(z.title)}</button><button class="btn" data-act="storyRestart">Start over</button><button class="btn" data-act="copyWalk" data-id="${a.id}">Copy link to this walk</button></div></div>`}
+  else{const s=chain[k],g=s.g,l=s.link,p=l?G[l.from]:null,t=l?TIERS[l.t]:null;
+    const srcs=l?srcHTML(l.src,l.tier):"";
+    body=`<div class="wrap"><div class="stin" key="${k}">${cover(g)}<div style="min-width:0"><div class="styear">${g.year}</div><h2>${esc(g.title)}</h2>
+      <p class="sub" style="margin:0">${flag(g.cc)} ${esc(g.dev||"")}${hist.birth?` · ${g.year-hist.birth>=0?"first released when you were "+(g.year-hist.birth):(hist.birth-g.year)+" years before you were born"}`:""}</p>
+      ${g.note?`<p class="gnote" style="font-size:14px">${esc(g.note)}</p>`:""}
+      ${l?`<div class="stlink" style="--c:var(${t.c})"><p class="lead">It built on <b>${esc(p.title)}</b> (${p.year}) · <span class="tier">${t.label}</span></p><dl class="ta"><dt>${l.rel==="variant"||l.rel==="fast-follow"?"Changed":"Added"}</dt><dd class="add">${esc(l.added)}</dd><dt>Took</dt><dd>${esc(l.took)}</dd></dl>${srcs?`<div class="src">Source: ${srcs}</div>`:""}</div>`
+        :s.collapsed?`<div class="stlink" style="--c:var(--t-series)"><p class="lead">It built on its own series: ${plural(s.collapsed.n,"earlier game")} back to <b>${esc(s.collapsed.to.title)}</b> (${s.collapsed.to.year}) · <span class="tier">Same series</span></p><p class="src" style="margin:4px 0 0">${esc(s.collapsed.via.map(v=>v.title+" ("+v.year+")").join(" · "))}</p></div>`
+        :`<div class="stlink" style="--c:var(--line2)"><p class="lead">This is the oldest game in this chain.</p></div>`}
+    </div></div></div>`}
+  $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="wrap sthead">${prog}<span class="mono muted" style="font-size:12px">${Math.min(k+1,n)} / ${n}</span><button class="x" data-act="closeStory" aria-label="Close">×</button></div>
+    <div class="stbody">${body}</div>
+    <div class="wrap stfoot"><button class="btn" data-act="storyPrev" ${k===0?"disabled":""}>◂ Newer</button><button class="btn primary" data-act="storyNext" ${k>=n?"disabled":""}>${k>=n-1?"Finish":"Older ▸"}</button></div></div>`;
+}
+
+/* ---------- friends ---------- */
+function overlap(a,b){const A=new Set(entries(a).map(x=>norm(x.e.t))),B=new Set(entries(b).map(x=>norm(x.e.t)));let both=0;A.forEach(k=>{if(B.has(k))both++});const uni=A.size+B.size-both;return {both,pct:uni?Math.round(both/uni*100):0}}
+function friendCard(f){
+  const d=f.data,es=entries(d),fav=es.filter(x=>x.lv===3&&x.g).sort((a,b)=>(b.g.pop)-(a.g.pop)).slice(0,5);
+  const ov=hist.birth&&entries(hist).length?overlap(hist,d):null;
+  return `<button class="fcard" data-act="friend" data-key="${esc(f.key)}"><span class="who"><span class="avatar" style="--h:${hueOf(String(f.name))}">${esc(String(f.name||"?").trim().charAt(0).toUpperCase()||"?")}</span><span><b>${esc(f.name)}</b><small>Born ${esc(d.birth)} · ${plural(es.length,"game")}</small></span></span>
+    <span class="covers">${(fav.length?fav:es.filter(x=>x.g).slice(0,5)).map(x=>cover(x.g,{showYear:false})).join("")}</span>
+    <span class="foot"><span>${f.src==="wall"?"On the friends wall":f.src==="db"?"Synced":"Opened from a link"}</span>${ov?`<span class="pill">${ov.pct}% in common</span>`:""}</span></button>`;
+}
+function renderFriends(m){
+  const fl=friendList(),mine=hist.birth&&entries(hist).length;
+  m.innerHTML=`<section class="wrap exhero"><p class="eyebrow">Friends</p><h1 class="h1">Compare timelines</h1>
+    <p class="lede">Send your timeline link to friends. When they open it they can see your games, make their own, and compare. ${CAPS.owner?"Open a friend's link and pin it to the friends wall, so everyone who opens this page sees it.":""}</p>
+    <div class="row">${mine?`<button class="btn primary" data-act="share">Share my timeline</button>`:`<a class="btn primary" href="#timeline">Make my timeline first</a>`}</div></section>
+    <section class="wrap sec">${fl.length?`<div class="fgrid">${fl.map(friendCard).join("")}</div>`:`<div class="card"><h2 class="h3">No friends' timelines yet</h2><p class="sub" style="margin:0">When a friend sends you their link, open it and they'll show up here on this device.</p></div>`}</section>
+    ${crewSection(fl)}
+    ${footer()}`;
+}
+/* the crew together: what most of you played, and what you loved most */
+function crewSection(fl){
+  const people=[...fl.map(f=>({name:f.name,data:f.data}))];if(hist.birth&&entries(hist).length)people.unshift({name:"You",data:hist});
+  if(people.length<2)return "";
+  const cnt=new Map();
+  people.forEach(p=>{const seenK=new Set();entries(p.data).forEach(x=>{if(!x.g||seenK.has(x.g.i))return;seenK.add(x.g.i);const o=cnt.get(x.g.i)||{g:x.g,n:0,love:0,who:[]};o.n++;if(x.lv===3){o.love++;o.who.push(p.name)}cnt.set(x.g.i,o)})});
+  const all=[...cnt.values()];
+  const most=all.filter(o=>o.n>=2).sort((a,b)=>b.n-a.n||b.love-a.love||b.g.pop-a.g.pop).slice(0,12);
+  const loved=all.filter(o=>o.love>=1).sort((a,b)=>b.love-a.love||b.n-a.n).slice(0,8);
+  const tile=(o,line)=>`<div class="tile"><button class="art" data-act="game" data-id="${o.g.id}">${cover(o.g)}</button><span class="tn">${esc(o.g.title)}</span><span class="why">${line}</span></div>`;
+  return `<section class="wrap sec"><p class="eyebrow">The crew</p><h2 class="h2">${people.length} timelines together</h2><p class="sub">${all.length.toLocaleString()} different games between you.</p>
+    ${most.length?`<h3 class="h3" style="margin-top:14px">Played by most of you</h3><div class="recs">${most.map(o=>tile(o,`${o.n} of ${people.length}`)).join("")}</div>`:""}
+    ${loved.length?`<h3 class="h3" style="margin-top:18px">The crew's favorites</h3><div class="recs">${loved.map(o=>tile(o,`♥ ${esc(o.who.slice(0,3).join(", "))}${o.who.length>3?" +"+(o.who.length-3):""}`)).join("")}</div>`:""}</section>`;
+}
+function friendsWhoPlayed(g){const out=[];friendList().forEach(f=>{const e=entryOf(f.data,g);if(e)out.push({name:f.name,lv:lvOf(e)})});return out}
+function findFriend(key){return friendList().find(f=>f.key===key)}
+function renderShared(m,payload){
+  const d=decodeShare(payload);
+  if(!d){m.innerHTML=`<section class="wrap exhero"><h1 class="h1">This link doesn't open a timeline</h1><p class="lede">It may have been cut off when it was copied. Ask for the link again.</p><a class="btn primary" href="#timeline">Make my own timeline</a></section>`;return}
+  if(!seen.some(s=>s.payload===payload)){seen.unshift({payload,at:Date.now()});seen=seen.slice(0,30);store.set("ib2-seen",seen)}
+  renderPerson(m,{name:d.name||"A friend",data:d,src:"seen",payload});
+}
+function renderPerson(m,f){
+  const d=f.data,st=timelineStats(d),mine=hist.birth&&entries(hist).length;
+  const ov=mine?overlap(hist,d):null;
+  m.innerHTML=`<section class="wrap mehead"><div><p class="eyebrow">Gaming timeline</p><h1 class="h1" style="font-size:clamp(26px,5vw,40px)">${esc(f.name)}'s life in games</h1>
+      <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div><div class="stat"><b>${st.years}</b><span>years</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div><div class="stat"><b>${esc(d.birth)}</b><span>born</span></div>${ov?`<div class="stat"><b>${ov.pct}%</b><span>in common with you</span></div>`:""}</div></div>
+      <div class="row">${mine?`<button class="btn primary" data-act="compare" data-key="${esc(f.key||"")}">Compare with mine</button>`:""}${f.payload?`<button class="btn" data-act="copyLink" data-payload="${esc(f.payload)}">Copy link</button><button class="btn ghost" data-act="adoptAsk" title="Load this saved link as your own editable timeline on this device">Load as mine</button>`:""}${CAPS.owner&&f.src!=="wall"?`<button class="btn" data-act="pin" data-key="${esc(f.key||"")}">Pin to friends wall</button>`:""}${CAPS.owner&&f.src==="wall"?`<button class="btn ghost" data-act="unpin" data-doc="${esc(f.docId)}">Unpin</button>`:""}${f.src==="seen"&&f.payload?`<button class="btn ghost" data-act="forget" data-payload="${esc(f.payload)}">Remove from this device</button>`:""}</div></section>
+    <div class="wrap" id="adoptBox"></div>
+    ${mine?"":`<section class="wrap"><div class="banner"><p><b>What did you play?</b> Make your own timeline in two minutes and see how much you have in common — or if this is your own backup link, click <b>Load as mine</b> above.</p><a class="btn primary" href="#timeline">Make mine</a></div></section>`}
+    <section class="wrap life">${lifeStrip(d,{mine:false})}</section>
+    ${favSection(d,false)}${dnaSection(d,false)}${statsSection(d)}${footer()}`;
+  state.viewing=f;
+}
+function openCompare(f){
+  const a=hist,b=f.data;const ea=entries(a),eb=entries(b);
+  const ka=new Map(ea.map(x=>[norm(x.e.t),x])),kb=new Map(eb.map(x=>[norm(x.e.t),x]));
+  const both=[...ka.keys()].filter(k=>kb.has(k)).map(k=>({a:ka.get(k),b:kb.get(k)}));
+  const bothFav=both.filter(x=>x.a.lv===3&&x.b.lv===3);
+  const onlyA=ea.filter(x=>!kb.has(norm(x.e.t))&&x.g).sort((x,y)=>y.lv-x.lv||y.g.pop-x.g.pop);
+  const onlyB=eb.filter(x=>!ka.has(norm(x.e.t))&&x.g).sort((x,y)=>y.lv-x.lv||y.g.pop-x.g.pop);
+  const ov=overlap(a,b);
+  const byYr=state.cmpMode==="year";
+  const mini=(x)=>{const g=x.g;return `<div class="tile lv${x.lv}"><button class="art" data-act="${g?"game":"noop"}" data-id="${g?g.id:""}" data-close="1">${coverOfEntry(x.e,x.y,{showYear:false})}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}">${LV[x.lv].m}</span></button><span class="tn">${esc(g?g.title:x.e.t)}</span></div>`};
+  const rows=[];
+  if(byYr){
+    const ys=[...new Set([...ea.map(x=>x.y),...eb.map(x=>x.y)])].sort((p,q)=>p-q);
+    for(const yr of ys){const la=ea.filter(x=>x.y===yr).sort((p,q)=>q.lv-p.lv).slice(0,4),lb=eb.filter(x=>x.y===yr).sort((p,q)=>q.lv-p.lv).slice(0,4);
+      if(la.length||lb.length)rows.push(`<div class="agerow"><b>${yr}<small>${yr-a.birth>=0?"age "+(yr-a.birth):"pre"} · ${yr-b.birth>=0?"age "+(yr-b.birth):"pre"}</small></b><div class="agecell">${la.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div><div class="agecell">${lb.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div></div>`)}
+  }else{
+    for(let age=4;age<=45;age++){const ya=a.birth+age,yb=b.birth+age;if(ya>NOW&&yb>NOW)break;
+      const la=ea.filter(x=>x.y===ya).sort((p,q)=>q.lv-p.lv).slice(0,4),lb=eb.filter(x=>x.y===yb).sort((p,q)=>q.lv-p.lv).slice(0,4);
+      if(la.length||lb.length)rows.push(`<div class="agerow"><b>${age}<small>${ya} · ${yb}</small></b><div class="agecell">${la.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div><div class="agecell">${lb.map(mini).join("")||'<span class="muted" style="font-size:12px">–</span>'}</div></div>`)}
+  }
+  const nm=f.name;
+  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Compare timelines"><div class="wrap ovhead"><h2>You and ${esc(nm)}</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="ovbody"><div class="wrap" style="padding-block:18px 40px">
+      <div class="stats"><div class="stat"><b>${ov.pct}%</b><span>in common</span></div><div class="stat"><b>${both.length}</b><span>games you both played</span></div><div class="stat"><b>${bothFav.length}</b><span>shared favorites</span></div><div class="stat"><b>${Math.abs(a.birth-b.birth)}</b><span>years apart</span></div></div>
+      ${bothFav.length?`<section class="sec"><h3 class="h2">You both loved</h3><div class="grid">${bothFav.map(x=>mini(x.a)).join("")}</div></section>`:""}
+      ${both.length?`<section class="sec"><h3 class="h2">You both played</h3><div class="grid">${both.filter(x=>!(x.a.lv===3&&x.b.lv===3)).slice(0,40).map(x=>mini(x.a)).join("")}</div></section>`:""}
+      <section class="sec"><div class="sechead"><div><h3 class="h2">${byYr?"Year by year":"At the same age"}</h3><p class="sub">${byYr?"What each of you was playing in the same calendar year.":"What each of you played at age 8, 12, 16…"}</p></div>
+        <span class="seg" role="group" aria-label="Compare mode"><button data-act="cmpMode" data-m="age" aria-pressed="${!byYr}">Same age</button><button data-act="cmpMode" data-m="year" aria-pressed="${byYr}">Same year</button></span></div>
+        <div class="agehead" style="top:0"><span>${byYr?"Year":"Age"}</span><span>You</span><span>${esc(nm)}</span></div>${rows.join("")}</section>
+      <section class="sec"><div class="hgrid"><div><h3 class="h2">Only you</h3><div class="grid">${onlyA.slice(0,18).map(mini).join("")}</div></div><div><h3 class="h2">Only ${esc(nm)}</h3><div class="grid">${onlyB.slice(0,18).map(mini).join("")}</div></div></div></section>
+    </div></div></div>`;
+}
+
+/* ---------- sheets ---------- */
+function openSheet(html,label){$("#layer").innerHTML=`<div class="sheet" data-act="closeLayer" data-self="1"><div class="sheetin" role="dialog" aria-label="${esc(label)}">${html}</div></div>`;const f=$("#layer .sheetin button, #layer .sheetin input");if(f)f.focus({preventScroll:true})}
+function clearLayer(){if(MAP){removeEventListener("resize",MAP.resize);MAP=null}$("#layer").innerHTML=""}
+function closeLayer(){clearLayer();if(state.route.view==="timeline"||state.route.view==="start")render()}
+function openGameSheet(y,t,ro){
+  const p=(ro?state.viewing&&state.viewing.data.years[y]:hist.years[y])||[];const e=p.find(x=>norm(x.t)===norm(t));if(!e)return;
+  const g=findGameY(e.t,e.y||y),lv=lvOf(e),d=ro?state.viewing.data:hist,sys=sysListOf(e,d);
+  const plats=g?sysOfGame(g):[];
+  const mtags=e.mtags||[];
+  const presets=[];
+  if(!ro&&d.birth){
+    if(g&&g.year>=1950)presets.push([g.year,`Release (${g.year})`]);
+    for(const ag of [6,9,12,15,18,22,28]){const py=d.birth+ag;if(py<=NOW&&(!g||py>=g.year)&&!presets.some(x=>x[0]===py))presets.push([py,`Age ${ag} (${py})`])}
+  }
+  openSheet(`<div class="sheethead"><h2>${esc(g?g.title:e.t)}</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="gsheet">${coverOfEntry(e,y)}<div style="min-width:0">
+      <p class="sub" style="margin:0 0 8px">Played in <b>${y}</b>${d.birth?` (${y-d.birth>=0?"age "+(y-d.birth):(-y+d.birth)+" yrs before birth"})`:""}${g&&g.year!==y?` · first released ${g.year}`:""}${g?` · ${flag(g.cc)} ${esc(g.dev)}`:""}</p>
+      ${ro?`<p style="margin:0 0 10px"><b>${LV[lv].m} ${LV[lv].label}</b>${sys.length?" on "+esc(sys.join(", ")):""}</p>
+        ${mtags.length?`<div class="row" style="margin:6px 0">${mtags.map(tg=>`<span class="pill">${esc(tg)}</span>`).join("")}</div>`:""}
+        ${e.mem?`<p class="memquote">“${esc(e.mem)}”</p>`:""}`:
+      `<div class="seg" role="group" aria-label="How much you played">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="entryLv" data-y="${y}" data-t="${esc(e.t)}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</div>
+       <p class="sub" style="margin:12px 0 6px">When did you play it?</p>
+       <div class="row">${presets.slice(0,6).map(([py,lbl])=>`<button type="button" class="chip" data-act="entryYr" data-y="${y}" data-t="${esc(e.t)}" data-to="${py}" aria-pressed="${py===y}">${esc(lbl)}</button>`).join("")}
+         <input class="input" id="entryYrIn" inputmode="numeric" maxlength="4" value="${y}" style="width:78px;padding:5px 9px;font-size:13px" aria-label="Year played"><button type="button" class="btn sm" data-act="entryYrGo" data-y="${y}" data-t="${esc(e.t)}">Move</button></div>
+       ${plats.length?`<p class="sub" style="margin:12px 0 6px">Played on</p><div class="row">${plats.map(n=>`<button class="chip" data-act="entrySys" data-y="${y}" data-t="${esc(e.t)}" data-sys="${esc(n)}" aria-pressed="${sys.includes(n)}">${esc(n)}</button>`).join("")}</div>`:""}
+       <p class="sub" style="margin:12px 0 6px">Memories & who with</p>
+       <div class="row">${MEM_TAGS.map(tg=>`<button type="button" class="chip" data-act="entryTag" data-y="${y}" data-t="${esc(e.t)}" data-tag="${esc(tg)}" aria-pressed="${mtags.includes(tg)}">${esc(tg)}</button>`).join("")}</div>
+       <form class="row" id="memForm" style="margin-top:8px"><input class="input" id="memIn" maxlength="80" style="flex:1;min-width:0;padding:7px 10px;font-size:13.5px" placeholder="Short memory, e.g. Summer '98 in the basement with Erik" value="${esc(e.mem||"")}" aria-label="Short memory"><button class="btn sm" type="submit">Save note</button></form>`}
+      <div class="row" style="margin-top:14px">${g?`<button class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">Family tree</button><button class="btn sm" data-act="walk" data-id="${g.id}" data-close="1">Walk its roots</button>`:""}${ro?"":`<button class="btn sm ghost" data-act="entryRm" data-y="${y}" data-t="${esc(e.t)}">Remove</button>`}</div>
+    </div></div>`,"Game");
+  const mf=$("#memForm");if(mf)mf.onsubmit=ev=>{ev.preventDefault();const v=$("#memIn").value.trim().slice(0,80);if(v)e.mem=v;else delete e.mem;save();toast(v?"Memory saved":"Memory cleared");closeLayer()};
+}
+function openYearSheet(y,customTitle){
+  const own=new Set(hist.owned||[]);
+  const all=G.filter(g=>g.year===y&&(g.cat||g.pop>=3)&&playable(g)).sort((a,b)=>{const ha=sysOfGame(a).some(p=>own.has(p)),hb=sysOfGame(b).some(p=>own.has(p));return (hb-ha)||b.pop-a.pop||b.inf-a.inf});
+  const list=state.showAllYear||!own.size?all:all.filter(g=>sysOfGame(g).some(p=>own.has(p))||g.pop>=4);
+  const age=y-hist.birth;
+  openSheet(`<div class="sheethead"><div><h2>${y}</h2><p class="sub" style="margin:2px 0 0">${age<0?`${-age} years before you were born`:age===0?"The year you were born":"You were "+age}</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="row" style="margin-bottom:10px"><button class="btn sm" data-act="yearNav" data-y="${y-1}">◂ ${y-1}</button>${y<NOW?`<button class="btn sm" data-act="yearNav" data-y="${y+1}">${y+1} ▸</button>`:""}<span style="flex:1"></span>${own.size?`<button class="chip" data-act="yearAll" data-y="${y}" aria-pressed="${state.showAllYear}">All systems</button>`:""}</div>
+    <div class="tap-hint" style="margin-bottom:12px"><span><b>✓</b>played</span><span><b class="l2">★</b>played a ton</span><span><b class="l3">♥</b>favorite</span></div>
+    <div class="grid" id="yeargrid">${list.map(g=>tileHTML(g,hist)).join("")||`<p class="empty">No games listed for ${y} yet.</p>`}</div>
+    <h3 class="h3" style="margin-top:18px">Played an older or missing game in ${y}?</h3>
+    <form class="row" id="customForm"><input class="input" id="customIn" style="flex:1;min-width:0" placeholder="Type any game you played in ${y}" value="${esc(customTitle||"")}" aria-label="Game title"><button class="btn" type="submit">Add to ${y}</button></form>`,"Year "+y);
+  $("#customForm").onsubmit=e=>{e.preventDefault();const t=$("#customIn").value.trim();if(!t)return;const g=findGame(t);if(g){setLevel(g,Math.max(1,levelOf(hist,g)),y);moveEntryYear(entryYearOf(hist,g)||y,g.title,y);toast(`Added ${g.title} to ${y}`)}else{addCustom(t,y);toast(`Added ${t} to ${y}`)}openYearSheet(y)};
+}
+function openShare(){
+  const st=timelineStats(hist),url=shareLink(hist);
+  const canWebShare=!!navigator.share;
+  openSheet(`<div class="sheethead"><h2>Share & save your timeline</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <label class="field" for="shareName">Name on your timeline<input class="input" id="shareName" maxlength="24" placeholder="Your first name" value="${esc(hist.name||"")}"></label>
+    <p class="sub" style="margin-top:14px">Your link carries your entire timeline (${plural(st.n,"game")}) right in the address — no account or sign-in required.</p>
+    <div class="sharebox"><input class="input" id="shareLink" readonly value="${esc(url)}" aria-label="Your timeline link"><button class="btn primary" data-act="copyShare">Copy link</button></div>
+    <div class="row" style="margin-top:10px">
+      ${canWebShare?`<button class="btn sm" data-act="webShare">Share…</button>`:""}
+      <button class="btn sm" data-act="emailSelf">Email link to myself</button>
+      <button class="btn sm" data-act="dlJson">Download backup (.json)</button>
+    </div>
+    <p class="sub" style="margin-top:8px">Tip: emailing the link to yourself keeps a permanent backup you can load on any phone or computer in one tap.</p>
+    <h3 class="h3" style="margin-top:16px">Images for group chats & desktops</h3><p class="sub">A vertical story card for chats, or a 4K poster connecting your games.</p>
+    <div class="row"><button class="btn" data-act="png" data-kind="card">Save story card</button><button class="btn" data-act="png" data-kind="wall">Save 4K poster</button></div><div id="imgout"></div>`,"Share");
+  $("#shareName").addEventListener("input",e=>{hist.name=e.target.value.trim().slice(0,24);save();$("#shareLink").value=shareLink(hist)});
+}
+function openSettings(){
+  const artEra=document.documentElement.dataset.art==="era";
+  openSheet(`<div class="sheethead"><h2>Timeline settings</h2><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <form id="setForm" class="row" style="align-items:flex-end"><label class="field" for="setBirth" style="flex:1">Year you were born<input class="input" id="setBirth" inputmode="numeric" maxlength="4" value="${hist.birth||""}"></label><label class="field" for="setName" style="flex:2">Name<input class="input" id="setName" maxlength="24" value="${esc(hist.name||"")}"></label><button class="btn primary" type="submit">Save</button></form>
+    <div class="row" style="margin-top:16px"><button class="btn" data-act="obSystems">Change systems</button><button class="btn" data-act="obAgain">Show quick picks again</button><button class="btn" data-act="theme">Switch light / dark</button><button class="btn" data-act="artToggle">${artEra?"Use real box art":"Use retro era spines"}</button></div>
+    <h3 class="h3" style="margin-top:16px">Backup & restore</h3>
+    <p class="sub">Your timeline saves automatically in this browser. You can also export or import a JSON backup file anytime.</p>
+    <div class="row"><button class="btn sm" data-act="dlJson">Export backup (.json)</button><label class="btn sm" style="cursor:pointer">Import backup (.json)<input type="file" id="impJson" accept=".json,application/json" hidden></label></div>
+    <h3 class="h3" style="margin-top:16px">Start over</h3><p class="sub">Removes every game from your timeline on this device.</p><button class="btn" data-act="resetAsk">Clear my timeline</button><div id="resetBox"></div>`,"Settings");
+  $("#setForm").onsubmit=e=>{e.preventDefault();const y=parseInt($("#setBirth").value,10);if(y>=1940&&y<=NOW-3)hist.birth=y;hist.name=$("#setName").value.trim().slice(0,24);save();closeLayer();toast("Saved")};
+  const imp=$("#impJson");if(imp)imp.onchange=async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;try{const raw=JSON.parse(await f.text());const c=cleanTimeline(raw);if(!c.birth)throw 0;hist=c;save();closeLayer();toast("Timeline restored");go("timeline")}catch(err){toast("Couldn't read that backup file")}};
+}
+function openSuggestSheet(subj){
+  if(CAPS.comments){const t=$(".gphead")||$("#main");CAPS.comments.openComposer({element:t}).then(r=>{if(r&&!r.opened)toast("Click into the page first, then try again")}).catch(()=>{});return}
+  const repo=ghRepoURL();
+  openSheet(`<div class="sheethead"><div><h2>Suggest a source, link, or studio note</h2><p class="sub" style="margin:2px 0 0">Disagree with a connection or have a developer interview / GDC talk URL? Send the receipt so we can keep the record accurate.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    <label class="field" for="sugSubj">Topic<input class="input" id="sugSubj" value="${esc(subj||"Suggested link or source")}"></label>
+    <label class="field" for="sugSrc" style="margin-top:10px">Interview, GDC talk, postmortem, or article URL<input class="input" id="sugSrc" placeholder="https://..."></label>
+    <label class="field" for="sugBody" style="margin-top:10px">What should be added or corrected?<textarea class="input" id="sugBody" rows="4" placeholder="Example: In a 2018 GDC talk, the lead designer cited X as the direct inspiration for Y..."></textarea></label>
+    <div class="row" style="margin-top:14px">
+      ${repo?`<button class="btn primary" data-act="sugGh" data-repo="${esc(repo)}">Open GitHub issue ↗</button>`:""}
+      <button class="btn${repo?"":" primary"}" data-act="sugCopy">Copy formatted note</button>
+    </div>`,"Suggest an edit");
+}
+function openTop10(){
+  const favs=entries(hist).filter(x=>x.lv===3&&x.g);hist.top10=(hist.top10||[]).filter(k=>favs.some(f=>f.g.n===k||norm1(f.g.title)===k)).map(k=>{const f=favs.find(f=>f.g.n===k||norm1(f.g.title)===k);return f.g.n});
+  const inT=new Set(hist.top10);const ranked=hist.top10.map(k=>favs.find(f=>f.g.n===k));const rest=favs.filter(f=>!inT.has(f.g.n)).sort((a,b)=>a.y-b.y);
+  const row=(f,i)=>`<div class="anc" style="grid-template-columns:30px 40px minmax(0,1fr) auto"><span class="mono" style="font-size:15px;text-align:right">${i!=null?i+1:""}</span>${cover(f.g,{showYear:false})}<span><b>${esc(f.g.title)}</b><small>${f.y}</small></span>
+    <span class="row" style="gap:4px">${i!=null?`<button class="btn sm" data-act="t10up" data-k="${f.g.n}" ${i===0?"disabled":""} aria-label="Move up">▲</button><button class="btn sm" data-act="t10down" data-k="${f.g.n}" ${i===ranked.length-1?"disabled":""} aria-label="Move down">▼</button><button class="btn sm ghost" data-act="t10rm" data-k="${f.g.n}" aria-label="Remove from top 10">×</button>`:`<button class="btn sm" data-act="t10add" data-k="${f.g.n}" ${ranked.length>=10?"disabled":""}>+ Top 10</button>`}</span></div>`;
+  openSheet(`<div class="sheethead"><div><h2>Rank your top 10</h2><p class="sub" style="margin:2px 0 0">From your ${plural(favs.length,"favorite")}. ${10-ranked.length>0?plural(10-ranked.length,"spot")+" left.":"All ten picked."}</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+    ${ranked.map((f,i)=>row(f,i)).join("")||`<p class="empty">Add favorites from the list below.</p>`}
+    ${rest.length?`<h3 class="h3" style="margin-top:16px">Other favorites</h3>${rest.map(f=>row(f,null)).join("")}`:""}`,"Top 10");
+}
+
+/* ---------- poster and images ---------- */
+function openPoster(d,name){
+  d=d||hist;
+  const es=entries(d),byY={};es.forEach(x=>(byY[x.y]=byY[x.y]||[]).push(x));
+  const ys=Object.keys(byY).map(Number);if(!ys.length){toast("Add some games first");return}
+  const from=Math.min(d.birth,...ys),to=Math.max(...ys);
+  let cols="";for(let y=from;y<=to;y++){const xs=(byY[y]||[]).sort((a,b)=>b.lv-a.lv);
+    cols+=`<div class="wcol${xs.length?"":" e"}"><div class="wh">${y}<small>${y-d.birth>=0?"age "+(y-d.birth):""}</small></div>${xs.slice(0,6).map((x,i)=>`<div class="tile lv${x.lv}${i>2?" s":""}">${coverOfEntry(x.e,y,{showYear:false,attrs:`data-k="${esc(norm(x.e.t))}"`})}${x.lv===3?`<span class="lvb l3">♥</span>`:""}</div>`).join("")}${xs.length>6?`<div class="rest">+${xs.length-6}</div>`:""}</div>`}
+  $("#layer").innerHTML=`<div class="ov" role="dialog" aria-label="Poster"><div class="wrap ovhead"><div><h2>${esc(name||(d.name?d.name+"'s":"My"))} gaming years</h2><p class="sync" style="margin:2px 0 0">Lines show where one of these games inspired another.</p></div><div class="row"><button class="btn sm" data-act="png" data-kind="wall" data-who="${name?"friend":"me"}">Save 4K poster</button><button class="x" data-act="closeLayer" aria-label="Close">×</button></div></div>
+    <div class="ovbody" id="posterBody"><div class="wall" id="wall"><svg class="lines" id="wallLines"></svg>${cols}</div></div></div>`;
+  requestAnimationFrame(()=>drawWallLines(d));
+}
+function wallLinks(d){const ks=new Map();entries(d).forEach(x=>{if(x.g)ks.set(x.g.i,norm(x.e.t))});return L.filter(l=>ks.has(l.from)&&ks.has(l.to)).map(l=>({l,a:ks.get(l.from),b:ks.get(l.to)}))}
+function drawWallLines(d){const wall=$("#wall"),svg=$("#wallLines");if(!wall||!svg)return;svg.setAttribute("width",wall.offsetWidth);svg.setAttribute("height",wall.offsetHeight);
+  const box=k=>{const el=wall.querySelector(`[data-k="${CSS.escape(k)}"]`);if(!el)return null;let x=0,y=0,n=el;while(n&&n!==wall){x+=n.offsetLeft;y+=n.offsetTop;n=n.offsetParent}return n===wall?{x,y,w:el.offsetWidth,h:el.offsetHeight}:null};
+  svg.innerHTML=wallLinks(d).map(({l,a,b})=>{const A=box(a),B=box(b);if(!A||!B)return "";const x1=A.x+A.w,y1=A.y+A.h/2,x2=B.x,y2=B.y+B.h/2,dx=Math.max(30,Math.abs(x2-x1)/2);
+    return `<path d="M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}" fill="none" stroke="${cssVar(TIERS[l.t].c)}" stroke-width="2" opacity=".75"/>`}).join("")}
+function canvasCover(x,title,year,h,glyph,bx,by,w,hh){
+  const g=x.createLinearGradient(bx,by,bx+w,by+hh);g.addColorStop(0,`hsl(${h} 55% 42%)`);g.addColorStop(1,`hsl(${h+35} 60% 18%)`);
+  x.fillStyle=g;x.beginPath();x.roundRect(bx,by,w,hh,Math.max(4,w*.05));x.fill();
+  const gi=GLYPH_IMG[glyph];if(gi){x.imageSmoothingEnabled=false;const s=Math.round(w*.22/8)*8||8;x.globalAlpha=.9;x.drawImage(gi,bx+w*.08,by+hh-s-w*.08,s,s);x.globalAlpha=1}
+  x.fillStyle="#fff";const fs=Math.max(10,w*.11);x.font=`700 ${fs}px Unbounded, Arial Black, sans-serif`;wrapText(x,title,bx+w*.09,by+fs*1.5,w*.82,fs*1.14,4);
+}
+function wrapText(x,text,px,py,maxW,lh,maxLines){const words=String(text).split(/\s+/);let line="",n=0;
+  for(const w of words){const t=line?line+" "+w:w;if(x.measureText(t).width>maxW&&line){x.fillText(line,px,py+n*lh);n++;line=w;if(n>=maxLines-1&&words.indexOf(w)<words.length-1){line=w+"…";break}}else line=t}
+  if(line&&n<maxLines)x.fillText(line,px,py+n*lh)}
+function drawWallpaper(d,name){
+  const W=3840,H=2160,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const es=entries(d),byY={};es.forEach(e=>(byY[e.y]=byY[e.y]||[]).push(e));const ys=Object.keys(byY).map(Number);
+  const from=Math.min(d.birth,...ys),to=Math.max(...ys),years=[];for(let y=from;y<=to;y++)years.push(y);
+  const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0C1222");bg.addColorStop(1,"#1A1532");x.fillStyle=bg;x.fillRect(0,0,W,H);
+  x.strokeStyle="rgba(140,157,255,.06)";x.lineWidth=2;for(let gx=0;gx<W;gx+=64){x.beginPath();x.moveTo(gx,0);x.lineTo(gx,H);x.stroke()}for(let gy=0;gy<H;gy+=64){x.beginPath();x.moveTo(0,gy);x.lineTo(W,gy);x.stroke()}
+  const M=120,colW=(W-M*2)/years.length,tw=Math.min(colW*.84,180),th=tw*4/3;
+  x.fillStyle="#E8ECF6";x.font="700 66px Unbounded, Arial Black, sans-serif";x.fillText(`${name||(d.name?d.name+"'s":"My")} gaming years`,M,150);
+  x.font="400 32px IBM Plex Mono, monospace";x.fillStyle="#98A1B6";x.fillText(`${from}–${to} · born ${d.birth} · ${es.length} games`,M,204);
+  const boxes={};
+  years.forEach((y,i)=>{const cx=M+i*colW+colW/2;
+    x.fillStyle="#98A1B6";x.font=`500 ${Math.max(16,Math.min(26,colW*.28))}px IBM Plex Mono, monospace`;x.textAlign="center";x.fillText(String(y),cx,H-90);x.textAlign="left";
+    x.strokeStyle="rgba(255,255,255,.07)";x.beginPath();x.moveTo(M+i*colW,260);x.lineTo(M+i*colW,H-130);x.stroke();
+    (byY[y]||[]).sort((a,b)=>b.lv-a.lv).slice(0,7).forEach((e,j)=>{const s=j===0?1:j<3?.86:.72,w=tw*s,h=th*s,top=270+[0,1.04,1.94,2.84,3.6,4.36,5.12][j]*th*.92;if(top+h>H-130)return;
+      const bx=cx-w/2,g=e.g;canvasCover(x,g?g.title:e.e.t,y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,top,w,h);
+      if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=7;x.beginPath();x.roundRect(bx,top,w,h,Math.max(4,w*.05));x.stroke()}else if(e.lv===2){x.strokeStyle="#8C9DFF";x.lineWidth=4;x.beginPath();x.roundRect(bx,top,w,h,Math.max(4,w*.05));x.stroke()}
+      boxes[norm(e.e.t)]={x:bx,y:top,w,h}})});
+  wallLinks(d).forEach(({a,b})=>{const A=boxes[a],B=boxes[b];if(!A||!B)return;const x1=A.x+A.w,y1=A.y+A.h/2,x2=B.x,y2=B.y+B.h/2,dx=Math.max(40,Math.abs(x2-x1)/2);
+    x.strokeStyle="rgba(140,157,255,.8)";x.lineWidth=4;x.beginPath();x.moveTo(x1,y1);x.bezierCurveTo(x1+dx,y1,x2-dx,y2,x2,y2);x.stroke()});
+  x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillStyle="#B9C1D2";x.fillText("Inspired By · the family tree of games",M,H-40);
+  return cv;
+}
+function drawCard(d,name){
+  const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0E1428");bg.addColorStop(1,"#23163C");x.fillStyle=bg;x.fillRect(0,0,W,H);
+  const st=timelineStats(d),es=entries(d);
+  x.fillStyle="#8C9DFF";x.font="400 30px Silkscreen, IBM Plex Mono, monospace";x.fillText("MY LIFE IN GAMES",72,120);
+  x.fillStyle="#F2F4F8";x.font="700 70px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"My timeline"),72,205);
+  x.fillStyle="#AEB6C8";x.font="400 32px IBM Plex Mono, monospace";x.fillText(`born ${d.birth} · ${st.n} games · ${st.sys} systems`,72,262);
+  const stages=[["Childhood",0,12],["Teens",13,19],["Twenties",20,29],["Thirties",30,39],["Forties",40,49]];let yy=350;
+  for(const [label,a,b] of stages){const xs=es.filter(e=>e.y-d.birth>=a&&e.y-d.birth<=b).sort((p,q)=>q.lv-p.lv||((q.g&&q.g.pop)||0)-((p.g&&p.g.pop)||0)).slice(0,5);if(!xs.length)continue;if(yy>1520)break;
+    x.fillStyle="#8C9DFF";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText(label.toUpperCase(),72,yy);yy+=24;
+    xs.forEach((e,k)=>{const w=170,h=226,bx=72+k*(w+18);const g=e.g;canvasCover(x,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,yy,w,h);if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=6;x.beginPath();x.roundRect(bx,yy,w,h,8);x.stroke()}});
+    yy+=226+64}
+  const dna=dnaOf(d);if(dna.top.length&&yy<1700){const a=dna.top[0];x.fillStyle="#8C9DFF";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText("MY GAMING DNA",72,yy);yy+=52;
+    x.fillStyle="#F2F4F8";x.font="600 36px IBM Plex Sans, sans-serif";wrapText(x,`${a.n} of my games descend from ${a.g.title} (${a.g.year}).`,72,yy,936,46,2)}
+  x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("What did you play? · Inspired By",72,H-70);
+  return cv;
+}
+async function saveImage(kind,who){
+  const d=who==="friend"&&state.viewing?state.viewing.data:hist,name=who==="friend"&&state.viewing?state.viewing.name+"'s":null;
+  const cv=kind==="card"?drawCard(d,name&&name.replace(/'s$/,"")):drawWallpaper(d,name);
+  const blob=await new Promise(r=>cv.toBlob(r,"image/png"));
+  const fname=kind==="card"?"my-life-in-games.png":"my-gaming-years-4k.png";
+  try{const dl=window.claude&&claude.use?await claude.use("downloads"):null;
+    if(dl){await dl.save({filename:fname,data:blob});toast("Saved");return}}catch(e){if(e&&e.code==="declined")return}
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
+  toast("Image downloaded");
+  const out=$("#imgout")||$("#posterBody");
+  if(out)out.insertAdjacentHTML("afterbegin",`<p class="sub" style="margin-top:12px">Downloaded <b>${esc(fname)}</b> (on phones, you can also press and hold the preview below).</p><img class="imgprev" src="${url}" alt="Your timeline image">`);
+}
+
+function updateArtBtn(){const b=$("#artBtn");if(b)b.textContent=document.documentElement.dataset.art==="era"?"Covers: Era spines":"Covers: Box art"}
+
+/* ================================================================
+   Actions (one delegated click handler)
+   ================================================================ */
+const ACTIONS={
+  noop(){},
+  toDna(){const s=$("#dna");if(s)s.scrollIntoView({behavior:"smooth",block:"start"})},
+  quizPick(el){if(!quiz||quiz.picked!=null)return;quiz.picked=+el.dataset.i;if(quiz.picked===quiz.parent.i){quizStreak++;if(quizStreak>quizBest){quizBest=quizStreak;store.set("ib2-best",quizBest)}}else quizStreak=0;renderQuiz()},
+  quizNext(){quiz=newQuiz();renderQuiz()},
+  infMode(el){state.infMode=el.dataset.m;store.set("ib2-inf",state.infMode);const y=window.scrollY;render();window.scrollTo({top:y})},
+  cmpMode(el){state.cmpMode=el.dataset.m;if(state.viewing)openCompare(state.viewing)},
+  stFilt(el){state.stFilter=el.dataset.f;render()},
+  studio(el){const id=el.dataset.st;if(!id)return;clearLayer();go("studio-"+id)},
+  goStudios(){go("studios")},
+  artToggle(){const r=document.documentElement;r.dataset.art=r.dataset.art==="era"?"real":"era";store.set("ib3-art",r.dataset.art);updateArtBtn();if($("#layer .sheet"))openSettings()},
+  map(){openMap()},
+  mapZoom(el){if(MAP)mapZoomAt(+el.dataset.z,MAP.W/2,MAP.H/2)},
+  mapReset(){if(MAP){MAP.k=1;MAP.tx=0;MAP.ty=0;MAP.sel=null;drawMap();mapCard()}},
+  suggest(el){openSuggestSheet(el&&el.dataset&&el.dataset.subj)},
+  sugGh(el){const repo=el.dataset.repo,t=($("#sugSubj")||{}).value||"Suggestion",s=($("#sugSrc")||{}).value||"",b=($("#sugBody")||{}).value||"";const body=`**Source URL:** ${s||"(none provided)"}\n\n**Details:**\n${b}`;window.open(`${repo}/issues/new?title=${encodeURIComponent(t)}&body=${encodeURIComponent(body)}`,"_blank","noopener")},
+  sugCopy(){const t=($("#sugSubj")||{}).value||"",s=($("#sugSrc")||{}).value||"",b=($("#sugBody")||{}).value||"";copyText(`Topic: ${t}\nSource: ${s}\nDetails: ${b}`);closeLayer()},
+  game(el){const id=el.dataset.id;if(!id)return;if(el.dataset.close||story){closeStory();clearLayer()}go(id)},
+  walk(el){const g=byId.get(el.dataset.id);if(!g)return;if(el.dataset.close)clearLayer();openStory(rootsChain(g.i))},
+  random(){const pool=TREE.filter(g=>g.pop>=3&&UP[g.i].length);go(pool[Math.floor(Math.random()*pool.length)].id)},
+  cycle(el){const g=byId.get(el.dataset.id);if(!g)return;cycleLevel(g);refreshTile(el,g);updatePickBar()},
+  own(el){const n=el.dataset.sys,o=new Set(hist.owned||[]);o.has(n)?o.delete(n):o.add(n);hist.owned=[...o];save();el.setAttribute("aria-pressed",o.has(n));const c=$("#ownCount");if(c)c.textContent=o.size?plural(o.size,"system")+" picked":"Pick a few, or skip"},
+  obBack(){if(entries(hist).length){hist.stage=null;save();go("timeline");return}hist.birth=null;hist.stage=null;save();go("start")},
+  obPicks(){hist.stage="picks";save();render();window.scrollTo({top:0})},
+  pickMore(el){const k=el.dataset.band;state.pickExtra[k]=(state.pickExtra[k]||0)+12;const y=window.scrollY;render();window.scrollTo({top:y})},
+  obDone(){hist.stage=null;save();go("timeline")},
+  obSystems(){hist.stage="systems";save();clearLayer();go("start")},
+  obAgain(){hist.stage="picks";save();clearLayer();go("start")},
+  setlv(el){const g=byId.get(el.dataset.id);const v=+el.dataset.lv;const cur=levelOf(hist,g);if(!hist.birth&&v>0){toast("Start your timeline first, then add games");go("start");return}setLevel(g,v===cur?0:v);render();toast(v&&v!==cur?`${LV[v].label}: ${g.title}`:`Removed ${g.title}`)},
+  entry(el){openGameSheet(+el.dataset.y,el.dataset.t,!!el.dataset.ro)},
+  entryLv(el){const y=+el.dataset.y,p=hist.years[y]||[],e=p.find(x=>norm(x.t)===norm(el.dataset.t));if(e){e.lv=+el.dataset.lv;sortPile(p);save();openGameSheet(y,e.t)}},
+  entryYr(el){const ny=moveEntryYear(+el.dataset.y,el.dataset.t,+el.dataset.to);openGameSheet(ny,el.dataset.t);toast(`Moved to ${ny}`)},
+  entryYrGo(el){const v=parseInt(($("#entryYrIn")||{}).value,10);if(!(v>=1950&&v<=NOW)){toast(`Enter a year between 1950 and ${NOW}`);return}const ny=moveEntryYear(+el.dataset.y,el.dataset.t,v);openGameSheet(ny,el.dataset.t);toast(`Moved to ${ny}`)},
+  entryTag(el){const y=+el.dataset.y,e=(hist.years[y]||[]).find(x=>norm(x.t)===norm(el.dataset.t));if(!e)return;const tg=el.dataset.tag,cur=(e.mtags||[]).slice(),i=cur.indexOf(tg);if(i>=0)cur.splice(i,1);else if(cur.length<4)cur.push(tg);if(cur.length)e.mtags=cur;else delete e.mtags;save();openGameSheet(y,e.t)},
+  entrySys(el){const y=+el.dataset.y,e=(hist.years[y]||[]).find(x=>norm(x.t)===norm(el.dataset.t));if(!e)return;const cur=sysListOf(e,hist).slice(),n=el.dataset.sys,i=cur.indexOf(n);if(i>=0)cur.splice(i,1);else cur.push(n);e.systems=cur;delete e.sys;save();openGameSheet(y,e.t)},
+  entryRm(el){removeEntry(+el.dataset.y,el.dataset.t);closeLayer();toast("Removed")},
+  year(el){openYearSheet(+el.dataset.y)},
+  yearNav(el){openYearSheet(+el.dataset.y,($("#customIn")||{}).value||"")},
+  yearAll(el){state.showAllYear=!state.showAllYear;openYearSheet(+el.dataset.y,($("#customIn")||{}).value||"")},
+  closeLayer(el,e){if(el.dataset.self&&e.target!==el)return;closeLayer()},
+  share(){if(!hist.birth||!entries(hist).length){toast("Add some games first");return}openShare()},
+  copyShare(){const v=$("#shareLink").value;copyText(v,$("#shareLink"))},
+  webShare(){const u=shareLink(hist);if(navigator.share)navigator.share({title:`${hist.name?hist.name+"'s":"My"} life in games`,text:"Here's my gaming timeline — compare yours in two minutes:",url:u}).catch(()=>{})},
+  emailSelf(){const u=shareLink(hist),sub=`My life in games (${entries(hist).length} games)`;location.href=`mailto:?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent("Here is my Inspired By gaming timeline link (open it on any device to view or continue editing):\n\n"+u)}`},
+  dlJson(){const blob=new Blob([JSON.stringify(packHist(hist),null,2)],{type:"application/json"});const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=`inspired-by-timeline-${hist.name?slugStudio(hist.name):hist.birth||"backup"}.json`;document.body.appendChild(a);a.click();a.remove();toast("Backup downloaded")},
+  adoptAsk(){const f=state.viewing;if(!f||!f.data)return;if(!entries(hist).length){hist=JSON.parse(JSON.stringify(f.data));save();toast("Loaded as your timeline");go("timeline");return}$("#adoptBox").innerHTML=`<div class="banner"><p>Replace your current timeline on this device (${plural(entries(hist).length,"game")}) with <b>${esc(f.name)}'s</b> (${plural(entries(f.data).length,"game")})?</p><div class="row"><button class="btn primary" data-act="adoptDo">Yes, load it</button><button class="btn" data-act="adoptNo">Cancel</button></div></div>`},
+  adoptDo(){const f=state.viewing;if(!f||!f.data)return;hist=JSON.parse(JSON.stringify(f.data));save();toast("Loaded as your timeline");go("timeline")},
+  adoptNo(){const b=$("#adoptBox");if(b)b.innerHTML=""},
+  copyLink(el){copyText(shareBase()+"#"+el.dataset.payload)},
+  copyWalk(el){copyText(shareBase()+"#walk-"+el.dataset.id)},
+  copyGame(el){copyText(shareBase()+"#"+el.dataset.id)},
+  png(el){saveImage(el.dataset.kind,el.dataset.who)},
+  poster(){openPoster(hist)},
+  settings(){openSettings()},
+  top10(){openTop10()},
+  t10add(el){if((hist.top10||[]).length>=10)return;hist.top10=[...(hist.top10||[]),el.dataset.k];save();openTop10()},
+  t10rm(el){hist.top10=(hist.top10||[]).filter(k=>k!==el.dataset.k);save();openTop10()},
+  t10up(el){const a=hist.top10,i=a.indexOf(el.dataset.k);if(i>0){[a[i-1],a[i]]=[a[i],a[i-1]];save();openTop10()}},
+  t10down(el){const a=hist.top10,i=a.indexOf(el.dataset.k);if(i>=0&&i<a.length-1){[a[i+1],a[i]]=[a[i],a[i+1]];save();openTop10()}},
+  theme(){const r=document.documentElement,cur=r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");r.dataset.theme=cur==="dark"?"light":"dark";store.set("ib2-theme",r.dataset.theme)},
+  resetAsk(){$("#resetBox").innerHTML=`<div class="banner"><p>Clear all ${plural(entries(hist).length,"game")} from your timeline?</p><div class="row"><button class="btn love" data-act="resetDo">Clear it</button><button class="btn" data-act="resetNo">Keep it</button></div></div>`},
+  resetNo(){$("#resetBox").innerHTML=""},
+  resetDo(){hist=blankHist();save();store.del("ib2-revealed");$("#layer").innerHTML="";go("start");render();toast("Cleared")},
+  tier(el){const k=el.dataset.tier;state.tiers[k]=state.tiers[k]?0:1;store.set("ib2-tiers",state.tiers);render()},
+  allTiers(){TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);render()},
+  moreLinks(el){state.treeMore[el.dataset.dir]=1;render()},
+  treeMore(el){state.treeMore["c"+el.dataset.col]=1;render()},
+  closeStory(){closeStory()},storyNext(){storyStep(1)},storyPrev(){storyStep(-1)},storyRestart(){story.k=0;drawStory()},
+  friend(el){const f=findFriend(el.dataset.key);if(!f)return;if(f.src==="seen"&&f.payload)go(f.payload);else go(friendHash(f))},
+  forget(el){const p=el.dataset.payload;seen=seen.filter(s=>s.payload!==p);store.set("ib2-seen",seen);DEC.delete(p);toast("Removed from this device");go("friends")},
+  compare(el){const f=state.viewing;if(f)openCompare(f)},
+  pin(){const f=state.viewing;if(!f||!CAPS.db)return;const id=("f-"+norm(f.name||"friend").slice(0,20)+"-"+f.data.birth).replace(/[^a-z0-9-]/g,"");
+    CAPS.db.doc("crew/"+id).set({...packHist(f.data),name:f.name,pinnedAt:Date.now()}).then(()=>toast(`Pinned ${f.name} to the friends wall`)).catch(()=>toast("Couldn't pin. Only the page owner can."))},
+  unpin(el){if(!CAPS.db)return;CAPS.db.doc("crew/"+el.dataset.doc).delete().then(()=>{toast("Unpinned");go("friends")}).catch(()=>toast("Couldn't unpin"))}
+};
+async function copyText(v,input){try{await navigator.clipboard.writeText(v);toast("Copied to clipboard")}catch(e){if(input){input.focus();input.select()}toast("Select the text and copy it")}}
+document.addEventListener("click",e=>{const el=e.target.closest("[data-act]");if(!el)return;const fn=ACTIONS[el.dataset.act];if(!fn)return;
+  if(el.tagName==="A")e.preventDefault();fn(el,e)});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&!story&&$("#layer").innerHTML){e.preventDefault();closeLayer();return}
+  if((e.key==="Enter"||e.key===" ")&&e.target.matches&&e.target.matches("g.wnode")){e.preventDefault();e.target.dispatchEvent(new MouseEvent("click",{bubbles:true}))}
+});
+
+/* ---------- boot ---------- */
+(()=>{const t=store.get("ib2-theme");if(t)document.documentElement.dataset.theme=t;const a=store.get("ib3-art");if(a)document.documentElement.dataset.art=a;updateArtBtn()})();
+route();
+initCaps();
+</script>

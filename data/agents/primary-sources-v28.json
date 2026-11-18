@@ -1,0 +1,670 @@
+{
+  "links": [
+    {
+      "from": "dwarf-fortress",
+      "to": "minecraft",
+      "tier": "dev",
+      "took": "Digging, building, and procedurally generated worlds; Markus Persson pitched Minecraft moving toward Dwarf Fortress.",
+      "added": "An accessible first-person world of blocks that anyone can pick up and reshape.",
+      "src": [
+        {
+          "t": "PC Gamer, Markus Persson TIGSource launch post & early Minecraft history",
+          "u": "https://www.pcgamer.com/the-first-moments-of-minecraft/"
+        },
+        {
+          "t": "Game Developer, Tarn Adams on Dwarf Fortress and Minecraft, 2013",
+          "u": "https://www.gamedeveloper.com/business/dwarf-fortress-in-2013"
+        }
+      ],
+      "extra": "Tarn Adams noted that Minecraft's credits brought a wave of new players to Dwarf Fortress."
+    },
+    {
+      "from": "minecraft",
+      "to": "deep-rock",
+      "tier": "dev",
+      "took": "Digging freely through procedurally generated subterranean caves.",
+      "added": "Four specialized space-dwarf classes mining destructible alien caverns while fighting bug swarms.",
+      "src": [
+        {
+          "t": "PCGamesN, Ghost Ship Games on Deep Rock Galactic, 2018",
+          "u": "https://www.pcgamesn.com/deep-rock-galactic/deep-rock-galactic-unreal-engine-4"
+        },
+        {
+          "t": "Wikipedia: Deep Rock Galactic",
+          "u": "https://en.wikipedia.org/wiki/Deep_Rock_Galactic"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "doom",
+      "to": "half-life",
+      "tier": "dev",
+      "took": "Visceral first-person gunplay and the goal of genuinely startling players.",
+      "added": "An unbroken story with no cutscenes where you play a vulnerable scientist instead of a space marine.",
+      "src": [
+        {
+          "t": "GamesRadar+, Gabe Newell 1998 Next Generation interview retrospective",
+          "u": "https://www.gamesradar.com/games/super-mario/decades-ago-gabe-newell-revealed-that-super-mario-64-influenced-half-life-and-it-seems-future-steam-god-gaben-was-a-lot-better-at-nintendos-platformer-than-valves-fps-classic/"
+        },
+        {
+          "t": "Wikipedia: Half-Life",
+          "u": "https://en.wikipedia.org/wiki/Half-Life_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "ultima-underworld-the-stygian-abyss",
+      "to": "half-life",
+      "tier": "dev",
+      "took": "Deep first-person environmental immersion and interactive subterranean spaces, cited by Gabe Newell.",
+      "added": "Scripted set-piece storytelling and tactical squad combat inside Black Mesa.",
+      "src": [
+        {
+          "t": "GamesRadar+, Gabe Newell 1998 Next Generation interview retrospective",
+          "u": "https://www.gamesradar.com/games/super-mario/decades-ago-gabe-newell-revealed-that-super-mario-64-influenced-half-life-and-it-seems-future-steam-god-gaben-was-a-lot-better-at-nintendos-platformer-than-valves-fps-classic/"
+        },
+        {
+          "t": "Wikipedia: Half-Life",
+          "u": "https://en.wikipedia.org/wiki/Half-Life_(video_game)"
+        }
+      ],
+      "extra": "Newell named Ultima Underworld, Resident Evil 2, and Super Mario 64 as key influences."
+    },
+    {
+      "from": "super-mario-64",
+      "to": "half-life",
+      "tier": "dev",
+      "took": "Expressive 3D spatial design and responsive player control, praised by Gabe Newell.",
+      "added": "A first-person science-fiction thriller told without cutscenes.",
+      "src": [
+        {
+          "t": "GamesRadar+, Gabe Newell on Super Mario 64 influencing Half-Life",
+          "u": "https://www.gamesradar.com/games/super-mario/decades-ago-gabe-newell-revealed-that-super-mario-64-influenced-half-life-and-it-seems-future-steam-god-gaben-was-a-lot-better-at-nintendos-platformer-than-valves-fps-classic/"
+        },
+        {
+          "t": "Nintendo Life, Gabe Newell on Super Mario 64, Mar 2014",
+          "u": "https://www.nintendolife.com/news/2014/03/valves_gabe_newell_thinks_super_mario_64_is_just_swell"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "street-fighter-ii",
+      "to": "doom",
+      "tier": "dev",
+      "took": "Trash-talking head-to-head arcade duels that id Software played on office breaks.",
+      "added": "First-person networked arena shooting, which John Romero named 'deathmatch'.",
+      "src": [
+        {
+          "t": "Old School Gamer Magazine, John Romero interview",
+          "u": "https://www.oldschoolgamermagazine.com/john-romero-the-interview-by-todd-friedman/"
+        },
+        {
+          "t": "Wikipedia: Doom (1993)",
+          "u": "https://en.wikipedia.org/wiki/Doom_(1993_video_game)"
+        }
+      ],
+      "extra": "Romero also named SNK's Fatal Fury and Art of Fighting alongside Street Fighter II."
+    },
+    {
+      "from": "doom",
+      "to": "doom-2016",
+      "tier": "dev",
+      "took": "Relentless movement speed, demonic arenas, and refusal to hide behind cover.",
+      "added": "Push-forward Glory Kills and chainsaw executions that drop health and ammo mid-fight.",
+      "src": [
+        {
+          "t": "Game Developer, Marty Stratton and Hugo Martin on Doom (2016) design",
+          "u": "https://www.gamedeveloper.com/design/-make-me-think-make-me-move-new-i-doom-i-s-deceptively-simple-design"
+        },
+        {
+          "t": "Shacknews, The Making and Remaking of Doom",
+          "u": "https://www.shacknews.com/article/99662/stairway-to-badass-the-making-and-remaking-of-doom?page=3"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "doom",
+      "to": "star-wars-dark-forces",
+      "tier": "dev",
+      "took": "Fast corridor gunplay after LucasArts staff saw fan-made Death Star mods for Doom.",
+      "added": "The Jedi engine with jumping, vertical aim, multi-story rooms, and Kyle Katarn's mission story.",
+      "src": [
+        {
+          "t": "PC Gamer, Daron Stinnett and Justin Chin Dark Forces retrospective",
+          "u": "https://www.pcgamer.com/dark-forces-was-much-more-than-a-star-wars-doom-clone/"
+        },
+        {
+          "t": "Wikipedia: Star Wars: Dark Forces",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars:_Dark_Forces"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "half-life-2",
+      "to": "left-4-dead",
+      "tier": "dev",
+      "took": "Adaptive supply-crate drops from Half-Life 2 and Episode Two as the seed of the AI Director.",
+      "added": "An AI Director dynamically pacing zombie hordes, special infected, and music across four-player runs.",
+      "src": [
+        {
+          "t": "Game Developer, Chet Faliszek on the making of Left 4 Dead",
+          "u": "https://www.gamedeveloper.com/design/15-years-later-chet-faliszek-dishes-on-the-making-of-left-4-dead"
+        },
+        {
+          "t": "Game Developer, Valve's AI Director",
+          "u": "https://www.gamedeveloper.com/design/the-discomfort-zone-the-hidden-potential-of-valve-s-ai-director"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "half-life",
+      "to": "deus-ex",
+      "tier": "dev",
+      "took": "Unbroken first-person combat and world immersion cited in Warren Spector's design doc.",
+      "added": "RPG skill builds, cybernetic augmentations, and multiple stealth, hacking, or combat routes.",
+      "src": [
+        {
+          "t": "Warren Spector, Postmortem: Ion Storm's Deus Ex, Game Developer, Dec 2000",
+          "u": "https://www.gamedeveloper.com/production/postmortem-ion-storm-s-deus-ex"
+        },
+        {
+          "t": "Wikipedia: Deus Ex",
+          "u": "https://en.wikipedia.org/wiki/Deus_Ex_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "half-life",
+      "to": "titanfall-2",
+      "tier": "dev",
+      "took": "Environmental puzzles solved on the move and unbroken first-person storytelling.",
+      "added": "Wall-running pilot parkour, a bond with Titan BT-7274, and time-swapping combat levels.",
+      "src": [
+        {
+          "t": "GamesRadar+, Steve Fukuda & Mackey McCandlish on making Titanfall 2",
+          "u": "https://www.gamesradar.com/the-making-of-titanfall-2-how-building-blocks-buddy-robots-and-half-life-led-to-one-of-the-freshest-fps-in-years/"
+        },
+        {
+          "t": "Wikipedia: Titanfall 2",
+          "u": "https://en.wikipedia.org/wiki/Titanfall_2"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-breath-of-the-wild",
+      "to": "elden-ring",
+      "tier": "dev",
+      "took": "Unscripted open-world exploration across wide vistas, cited by Hidetaka Miyazaki.",
+      "added": "Demanding Souls combat, build variety, and legacy dungeons hidden across the Lands Between.",
+      "src": [
+        {
+          "t": "IGN, Hidetaka Miyazaki on Breath of the Wild, Elder Scrolls and Witcher 3, 2022",
+          "u": "https://www.ign.com/articles/elden-ring-director-hidetaka-miyazaki-influenced-zelda-breath-of-the-wild-elder-scrolls-witcher-3"
+        },
+        {
+          "t": "Wikipedia: Elden Ring",
+          "u": "https://en.wikipedia.org/wiki/Elden_Ring"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-elder-scrolls-v-skyrim",
+      "to": "elden-ring",
+      "tier": "dev",
+      "took": "Large-scale fantasy open-world roaming, named by Hidetaka Miyazaki as an influence.",
+      "added": "Boss-first map layouts and cryptic discovery with no town quest logs.",
+      "src": [
+        {
+          "t": "IGN, Hidetaka Miyazaki open-world influences interview, 2022",
+          "u": "https://www.ign.com/articles/elden-ring-director-hidetaka-miyazaki-influenced-zelda-breath-of-the-wild-elder-scrolls-witcher-3"
+        },
+        {
+          "t": "Wikipedia: Elden Ring",
+          "u": "https://en.wikipedia.org/wiki/Elden_Ring"
+        }
+      ],
+      "extra": "Miyazaki cited The Elder Scrolls series as a whole."
+    },
+    {
+      "from": "the-witcher-3-wild-hunt",
+      "to": "elden-ring",
+      "tier": "dev",
+      "took": "Dark-fantasy open-world scale, named by Hidetaka Miyazaki among his open-world touchstones.",
+      "added": "Custom character builds, Soulslike stamina combat, and unguided exploration.",
+      "src": [
+        {
+          "t": "IGN, Hidetaka Miyazaki open-world influences interview, 2022",
+          "u": "https://www.ign.com/articles/elden-ring-director-hidetaka-miyazaki-influenced-zelda-breath-of-the-wild-elder-scrolls-witcher-3"
+        },
+        {
+          "t": "Wikipedia: Elden Ring",
+          "u": "https://en.wikipedia.org/wiki/Elden_Ring"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dark-souls",
+      "to": "elden-ring",
+      "tier": "dev",
+      "took": "Stamina melee, Sites of Grace checkpoints, and builds; Miyazaki called it Dark Souls' evolution.",
+      "added": "An open world crossed on horseback with jumping, stealth, and Spirit Ash summons.",
+      "src": [
+        {
+          "t": "IGN, Hidetaka Miyazaki Summer of Gaming interview, Jun 2021",
+          "u": "https://www.ign.com/articles/elden-ring-miyazaki-hidetaka-full-interview-summer-of-gaming"
+        },
+        {
+          "t": "IGN, Hidetaka Miyazaki E3 2019 interview",
+          "u": "https://www.ign.com/articles/2019/06/11/dark-souls-and-bloodborne-creator-says-elden-ring-is-a-vast-open-world-souls-like-game-a-e3-2019"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "runequest",
+      "to": "elden-ring",
+      "tier": "dev",
+      "took": "Mythic pantheons and tabletop world-building, credited by Hidetaka Miyazaki.",
+      "added": "The shattered Lands Between, warring demigods, and lore co-written with George R. R. Martin.",
+      "src": [
+        {
+          "t": "Inverse, citing Hidetaka Miyazaki's Edge interview",
+          "u": "https://www.inverse.com/input/gaming/elden-ring-team-had-to-step-up-its-graphics-after-demon-souls-looked-so-good"
+        },
+        {
+          "t": "Wikipedia: Elden Ring",
+          "u": "https://en.wikipedia.org/wiki/Elden_Ring"
+        }
+      ],
+      "extra": "Miyazaki also named The Lord of the Rings and Michael Moorcock's Eternal Champion."
+    },
+    {
+      "from": "the-legend-of-zelda-breath-of-the-wild",
+      "to": "genshin-impact",
+      "tier": "dev",
+      "took": "Climbing, gliding stamina, and bright open-world exploration cited by miHoYo as a primary inspiration.",
+      "added": "Four-character party swapping, elemental reaction combos, gacha roster updates, and live chapters.",
+      "src": [
+        {
+          "t": "IGN, miHoYo on Breath of the Wild inspiration",
+          "u": "https://www.ign.com/articles/genshin-impact-devs-were-left-crying-over-zelda-breath-of-the-wild-clone-accusations"
+        },
+        {
+          "t": "Kotaku, Genshin Impact and Breath of the Wild, Oct 2020",
+          "u": "https://kotaku.com/genshin-impact-is-more-than-a-breath-of-the-wild-clone-1845232653"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-breath-of-the-wild",
+      "to": "ghost-of-tsushima",
+      "tier": "dev",
+      "took": "Minimalist open landscapes that guide curiosity naturally without cluttering the screen.",
+      "added": "Guiding Wind navigation, Kurosawa-inspired samurai standoffs, and the 1274 Mongol invasion.",
+      "src": [
+        {
+          "t": "GamesRadar+, Nate Fox and Jason Connell (Sucker Punch) interview",
+          "u": "https://www.gamesradar.com/games/action-rpg/i-asked-ghost-of-yoteis-creative-directors-all-of-my-burning-questions-and-i-dont-want-to-get-your-hopes-up-but-sucker-punchs-sequel-sounds-like-feudal-red-dead-redemption-2/"
+        },
+        {
+          "t": "Wikipedia: Ghost of Tsushima",
+          "u": "https://en.wikipedia.org/wiki/Ghost_of_Tsushima"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "super-mario-bros",
+      "to": "sonic-the-hedgehog",
+      "tier": "dev",
+      "took": "Yuji Naka replaying World 1-1 at top sprint speed, wishing stages let players go faster.",
+      "added": "Pinball slopes, 360-degree loops, spin-ball momentum, and protective golden rings.",
+      "src": [
+        {
+          "t": "Shmuplations, Yuji Naka and Naoto Ohshima Sonic interviews",
+          "u": "https://shmuplations.com/sonic/"
+        },
+        {
+          "t": "Game Developer, Sonic devs on competing with Mario",
+          "u": "https://www.gamedeveloper.com/design/-i-sonic-the-hedgehog-i-devs-explain-how-competing-with-mario-influenced-development"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "super-mario-bros-3",
+      "to": "commander-keen",
+      "tier": "dev",
+      "took": "Smooth console tile scrolling from Carmack and Hall's rejected PC demo of Super Mario Bros. 3.",
+      "added": "Boy-genius Billy Blaze, a pogo stick, rayguns, and three-episode PC shareware distribution.",
+      "src": [
+        {
+          "t": "Game Developer, John Romero shares 1990 PC Super Mario Bros. 3 demo",
+          "u": "https://www.gamedeveloper.com/business/john-romero-shares-pc-i-super-mario-bros-3-i-demo-vid"
+        },
+        {
+          "t": "Wikipedia: Commander Keen in Invasion of the Vorticons",
+          "u": "https://en.wikipedia.org/wiki/Commander_Keen_in_Invasion_of_the_Vorticons"
+        }
+      ],
+      "extra": "The prototype was titled Dangerous Dave in Copyright Infringement."
+    },
+    {
+      "from": "super-mario-bros",
+      "to": "super-meat-boy",
+      "tier": "dev",
+      "took": "Tight momentum jumps, world numbering, warp zones, and a kidnapped partner.",
+      "added": "Instant respawns, wall-sliding sawblade gauntlets, and simultaneous replay ghosts of every death.",
+      "src": [
+        {
+          "t": "Edmund McMillen & Tommy Refenes, Super Meat Boy Postmortem, Game Developer",
+          "u": "https://www.gamedeveloper.com/audio/postmortem-team-meat-s-i-super-meat-boy-i-"
+        },
+        {
+          "t": "Game Informer, Super Meat Boy Postmortem interview, Apr 2011",
+          "u": "https://gameinformer.com/b/news/archive/2011/04/16/extensive-super-meat-boy-postmortem-interview"
+        }
+      ],
+      "extra": "McMillen summed it up as 'Super Mario Bros. if Tommy and I made it.'"
+    },
+    {
+      "from": "super-mario-bros",
+      "to": "spelunky",
+      "tier": "dev",
+      "took": "Readable jump arcs and stomp rules that let players grasp hazards at a glance.",
+      "added": "Procedurally generated caves, chain-reaction traps, and permanent death.",
+      "src": [
+        {
+          "t": "Derek Yu, Spelunky book excerpt, Game Developer",
+          "u": "https://www.gamedeveloper.com/design/explorer-gmk-an-excerpt-from-the-spelunky-book"
+        },
+        {
+          "t": "Wikipedia: Spelunky",
+          "u": "https://en.wikipedia.org/wiki/Spelunky"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "pentominoes",
+      "to": "tetris",
+      "tier": "dev",
+      "took": "Fitting joined-square shapes together, from a wooden pentomino puzzle Alexey Pajitnov bought.",
+      "added": "Seven four-square pieces falling in real time and completed horizontal rows vanishing.",
+      "src": [
+        {
+          "t": "The Guardian, Alexey Pajitnov: How We Made Tetris, Jun 2014",
+          "u": "https://www.theguardian.com/culture/2014/jun/02/how-we-made-tetris"
+        },
+        {
+          "t": "Wikipedia: Tetris",
+          "u": "https://en.wikipedia.org/wiki/Tetris"
+        }
+      ],
+      "extra": "Pajitnov trimmed twelve five-square pentominoes down to seven four-square tetrominoes."
+    },
+    {
+      "from": "portal",
+      "to": "human-fall-flat",
+      "tier": "dev",
+      "took": "Physics-driven puzzle rooms built out of boxes, switches, and spatial problem solving.",
+      "added": "A wobbly hero with independent grabbing arms whose clumsy ragdoll physics create slapstick solutions.",
+      "src": [
+        {
+          "t": "Tomas Sakalauskas, Designer AMA, Dec 2017",
+          "u": "https://www.reddit.com/r/nintendo/comments/7jkklc/hi_everyone_i_am_tomas_sakalauskas_the_designer/"
+        },
+        {
+          "t": "Wikipedia: Human: Fall Flat",
+          "u": "https://en.wikipedia.org/wiki/Human:_Fall_Flat"
+        }
+      ],
+      "extra": "Sakalauskas pitched the prototype as a cross between Portal and Limbo."
+    },
+    {
+      "from": "earthbound",
+      "to": "undertale",
+      "tier": "dev",
+      "took": "Offbeat humor, unsettling emotional turns, and quirky modern-esque RPG towns.",
+      "added": "Bullet-dodging defense and the choice to befriend and spare every monster.",
+      "src": [
+        {
+          "t": "Toby Fox interview, The Escapist, Jun 2013",
+          "u": "https://www.escapistmagazine.com/undertale-dev-every-monster-should-feel-like-an-individual/"
+        },
+        {
+          "t": "Wikipedia: Undertale",
+          "u": "https://en.wikipedia.org/wiki/Undertale"
+        }
+      ],
+      "extra": "Toby Fox got his start making EarthBound ROM hacks."
+    },
+    {
+      "from": "touhou-the-embodiment-of-scarlet-devil",
+      "to": "undertale",
+      "tier": "dev",
+      "took": "Weaving through patterned bullet curtains during enemy attacks, cited by Toby Fox.",
+      "added": "Bullet-hell dodging placed inside turn-based RPG battles where nobody has to die.",
+      "src": [
+        {
+          "t": "Toby Fox interview, The Escapist, Jun 2013",
+          "u": "https://www.escapistmagazine.com/undertale-dev-every-monster-should-feel-like-an-individual/"
+        },
+        {
+          "t": "Wikipedia: Undertale",
+          "u": "https://en.wikipedia.org/wiki/Undertale"
+        }
+      ],
+      "extra": "Toby Fox cited ZUN's Touhou Project series as a whole."
+    },
+    {
+      "from": "mario-and-luigi-superstar-saga",
+      "to": "undertale",
+      "tier": "dev",
+      "took": "Active player dodging during enemy turns instead of passive stat rolls.",
+      "added": "Steering a heart soul inside a battle box against custom monster attack patterns.",
+      "src": [
+        {
+          "t": "Toby Fox interview, The Escapist, Jun 2013",
+          "u": "https://www.escapistmagazine.com/undertale-dev-every-monster-should-feel-like-an-individual/"
+        },
+        {
+          "t": "Wikipedia: Undertale",
+          "u": "https://en.wikipedia.org/wiki/Undertale"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "zelda",
+      "to": "shadow-colossus",
+      "tier": "dev",
+      "took": "Puzzle-box boss encounters; Fumito Ueda designed each colossus like an inverted Zelda dungeon.",
+      "added": "Sixteen towering creatures you climb across an otherwise empty forbidden land.",
+      "src": [
+        {
+          "t": "Source Gaming, Fumito Ueda interview, Jan 2018",
+          "u": "https://sourcegaming.info/2018/01/20/fumito-ueda-interview-with-entertainment-station-part-1/2/"
+        },
+        {
+          "t": "Wikipedia: Shadow of the Colossus",
+          "u": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-ocarina-of-time",
+      "to": "dark-souls",
+      "tier": "dev",
+      "took": "Lock-on 3D sword-and-shield combat; Miyazaki called Zelda 'a sort of textbook for 3D action'.",
+      "added": "Punishing stamina management, looping bonfire shortcuts, and online player bloodstains and messages.",
+      "src": [
+        {
+          "t": "Siliconera, Hidetaka Miyazaki on Dark Souls and Zelda, Nov 2016",
+          "u": "https://www.siliconera.com/dark-souls-creator-discusses-difference-similarities-legend-zelda/"
+        },
+        {
+          "t": "Wikipedia: The Legend of Zelda: Ocarina of Time",
+          "u": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dark-souls",
+      "to": "bloodborne",
+      "tier": "dev",
+      "took": "FromSoftware's looping, interconnected 3D shortcuts and high-stakes stamina melee.",
+      "added": "Victorian cosmic horror, trick weapons, sidearm parries, and Rally health recovery on counterattacks.",
+      "src": [
+        {
+          "t": "PlayStation.Blog, Hidetaka Miyazaki Bloodborne interview, Mar 2015",
+          "u": "https://blog.playstation.com/2015/03/20/a-conversation-with-bloodborne-creator-hidetaka-miyazaki/"
+        },
+        {
+          "t": "Wikipedia: Bloodborne",
+          "u": "https://en.wikipedia.org/wiki/Bloodborne"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dark-souls",
+      "to": "shovel-knight",
+      "tier": "dev",
+      "took": "Dropping gold bags at the spot you died and risk-versus-reward checkpoint tension.",
+      "added": "Glass checkpoints you can smash for extra treasure in an 8-bit pogo-shovel platformer.",
+      "src": [
+        {
+          "t": "Yacht Club Games, Checkpoint Design blog",
+          "u": "https://www.yachtclubgames.com/blog/check-point-design/"
+        },
+        {
+          "t": "Siliconera, How Shovel Knight is Inspired by Dark Souls",
+          "u": "https://www.siliconera.com/how-shovel-knight-is-inspired-by-dark-souls/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dark-souls",
+      "to": "enter-the-gungeon",
+      "tier": "dev",
+      "took": "Invulnerability-frame dodge rolls that commit the player to a fixed landing spot.",
+      "added": "Vaulting through dense twin-stick bullet curtains in a gun-themed roguelike dungeon.",
+      "src": [
+        {
+          "t": "Game Developer, Dave Crooks (Dodge Roll) Q&A",
+          "u": "https://www.gamedeveloper.com/design/q-a-the-guns-and-dungeons-of-i-enter-the-gungeon-i-"
+        },
+        {
+          "t": "Wikipedia: Enter the Gungeon",
+          "u": "https://en.wikipedia.org/wiki/Enter_the_Gungeon"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dark-souls",
+      "to": "god-of-war-2018",
+      "tier": "dev",
+      "took": "Deliberate, weighty melee spacing and reading enemy telegraphs, cited by Cory Barlog.",
+      "added": "A single-shot over-the-shoulder camera, a recalled Leviathan Axe, and Atreus fighting alongside Kratos.",
+      "src": [
+        {
+          "t": "PlayStation LifeStyle, Cory Barlog interview, Mar 2018",
+          "u": "https://www.playstationlifestyle.net/2018/03/19/cory-barlog-interview-on-norse-myths-single-player-kratos"
+        },
+        {
+          "t": "Wikipedia: God of War (2018)",
+          "u": "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "tom-clancy-s-rainbow-six",
+      "to": "counter-strike",
+      "tier": "dev",
+      "took": "Counter-terrorist hostage rescues and lethal modern firearms, cited by co-creator Minh Le.",
+      "added": "Fast round-based online multiplayer with between-round cash weapon buying instead of pre-mission planning.",
+      "src": [
+        {
+          "t": "Eurogamer, Minh Le interview, Mar 2000",
+          "u": "https://www.eurogamer.net/counterstrike"
+        },
+        {
+          "t": "Wikipedia: Counter-Strike",
+          "u": "https://en.wikipedia.org/wiki/Counter-Strike_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-elder-scrolls-iii-morrowind",
+      "to": "the-elder-scrolls-v-skyrim",
+      "tier": "dev",
+      "took": "Morrowind's 'wonder of discovery' in an unfamiliar culture, which Todd Howard wanted back.",
+      "added": "Dragon Shouts, dual-hand spell and weapon casting, and rugged Nordic holds and Dwemer ruins.",
+      "src": [
+        {
+          "t": "PC Gamer, Todd Howard on Morrowind and Skyrim, 2011",
+          "u": "https://www.pcgamer.com/bethesdas-todd-howard-oblivion-sacrificed-what-made-morrowind-special/"
+        },
+        {
+          "t": "Wikipedia: The Elder Scrolls V: Skyrim",
+          "u": "https://en.wikipedia.org/wiki/The_Elder_Scrolls_V:_Skyrim"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dungeons-and-dragons",
+      "to": "diablo",
+      "tier": "dev",
+      "took": "Fighter, rogue, and sorcerer archetypes, loot tables, and dungeon delves from tabletop play.",
+      "added": "Real-time point-and-click action beneath Tristram after Blizzard nudged David Brevik away from turns.",
+      "src": [
+        {
+          "t": "GDC Vault, David Brevik Diablo Classic Game Postmortem, 2016",
+          "u": "https://gdcvault.com/play/1023469/Classic-Game-Postmortem"
+        },
+        {
+          "t": "IGN, Inside Diablo's Turn-Based Origins",
+          "u": "https://sea.ign.com/diablo-iii-collectors-edition/65566/inside-diablos-turn-based-origins"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dragon-quest-ii",
+      "to": "pok-mon-red-and-green",
+      "tier": "dev",
+      "took": "Satoshi Tajiri wishing Ken Sugimori could give him a spare rare Mad Cap drop.",
+      "added": "Trading creatures across the Game Boy Link Cable between paired Red and Green versions.",
+      "src": [
+        {
+          "t": "Lava Cut Content, Satoshi Tajiri & Tsunekazu Ishihara 2000 interview",
+          "u": "https://lavacutcontent.com/satoshi-tajiri-ishihara-interview/"
+        },
+        {
+          "t": "Kotaku, Satoshi Tajiri interview retrospective, 2021",
+          "u": "https://kotaku.com/this-2004-interview-with-the-creator-of-pokemon-is-full-1847495348"
+        }
+      ],
+      "extra": ""
+    }
+  ]
+}
