@@ -80,10 +80,11 @@ input,select{font:inherit;color:var(--ink)}
 .vbadge.sun{background:var(--up);color:var(--up-ink);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
 .logo b{font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:-.01em}
 .logo small{font-family:var(--f-pixel);font-size:10px;color:var(--muted);letter-spacing:.06em}
-.tabs{display:flex;gap:3px;margin-left:auto;align-items:center}
-.tab{border-radius:999px;padding:6px 12px;font-weight:600;font-size:13.5px;color:var(--ink2);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:2px;margin-left:auto;align-items:center}
+.tab{border-radius:999px;padding:5px 10px;font-weight:600;font-size:13px;color:var(--ink2);text-decoration:none;white-space:nowrap;scroll-snap-align:start}
 .tab:hover{background:var(--accent-soft)}
 .tab[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.input:user-invalid{border-color:var(--love)}
 .artbtn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:600;color:var(--ink2);white-space:nowrap}
 .artbtn:hover{border-color:var(--line2)}
 .installbtn{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));color:var(--accent)}
@@ -91,8 +92,8 @@ input,select{font:inherit;color:var(--ink)}
 [aria-disabled="true"]{opacity:.55;cursor:default}
 .toputil{display:inline-flex;gap:5px;align-items:center;flex:none}
 .sync{font-size:12px;color:var(--muted)}
-@media (max-width:1160px){.logo small{display:none}}
-@media (max-width:1060px){.topin{flex-wrap:wrap;gap:5px 8px;padding-block:6px}.tabs{width:100%;max-width:100%;min-width:0;margin:0;order:3;gap:3px;padding-bottom:1px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;text-align:center;padding:5px 10px;font-size:12.5px}.toputil{margin-left:auto}}
+@media (max-width:1240px){.logo small{display:none}}
+@media (max-width:1120px){.topin{flex-wrap:wrap;gap:5px 8px;padding-block:6px}.tabs{width:100%;max-width:100%;min-width:0;margin:0;order:3;gap:3px;padding-bottom:1px;overflow-x:auto;scroll-snap-type:inline proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;text-align:center;padding:5px 10px;font-size:12.5px}.toputil{margin-left:auto}}
 @media (max-width:440px){.logo b{font-size:14.5px}.tab{font-size:12px;padding:5px 9px}.artbtn{font-size:11px;padding:4px 7px}}
 
 /* ---------- type & controls ---------- */
@@ -773,8 +774,9 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
     <nav class="tabs" aria-label="Sections">
       <a class="tab" href="#timeline" data-tab="timeline">My timeline</a>
       <a class="tab" href="#picks" data-tab="picks">🕹️ Pick games</a>
-      <a class="tab" href="#explore" data-tab="explore">Explore</a>
+      <a class="tab" href="#lineage" data-tab="lineage">⑂ Lineage</a>
       <a class="tab" href="#trivia" data-tab="trivia">🎯 Trivia</a>
+      <a class="tab" href="#explore" data-tab="explore">Explore</a>
       <a class="tab" href="#mechanics" data-tab="mechanics">Genres &amp; craft</a>
       <a class="tab" href="#studios" data-tab="studios">Makers &amp; world</a>
       <a class="tab" href="#friends" data-tab="friends">Friends</a>
@@ -1527,13 +1529,15 @@ function parseHash(){
   if(h==="picks"){hist.stage=null;return {view:"picks"}}
   if(h==="systems")return {view:"systems"};
   if(h==="timeline"){hist.stage=null;return hasTl?{view:"timeline"}:{view:"start"}}
+  if(h==="lineage")return {view:"lineage",id:state.linId||""};
+  if(h.startsWith("lineage-")&&byId.has(h.slice(8))){state.linId=h.slice(8);return {view:"lineage",id:state.linId}}
   if(h==="explore")return {view:"explore"};
   if(h==="trivia"){if(!state.quizMode||state.quizMode==="lineage")state.quizMode="lore";return {view:"trivia"}}
   if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":"mechanics";return {view:"mechanics",mt:state.mechTab}}
   if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
   if(h==="world"){return {view:"world"}}
   if(h.startsWith("country-")&&/^[A-Za-z]{2}$/.test(h.slice(8))){state.worldCC=h.slice(8).toUpperCase();return {view:"world",cc:state.worldCC}}
-  if(h==="studios"||h==="gratitude"||h==="vault"){if(h==="gratitude")state.stFilter="gratitude";else if(h==="vault")state.stFilter="vault";return {view:"studios"}}
+  if(h==="studios"||h==="gratitude"||h==="vault"||h==="giveback"||h==="donate"){if(h==="gratitude")state.stFilter="gratitude";else if(h==="vault")state.stFilter="vault";else if(h==="giveback"||h==="donate")state.stFilter="giveback";return {view:"studios"}}
   if(h.startsWith("studio-")&&findStudio(h.slice(7)))return {view:"studio",st:findStudio(h.slice(7)).id};
   if(h==="friends")return {view:"friends"};
   if(h.startsWith("list-"))return {view:"sharedList",payload:h};
@@ -1551,13 +1555,14 @@ addEventListener("hashchange",route);
 function render(){
   renderSandboxBar();
   const r=state.route,m=$("#main");
-  const tab=r.view==="start"?(hist.stage?"picks":"timeline"):(r.view==="picks"||r.view==="systems")?"picks":r.view==="trivia"?"trivia":(r.view==="shared"||r.view==="person"||r.view==="sharedList")?"friends":r.view==="game"?"explore":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
+  const tab=r.view==="start"?(hist.stage?"picks":"timeline"):(r.view==="picks"||r.view==="systems")?"picks":(r.view==="lineage"||r.view==="game")?"lineage":r.view==="trivia"?"trivia":(r.view==="shared"||r.view==="person"||r.view==="sharedList")?"friends":r.view==="mechanics"?"mechanics":(r.view==="studios"||r.view==="studio"||r.view==="world")?"studios":r.view;
   $$(".tab").forEach(a=>a.toggleAttribute("aria-current",a.dataset.tab===tab)),$$(".tab").forEach(a=>{if(a.dataset.tab===tab)a.setAttribute("aria-current","page")});
   const key=r.view+(r.id||"")+(r.st||"")+(r.gen||"")+(r.cc||"")+(r.payload||"")+(r.fk||"")+(r.picks||"")+(r.mt||"");
   if(r.view==="start")renderStart(m);
   else if(r.view==="picks")renderPicks(m);
   else if(r.view==="systems")renderSystems(m);
   else if(r.view==="timeline")renderTimeline(m);
+  else if(r.view==="lineage")renderLineage(m,r.id);
   else if(r.view==="explore")renderExplore(m);
   else if(r.view==="trivia")renderTrivia(m);
   else if(r.view==="mechanics")renderMechanics(m);
@@ -1573,9 +1578,12 @@ function render(){
   if(key!==lastView){window.scrollTo({top:0});lastView=key}
   if(r.view==="game"&&r.walk){r.walk=false;openStory(rootsChain(byId.get(r.id).i))}
   const curTab=$('.tabs .tab[aria-current="page"]');
-  if(curTab&&curTab.parentElement&&curTab.parentElement.scrollWidth>curTab.parentElement.clientWidth){
-    const nav=curTab.parentElement,target=curTab.offsetLeft-(nav.clientWidth-curTab.offsetWidth)/2;
-    nav.scrollTo({left:Math.max(0,target),behavior:"smooth"});
+  if(curTab&&curTab.scrollIntoView){
+    try{curTab.scrollIntoView({block:"nearest",inline:"nearest",container:"nearest"})}catch(e){
+      if(curTab.parentElement&&curTab.parentElement.scrollWidth>curTab.parentElement.clientWidth){
+        const nav=curTab.parentElement;nav.scrollTo({left:Math.max(0,curTab.offsetLeft-(nav.clientWidth-curTab.offsetWidth)/2),behavior:"smooth"});
+      }
+    }
   }
   syncInstallUI();
 }
@@ -1584,21 +1592,23 @@ const footer=()=>`<footer class="wrap foot-about">
     <div class="row" style="gap:6px">
       <a class="chip" href="#timeline">My timeline</a>
       <a class="chip" href="#picks">🕹️ Pick games</a>
-      <button type="button" class="chip" data-act="listsSheet">📋 Custom lists</button>
-      <a class="chip" href="#explore">Explore tree</a>
+      <a class="chip" href="#lineage">⑂ Lineage tree</a>
       <a class="chip" href="#trivia">🎯 Trivia &amp; lore</a>
-      <a class="chip" href="#mechanics">Genres & mechanics</a>
+      <button type="button" class="chip" data-act="listsSheet">📋 Custom lists</button>
+      <a class="chip" href="#explore">Explore</a>
+      <a class="chip" href="#mechanics">Genres &amp; mechanics</a>
       <a class="chip" href="#prices">💸 Game prices</a>
       <a class="chip" href="#world">🌍 World map</a>
       <a class="chip" href="#vault">🕯️ Vault &amp; lore</a>
-      <a class="chip" href="#gratitude">💌 Thank makers</a>
+      <a class="chip" href="#gratitude">💌 Makers &amp; stories</a>
+      <a class="chip" href="#giveback">❤️ Support makers &amp; kids</a>
       <a class="chip" href="#friends">Friends</a>
-      <button type="button" class="chip" data-act="featureSheet">➕ Request console, game or feature</button>
+      <button type="button" class="chip" data-act="featureSheet">➕ Suggest console, game or idea</button>
     </div>
     <button type="button" class="btn sm ghost" data-act="scrollTop">↑ Back to top</button>
   </div>
   <p><b>Played &amp; Made — your life in games, and the humans who built them.</b> For many of us, video games weren't a distraction — they were safe harbors growing up, bridges to friends, and living art built by designers, engineers, writers, painters, and musicians. Every link here honors what teams built on and what they added.</p>
-  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">➕ Request console, game or feature</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <button class="link" data-act="goGiveBack">Support youth &amp; preservation ▸</button> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button><span data-install-ui hidden> · <button type="button" class="link" data-act="installApp">📲 Install app</button></span></p>
+  <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">➕ Suggest console, game or feature</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <a class="link" href="#giveback">❤️ Support youth, devs &amp; preservation ▸</a> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button><span data-install-ui hidden> · <button type="button" class="link" data-act="installApp">📲 Install app</button></span></p>
   <p style="margin-top:6px;font-size:12px;opacity:.85">Created by <b>Johan Heurlin</b> · Built ${esc(RAW.built||"")}.</p></footer>`;
 
 function eraMomentsHTML(from,to){
@@ -1632,7 +1642,7 @@ function whyGamesSectionHTML(compact=false){
     {icon:"🔥",eyebrow:"Agency & grit",title:"Teaching us to adapt and keep going",body:"Games ask something back: reading maps, solving systems, laughing on a couch with friends, and getting back up twenty times until an impossible challenge gives way."},
     {icon:"💌",eyebrow:"To the makers",title:"Even when studios close, your worlds stay open",body:"Logos change and credits scroll fast, yet decades later someone across the world still carries the melody, level, or safe room you stayed late to build."}
   ];
-  return `<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">More than pastimes · Art & safe harbors</p><h2 class="h2">Why games stay with us for life — and why their makers matter</h2><p class="sub">For anyone who ever wondered why people care so deeply about the games they grew up with — and for every developer who ever wondered if their work was forgotten.</p></div>${compact?`<a class="btn sm" href="#gratitude">💌 Read & send letters to makers ▸</a>`:`<button type="button" class="btn sm love" data-act="gratSheet">💌 Write a thank-you to a maker</button>`}</div>
+  return `<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">More than pastimes · Art & safe harbors</p><h2 class="h2">Why games stay with us for life — and why their makers matter</h2><p class="sub">For anyone who ever wondered why people care so deeply about the games they grew up with — and for every developer who ever wondered if their work was forgotten.</p></div><div class="row" style="gap:6px">${compact?`<a class="btn sm" href="#gratitude">💌 Real stories &amp; thank makers ▸</a>`:`<button type="button" class="btn sm love" data-act="gratSheet">💌 Create a thank-you postcard</button>`}<a class="btn sm" href="#giveback">❤️ Support devs, kids &amp; preservation</a></div></div>
     <div class="artgrid">${pillars.map(p=>`<div class="artcard"><span class="eyebrow" style="margin:0">${esc(p.icon||"✦")} ${esc(p.eyebrow||"")}</span><b style="font-family:var(--f-display);font-size:14.5px;line-height:1.25">${esc(p.title)}</b><p style="margin:2px 0 0;font-size:13px;color:var(--ink2);line-height:1.48">${esc(p.body)}</p></div>`).join("")}</div></section>`;
 }
 
@@ -1656,7 +1666,7 @@ function renderStart(m){
         <label class="field" for="birthIn">Year you were born<input class="input" id="birthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1984" autocomplete="off"></label>
         <button class="btn primary" type="submit">Start my timeline</button>
       </form>
-      <div class="row" style="margin-top:10px;gap:8px"><a class="btn sm" href="#picks">🕹️ Browse all eras &amp; pick games ▸</a><a class="btn sm" href="#trivia">🎯 Play lore trivia</a><a class="btn sm ghost" href="#systems">Pick consoles</a></div>
+      <div class="row" style="margin-top:10px;gap:8px"><a class="btn sm" href="#picks">🕹️ Browse &amp; pick games ▸</a><a class="btn sm" href="#lineage">⑂ Lineage tree</a><a class="btn sm" href="#trivia">🎯 Lore trivia</a><a class="btn sm ghost" href="#giveback">❤️ Give back</a></div>
       <p class="sub" id="birthErr" style="margin-top:8px" hidden></p>
       ${isDevMode()?`<p class="sub" style="margin-top:10px;font-size:13.5px">🛠 Industry mode active · <button type="button" class="link" data-act="makerSheet">Add dev / studio credits ▸</button></p>`:""}
     </div>
@@ -2298,6 +2308,71 @@ function cloneLensSection(){
       <div class="lenscol"><h3 class="h3">Fast-follows, direct variants & debates</h3><p class="sub">Closely recreated a breakout format, sparking debate over credit and craft.</p>${fast.map(pairRow).join("")}</div>
     </div></section>`;
 }
+function renderLineage(m,focusId){
+  const myTreePicks=entries(hist).filter(x=>x.g&&x.g.tree).sort((a,b)=>b.lv-a.lv||b.g.inf-a.g.inf).map(x=>x.g).filter((g,i,a)=>a.indexOf(g)===i).slice(0,5);
+  const defId=focusId||(state.linId&&byId.has(state.linId)?state.linId:(myTreePicks[0]&&myTreePicks[0].id)||"grand-theft-auto-vi");
+  const g=byId.get(defId)||TREE[0];
+  state.linId=g.id;
+  if(!state.linTrail)state.linTrail=[];
+  if(state.linTrail[state.linTrail.length-1]!==g.id){const k=state.linTrail.indexOf(g.id);if(k>=0)state.linTrail=state.linTrail.slice(0,k+1);else state.linTrail.push(g.id);state.linTrail=state.linTrail.slice(-7)}
+  const ups=UP[g.i],downs=DOWN[g.i];
+  const chain=rootsChain(g.i),oldest=chain.length?chain[chain.length-1].g:g;
+  const landmarks=["grand-theft-auto-vi","elden-ring","baldurs-gate-3","doom","super-mario-64","hades","world-of-warcraft","project-titan","minecraft","the-legend-of-zelda-breath-of-the-wild"].map(gameRef).filter(x=>x&&x.tree);
+  m.innerHTML=`<section class="wrap" style="padding-block:16px 8px">
+    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:8px">
+      <div>
+        <p class="eyebrow" style="margin-bottom:2px">⑂ Interactive lineage org-chart · ${TREE.length.toLocaleString()} games &amp; ${L.length.toLocaleString()} documented links</p>
+        <h1 class="h2" style="margin:0;font-size:clamp(1.2rem,1rem + 1.1vw,1.65rem)">Click any game node to walk forward or backward across generations</h1>
+      </div>
+      <div class="row" style="gap:6px">
+        <button type="button" class="btn sm" data-act="linRandom">🎲 Random tree</button>
+        <button type="button" class="btn sm" data-act="map">🗺️ Big Picture (5 views)</button>
+      </div>
+    </div>
+    <div class="search" style="margin-bottom:8px"><input class="input" id="linQ" type="search" placeholder="Jump org-chart to any game — e.g. Chrono Trigger, Quake, Overwatch, Van Buren, Stardew Valley…" autocomplete="off" aria-label="Jump lineage tree to any game"><div class="results" id="linR" hidden></div></div>
+    <div class="pickstrip" style="padding-block:2px 6px;gap:5px">
+      ${myTreePicks.length?`<span class="sync" style="align-self:center;margin-right:2px">Your games:</span>${myTreePicks.map(x=>`<button type="button" class="chip" style="padding:4px 9px;font-size:12px" data-act="linFocus" data-id="${x.id}" aria-pressed="${x.id===g.id}">♥ ${esc(x.title)}</button>`).join("")}<span class="muted" style="align-self:center">·</span>`:""}
+      ${landmarks.filter(x=>!myTreePicks.includes(x)).slice(0,8).map(x=>`<button type="button" class="chip" style="padding:4px 9px;font-size:12px" data-act="linFocus" data-id="${x.id}" aria-pressed="${x.id===g.id}">${x.cancelled?"🕯️ ":""}${esc(x.title)}</button>`).join("")}
+    </div>
+    <div class="row" style="justify-content:space-between;gap:8px;margin:4px 0 8px">
+      <div class="pickstrip" style="padding:0;gap:5px;flex:1">${TIERS.map(t=>`<button class="chip tierchip" style="--c:var(${t.c});padding:3px 9px;font-size:11.5px" data-act="tier" data-tier="${t.k}" aria-pressed="${!!state.tiers[t.k]}"><span class="dot"></span>${t.label}</button>`).join("")}</div>
+      ${state.linTrail.length>1?`<nav class="trail" style="padding:0;font-size:12px" aria-label="Tree history">${state.linTrail.map((id,k)=>k===state.linTrail.length-1?`<span class="cur">${esc(byId.get(id).title)}</span>`:`<button type="button" data-act="linFocus" data-id="${id}">${esc(byId.get(id).title)}</button><span aria-hidden="true">›</span>`).join("")}</nav>`:""}
+    </div>
+    <div class="treebox" id="treebox" tabindex="0" role="region" aria-label="Interactive lineage org-chart of ${esc(g.title)}">${treeSVG(g,"linFocus")}</div>
+    <div class="card" style="margin-top:12px;padding:12px 14px">
+      <div class="row" style="justify-content:space-between;align-items:center;gap:12px">
+        <div class="row" style="gap:10px;min-width:0;flex:1">
+          <div style="width:44px;flex:none">${cover(g,{showYear:false})}</div>
+          <div style="min-width:0">
+            <div class="row" style="gap:6px"><b style="font-size:15.5px">${esc(g.title)}</b><span class="mono muted" style="font-size:12.5px">${g.year}</span>${statusBadgeHTML(g)}</div>
+            <small class="muted" style="display:block">${flag(g.cc)} ${esc(studio(g))} · <b>${ups.length}</b> direct ancestor${ups.length===1?"":"s"} · <b>${downs.length}</b> direct descendant${downs.length===1?"":"s"} · <b>${g.inf.toLocaleString()}</b> total reach</small>
+          </div>
+        </div>
+        <div class="row" style="gap:6px">
+          ${chain.length>1?`<button type="button" class="btn sm primary" data-act="walk" data-id="${g.id}">Walk ${g.year-oldest.year}-yr roots (${chain.length-1} steps) ▸</button>`:""}
+          <button type="button" class="btn sm" data-act="game" data-id="${g.id}">Full game page &amp; media ▸</button>
+          <button type="button" class="btn sm ghost" data-act="featureSheet" data-cat="⑂ Lineage Link / Source" data-title="${esc(g.title+" ← / → ")}">Cite a link</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec" style="padding-top:10px"><div class="cols">${panelHTML("up",ups,g)}${panelHTML("down",downs,g)}</div></section>
+  <section class="wrap sec">
+    <div class="card"><p class="eyebrow">Six degrees of Pong</p><h2 class="h2">Connect any two games</h2><p class="sub">Find the shortest chain of documented inspiration between any two games in the tree.</p>
+      <div class="connect"><div class="search"><input class="input" id="linCa" type="search" placeholder="From (older or newer game)" autocomplete="off" aria-label="First game"><div class="results" id="linCra" hidden></div></div><div class="search"><input class="input" id="linCb" type="search" placeholder="To (second game)" autocomplete="off" aria-label="Second game"><div class="results" id="linCrb" hidden></div></div><button type="button" class="btn" data-act="linRandomPair">Random pair</button></div>
+      <div id="linCpath"></div>
+    </div>
+  </section>
+  ${footer()}`;
+  requestAnimationFrame(()=>{
+    const tb=$("#treebox");if(tb){const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx;tb.scrollLeft=Math.max(0,x-tb.clientWidth/2)}}
+  });
+  wireSearch($("#linQ"),$("#linR"),x=>{if(!x||!x.id)return;if(x.tree)go("lineage-"+x.id);else go(x.id)},{treeOnly:true});
+  let A=null,B=null;const drawP=()=>{if(A&&B&&$("#linCpath"))$("#linCpath").innerHTML=pathHTML(A,B)};
+  wireSearch($("#linCa"),$("#linCra"),x=>{if(!x||!x.id)return;A=x;$("#linCa").value=x.title;drawP()},{treeOnly:true});
+  wireSearch($("#linCb"),$("#linCrb"),x=>{if(!x||!x.id)return;B=x;$("#linCb").value=x.title;drawP()},{treeOnly:true});
+  ACTIONS.linRandomPair=()=>{const pool=TREE.filter(x=>x.pop>=4);for(let k=0;k<30;k++){const a=pool[Math.floor(Math.random()*pool.length)],b=pool[Math.floor(Math.random()*pool.length)];if(a&&b&&a!==b&&Math.abs(a.year-b.year)>8&&connectPath(a.i,b.i)){A=a.year<b.year?a:b;B=a.year<b.year?b:a;$("#linCa").value=A.title;$("#linCb").value=B.title;drawP();return}}};
+}
 function renderExplore(m){
   const js=journeyList(),tg=todayGame();
   const direct=state.infMode==="direct",dcount=new Map(TREE.map(g=>[g.i,DOWN[g.i].filter(l=>l.tier!=="series").length])),val=g=>direct?dcount.get(g.i):g.inf;
@@ -2395,10 +2470,22 @@ function allGratitudeNotes(){
   const mine=store.get("ib3-gratitude",[]);
   return [...mine.map(x=>({...x,mine:true})),...(CULT.gratitude||[])];
 }
+function realStoryCardHTML(item){
+  const st=item.studio&&findStudio(item.studio),gm=item.game&&gameRef(item.game);
+  return `<article class="gratcard">
+    <div class="row" style="justify-content:space-between;gap:6px"><span class="pill" style="background:var(--accent-soft);color:var(--accent)">📖 ${esc(item.tag||"Documented")}</span></div>
+    <b style="font-family:var(--f-display);font-size:14.5px;line-height:1.3">${esc(item.title||"")}</b>
+    <p style="margin:4px 0;font-size:13.2px;color:var(--ink2);line-height:1.48">${esc(item.body||"")}</p>
+    ${item.source?`<small class="muted" style="display:block;font-size:11.5px">Source: ${esc(item.source)}</small>`:""}
+    <div class="row" style="margin-top:auto;padding-top:6px;justify-content:space-between">
+      <span class="row" style="gap:6px">${st?`<button type="button" class="stbtn" style="font-weight:700;font-size:12.5px" data-act="studio" data-st="${esc(st.id)}">${flag(st.cc)} ${esc(st.name)}</button>`:""}${gm?`<button type="button" class="chip" style="padding:2px 8px;font-size:11.5px" data-act="quickLook" data-id="${gm.id}">${esc(gm.title)}</button>`:""}</span>
+    </div>
+  </article>`;
+}
 function gratitudeCardHTML(gItem){
   const st=gItem.studio&&findStudio(gItem.studio),gm=gItem.game&&gameRef(gItem.game);
   return `<article class="gratcard">
-    <div class="row" style="justify-content:space-between"><span class="pill" style="background:var(--love-soft);color:var(--love)">💌 ${esc(gItem.tag||"Thank you")}</span><small class="mono muted">${esc(gItem.who||(gItem.year?String(gItem.year):""))}</small></div>
+    <div class="row" style="justify-content:space-between"><span class="pill" style="background:var(--love-soft);color:var(--love)">💌 ${esc(gItem.tag||"Thank you")}</span><small class="mono muted">${esc(gItem.mine?"Saved on your device":(gItem.who||(gItem.year?String(gItem.year):"")))}</small></div>
     <blockquote>“${esc(gItem.note||"")}”</blockquote>
     <div class="row" style="margin-top:auto;padding-top:4px;justify-content:space-between">
       <span class="row" style="gap:6px">${st?`<button type="button" class="stbtn" style="font-weight:700;font-size:12.5px" data-act="studio" data-st="${esc(st.id)}">${flag(st.cc)} ${esc(st.name)}</button>`:""}${gm?`<button type="button" class="chip" style="padding:2px 8px;font-size:11.5px" data-act="quickLook" data-id="${gm.id}">${esc(gm.title)}</button>`:""}</span>
@@ -2407,10 +2494,15 @@ function gratitudeCardHTML(gItem){
 }
 function gratitudeSectionHTML(){
   const notes=allGratitudeNotes();
+  const realStories=CULT.realStories||[];
+  const charities=CULT.charities||[];
   return `${whyGamesSectionHTML(false)}
-    <section class="wrap sec" id="gratitudeWall"><div class="sechead"><div><p class="eyebrow">Personal stories &amp; thank-you postcards</p><h2 class="h2">💌 Letters to the makers who raised us</h2><p class="sub">Heartfelt stories for the studios, programmers, artists, and musicians whose worlds carried us through growing up. Write your own thank-you note to save on your device or download a <b>Thank-You Postcard (.png)</b> to send directly to a creator.</p></div><button type="button" class="btn primary" data-act="gratSheet">💌 Create a thank-you postcard</button></div>
-      <div class="gratgrid">${notes.map(gratitudeCardHTML).join("")}</div>
-    </section>`;
+    ${notes.length?`<section class="wrap sec" id="myGratitudeWall"><div class="sechead"><div><p class="eyebrow">Your personal thank-you postcards</p><h2 class="h2">💌 Notes saved on this device (${notes.length})</h2></div><button type="button" class="btn sm primary" data-act="gratSheet">💌 Create another postcard</button></div>
+      <div class="gratgrid">${notes.map(gratitudeCardHTML).join("")}</div></section>`:""}
+    <section class="wrap sec" id="gratitudeWall"><div class="sechead"><div><p class="eyebrow">Verified real-world history · Zero fabricated letters</p><h2 class="h2">📖 Documented moments where games &amp; makers changed real lives</h2><p class="sub">Every story below is real, named, and sourced — never AI-fabricated filler. Want to thank a team whose game mattered to you? Create a <b>Thank-You Postcard (.png)</b> to send a developer directly on LinkedIn or Bluesky, or submit your real note for review.</p></div><div class="row" style="gap:6px"><button type="button" class="btn primary" data-act="gratSheet">💌 Create a thank-you postcard</button></div></div>
+      <div class="gratgrid">${realStories.map(realStoryCardHTML).join("")}</div>
+    </section>
+    ${giveBackSectionHTML(charities)}`;
 }
 function giveBackSectionHTML(charities){
   if(!charities||!charities.length)return "";
@@ -2518,7 +2610,7 @@ function vaultSectionHTML(){
 function renderStudios(m){
   const f=state.stFilter||"all";
   const curated=[...STUDIOS.values()].filter(s=>s.curated).sort((a,b)=>(b.maxInf-a.maxInf)||(b.games.length-a.games.length));
-  const pioneers=CULT.pioneers||[],hardware=CULT.hardware||[],charities=CULT.charities||[],grats=allGratitudeNotes(),lore=CULT.vaultLore||[];
+  const pioneers=CULT.pioneers||[],hardware=CULT.hardware||[],charities=CULT.charities||[],grats=allGratitudeNotes(),realStories=CULT.realStories||[],lore=CULT.vaultLore||[];
   const vaultCount=G.filter(g=>g.cancelled||g.sunset).length+lore.length;
   const list=f==="closed"?curated.filter(s=>s.status!=="active"):f==="active"?curated.filter(s=>s.status==="active"):curated;
   const topOther=[...STUDIOS.values()].filter(s=>!s.curated&&s.games.length>=4).sort((a,b)=>b.games.length-a.games.length).slice(0,36);
@@ -2531,12 +2623,12 @@ function renderStudios(m){
     <div class="row" style="margin-top:14px">
       <button class="chip" data-act="stFilt" data-f="all" aria-pressed="${f==="all"}">All featured (${curated.length})</button>
       <button class="chip" data-act="stFilt" data-f="vault" aria-pressed="${f==="vault"}">🕯️ Vault, cancelled &amp; lore (${vaultCount})</button>
-      <button class="chip" data-act="stFilt" data-f="gratitude" aria-pressed="${f==="gratitude"}">💌 Letters & why games matter (${grats.length})</button>
+      <button class="chip" data-act="stFilt" data-f="gratitude" aria-pressed="${f==="gratitude"}">💌 Real stories &amp; postcards (${realStories.length+grats.length})</button>
+      ${charities.length?`<button class="chip" data-act="stFilt" data-f="giveback" aria-pressed="${f==="giveback"}">❤️ Support makers &amp; kids (${charities.length})</button>`:""}
       ${pioneers.length?`<button class="chip" data-act="stFilt" data-f="pioneers" aria-pressed="${f==="pioneers"}">🌟 Pioneers (${pioneers.length})</button>`:""}
-      ${hardware.length?`<button class="chip" data-act="stFilt" data-f="hardware" aria-pressed="${f==="hardware"}">🕹️ Consoles & hardware (${hardware.length})</button>`:""}
-      <button class="chip" data-act="stFilt" data-f="closed" aria-pressed="${f==="closed"}">Shuttered & scattered (${curated.filter(s=>s.status!=="active").length})</button>
+      ${hardware.length?`<button class="chip" data-act="stFilt" data-f="hardware" aria-pressed="${f==="hardware"}">🕹️ Consoles &amp; hardware (${hardware.length})</button>`:""}
+      <button class="chip" data-act="stFilt" data-f="closed" aria-pressed="${f==="closed"}">Shuttered &amp; scattered (${curated.filter(s=>s.status!=="active").length})</button>
       <button class="chip" data-act="stFilt" data-f="active" aria-pressed="${f==="active"}">Active studios (${curated.filter(s=>s.status==="active").length})</button>
-      ${charities.length?`<button class="chip" data-act="stFilt" data-f="giveback" aria-pressed="${f==="giveback"}">❤️ Give back (${charities.length})</button>`:""}
       <a class="chip" href="#world">🌍 World map (46 countries)</a>
       ${isDevMode()?`<button class="chip craftchip" data-act="makerSheet" aria-pressed="${wkN>0||!!(hist.workedStudios&&hist.workedStudios.length)}">🛠 ${wkN?`My dev credits (${wkN})`:"Add dev & studio credits"}</button>`
         :`<button class="chip" data-act="devModeTog" title="Enable game-industry career & studio credit tools">🛠 Industry / dev mode</button>`}
@@ -2553,8 +2645,8 @@ function renderStudios(m){
     ${f==="all"&&lore.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">🕯️ Unfinished games, sunsetted servers &amp; deep folklore</p><h2 class="h2">The Vault: honoring cancelled craft, lost worlds &amp; strange hardware</h2><p class="sub">Explore ${G.filter(g=>g.cancelled).length} cancelled projects whose ideas still shaped gaming, ${G.filter(g=>g.sunset).length} sunsetted online worlds, and ${lore.length} wild stories from Gizmondo and Atari's New Mexico landfill to Brazil's TecToy Sega universe.</p></div><div class="row"><button type="button" class="btn sm primary" data-act="stFilt" data-f="vault">🕯️ Open the Vault (${vaultCount}) ▸</button><button type="button" class="btn sm" data-act="featureSheet" data-cat="🕯️ Cancelled / Sunsetted / Lore">➕ Suggest deep cut</button></div></div>
       <div class="mechgrid">${lore.slice(0,3).map(loreCardHTML).join("")}</div></section>`:""}
     <section class="wrap sec"><div class="stgrid">${list.map(studioCardHTML).join("")}</div></section>
-    ${f==="all"&&grats.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">No rankings · Pure human gratitude</p><h2 class="h2">💌 Letters to the makers</h2><p class="sub">Personal thank-you notes to studios and creators whose games carried players through growing up.</p></div><div class="row"><button type="button" class="btn sm love" data-act="gratSheet">💌 Write a thank-you</button><button class="btn sm" data-act="stFilt" data-f="gratitude">Read all ${grats.length} letters ▸</button></div></div>
-      <div class="gratgrid">${grats.slice(0,6).map(gratitudeCardHTML).join("")}</div></section>`:""}
+    ${f==="all"&&realStories.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Verified real-world history · Sourced</p><h2 class="h2">📖 Documented moments where games &amp; makers mattered</h2><p class="sub">Real, attributed stories — plus create a personal Thank-You Postcard to send directly to a developer.</p></div><div class="row"><button type="button" class="btn sm love" data-act="gratSheet">💌 Create thank-you postcard</button><button class="btn sm" data-act="stFilt" data-f="gratitude">All ${realStories.length} stories ▸</button></div></div>
+      <div class="gratgrid">${realStories.slice(0,3).map(realStoryCardHTML).join("")}</div></section>`:""}
     ${f==="all"&&pioneers.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Hall of pioneers · 1958–today</p><h2 class="h2">Trailblazers who shaped how we play</h2><p class="sub">Meet ${pioneers.length} influential human creators across seven decades of game history.</p></div><button class="btn sm" data-act="stFilt" data-f="pioneers">See all ${pioneers.length} pioneers ▸</button></div>
       <div class="piogrid">${pioneers.slice(0,9).map(pioneerCardHTML).join("")}</div></section>`:""}
     ${f==="all"&&hardware.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">The hardware makers</p><h2 class="h2">The consoles, home computers & silicon engineers</h2><p class="sub">Every era of game design stood on daring custom chips, sound synthesizers, and controllers.</p></div><button class="btn sm" data-act="stFilt" data-f="hardware">See all ${hardware.length} machines ▸</button></div>
@@ -3227,7 +3319,7 @@ function relatedSection(g){
     ${rel.length?`<h2 class="h2" style="margin-top:22px">Related games in the family tree</h2><p class="sub">Same kind of game, from around the same time.</p><div class="recs">${rel.map(r=>tileHTML(r,hist,{act:"game",quickTick:!!hist.birth})).join("")}</div>`:""}</section>`;
 }
 /* two generations each way, capped per column; ordered by year, with real box art thumbnails */
-function treeSVG(g){
+function treeSVG(g,nodeAct="game"){
   const gen=new Map([[g.i,0]]),cols={"-2":[],"-1":[],"0":[g.i],"1":[],"2":[]};
   const imp=i=>G[i].pop*10+Math.min(G[i].inf,500)/10;
   const add=(i,k)=>{if(!gen.has(i)){gen.set(i,k);cols[k].push(i)}};
@@ -3259,7 +3351,8 @@ function treeSVG(g){
     s+=`<path d="M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}" fill="none" stroke="${C(t.c)}" stroke-width="${touch?2.4:1.4}" ${t.dash?'stroke-dasharray="5 4"':""} opacity="${touch?.9:.45}"/>`});
   for(const [i,p] of pos){const n=G[i],isC=i===g.i;const t1=n.title.length>22?n.title.slice(0,21)+"…":n.title;const st=studio(n),t2=`${n.year}${n.cancelled?" 🕯️":n.sunset?" 🌅":""} · ${st.length>15?st.slice(0,14)+"…":st}`;
     const myl=levelOf(hist,n),myw=isWorked(hist,n);
-    s+=`<g class="wnode" data-act="game" data-id="${n.id}" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link" aria-label="${esc(n.title)}, ${n.year}${n.cancelled?", unreleased":""}">
+    const act=isC&&nodeAct==="linFocus"?"game":nodeAct;
+    s+=`<g class="wnode" data-act="${act}" data-id="${n.id}" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link" aria-label="${esc(n.title)}, ${n.year}${n.cancelled?", unreleased":""}">
       <rect x="${p.x}" y="${p.y}" width="${W}" height="${H}" rx="10" fill="${isC?acc:card}" stroke="${myw?C("--craft"):isC?acc:n.cancelled?C("--hook"):line2}" stroke-width="${myw||n.cancelled?1.8:1}" ${n.cancelled&&!isC?'stroke-dasharray="4 2"':""}/>
       <rect x="${p.x+7}" y="${p.y+6}" width="30" height="40" rx="4" fill="hsl(${n.h} 55% 40%)"/>
       ${useImg&&n.img?`<image href="${esc(n.img)}" x="${p.x+7}" y="${p.y+6}" width="30" height="40" preserveAspectRatio="xMidYMid slice" clip-path="url(#tc-${i})"/>`:""}
@@ -3796,15 +3889,18 @@ function openGratitudeSheet(opts={}){
     <label class="field" for="gratNote">Your note or memory<textarea class="input" id="gratNote" rows="4" maxlength="360" placeholder="Example: Growing up in a chaotic house, booting up ${gm?esc(gm.title):st?esc(st.name+"'s games"):"this world"} after school carried me through rough days I still remember today. Thank you to everyone on the team.">${esc(GRAT_DRAFT.note||"")}</textarea></label>
     <label class="field" for="gratWho" style="margin-top:10px">Signed (optional — first name, platform, or era)<input class="input" id="gratWho" maxlength="48" placeholder="e.g. ${esc(hist.name||"A grateful player")} · Amiga & PC kid" value="${esc(GRAT_DRAFT.who||(hist.name?hist.name:""))}"></label>
     <div class="row" style="margin-top:14px">
-      <button type="button" class="btn primary wrap" data-act="gratPostcard">💌 Save note &amp; download Postcard (.png)</button>
-      <button type="button" class="btn" data-act="gratCopy">Copy note text</button>
+      <button type="button" class="btn primary wrap" data-act="gratPostcard">💌 Save &amp; download Postcard (.png)</button>
+      <button type="button" class="btn" id="gratSubmitBtn" data-act="gratSubmitReal">📬 Submit real note for review</button>
+      <button type="button" class="btn ghost" data-act="gratCopy">Copy text</button>
     </div>
+    <p class="sub" id="gratSubmitStatus" role="status" aria-live="polite" style="margin-top:8px;color:var(--craft)" hidden></p>
     ${mobyLink||liLink?`<div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)"><span class="sync" style="display:block;margin-bottom:6px">Want to thank a creator directly? Find the real humans on the credits:</span>
       <div class="row" style="gap:8px">
         ${mobyLink?`<a class="btn sm" href="${esc(mobyLink)}" target="_blank" rel="noopener">Full team credits on MobyGames ↗</a>`:""}
         ${liLink?`<a class="btn sm" href="${esc(liLink)}" target="_blank" rel="noopener">Find alumni on LinkedIn ↗</a>`:""}
         ${bskyLink?`<a class="btn sm ghost" href="${esc(bskyLink)}" target="_blank" rel="noopener">Search makers on Bluesky ↗</a>`:""}
       </div></div>`:""}
+    <p class="sub" style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:12.5px">❤️ Want to support laid-off developers, game preservation, or hospitalized kids directly? <a href="#giveback" data-act="goGiveBack">6 verified non-profits (0% cut) ▸</a></p>
     <div id="gratOut"></div>`,"Thank the makers");
   const nEl=$("#gratNote"),wEl=$("#gratWho");
   if(nEl)nEl.addEventListener("input",()=>{GRAT_DRAFT.note=nEl.value});
@@ -3926,73 +4022,98 @@ function renderSharedList(m,payload){
       </article>`}).join("")}</div>
   </section>${footer()}`;
 }
+const INBOX_RELAY_URL="https://ntfy.sh/pm-inbox-4e82b9d1c6a073f5";
+const INBOX_WEBHOOK_URL="";
 let FEAT_DRAFT={title:"",cat:"🕹️ Missing Console / System",scope:"Let AI & maintainer decide",body:""};
-let lastCopyStatusMsg="";
-const COPY_TIMERS=new WeakMap();
-function formatFeatureRequestText(t,b){
-  const isCatalog=/Missing Console|Missing Game|Cancelled \/ Sunsetted/i.test(FEAT_DRAFT.cat);
-  return `Played & Made Request — ${FEAT_DRAFT.cat}\nTitle: ${t}${b?`\nDetails: ${b}`:""}${!isCatalog?`\nPlacement: ${FEAT_DRAFT.scope}`:""}\nSite: ${shareBase()}`;
-}
-function saveLocalRequest(t,b){
+let inboxLastSent=0;
+function saveLocalRequest(t,b,cat){
   const saved=store.get("ib3-requests",[]);
-  const rec={title:t,cat:FEAT_DRAFT.cat,body:b||"",ts:Date.now()};
+  const rec={title:t,cat:cat||FEAT_DRAFT.cat,body:b||"",ts:Date.now()};
   const idx=saved.findIndex(x=>norm(x.title)===norm(t)&&x.cat===rec.cat);
   if(idx>=0)saved[idx]=rec;else saved.unshift(rec);
   store.set("ib3-requests",saved.slice(0,25));
 }
-function reportCopyStatus(btn,tip,ok){
-  if(!btn||!tip)return;
-  clearTimeout(COPY_TIMERS.get(btn));
-  let msg=ok?"Copied! Paste into any text or chat":"Copy failed";
-  if(msg===lastCopyStatusMsg)msg+="\u00A0";
-  lastCopyStatusMsg=msg;
-  tip.classList.remove("on","err");
-  tip.textContent="";
-  btn.textContent=ok?"✓ Copied request":"📋 Copy request";
-  requestAnimationFrame(()=>{
-    tip.textContent=msg;
-    tip.classList.add(ok?"on":"err");
-  });
-  COPY_TIMERS.set(btn,setTimeout(()=>{
-    btn.textContent="📋 Copy request";
-    tip.classList.remove("on","err");
-    tip.textContent="";
-  },2600));
+async function submitInboxPayload(payload){
+  const id="sub-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6);
+  const full={id,ts:new Date().toISOString(),cat:payload.cat||"General",title:payload.title||"",body:payload.body||"",scope:payload.scope||"Let AI & maintainer decide",page:location.hash||"#start"};
+  const tasks=[];
+  if(INBOX_WEBHOOK_URL){
+    tasks.push(fetch(INBOX_WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(full)}));
+  }
+  if(INBOX_RELAY_URL){
+    tasks.push(fetch(INBOX_RELAY_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(full)}));
+  }
+  const res=await Promise.allSettled(tasks);
+  return res.some(r=>r.status==="fulfilled"&&(r.value.ok||r.value.type==="opaque"));
 }
 function openFeatureSheet(opts={}){
   if(opts.cat)FEAT_DRAFT.cat=opts.cat;
   if(opts.title!==undefined)FEAT_DRAFT.title=opts.title;
   const repo=ghRepoURL()||"https://github.com/JohanHeurlin/inspired-by";
-  const cats=["🕯️ Cancelled / Sunsetted / Lore","🕹️ Missing Console / System","🎮 Missing Game / Classic","Timeline & Memories","Makers & Gratitude","Family Tree & Visuals"];
+  const cats=["🕹️ Missing Console / System","🎮 Missing Game / Classic","🕯️ Cancelled / Sunsetted / Lore","⑂ Lineage Link / Source","✨ Feature / UI Idea","🐞 Bug / Mobile Polish"];
+  if(!cats.includes(FEAT_DRAFT.cat))FEAT_DRAFT.cat=cats[0];
   const scopes=["Let AI & maintainer decide","Good for everyone (default)","Niche / power-user (Settings toggle)"];
-  const isVault=FEAT_DRAFT.cat.includes("Cancelled"),isConsole=FEAT_DRAFT.cat.includes("Console"),isGame=FEAT_DRAFT.cat.includes("Game"),isCatalog=isVault||isConsole||isGame;
+  const isVault=FEAT_DRAFT.cat.includes("Cancelled"),isConsole=FEAT_DRAFT.cat.includes("Console"),isGame=FEAT_DRAFT.cat.includes("Game"),isLineage=FEAT_DRAFT.cat.includes("Lineage"),isFeature=FEAT_DRAFT.cat.includes("Feature");
   const ph=isVault?"e.g. LMNO, Asheron's Call, Zeebo, B.C. (Lionhead), or a regional gaming story…"
     :isConsole?"e.g. Pegasus, Sega Pico, Acorn Archimedes, Zeebo, FM Towns…"
     :isGame?"e.g. Captain Claw, Prehistorik 2, Jazz Jackrabbit 2, Dizzy…"
+    :isLineage?"e.g. Quake → Half-Life (GoldSrc engine & developer interview)…"
     :"e.g. Compare 3+ friends side-by-side, Soundtrack radio mode…";
   const bodyPh=isVault?"What happened to it, which studio/makers worked on it, or why does its story deserve to be remembered?"
     :isConsole?"Which years/region did you play it in, and what were its signature games or cartridges?"
     :isGame?"What year or console/computer did you play it on? Any studio or regional title?"
-    :"Describe what you'd love to see…";
-  const canShare=typeof navigator!=="undefined"&&typeof navigator.share==="function";
+    :isLineage?"Paste an interview, GDC talk, or postmortem URL and describe what it built on and added…"
+    :"Describe what you'd love to see or what looked off…";
   const savedReqs=store.get("ib3-requests",[]);
-  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">➕ Lost worlds, regional consoles, classics &amp; feature ideas</p><h2>Request a console, game, lore story, or feature</h2><p class="sub" style="margin:2px 0 0">Know a cancelled game whose devs deserve love, a sunsetted online world, a regional console, or a feature idea? <b>No GitHub account needed:</b> share or copy your note to text/DM it directly, or post to GitHub Issues if you use GitHub.</p></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
-    <span class="sync" style="display:block;margin:0 0 6px">What are you suggesting?</span>
-    <div class="row" style="gap:6px;margin-bottom:12px">${cats.map(c=>`<button type="button" class="chip" data-act="featCat" data-v="${esc(c)}" aria-pressed="${FEAT_DRAFT.cat===c}">${esc(c)}</button>`).join("")}</div>
-    <label class="field" for="featTitle">${isVault?"Cancelled game, sunsetted world, or lore topic":isConsole?"Console or computer name":isGame?"Game title (and system if known)":"Short idea title"}<input class="input" id="featTitle" maxlength="90" placeholder="${esc(ph)}" value="${esc(FEAT_DRAFT.title||"")}"></label>
-    ${!isCatalog?`<span class="sync" style="display:block;margin:10px 0 5px">Should this be on for everyone or an optional Settings toggle?</span>
-      <div class="row" style="gap:6px">${scopes.map(s=>`<button type="button" class="chip" data-act="featScope" data-v="${esc(s)}" aria-pressed="${FEAT_DRAFT.scope===s}">${esc(s)}</button>`).join("")}</div>`:""}
-    <label class="field" for="featBody" style="margin-top:10px">${isCatalog?"Favorite games on it, region, or extra notes (optional)":"How would it work, and why would it be fun or meaningful?"}<textarea class="input" id="featBody" rows="3" placeholder="${esc(bodyPh)}">${esc(FEAT_DRAFT.body||"")}</textarea></label>
-    <div class="row" style="margin-top:14px;gap:8px;align-items:center">
-      ${canShare?`<button type="button" class="btn primary" data-act="featShare">📲 Share / Text request (no sign-in)</button>`:""}
-      <span class="copywrap"><button type="button" class="btn${canShare?"":" primary"}" id="featCopyBtn" data-act="featCopy">📋 Copy request</button><span class="copytip" role="status" id="featCopyTip"></span></span>
-      <button type="button" class="btn ghost" data-act="featGh" data-repo="${esc(repo)}">Post on GitHub Issues ↗ <span class="muted" style="font-weight:400;font-size:11.5px">(GitHub login)</span></button>
-    </div>
-    ${savedReqs.length?`<div style="margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)"><span class="sync" style="display:block;margin-bottom:6px">Saved on this device (${savedReqs.length}):</span>
-      <div class="row" style="gap:6px">${savedReqs.slice(0,6).map((r,i)=>`<span class="chip" style="cursor:default">${esc(r.title)} <button type="button" class="link" style="margin-left:4px;text-decoration:none" data-act="featRmSaved" data-i="${i}" aria-label="Remove saved request ${esc(r.title)}">×</button></span>`).join("")}</div></div>`:""}`,"Request a console, game, or feature");
-  const ft=$("#featTitle"),fb=$("#featBody");
-  if(ft)ft.addEventListener("input",()=>{FEAT_DRAFT.title=ft.value});
+  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">📥 Direct review queue · Zero sign-in · Reviewed by AI &amp; maintainer</p><h2 id="featHeading">Suggest a console, game, source, or feature</h2><p class="sub" style="margin:2px 0 0">Submissions go straight into the <b>Played &amp; Made review sheet &amp; backlog</b> for AI verification and triage — no login, account, or personal messaging required.</p></div><button class="x" type="button" data-act="closeLayer" aria-label="Close">×</button></div>
+    <form id="featForm" aria-labelledby="featHeading" novalidate>
+      <input type="text" id="featHp" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true" class="sr">
+      <span class="sync" style="display:block;margin:0 0 6px">Category</span>
+      <div class="row" style="gap:6px;margin-bottom:12px">${cats.map(c=>`<button type="button" class="chip" data-act="featCat" data-v="${esc(c)}" aria-pressed="${FEAT_DRAFT.cat===c}">${esc(c)}</button>`).join("")}</div>
+      <label class="field" for="featTitle">${isVault?"Cancelled game, sunsetted world, or lore topic":isConsole?"Console or computer name":isGame?"Game title (and system if known)":isLineage?"Game pair or topic (Older → Newer)":"Short summary"} <span aria-hidden="true">*</span><input class="input" id="featTitle" name="title" maxlength="100" required minlength="2" aria-describedby="featErr" placeholder="${esc(ph)}" value="${esc(FEAT_DRAFT.title||"")}"></label>
+      ${isFeature?`<span class="sync" style="display:block;margin:10px 0 5px">Should this be on for everyone or an optional Settings toggle?</span>
+        <div class="row" style="gap:6px">${scopes.map(s=>`<button type="button" class="chip" data-act="featScope" data-v="${esc(s)}" aria-pressed="${FEAT_DRAFT.scope===s}">${esc(s)}</button>`).join("")}</div>`:""}
+      <label class="field" for="featBody" style="margin-top:10px">${isLineage?"Source URL (interview, GDC talk, article) &amp; notes":"Details, region, favorite games, or notes (optional)"}<textarea class="input" id="featBody" name="details" rows="3" maxlength="800" placeholder="${esc(bodyPh)}">${esc(FEAT_DRAFT.body||"")}</textarea></label>
+      <p class="sub" id="featErr" role="status" aria-live="polite" style="margin:8px 0 0;color:var(--love)" hidden></p>
+      <div class="row" style="margin-top:14px;gap:8px;align-items:center;justify-content:space-between">
+        <button type="submit" class="btn primary" id="featSubmitBtn">📥 Submit to review queue</button>
+        <button type="button" class="btn sm ghost" data-act="featGh" data-repo="${esc(repo)}">Or open public GitHub Issue ↗</button>
+      </div>
+    </form>
+    ${savedReqs.length?`<div style="margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)"><span class="sync" style="display:block;margin-bottom:6px">Submitted from this device (${savedReqs.length}):</span>
+      <div class="row" style="gap:6px">${savedReqs.slice(0,6).map((r,i)=>`<span class="chip" style="cursor:default">✓ ${esc(r.title)} <button type="button" class="link" style="margin-left:4px;text-decoration:none" data-act="featRmSaved" data-i="${i}" aria-label="Remove local receipt ${esc(r.title)}">×</button></span>`).join("")}</div></div>`:""}`,"Suggest a console, game, or feature");
+  const ft=$("#featTitle"),fb=$("#featBody"),fm=$("#featForm"),er=$("#featErr"),sb=$("#featSubmitBtn");
+  const clearErr=()=>{if(er&&!er.dataset.ok){er.hidden=true;er.textContent=""}if(ft)ft.removeAttribute("aria-invalid")};
+  if(ft){
+    ft.addEventListener("input",()=>{FEAT_DRAFT.title=ft.value;clearErr()});
+    ft.addEventListener("blur",()=>{if(ft.value.trim().length>0&&ft.value.trim().length<2){ft.setAttribute("aria-invalid","true");if(er){delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;er.textContent="Please enter at least 2 characters."}}});
+  }
   if(fb)fb.addEventListener("input",()=>{FEAT_DRAFT.body=fb.value});
+  if(fm)fm.addEventListener("submit",async ev=>{
+    ev.preventDefault();
+    if(($("#featHp")||{}).value)return;
+    const t=(ft?ft.value:"").trim(),b=(fb?fb.value:"").trim();
+    if(t.length<2){
+      if(ft){ft.setAttribute("aria-invalid","true");ft.focus()}
+      if(er){delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;er.textContent="Please enter the console, game, or idea title before submitting."}
+      return;
+    }
+    if(Date.now()-inboxLastSent<4000){toast("Submitted — wait a moment before sending another");return}
+    if(sb){sb.disabled=true;sb.textContent="Sending to queue…"}
+    const ok=await submitInboxPayload({cat:FEAT_DRAFT.cat,title:t,body:b,scope:FEAT_DRAFT.scope});
+    if(sb){sb.disabled=false;sb.textContent="📥 Submit to review queue"}
+    if(ok){
+      inboxLastSent=Date.now();
+      saveLocalRequest(t,b,FEAT_DRAFT.cat);
+      FEAT_DRAFT.title="";FEAT_DRAFT.body="";
+      playBlip(2);
+      openFeatureSheet();
+      const er2=$("#featErr");
+      if(er2){er2.dataset.ok="1";er2.style.color="var(--craft)";er2.hidden=false;er2.textContent=`✓ Logged “${t}” in the Played & Made review queue for AI & maintainer triage. Thank you!`}
+    }else{
+      if(er){delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;er.textContent="Network couldn't reach the review queue right now — check your connection or use the GitHub Issue link."}
+    }
+  });
 }
 function openPackSheet(){
   const cur=MEMORY_PACKS.find(p=>p.k===state.packKey)||MEMORY_PACKS[0];
@@ -4672,50 +4793,41 @@ const ACTIONS={
   },
   featCat(el){FEAT_DRAFT.cat=el.dataset.v;openFeatureSheet()},
   featScope(el){FEAT_DRAFT.scope=el.dataset.v;openFeatureSheet()},
-  async featShare(){
-    const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
-    if(t.length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
-    FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b);
-    const txt=formatFeatureRequestText(t,b);
-    if(navigator.share){
-      try{await navigator.share({title:`Played & Made request: ${t}`,text:txt});toast("Shared request — thank you!");return}
-      catch(err){if(err&&err.name==="AbortError")return}
-    }
-    copyText(txt);
-  },
   featGh(el){
     const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
     if(t.length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
-    FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b);
+    FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b,FEAT_DRAFT.cat);
     const repo=el.dataset.repo||"https://github.com/JohanHeurlin/inspired-by";
-    const isVault=FEAT_DRAFT.cat.includes("Cancelled"),isConsole=FEAT_DRAFT.cat.includes("Console"),isGame=FEAT_DRAFT.cat.includes("Game");
-    const tag=isVault?"[Vault / Lore] ":isConsole?"[Console Request] ":isGame?"[Game Request] ":"[Feature] ";
+    const isVault=FEAT_DRAFT.cat.includes("Cancelled"),isConsole=FEAT_DRAFT.cat.includes("Console"),isGame=FEAT_DRAFT.cat.includes("Game"),isLineage=FEAT_DRAFT.cat.includes("Lineage");
+    const tag=isVault?"[Vault / Lore] ":isConsole?"[Console Request] ":isGame?"[Game Request] ":isLineage?"[Lineage Source] ":"[Feature] ";
     const body=`### Request summary\n${t}\n\n### Category\n${FEAT_DRAFT.cat}\n\n### Default vs. Settings Toggle\n${FEAT_DRAFT.scope}\n\n### Details & notes\n${b||"(No extra details provided)"}`;
     window.open(`${repo}/issues/new?labels=feature-request&title=${encodeURIComponent(tag+t)}&body=${encodeURIComponent(body)}`,"_blank","noopener");
-  },
-  async featCopy(el){
-    const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
-    if(t.length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
-    FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b);
-    const txt=formatFeatureRequestText(t,b);
-    const tip=$("#featCopyTip");
-    let ok=false;
-    try{
-      await navigator.clipboard.writeText(txt);
-      ok=true;
-    }catch{
-      const field=Object.assign(document.createElement("textarea"),{value:txt});
-      field.setAttribute("readonly","");field.style.cssText="position:fixed;inset-block-start:0;opacity:0";
-      document.body.append(field);field.select();
-      try{ok=document.execCommand("copy")}finally{field.remove()}
-    }
-    reportCopyStatus(el,tip,ok);
   },
   featRmSaved(el){
     const saved=store.get("ib3-requests",[]),i=+el.dataset.i;
     if(i>=0&&i<saved.length){saved.splice(i,1);store.set("ib3-requests",saved);openFeatureSheet()}
   },
-  goGiveBack(){state.stFilter="giveback";go("studios")},
+  async gratSubmitReal(el){
+    const note=(($("#gratNote")||{}).value||GRAT_DRAFT.note||"").trim();
+    const who=(($("#gratWho")||{}).value||GRAT_DRAFT.who||"").trim();
+    if(note.length<12){toast("Write a short memory or thank-you note first");const inp=$("#gratNote");if(inp)inp.focus();return}
+    const gm=GRAT_DRAFT.id?byId.get(GRAT_DRAFT.id):null;
+    const st=GRAT_DRAFT.st?findStudio(GRAT_DRAFT.st):(gm?findStudio(studio(gm)):null);
+    const target=gm&&st?`${gm.title} (${st.name})`:gm?gm.title:st?st.name:"Game makers";
+    if(el){el.disabled=true;el.textContent="Submitting…"}
+    const ok=await submitInboxPayload({cat:"💌 Real Maker Thank-You Note",title:`To ${target}${who?" — from "+who:""}`,body:`[${GRAT_DRAFT.tag||"Thank you"}] ${note}`,scope:"Community review"});
+    if(el){el.disabled=false;el.textContent="📬 Submit real note for review"}
+    const msg=$("#gratSubmitStatus");
+    if(ok){
+      playBlip(2);
+      if(msg){msg.hidden=false;msg.style.color="var(--craft)";msg.textContent="✓ Sent to the review queue — only genuine human notes are ever added."}
+    }else if(msg){
+      msg.hidden=false;msg.style.color="var(--love)";msg.textContent="Couldn't reach the review queue right now — please try again in a moment.";
+    }
+  },
+  linFocus(el){const id=el.dataset.id;if(!id)return;state.linId=id;state.treeMore={};go("lineage-"+id)},
+  linRandom(){const pool=TREE.filter(g=>g.pop>=3&&(UP[g.i].length+DOWN[g.i].length>=2));const pick=pool[Math.floor(Math.random()*pool.length)]||TREE[0];state.linId=pick.id;state.treeMore={};go("lineage-"+pick.id)},
+  goGiveBack(){clearLayer();go("giveback")},
   toDna(){const s=$("#dna");if(s)s.scrollIntoView({behavior:"smooth",block:"start"})},
   quizMode(el){state.quizMode=el.dataset.m||"lineage";quiz=newQuiz();renderQuiz()},
   quizPickVal(el){if(!quiz||quiz.picked!=null)return;quiz.picked=el.dataset.v;if(quiz.picked===quiz.ans){quizStreak++;if(quizStreak>quizBest){quizBest=quizStreak;store.set("ib2-best",quizBest)}}else quizStreak=0;renderQuiz()},
@@ -4747,7 +4859,10 @@ const ACTIONS={
   mapStrongTog(el){state.mapStrong=!state.mapStrong;el.setAttribute("aria-pressed",state.mapStrong);el.textContent="Links: "+(state.mapStrong?"Primary":"All");if(MAP)drawMap()},
   mapZoom(el){if(MAP)mapZoomAt(+el.dataset.z,MAP.W/2,MAP.H/2)},
   mapReset(){if(MAP){MAP.k=1;MAP.tx=0;MAP.ty=0;MAP.sel=null;drawMap();mapCard()}},
-  suggest(el){openSuggestSheet(el&&el.dataset&&el.dataset.subj)},
+  suggest(el){
+    const subj=(el&&el.dataset&&el.dataset.subj)||"";
+    openFeatureSheet({cat:"⑂ Lineage Link / Source",title:subj});
+  },
   sugGh(el){
     if(($("#sugHp")||{}).value)return;
     const er=$("#sugErr"),s=(($("#sugSrc")||{}).value||"").trim(),t=(($("#sugSubj")||{}).value||"Suggestion").trim(),b=(($("#sugBody")||{}).value||"").trim();
@@ -4848,10 +4963,10 @@ const ACTIONS={
   resetAsk(){$("#resetBox").innerHTML=`<div class="banner"><p>Clear all ${plural(entries(hist).length,"game")} from your timeline?</p><div class="row"><button class="btn love" data-act="resetDo">Clear it</button><button class="btn" data-act="resetNo">Keep it</button></div></div>`},
   resetNo(){$("#resetBox").innerHTML=""},
   resetDo(){hist=blankHist();save();store.del("ib2-revealed");clearLayer();go("start");render();toast("Cleared")},
-  tier(el){const k=el.dataset.tier;state.tiers[k]=state.tiers[k]?0:1;store.set("ib2-tiers",state.tiers);render()},
-  allTiers(){TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);render()},
-  moreLinks(el){state.treeMore[el.dataset.dir]=1;render()},
-  treeMore(el){state.treeMore["c"+el.dataset.col]=1;render()},
+  tier(el){const k=el.dataset.tier;state.tiers[k]=state.tiers[k]?0:1;store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
+  allTiers(){TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
+  moreLinks(el){state.treeMore[el.dataset.dir]=1;const y=window.scrollY;render();window.scrollTo({top:y})},
+  treeMore(el){state.treeMore["c"+el.dataset.col]=1;const y=window.scrollY;render();window.scrollTo({top:y})},
   closeStory(){closeStory()},storyNext(){storyStep(1)},storyPrev(){storyStep(-1)},storyRestart(){if(story){story.dir=1;story.k=story.chain.length-1;drawStory()}},storyJump(el){if(story){const nk=+el.dataset.k;story.dir=nk<story.k?-1:1;story.k=nk;drawStory()}},
   friend(el){const f=findFriend(el.dataset.key);if(!f)return;if(f.src==="seen"&&f.payload)go(f.payload);else go(friendHash(f))},
   forget(el){const p=el.dataset.payload;seen=seen.filter(s=>s.payload!==p);store.set("ib2-seen",seen);DEC.delete(p);toast("Removed from this device");go("friends")},

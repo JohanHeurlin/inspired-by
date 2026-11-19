@@ -881,127 +881,16 @@
       "body": "In an industry where beloved studios get bought, renamed, or shuttered overnight and credits roll past too fast, it is easy for a laid-off or retired developer to wonder if the late nights mattered. They did. Decades later, someone across the ocean still lights up at the exact four-bar melody, level shortcut, or small joke you stayed late to polish—because the rooms you built are still sheltering people, and you were never forgotten."
     }
   ],
-  "gratitude": [
-    {
-      "studio": "dma-design",
-      "game": "lemmings",
-      "year": 1991,
-      "tag": "Sibling bond",
-      "who": "Born 1981 · Amiga 500",
-      "note": "My sister and I crowded around one beige Amiga 500 mouse on rainy afternoons, shouting out blocker and digger jobs before a hundred green-haired walkers marched off a cliff. Long before Dundee's DMA Design became global front-page news, those tiny pixel rescues taught the two of us how to laugh through panic on the same team."
-    },
-    {
-      "studio": "lucasarts",
-      "game": "the-secret-of-monkey-island",
-      "year": 1990,
-      "tag": "Childhood safe harbor",
-      "who": "Born 1980 · Amiga & DOS PC",
-      "note": "Growing up in a house where raised voices were the nightly soundtrack, swapping floppies into Mêlée Island felt like slipping out a bedroom window into warm Caribbean air. Knowing LucasArts built an adventure where you couldn't get punished for exploring—and where wit beat brute force in every insult swordfight—kept my sense of humor intact."
-    },
-    {
-      "studio": "sierra-on-line",
-      "game": "kings-quest-vi-heir-today-gone-tomorrow",
-      "year": 1992,
-      "tag": "Shaped who I am",
-      "who": "Born 1983 · 386 DOS PC",
-      "note": "Clicking through Sierra's painted Green Isles with a dog-eared dictionary beside our family monitor is how I fell in love with English, folklore, and storytelling after immigrating as a kid. Roberta Williams, Jane Jensen, and the Oakhurst crew treated young players like attentive readers capable of untangling riddles, grief, and fairy-tale wonder."
-    },
-    {
-      "studio": "bullfrog-productions",
-      "game": "theme-hospital",
-      "year": 1997,
-      "tag": "Carried me through",
-      "who": "Born 1986 · Windows 95 PC",
-      "note": "During a childhood winter spent in and out of real clinic waiting rooms, coming home to Bullfrog's cheerfully absurd wards of Bloaty Heads and dry Tannoy announcements took the fear right out of hospitals. Even long after the Guildford studio closed, that warm British mischief reminds me how much courage can hide inside a laugh."
-    },
-    {
-      "studio": "westwood-studios",
-      "game": "command-conquer-red-alert",
-      "year": 1996,
-      "tag": "Sibling bond",
-      "who": "Born 1984 · Pentium PC",
-      "note": "My older brother and I lugged two heavy CRT monitors down the hall with a grey serial cable every Friday night, racing to wall off ore fields while Frank Klepacki's industrial basslines rattled our desk. Westwood's Las Vegas doors closed over twenty years ago, yet whenever my brother and I talk across time zones, those skirmish maps are still shorthand for home."
-    },
-    {
-      "studio": "looking-glass-studios",
-      "game": "thief-the-dark-project",
-      "year": 1998,
-      "tag": "Pure craft",
-      "who": "Born 1982 · Sound Blaster PC",
-      "note": "Crouching in a dark stone corridor with headphones on—listening to footsteps shift from marble to carpet while watching a single torch shadow flicker—showed me games could trust quietness over noise. Looking Glass folded in Cambridge far too soon, yet every time a modern game respects a player's improvisation, your fingerprints are still right there."
-    },
-    {
-      "studio": "origin-systems",
-      "game": "ultima-vii-the-black-gate",
-      "year": 1992,
-      "tag": "Pure craft",
-      "who": "Born 1978 · 486 DOS PC",
-      "note": "Baking bread from flour and water, watching village bakers shutter their windows when rain started in Britannia, and keeping a cloth map above my desk made Origin's motto—'We Create Worlds'—feel completely real. That Austin team built a living world with moral memory rather than high scores, and nothing has ever topped stepping through that red moongate."
-    },
-    {
-      "studio": "microprose",
-      "game": "civilization",
-      "year": 1991,
-      "tag": "Shaped who I am",
-      "who": "Born 1979 · Amiga & DOS PC",
-      "note": "Reading MicroProse's Civilopedia entries past midnight—tracing how pottery, printing presses, and railroads reshaped continents—turned a restless C-student into a high-school history teacher. Whoever wrote and tuned those quiet encyclopedias in Hunt Valley sparked a lifelong curiosity across thousands of classrooms you never got to see."
-    },
-    {
-      "studio": "psygnosis",
-      "game": "wipeout-2097",
-      "year": 1996,
-      "tag": "Shaped who I am",
-      "who": "Born 1982 · PlayStation",
-      "note": "Threading anti-gravity airbrakes through neon tunnels to The Designers Republic's razor-sharp typography and pounding club tracks was the exact night I decided to study graphic design. Liverpool's Psygnosis owl sign is gone from the docks now, yet that fearless marriage of electronic music, industrial art, and velocity still sits on my studio shelf."
-    },
-    {
-      "studio": "nintendo",
-      "game": "super-mario-land",
-      "year": 1989,
-      "tag": "Childhood safe harbor",
-      "who": "Born 1983 · Game Boy",
-      "note": "After my parents split up and I spent every other weekend on long bus rides between two apartments, Gunpei Yokoi's pea-green Game Boy and four AA batteries were the one steady thing in my coat pocket. Reaching Hip Tanaka's bright, wistful ending theme under passing highway streetlights always made me feel like someone out there was cheering me home."
-    },
-    {
-      "studio": "square-enix",
-      "game": "chrono-trigger",
-      "year": 1995,
-      "tag": "Carried me through",
-      "who": "Born 1985 · SNES",
-      "note": "After moving to a new town where I ate lunch alone for a whole semester, sitting around that forest campfire with Lucca, Frog, and Robo gave me a circle of friends who refused to give up on a broken world. When Yasunori Mitsuda's 'Corridors of Time' drifted out of our small bedroom TV, I learned that sixteen-bit pixels and eight sound channels could ache like a great novel."
-    },
-    {
-      "studio": "free-radical-design",
-      "game": "timesplitters-2",
-      "year": 2002,
-      "tag": "Sibling bond",
-      "who": "Born 1990 · PlayStation 2",
-      "note": "Four teenagers wedged onto one sagging basement sofa—building ridiculous custom map-maker arenas and crying with laughter as a gingerbread man sprinted past monkeys in Siberia—gave our friend group its happiest Friday nights. Hearing that Nottingham's Free Radical closed broke our hearts, so please know those split-screen evenings kept four kids out of trouble and bonded for life."
-    },
-    {
-      "studio": "clover-studio",
-      "game": "okami",
-      "year": 2006,
-      "tag": "Carried me through",
-      "who": "Born 1989 · PlayStation 2",
-      "note": "During a bleak autumn in my late teens when everything around me felt drained of color, sweeping a celestial ink brush across Nippon to coax cherry blossoms back onto dead trees felt like quiet medicine. Clover Studio existed for barely three years, yet the tenderness poured into every sumi-e brushstroke still reminds people that barren seasons pass."
-    },
-    {
-      "studio": "maxis",
-      "game": "the-sims",
-      "year": 2000,
-      "tag": "Childhood safe harbor",
-      "who": "Born 1988 · Windows 98 PC",
-      "note": "In a cramped apartment where money was tight and nobody had a quiet corner, Maxis's little isometric neighborhood let me build sunlit rooms, bookshelves, and peaceful mornings to Jerry Martin's piano score. Even after Emeryville's studio lights went out, millions of us still carry the gentle hope we practiced building inside those walls."
-    }
-  ],
+  "gratitude": [],
   "vaultLore": [
     {
       "tag": "🕵️ Scam & Scandal · 2005–2006",
       "title": "Gizmondo, the Uppsala Mafia & the 162-MPH Malibu Ferrari",
       "cc": "SE",
       "sys": "Gizmondo",
-      "games": ["sticky-balls"],
+      "games": [
+        "sticky-balls"
+      ],
       "body": "Swedish executives Carl Freer and Stefan 'Tjock-Steffe' Eriksson—a former enforcer in Sweden's notorious Uppsala Mafia—burned through ~$300M+ in investor funds launching the GPS-equipped Gizmondo handheld, staging London Mayfair parties with Sting and Jamiroquai while selling fewer than 25,000 units. Weeks after bankruptcy, Eriksson split an embezzled $1M+ Ferrari Enzo in half at 162 mph on Malibu's Pacific Coast Highway and blamed a phantom German driver named 'Dietrich'—leaving real devs at Warthog Games and Indie Studios with 14 orphaned games."
     },
     {
@@ -1009,7 +898,9 @@
       "title": "728,000 Cartridges in the New Mexico Desert — & Howard Scott Warshaw's Redemption",
       "cc": "US",
       "sys": "Atari 2600",
-      "games": ["et-the-extra-terrestrial"],
+      "games": [
+        "et-the-extra-terrestrial"
+      ],
       "body": "Blamed for thirty years as the programmer who 'killed video games,' Atari star coder Howard Scott Warshaw (Yars' Revenge) had actually been handed an impossible 5-week solo deadline before Christmas 1982 instead of six months. In Sept 1983, Atari quietly buried ~728,000 unsold warehouse cartridges in Alamogordo, New Mexico. When excavators dug 30 feet down in April 2014 and pulled ~1,300 carts into the sunlight—sending one to the Smithsonian—crowds cheered Warshaw in one of gaming's warmest human redemptions."
     },
     {
@@ -1017,7 +908,10 @@
       "title": "TecToy's 35-Year Sega Universe in Brazil",
       "cc": "BR",
       "sys": "Master System",
-      "games": ["wonder-boy-in-monster-land", "street-fighter-ii"],
+      "games": [
+        "wonder-boy-in-monster-land",
+        "street-fighter-ii"
+      ],
       "body": "When steep Brazilian electronics tariffs priced out imports, São Paulo maker TecToy partnered officially with Sega in 1989—translating Phantasy Star into Portuguese, swapping Wonder Boy sprites into beloved Brazilian comic hero Turma da Mônica, porting Street Fighter II onto 8-bit hardware, launching the 3G cellular Zeebo console, and manufacturing brand-new Master System and Mega Drive variations into the 2020s."
     },
     {
@@ -1025,7 +919,11 @@
       "title": "Dendy, Subor & Pegasus: How Yellow Multicarts Raised Half the Planet",
       "cc": "TW",
       "sys": "Dendy",
-      "games": ["battle-city", "darkwing-duck", "contra"],
+      "games": [
+        "battle-city",
+        "darkwing-duck",
+        "contra"
+      ],
       "body": "Nintendo never officially launched the 8-bit NES across Russia, Ukraine, Poland, or mainland China—so Taiwanese clone silicon stepped into the gap. Marketed with Ivan Maximov's cheerful elephant as Dendy, as Pegasus in Poland, and disguised inside a Jackie Chan–endorsed 'educational typing keyboard' by Subor (Xiaobawang) in China, bright yellow '9999-in-1' market cartridges introduced tens of millions of kids to couch co-op and computer programming."
     },
     {
@@ -1033,7 +931,9 @@
       "title": "Streaming Games in 1994: Coax Sega Channel & Live-Voice Satellaview",
       "cc": "JP",
       "sys": "SNES",
-      "games": ["bs-the-legend-of-zelda"],
+      "games": [
+        "bs-the-legend-of-zelda"
+      ],
       "body": "Years before home broadband, Time Warner and TCI beamed 50 rotating Genesis games a month over coaxial cable-TV wires via the Sega Channel adapter. A year later in Japan, Nintendo's Satellaview modem pulled live SoundLink episodes down from an orbital satellite at 6:00 PM on Sundays: actors performed live radio drama over Super Famicom Zelda stages while the real-world clock triggered timed weather buffs and vanishing dungeons."
     },
     {
@@ -1048,7 +948,9 @@
       "title": "Desert Bus: How a Cancelled Penn & Teller Prank Raised $11M+ for Hospitalized Kids",
       "cc": "US",
       "sys": "Sega CD",
-      "games": ["penn-and-tellers-smoke-and-mirrors"],
+      "games": [
+        "penn-and-tellers-smoke-and-mirrors"
+      ],
       "body": "Built to satirize 1990s Senate moral-panic hearings, Desert Bus asked Sega CD players to steer an empty highway bus for 8 real-time hours from Tucson to Las Vegas at a top speed of 45 mph—pulling slightly to the right so nobody could tape a button down—for 1 single point. Cancelled when Absolute Entertainment went bankrupt in 1995, a rediscovered press disc inspired loadingReadyRun's Desert Bus for Hope marathon, raising over $11 million for Child's Play Charity."
     },
     {
@@ -1056,7 +958,11 @@
       "title": "Star Fox 2: Finished in 1995, Locked in a Vault, Yet Quietly Shaping 3D Nintendo",
       "cc": "JP",
       "sys": "SNES",
-      "games": ["star-fox-2", "super-mario-64", "star-fox-64"],
+      "games": [
+        "star-fox-2",
+        "super-mario-64",
+        "star-fox-64"
+      ],
       "body": "Argonaut coder Dylan Cuthbert and Nintendo EAD completely finished, localized, and QA-tested Star Fox 2 in 1995—only for Shigeru Miyamoto to shelve the completed ROM so SNES polygons wouldn't look dated beside the PlayStation and upcoming N64. Yet the team's labor wasn't wasted: its free-roaming 3D camera and all-range dogfights fed directly into Super Mario 64 and Star Fox 64 before the untouched 1995 master finally shipped in 2017."
     },
     {
@@ -1064,7 +970,9 @@
       "title": "Polybius: Portland's Men-in-Black Arcade Cabinet Myth",
       "cc": "US",
       "sys": "Arcade",
-      "games": ["tempest"],
+      "games": [
+        "tempest"
+      ],
       "body": "In late 1981, Portland arcades saw real news crews covering teenagers struck with vertigo at glowing vector Tempest cabinets alongside federal agents inspecting coin-op machines in gambling stings. Twenty years later on early web archives, those tangled memories fused into gaming's quintessential ghost story: a mysterious black cabinet called Polybius whose players suffered amnesia while men in dark suits harvested scores after closing time."
     },
     {
@@ -1072,8 +980,60 @@
       "title": "Steel Battalion's 40-Button Cockpit & Save-Wiping Eject Cover",
       "cc": "JP",
       "sys": "Xbox",
-      "games": ["steel-battalion"],
+      "games": [
+        "steel-battalion"
+      ],
       "body": "Capcom's Production Studio 4 refused to compromise mech immersion: Steel Battalion arrived in an oversized crate with a $200, 40-button twin-stick control desk, three metal foot pedals, a gear shifter, and a physical windshield-wiper button for mud. Best of all, a flip-up plastic safety guard covered the glowing red Eject button—if you failed to eject before your mech blew up, the game permanently wiped your save file."
+    }
+  ],
+  "realStories": [
+    {
+      "tag": "Documented · 1987–2017",
+      "title": "Robin & Zelda Williams — Named After Hyrule",
+      "studio": "nintendo",
+      "game": "zelda",
+      "source": "Nintendo 25th Anniversary Interview (2011) & Polygon (2017)",
+      "body": "While expecting their daughter in 1989, Robin and Marsha Williams spent evenings solving the gold NES cartridge of The Legend of Zelda together—and named Zelda Williams after the princess. Twenty-two years later, father and daughter filmed a warm tribute commercial for Ocarina of Time 3D, and after Robin's passing, Nintendo's developers quietly placed a wandering traveller tribute along Hyrule's roads in Breath of the Wild."
+    },
+    {
+      "tag": "Documented · GDC 2005",
+      "title": "Satoru Iwata: “In My Heart, I Am a Gamer”",
+      "studio": "nintendo",
+      "game": "earthbound",
+      "source": "Satoru Iwata, GDC 2005 Keynote (“Heart of a Gamer”)",
+      "body": "Before becoming Nintendo's president, Satoru Iwata personally rewrote EarthBound's tangled codebase from scratch to rescue the team's years of work and compressed Pokémon Gold & Silver so Kanto could fit onto one Game Boy cart. Stepping onto the GDC stage in 2005, he spoke the line studios still frame on their walls: “On my business card, I am a corporate president. In my mind, I am a game developer. But in my heart, I am a gamer.”"
+    },
+    {
+      "tag": "Documented · 2019–2020",
+      "title": "87-Year-Old “Mayor Audie” & 3,580 Hours in Animal Crossing",
+      "studio": "nintendo",
+      "game": "animal-crossing-new-horizons",
+      "source": "Paul Hubans Video (2019) & Eurogamer / Nintendo Treehouse (2020)",
+      "body": "While recovering from illness at age 87, Audrey (“Audie” on her 3DS) tended flowers, mailed letters to villagers, and logged over 3,580 hours across four years in Animal Crossing: New Leaf. After her grandson shared a clip of her town tour online, Nintendo's team quietly named New Horizons' upbeat wolf villager Audie in her honor."
+    },
+    {
+      "tag": "Documented · 1983–2000",
+      "title": "Dani Bunten Berry & Will Wright's Dedication in The Sims",
+      "studio": "maxis",
+      "game": "m-u-l-e",
+      "source": "The Sims Credits (2000) & GDC Pioneer Award Archive",
+      "body": "Dani Bunten Berry built 1983's four-player classic M.U.L.E. around the belief that computers were best when friends laughed and bargained shoulder-to-shoulder in the same room. Months before lung cancer took her life in 1998, fellow creators flooded her inbox with thank-you letters—and Will Wright dedicated The Sims (2000) to her memory right in its credits."
+    },
+    {
+      "tag": "Documented · 2000–2011",
+      "title": "Erik Wolpaw: From Hospital Rooms to Portal's GLaDOS",
+      "studio": "valve",
+      "game": "portal",
+      "source": "Geoff Keighley, The Final Hours of Portal 2 (2011)",
+      "body": "Diagnosed with ulcerative colitis while writing sharp, hilarious criticism on Old Man Murray, Erik Wolpaw was recruited by Gabe Newell to Valve—helping write Half-Life 2 episodes, Psychonauts, and Portal. Even when flare-ups landed him back in hospital beds, the dry, resilient comedy he poured into GLaDOS and Wheatley turned a tiny student-team puzzle experiment into one of gaming's best-loved scripts."
+    },
+    {
+      "tag": "Documented · 1995–Today",
+      "title": "Child's Play & Desert Bus: $60M+ for Hospitalized Kids",
+      "studio": "sega",
+      "game": "penn-and-tellers-smoke-and-mirrors",
+      "source": "Child's Play Charity & Desert Bus for Hope Official Records",
+      "body": "What began in 2003 with players sending consoles to Seattle Children's Hospital grew into Child's Play across 190+ pediatric hospitals worldwide. Four years later, comedy troupe LoadingReadyRun rescued Penn & Teller's cancelled 1995 Sega CD curio Desert Bus from obscurity—driving its virtual Tucson-to-Vegas highway nonstop every November to raise over $11 million for hospital playrooms."
     }
   ]
 }
