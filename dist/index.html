@@ -1634,6 +1634,7 @@ function route(){
   if(hasBooted)playUiTick("tap");
   state.route=parseHash();
   render();
+  trackRouteAnalytics();
   if(state.route&&state.route.jumpMods)requestAnimationFrame(()=>{const el=$("#modStories");if(el)el.scrollIntoView({behavior:"smooth",block:"start"})});
   if(state.route&&state.route.jumpCredits)requestAnimationFrame(()=>{const el=$("#creditsSec");if(el)el.scrollIntoView({behavior:"smooth",block:"start"})});
   hasBooted=true;
@@ -1782,7 +1783,7 @@ function renderStart(m){
   requestAnimationFrame(()=>{const sh=$("#heroShelf");if(sh)sh.scrollLeft=sh.scrollWidth});
   wireSearch($("#q0"),$("#r0"),g=>g&&g.id&&go(g.id),{});
   $("#startForm").onsubmit=e=>{e.preventDefault();const y=parseInt($("#birthIn").value,10);
-    if(y>=1940&&y<=NOW-3){hist.birth=y;hist.stage="systems";save();renderOnboard(m);window.scrollTo({top:0})}
+    if(y>=1940&&y<=NOW-3){hist.birth=y;hist.stage="systems";save();trackEvent("timeline_started",String(y));renderOnboard(m);window.scrollTo({top:0})}
     else{const er=$("#birthErr");er.hidden=false;er.textContent="Enter a year like 1986."}};
 }
 
@@ -4390,6 +4391,7 @@ function openVideoSheet(g,customVid,liveAuto=false){
   expandVidDock();
   if(!samePlaying){
     VID_STATE.vid=vid||"";
+    if(vid)trackEvent("video_play",g.id);
     scr.innerHTML=vid
       ?`<iframe id="vidIframe" src="https://www.youtube.com/embed/${encodeURIComponent(vid)}?rel=0&autoplay=1" title="${esc(g.title)} gameplay" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
       :`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;max-width:44ch">
@@ -4580,7 +4582,68 @@ function renderSharedList(m,payload){
   </section>${footer()}`;
 }
 const SUPABASE_INBOX_URL="https://bplcmxwkhpvqogqincmq.supabase.co/rest/v1/pm_inbox";
+const SUPABASE_EVENTS_URL="https://bplcmxwkhpvqogqincmq.supabase.co/rest/v1/pm_events";
 const SUPABASE_PUB_KEY="sb_publishable_JkMRhruYPEVPnQwCylR0aA_TWWiFTwG";
+/* Cookie-free, zero-IP, zero-PII aggregate counter (1 visit per tab session + deduped section views + share/export conversions) */
+const ANALYTICS_SEEN=new Set();
+function cleanRefHost(){
+  try{
+    if(!document.referrer)return "";
+    const h=new URL(document.referrer).hostname.toLowerCase().replace(/^www\./,"");
+    if(!h||h==="playedmade.com"||h.endsWith(".github.io")||h==="localhost"||h==="127.0.0.1")return "";
+    return h.slice(0,80);
+  }catch(e){return ""}
+}
+function deviceBucket(){
+  try{
+    if((window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true)return "pwa";
+    const w=window.innerWidth||1024;
+    return w<=640?"mobile":w<=1024?"tablet":"desktop";
+  }catch(e){return "desktop"}
+}
+function trackEvent(event,section=""){
+  try{
+    if(navigator.webdriver)return;
+    const host=location.hostname;
+    if(!host||host==="localhost"||host==="127.0.0.1"||location.protocol==="file:")return;
+    if(event==="view"){
+      const key="v:"+section;
+      if(ANALYTICS_SEEN.has(key)||ANALYTICS_SEEN.size>=16)return;
+      ANALYTICS_SEEN.add(key);
+    }
+    const tz=((Intl&&Intl.DateTimeFormat&&Intl.DateTimeFormat().resolvedOptions().timeZone)||"").slice(0,48);
+    const body=JSON.stringify({
+      event,
+      section:String(section||"").slice(0,48),
+      ref_host:event==="visit"?cleanRefHost():"",
+      device:deviceBucket(),
+      tz
+    });
+    fetch(SUPABASE_EVENTS_URL,{
+      method:"POST",
+      keepalive:true,
+      headers:{
+        "apikey":SUPABASE_PUB_KEY,
+        "Content-Type":"application/json",
+        "Prefer":"return=minimal"
+      },
+      body
+    }).catch(()=>{});
+  }catch(e){}
+}
+function trackRouteAnalytics(){
+  try{
+    const r=state.route||{};
+    const sec=r.view==="mechanics"?(r.jumpMods?"mods":(r.mt||"mechanics"))
+      :r.view==="studios"?(state.stFilter||"studios")
+      :r.view==="about"?(r.jumpCredits?"credits":"about")
+      :(r.view||"start");
+    let visited=false;
+    try{visited=sessionStorage.getItem("pm_v1")==="1";if(!visited)sessionStorage.setItem("pm_v1","1")}catch(e){}
+    if(!visited)trackEvent("visit",sec);
+    trackEvent("view",sec);
+  }catch(e){}
+}
 let FEAT_DRAFT={title:"",cat:"🕹️ Missing Console / System",scope:"Let AI & maintainer decide",body:""};
 let inboxLastSent=0;
 function saveLocalRequest(t,b,cat){
@@ -5181,6 +5244,7 @@ async function exportCanvasPng(gamesToPreload,buildFn,fname,outSel){
     if(dl){await dl.save({filename:fname,data:blob});toast("Saved "+fname);return}}catch(e){if(e&&e.code==="declined")return}
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");a.href=url;a.download=fname;document.body.appendChild(a);a.click();a.remove();
+  trackEvent("export_png",String(fname||"").replace(/\.png$/i,""));
   toast(`Downloaded ${fname}`);
   const out=outSel?$(outSel):null;
   if(out)out.innerHTML=`<p class="sub" style="margin-top:12px">Downloaded <b>${esc(fname)}</b> (on phones, press and hold the preview below to save to Photos).</p><img class="imgprev" src="${url}" alt="${esc(fname)}">`;
@@ -5419,6 +5483,7 @@ const ACTIONS={
   quizNext(){playUiTick("fwd");quiz=newQuiz();renderQuiz()},
   shareStreak(){
     const best=Math.max(quizStreak,quizBest,1),md=QUIZ_MODES.find(x=>x[0]===(state.quizMode||"lore"));
+    trackEvent("trivia_streak",state.quizMode||"lore");
     const txt=`🎯 I hit a ${best}-in-a-row streak in Played & Made's ${md?md[1]:"Game History"} Trivia! Can you beat it?\n${shareBase()}#trivia`;
     if(navigator.share){navigator.share({title:"Played & Made — Game Lore & Lineage Trivia",text:txt}).catch(()=>{copyText(txt)});return}
     copyText(txt);
@@ -5488,8 +5553,8 @@ const ACTIONS={
   yearAll(el){state.showAllYear=!state.showAllYear;openYearSheet(+el.dataset.y,($("#customIn")||{}).value||"")},
   closeLayer(el,e){if(el&&el.dataset&&el.dataset.self&&e&&e.target!==el)return;closeLayer()},
   share(){if(!entries(hist).length){toast("Add some games first");return}ensureBirthThen(()=>openShare())},
-  copyShare(){const v=$("#shareLink").value;copyText(v,$("#shareLink"))},
-  webShare(){const u=shareLink(hist);if(navigator.share)navigator.share({title:`${hist.name?hist.name+"'s":"My"} life in games · Played & Made`,text:"Here's my gaming timeline — compare yours in two minutes:",url:u}).catch(()=>{})},
+  copyShare(){const v=$("#shareLink").value;trackEvent("share_link","timeline");copyText(v,$("#shareLink"))},
+  webShare(){const u=shareLink(hist);trackEvent("share_link","webshare");if(navigator.share)navigator.share({title:`${hist.name?hist.name+"'s":"My"} life in games · Played & Made`,text:"Here's my gaming timeline — compare yours in two minutes:",url:u}).catch(()=>{})},
   emailSelf(){const u=shareLink(hist),sub=`My life in games (${entries(hist).length} games) · Played & Made`;location.href=`mailto:?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent("Here is my Played & Made gaming timeline link (open it on any device to view or continue editing):\n\n"+u)}`},
   dlJson(){const blob=new Blob([JSON.stringify(packHist(hist),null,2)],{type:"application/json"});const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=`played-and-made-timeline-${hist.name?slugStudio(hist.name):hist.birth||"backup"}.json`;document.body.appendChild(a);a.click();a.remove();toast("Backup downloaded")},
   adoptAsk(){const f=state.viewing;if(!f||!f.data)return;if(!entries(hist).length){hist=JSON.parse(JSON.stringify(f.data));save();toast("Loaded as your timeline");go("timeline");return}$("#adoptBox").innerHTML=`<div class="banner"><p>Replace your current timeline on this device (${plural(entries(hist).length,"game")}) with <b>${esc(f.name)}'s</b> (${plural(entries(f.data).length,"game")})?</p><div class="row"><button class="btn primary" data-act="adoptDo">Yes, load it</button><button class="btn" data-act="adoptNo">Cancel</button></div></div>`},
