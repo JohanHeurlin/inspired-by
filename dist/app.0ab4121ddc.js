@@ -94,6 +94,16 @@ const DEV_QUERY=(()=>{try{return new URLSearchParams(location.search).get("dev")
 
 /* ---------- data ---------- */
 const imgURL=v=>{if(!v)return "";if(v.startsWith("i:"))return `https://images.igdb.com/igdb/image/upload/t_cover_big/${v.slice(2)}.webp`;if(v.startsWith("wt:"))return `https://thumb.wikimedia.org/wikipedia/${v.slice(3)}`;if(v.startsWith("w:"))return `${v.includes("/thumb/")?"https://thumb.wikimedia.org/wikipedia/":"https://upload.wikimedia.org/wikipedia/"}${v.slice(2)}`;if(v.startsWith("s:"))return `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${v.slice(2)}/library_600x900.jpg`;return v};
+window._covFit=function(im){
+  if(!im||im.naturalWidth<=20){_covErr(im);return}
+  const u=im.getAttribute("src")||"",isLogo=/\.svg\.png|Logo\.|_logo\./i.test(u);
+  if(!isLogo){
+    const ar=im.naturalWidth/Math.max(1,im.naturalHeight);
+    if(ar>1.55)im.dataset.fit="wrap";
+    else if(ar>0.96)im.dataset.fit="wide";
+  }
+  if(im.parentElement)im.parentElement.classList.add("hasimg");
+};
 window._covErr=function(im){
   if(!im||im.dataset.retried){if(im)im.remove();return}
   im.dataset.retried="1";const u=im.src||"";
@@ -306,16 +316,17 @@ function canvasHardware(x,sys,bx,by,w,h){
   const s=String(sys||"");x.save();
   x.fillStyle="rgba(255,255,255,.06)";x.strokeStyle="rgba(140,157,255,.35)";x.lineWidth=2;
   x.beginPath();x.roundRect(bx,by,w,h,14);x.fill();x.stroke();
-  const cx=bx+20,cy=by+16,cw=76,ch=50;
-  if(s==="Amiga"){x.fillStyle="#DDD4BF";x.fillRect(cx,cy+8,cw,ch-14);x.fillStyle="#6F685A";x.fillRect(cx+8,cy+13,cw-24,6);x.fillStyle="#F2ECE0";x.fillRect(cx+6,cy+22,cw-14,14);x.fillStyle="#E84A3C";x.fillRect(cx+cw-12,cy+13,5,3);x.fillStyle="#4AD66D";x.fillRect(cx+cw-6,cy+13,5,3)}
-  else if(s==="Commodore 64"){x.fillStyle="#8C7965";x.beginPath();x.roundRect(cx,cy+8,cw,ch-14,8);x.fill();x.fillStyle="#3B322B";x.fillRect(cx+8,cy+18,cw-18,16);x.fillStyle="#E04646";x.fillRect(cx+cw-16,cy+11,10,3);x.fillStyle="#3BA8DF";x.fillRect(cx+cw-16,cy+14,10,3)}
-  else if(s==="Switch"||s==="Switch 2"){x.fillStyle="#00C3E3";x.beginPath();x.roundRect(cx,cy+6,14,ch-12,6);x.fill();x.fillStyle="#FF4554";x.beginPath();x.roundRect(cx+cw-14,cy+6,14,ch-12,6);x.fill();x.fillStyle="#1B1F29";x.fillRect(cx+14,cy+6,cw-28,ch-12);x.fillStyle="#2A4678";x.fillRect(cx+18,cy+10,cw-36,ch-20)}
-  else if(s.startsWith("Xbox")){x.fillStyle="#1B1F26";x.beginPath();x.roundRect(cx,cy+10,cw,ch-18,6);x.fill();x.fillStyle="#52E038";x.beginPath();x.arc(cx+cw/2,cy+ch/2+1,9,0,7);x.fill()}
-  else if(s.startsWith("PlayStation")){x.fillStyle=s==="PlayStation"?"#C7CCD6":"#171A24";x.beginPath();x.roundRect(cx+4,cy+8,cw-8,ch-14,6);x.fill();x.strokeStyle="#2D6BFF";x.lineWidth=3;x.beginPath();x.arc(cx+cw/2,cy+ch/2+1,11,0,7);x.stroke()}
-  else if(s==="Game Boy"||s==="Game Boy Color"){x.fillStyle="#D8D9DE";x.beginPath();x.roundRect(cx+18,cy,40,ch,6);x.fill();x.fillStyle="#7E9448";x.fillRect(cx+24,cy+6,28,18);x.fillStyle="#A62656";x.beginPath();x.arc(cx+48,cy+34,3.5,0,7);x.fill()}
-  else if(s==="Dendy"){x.fillStyle="#F4C430";x.fillRect(cx+22,cy+2,32,12);x.fillStyle="#E3E5EA";x.beginPath();x.roundRect(cx+4,cy+12,cw-8,ch-18,6);x.fill();x.fillStyle="#D9383A";x.fillRect(cx+14,cy+26,12,7);x.fillRect(cx+cw-26,cy+26,12,7)}
-  else if(s==="PC"||s==="Mac"){x.fillStyle="#E4DFD3";x.beginPath();x.roundRect(cx+10,cy+2,cw-20,ch-14,5);x.fill();x.fillStyle="#16325C";x.fillRect(cx+16,cy+7,cw-32,ch-24);x.fillStyle="#CFC9BA";x.fillRect(cx+4,cy+ch-10,cw-8,10)}
-  else{x.fillStyle="#2B3348";x.beginPath();x.roundRect(cx+2,cy+8,cw-4,ch-14,6);x.fill();x.fillStyle="#FF6E5A";x.fillRect(cx+10,cy+22,16,8);x.fillStyle="#8C9DFF";x.fillRect(cx+32,cy+22,28,8)}
+  /* normalized 72×44 hardware icon box */
+  const cx=bx+20,cy=by+24,cw=72,ch=44;
+  if(s==="Amiga"){x.fillStyle="#DDD4BF";x.fillRect(cx,cy+7,cw,ch-12);x.fillStyle="#6F685A";x.fillRect(cx+8,cy+11,cw-24,5);x.fillStyle="#F2ECE0";x.fillRect(cx+6,cy+19,cw-14,13);x.fillStyle="#E84A3C";x.fillRect(cx+cw-12,cy+11,5,3);x.fillStyle="#4AD66D";x.fillRect(cx+cw-6,cy+11,5,3)}
+  else if(s==="Commodore 64"){x.fillStyle="#8C7965";x.beginPath();x.roundRect(cx,cy+7,cw,ch-12,7);x.fill();x.fillStyle="#3B322B";x.fillRect(cx+8,cy+16,cw-18,14);x.fillStyle="#E04646";x.fillRect(cx+cw-16,cy+10,10,3);x.fillStyle="#3BA8DF";x.fillRect(cx+cw-16,cy+13,10,3)}
+  else if(s==="Switch"||s==="Switch 2"){x.fillStyle="#00C3E3";x.beginPath();x.roundRect(cx,cy+5,13,ch-10,6);x.fill();x.fillStyle="#FF4554";x.beginPath();x.roundRect(cx+cw-13,cy+5,13,ch-10,6);x.fill();x.fillStyle="#1B1F29";x.fillRect(cx+13,cy+5,cw-26,ch-10);x.fillStyle="#2A4678";x.fillRect(cx+17,cy+9,cw-34,ch-18)}
+  else if(s.startsWith("Xbox")){x.fillStyle="#1B1F26";x.beginPath();x.roundRect(cx,cy+7,cw,ch-14,6);x.fill();x.fillStyle="#52E038";x.beginPath();x.arc(cx+cw/2,cy+ch/2,8.5,0,7);x.fill()}
+  else if(s.startsWith("PlayStation")){x.fillStyle=s==="PlayStation"?"#C7CCD6":"#171A24";x.beginPath();x.roundRect(cx+2,cy+6,cw-4,ch-12,6);x.fill();x.strokeStyle="#2D6BFF";x.lineWidth=3;x.beginPath();x.arc(cx+cw/2,cy+ch/2,10,0,7);x.stroke()}
+  else if(s==="Game Boy"||s==="Game Boy Color"){x.fillStyle="#D8D9DE";x.beginPath();x.roundRect(cx+18,cy+1,36,ch-2,5);x.fill();x.fillStyle="#7E9448";x.fillRect(cx+23,cy+6,26,16);x.fillStyle="#A62656";x.beginPath();x.arc(cx+45,cy+30,3.2,0,7);x.fill()}
+  else if(s==="Dendy"){x.fillStyle="#F4C430";x.fillRect(cx+21,cy+2,30,10);x.fillStyle="#E3E5EA";x.beginPath();x.roundRect(cx+3,cy+11,cw-6,ch-15,6);x.fill();x.fillStyle="#D9383A";x.fillRect(cx+13,cy+23,11,6);x.fillRect(cx+cw-24,cy+23,11,6)}
+  else if(s==="PC"||s==="Mac"||s.startsWith("PC (")){x.fillStyle="#E4DFD3";x.beginPath();x.roundRect(cx+10,cy+2,cw-20,ch-12,5);x.fill();x.fillStyle="#16325C";x.fillRect(cx+16,cy+7,cw-32,ch-22);x.fillStyle="#CFC9BA";x.fillRect(cx+4,cy+ch-9,cw-8,9)}
+  else{x.fillStyle="#2B3348";x.beginPath();x.roundRect(cx+2,cy+6,cw-4,ch-12,6);x.fill();x.fillStyle="#FF6E5A";x.fillRect(cx+10,cy+19,16,7);x.fillStyle="#8C9DFF";x.fillRect(cx+30,cy+19,28,7)}
   x.restore();
 }
 
@@ -598,7 +609,7 @@ const eraOf=y=>y<1977?0:y<1984?1:y<1990?2:y<1996?3:y<2002?4:y<2013?5:6;
 /* a generated box: the era sets the packaging style, the genre sets the pixel glyph; real box art fades in over it when available */
 function coverHTML(title,year,h,glyph,{tag="div",attrs="",cls="",showYear=true,img=""}={}){
   const ph=h%2?120:38,lw=Math.max(...String(title).split(/[\s\-–:]+/).map(w=>w.length)),k=lw>7?Math.max(.55,7.4/lw).toFixed(2):1;
-  const im=img?`<img class="cimg" src="${esc(img)}" alt="" loading="lazy" decoding="async" onload="if(this.naturalWidth>20)this.parentElement.classList.add('hasimg');else _covErr(this)" onerror="_covErr(this)">`:"";
+  const im=img?`<img class="cimg" src="${esc(img)}" alt="" loading="lazy" decoding="async" onload="_covFit(this)" onerror="_covErr(this)">`:"";
   return `<${tag} class="cv e${eraOf(year||2000)} gl-${glyph} ${cls}" style="--h:${h};--ph:${ph};--k:${k}" ${attrs}>${im}<span class="ct">${esc(title)}</span><i class="gl" aria-hidden="true"></i>${showYear&&year?`<span class="cy">${year}</span>`:""}</${tag}>`}
 const cover=(g,o={})=>coverHTML(g.title,g.year,g.h,glyphOf(g),{img:g.img,...o});
 const coverOfEntry=(e,y,o={})=>{const g=findGameY(e.t,e.y||y);return g?cover(g,o):coverHTML(e.t,y,hueOf(norm(e.t)),"stick",o)};
@@ -1195,32 +1206,37 @@ const HERO_ERAS=[
   {k:"90s",label:"'90s kid",from:1991,to:2001},
   {k:"00s",label:"'00s kid",from:2001,to:2011}
 ];
-function heroYearWindow(){
-  const b=state.heroBirth||hist.birth;
+/* Unified formative years window (Ages 7–15) shared by Hero, Daily Rewind & Lucky Wheel */
+function formativeWindow(d=hist,{birthOverride=null}={}){
+  const b=birthOverride||state.heroBirth||(d&&d.birth)||null;
   if(b&&b>=1940&&b<=NOW-3){
-    const f=Math.max(1978,Math.min(NOW-4,b+7));
-    const t=Math.min(NOW,Math.max(f+8,b+15));
-    return {from:f,to:t,label:`Ages 7–15 (${f}–${t})`};
+    const from=Math.max(1978,Math.min(NOW-4,b+7));
+    const to=Math.min(NOW,Math.max(from+8,b+15));
+    return {from,to,birth:b,ageFrom:from-b,ageTo:to-b,label:`Ages ${from-b}\u2013${to-b} (${from}\u2013${to})`};
   }
-  const ek=state.heroEra||hist.era||"90s";
+  const ek=(d&&d.era)||state.heroEra||"90s";
   const cfg=HERO_ERAS.find(e=>e.k===ek)||HERO_ERAS[1];
-  return {from:cfg.from,to:cfg.to,label:`${cfg.label} · ${cfg.from}–${cfg.to}`};
+  return {from:cfg.from,to:cfg.to,birth:null,ageFrom:null,ageTo:null,eraLabel:cfg.label,label:`${cfg.label} · ${cfg.from}\u2013${cfg.to}`};
 }
+function heroYearWindow(){return formativeWindow(hist)}
+const seriesKeyOf=title=>fold(String(title||"")).toLowerCase().replace(/\s*[:\-–].*$/,"").replace(/\s+(?:ii|iii|iv|v|vi|vii|viii|ix|x|64|2000|\d+)$/,"").replace(/[^a-z0-9]+/g,"");
 function heroWallGames(){
   const {from,to}=heroYearWindow();
-  const cand=G.filter(g=>playable(g)&&g.year>=from&&g.year<=to&&g.year>=1978&&(g.pop>=4||g.inf>=20))
+  const cand=G.filter(g=>playable(g)&&!g.cancelled&&g.year>=from&&g.year<=to&&g.year>=1978&&(g.pop>=4||g.inf>=20))
     .sort((a,b)=>(b.pop*12+Math.min(b.inf,300)/14+(b.img?8:0))-(a.pop*12+Math.min(a.inf,300)/14+(a.img?8:0)));
-  const pool=cand.slice(0,Math.min(cand.length,48));
+  const pool=cand.slice(0,Math.min(cand.length,56));
   if(pool.length<=16)return pool.slice().sort((a,b)=>a.year-b.year);
   const offset=(state.heroShuffle||0)*7;
-  const picked=[],usedGen=new Map();
-  for(let pass=0;pass<2&&picked.length<16;pass++){
+  const picked=[],usedGen=new Map(),usedSeries=new Set();
+  for(let pass=0;pass<3&&picked.length<16;pass++){
     for(let i=0;i<pool.length&&picked.length<16;i++){
       const g=pool[(offset+i)%pool.length];
       if(picked.includes(g))continue;
+      const sk=seriesKeyOf(g.title);
+      if(pass<2&&sk&&usedSeries.has(sk))continue;
       const gk=g.gen[0]??-1,gc=usedGen.get(gk)||0;
       if(pass===0&&gc>=3)continue;
-      picked.push(g);usedGen.set(gk,gc+1);
+      picked.push(g);usedGen.set(gk,gc+1);if(sk)usedSeries.add(sk);
     }
   }
   return picked.sort((a,b)=>a.year-b.year||a.title.localeCompare(b.title));
@@ -1277,20 +1293,20 @@ function renderStart(m){
     <div class="hero-head">
       <div style="min-width:0;max-width:68ch">
         <h1 class="h1" style="margin-bottom:6px">What worlds raised you growing up?</h1>
-        <p class="lede" style="margin:0">Tap any cover below to build your gaming timeline — <b>1× ✓</b> played, <b>2× ★</b> played a ton, <b>3× ♥</b> all-time favorite.</p>
+        <p class="lede" style="margin:0">Tap any cover to build your gaming timeline.</p>
       </div>
-      <div class="tap-hint" style="margin:0" aria-hidden="true"><span><b>✓</b>1×</span><span><b class="l2">★</b>2×</span><span><b class="l3">♥</b>3×</span></div>
+      <div class="tap-hint" style="margin:0" aria-label="Tap 1 time for played, 2 times for played a ton, 3 times for favorite"><span><b>✓</b>1× played</span><span><b class="l2">★</b>2× a ton</span><span><b class="l3">♥</b>3× favorite</span></div>
     </div>
     <div class="hero-eras" role="group" aria-label="Choose your childhood era">
       ${HERO_ERAS.map(e=>`<button type="button" class="chip" data-act="heroEra" data-era="${e.k}" aria-pressed="${activeEra===e.k}">${e.label}</button>`).join("")}
       <span class="hero-birth"><label for="heroBirthIn">Birth year</label><input id="heroBirthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1984" value="${esc(curBirth)}" autocomplete="off" aria-label="Optional birth year to tune covers to ages 7 to 15"></span>
       <button type="button" class="chip" data-act="heroShuffle" title="Show 16 more games from this window">Shuffle 16</button>
-      <span class="sync" style="margin-left:auto">${esc(win.label)} · hold cover or tap title for info</span>
+      <span class="sync hero-winhint" style="margin-left:auto">${esc(win.label)} · hold cover or tap title for info</span>
     </div>
     <div class="hero-wall" id="heroWall">${wall.map(g=>tileHTML(g,hist,{act:"heroCycle",sub:`${g.year}`})).join("")}</div>
     <div class="hero-bar" id="heroBar">
       <div class="row" style="gap:10px;min-width:0">
-        <span id="heroCount" style="font-size:14px">${pickedN?`<b>${plural(pickedN,"game")}</b> picked — auto-saved on this device`:"Tap a few covers above, or search any game below."}</span>
+        <span id="heroCount" style="font-size:14px">${pickedN?`<b>${plural(pickedN,"game")}</b> picked — auto-saved`:`<span class="muted">0 picked</span>`}</span>
       </div>
       <div class="row" style="gap:8px">
         <a class="btn sm ghost" href="#picks">Browse all eras</a>
@@ -1342,7 +1358,7 @@ function renderStart(m){
 function updateHeroBar(){
   const n=entries(hist).length,bar=$("#heroBar");if(!bar)return;
   const cnt=$("#heroCount");
-  if(cnt)cnt.innerHTML=n?`<b>${plural(n,"game")}</b> picked — auto-saved on this device`:"Tap a few covers above, or search any game below.";
+  if(cnt)cnt.innerHTML=n?`<b>${plural(n,"game")}</b> picked — auto-saved`:`<span class="muted">0 picked</span>`;
   const cta=bar.querySelector("a.btn.sm.primary, a[href='#tree']");
   if(cta){
     if(n){cta.href="#timeline";cta.className="btn sm primary";cta.textContent=`Open my timeline (${n}) ▸`}
@@ -1554,7 +1570,7 @@ function updatePickBar(){
 function refreshTile(btn,g){const tile=btn.closest(".tile");if(!tile)return;const lv=levelOf(hist,g);
   tile.classList.remove("lv1","lv2","lv3");if(lv)tile.classList.add("lv"+lv);
   const old=btn.querySelector(".lvb");if(old)old.remove();
-  if(lv)btn.insertAdjacentHTML("beforeend",`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`);
+  if(lv)btn.insertAdjacentHTML("beforeend",`<span class="lvb pop${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`);
   btn.setAttribute("aria-label",`${g.title}, ${lv?LV[lv].label:"not played"}`)}
 
 /* ---------- my timeline ---------- */
@@ -1572,7 +1588,7 @@ function lifeStrip(d,{mine=true,workedOnly=false}={}){
   const minPlayed=Math.min(...ys),from=minPlayed,to=workedOnly?Math.max(...ys):(mine?NOW:Math.max(...ys));
   let h=(mine&&!workedOnly&&d.birth&&minPlayed>d.birth)?`<div class="ygap" data-yrow="${d.birth}" style="padding-block:6px"><b class="mono">${d.birth===minPlayed-1?d.birth:`${d.birth}–${minPlayed-1}`}</b><button class="link" data-act="year" data-y="${Math.min(minPlayed-1,d.birth+6)}">+ Add earlier childhood games (${d.birth===minPlayed-1?d.birth:`${d.birth}–${minPlayed-1}`})</button></div>`:"";
   let stage="",gapFrom=null;
-  const flushGap=y=>{if(gapFrom!=null){if(!workedOnly){const a=gapFrom,b=y-1;h+=`<div class="ygap" data-yrow="${a}"><b>${a===b?a:a+"–"+b}</b><span>Nothing yet</span>${mine?`<button class="link" data-act="year" data-y="${a}">Add or drop games into ${a===b?a:a+"–"+b}</button>`:""}</div>`}gapFrom=null}};
+  const flushGap=y=>{if(gapFrom!=null){if(!workedOnly){const a=gapFrom,b=y-1;const lbl=a===b?String(a):`${a}\u2013${b}`;h+=`<div class="ygap" data-yrow="${a}"><b>${lbl}</b>${mine?`<button class="link" data-act="year" data-y="${a}">+ ${lbl}</button>`:""}</div>`}gapFrom=null}};
   for(let y=from;y<=to;y++){
     const age=d.birth?y-d.birth:0,st=(workedOnly||!d.birth)?`${Math.floor(y/10)*10}s`:lifeStage(age);
     const xs=(byY[y]||[]).sort((a,b)=>(!!b.e.wk-!!a.e.wk)||b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
@@ -1711,38 +1727,74 @@ const MECH_MAP={
 const COZY_IDS=new Set(["stardew-valley","animal-crossing","animal-crossing-new-horizons","harvest-moon","the-sims","the-sims-2","nintendogs","spiritfarer","unpacking","a-short-hike","dorfromantik","slime-rancher","dave-the-diver","dredge","journey","minecraft","katamari-damacy","powerwash-simulator","abzu","gris"]);
 const RITUAL_IDS=new Set(["tetris","minesweeper","microsoft-solitaire","candy-crush-saga","threes","2048","balatro","slay-the-spire","vampire-survivors","hearthstone","marvel-snap","the-battle-of-polytopia","pok-mon-go","wordle","clash-royale","clash-of-clans","brawl-stars","bejeweled","brain-age","mini-metro","plants-vs-zombies","tetris-99","flappy-bird","angry-birds","fruit-ninja","cut-the-rope"]);
 const CHILDHOOD_COMBOS=[
-  {k:"splitscreen",name:"4-Player Split-Screen Veteran",note:"No Oddjob, blue-shell diplomacy, and taped cardboard dividers.",req:["goldeneye-007"],any:["mario-kart-64","super-mario-kart","super-smash-bros-melee","halo-combat-evolved"]},
-  {k:"lanparty",name:"CRT LAN-Party Hauler",note:"Lugging a 25-kg monitor up stairs for de_dust2 and midnight pizza.",req:["counter-strike"],any:["half-life","quake","starcraft","battlefield-1942","team-fortress-classic"]},
-  {k:"floppy",name:"Floppy-Swap Survivor",note:"Insert Disk 4 of 11. Amiga drive clicks etched permanently in memory.",any2:["lemmings","the-secret-of-monkey-island","sensible-soccer","pinball-dreams","speedball-2","defender-of-the-crown","another-world","turrican-ii","cannon-fodder"]},
-  {k:"cartblower",name:"Cartridge-Blower Class of '88",note:"Blow on the pins, wiggle twice, hold Reset while powering off.",req:["super-mario-bros"],any:["duck-hunt","contra","mega-man-2","castlevania","metroid","super-mario-bros-3"]},
-  {k:"jrpgtears",name:"90s JRPG Heartbreak Club",note:"Still gets goosebumps from a single 16-bit piano or flute leitmotif.",any2:["chrono-trigger","final-fantasy-vi","final-fantasy-vii","earthbound","secret-of-mana","final-fantasy-ix","xenogears"]},
-  {k:"godmayor",name:"2 A.M. God-View Mayor",note:"Reticulating splines and 'just one more turn' until the birds chirp.",any2:["simcity-2000","rollercoaster-tycoon","civilization","civilization-ii","civilization-iv","theme-hospital","age-of-empires-ii","heroes-of-might-and-magic-iii"]},
-  {k:"shareware",name:"Shareware Floppy Smuggler",note:"Installed Episode 1 from a magazine cover disk onto the family 486.",req:["doom"],any:["wolfenstein-3d","quake","duke-nukem-3d","commander-keen","jazz-jackrabbit"]},
-  {k:"backseatgb",name:"Backseat Streetlight Commuter",note:"Tilting the olive-green Game Boy screen toward every passing highway lamp.",req:["tetris"],any:["super-mario-land","the-legend-of-zelda-link-s-awakening","metroid-ii-return-of-samus","kirby-s-dream-land"],sysAny:["Game Boy","Game Boy Color"]},
-  {k:"ps1case",name:"PS1 Jewel-Case Detective",note:"Checked the back of the CD case for Meryl's codec frequency.",req:["metal-gear-solid"],any:["resident-evil","resident-evil-2","silent-hill","final-fantasy-vii","castlevania-symphony-of-the-night","gran-turismo"]},
-  {k:"dorm2000s",name:"Early-2000s Dorm Legend",note:"System Link cables down the hallway and Blood Gulch till dawn.",any2:["halo-combat-evolved","grand-theft-auto-san-andreas","grand-theft-auto-vice-city","super-smash-bros-melee","guitar-hero","wii-sports"]},
-  {k:"azeroth",name:"Azeroth & Sanctuary Pilgrim",note:"Stay awhile and listen — then pull aggro in Molten Core.",any2:["world-of-warcraft","diablo","diablo-ii","warcraft-iii","starcraft"]},
-  {k:"voxel",name:"Voxel & Torch Architect",note:"Never dig straight down, and always light up the cave.",any2:["minecraft","terraria","roblox","dwarf-fortress","valheim","subnautica"]},
-  {k:"bonfire",name:"Bonfire Stubbornness Award",note:"Died 47 times, memorized every parry frame, praised the sun.",any2:["dark-souls","elden-ring","bloodborne","sekiro-shadows-die-twice","demon-s-souls","demon-s-souls-2020","dark-souls-iii"]},
-  {k:"cozyturnip",name:"Cozy Turnip & Parsnip Steward",note:"Pays off raccoon mortgages and waters crops before breakfast.",any2:["stardew-valley","animal-crossing","animal-crossing-new-horizons","harvest-moon","dave-the-diver","spiritfarer","dredge"]},
-  {k:"notebook",name:"Scratchpad Detective",note:"Kept real paper notes beside the keyboard to crack the mystery.",any2:["outer-wilds","return-of-the-obra-dinn","tunic","disco-elysium","baba-is-you","myst","blue-prince","animal-well"]},
-  {k:"metroidmap",name:"Backtrack Cartographer",note:"Stared at an unexplored 1% map tile until you found the breakable wall.",any2:["super-metroid","castlevania-symphony-of-the-night","hollow-knight","metroid-prime","ori-and-the-blind-forest","cave-story"]},
-  {k:"onerun",name:"Just-One-More-Run Alchemist",note:"Turned a doomed run into an accidental game-breaking synergy engine.",any2:["hades","slay-the-spire","balatro","spelunky","vampire-survivors","ftl-faster-than-light","inscryption"]},
-  {k:"aperture",name:"Aperture Science Test Subject",note:"Trusted the Companion Cube, doubted the cake, loved the gravity gun.",any2:["portal","portal-2","half-life-2","left-4-dead","left-4-dead-2","team-fortress-2"]},
-  {k:"yellowcart",name:"9999-in-1 Yellow Cart Alumni",note:"Defended the eagle base in Tanki on a Saturday morning CRT.",req:["battle-city"],any:["contra","chip-n-dale-rescue-rangers","darkwing-duck","ducktales","adventure-island"],sysAny:["Dendy","Subor"]},
-  {k:"quarter",name:"Quarter-on-the-Bezel Challenger",note:"Learned quarter-circle-forward before long division.",any2:["street-fighter-ii","mortal-kombat","tekken","tekken-3","virtua-fighter","soulcalibur","nba-jam","pac-man"]},
-  {k:"punkcombo",name:"Punk-Soundtrack Combo Chaser",note:"One guitar riff instantly teleports you back to the Warehouse.",any2:["ssx-tricky","burnout-3-takedown","wipeout","wipeout-2097","crazy-taxi","jet-set-radio","mirrors-edge"]},
-  {k:"squadcomms",name:"Squad-Comms Field Medic",note:"Compass bearings at 240°, scarce bandages, unforgettable emergent stories.",any2:["dayz","pubg","hell-let-loose","battlefield-1942","arma-2","tarkov","project-reality"]},
-  {k:"poolladder",name:"Benevolent (Mostly) Pool Architect",note:"Built dream mansions, bustling hospitals, and suspiciously doorless rooms.",any2:["the-sims","the-sims-2","theme-hospital","theme-park","simcity","rollercoaster-tycoon"]},
-  {k:"rubberchicken",name:"Point-and-Click Pixel Hunter",note:"Combined a rubber chicken with a pulley on every hotspot in sight.",any2:["the-secret-of-monkey-island","grim-fandango","maniac-mansion","day-of-the-tentacle","myst","broken-sword-the-shadow-of-the-templars"]},
-  {k:"campfire",name:"Campfire Party Therapist",note:"Quick-saved before every dialogue wheel to keep the whole crew alive.",any2:["mass-effect","mass-effect-2","the-witcher-3-wild-hunt","star-wars-knights-of-the-old-republic","planescape-torment","dragon-age-origins","red-dead-redemption-2"]},
-  {k:"zenclimber",name:"Thousand-Death Zen Climber",note:"Wore out the jump button and wore the death counter with pride.",any2:["celeste","super-meat-boy","cuphead","ghosts-n-goblins","battletoads","ninja-gaiden"]}
+  {"k":"splitscreen","name":"4-Player Split-Screen Veteran","note":"No Oddjob, blue-shell diplomacy, and taped cardboard dividers.","req":["goldeneye-007"],"any":["mario-kart-64","super-mario-kart","super-smash-bros-melee","halo-combat-evolved","perfect-dark","mario-party"]},
+  {"k":"lanparty","name":"CRT LAN-Party Hauler","note":"Lugging a 25-kg monitor up stairs for de_dust2 and midnight pizza.","any2":["counter-strike","counter-strike-source","half-life","quake","quake-iii-arena","unreal-tournament","starcraft","battlefield-1942","team-fortress-classic","warcraft-iii"]},
+  {"k":"floppy","name":"Floppy-Swap Survivor","note":"Insert Disk 4 of 11. Amiga drive clicks etched permanently in memory.","any2":["lemmings","the-secret-of-monkey-island","sensible-soccer","sensible-world-of-soccer","pinball-dreams","speedball-2","defender-of-the-crown","another-world","turrican-ii","cannon-fodder"],"sys3":["Amiga","Atari ST"]},
+  {"k":"cartblower","name":"Cartridge-Blower Class of '88","note":"Blow on the pins, wiggle twice, hold Reset while powering off.","any2":["super-mario-bros","super-mario-bros-2","super-mario-bros-3","duck-hunt","contra","mega-man-2","mega-man-3","castlevania","metroid","zelda","punch-out","excitebike","tetris"],"sys3":["NES"]},
+  {"k":"jrpgtears","name":"90s JRPG Heartbreak Club","note":"Still gets goosebumps from a single 16-bit piano or flute leitmotif.","any2":["chrono-trigger","final-fantasy-vi","final-fantasy-vii","final-fantasy-viii","final-fantasy-ix","final-fantasy-x","earthbound","secret-of-mana","xenogears","suikoden-ii","dragon-quest-viii-journey-of-the-cursed-king","persona-4","persona-5"]},
+  {"k":"godmayor","name":"2 A.M. God-View Mayor","note":"Reticulating splines and 'just one more turn' until the birds chirp.","any2":["simcity","simcity-2000","simcity-4","rollercoaster-tycoon","rollercoaster-tycoon-2","civilization","civilization-ii","civilization-iv","civilization-v","civilization-vi","theme-hospital","age-of-empires-ii","heroes-of-might-and-magic-iii","cities-skylines"]},
+  {"k":"shareware","name":"Shareware Floppy Smuggler","note":"Installed Episode 1 from a magazine cover disk onto the family 486.","any2":["doom","doom-ii","wolfenstein-3d","quake","duke-nukem-3d","commander-keen","jazz-jackrabbit","heretic"]},
+  {"k":"backseatgb","name":"Backseat Streetlight Commuter","note":"Tilting the olive-green Game Boy screen toward every passing highway lamp.","any2":["tetris","super-mario-land","super-mario-land-2-6-golden-coins","the-legend-of-zelda-link-s-awakening","metroid-ii-return-of-samus","kirby-s-dream-land","pok-mon-red-and-green","pok-mon-gold-and-silver"],"sys3":["Game Boy","Game Boy Color"]},
+  {"k":"ps1case","name":"PS1 Jewel-Case Detective","note":"Checked the back of the CD case for Meryl's codec frequency.","any2":["metal-gear-solid","resident-evil","resident-evil-2","silent-hill","final-fantasy-vii","castlevania-symphony-of-the-night","gran-turismo","crash-bandicoot","spyro-the-dragon","tekken-3","tomb-raider"],"sys3":["PlayStation"]},
+  {"k":"dorm2000s","name":"Early-2000s Dorm Legend","note":"System Link cables down the hallway and Blood Gulch till dawn.","any2":["halo-combat-evolved","halo-2","halo-3","grand-theft-auto-vice-city","grand-theft-auto-san-andreas","super-smash-bros-melee","guitar-hero","wii-sports","mario-kart-double-dash","ssx-tricky"]},
+  {"k":"azeroth","name":"Azeroth & Sanctuary Pilgrim","note":"Stay awhile and listen — then pull aggro in Molten Core.","any2":["world-of-warcraft","diablo","diablo-ii","diablo-iii","warcraft-iii","starcraft","starcraft-ii-wings-of-liberty","hearthstone","overwatch"]},
+  {"k":"voxel","name":"Voxel & Torch Architect","note":"Never dig straight down, and always light up the cave.","any2":["minecraft","terraria","roblox","dwarf-fortress","valheim","subnautica","dont-starve","rust","ark-survival-evolved"]},
+  {"k":"bonfire","name":"Bonfire Stubbornness Award","note":"Died 47 times, memorized every parry frame, praised the sun.","any2":["dark-souls","dark-souls-ii","dark-souls-iii","elden-ring","bloodborne","sekiro-shadows-die-twice","demon-s-souls","demon-s-souls-2020","lies-of-p","nioh"]},
+  {"k":"cozyturnip","name":"Cozy Turnip & Parsnip Steward","note":"Pays off raccoon mortgages and waters crops before breakfast.","any2":["stardew-valley","animal-crossing","animal-crossing-wild-world","animal-crossing-new-leaf","animal-crossing-new-horizons","harvest-moon","dave-the-diver","spiritfarer","dredge","a-short-hike","unpacking","dorfromantik"]},
+  {"k":"notebook","name":"Scratchpad Detective","note":"Kept real paper notes beside the keyboard to crack the mystery.","any2":["outer-wilds","return-of-the-obra-dinn","tunic","disco-elysium","baba-is-you","myst","blue-prince","animal-well","the-witness","fez"]},
+  {"k":"metroidmap","name":"Backtrack Cartographer","note":"Stared at an unexplored 1% map tile until you found the breakable wall.","any2":["super-metroid","castlevania-symphony-of-the-night","hollow-knight","metroid-prime","metroid-dread","ori-and-the-blind-forest","ori-and-the-will-of-the-wisps","cave-story","dead-cells","blasphemous"]},
+  {"k":"onerun","name":"Just-One-More-Run Alchemist","note":"Turned a doomed run into an accidental game-breaking synergy engine.","any2":["hades","hades-ii","slay-the-spire","balatro","spelunky","vampire-survivors","ftl-faster-than-light","inscryption","the-binding-of-isaac","into-the-breach","risk-of-rain-2","dead-cells"]},
+  {"k":"aperture","name":"Aperture Science Test Subject","note":"Trusted the Companion Cube, doubted the cake, loved the gravity gun.","any2":["portal","portal-2","half-life","half-life-2","left-4-dead","left-4-dead-2","team-fortress-2","counter-strike","garrys-mod"]},
+  {"k":"yellowcart","name":"9999-in-1 Yellow Cart Alumni","note":"Defended the eagle base in Tanki on a Saturday morning CRT.","req":["battle-city"],"any":["contra","chip-n-dale-rescue-rangers","darkwing-duck","ducktales","adventure-island","super-mario-bros"],"sysAny":["Dendy","Subor"]},
+  {"k":"quarter","name":"Quarter-on-the-Bezel Challenger","note":"Learned quarter-circle-forward before long division.","any2":["street-fighter-ii","street-fighter-iv","street-fighter-6","mortal-kombat","mortal-kombat-ii","mortal-kombat-11","tekken","tekken-3","tekken-5","tekken-7","virtua-fighter","soulcalibur","nba-jam","marvel-vs-capcom-2-new-age-of-heroes","super-smash-bros-ultimate"]},
+  {"k":"punkcombo","name":"Punk-Soundtrack Combo Chaser","note":"One guitar riff instantly teleports you back to the Warehouse.","any2":["tony-hawk-s-pro-skater","tony-hawk-s-pro-skater-2","tony-hawk-s-pro-skater-3","tony-hawks-pro-skater-4","tony-hawks-underground","ssx-tricky","burnout-3-takedown","burnout-paradise","wipeout","wipeout-2097","crazy-taxi","jet-set-radio","mirrors-edge","skate-3"]},
+  {"k":"squadcomms","name":"Squad-Comms Field Medic","note":"Compass bearings at 240°, scarce bandages, unforgettable emergent stories.","any2":["dayz","dayz-standalone","dayz-badlands","pubg","hell-let-loose","hell-let-loose-vietnam","battlefield-1942","battlefield-2","battlefield-bad-company-2","battlefield-3","battlefield-1","arma-2","arma-3","tarkov","project-reality","squad"]},
+  {"k":"poolladder","name":"Benevolent (Mostly) Pool Architect","note":"Built dream mansions, bustling hospitals, and suspiciously doorless rooms.","any2":["the-sims","the-sims-2","the-sims-3","the-sims-4","theme-hospital","theme-park","simcity","rollercoaster-tycoon","cities-skylines","zoo-tycoon","planet-coaster"]},
+  {"k":"rubberchicken","name":"Point-and-Click Pixel Hunter","note":"Combined a rubber chicken with a pulley on every hotspot in sight.","any2":["the-secret-of-monkey-island","monkey-island-2-lechuck-s-revenge","grim-fandango","maniac-mansion","day-of-the-tentacle","myst","broken-sword-the-shadow-of-the-templars","broken-sword","full-throttle","sam-and-max-hit-the-road","kings-quest"]},
+  {"k":"campfire","name":"Campfire Party Therapist","note":"Quick-saved before every dialogue wheel to keep the whole crew alive.","any2":["mass-effect","mass-effect-2","mass-effect-3","the-witcher-3-wild-hunt","star-wars-knights-of-the-old-republic","planescape-torment","dragon-age-origins","red-dead-redemption-2","baldur-s-gate-3","cyberpunk-2077","the-last-of-us"]},
+  {"k":"zenclimber","name":"Thousand-Death Zen Climber","note":"Wore out the jump button and wore the death counter with pride.","any2":["celeste","super-meat-boy","cuphead","ghosts-n-goblins","battletoads","ninja-gaiden","geometry-dash","getting-over-it-with-bennett-foddy"]},
+  {"k":"c64tape","name":"LOAD \"*\",8,1 Bedroom Coder","note":"Waited six minutes of cassette screech — and froze if anyone walked past the desk.","any2":["california-games","international-karate","the-great-giana-sisters","elite","boulder-dash","impossible-mission","wizball","the-last-ninja","last-ninja-2","manic-miner","jet-set-willy","summer-games"],"sys3":["Commodore 64","ZX Spectrum"]},
+  {"k":"nordicdemo","name":"Nordic Bedroom Demoscene","note":"Amiga 500, 4-channel Paula trackers, and Swedish/Finnish pixel craft before dawn.","any2":["pinball-dreams","max-payne","battlefield-1942","minecraft","the-battle-of-polytopia","valheim","hotline-miami","baba-is-you","angry-birds","clash-of-clans","alan-wake-2","helldivers-2","it-takes-two","mirrors-edge"]},
+  {"k":"blastproc","name":"Blast-Processing Playground Loyalist","note":"Swore Sonic was faster than Mario and defended the 3-button pad at recess.","any2":["sonic-the-hedgehog","sonic-the-hedgehog-2","sonic-the-hedgehog-3","streets-of-rage-2","gunstar-heroes","phantasy-star-iv-the-end-of-the-millennium","golden-axe","altered-beast","shinobi","earthworm-jim","mortal-kombat"],"sys3":["Mega Drive / Genesis"]},
+  {"k":"mode7snes","name":"Mode-7 Saturday Morning","note":"Rented cartridges on Friday night and tried to beat them before Blockbuster closed Sunday.","any2":["super-mario-world","the-legend-of-zelda-a-link-to-the-past","donkey-kong-country","super-mario-world-2-yoshi-s-island","f-zero","star-fox","super-mario-kart","super-metroid","chrono-trigger","super-mario-all-stars","street-fighter-ii"],"sys3":["SNES"]},
+  {"k":"n64fog","name":"Three-Prong Controller Acrobat","note":"Mastered the Z-trigger, dusted the Rumble Pak, and never fell off Rainbow Road.","any2":["super-mario-64","the-legend-of-zelda-ocarina-of-time","the-legend-of-zelda-majora-s-mask","banjo-kazooie","star-fox-64","diddy-kong-racing","goldeneye-007","mario-kart-64","super-smash-bros"],"sys3":["Nintendo 64"]},
+  {"k":"modderlab","name":"Custom-Map & Mod Folder Tinkerer","note":"Spent more hours unpacking .zip mods and custom servers than playing vanilla campaigns.","any2":["garrys-mod","desert-combat","natural-selection","defense-of-the-ancients","dayz","counter-strike","the-elder-scrolls-v-skyrim","doom","warcraft-iii","minecraft","factorio","rimworld"]},
+  {"k":"siblingcoop","name":"Sibling Couch Co-Op Survivor","note":"Screamed 'PASS THE ONIONS!' and swore the second controller wasn't unplugged.","any2":["overcooked","overcooked-2","it-takes-two","castle-crashers","littlebigplanet","littlebigplanet-2","mario-party","portal-2","streets-of-rage-2","contra","battletoads","chip-n-dale-rescue-rangers","new-super-mario-bros-wii","lego-star-wars-the-complete-saga"]},
+  {"k":"roadtriphandheld","name":"AA-Battery Road-Trip Tactician","note":"Brought a pocketful of spare batteries and traded link-cable monsters across the back seat.","any2":["pok-mon-red-and-green","pokemon-yellow","pok-mon-gold-and-silver","pokemon-crystal","pokemon-ruby-and-sapphire","pokemon-heartgold-and-soulsilver","pokemon-black-and-white","pokemon-sun-and-moon","advance-wars","golden-sun","fire-emblem","mario-kart-ds","the-legend-of-zelda-the-minish-cap"],"sys3":["Game Boy Advance","Nintendo DS","Nintendo 3DS"]},
+  {"k":"nokiathumb","name":"Nokia 3310 & One-Thumb Commuter","note":"Played Snake under a school desk and now sneaks 30-turn matches on the train.","any2":["snake","snake-ii","the-battle-of-polytopia","angry-birds","fruit-ninja","cut-the-rope","monument-valley","threes","2048","flappy-bird","wordle","subway-surfers","temple-run","doodle-jump","jetpack-joyride"]},
+  {"k":"supercelltap","name":"Bus-Stop Pocket Empire","note":"Timed shields, clan wars, and crop harvests around lunch breaks for years.","any2":["clash-of-clans","clash-royale","brawl-stars","hay-day","boom-beach","candy-crush-saga","pok-mon-go","plants-vs-zombies","the-battle-of-polytopia","genshin-impact","hearthstone","marvel-snap"]},
+  {"k":"windows95break","name":"Windows 95 Coffee-Break Pro","note":"Learned right-click precision from Minesweeper and spacebar nudges from Space Cadet.","any2":["minesweeper","microsoft-solitaire","3d-pinball-for-windows-space-cadet","skifree","chips-challenge","bejeweled","peggle","plants-vs-zombies","zuma"]},
+  {"k":"goldenarcade","name":"Coin-Op Cabinet High-Score Ghost","note":"Still hears the attract-mode bleeps and smells pizza parlor carpet on cue.","any2":["space-invaders","galaga","donkey-kong","frogger","centipede","asteroids","defender","joust","dig-dug","ms-pac-man","pac-man","pong","breakout","q-bert","tempest"],"sys3":["Arcade","Atari 2600"]},
+  {"k":"ps2monolith","name":"PS2 Blue-Light Night Owl","note":"Stared at the floating memory-card towers praying the scratched disc would boot.","any2":["shadow-colossus","ico","okami","katamari-damacy","god-of-war","god-of-war-ii","devil-may-cry","kingdom-hearts","jak-and-daxter","ratchet-clank","sly-cooper-and-the-thievius-raccoonus","gta3","grand-theft-auto-vice-city","grand-theft-auto-san-andreas","metal-gear-solid-2","metal-gear-solid-3","final-fantasy-x"],"sys3":["PlayStation 2"]},
+  {"k":"lobby360","name":"2007 Headset Lobby Graduate","note":"Still remembers the exact map veto countdown and red-ring towel rituals.","any2":["call-of-duty-4-modern-warfare","call-of-duty-world-at-war","call-of-duty-modern-warfare-2","call-of-duty-black-ops","call-of-duty-black-ops-ii","halo-3","halo-reach","gears-of-war","gears-of-war-2","left-4-dead","bioshock","borderlands","grand-theft-auto-iv"],"sys3":["Xbox 360"]},
+  {"k":"plasticguitar","name":"Living-Room Plastic Rock Star","note":"Five colored fret buttons, sore wrists on Through the Fire and Flames, zero regrets.","any2":["guitar-hero","guitar-hero-ii","guitar-hero-iii","rock-band","dance-dance-revolution","just-dance","just-dance-2","just-dance-3","just-dance-4","parappa-the-rapper","beat-saber","elite-beat-agents","taiko-no-tatsujin","singstar","wii-sports"]},
+  {"k":"flashlighthorror","name":"Zero-Ammo Flashlight Holder","note":"Checked every dark corner twice, saved ink ribbons, and jumped at every pipe rattle.","any2":["resident-evil","resident-evil-2","resident-evil-4","resident-evil-7-biohazard","resident-evil-village","silent-hill","silent-hill-2","dead-space","dead-space-2","amnesia-the-dark-descent","alien-isolation","outlast","phasmophobia","alan-wake-2","five-nights-at-freddys"]},
+  {"k":"ventcrawler","name":"0451 Air-Vent Ghost","note":"Always tries 0451 on the very first keypad and stacks crates just to skip the front door.","any2":["deus-ex","system-shock-2","thief-the-dark-project","dishonored","dishonored-2","bioshock","bioshock-infinite","prey-2017","hitman","hitman-2","tom-clancys-splinter-cell","tom-clancys-splinter-cell-chaos-theory"]},
+  {"k":"factorybelt","name":"Conveyor-Belt Bottleneck Auditor","note":"Planned to fix one iron smelter at 9 P.M. and looked up at sunrise.","any2":["factorio","satisfactory","dyson-sphere-program","rimworld","dwarf-fortress","oxygen-not-included","minecraft","rollercoaster-tycoon"]},
+  {"k":"mapstaring","name":"Spreadsheet & Border-Gore Monarch","note":"Called 400 hours 'still finishing the tutorial' while redrawing 15th-century Europe.","any2":["europa-universalis-iv","crusader-kings-ii","crusader-kings-iii","hearts-of-iron-iv","stellaris","total-war-shogun-2","rome-total-war","sid-meiers-alpha-centauri","civilization-v","civilization-vi"]},
+  {"k":"xcom95","name":"95%-Shot-Missed Tactician","note":"Named every squad member after real friends — and silently mourned each permadeath.","any2":["ufo-enemy-unknown","xcom-enemy-unknown","xcom-2","into-the-breach","fire-emblem","fire-emblem-three-houses","advance-wars","heroes-of-might-and-magic-iii","final-fantasy-tactics"]},
+  {"k":"footballpitch","name":"Late-Night Digital Manager","note":"Signed an obscure 17-year-old wonderkid and celebrated a 90th-minute winner like the real cup.","any2":["sensible-world-of-soccer","sensible-soccer","fifa-road-to-world-cup-98","fifa-12","fifa-14","fifa-17","fifa-18","fifa-19","fifa-20","fifa-21","fifa-22","fifa-23","ea-sports-fc-24","pro-evolution-soccer-6","football-manager-2007","championship-manager-0102","rocket-league"]},
+  {"k":"apexracer","name":"Apex-Clipping Time-Trialist","note":"Shaved 0.04 seconds off a ghost car at 1 A.M. just to climb one leaderboard spot.","any2":["gran-turismo","gran-turismo-2","gran-turismo-3","gran-turismo-4","gran-turismo-5","forza-horizon-3","forza-horizon-4","forza-horizon-5","need-for-speed-underground","need-for-speed-most-wanted","mario-kart-8","mario-kart-8-deluxe","mario-kart-wii","daytona-usa","out-run","trackmania-nations","burnout-3-takedown"]},
+  {"k":"openhorizon","name":"Distracted Side-Quest Wanderer","note":"Swore to finish the main quest tonight — spent four hours chasing glowing hills instead.","any2":["the-legend-of-zelda-breath-of-the-wild","the-legend-of-zelda-tears-of-the-kingdom","the-elder-scrolls-iii-morrowind","the-elder-scrolls-iv-oblivion","the-elder-scrolls-v-skyrim","the-witcher-3-wild-hunt","red-dead-redemption","red-dead-redemption-2","cyberpunk-2077","ghost-of-tsushima","horizon-zero-dawn","grand-theft-auto-v","assassin-s-creed-ii","marvel-s-spider-man"]},
+  {"k":"spacesim","name":"Star-Chart Cockpit Pilot","note":"Balanced shield power to forward deflectors and plotted orbital burns by hand.","any2":["elite","elite-dangerous","x-wing","tie-fighter","wing-commander","freelancer","kerbal-space-program","no-mans-sky","eve-online","homeworld","star-fox-64","ftl-faster-than-light"]},
+  {"k":"indiefeelings","name":"2 A.M. Indie Credits Weeper","note":"Finished a four-hour indie game in one sitting and stared silently at the end scroll.","any2":["undertale","journey","life-is-strange","to-the-moon","firewatch","what-remains-of-edith-finch","night-in-the-woods","kentucky-route-zero","gris","spiritfarer","outer-wilds","celeste"]},
+  {"k":"esportsqueue","name":"One-More-Ranked-Match Believer","note":"Swore 'can't end on a loss' at midnight — and couldn't end on a win streak either.","any2":["league-of-legends","dota-2","overwatch","valorant","apex-legends","fortnite-br","rocket-league","counter-strike-global-offensive","counter-strike-2","starcraft","tom-clancy-s-rainbow-six-siege","pubg"]},
+  {"k":"lootgoblin","name":"Glowing-Beam Loot Hoarder","note":"Spent twenty minutes comparing +1.4% crit rolls before dismantling half the backpack.","any2":["diablo-ii","diablo-iii","diablo-iv","path-of-exile","borderlands-2","destiny","destiny-2","warframe","monster-hunter-world","monster-hunter-rise","world-of-warcraft"]},
+  {"k":"crpgmanual","name":"Spiral-Bound RPG Manual Reader","note":"Read the spell tables on the bus ride home before even reaching character creation.","any2":["baldur-s-gate","baldur-s-gate-ii","baldur-s-gate-3","planescape-torment","fallout","fallout-2","fallout-3","fallout-new-vegas","disco-elysium","dragon-age-origins","divinity-original-sin-ii"]},
+  {"k":"mmoguild","name":"Early-MMO Guild Archivist","note":"Still remembers their first server's trade-chat regulars and midnight boss timers.","any2":["ultima-online","everquest","runescape","world-of-warcraft","eve-online","guild-wars","star-wars-galaxies","city-of-heroes","maplestory","habbo-hotel","club-penguin"]},
+  {"k":"partychaos","name":"Voice-Chat Trust Breaker","note":"Accused their best friend in Emergency Meeting and laughed until nobody could breathe.","any2":["among-us","lethal-company","helldivers-2","fall-guys","the-jackbox-party-pack","goose-goose-duck","mario-party","wii-sports","wii-sports-resort","super-smash-bros-ultimate","mario-kart-8-deluxe"]},
+  {"k":"vrpioneer","name":"Living-Room Boundary Puncher","note":"Accidentally clipped a ceiling lamp trying to flick a wrist-grab in VR.","any2":["half-life-alyx","beat-saber","superhot","walkabout-mini-golf","the-walking-dead-saints-and-sinners","echo-vr"]},
+  {"k":"ugcbuilder","name":"Player-Made World Hopper","note":"Lived inside community servers, islands, and roleplay cities built by other players.","any2":["roblox","minecraft","garrys-mod","fortnite-creative-uefn","hypixel-skyblock","fivem-gta-rp","adopt-me","brookhaven-rp","dreams","super-mario-maker","littlebigplanet"]},
+  {"k":"dsstylus","name":"Stylus-Tapping Dual-Screen Era","note":"Blew into the DS mic, trained their brain age, and lost the plastic stylus twice.","any2":["brain-age","nintendogs","mario-kart-ds","phoenix-wright-ace-attorney","professor-layton-and-the-curious-village","elite-beat-agents","animal-crossing-wild-world","new-super-mario-bros","the-legend-of-zelda-phantom-hourglass"],"sys3":["Nintendo DS"]},
+  {"k":"cozypowerwash","name":"Zen Chore & Oddly Satisfying Club","note":"Relaxed after work by tidying virtual rooms, washing vans, and arranging puzzle tiles.","any2":["powerwash-simulator","unpacking","dorfromantik","a-short-hike","stardew-valley","animal-crossing-new-horizons","mini-metro","tetris-effect","katamari-damacy","animal-crossing"]}
 ];
 function unlockedCombos(d){
   const es=entries(d).filter(x=>x.g);
   const idSet=new Set(es.map(x=>x.g.id));
   const ownSet=new Set([...(d.owned||[]),...es.flatMap(x=>sysListOf(x.e,d))]);
-  const out=[];
+  const sysCounts=new Map();
+  for(const x of es){for(const s of new Set(sysListOf(x.e,d)))sysCounts.set(s,(sysCounts.get(s)||0)+1)}
+  const exact=[],bySys=[];
   for(const cb of CHILDHOOD_COMBOS){
     let ok=false;
     if(cb.req){
@@ -1753,9 +1805,10 @@ function unlockedCombos(d){
       let hits=0;for(const id of cb.any2)if(idSet.has(id))hits++;
       ok=hits>=2;
     }
-    if(ok)out.push(cb);
+    if(ok){exact.push(cb);continue}
+    if(cb.sys3&&cb.sys3.some(s=>(sysCounts.get(s)||0)>=3))bySys.push(cb);
   }
-  return out;
+  return [...exact,...bySys];
 }
 function gamerPersonaOf(d){
   const es=entries(d).filter(x=>x.g);if(es.length<4)return null;
@@ -1850,12 +1903,20 @@ function storeLinksHTML(g){
   const stm=`<a class="storetag" href="https://store.steampowered.com/search/?term=${q}" target="_blank" rel="noopener" title="Search on Steam">Steam ↗</a>`;
   return `<div class="storelinks">${gog}${stm}</div>`;
 }
+function matchTop10Entry(favs,k){
+  return favs.find(f=>f.g&&(f.g.n===k||f.g.id===k||norm1(f.g.title)===k))||null;
+}
 function pinnedFavoritesOf(d,max=4){
   const es=entries(d);
-  const favs=es.filter(x=>x.lv===3).sort((a,b)=>a.y-b.y);
-  const t10=(d.top10||[]).map(k=>favs.find(f=>f.g&&(f.g.n===k||norm1(f.g.title)===k))).filter(Boolean);
-  const base=t10.length?t10:favs.length?favs:es.slice().sort((a,b)=>b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
-  return base.slice(0,max);
+  const favs=es.filter(x=>x.lv===3).sort((a,b)=>((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0)||((b.g&&b.g.inf)||0)-((a.g&&a.g.inf)||0)||a.y-b.y);
+  const t10=(d.top10||[]).map(k=>matchTop10Entry(favs,k)).filter(Boolean);
+  const seen=new Set(t10);
+  const backfilled=[...t10,...favs.filter(f=>!seen.has(f))];
+  if(backfilled.length<max){
+    const rest=es.filter(x=>!seen.has(x)&&x.lv<3).sort((a,b)=>b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
+    backfilled.push(...rest);
+  }
+  return backfilled.slice(0,max);
 }
 function renderTimeline(m){
   const d=hist,st=timelineStats(d),mk=makerLegacyOf(d);
@@ -1931,10 +1992,12 @@ function renderTimeline(m){
 }
 function favSection(d,mine){
   const favs=entries(d).filter(x=>x.lv===3).sort((a,b)=>a.y-b.y);if(!favs.length)return "";
-  const t10=(d.top10||[]).map(k=>favs.find(f=>f.g&&(f.g.n===k||norm1(f.g.title)===k))).filter(Boolean);
-  const list=t10.length?t10:favs;
-  return `<section class="wrap sec" id="favSec"><div class="sechead"><div><h2 class="h2">${t10.length?(mine?"My top "+t10.length:"Top "+t10.length):"All-time favorites"}</h2><p class="sub">${t10.length?"Ranked.":plural(favs.length,"favorite")+", in the order you played them."}</p></div>${mine?`<div class="row"><button class="btn sm" data-act="boxPile">Box Pile</button><button class="btn sm" data-act="png" data-kind="favs">♥ Save favorites image</button><button class="btn sm" data-act="top10">${t10.length?"Edit top 10":"Rank a top 10"}</button></div>`:""}</div>
-    <div class="grid">${list.map((x,i)=>{const g=x.g;return `<div class="tile lv3"><button class="art" data-act="${g?"quickLook":"noop"}" data-id="${g?g.id:""}" ${g?`data-lp="${g.id}"`:""}>${coverOfEntry(x.e,x.y)}${t10.length?`<span class="lvb l3">${i+1}</span>`:""}</button><span class="tn">${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>`:esc(x.e.t)}</span><span class="ts">${x.y}${g?" · "+studioBtn(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div></section>`;
+  const t10=(d.top10||[]).map(k=>matchTop10Entry(favs,k)).filter(Boolean);
+  const seen=new Set(t10);
+  const list=t10.length>=4?t10:[...t10,...favs.filter(f=>!seen.has(f))];
+  const showRank=t10.length>=2;
+  return `<section class="wrap sec" id="favSec"><div class="sechead"><div><h2 class="h2">${t10.length>=4?(mine?"My top "+t10.length:"Top "+t10.length):"All-time favorites"}</h2><p class="sub">${t10.length>=4?"Ranked.":plural(favs.length,"favorite")+", in the order you played them."}</p></div>${mine?`<div class="row"><button class="btn sm" data-act="boxPile">Box Pile</button><button class="btn sm" data-act="png" data-kind="favs">♥ Save favorites image</button><button class="btn sm" data-act="top10">${t10.length?"Edit top 10":"Rank a top 10"}</button></div>`:""}</div>
+    <div class="grid">${list.map((x,i)=>{const g=x.g;return `<div class="tile lv3"><button class="art" data-act="${g?"quickLook":"noop"}" data-id="${g?g.id:""}" ${g?`data-lp="${g.id}"`:""}>${coverOfEntry(x.e,x.y)}${showRank&&i<t10.length?`<span class="lvb l3">${i+1}</span>`:""}</button><span class="tn">${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>`:esc(x.e.t)}</span><span class="ts">${x.y}${g?" · "+studioBtn(studio(g)):""}</span>${x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:""}</div>`}).join("")}</div></section>`;
 }
 function specialShelvesSection(d,mine){
   const es=entries(d);if(!es.length)return "";
@@ -2062,6 +2125,7 @@ function formatVariantsSection(){
       <div class="lenscol"><h3 class="h3">Format evolutions &amp; genre variants</h3><p class="sub">Iterated closely on a breakout loop with new pacing, platform reach, or mechanics.</p>${variants.map(pairRow).join("")}</div>
     </div></section>`;
 }
+const treeHeading=title=>`${title} · family tree`;
 function renderFamilyTree(m,focusId,opts={}){
   const myTreePicks=entries(hist).filter(x=>x.g&&x.g.tree).sort((a,b)=>b.lv-a.lv||b.g.inf-a.g.inf).map(x=>x.g).filter((g,i,a)=>a.indexOf(g)===i).slice(0,5);
   const defId=focusId||(state.linId&&byId.has(state.linId)?state.linId:(myTreePicks[0]&&myTreePicks[0].id)||"grand-theft-auto-vi");
@@ -2082,15 +2146,15 @@ function renderFamilyTree(m,focusId,opts={}){
   m.innerHTML=`<section class="wrap" style="padding-block:18px 8px">
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:10px">
       <div style="min-width:0">
-        <p class="eyebrow" style="margin-bottom:3px">Family tree · ${TREE.length.toLocaleString()} games &amp; ${L.length.toLocaleString()} sourced links</p>
-        <h1 class="h1" style="margin:0;font-size:clamp(1.45rem,1.05rem + 2vw,2.2rem)">${esc(g.title)}'s family tree</h1>
+        <p class="eyebrow" style="margin-bottom:3px">Family tree · ${TREE.length.toLocaleString()} connected games · ${L.length.toLocaleString()} sourced links</p>
+        <h1 class="h1" style="margin:0;font-size:clamp(1.45rem,1.05rem + 2vw,2.2rem)">${esc(treeHeading(g.title))}</h1>
       </div>
       <div class="row" style="gap:6px">
         <button type="button" class="btn sm" data-act="luckyWheel">Feeling lucky</button>
         <button type="button" class="btn sm" data-act="map">Big Picture (5 views)</button>
       </div>
     </div>
-    <div class="search" style="margin-bottom:8px"><input class="input" id="linQ" type="search" placeholder="Search ${G.length.toLocaleString()}+ games to trace — e.g. Chrono Trigger, Quake, Stardew Valley, Van Buren…" autocomplete="off" aria-label="Jump family tree to any game"><div class="results" id="linR" hidden></div></div>
+    <div class="search" style="margin-bottom:8px"><input class="input" id="linQ" type="search" placeholder="Search ${TREE.length.toLocaleString()} connected games (or ${G.length.toLocaleString()} catalog titles)…" autocomplete="off" aria-label="Jump family tree to any game"><div class="results" id="linR" hidden></div></div>
     <div class="pickstrip" style="padding-block:2px 6px;gap:5px">
       ${myTreePicks.length?`<span class="sync" style="align-self:center;margin-right:2px">Your games:</span>${myTreePicks.map(x=>`<button type="button" class="chip" style="padding:4px 9px;font-size:12px" data-act="linFocus" data-id="${x.id}" aria-pressed="${x.id===g.id}">♥ ${esc(x.title)}</button>`).join("")}<span class="muted" style="align-self:center">·</span>`:""}
       ${landmarks.filter(x=>!myTreePicks.includes(x)).slice(0,8).map(x=>`<button type="button" class="chip" style="padding:4px 9px;font-size:12px" data-act="linFocus" data-id="${x.id}" aria-pressed="${x.id===g.id}">${esc(x.title)}</button>`).join("")}
@@ -2142,7 +2206,7 @@ function renderFamilyTree(m,focusId,opts={}){
   requestAnimationFrame(()=>{
     const tb=$("#treebox");if(tb){
       if(state.treeKeepScroll!=null){tb.scrollLeft=state.treeKeepScroll;state.treeKeepScroll=null}
-      else{const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx;tb.scrollLeft=Math.max(0,x-tb.clientWidth/2)}}
+      else{const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx,mob=window.innerWidth<=560;tb.scrollLeft=Math.max(0,x-tb.clientWidth*(mob?0.28:0.5))}}
     }
     const mc=$("#mapThumb");if(mc)drawMapThumb(mc);
   });
@@ -2348,7 +2412,7 @@ function vaultGameCardHTML(g,mode){
     <div class="row" style="justify-content:space-between;gap:6px">
       ${mode==="cancelled"?`<span class="vbadge canc">Unreleased · ${g.year}</span>`:`<span class="vbadge sun">Sunsetted · ${g.year}</span>`}
       ${mode==="cancelled"
-        ?(isDevMode()?`<button type="button" class="btn sm ${wk?"craft":"ghost"}" style="padding:3px 9px;font-size:11.5px" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on it ✓":"I worked on this"}</button>`:"")
+        ?(isDevMode()?`<button type="button" class="btn sm vault-wkbtn ${wk?"craft":"ghost"}" style="padding:3px 9px;font-size:11.5px" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}" title="${wk?"Worked on it":"I worked on this"}">🛠 <span class="vwk-lbl">${wk?"Worked on it ✓":"I worked on this"}</span></button>`:"")
         :`<button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}" aria-pressed="${lv>0}">${lv?`${LV[lv].m} ${LV[lv].label}`:"+ Played"}</button>`}
     </div>
     <div class="today" style="grid-template-columns:72px minmax(0,1fr);gap:12px">
@@ -2358,7 +2422,7 @@ function vaultGameCardHTML(g,mode){
         <small class="muted" style="display:block">${flag(g.cc)} ${studioLinks(g.dev||"")}${g.plats.length?` · ${esc(sysOfGame(g).slice(0,3).join(", "))}`:""}</small>
       </div>
     </div>
-    <p style="margin:2px 0;font-size:13px;color:var(--ink2);line-height:1.46">${esc(g.note||"")}</p>
+    <p class="vault-note">${esc(g.note||"")}</p>
     ${downs.length?`<div style="margin-top:auto;padding-top:4px"><span class="sync" style="display:block;margin-bottom:4px">Carried forward into:</span><div class="row" style="gap:5px">${downs.slice(0,4).map(d=>`<button type="button" class="chip" style="padding:2px 8px;font-size:11.5px" data-act="game" data-id="${d.id}">→ ${esc(d.title)} (${d.year})</button>`).join("")}</div></div>`
       :ups.length?`<div style="margin-top:auto;padding-top:4px"><span class="sync" style="display:block;margin-bottom:4px">Built on:</span><div class="row" style="gap:5px">${ups.slice(0,3).map(u=>`<button type="button" class="chip" style="padding:2px 8px;font-size:11.5px" data-act="game" data-id="${u.id}">${esc(u.title)} (${u.year})</button>`).join("")}</div></div>`:""}
     <footer class="row" style="margin-top:${downs.length||ups.length?"6px":"auto"};padding-top:6px;border-top:1px dashed var(--line);justify-content:space-between">
@@ -2398,7 +2462,7 @@ function vaultSectionHTML(){
           <h1 class="h1" style="font-size:clamp(1.45rem,1.05rem + 1.9vw,2.15rem);margin:0 0 6px">Cancelled projects, sunsetted servers &amp; regional hardware</h1>
           <p class="sub" style="margin:0;font-size:14px">Years of craft survive even when a project is cancelled before launch or live servers go dark. Trace the ideas unfinished projects seeded, revisit sunsetted online worlds, and explore parallel regional scenes.</p>
         </div>
-        <div class="row" style="gap:8px">
+        <div class="row vault-hero-acts" style="gap:8px">
           <button type="button" class="btn sm primary wrap" data-act="featureSheet" data-cat="Cancelled / Sunsetted / Lore">Suggest a lost game or story</button>
           ${isDevMode()?`<button type="button" class="btn sm wrap" data-act="makerSheet">🛠 Log unshipped credit</button>`:""}
         </div>
@@ -2412,7 +2476,6 @@ function vaultSectionHTML(){
     </div>
 
     <div id="vCancelled" style="margin-bottom:28px">
-      <div class="sechead"><div><p class="eyebrow">Unshipped labor · Wired into the family tree</p><h2 class="h2">Cancelled before launch, still echoing forward</h2><p class="sub">Open the family tree on projects like <b>Project Titan</b>, <b>Van Buren</b>, <b>Thrill Kill</b>, or <b>Silent Hills</b> to see how ideas from cancelled teams carried into shipped games.</p></div></div>
       <div class="mechgrid">${cancelled.map(g=>vaultGameCardHTML(g,"cancelled")).join("")}</div>
     </div>
 
@@ -2983,68 +3046,134 @@ function loadRootsStore(){
   return {done:raw&&typeof raw.done==="object"?raw.done:{},streak:+(raw&&raw.streak)||0,bestStreak:+(raw&&raw.bestStreak)||0,lastDay:raw&&raw.lastDay!=null?+raw.lastDay:null};
 }
 function saveRootsStore(st){store.set("pm-roots-v1",st)}
-let ROOTS_CACHE={day:-1,puzzle:null},ROOTS_SESSION={day:-1,step:0,picks:[],results:[]},rootsCdTimer=0;
+let ROOTS_CACHE={day:-1,puzzle:null},ROOTS_SESSION={day:-1,step:0,picks:[],results:[]},rootsCdTimer=0,ROOTS_POOLS=null;
 function stopRootsCountdown(){if(rootsCdTimer){clearInterval(rootsCdTimer);rootsCdTimer=0}}
+function getRootsPools(){
+  if(ROOTS_POOLS)return ROOTS_POOLS;
+  const prng=mulberry32(0x524F4F54);
+  const byOrder=G.slice().sort((a,b)=>a.id.localeCompare(b.id));
+  /* 1) Arrange LORE_QUIZ indices so no two entries within 30 circular steps share the same game */
+  const loreGameOf=it=>byId.get(it.id)||byId.get(it.gFb)||TREE[0];
+  const rawLore=shuffle(LORE_QUIZ.map((it,idx)=>({idx,gi:(loreGameOf(it)||{}).i??-1})),prng);
+  const loreOrder=[],loreGis=[];
+  const rem=rawLore.slice();
+  const NQ=rem.length;
+  for(let pos=0;pos<NQ;pos++){
+    let pickAt=0;
+    for(let j=0;j<rem.length;j++){
+      const gi=rem[j].gi;
+      let clash=false;
+      for(let b=1;b<=30&&pos-b>=0;b++){if(loreGis[pos-b]===gi){clash=true;break}}
+      if(!clash&&pos>=NQ-30){
+        for(let f=0;f<30-(NQ-1-pos)&&f<loreGis.length;f++){if(loreGis[f]===gi){clash=true;break}}
+      }
+      if(!clash){pickAt=j;break}
+    }
+    const chosen=rem.splice(pickAt,1)[0];
+    loreOrder.push(chosen.idx);loreGis.push(chosen.gi);
+  }
+  const loreSet=new Set(loreGis.filter(i=>i>=0));
+  /* 2) Partition non-lore pop>=4 playable games with covers into 3 strictly disjoint pools: yPool, zPool, sPool */
+  const p4Base=shuffle(byOrder.filter(g=>g.pop>=4&&g.year>=1978&&g.year<=NOW&&playable(g)&&!g.cancelled&&g.img&&!loreSet.has(g.i)),prng);
+  const leaksYear=g=>{
+    const y=g.year,t=g.title||"";
+    if(t.includes(String(y))||t.includes(String(y-1))||t.includes(String(y+1)))return true;
+    const y2=String(y).slice(2),y2n=String(y+1).slice(2);
+    return new RegExp(`(?:^|[\\s'’(-])(?:2k)?(?:${y2}|${y2n})(?=$|[\\s)'’])`,"i").test(t);
+  };
+  const yPool=[],zPool=[],sPool=[];
+  for(const g of p4Base){
+    const canYear=!leaksYear(g);
+    if(g.year<1982&&canYear){yPool.push(g);continue}
+    if(canYear&&yPool.length<=zPool.length&&yPool.length<=sPool.length)yPool.push(g);
+    else if(zPool.length<=sPool.length)zPool.push(g);
+    else if(studio(g))sPool.push(g);
+    else if(canYear)yPool.push(g);
+    else zPool.push(g);
+  }
+  const coreSet=new Set([...yPool,...zPool,...sPool].map(g=>g.i));
+  /* 3) Disjoint R3 Ancestor pool (1 link per unique child, pre-verified >=3 decoys) */
+  const lSeen=new Set(),lPool=[];
+  const candLinks=shuffle(L.filter(l=>(l.tier==="dev"||l.tier==="team"||l.tier==="critic")&&G[l.to].pop>=3&&G[l.from].pop>=3&&G[l.to].year-G[l.from].year>=1&&!G[l.to].cancelled&&!loreSet.has(G[l.to].i)&&!coreSet.has(G[l.to].i)),prng);
+  for(const lk of candLinks){
+    const child=G[lk.to],parent=G[lk.from];
+    if(lSeen.has(child.i))continue;
+    const near=new Set([child.i,...UP[child.i].map(x=>x.from),...DOWN[child.i].map(x=>x.to)]);
+    const dc=TREE.filter(g=>!near.has(g.i)&&g.n!==parent.n&&g.year<child.year&&g.year>=child.year-25&&g.pop>=3);
+    if(dc.length>=3){lSeen.add(child.i);lPool.push({lk,child,parent})}
+  }
+  const used4=new Set([...coreSet,...lSeen]);
+  /* 4) Disjoint R4 Country pool */
+  const cPool=shuffle(byOrder.filter(g=>g.pop>=3&&g.cc&&playable(g)&&!g.cancelled&&g.img&&!loreSet.has(g.i)&&!used4.has(g.i)),prng);
+  const allCountries=[...new Set(byOrder.map(x=>x.cc).filter(Boolean))];
+  const allStudios=[...new Set(byOrder.filter(x=>x.pop>=4&&studio(x)).map(studio))];
+  ROOTS_POOLS={loreOrder,yPool,zPool,sPool,lPool,cPool,allCountries,allStudios};
+  return ROOTS_POOLS;
+}
 function buildRootsDaily(dayNum=utcDayNum()){
   if(ROOTS_CACHE.day===dayNum&&ROOTS_CACHE.puzzle)return ROOTS_CACHE.puzzle;
+  const P=getRootsPools();
   const n=rootsNumber(dayNum*864e5);
   const rng=mulberry32((dayNum*2654435761)^0x9E3779B9);
-  const pick=arr=>arr[Math.floor(rng()*arr.length)];
-  const usedIds=new Set();
+  const mod=(a,m)=>((a%m)+m)%m;
   const rounds=[];
-  /* Round 1: Year */
-  const yPool=G.filter(g=>g.pop>=4&&g.year>=1978&&g.year<=NOW&&playable(g));
-  const yg=pick(yPool)||G[0];usedIds.add(yg.i);
+  /* Round 1: Year — tight ±1..3 distractors (no throwaway 8-year-off options) */
+  const yg=P.yPool[mod(dayNum,P.yPool.length)]||G[0];
   const ySet=new Set([yg.year]);
-  for(const d of shuffle([-6,-4,-3,-2,2,3,4,6,8],rng)){const yy=yg.year+d;if(yy>=1975&&yy<=NOW&&ySet.size<4)ySet.add(yy)}
+  for(const d of shuffle([-3,-2,-1,1,2,3],rng)){const yy=yg.year+d;if(yy>=1975&&yy<=NOW&&ySet.size<4)ySet.add(yy)}
+  for(const d of [-4,4,-5,5]){const yy=yg.year+d;if(yy>=1975&&yy<=NOW&&ySet.size<4)ySet.add(yy)}
   rounds.push({kind:"year",icon:"🗓️",tag:"Year",g:yg,q:`What year did ${yg.title} launch?`,sub:`From ${studio(yg)||"its original team"} — pick the debut release year:`,ans:String(yg.year),opts:[...ySet].sort((a,b)=>a-b).map(y=>({k:String(y),label:String(y)})),fact:`${yg.title} launched in ${yg.year} (${studio(yg)||"original studio"}).`});
   /* Round 2: Zoomed Cover */
-  const zPool=G.filter(g=>!usedIds.has(g.i)&&g.img&&g.pop>=4&&playable(g)&&g.year>=1982&&g.year<=NOW);
-  const zg=pick(zPool)||yPool[1]||G[0];usedIds.add(zg.i);
-  const zDecPool=shuffle(G.filter(x=>x.i!==zg.i&&playable(x)&&x.pop>=4&&Math.abs(x.year-zg.year)<=8),rng);
-  const zDecoys=zDecPool.slice(0,3);
+  const zg=P.zPool[mod(dayNum,P.zPool.length)]||G[0];
+  const zSeenN=new Set([zg.n]);
+  const zDecoys=[];
+  for(const x of shuffle(G.filter(x=>x.i!==zg.i&&playable(x)&&!x.cancelled&&x.pop>=4&&Math.abs(x.year-zg.year)<=6),rng)){
+    if(!zSeenN.has(x.n)){zSeenN.add(x.n);zDecoys.push(x);if(zDecoys.length===3)break}
+  }
+  if(zDecoys.length<3){
+    for(const x of shuffle(G.filter(x=>x.i!==zg.i&&playable(x)&&!x.cancelled&&x.pop>=3),rng)){
+      if(!zSeenN.has(x.n)){zSeenN.add(x.n);zDecoys.push(x);if(zDecoys.length===3)break}
+    }
+  }
   const zOpts=shuffle([zg,...zDecoys],rng).map(x=>({k:x.id,label:x.title}));
   const zx=28+Math.floor(rng()*44),zy=24+Math.floor(rng()*46);
   rounds.push({kind:"zoom",icon:"🔍",tag:"Zoomed Cover",g:zg,zx,zy,q:"Name the game from this zoomed box-art crop",sub:`Released in the ${Math.floor(zg.year/10)*10}s — tap to reveal the full cover:`,ans:zg.id,opts:zOpts,fact:`${zg.title} (${zg.year}) by ${studio(zg)||"its studio"}.`});
   /* Round 3: Direct Ancestor */
-  const lPool=L.filter(l=>(l.tier==="dev"||l.tier==="team"||l.tier==="critic")&&G[l.to].pop>=3&&G[l.from].pop>=3&&G[l.to].year-G[l.from].year>=1&&!usedIds.has(G[l.to].i));
-  let ancRound=null;
-  for(let tries=0;tries<40&&lPool.length;tries++){
-    const lk=pick(lPool),child=G[lk.to],parent=G[lk.from];
+  const ent=P.lPool[mod(dayNum,P.lPool.length)];
+  if(ent){
+    const {lk,child,parent}=ent;
     const near=new Set([child.i,...UP[child.i].map(x=>x.from),...DOWN[child.i].map(x=>x.to)]);
     const fam=new Set(child.gen.concat(parent.gen));
-    const cand=TREE.filter(g=>!near.has(g.i)&&g.year<child.year&&g.year>=child.year-25&&g.pop>=3);
+    const cand=TREE.filter(g=>!near.has(g.i)&&g.n!==parent.n&&g.year<child.year&&g.year>=child.year-25&&g.pop>=3);
     const same=shuffle(cand.filter(g=>g.gen.some(x=>fam.has(x))),rng),other=shuffle(cand.filter(g=>!g.gen.some(x=>fam.has(x))),rng);
-    const decoys=[...same.slice(0,2),...other].slice(0,3);
-    if(decoys.length===3){
-      usedIds.add(child.i);
-      ancRound={kind:"ancestor",icon:"🧬",tag:"Direct Ancestor",g:child,parent,l:lk,q:`Which earlier game directly inspired ${child.title}?`,sub:`Released in ${child.year} — pick its documented inspiration:`,ans:parent.id,opts:shuffle([parent,...decoys],rng).map(x=>({k:x.id,label:x.title,g:x})),fact:`${child.title} built on ${parent.title} (${parent.year}): ${lk.added||lk.took}`};
-      break;
+    const decoys=[],dSeen=new Set([parent.n]);
+    for(const g of [...same.slice(0,2),...other,...same.slice(2)]){
+      if(!dSeen.has(g.n)){dSeen.add(g.n);decoys.push(g);if(decoys.length===3)break}
     }
+    rounds.push({kind:"ancestor",icon:"🧬",tag:"Direct Ancestor",g:child,parent,l:lk,q:`Which earlier game directly inspired ${child.title}?`,sub:`Released in ${child.year} — pick its documented inspiration:`,ans:parent.id,opts:shuffle([parent,...decoys],rng).map(x=>({k:x.id,label:x.title,g:x})),fact:`${child.title} built on ${parent.title} (${parent.year}): ${lk.added||lk.took}`});
   }
-  if(ancRound)rounds.push(ancRound);
-  /* Round 4: Studio (even N) or Country (odd N) */
-  const doCountry=(n%2)===1;
+  /* Round 4: Studio (even dayNum) or Country (odd dayNum) */
+  const doCountry=mod(dayNum,2)===1;
+  const halfSlot=Math.floor(dayNum/2);
   if(doCountry){
-    const cPool=G.filter(g=>!usedIds.has(g.i)&&g.pop>=3&&g.cc&&playable(g));
-    const cg=pick(cPool)||G[0];usedIds.add(cg.i);
-    const other=[...new Set(cPool.map(x=>x.cc).filter(c=>c&&c!==cg.cc))];
+    const cg=P.cPool[mod(halfSlot,P.cPool.length)]||G[0];
+    const other=P.allCountries.filter(c=>c&&c!==cg.cc);
     const opts=shuffle([cg.cc,...shuffle(other,rng).slice(0,3)],rng).map(c=>({k:c,label:`${flagEmoji(c)} ${countryName(c)}`}));
     rounds.push({kind:"country",icon:"🌍",tag:"Country",g:cg,q:`Where was ${cg.title} made?`,sub:`Released in ${cg.year} — pick the country where its team built it:`,ans:cg.cc,opts,fact:`${cg.title} (${cg.year}) was crafted in ${countryName(cg.cc)} by ${studio(cg)}.`});
   }else{
-    const sPool=G.filter(g=>!usedIds.has(g.i)&&g.pop>=4&&studio(g)&&playable(g));
-    const sg=pick(sPool)||G[0];usedIds.add(sg.i);const ansS=studio(sg);
-    const other=[...new Set(sPool.map(studio).filter(s=>s&&s!==ansS))];
+    const sg=P.sPool[mod(halfSlot,P.sPool.length)]||G[0];
+    const ansS=studio(sg);
+    const other=P.allStudios.filter(s=>s&&s!==ansS);
     const opts=shuffle([ansS,...shuffle(other,rng).slice(0,3)],rng).map(s=>({k:s,label:s}));
     rounds.push({kind:"studio",icon:"🏛️",tag:"Studio",g:sg,q:`Which studio built ${sg.title}?`,sub:`Released in ${sg.year} — pick the studio behind it:`,ans:ansS,opts,fact:`${sg.title} (${sg.year}) was crafted by ${sg.dev}.`});
   }
-  /* Round 5: Deep-Cut Lore (deterministic non-repeating rotation over 170+ bank) */
-  const loreIdx=((dayNum*37)+11)%LORE_QUIZ.length;
+  /* Round 5: Deep-Cut Lore (300-question bank, cyclic >=30-day game spacing) */
+  const loreIdx=P.loreOrder[mod(dayNum,P.loreOrder.length)]||0;
   const lit=LORE_QUIZ[loreIdx]||LORE_QUIZ[0];
   const lg=byId.get(lit.id)||byId.get(lit.gFb)||TREE[0];
   const cleanAns=String(lit.ans||"").trim();
-  const na=norm(cleanAns),nt=lg?lg.n:"";
-  const hideCover=!!(lit.hideCover||(na.length>=4&&nt&&(nt.includes(na)||na.includes(nt))));
+  const na=norm(cleanAns),nt=lg?lg.n:"",nd=lg?norm(studio(lg)||""):"";
+  const hideCover=!!(lit.hideCover||(na.length>=4&&nt&&(nt.includes(na)||na.includes(nt)))||(na.length>=4&&nd&&(nd.includes(na)||na.includes(nd))));
   rounds.push({kind:"lore",icon:"📜",tag:"Lore",g:lg,hideCover,q:lit.q,sub:"Deep-cut gaming & industry lore — pick the true answer:",ans:cleanAns,opts:shuffle([cleanAns,...(lit.wrong||[]).map(w=>String(w||"").trim())],rng).map(s=>({k:s,label:s})),fact:lit.fact});
   const puzzle={dayNum,dateKey:utcDateKey(dayNum*864e5),n,rounds};
   ROOTS_CACHE={day:dayNum,puzzle};
@@ -3070,7 +3199,7 @@ function renderRootsCard(){
   const dots=puzzle.rounds.map((r,i)=>{
     const res=doneRec?doneRec.results[i]:ROOTS_SESSION.results[i];
     const cls=res===true?"ok":res===false?"no":(!doneRec&&i===ROOTS_SESSION.step?"cur":"");
-    return `<span class="roots-dot ${cls}" title="Round ${i+1}: ${esc(r.tag)}" aria-label="Round ${i+1} ${esc(r.tag)}: ${res===true?"correct":res===false?"missed":"pending"}">${res===true?"✓":res===false?"×":r.icon}</span>`;
+    return `<span class="roots-dot ${cls}" title="Round ${i+1}: ${esc(r.tag)}" aria-label="Round ${i+1} ${esc(r.tag)}: ${res===true?"correct":res===false?"missed":"pending"}">${res===true?"✓":res===false?"×":i+1}</span>`;
   }).join("");
   if(doneRec){
     const score=doneRec.results.filter(Boolean).length;
@@ -3125,7 +3254,7 @@ function renderRootsCard(){
   }
   el.innerHTML=`<div class="roots-head">
       <div>
-        <p class="eyebrow" style="margin-bottom:3px">ROOTS #${puzzle.n} · Round ${idx+1} of ${puzzle.rounds.length} · ${rd.icon} ${esc(rd.tag)}${rs.streak?` · 🔥 ${rs.streak}`:""}</p>
+        <p class="eyebrow" style="margin-bottom:3px">Round ${idx+1} of ${puzzle.rounds.length} · ${esc(rd.tag)}${rs.streak?` · Streak ${rs.streak}`:""}</p>
         <h2 class="h2" style="margin:0">${esc(rd.q)}</h2>
       </div>
       <div class="roots-dots">${dots}</div>
@@ -3139,28 +3268,25 @@ function renderRootsCard(){
 }
 function monthAtYourAgeHTML(){
   const nowDate=new Date();
-  const monthName=nowDate.toLocaleString("en-US",{month:"long",timeZone:"UTC"});
   const monthIdx=nowDate.getUTCMonth();
-  let from=1992,to=2001,headline="",subline="";
-  if(hist.birth&&hist.birth>=1940&&hist.birth<=NOW-6){
-    from=Math.max(1972,hist.birth+8);to=Math.max(from+6,Math.min(NOW,hist.birth+17));
-    headline=`${monthName} Rewind · When you were ${from-hist.birth}–${to-hist.birth} (${from}–${to})`;
-    subline=`Landmark games launched during your formative ${from}–${to} years — tap + Played to log any you remember.`;
+  const win=formativeWindow(hist);
+  const from=win.from,to=win.to;
+  let headline="",subline="";
+  if(win.birth){
+    headline=`When you were ${win.ageFrom}\u2060\u2013\u2060${win.ageTo} (${from}\u2060\u2013\u2060${to})`;
+    subline=`Four games from your formative ${from}\u2013${to} window — tap + Played to log any you remember.`;
   }else{
-    const ek=hist.era||state.heroEra||"90s";
-    const cfg=HERO_ERAS.find(e=>e.k===ek)||HERO_ERAS[1];
-    from=cfg.from;to=cfg.to;
-    headline=`${monthName} Rewind · ${cfg.label} era (${from}–${to})`;
-    subline="Set your optional birth year in Settings (or below) to calculate your exact age for every release.";
+    headline=`${win.eraLabel} rewind (${from}\u2060\u2013\u2060${to})`;
+    subline="Set your optional birth year in Settings to tune this shelf to your exact ages 7–15.";
   }
-  const pool=G.filter(g=>playable(g)&&g.year>=from&&g.year<=to&&g.pop>=4&&g.img);
+  const pool=G.filter(g=>playable(g)&&!g.cancelled&&g.year>=from&&g.year<=to&&g.pop>=4&&g.img);
   const rng=mulberry32((nowDate.getUTCFullYear()*13+monthIdx+1)*2654435761);
   const picks=shuffle(pool.slice(),rng).slice(0,4).sort((a,b)=>a.year-b.year);
   if(!picks.length)return "";
   return `<section class="month-age-card">
     <div class="sechead" style="margin-bottom:10px">
       <div>
-        <p class="eyebrow" style="margin-bottom:2px">This month at your age</p>
+        <p class="eyebrow" style="margin-bottom:2px">Your formative years · Monthly picks</p>
         <h2 class="h2">${esc(headline)}</h2>
         <p class="sub" style="margin:2px 0 0">${esc(subline)}</p>
       </div>
@@ -3264,8 +3390,7 @@ function renderDaily(m){
   m.innerHTML=`<section class="wrap" style="padding-block:18px 6px;max-width:980px">
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:14px">
       <div>
-        <p class="eyebrow" style="margin-bottom:3px">Daily play · ROOTS #${puz.n} &amp; Endless Arcade</p>
-        <h1 class="h1" style="margin:0;font-size:clamp(1.45rem,1.05rem + 2vw,2.2rem)">ROOTS #${puz.n} · 60-Second Daily</h1>
+        <h1 class="h1" style="margin:0;font-size:clamp(1.45rem,1.05rem + 2vw,2.2rem)">ROOTS #${puz.n} · 60\u2011Second Daily</h1>
       </div>
       <button type="button" class="btn sm primary" data-act="luckyWheel">Feeling lucky — spin wheel</button>
     </div>
@@ -3491,13 +3616,13 @@ function renderGame(m,id){
         const arrow=!nx?"":nx.collapsed?`<span class="rfold" title="${esc(nx.collapsed.via.map(v=>v.title).join(", "))}">… ${nx.collapsed.n} more in the series …</span>`:(()=>{const lk=nx.link;return lk?`<span class="rarr" style="--c:var(${TIERS[lk.t].c})" title="${esc(tierLabelForLink(lk))}" aria-hidden="true"></span>`:``})();
         return `<button class="rs${s.g.i===g.i?" cur":""}" data-act="game" data-id="${s.g.id}">${cover(s.g,{showYear:false})}<b>${esc(s.g.title)}</b><span>${s.g.year}</span></button>${arrow}`}).join("")}</div></section>`
       :`<section class="sec"><p class="sub">No recorded roots yet.</p></section>`}
-    ${g.tree?`<section class="sec"><div class="sechead"><div><h2 class="h2">${esc(g.title)}'s family tree</h2><p class="sub">Two generations back and forward. Tap any game to refocus the tree.</p></div></div>
+    ${g.tree?`<section class="sec"><div class="sechead"><div><h2 class="h2">${esc(treeHeading(g.title))}</h2><p class="sub">Two generations back and forward. Tap any game to refocus the tree.</p></div></div>
       <div class="pickstrip" style="padding:0 0 8px;gap:5px">${TIERS.map(t=>`<button type="button" class="chip tierchip" style="--c:var(${t.c})" data-act="tier" data-tier="${t.k}" aria-pressed="${!!state.tiers[t.k]}">${tierSwatchSVG(t)}${t.label}</button>`).join("")}</div>
       <div class="treebox" id="treebox" tabindex="0" role="region" aria-label="Interactive family tree">${treeSVG(g)}</div></section>
     <section class="sec"><div class="cols">${panelHTML("up",ups,g)}${panelHTML("down",downs,g)}</div></section>`:""}
   </div>${footer()}`;
   requestAnimationFrame(()=>{const rr=$("#rootsRow");if(rr)rr.scrollLeft=rr.scrollWidth;
-    const tb=$("#treebox");if(tb){if(state.treeKeepScroll!=null){tb.scrollLeft=state.treeKeepScroll;state.treeKeepScroll=null}else{const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx;tb.scrollLeft=Math.max(0,x-tb.clientWidth/2)}}}});
+    const tb=$("#treebox");if(tb){if(state.treeKeepScroll!=null){tb.scrollLeft=state.treeKeepScroll;state.treeKeepScroll=null}else{const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx,mob=window.innerWidth<=560;tb.scrollLeft=Math.max(0,x-tb.clientWidth*(mob?0.28:0.5))}}}});
   mountGameGallery(g,"#gameGalBox");
 }
 /* catalog-only games: no dead end, point to nearby games that are in the family tree */
@@ -3525,36 +3650,38 @@ function computeTreeLayout(g){
 }
 function treeSVG(g,nodeAct="game"){
   const {gen,cols,more,ks}=computeTreeLayout(g);
-  const W=192,H=52,RG=10,CG=50,M=16,TOP=44;
+  const mob=typeof window!=="undefined"&&window.innerWidth<=560;
+  const W=mob?148:192,H=mob?48:52,RG=mob?8:10,CG=mob?34:50,M=mob?12:16,TOP=40;
   const maxRows=Math.max(...ks.map(k=>cols[k].length+(more[k]?1:0)));
   const pos=new Map();const colX={};ks.forEach((k,ci)=>colX[k]=M+ci*(W+CG));
   const colOff={};
-  ks.forEach(k=>{const n=cols[k].length+(more[k]?1:0),off=Math.min((maxRows-n)/2*(H+RG),68);colOff[k]=off;cols[k].forEach((i,r)=>pos.set(i,{x:colX[k],y:TOP+off+r*(H+RG)}))});
+  ks.forEach(k=>{const n=cols[k].length+(more[k]?1:0),off=mob?0:Math.min((maxRows-n)/2*(H+RG),68);colOff[k]=off;cols[k].forEach((i,r)=>pos.set(i,{x:colX[k],y:TOP+off+r*(H+RG)}))});
   const actualBottom=Math.max(...ks.map(k=>{const n=cols[k].length+(more[k]?1:0);return TOP+colOff[k]+n*(H+RG)}));
   const width=M*2+ks.length*(W+CG)-CG,height=actualBottom+8;
   const C=cssVar,ink=C("--ink"),muted=C("--muted"),line2=C("--line2"),card=C("--card"),paper=C("--paper"),acc=C("--accent"),accInk=C("--accent-ink"),upInk=C("--up-ink"),downInk=C("--down-ink");
   const useImg=document.documentElement.dataset.art!=="era";
+  const covW=mob?26:30,covH=mob?36:40,txX=mob?38:44;
   let defs="";
-  for(const [i,p] of pos)if(useImg&&G[i].img)defs+=`<clipPath id="tc-${i}"><rect x="${p.x+7}" y="${p.y+6}" width="30" height="40" rx="4"/></clipPath>`;
+  for(const [i,p] of pos)if(useImg&&G[i].img)defs+=`<clipPath id="tc-${i}"><rect x="${p.x+6}" y="${p.y+6}" width="${covW}" height="${covH}" rx="4"/></clipPath>`;
   let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="img" aria-label="Family tree of ${esc(g.title)}">${defs?`<defs>${defs}</defs>`:""}`;
-  const lab={"-2":"◂ Earlier ancestors","-1":"◂ Inspired it","0":"This game","1":"It inspired ▸","2":"Later descendants ▸"};
+  const lab={"-2":mob?"◂ Earlier":"◂ Earlier ancestors","-1":"◂ Inspired it","0":"This game","1":"It inspired ▸","2":mob?"Later ▸":"Later descendants ▸"};
   ks.forEach(k=>{
     const tot=cols[k].length+(more[k]||0),lbl=k===0?lab[k]:`${lab[k]} (${tot})`;
-    s+=`<g class="wnode" data-act="treeColJump" data-col="${k}" data-colx="${colX[k]+W/2}" pointer-events="all" style="cursor:pointer" role="button" tabindex="0" aria-label="Scroll to ${esc(lbl)}"><rect x="${colX[k]+8}" y="6" width="${W-16}" height="24" rx="12" fill="${card}" fill-opacity="0.85" stroke="${line2}" stroke-opacity="0.65"/><text x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${esc(lbl)}</text></g>`;
+    s+=`<g class="wnode" data-act="treeColJump" data-col="${k}" data-colx="${colX[k]+W/2}" pointer-events="all" style="cursor:pointer" role="button" tabindex="0" aria-label="Scroll to ${esc(lbl)}"><rect x="${colX[k]+6}" y="6" width="${W-12}" height="24" rx="12" fill="${card}" fill-opacity="0.85" stroke="${line2}" stroke-opacity="0.65"/><text x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="${mob?10.5:11}" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${esc(lbl)}</text></g>`;
   });
   const edges=L.filter(l=>tierOn(l)&&pos.has(l.from)&&pos.has(l.to)&&gen.get(l.to)-gen.get(l.from)===1);
-  edges.forEach(l=>{const A=pos.get(l.from),B=pos.get(l.to),t=TIERS[l.t];const x1=A.x+W,y1=A.y+H/2,x2=B.x,y2=B.y+H/2,dx=Math.max(22,(x2-x1)/2);
+  edges.forEach(l=>{const A=pos.get(l.from),B=pos.get(l.to),t=TIERS[l.t];const x1=A.x+W,y1=A.y+H/2,x2=B.x,y2=B.y+H/2,dx=Math.max(16,(x2-x1)/2);
     const touch=l.from===g.i||l.to===g.i;
     s+=`<path d="M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}" fill="none" stroke="${C(t.c)}" stroke-width="${touch?2.5:1.5}" ${t.dash?`stroke-dasharray="${t.dash}"`:""} stroke-linecap="round" opacity="${touch?.92:.5}" pointer-events="none"/>`});
-  for(const [i,p] of pos){const n=G[i],isC=i===g.i;const t1=n.title.length>22?n.title.slice(0,21)+"…":n.title;const st=studio(n),t2=`${n.year}${n.cancelled?" (unreleased)":n.sunset?" (sunset)":""} · ${st.length>15?st.slice(0,14)+"…":st}`;
+  for(const [i,p] of pos){const n=G[i],isC=i===g.i;const maxC=mob?15:22;const t1=n.title.length>maxC?n.title.slice(0,maxC-1)+"…":n.title;const st=studio(n),t2=mob?`${n.year}${n.cancelled?" · unshipped":n.sunset?" · sunset":""}`:`${n.year}${n.cancelled?" (unreleased)":n.sunset?" (sunset)":""} · ${st.length>15?st.slice(0,14)+"…":st}`;
     const myl=levelOf(hist,n),myw=isWorked(hist,n);
     const act=isC&&nodeAct==="linFocus"?"game":nodeAct;
     s+=`<g class="wnode" data-act="${act}" data-id="${n.id}" pointer-events="all" style="cursor:pointer" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link" aria-label="${esc(n.title)}, ${n.year}${n.cancelled?", unreleased":""}">
       <rect x="${p.x}" y="${p.y}" width="${W}" height="${H}" rx="10" fill="${isC?acc:card}" stroke="${myw?C("--craft"):isC?acc:n.cancelled?C("--hook"):line2}" stroke-width="${myw||n.cancelled?1.8:1}" ${n.cancelled&&!isC?'stroke-dasharray="4 2"':""}/>
-      <rect x="${p.x+7}" y="${p.y+6}" width="30" height="40" rx="4" fill="hsl(${n.h} 55% 40%)"/>
-      ${useImg&&n.img?`<image href="${esc(n.img)}" x="${p.x+7}" y="${p.y+6}" width="30" height="40" preserveAspectRatio="xMidYMid slice" clip-path="url(#tc-${i})"/>`:""}
-      <text x="${p.x+44}" y="${p.y+21}" font-size="12.5" font-weight="700" fill="${isC?accInk:ink}">${esc(t1)}</text>
-      <text x="${p.x+44}" y="${p.y+37}" font-size="10.5" fill="${isC?accInk:muted}">${esc(t2)}</text>
+      <rect x="${p.x+6}" y="${p.y+6}" width="${covW}" height="${covH}" rx="4" fill="hsl(${n.h} 55% 40%)"/>
+      ${useImg&&n.img?`<image href="${esc(n.img)}" x="${p.x+6}" y="${p.y+6}" width="${covW}" height="${covH}" preserveAspectRatio="xMidYMid slice" clip-path="url(#tc-${i})"/>`:""}
+      <text x="${p.x+txX}" y="${p.y+(mob?19:21)}" font-size="${mob?11.5:12.5}" font-weight="700" fill="${isC?accInk:ink}">${esc(t1)}</text>
+      <text x="${p.x+txX}" y="${p.y+(mob?34:37)}" font-size="${mob?10:10.5}" fill="${isC?accInk:muted}">${esc(t2)}</text>
       ${myw||myl?`<circle cx="${p.x+W-10}" cy="${p.y+10}" r="7" fill="${myw?C("--craft"):myl===3?C("--love"):acc}"/><text x="${p.x+W-10}" y="${p.y+13.5}" text-anchor="middle" font-size="9" font-weight="700" fill="${myw?C("--craft-ink"):paper}">${myw?"🛠":myl===3?"♥":"✓"}</text>`:""}</g>`}
   ks.forEach(k=>{if(more[k]){const n=cols[k].length,y=TOP+colOff[k]+n*(H+RG);
     s+=`<g class="wnode" data-act="treeMore" data-col="${k}" pointer-events="all" style="cursor:pointer" tabindex="0" role="button" aria-label="Show ${more[k]} more games in column"><rect x="${colX[k]}" y="${y}" width="${W}" height="${H}" rx="10" fill="${card}" fill-opacity="0.92" stroke="${acc}" stroke-dasharray="4 3"/><text x="${colX[k]+W/2}" y="${y+30}" text-anchor="middle" font-size="12.5" font-weight="700" fill="${acc}">+${more[k]} more ▾</text></g>`}});
@@ -3570,31 +3697,30 @@ function drawStory(){
   const {chain,k,dir}=story,n=chain.length;
   const oldest=chain[0].g,newest=chain[n-1].g;
   const shortT=s=>s.length>(window.innerWidth<540?14:24)?s.slice(0,window.innerWidth<540?13:23)+"…":s;
-  const prog=`<div class="stprog" role="group" aria-label="Lineage timeline (${oldest.year} on left to ${newest.year} on right)"><button type="button" class="${k===-1?"cur on":""}" data-act="storyJump" data-k="-1" title="Full lineage summary" aria-label="Full lineage summary"></button>${chain.map((st,j)=>`<button type="button" class="${j>=Math.max(0,k)?"on":""}${j===k?" cur":""}" data-act="storyJump" data-k="${j}" title="${st.g.year}: ${esc(st.g.title)}" aria-label="${st.g.year}: ${esc(st.g.title)}"></button>`).join("")}</div>`;
+  const prog=`<div class="stprog" role="group" aria-label="Lineage timeline (${oldest.year} on left to ${newest.year} on right)"><button type="button" class="${k===-1?"cur on":""}" data-act="storyJump" data-k="-1" title="Full lineage summary" aria-label="Full lineage summary"></button>${chain.map((st,j)=>`<button type="button" class="${j<=k&&k>=0?"on":""}${j===k?" cur":""}" data-act="storyJump" data-k="${j}" title="${st.g.year}: ${esc(st.g.title)}" aria-label="${st.g.year}: ${esc(st.g.title)}"></button>`).join("")}</div>`;
   const curG=k>=0?chain[k].g:null;
   let body;
   if(k<0){const studios=new Set(chain.map(s=>studio(s.g)).filter(Boolean)),cs=new Set(chain.map(s=>s.g.cc).filter(Boolean));
-    body=`<div><p class="eyebrow">${oldest.year} ◂ ${newest.year} · Root walk complete</p><h2 class="h1" style="font-size:clamp(24px,4.5vw,38px)">${esc(oldest.title)} (${oldest.year}) → ${esc(newest.title)} (${newest.year})</h2>
+    body=`<div><p class="eyebrow">${oldest.year} ← ${newest.year} · Root walk complete</p><h2 class="h1" style="font-size:clamp(24px,4.5vw,38px)">${esc(oldest.title)} (${oldest.year}) → ${esc(newest.title)} (${newest.year})</h2>
       <p class="stsum">Starting at <b>${esc(newest.title)}</b> (${newest.year}) and walking back to <b>${esc(oldest.title)}</b> (${oldest.year}): <b>${newest.year-oldest.year} years</b>, ${plural(story.total,"step")}, ${plural(studios.size,"team")} in ${plural(cs.size,"country","countries")}. Every team stood on earlier craft and added something of their own.</p>
       <div class="row" style="margin-top:16px"><button class="btn primary wrap" data-act="game" data-id="${oldest.id}" data-close="1">Open ${esc(oldest.title)} (${oldest.year})</button><button class="btn wrap" data-act="game" data-id="${newest.id}" data-close="1">Open ${esc(newest.title)} (${newest.year})</button><button class="btn" data-act="storyRestart">Restart at ${esc(newest.title)} (${newest.year}) ▸</button><button class="btn" data-act="copyWalk" data-id="${newest.id}">Copy walk link</button></div></div>`}
   else{const s=chain[k],g=s.g,l=s.link,p=l?G[l.from]:null,t=l?TIERS[l.t]:null;
     const srcs=l?srcHTML(l.src,l.tier):"";
-    const stepNote=k===n-1?`Starting point (${n} steps) — click <b>◂ Earlier</b> right below (or Left Arrow) to step back`:k===0?`Oldest recorded root (${oldest.year})`:`Step ${n-k+1} of ${n} · walking back from ${esc(newest.title)}`;
+    const stepNote=k===n-1?`Step ${n} of ${n} · Start`:k===0?`Step 1 of ${n} · Origin (${oldest.year})`:`Step ${k+1} of ${n} · Roots of ${esc(newest.title)}`;
+    const ageDiff=hist.birth?g.year-hist.birth:null;
+    const ageStr=ageDiff==null?"":ageDiff===0?" · released the year you were born":ageDiff>0?` · released when you were ${ageDiff}`:` · ${-ageDiff} years before you were born`;
     body=`<div class="stin${dir<0?" back":""}" key="${k}">${cover(g)}<div style="min-width:0"><p class="eyebrow" style="margin-bottom:4px">${stepNote}</p><div class="styear">${g.year}</div><h2>${esc(g.title)}</h2>
-      <p class="sub" style="margin:0">${flag(g.cc)} ${studioLinks(g.dev||"")}${hist.birth?` · ${g.year-hist.birth>=0?"first released when you were "+(g.year-hist.birth):(hist.birth-g.year)+" years before you were born"}`:""}</p>
+      <p class="sub" style="margin:0">${flag(g.cc)} ${studioLinks(g.dev||"")}${ageStr}</p>
       ${g.note?`<p class="gnote" style="font-size:14px">${esc(g.note)}</p>`:""}
       ${l?`<div class="stlink" style="--c:var(${t.c})"><p class="lead">Built on <b>${esc(p.title)}</b> (${p.year}) · <span class="tier">${esc(tierLabelForLink(l))}</span></p><dl class="ta"><dt>${l.rel==="variant"||l.rel==="fast-follow"?"Changed":"Added"}</dt><dd class="add">${esc(l.added)}</dd><dt>Took</dt><dd>${esc(l.took)}</dd></dl>${srcs?`<div class="src">Source: ${srcs}</div>`:""}</div>`
         :s.collapsed?`<div class="stlink" style="--c:var(--t-series)"><p class="lead">Built on its own series: ${plural(s.collapsed.n,"game")} from <b>${esc(s.collapsed.to.title)}</b> (${s.collapsed.to.year}) · <span class="tier">Same series</span></p><p class="src" style="margin:4px 0 0">${esc(s.collapsed.via.map(v=>v.title+" ("+v.year+")").join(" ▸ "))}</p></div>`
         :`<div class="stlink" style="--c:var(--accent)"><p class="lead"><b>Origin point (${g.year}):</b> where the ${newest.year-oldest.year}-year road to ${esc(newest.title)} (${newest.year}) begins.</p></div>`}
     </div></div>`}
   const prevLbl=k>0?`◂ Earlier (${chain[k-1].g.year} · ${esc(shortT(chain[k-1].g.title))})`:k===0?`◂ Summary (${newest.year-oldest.year} yrs)`:"◂ Origin reached";
-  const nextLbl=k<0?`Origin (${oldest.year}) ▸`:k<n-1?`Later (${chain[k+1].g.year}) ▸`:`At ${newest.year} ▸`;
-  const prevTip=k>0?`Step back to ${chain[k-1].g.title} (${chain[k-1].g.year})`:"Summary";
-  const nextTip=k<n-1?`Step forward to ${chain[Math.max(0,k+1)].g.title}`:"Latest step";
+  const nextLbl=k<0?`Origin (${oldest.year}) ▸`:k<n-1?`Later (${chain[k+1].g.year}) ▸`:`At ${newest.year}`;
   $("#layer").innerHTML=`<div class="story" role="dialog" aria-label="Walk the roots"><div class="ststage">
-    <div class="sthead"><button type="button" class="navback" data-act="closeStory">◂ Exit walk</button>${prog}<span class="mono muted sthead-yr" style="font-size:12px">${oldest.year} ◂ ${k>=0?chain[k].g.year:"Summary"} ▸ ${newest.year}</span><button class="x sthead-x" data-act="closeStory" aria-label="Close">×</button></div>
+    <div class="sthead">${prog}<span class="mono muted sthead-yr" style="font-size:12px">${oldest.year} ← ${k>=0?chain[k].g.year:"Summary"}</span><button class="x" data-act="closeStory" aria-label="Close">×</button></div>
     <div class="stframe">
-      <button type="button" class="stpad prev" data-act="storyPrev" ${k<0?"disabled":""} title="${esc(prevTip)}" aria-label="${esc(prevTip)}">◂</button>
       <div class="storycard" id="storyBody">
         <div class="stbody">${body}</div>
         <div class="stfoot">
@@ -3604,11 +3730,9 @@ function drawStory(){
           </div>
           <div class="row stfoot-aux" style="gap:6px">
             ${curG?`<button type="button" class="btn sm ghost" data-act="game" data-id="${curG.id}" data-close="1">Family tree</button><button type="button" class="btn sm ghost" data-act="watchTv" data-id="${curG.id}">▶ Gameplay</button>`:""}
-            <button type="button" class="btn sm ghost stfoot-close" data-act="closeStory">Exit</button>
           </div>
         </div>
       </div>
-      <button type="button" class="stpad next" data-act="storyNext" ${k>=n-1?"disabled":""} title="${esc(nextTip)}" aria-label="${esc(nextTip)}">▸</button>
     </div>
   </div></div>`;
   const sb=$("#storyBody");
@@ -3765,20 +3889,19 @@ function renderPerson(m,f){
   const pSpanTxt=st.from&&st.from!==st.to?` (${st.from}–${st.to})`:"";
   const eraLbl=eraKidLabel(d);
   const vsGames=vsGridGamesOf(d);
-  m.innerHTML=`<section class="wrap mehead"><div><p class="eyebrow">${wkMode?"Game industry credits":"Friend timeline challenge"}</p><h1 class="h1" style="font-size:clamp(1.65rem,1.1rem + 2.8vw,2.5rem)">${esc(f.name)}'s ${wkMode?"work in games":"life in games"}</h1>
-      <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.span}</b><span>${st.span===1?"year":"years"}${pSpanTxt}</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${d.birth?`<div class="stat"><b>${esc(d.birth)}</b><span>born</span></div>`:eraLbl?`<div class="stat"><b>${esc(eraLbl)}</b><span>era</span></div>`:""}${ov?`<div class="stat"><b id="vsHeadPct">${ov.pct}%</b><span>taste match</span></div>`:""}</div></div>
-      <div class="row">${mine?`<button class="btn primary" data-act="compare">Compare with mine</button>`:""}${f.payload?`<button class="btn" data-act="copyLink" data-payload="${esc(f.payload)}">Copy link</button><button class="btn ghost" data-act="adoptAsk" title="Load this saved link as your own editable timeline on this device">Load as mine</button>`:""}</div></section>
+  m.innerHTML=`<section class="wrap mehead"><div><p class="eyebrow">${wkMode?"Game industry credits":"Friend timeline"}</p><h1 class="h1" style="font-size:clamp(1.65rem,1.1rem + 2.8vw,2.5rem)">${esc(f.name)}'s ${wkMode?"work in games":"life in games"}</h1>
+      <div class="stats"><div class="stat"><b>${st.n}</b><span>games</span></div>${st.wk?`<div class="stat"><b style="color:var(--craft)">${st.wk}</b><span>worked on</span></div>`:""}<div class="stat"><b>${st.span}</b><span>${st.span===1?"year":"years"}${pSpanTxt}</span></div><div class="stat"><b>${st.fav}</b><span>favorites</span></div>${d.birth?`<div class="stat"><b>${esc(d.birth)}</b><span>born</span></div>`:eraLbl?`<div class="stat"><b>${esc(eraLbl)}</b><span>era</span></div>`:""}</div></div>
+      <div class="row">${f.payload?`<button class="btn" data-act="copyLink" data-payload="${esc(f.payload)}">Copy link</button><button class="btn ghost" data-act="adoptAsk" title="Load this saved link as your own editable timeline on this device">Load as mine</button>`:""}</div></section>
     <div class="wrap" id="adoptBox"></div>
     ${vsGames.length?`<section class="wrap"><div class="vs-card" id="vsCard">
       <div class="sechead" style="margin-bottom:10px">
         <div>
-          <p class="eyebrow" style="margin-bottom:2px">10-second Taste Match · Instant compare</p>
+          <p class="eyebrow" style="margin-bottom:2px">10-second Taste Match</p>
           <h2 class="h2" style="margin:0">Tap the ones you played too</h2>
         </div>
-        <span class="tap-hint" style="margin:0" aria-hidden="true"><span><b>✓</b>1×</span><span><b class="l2">★</b>2×</span><span><b class="l3">♥</b>3×</span></span>
       </div>
       <div id="vsHud">${vsHudHTML(f)}</div>
-      <div class="grid" id="vsGrid" style="margin-top:12px">${vsGames.map(x=>tileHTML(x.g,hist,{act:"vsCycle",sub:`${esc(f.name)}: ${LV[x.lv].m} (${x.y})`})).join("")}</div>
+      <div class="grid" id="vsGrid" style="margin-top:12px">${vsGames.map(x=>tileHTML(x.g,hist,{act:"vsCycle",sub:`${esc(f.name)} · ${x.y}`})).join("")}</div>
     </div></section>`:""}
     ${mk?`<section class="wrap" style="margin-top:10px;display:flex;justify-content:flex-end"><span class="seg" role="group" aria-label="Timeline filter"><button data-act="tlMode" data-m="all" aria-pressed="${!wkMode}">All games (${st.n})</button><button data-act="tlMode" data-m="worked" aria-pressed="${wkMode}">🛠 Worked on (${st.wk})</button></span></section>`:""}
     ${!wkMode?personaSection(d,false):""}
@@ -4158,17 +4281,14 @@ const WHEEL_PALETTE=[
 ];
 function wheelPool(filter){
   if(filter==="childhood"){
-    let from=1991,to=2002;
-    if(hist.birth){from=Math.max(1975,hist.birth+5);to=Math.min(NOW,hist.birth+16)}
-    else{
-      const ek=hist.era||state.heroEra||"90s";
-      const cfg=HERO_ERAS.find(e=>e.k===ek)||HERO_ERAS[1];
-      from=cfg.from;to=cfg.to;
-    }
-    const sub=TREE.filter(g=>isVideoGame(g)&&playable(g)&&g.pop>=3&&g.year>=from&&g.year<=to);
+    const win=formativeWindow(hist);
+    const strong=TREE.filter(g=>isVideoGame(g)&&playable(g)&&!g.cancelled&&g.img&&(g.inf>=10||g.pop>=4)&&g.year>=win.from&&g.year<=win.to);
+    if(strong.length>=12)return strong;
+    const sub=TREE.filter(g=>isVideoGame(g)&&playable(g)&&!g.cancelled&&g.img&&g.pop>=3&&g.year>=win.from&&g.year<=win.to);
     if(sub.length>=12)return sub;
   }
-  return TREE.filter(g=>isVideoGame(g)&&playable(g)&&g.pop>=3);
+  const strongAll=TREE.filter(g=>isVideoGame(g)&&playable(g)&&!g.cancelled&&g.img&&(g.inf>=10||g.pop>=4));
+  return strongAll.length>=12?strongAll:TREE.filter(g=>isVideoGame(g)&&playable(g)&&!g.cancelled&&g.pop>=3);
 }
 function sampleWheel12(filter){
   const pool=shuffle(wheelPool(filter).slice());
@@ -4187,7 +4307,7 @@ function sampleWheel12(filter){
 function openLuckyWheel(){
   const filt=state.wheelFilter==="childhood"?"childhood":"all";
   const games=sampleWheel12(filt);
-  const eraHint=hist.birth?`Ages 5–16 (${Math.max(1975,hist.birth+5)}–${Math.min(NOW,hist.birth+16)})`:(eraKidLabel(hist)||"'90s kid");
+  const eraHint=formativeWindow(hist).label;
   openSheet(`<div class="sheethead"><div>
       <p class="eyebrow" style="margin-bottom:2px">12-wedge discovery wheel</p>
       <h2>Feeling lucky</h2>
@@ -4201,7 +4321,7 @@ function openLuckyWheel(){
     </div>
     <p class="sync" style="margin:0 0 6px">${filt==="childhood"?esc(eraHint)+" · ":""}Pull the spring lever down (or tap it / press Space) to spin.</p>
     <div class="wheel-stage">
-      <div class="wheel-wrap"><canvas id="wheelCanvas" class="wheel-canvas" width="400" height="400" role="img" aria-label="12-wedge Lucky Wheel of video games"></canvas></div>
+      <div class="wheel-wrap"><canvas id="wheelCanvas" class="wheel-canvas" width="500" height="500" role="img" aria-label="12-wedge Lucky Wheel of video games"></canvas></div>
       <div class="lever-rig">
         <div class="lever-housing" id="leverHousing" title="Drag down to tension & release, or tap to yank">
           <div class="lever-slot" aria-hidden="true"></div>
@@ -4209,8 +4329,7 @@ function openLuckyWheel(){
           <div class="lever-arm" id="leverArm" aria-hidden="true"></div>
           <button type="button" class="lever-knob" id="leverKnob" aria-label="Pull lever down or press Space to spin the Lucky Wheel"></button>
         </div>
-        <div class="lever-meter" aria-hidden="true"><i id="leverMeter"></i></div>
-        <span class="lever-hint" id="leverHint">Pull or<br>Space</span>
+        <span class="lever-hint" id="leverHint">Pull or Space</span>
       </div>
     </div>
     <div id="wheelWinBox" aria-live="polite"></div>`,"Feeling lucky",{wide:true});
@@ -4274,33 +4393,39 @@ function openLuckyWheel(){
     ctx.save();
     ctx.translate(cx,cy);
     ctx.rotate(WSTATE.theta);
-    const hubR=Math.max(18,R*0.14);
-    const yrX=hubR+7;
-    const titleMaxW=Math.max(44,R-15-(yrX+30));
+    const hubR=Math.max(20,R*0.14);
+    const titleMaxW=Math.max(58,R-hubR-24);
+    const fitWheelText=(txt,maxW)=>{
+      if(ctx.measureText(txt).width<=maxW)return txt;
+      let t=txt;
+      while(t.length>3&&ctx.measureText(t+"…").width>maxW)t=t.slice(0,-1);
+      return t.trimEnd()+"…";
+    };
     for(let i=0;i<N;i++){
-      const a0=i*SLICE,a1=a0+SLICE,g=games[i];
+      const a0=i*SLICE,a1=a0+SLICE,mid=a0+SLICE/2,g=games[i];
       const [bg,fg]=WHEEL_PALETTE[i%WHEEL_PALETTE.length];
       ctx.beginPath();ctx.moveTo(0,0);ctx.arc(0,0,R,a0,a1);ctx.closePath();
       ctx.fillStyle=WSTATE.settledIdx===i?"#C7513D":bg;
       ctx.fill();
       ctx.strokeStyle="rgba(255,255,255,.16)";ctx.lineWidth=1;ctx.stroke();
-      /* radial year (inner) + title (outer, guaranteed air gap) */
+      /* Always-upright radial title (flip left hemisphere so zero upside-down labels) */
       ctx.save();
-      ctx.rotate(a0+SLICE/2);
+      ctx.rotate(mid);
+      const wa=WSTATE.theta+mid;
+      const flip=Math.cos(wa)<0;
+      if(flip)ctx.rotate(Math.PI);
       ctx.textBaseline="middle";
-      const fs=Math.max(9.5,Math.min(12.2,R*0.075));
+      const fs=Math.max(10.5,Math.min(14.5,R*0.072));
       ctx.fillStyle=WSTATE.settledIdx===i?"#FFFFFF":fg;
-      ctx.font=`600 ${Math.max(8,fs*0.74)}px IBM Plex Mono, monospace`;
-      ctx.textAlign="left";
-      ctx.globalAlpha=0.72;
-      ctx.fillText(g?String(g.year):"",yrX,0,26);
-      ctx.globalAlpha=1;
       ctx.font=`700 ${fs}px IBM Plex Sans, system-ui, sans-serif`;
-      ctx.textAlign="right";
-      const rawT=g?g.title:"";
-      const maxCh=R<125?12:15;
-      const lbl=rawT.length>maxCh?rawT.slice(0,maxCh-1)+"…":rawT;
-      ctx.fillText(lbl,R-14,0,titleMaxW);
+      const lbl=fitWheelText(g?g.title:"",titleMaxW);
+      if(flip){
+        ctx.textAlign="left";
+        ctx.fillText(lbl,-(R-15),0);
+      }else{
+        ctx.textAlign="right";
+        ctx.fillText(lbl,R-15,0);
+      }
       ctx.restore();
     }
     /* 12 brass rim pegs every 30° */
@@ -4340,7 +4465,7 @@ function openLuckyWheel(){
     drawWheel();
     const g=games[idx];if(!g||!winBox)return;
     const lv=levelOf(hist,g),dc=directCrossLinks(g).length,upC=(UP[g.i]||[]).length,genObj=genreOf(g);
-    const infBit=(dc>0||g.inf>0)?` · Inspired <b>${dc}</b> directly · <b>${g.inf.toLocaleString()}</b> across genres`:(upC>0?` · Built on <b>${upC}</b> earlier game${upC===1?"":"s"}`:(genObj?` · ${esc(genObj.label)}`:""));
+    const infBit=dc>0?` · Inspired <b>${dc}</b> directly${g.inf?` · <b>${g.inf.toLocaleString()}</b> across genres`:""}`:(g.inf>0?` · <b>${g.inf.toLocaleString()}</b> downstream games`:(upC>0?` · Built on <b>${upC}</b> earlier game${upC===1?"":"s"}`:(genObj?` · ${esc(genObj.label)}`:"")));
     playBlip(2);
     winBox.innerHTML=`<div class="wheel-win">
       <div class="gsheet">${cover(g)}
@@ -4386,7 +4511,7 @@ function openLuckyWheel(){
   };
 
   /* spring pull-arm pointer capture */
-  let dragId=null,startY=0,didTick35=false,didTick75=false;
+  let dragId=null,startY=0,didTick35=false,didTick75=false,lastUpAt=0;
   const onDown=e=>{
     if(e.button&&e.button!==0)return;
     if(WSTATE.spinning)return;
@@ -4404,7 +4529,7 @@ function openLuckyWheel(){
   };
   const onUp=e=>{
     if(e.pointerId!==dragId)return;
-    dragId=null;WSTATE.pulling=false;housing.classList.remove("pulling");
+    dragId=null;WSTATE.pulling=false;housing.classList.remove("pulling");lastUpAt=Date.now();
     const p=WSTATE.pull;
     if(p>=0.14){launchWithPull(p)}
     else{triggerAutoYank()}
@@ -4413,6 +4538,7 @@ function openLuckyWheel(){
   housing.addEventListener("pointerdown",onDown);
   housing.addEventListener("pointermove",onMove);
   housing.addEventListener("pointerup",onUp);
+  knob.addEventListener("click",()=>{if(Date.now()-lastUpAt>300&&!WSTATE.spinning&&!WSTATE.pulling&&!WSTATE.autoYank)triggerAutoYank()});
   housing.addEventListener("pointercancel",()=>{dragId=null;WSTATE.pulling=false;housing.classList.remove("pulling");ensureLoop()});
   knob.addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();triggerAutoYank()}});
   WSTATE.keyFn=e=>{
@@ -5156,7 +5282,7 @@ function encodeQR(text){
   finder(0,0);finder(0,n-7);finder(n-7,0);
   for(let i=8;i<n-8;i++){setFn(6,i,i%2===0?1:0);setFn(i,6,i%2===0?1:0)}
   for(const r0 of align)for(const c0 of align){
-    if(fn[r0][c0])continue;
+    if((r0<9&&c0<9)||(r0<9&&c0>=n-8)||(r0>=n-8&&c0<9))continue;
     for(let dr=-2;dr<=2;dr++)for(let dc=-2;dc<=2;dc++){
       setFn(r0+dr,c0+dc,Math.max(Math.abs(dr),Math.abs(dc))!==1?1:0);
     }
@@ -5269,7 +5395,7 @@ function buildShareCanvasForKind(kind,d,cleanName,imgMap){
 async function renderShareCarouselPreviews(){
   const tok=++SHARE_CACHE.token;
   const gs=[...new Set(["card","favs","consoles","linkedin"].flatMap(k=>renderedGamesForPng(k,hist)))];
-  const imgMap=await preloadCoverImages(gs,3800);
+  const imgMap=await preloadCoverImages(gs,5200);
   if(tok!==SHARE_CACHE.token)return;
   SHARE_CACHE.imgMap=imgMap;
   for(let i=0;i<SHARE_SLIDES.length;i++){
@@ -5341,14 +5467,13 @@ function openShare(){
   const eraLbl=eraKidLabel(hist)||"'90s kid";
   const curIdx=Math.max(0,Math.min(SHARE_SLIDES.length-1,state.shareSlide||0));
   const curSlide=SHARE_SLIDES[curIdx];
-  openSheet(`<div class="sheethead"><div><p class="eyebrow" style="margin-bottom:2px">Share v2 · Crisp QR &amp; 4 high-res cards</p><h2>Share &amp; export your timeline</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
+  openSheet(`<div class="sheethead"><div><h2>Share &amp; export your timeline</h2></div><button class="x" data-act="closeLayer" aria-label="Close">×</button></div>
     <div class="row" style="gap:10px;align-items:flex-end">
       <label class="field" for="shareName" style="flex:1;min-width:160px">Name on your timeline<input class="input" id="shareName" maxlength="24" placeholder="Your first name" value="${esc(hist.name||"")}"></label>
-      <span class="sync" style="padding-bottom:8px">${plural(st.n,"game")}${st.wk?` · 🛠 ${st.wk}`:""}</span>
     </div>
     <div class="share-deck-wrap">
       <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:6px">
-        <span class="eyebrow" style="margin:0">Swipeable 4-card preview (QR embedded)</span>
+        <span class="eyebrow" style="margin:0">Card preview</span>
         <div class="row" style="gap:4px">
           <button type="button" class="btn sm" data-act="shareSlidePrev" aria-label="Previous card">◂</button>
           <button type="button" class="btn sm" data-act="shareSlideNext" aria-label="Next card">▸</button>
@@ -5356,8 +5481,8 @@ function openShare(){
       </div>
       <div class="share-deck" id="shareDeck" role="region" aria-label="Share card previews">
         ${SHARE_SLIDES.map((s,i)=>`<div class="share-slide" data-slide="${i}">
-          <div class="share-slide-head"><b>${esc(s.title)}</b><span class="mono muted" style="font-size:11.5px">${s.dim} · QR ready</span></div>
-          <div class="share-slide-stage" id="shareStage-${s.k}"><span class="sync" style="color:#AEB6C8">Rendering ${esc(s.title)}…</span></div>
+          <div class="share-slide-head"><b>${esc(s.title)}</b><span class="mono muted" style="font-size:11.5px">${s.dim}</span></div>
+          <div class="share-slide-stage" id="shareStage-${s.k}"><span class="sync" style="color:var(--muted)">Rendering ${esc(s.title)}…</span></div>
         </div>`).join("")}
       </div>
       <div class="share-dots" role="tablist" aria-label="Choose share card">${SHARE_SLIDES.map((s,i)=>`<button type="button" class="share-dot" data-act="shareSlideDot" data-i="${i}" aria-label="${esc(s.title)}" aria-current="${i===curIdx?"true":"false"}"></button>`).join("")}</div>
@@ -5366,7 +5491,7 @@ function openShare(){
         <button type="button" class="btn ${canFiles?"":"primary"}" id="shareSlideDlBtn" data-act="shareCardDl">Download ${esc(curSlide.title)} PNG</button>
       </div>
     </div>
-    <div class="sharebox" style="margin-top:14px"><input class="input" id="shareLink" readonly value="${esc(url)}" aria-label="Your timeline link"><button class="btn primary" data-act="copyShare">Copy challenge link</button></div>
+    <div class="sharebox" style="margin-top:14px"><input class="input" id="shareLink" readonly value="${esc(url)}" aria-label="Your timeline link"><button class="btn" data-act="copyShare">Copy challenge link</button></div>
     <div style="display:flex;flex-direction:column;gap:8px;margin:10px 0 12px;padding:10px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line)">
       <span class="eyebrow" style="margin:0">Privacy options (opt-in — OFF by default)</span>
       ${hist.birth?`<label style="display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer"><input type="checkbox" id="shareBirthChk" ${state.shareBirth?"checked":""}><span>Include exact birth year (${hist.birth}) — off uses <b>${esc(eraLbl)}</b></span></label>`:""}
@@ -5648,7 +5773,7 @@ function canvasCover(x,title,year,h,glyph,bx,by,w,hh){
   const g=x.createLinearGradient(bx,by,bx+w,by+hh);g.addColorStop(0,`hsl(${h} 55% 42%)`);g.addColorStop(1,`hsl(${h+35} 60% 18%)`);
   x.fillStyle=g;x.beginPath();x.roundRect(bx,by,w,hh,Math.max(4,w*.05));x.fill();
   const gi=GLYPH_IMG[glyph];if(gi){x.imageSmoothingEnabled=false;const s=Math.round(w*.22/8)*8||8;x.globalAlpha=.9;x.drawImage(gi,bx+w*.08,by+hh-s-w*.08,s,s);x.globalAlpha=1}
-  x.fillStyle="#fff";const fs=Math.max(10,w*.11);x.font=`700 ${fs}px Unbounded, Arial Black, sans-serif`;wrapText(x,title,bx+w*.09,by+fs*1.5,w*.82,fs*1.14,4);
+  x.fillStyle="#fff";const fs=Math.max(9.5,Math.min(18,w*.098));x.font=`700 ${fs}px Unbounded, Arial Black, sans-serif`;wrapText(x,title,bx+w*.09,by+fs*1.55,w*.82,fs*1.16,4);
 }
 function preloadCoverImages(games,timeoutMs=4500){
   if(document.documentElement.dataset.art==="era")return Promise.resolve(new Map());
@@ -5671,13 +5796,23 @@ function preloadCoverImages(games,timeoutMs=4500){
 function drawCoverOrBox(x,g,title,year,h,glyph,bx,by,w,hh,imgMap){
   const im=g&&g.img&&imgMap&&imgMap.get(g.img);
   if(im&&im.naturalWidth>20&&im.naturalHeight>20){
-    const r=Math.max(4,w*.05),iw=im.naturalWidth,ih=im.naturalHeight;
+    const r=Math.max(4,w*.05),iw=im.naturalWidth,ih=im.naturalHeight,ar=iw/ih;
     const isLogo=/\.svg\.png|Logo\.|_logo\./i.test(g.img);
     x.save();x.imageSmoothingEnabled=true;
     x.beginPath();x.roundRect(bx,by,w,hh,r);x.clip();
     if(isLogo){
       x.fillStyle="#EEF2FA";x.fillRect(bx,by,w,hh);
       const pad=w*0.1,mw=w-pad*2,mh=hh-pad*2,sc=Math.min(mw/iw,mh/ih),dw=iw*sc,dh=ih*sc;
+      x.drawImage(im,bx+(w-dw)/2,by+(hh-dh)/2,dw,dh);
+    }else if(ar>1.55){
+      /* Wraparound scan (back|spine|front): anchor to front cover on right */
+      x.fillStyle="#0D111C";x.fillRect(bx,by,w,hh);
+      const sc=Math.max(w/iw,hh/ih),dw=iw*sc,dh=ih*sc;
+      x.drawImage(im,bx+w-dw,by+(hh-dh)/2,dw,dh);
+    }else if(ar>0.96){
+      /* Square/landscape box art (SNES/N64/Game Boy/PS1 jewel): full cover inside subtle frame */
+      x.fillStyle="#0D111C";x.fillRect(bx,by,w,hh);
+      const sc=Math.min(w/iw,hh/ih),dw=iw*sc,dh=ih*sc;
       x.drawImage(im,bx+(w-dw)/2,by+(hh-dh)/2,dw,dh);
     }else{
       x.fillStyle="#0D111C";x.fillRect(bx,by,w,hh);
@@ -5730,16 +5865,18 @@ function drawWallpaper(d,name,imgMap){
   x.font="500 28px IBM Plex Mono, monospace";x.fillStyle="#B9C1D2";x.fillText("Played & Made · playedmade.com",M,H-40);
   return cv;
 }
-function cardStagesFor(d){
+function cardStagesFor(d,imgMap=null){
   const es=entries(d);
+  const hasArt=e=>!!(e.g&&e.g.img&&(!imgMap||imgMap.has(e.g.img)));
+  const cmp=(p,q)=>(hasArt(q)-hasArt(p))||(q.lv-p.lv)||(((q.g&&q.g.pop)||0)-((p.g&&p.g.pop)||0));
   if(d.birth){
     return [["Childhood",0,12],["Teens",13,19],["Twenties",20,29],["Thirties",30,39],["Forties",40,49],["Fifty+",50,120]].map(([label,a,b])=>({
-      label,xs:es.filter(e=>e.y-d.birth>=a&&e.y-d.birth<=b).sort((p,q)=>q.lv-p.lv||((q.g&&q.g.pop)||0)-((p.g&&p.g.pop)||0)).slice(0,5)
+      label,xs:es.filter(e=>e.y-d.birth>=a&&e.y-d.birth<=b).sort(cmp).slice(0,5)
     })).filter(s=>s.xs.length);
   }
   const decs=[[1950,1979,"1950s–70s"],[1980,1989,"1980s"],[1990,1999,"1990s"],[2000,2009,"2000s"],[2010,2019,"2010s"],[2020,NOW,"2020s"]];
   return decs.map(([a,b,label])=>({
-    label,xs:es.filter(e=>e.y>=a&&e.y<=b).sort((p,q)=>q.lv-p.lv||((q.g&&q.g.pop)||0)-((p.g&&p.g.pop)||0)).slice(0,5)
+    label,xs:es.filter(e=>e.y>=a&&e.y<=b).sort(cmp).slice(0,5)
   })).filter(s=>s.xs.length);
 }
 function drawCard(d,name,imgMap){
@@ -5751,10 +5888,11 @@ function drawCard(d,name,imgMap){
   x.fillStyle="#AEB6C8";x.font="500 28px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)} · ${st.n} games · ${st.sys} systems`,72,248,W-144);
   if(persona){x.fillStyle="#FF8A78";x.font="600 28px IBM Plex Sans, sans-serif";x.fillText(persona.title,72,292,W-144)}
   let yy=356;
-  for(const {label,xs} of cardStagesFor(d)){if(yy>1420)break;
+  const cw=(W-144-4*18)/5,ch=Math.round(cw*4/3);
+  for(const {label,xs} of cardStagesFor(d,imgMap)){if(yy>1420)break;
     x.fillStyle="#8C9DFF";x.font="600 24px IBM Plex Mono, monospace";x.fillText(label.toUpperCase(),72,yy);yy+=24;
-    xs.forEach((e,k)=>{const w=170,h=226,bx=72+k*(w+18);const g=e.g;drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,yy,w,h,imgMap);if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=6;x.beginPath();x.roundRect(bx,yy,w,h,8);x.stroke()}});
-    yy+=226+56}
+    xs.forEach((e,k)=>{const bx=72+k*(cw+18);const g=e.g;drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,yy,cw,ch,imgMap);if(e.lv===3){x.strokeStyle="rgba(255,110,90,.85)";x.lineWidth=3;x.beginPath();x.roundRect(bx+1.5,yy+1.5,cw-3,ch-3,8);x.stroke()}});
+    yy+=ch+54}
   const dna=dnaOf(d);if(dna.top.length&&yy<1630){const a=dna.top[0];x.fillStyle="#8C9DFF";x.font="600 24px IBM Plex Mono, monospace";x.fillText("MY GAMING DNA",72,yy);yy+=46;
     x.fillStyle="#F2F4F8";x.font="600 32px IBM Plex Sans, sans-serif";wrapText(x,`${a.n} of my games descend from ${a.g.title} (${a.g.year}).`,72,yy,740,42,2);yy+=96}
   if(combos.length&&yy<1730){
@@ -5766,30 +5904,36 @@ function drawCard(d,name,imgMap){
   return cv;
 }
 function favCardPicks(d){
-  const es=entries(d),favs=es.filter(e=>e.lv===3).sort((a,b)=>a.y-b.y);
-  const t10=(d.top10||[]).map(k=>favs.find(f=>f.g&&(f.g.n===k||norm1(f.g.title)===k))).filter(Boolean);
-  return {t10,picks:(t10.length?t10:favs.length?favs:es.slice().sort((a,b)=>b.lv-a.lv)).slice(0,12)};
+  const es=entries(d);
+  const favs=es.filter(e=>e.lv===3).sort((a,b)=>((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0)||a.y-b.y);
+  const t10=(d.top10||[]).map(k=>matchTop10Entry(favs,k)).filter(Boolean);
+  const seen=new Set(t10);
+  const backfilled=[...t10,...favs.filter(f=>!seen.has(f))];
+  if(!backfilled.length)backfilled.push(...es.slice().sort((a,b)=>b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0)));
+  return {t10,picks:backfilled.slice(0,12)};
 }
 function drawFavsCard(d,name,imgMap){
   const W=1080,H=1440,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#121629");bg.addColorStop(1,"#261533");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const es=entries(d),{t10,picks}=favCardPicks(d);
   const persona=gamerPersonaOf(d);
-  x.fillStyle="#FF6E5A";x.font="600 26px IBM Plex Mono, monospace";x.fillText(t10.length?`MY TOP ${t10.length} GAMES`:"MY ALL-TIME FAVORITES",72,110);
+  const hdr=t10.length>=10?"MY TOP 10":t10.length>=4?`MY TOP ${t10.length}`:"MY ALL-TIME FAVORITES";
+  x.fillStyle="#FF6E5A";x.font="600 26px IBM Plex Mono, monospace";x.fillText(hdr,72,110);
   x.fillStyle="#F2F4F8";x.font="700 62px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"My Favorites"),72,186,W-300);
   x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)}${persona?" · "+persona.title:""}`,72,236,W-300);
   drawQrStamp(x,compactQrShareURL(d),W-226,64,154,"SCAN TO COMPARE");
-  const cols=4,w=212,h=282,gapX=29,gapY=54,startY=290;
+  const small=picks.length<=6;
+  const cols=small?3:4,w=small?292:212,h=small?388:276,gapX=small?30:29,gapY=small?46:42,startY=278;
   picks.forEach((e,idx)=>{
     const r=Math.floor(idx/cols),c=idx%cols,bx=72+c*(w+gapX),by=startY+r*(h+gapY),g=e.g;
     drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,w,h,imgMap);
-    x.strokeStyle=e.lv===3?"#FF6E5A":"#8C9DFF";x.lineWidth=5;x.beginPath();x.roundRect(bx,by,w,h,10);x.stroke();
-    if(t10.length){x.fillStyle="#FF6E5A";x.beginPath();x.roundRect(bx+10,by+10,44,36,8);x.fill();x.fillStyle="#fff";x.font="700 22px IBM Plex Mono, monospace";x.fillText("#"+(idx+1),bx+16,by+35)}
-    x.fillStyle="#CBD2E1";x.font="500 21px IBM Plex Mono, monospace";x.fillText(String(e.y),bx,by+h+28);
+    x.strokeStyle=e.lv===3?"rgba(255,110,90,.85)":"#8C9DFF";x.lineWidth=3.5;x.beginPath();x.roundRect(bx+1.5,by+1.5,w-3,h-3,10);x.stroke();
+    if(idx<t10.length&&t10.length>=2){x.fillStyle="#FF6E5A";x.beginPath();x.roundRect(bx+10,by+10,46,36,8);x.fill();x.fillStyle="#fff";x.font="700 22px IBM Plex Mono, monospace";x.fillText("#"+(idx+1),bx+15,by+35)}
+    x.fillStyle="#CBD2E1";x.font="500 20px IBM Plex Mono, monospace";x.fillText(String(e.y),bx,by+h+26);
   });
   const sys=(d.owned&&d.owned.length?d.owned:[...new Set(es.flatMap(e=>sysListOf(e.e,d)))]).slice(0,6);
-  if(sys.length){x.fillStyle="#98A1B6";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played on: "+sys.join(" · "),72,H-115,W-144)}
-  x.fillStyle="#8E98B0";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played & Made · playedmade.com",72,H-64);
+  if(sys.length){x.fillStyle="#98A1B6";x.font="500 22px IBM Plex Mono, monospace";wrapText(x,"Played on: "+sys.join(" · "),72,H-132,W-144,28,2)}
+  x.fillStyle="#8E98B0";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played & Made · playedmade.com",72,H-56);
   return cv;
 }
 function consoleCardRows(d){
@@ -5801,23 +5945,23 @@ function consoleCardRows(d){
 function drawConsolesCard(d,name,imgMap){
   const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0D1526");bg.addColorStop(1,"#1B1B34");x.fillStyle=bg;x.fillRect(0,0,W,H);
-  const es=entries(d),{bySys,rows}=consoleCardRows(d);
+  const es=entries(d),st=timelineStats(d),{rows}=consoleCardRows(d);
   const hwMap=new Map((CULT.hardware||[]).map(h=>[h.sys,h]));
   x.fillStyle="#8C9DFF";x.font="600 26px IBM Plex Mono, monospace";x.fillText("THE MACHINES THAT RAISED ME",72,115);
   x.fillStyle="#F2F4F8";x.font="700 62px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"Consoles & Favorites"),72,192,W-300);
-  x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)} · ${plural(bySys.size,"system")} · ${plural(es.length,"game")}`,72,244,W-300);
+  x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)} · ${plural(st.sys,"system")} · ${plural(es.length,"game")}`,72,244,W-300);
   drawQrStamp(x,compactQrShareURL(d),W-226,68,154,"SCAN TO COMPARE");
   let yy=305;
   rows.forEach(({sys,arr,top})=>{
     const hw=hwMap.get(sys);
     canvasHardware(x,sys,72,yy,310,256);
-    x.fillStyle="#F2F4F8";x.font="700 30px Unbounded, Arial Black, sans-serif";wrapText(x,sys,92,yy+118,270,34,2);
-    x.fillStyle="#98A1B6";x.font="500 20px IBM Plex Mono, monospace";x.fillText(hw?hw.maker:plural(arr.length,"game"),92,yy+190,270);
-    x.fillStyle="#8C9DFF";x.font="600 22px IBM Plex Mono, monospace";x.fillText(plural(arr.length,"game")+" played",92,yy+226,270);
+    x.fillStyle="#F2F4F8";x.font="700 29px Unbounded, Arial Black, sans-serif";wrapText(x,sys,92,yy+114,270,34,2);
+    x.fillStyle="#98A1B6";x.font="500 20px IBM Plex Mono, monospace";x.fillText(hw?hw.maker:plural(arr.length,"game"),92,yy+176,270);
+    x.fillStyle="#8C9DFF";x.font="600 22px IBM Plex Mono, monospace";x.fillText(plural(arr.length,"game")+" played",92,yy+214,270);
     top.forEach((e,k)=>{
       const cw=142,ch=190,bx=406+k*(cw+14),by=yy+33,g=e.g;
       drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,cw,ch,imgMap);
-      if(e.lv===3){x.strokeStyle="#FF6E5A";x.lineWidth=5;x.beginPath();x.roundRect(bx,by,cw,ch,8);x.stroke()}
+      if(e.lv===3){x.strokeStyle="rgba(255,110,90,.85)";x.lineWidth=3.5;x.beginPath();x.roundRect(bx+1.5,by+1.5,cw-3,ch-3,8);x.stroke()}
     });
     yy+=288;
   });
@@ -5873,25 +6017,33 @@ function drawLinkedInCard(d,name,imgMap){
     const subBits=[plural(mk.wk.length,"project"),mk.studios.length?mk.studios.slice(0,3).map(s=>s.name).join(" · "):"",mk.reachCount?`${mk.reachCount.toLocaleString()} later games in its ripple`:""].filter(Boolean).join("  ·  ");
     x.fillStyle="#B8C2D6";x.font="500 20px IBM Plex Sans, sans-serif";
     x.fillText(subBits,56,170,880);
-    x.fillStyle="#E8A948";x.font="600 15px IBM Plex Mono, monospace";x.fillText("CREDITS I HELPED BUILD",56,222);
-    mk.wk.slice(0,5).forEach((e,k)=>{
-      const cw=124,ch=166,bx=56+k*(cw+14),by=236,g=e.g;
-      drawCoverOrBox(x,g,g?g.title:e.e.t,workedYearOf(e),g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,cw,ch,imgMap);
-      x.strokeStyle="#E8A948";x.lineWidth=3.5;x.beginPath();x.roundRect(bx,by,cw,ch,7);x.stroke();
-      x.fillStyle="#CBD2E1";x.font="500 14px IBM Plex Mono, monospace";x.fillText(String(workedYearOf(e)),bx,by+ch+20);
+    const wkShow=mk.wk.slice(0,4);
+    const cw=138,ch=184,cGap=16,baseY=252;
+    x.fillStyle="#E8A948";x.font="600 15px IBM Plex Mono, monospace";x.fillText("CREDITS I HELPED BUILD",56,236);
+    wkShow.forEach((e,k)=>{
+      const bx=56+k*(cw+cGap),by=baseY,g=e.g,wy=workedYearOf(e);
+      drawCoverOrBox(x,g,g?g.title:e.e.t,wy,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,cw,ch,imgMap);
+      x.strokeStyle="#E8A948";x.lineWidth=3.5;x.beginPath();x.roundRect(bx+1.5,by+1.5,cw-3,ch-3,7);x.stroke();
+      const yrLbl=(g&&g.year!==wy)?`credit ${wy}`:String(wy);
+      x.fillStyle="#CBD2E1";x.font="500 14px IBM Plex Mono, monospace";x.fillText(yrLbl,bx,by+ch+22);
     });
     if(mk.desc.length){
-      const rx0=770;
+      const rx0=Math.max(296,56+wkShow.length*(cw+cGap)+44);
+      const rw=118,rh=158,rGap=14;
+      const maxRip=Math.max(1,Math.floor((W-56-rx0+rGap)/(rw+rGap)));
+      const ripList=mk.desc.slice().sort((a,b)=>(!!(b.g&&b.g.img&&(!imgMap||imgMap.has(b.g.img)))-!!(a.g&&a.g.img&&(!imgMap||imgMap.has(a.g.img))))||(b.g.pop-a.g.pop)).slice(0,Math.min(6,maxRip));
       x.fillStyle="#8C9DFF";x.font="600 15px IBM Plex Mono, monospace";x.fillText("DOWNSTREAM RIPPLE",rx0,236);
-      mk.desc.slice(0,3).forEach((r,k)=>{
-        const cw=112,ch=150,bx=rx0+k*(cw+12),by=252;
-        drawCoverOrBox(x,r.g,r.g.title,r.g.year,r.g.h,glyphOf(r.g),bx,by,cw,ch,imgMap);
-        x.strokeStyle="rgba(140,157,255,.75)";x.lineWidth=2.5;x.beginPath();x.roundRect(bx,by,cw,ch,7);x.stroke();
+      const ry=baseY+(ch-rh);
+      ripList.forEach((r,k)=>{
+        const bx=rx0+k*(rw+rGap);
+        drawCoverOrBox(x,r.g,r.g.title,r.g.year,r.g.h,glyphOf(r.g),bx,ry,rw,rh,imgMap);
+        x.strokeStyle="rgba(140,157,255,.75)";x.lineWidth=2.5;x.beginPath();x.roundRect(bx+1,ry+1,rw-2,rh-2,7);x.stroke();
+        x.fillStyle="#98A1B6";x.font="500 13px IBM Plex Mono, monospace";x.fillText(String(r.g.year),bx,ry+rh+20);
       });
     }
     drawQrStamp(x,compactQrShareURL(d),W-196,42,148,"COMPARE / CREDITS");
     x.fillStyle="#98A1B6";x.font="500 18px IBM Plex Mono, monospace";
-    x.fillText("Played & Made · playedmade.com — trace the lineage of every game you played or built",56,H-48,W-280);
+    x.fillText("Played & Made · playedmade.com — trace the lineage of every game you played or built",56,H-50,W-280);
   }else{
     const st=timelineStats(d),persona=gamerPersonaOf(d),dna=dnaOf(d),combos=unlockedCombos(d);
     const {picks}=favCardPicks(d);
@@ -5927,41 +6079,41 @@ function drawDuoCard(a,b,bName,imgMap){
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0D1528");bg.addColorStop(1,"#2A1634");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const ov=weightedTasteMatch(a,b),ss=ov.sameServer[0];
   const aName=a.name||"You",fName=bName||b.name||"A friend";
-  x.fillStyle="#8C9DFF";x.font="600 24px IBM Plex Mono, monospace";x.fillText("DUO TASTE MATCH · PLAYED & MADE",68,94);
-  x.fillStyle="#F4F6FA";x.font="700 54px Unbounded, Arial Black, sans-serif";x.fillText(`${aName} × ${fName}`,68,166,W-280);
+  x.fillStyle="#8C9DFF";x.font="600 24px IBM Plex Mono, monospace";x.fillText("DUO TASTE MATCH · PLAYED & MADE",72,94);
+  x.fillStyle="#F4F6FA";x.font="700 54px Unbounded, Arial Black, sans-serif";x.fillText(`${aName} × ${fName}`,72,166,W-280);
   x.fillStyle="#FF6E5A";x.font="700 96px Unbounded, Arial Black, sans-serif";
   const pctStr=`${ov.pct}%`;
-  x.fillText(pctStr,68,296,360);
+  x.fillText(pctStr,72,296,360);
   const pctW=Math.min(360,x.measureText(pctStr).width);
-  const metaX=Math.ceil(68+pctW+30);
+  const metaX=Math.ceil(72+pctW+30);
   x.fillStyle="#CBD2E1";x.font="600 26px IBM Plex Sans, sans-serif";
-  x.fillText(`${plural(ov.both,"shared game")} · ${plural(ov.favBoth,"shared ♥ favorite")}`,metaX,252,W-metaX-68);
+  x.fillText(`${plural(ov.both,"shared game")} · ${plural(ov.favBoth,"shared ♥ favorite")}`,metaX,252,W-metaX-72);
   x.fillStyle="#98A1B6";x.font="500 22px IBM Plex Mono, monospace";
-  x.fillText(`${ov.genrePct}% genre DNA alignment`,metaX,292,W-metaX-68);
+  x.fillText(`${ov.genrePct}% genre DNA alignment`,metaX,292,W-metaX-72);
   let yy=348;
   if(ss){
     x.fillStyle="rgba(232,169,72,.16)";x.strokeStyle="#E8A948";x.lineWidth=2.5;
-    x.beginPath();x.roundRect(68,yy,W-136,62,14);x.fill();x.stroke();
+    x.beginPath();x.roundRect(72,yy,W-144,62,14);x.fill();x.stroke();
     x.fillStyle="#F6C86E";x.font="700 24px IBM Plex Sans, sans-serif";
-    x.fillText(`${ss.isOnline?"Same Server, Same Year":"Same Year, Same World"}: You both played ${ss.title} in ${ss.year}`,92,yy+39,W-184);
-    yy+=88;
+    x.fillText(`${ss.isOnline?"Same Server, Same Year":"Same Year, Same World"}: You both played ${ss.title} in ${ss.year}`,96,yy+39,W-192);
+    yy+=108;
   }
   x.fillStyle="#8C9DFF";x.font="600 22px IBM Plex Mono, monospace";
-  x.fillText(ov.shared.length?"GAMES YOU BOTH PLAYED":"PLAYED ON DIFFERENT WORLDS",68,yy);
-  yy+=22;
+  x.fillText(ov.shared.length?"GAMES YOU BOTH PLAYED":"PLAYED ON DIFFERENT WORLDS",72,yy);
+  yy+=26;
   const picks=ov.shared.slice(0,8);
-  const cols=4,cw=216,ch=270,gx=26,gy=42;
+  const cols=4,cw=216,ch=266,gx=24,gy=42;
   picks.forEach((it,idx)=>{
-    const r=Math.floor(idx/cols),c=idx%cols,bx=68+c*(cw+gx),by=yy+r*(ch+gy),g=it.g;
+    const r=Math.floor(idx/cols),c=idx%cols,bx=72+c*(cw+gx),by=yy+r*(ch+gy),g=it.g;
     drawCoverOrBox(x,g,g?g.title:it.a.e.t,it.a.y,g?g.h:hueOf(norm(it.a.e.t)),g?glyphOf(g):"stick",bx,by,cw,ch,imgMap);
     const bothFav=it.a.lv===3&&it.b.lv===3;
-    x.strokeStyle=bothFav?"#FF6E5A":"#8C9DFF";x.lineWidth=bothFav?6:3;
-    x.beginPath();x.roundRect(bx,by,cw,ch,10);x.stroke();
+    x.strokeStyle=bothFav?"rgba(255,110,90,.85)":"#8C9DFF";x.lineWidth=bothFav?4:2.5;
+    x.beginPath();x.roundRect(bx+1.5,by+1.5,cw-3,ch-3,10);x.stroke();
     x.fillStyle="#CBD2E1";x.font="500 19px IBM Plex Mono, monospace";
     x.fillText(`${it.a.y===it.b.y?it.a.y:`${it.a.y}/${it.b.y}`}${bothFav?" · ♥♥":""}`,bx,by+ch+25);
   });
-  drawQrStamp(x,compactQrShareURL(a),W-222,H-222,154,"COMPARE YOURS");
-  x.fillStyle="#8E98B0";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played & Made · playedmade.com",68,H-64);
+  drawQrStamp(x,compactQrShareURL(a),W-226,H-222,154,"COMPARE YOURS");
+  x.fillStyle="#8E98B0";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played & Made · playedmade.com",72,H-64);
   return cv;
 }
 async function exportDuoPng(f){
@@ -5969,7 +6121,7 @@ async function exportDuoPng(f){
   const ov=weightedTasteMatch(hist,f.data);
   const gs=ov.shared.slice(0,8).map(x=>x.g).filter(Boolean);
   toast("Rendering Duo Overlap card…");
-  const imgMap=await preloadCoverImages(gs,3800);
+  const imgMap=await preloadCoverImages(gs,5200);
   let blob=null;
   try{const cv=drawDuoCard(hist,f.data,f.name,imgMap);blob=await new Promise((res,rej)=>{try{cv.toBlob(b=>b?res(b):rej(0),"image/png")}catch(e){rej(e)}})}
   catch(_){const cv2=drawDuoCard(hist,f.data,f.name,null);blob=await new Promise(r=>cv2.toBlob(r,"image/png"))}
@@ -6037,7 +6189,7 @@ function renderedGamesForPng(kind,d){
   if(kind==="consoles")return consoleCardRows(d).rows.flatMap(r=>r.top).map(e=>e.g).filter(Boolean);
   if(kind==="linkedin"){
     const mk=makerLegacyOf(d);
-    if(mk&&mk.wk.length)return [...mk.wk.slice(0,5).map(e=>e.g),...mk.desc.slice(0,3).map(r=>r.g)].filter(Boolean);
+    if(mk&&mk.wk.length)return [...mk.wk.slice(0,5).map(e=>e.g),...mk.desc.slice(0,8).map(r=>r.g)].filter(Boolean);
     return favCardPicks(d).picks.slice(0,6).map(e=>e.g).filter(Boolean);
   }
   if(kind==="maker"){

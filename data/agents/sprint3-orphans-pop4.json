@@ -1,0 +1,2131 @@
+{
+  "links": [
+    {
+      "from": "company-of-heroes",
+      "to": "hell-let-loose",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Sector-capture frontlines tied to Manpower, Munitions, and Fuel resource nodes.",
+      "added": "Translated that overhead RTS territory meta-game into 50-vs-50 first-person WWII combat.",
+      "src": [
+        {
+          "t": "GamesIndustry.biz, Maximilian Rea (Black Matter) interview",
+          "u": "https://www.gamesindustry.biz/how-hell-let-loose-hopes-to-set-itself-apart-from-other-wwii-shooters"
+        },
+        {
+          "t": "Hell Let Loose — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Hell_Let_Loose"
+        }
+      ],
+      "extra": "Black Matter founder Max Rea paired Company of Heroes' resource meta-game with Project Reality's squad logistics."
+    },
+    {
+      "from": "battlefield-1942",
+      "to": "hell-let-loose",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized large-scale combined-arms WWII infantry and tank battles across European theaters.",
+      "added": "Replaced arcade ticket bleed with lethal gunplay, officer radio chains, and player-built garrison spawns.",
+      "src": [
+        {
+          "t": "Hell Let Loose — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Hell_Let_Loose"
+        }
+      ]
+    },
+    {
+      "from": "battlefield-vietnam",
+      "to": "hell-let-loose-vietnam",
+      "tier": "critic",
+      "rel": "",
+      "took": "Popularized asymmetric Vietnam multiplayer pitting US Huey air-cavalry against NVA jungle ambushes.",
+      "added": "Pushed that asymmetric theater toward archival authenticity, 50-vs-50 platoon logistics, and tunnel networks.",
+      "src": [
+        {
+          "t": "Loot Level Chill, Paul Rustchynsky (Expression Games) interview",
+          "u": "https://lootlevelchill.com/features/hell-let-loose-vietnam-interview-authenticity-is-front-of-mind/"
+        },
+        {
+          "t": "Battlefield Vietnam — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Battlefield_Vietnam"
+        }
+      ],
+      "extra": "Director Paul Rustchynsky noted Expression Games prioritized veteran archives over older Vietnam shooters."
+    },
+    {
+      "from": "dayz",
+      "to": "dayz-badlands",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "The 2012 Arma 2 DayZ mod sparked popular community survival servers on Takistan's desert.",
+      "added": "Built Nasdara from scratch as DayZ's largest official arid expansion with heatstroke and sandstorms.",
+      "src": [
+        {
+          "t": "Bohemia Interactive — DayZ Badlands launch blog",
+          "u": "https://www.bohemia.net/en/blog/dayz-badlands-out-now"
+        },
+        {
+          "t": "Shacknews — DayZ Badlands preview",
+          "u": "https://www.shacknews.com/article/144895/dayz-badlands-hands-off-preview"
+        }
+      ],
+      "extra": "Nasdara sits on the western frontier of Takistan from Arma 2: Operation Arrowhead."
+    },
+    {
+      "from": "civilization-v",
+      "to": "the-battle-of-polytopia",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized one-unit-per-tile grid combat and streamlined modern 4X city expansion.",
+      "added": "Compressed one-unit-per-tile warfare into crisp 30-turn mobile matches without diplomacy or build queues.",
+      "src": [
+        {
+          "t": "Prima Games, Felix af Ekenstam (Midjiwan) retrospective",
+          "u": "https://primagames.com/gaming/seven-years-war-how-the-battle-of-polytopia-conquered-the-mobile-strategy-world"
+        },
+        {
+          "t": "The Battle of Polytopia — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Battle_of_Polytopia"
+        }
+      ]
+    },
+    {
+      "from": "advance-wars",
+      "to": "the-battle-of-polytopia",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Bite-sized portable turn-based grid warfare with readable unit counters and deterministic combat.",
+      "added": "Merged portable tactical clarity with fog-of-war exploration, city leveling, and asymmetric tribe tech trees.",
+      "src": [
+        {
+          "t": "Cubed3, Midjiwan CEO Christian Lovstedt interview",
+          "u": "https://www.cubed3.com/features/interviews/interview-with-midjiwan-ceo-christian-lovstedt-on-the-battle-of-polytopia"
+        },
+        {
+          "t": "The Battle of Polytopia — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Battle_of_Polytopia"
+        }
+      ]
+    },
+    {
+      "from": "knight-lore",
+      "to": "batman",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Isometric Filmation-style 3D room projection, block pushing, and flip-screen exploration.",
+      "added": "Added smoother object sorting, four collectible bat-gadgets, hovercraft rescue goals, and checkpoint saves.",
+      "src": [
+        {
+          "t": "Game Developer, Jon Ritman interview",
+          "u": "https://www.gamedeveloper.com/game-platforms/playing-catch-up-i-match-day-i-s-jon-ritman"
+        },
+        {
+          "t": "Batman (1986 video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Batman_(1986_video_game)"
+        }
+      ],
+      "extra": "Jon Ritman said seeing Knight Lore made his jaw drop and drove him to code Batman with Bernie Drummond."
+    },
+    {
+      "from": "atari-football",
+      "to": "tecmo-bowl",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized horizontal-field arcade American football with pre-snap offensive and defensive play calling.",
+      "added": "Expanded to four-player dual-screen arcade cabinets, smooth scrolling, and later licensed NFLPA NES rosters.",
+      "src": [
+        {
+          "t": "Tecmo Bowl — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Tecmo_Bowl"
+        }
+      ]
+    },
+    {
+      "from": "tecmo-bowl",
+      "to": "tecmo-super-bowl",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast side-view four-play arcade football rhythm and real NFLPA player identities.",
+      "added": "Added all 28 NFL teams, full season play with stat tracking, player injuries, and eight-play playbooks.",
+      "src": [
+        {
+          "t": "Tecmo Super Bowl — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Tecmo_Super_Bowl"
+        }
+      ]
+    },
+    {
+      "from": "shinobi",
+      "to": "robocop",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized side-scrolling arcade gun action paired with first-person target-shooting bonus stages.",
+      "added": "Adapted the film into deliberate armored street gunplay, voice samples, and ED-209 boss battles.",
+      "src": [
+        {
+          "t": "RoboCop (1988 video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/RoboCop_(1988_video_game)"
+        }
+      ],
+      "extra": "Ocean Software built the hit 1988 home-computer version directly alongside Data East's arcade build."
+    },
+    {
+      "from": "super-mario-bros",
+      "to": "bonks-adventure",
+      "tier": "critic",
+      "rel": "fast-follow",
+      "took": "Side-scrolling mascot platforming, hidden bonus rooms, and power-up transformations.",
+      "added": "Created the TurboGrafx-16's caveman mascot built around skull headbutts, meat power-ups, and tooth-climbing.",
+      "src": [
+        {
+          "t": "Bonk's Adventure — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Bonk%27s_Adventure"
+        }
+      ],
+      "extra": "Commissioned by Hudson Soft from Red Company to give the PC Engine a signature mascot platformer."
+    },
+    {
+      "from": "ducktales",
+      "to": "chip-n-dale-rescue-rangers",
+      "tier": "team",
+      "rel": "",
+      "took": "Capcom's tight NES Disney platformer craft and non-linear stage map under producer Tokuro Fujiwara.",
+      "added": "Swapped solo pogo exploration for two-player co-op crate lifting, partner tossing, and teamwork bosses.",
+      "src": [
+        {
+          "t": "Chip 'n Dale Rescue Rangers (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Chip_%27n_Dale_Rescue_Rangers_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "super-mario-bros-2",
+      "to": "chip-n-dale-rescue-rangers",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized plucking and carrying heavy objects over your head to hurl at enemies.",
+      "added": "Built two-player co-op stages around hiding inside crates and tossing boxes or teammates.",
+      "src": [
+        {
+          "t": "Chip 'n Dale Rescue Rangers (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Chip_%27n_Dale_Rescue_Rangers_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "mega-man-2",
+      "to": "mega-man-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Eight selectable Robot Masters, boss-weapon rock-paper-scissors weaknesses, and Energy Tanks.",
+      "added": "Introduced Mega Man's ground slide, robot dog Rush transformations, Proto Man, and Doc Robot rematches.",
+      "src": [
+        {
+          "t": "Mega Man 3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Mega_Man_3"
+        }
+      ]
+    },
+    {
+      "from": "mega-man-3",
+      "to": "mega-man-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Slide mobility, Rush support utilities, and eight-stage Robot Master progression.",
+      "added": "Debuted the chargeable Mega Buster shot, Eddie item drops, and the two-fortress Dr. Cossack twist.",
+      "src": [
+        {
+          "t": "Mega Man 4 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Mega_Man_4"
+        }
+      ]
+    },
+    {
+      "from": "super-mario-bros-3",
+      "to": "super-mario-all-stars",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Nintendo's flagship 8-bit side-scrolling Mario stages, physics, and world maps.",
+      "added": "Remade all four NES Mario games in 16-bit SNES graphics with battery saves and Lost Levels.",
+      "src": [
+        {
+          "t": "Super Mario All-Stars — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Super_Mario_All-Stars"
+        }
+      ]
+    },
+    {
+      "from": "nba-jam",
+      "to": "nba-jam-tournament-edition",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Two-on-two arcade basketball with flaming on-fire streaks and over-the-top dunks.",
+      "added": "Added mid-game substitutions, player fatigue and injuries, hotspots, rookies, and expanded secret characters.",
+      "src": [
+        {
+          "t": "NBA Jam (Tournament Edition) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/NBA_Jam_(1993_video_game)"
+        }
+      ]
+    },
+    {
+      "from": "duck-hunt",
+      "to": "moorhuhn",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized timed bird-shooting gallery reflexes and escalating target scoring.",
+      "added": "Turned a Johnnie Walker laptop bar promo into Europe's viral 90-second mouse-aimed PC phenomenon.",
+      "src": [
+        {
+          "t": "Crazy Chicken — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Crazy_Chicken"
+        }
+      ]
+    },
+    {
+      "from": "tamagotchi",
+      "to": "neopets",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Virtual pet feeding, grooming, and daily emotional care loops.",
+      "added": "Moved digital pets into a persistent browser world with Flash minigames, shops, and player trading.",
+      "src": [
+        {
+          "t": "The Guardian — Neopets profile, Oct 2002",
+          "u": "https://www.theguardian.com/technology/2002/oct/31/games.onlinesupplement"
+        },
+        {
+          "t": "Neopets — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Neopets"
+        }
+      ],
+      "extra": "Created by Adam Powell and Donna Williams at Nottingham; The Guardian called it an online Pokemon-Tamagotchi hybrid."
+    },
+    {
+      "from": "pok-mon-red-and-green",
+      "to": "neopets",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Collectible creature species, elemental paint/type variety, and turn-based monster battles.",
+      "added": "Combined collectible pets with a free browser economy, user guilds, and daily community events.",
+      "src": [
+        {
+          "t": "The Guardian — Neopets profile, Oct 2002",
+          "u": "https://www.theguardian.com/technology/2002/oct/31/games.onlinesupplement"
+        },
+        {
+          "t": "Neopets — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Neopets"
+        }
+      ]
+    },
+    {
+      "from": "marvel-vs-capcom",
+      "to": "marvel-vs-capcom-2-new-age-of-heroes",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "High-flying crossover tag combat with super combos and comic-book assists.",
+      "added": "Expanded to 3-on-3 teams, 56 fighters, a simplified four-attack layout, and customizable assist types.",
+      "src": [
+        {
+          "t": "Marvel vs. Capcom 2: New Age of Heroes — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Marvel_vs._Capcom_2:_New_Age_of_Heroes"
+        }
+      ]
+    },
+    {
+      "from": "snake",
+      "to": "snake-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Nokia's monochrome grid-slithering high-score mobile arcade staple from the 6110.",
+      "added": "Added screen-wrapping borders, timed bonus critters, five selectable mazes, and infrared two-player battles.",
+      "src": [
+        {
+          "t": "Snake (video game genre) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Snake_(video_game_genre)"
+        }
+      ],
+      "extra": "Bundled on Nokia 3310 handsets starting in 2000, becoming one of mobile gaming's widest hits."
+    },
+    {
+      "from": "virtua-fighter",
+      "to": "wwf-no-mercy",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized polygonal 3D ring spacing, strike timing, and grappling physics.",
+      "added": "Adapted 3D combat timing into AKI's reversal-heavy pro-wrestling engine with deep creation tools.",
+      "src": [
+        {
+          "t": "WWF No Mercy (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/WWF_No_Mercy_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "wcwnwo-revenge",
+      "to": "wwf-no-mercy",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "AKI Corporation's N64 light-and-heavy grapple engine and Spirit momentum meter.",
+      "added": "Added branching championship storylines, backstage brawl rooms, ladder matches, and deep wrestler creation.",
+      "src": [
+        {
+          "t": "WWF No Mercy (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/WWF_No_Mercy_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "wwf-no-mercy",
+      "to": "def-jam-fight-for-ny",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "AKI Corporation's responsive grapple-reversal controls and momentum-fueled Blazin' finishers.",
+      "added": "Fused five fighting styles, hip-hop stars, crowd-weapon pickups, and brutal arena hazard knockouts.",
+      "src": [
+        {
+          "t": "Def Jam: Fight for NY — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Def_Jam:_Fight_for_NY"
+        }
+      ],
+      "extra": "Co-developed by AKI Corporation and EA Canada as the direct evolution of AKI's N64 wrestling engine."
+    },
+    {
+      "from": "tekken-3",
+      "to": "wwf-smackdown",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized fast PlayStation 3D arcade striking, responsive animations, and simple button combos.",
+      "added": "Brought brisk arcade pacing, backstage brawls, and a year-round calendar Season mode to wrestling.",
+      "src": [
+        {
+          "t": "WWF SmackDown! (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/WWF_SmackDown!_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "wwf-smackdown",
+      "to": "wwf-smackdown-2-know-your-role",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Yuke's brisk PlayStation arcade wrestling engine and dynamic backstage brawls.",
+      "added": "Added Hell in a Cell, Tables and TLC matches, Create-a-Taunt, and four-player Season mode.",
+      "src": [
+        {
+          "t": "WWF SmackDown! 2: Know Your Role — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/WWF_SmackDown!_2:_Know_Your_Role"
+        }
+      ],
+      "extra": "Released November 2000, eight months after the March 2000 original."
+    },
+    {
+      "from": "wwf-smackdown-2-know-your-role",
+      "to": "wwe-smackdown-here-comes-the-pain",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Yuke's fast SmackDown match flow, gimmick bouts, and customizable wrestler suite.",
+      "added": "Overhauled grappling with limb damage, weight detection, Elimination Chamber matches, and branching Season stories.",
+      "src": [
+        {
+          "t": "WWE SmackDown! Here Comes the Pain — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/WWE_SmackDown!_Here_Comes_the_Pain"
+        }
+      ]
+    },
+    {
+      "from": "wwe-smackdown-here-comes-the-pain",
+      "to": "wwe-smackdown-vs-raw",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Limb-targeting grapple mechanics, weight physics, and branching WWE Season careers.",
+      "added": "Added full superstar voice acting, online PlayStation 2 play, and Clean-or-Dirty alignment meters.",
+      "src": [
+        {
+          "t": "WWE SmackDown! vs. Raw — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/WWE_SmackDown!_vs._Raw"
+        }
+      ]
+    },
+    {
+      "from": "championship-manager",
+      "to": "championship-manager-0102",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Collyer brothers' text-driven football club database, tactics, and transfer market sim.",
+      "added": "Expanded to 27 playable nations, EU transfer rules, attribute masking, and enduring community-updated speed.",
+      "src": [
+        {
+          "t": "Championship Manager: Season 01/02 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Championship_Manager:_Season_01/02"
+        }
+      ]
+    },
+    {
+      "from": "championship-manager-0102",
+      "to": "football-manager-2005",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Sports Interactive's match engine, massive scouting database, and tactical club management depth.",
+      "added": "Relaunched under Sega with a 2D pitch engine, revamped UI, and expanded media mind games.",
+      "src": [
+        {
+          "t": "Championship Manager: Season 01/02 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Championship_Manager:_Season_01/02"
+        }
+      ],
+      "extra": "After splitting with Eidos, Sports Interactive kept its code and database to launch Football Manager."
+    },
+    {
+      "from": "football-manager-2005",
+      "to": "football-manager-2006",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sports Interactive's 2D match viewer, player scouting database, and club finances.",
+      "added": "Introduced half-time dressing-room team talks, touchline quick tactics, and interactive physio injury options.",
+      "src": [
+        {
+          "t": "Football Manager 2006 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Football_Manager_2006"
+        }
+      ]
+    },
+    {
+      "from": "football-manager-2006",
+      "to": "football-manager-2007",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Half-time team talks, 2D match tactics, and deep global club databases.",
+      "added": "Added pre-match speeches, parent-and-feeder club loan links, youth regen overhauls, and scout report cards.",
+      "src": [
+        {
+          "t": "Football Manager 2007 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Football_Manager_2007"
+        }
+      ]
+    },
+    {
+      "from": "ssx",
+      "to": "ssx-tricky",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Exaggerated arcade snowboarding tracks, boost-filling grabs, and stylized PS2 trick courses.",
+      "added": "Added absurd Uber Tricks, rivalries that change rival AI, celebrity voiceovers, and vibrant remixed slopes.",
+      "src": [
+        {
+          "t": "SSX Tricky — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/SSX_Tricky"
+        }
+      ]
+    },
+    {
+      "from": "super-mario-bros-2",
+      "to": "super-mario-advance",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Four playable characters with distinct jumps and vegetable-plucking Subcon platforming.",
+      "added": "Rebuilt SMB2 for Game Boy Advance launch with giant enemies, Red Coins, voices, and Mario Bros. co-op.",
+      "src": [
+        {
+          "t": "Super Mario Advance — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Super_Mario_Advance"
+        }
+      ]
+    },
+    {
+      "from": "super-mario-world",
+      "to": "super-mario-advance-2-super-mario-world",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Dinosaur Land's cape flight, Yoshi mounts, and 96 secret-exit SNES stages.",
+      "added": "Adapted the SNES platformer for GBA with Luigi's distinct floaty physics and dragon-coin tracking.",
+      "src": [
+        {
+          "t": "Super Mario World — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Super_Mario_World"
+        }
+      ]
+    },
+    {
+      "from": "the-legend-of-zelda-link-s-awakening",
+      "to": "the-legend-of-zelda-oracle-of-seasons",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Top-down Game Boy Zelda engine, two-button item swapping, and compact dungeon puzzle craft.",
+      "added": "Added the Rod of Seasons to flip overworld climates and password-linked story continuity with Oracle of Ages.",
+      "src": [
+        {
+          "t": "The Legend of Zelda: Oracle of Seasons and Oracle of Ages — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Oracle_of_Seasons_and_Oracle_of_Ages"
+        }
+      ],
+      "extra": "Developed by Capcom's Flagship studio under Hidemaro Fujibayashi using an evolved Link's Awakening engine."
+    },
+    {
+      "from": "the-legend-of-zelda-oracle-of-seasons",
+      "to": "the-legend-of-zelda-the-minish-cap",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Capcom and Flagship's dense handheld Zelda dungeon puzzles and inventive overworld gimmicks.",
+      "added": "Introduced Ezlo's talking cap, shrinking to microscopic Minish worlds, and Kinstone fusion overworld secrets.",
+      "src": [
+        {
+          "t": "The Legend of Zelda: The Minish Cap — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_The_Minish_Cap"
+        }
+      ]
+    },
+    {
+      "from": "the-legend-of-zelda-the-wind-waker",
+      "to": "the-legend-of-zelda-phantom-hourglass",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Cel-shaded ocean sailing, cartoon Link, and seafaring island exploration.",
+      "added": "Rebuilt controls around DS touchscreen stylus movement, chart drawing, and the recurring Ocean King temple.",
+      "src": [
+        {
+          "t": "The Legend of Zelda: Phantom Hourglass — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Phantom_Hourglass"
+        }
+      ]
+    },
+    {
+      "from": "tony-hawk-s-pro-skater-3",
+      "to": "tony-hawks-pro-skater-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Revert-linked manual combos and trick-heavy urban skateparks.",
+      "added": "Dropped the two-minute session timer for open-roam parks with NPC goals and spine transfers.",
+      "src": [
+        {
+          "t": "Tony Hawk's Pro Skater 4 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Tony_Hawk%27s_Pro_Skater_4"
+        }
+      ]
+    },
+    {
+      "from": "tony-hawks-pro-skater-4",
+      "to": "tony-hawks-underground",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Free-roam skate levels with talk-to-start missions and massive combo chains.",
+      "added": "Added getting off the board on foot, driving cars, custom tricks, and a rags-to-pro story campaign.",
+      "src": [
+        {
+          "t": "Tony Hawk's Underground — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Tony_Hawk%27s_Underground"
+        }
+      ]
+    },
+    {
+      "from": "spider-man",
+      "to": "spider-man-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Treyarch's movie-tie-in Spider-Man combat engine, web-zip acrobatics, and stealth-action structure.",
+      "added": "Replaced linear skybox levels with a free-roam Manhattan and true physics-driven pendulum web-swinging.",
+      "src": [
+        {
+          "t": "Spider-Man 2 (2004 video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Spider-Man_2_(2004_video_game)"
+        }
+      ],
+      "extra": "Treyarch built Spider-Man (2002) first, then overhauled traversal into Spider-Man 2's open-world Manhattan."
+    },
+    {
+      "from": "banjo-kazooie",
+      "to": "spongebob-squarepants-battle-for-bikini-bottom",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized hub-linked 3D collect-athon worlds with tiered progression items and move unlocks.",
+      "added": "Delivered tight cartoon platforming across three playable heroes collecting Golden Spatulas and socks.",
+      "src": [
+        {
+          "t": "SpongeBob SquarePants: Battle for Bikini Bottom — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants:_Battle_for_Bikini_Bottom"
+        }
+      ]
+    },
+    {
+      "from": "super-mario-64",
+      "to": "spongebob-squarepants-battle-for-bikini-bottom",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized analog 3D platforming hubs and open mission-based stage objectives.",
+      "added": "Adapted Bikini Bottom into an exploratory 3D collect-athon with character-swapping puzzles and speedrun depth.",
+      "src": [
+        {
+          "t": "SpongeBob SquarePants: Battle for Bikini Bottom — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants:_Battle_for_Bikini_Bottom"
+        }
+      ]
+    },
+    {
+      "from": "golden-axe",
+      "to": "the-lord-of-the-rings-the-return-of-the-king",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized cooperative fantasy melee brawling against waves of invading monsters.",
+      "added": "Fused seamless film-to-gameplay transitions, parry executions, ranged attacks, and two-player siege co-op.",
+      "src": [
+        {
+          "t": "The Lord of the Rings: The Return of the King (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "the-lord-of-the-rings-the-two-towers",
+      "to": "the-lord-of-the-rings-the-return-of-the-king",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Combo-driven Middle-earth hack-and-slash combat with seamless live-action movie cuts.",
+      "added": "Added drop-in two-player co-op, three branching hero paths, interactive siege engines, and nine characters.",
+      "src": [
+        {
+          "t": "The Lord of the Rings: The Return of the King (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "street-fighter",
+      "to": "dragon-ball-z-budokai-3",
+      "tier": "team",
+      "rel": "",
+      "took": "Creator Takashi Nishiyama's arcade fighting cadence and cancel-combo timing carried into Dimps.",
+      "added": "Blended anime transformations, vanish-teleport counters, Dragon Rush clashes, and overworld flight exploration.",
+      "src": [
+        {
+          "t": "Dragon Ball Z: Budokai 3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Budokai_3"
+        }
+      ],
+      "extra": "Dimps was founded in 2000 by Street Fighter and Fatal Fury creator Takashi Nishiyama."
+    },
+    {
+      "from": "virtua-fighter",
+      "to": "dragon-ball-z-budokai-3",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized 3D arena spacing, directional guarding, and sidestep evasion.",
+      "added": "Paired 3D sidestepping with high-speed ki beams, mid-fight fusions, and custom skill capsules.",
+      "src": [
+        {
+          "t": "Dragon Ball Z: Budokai 3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Budokai_3"
+        }
+      ]
+    },
+    {
+      "from": "prince-of-persia-the-sands-of-time",
+      "to": "prince-of-persia-warrior-within",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Wall-running acrobatics and Dagger of Time rewind puzzles.",
+      "added": "Introduced free-form dual-wielding combat, interconnected past-and-present island hubs, and Dahaka chases.",
+      "src": [
+        {
+          "t": "Prince of Persia: Warrior Within — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Prince_of_Persia:_Warrior_Within"
+        }
+      ]
+    },
+    {
+      "from": "prince-of-persia-warrior-within",
+      "to": "prince-of-persia-the-two-thrones",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Expanded free-form swordplay and darker dual-era action pacing.",
+      "added": "Added stealth Speed Kills, chariot races, and the chain-whipping Dark Prince persona.",
+      "src": [
+        {
+          "t": "Prince of Persia: Warrior Within — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Prince_of_Persia:_Warrior_Within"
+        }
+      ]
+    },
+    {
+      "from": "tekken-3",
+      "to": "tekken-5",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast 3D sidestepping, four-limb button mapping, and juggles without uneven terrain.",
+      "added": "Returned to flat walled arenas with crush-system counters, character customization, and arcade classics bonus.",
+      "src": [
+        {
+          "t": "Tekken 5 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Tekken_5"
+        }
+      ]
+    },
+    {
+      "from": "you-dont-know-jack",
+      "to": "buzz-the-music-quiz",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Sarcastic game-show host banter and fast multiplayer buzz-in trivia rounds.",
+      "added": "Bundled four custom PS2 USB buzzer controllers and licensed pop-music clips for living-room parties.",
+      "src": [
+        {
+          "t": "Eurogamer — Buzz!: The Music Quiz preview",
+          "u": "https://www.eurogamer.net/p-buzz-ps2"
+        },
+        {
+          "t": "Buzz!: The Music Quiz — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Buzz!:_The_Music_Quiz"
+        }
+      ]
+    },
+    {
+      "from": "singstar",
+      "to": "buzz-the-music-quiz",
+      "tier": "critic",
+      "rel": "",
+      "took": "Sony Europe's bundled USB social peripheral formula turning PlayStation 2 into a party hub.",
+      "added": "Swapped karaoke microphones for four tactile quiz buzzers and chaotic point-stealing trivia rounds.",
+      "src": [
+        {
+          "t": "Eurogamer — Buzz!: The Music Quiz preview",
+          "u": "https://www.eurogamer.net/p-buzz-ps2"
+        },
+        {
+          "t": "Buzz!: The Music Quiz — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Buzz!:_The_Music_Quiz"
+        }
+      ]
+    },
+    {
+      "from": "gta3",
+      "to": "grand-theft-auto-liberty-city-stories",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Liberty City's three-island 3D crime sandbox and open mission structure.",
+      "added": "Brought full 3D GTA with motorcycles and ad-hoc multiplayer to the handheld PlayStation Portable.",
+      "src": [
+        {
+          "t": "Grand Theft Auto: Liberty City Stories — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories"
+        }
+      ]
+    },
+    {
+      "from": "ratchet-clank",
+      "to": "resistance-fall-of-man",
+      "tier": "dev",
+      "rel": "",
+      "took": "Insomniac's signature inventive arsenal where every gun packs a tactical alternate-fire twist.",
+      "added": "Applied exotic weapon design like wall-piercing Augers to an alternate-1951 alien-invasion PS3 shooter.",
+      "src": [
+        {
+          "t": "Game Developer, Ted Price (Insomniac) interview",
+          "u": "https://www.gamedeveloper.com/game-platforms/interview-insomniac-s-price-on-i-resistance-i-ps3-and-more"
+        },
+        {
+          "t": "Resistance: Fall of Man — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Resistance:_Fall_of_Man"
+        }
+      ]
+    },
+    {
+      "from": "halo-combat-evolved",
+      "to": "resistance-fall-of-man",
+      "tier": "critic",
+      "rel": "",
+      "took": "Established the console launch sci-fi shooter showcase with vehicular combat and split-screen co-op.",
+      "added": "Answered for PS3 with segmented regenerating health, an eight-weapon wheel, and 40-player online matches.",
+      "src": [
+        {
+          "t": "GameSpot, Ted Price Q&A on Resistance",
+          "u": "https://www.gamespot.com/articles/resistance-fall-of-man-qanda-rewriting-the-past/1100-6152225/"
+        },
+        {
+          "t": "Resistance: Fall of Man — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Resistance:_Fall_of_Man"
+        }
+      ]
+    },
+    {
+      "from": "dragon-quest-viii-journey-of-the-cursed-king",
+      "to": "dragon-quest-ix-sentinels-of-the-starry-skies",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Level-5's skill-point trees, tension charging, and cel-shaded Dragon Quest charm.",
+      "added": "Added four-player local DS co-op, full party customization, visible roaming monsters, and StreetPass treasure maps.",
+      "src": [
+        {
+          "t": "Dragon Quest IX — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Quest_IX"
+        }
+      ]
+    },
+    {
+      "from": "halo-3",
+      "to": "halo-3-odst",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Halo 3's sandbox combat, Covenant encounters, and Forge/Theater multiplayer engine.",
+      "added": "Introduced four-player wave survival Firefight and a moody night-time New Mombasa noir detective hub.",
+      "src": [
+        {
+          "t": "Halo 3: ODST — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Halo_3:_ODST"
+        }
+      ]
+    },
+    {
+      "from": "halo-3-odst",
+      "to": "halo-reach",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Four-player cooperative Firefight survival waves and gritty non-Master Chief squad storytelling.",
+      "added": "Expanded Firefight with customizable skulls and matchmaking alongside armor abilities and Forge World.",
+      "src": [
+        {
+          "t": "Halo 3: ODST — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Halo_3:_ODST"
+        }
+      ]
+    },
+    {
+      "from": "assassin-s-creed-ii",
+      "to": "assassins-creed-brotherhood",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Ezio's Renaissance parkour, economy rebuilding, and hidden-blade assassination missions.",
+      "added": "Added recruitable Assassin apprentices, streak-kill combat chains, Rome's single vast map, and cat-and-mouse multiplayer.",
+      "src": [
+        {
+          "t": "Assassin's Creed: Brotherhood — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Assassin%27s_Creed:_Brotherhood"
+        }
+      ]
+    },
+    {
+      "from": "assassins-creed-brotherhood",
+      "to": "assassins-creed-iii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-city stealth parkour, recruit squads, and counter-chain melee combat.",
+      "added": "Shifted to 1770s Colonial America with tree-climbing frontier hunting, seasonal weather, and broadside naval battles.",
+      "src": [
+        {
+          "t": "Assassin's Creed III — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Assassin%27s_Creed_III"
+        }
+      ]
+    },
+    {
+      "from": "assassins-creed-iii",
+      "to": "assassin-s-creed-iv-black-flag",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Broadside sailing physics, sea shanties, and ship-boarding naval combat prototypes.",
+      "added": "Expanded naval warfare into a seamless open Caribbean pirate sandbox with fort sieges and diving.",
+      "src": [
+        {
+          "t": "Assassin's Creed III — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Assassin%27s_Creed_III"
+        }
+      ]
+    },
+    {
+      "from": "farmville",
+      "to": "cityville",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Zynga's Facebook energy-timer loop, asynchronous friend visits, and viral gift requests.",
+      "added": "Moved social timers into urban commerce and franchise chains, crossing 100 million monthly players.",
+      "src": [
+        {
+          "t": "CityVille — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/CityVille"
+        }
+      ]
+    },
+    {
+      "from": "simcity",
+      "to": "cityville",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized isometric placement of homes, businesses, and civic landmarks to grow populations.",
+      "added": "Simplified urban management into quick Facebook social clicks and friend-linked business franchises.",
+      "src": [
+        {
+          "t": "CityVille — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/CityVille"
+        }
+      ]
+    },
+    {
+      "from": "gran-turismo-4",
+      "to": "gran-turismo-5",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Massive real-car encyclopedic garage, license tests, and B-Spec race management.",
+      "added": "Added 16-car online racing, dynamic weather and day-night cycles, karting, NASCAR, and track creation.",
+      "src": [
+        {
+          "t": "Gran Turismo 5 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Gran_Turismo_5"
+        }
+      ]
+    },
+    {
+      "from": "farmville",
+      "to": "hay-day",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Proved casual social farming's global appeal through crop timers and friendly trade.",
+      "added": "Rebuilt farming for touchscreens with gesture harvesting, player-run roadside shops, and no crop withering.",
+      "src": [
+        {
+          "t": "GamesIndustry.biz, Supercell Hay Day 10-year interview",
+          "u": "https://www.gamesindustry.biz/supercells-hay-day-team-on-10-years-of-sowing-the-seeds-of-stability"
+        },
+        {
+          "t": "Hay Day — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Hay_Day"
+        }
+      ],
+      "extra": "Supercell's team built Hay Day specifically to fill the mobile-native touchscreen gap left by browser FarmVille."
+    },
+    {
+      "from": "burnout-3-takedown",
+      "to": "asphalt-8-airborne",
+      "tier": "mech",
+      "rel": "",
+      "took": "Popularized aggressive rival knockdowns, drifting nitro charges, and spectacle-heavy arcade racing.",
+      "added": "Packed ramp barrel rolls, mid-air flat spins, and licensed supercars into free-to-play mobile racing.",
+      "src": [
+        {
+          "t": "Asphalt 8: Airborne — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Asphalt_8:_Airborne"
+        }
+      ]
+    },
+    {
+      "from": "subway-surfers",
+      "to": "despicable-me-minion-rush",
+      "tier": "mech",
+      "rel": "fast-follow",
+      "took": "Popularized three-lane swipe-to-dodge mobile endless running and coin-line pickups.",
+      "added": "Added shifting camera angles, movie villain boss fights, and ability-granting Minion costumes.",
+      "src": [
+        {
+          "t": "Despicable Me (Minion Rush) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Despicable_Me"
+        }
+      ]
+    },
+    {
+      "from": "skylanders-giants",
+      "to": "skylanders-swap-force",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "NFC Portal of Power toys-to-life figurines carrying upgrades across platforms.",
+      "added": "Introduced magnetic two-piece swappable figures with 256 combinations and finally added a jump button.",
+      "src": [
+        {
+          "t": "Skylanders: Swap Force — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Skylanders:_Swap_Force"
+        }
+      ]
+    },
+    {
+      "from": "skylanders-swap-force",
+      "to": "skylanders-trap-team",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Toys-to-life Portal adventure with jumping platforming and elemental gates.",
+      "added": "Added crystal Traps and a portal speaker letting players capture and play as 40-plus villains.",
+      "src": [
+        {
+          "t": "Skylanders: Trap Team — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Skylanders:_Trap_Team"
+        }
+      ]
+    },
+    {
+      "from": "clash-of-clans",
+      "to": "boom-beach",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Supercell's asynchronous base building, upgrade timers, and troop-raid progression.",
+      "added": "Shifted to tropical amphibious beach landings with gunboat artillery and flare-directed squad maneuvering.",
+      "src": [
+        {
+          "t": "Boom Beach — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Boom_Beach"
+        }
+      ]
+    },
+    {
+      "from": "forza-horizon",
+      "to": "forza-horizon-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Festival-themed open-world arcade-sim racing with seamless road discovery.",
+      "added": "Moved to diverse Australian outback-to-rainforest terrain, putting players in charge as festival director.",
+      "src": [
+        {
+          "t": "Forza Horizon 3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Forza_Horizon_3"
+        }
+      ]
+    },
+    {
+      "from": "forza-horizon-3",
+      "to": "forza-horizon-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-world festival progression, Blueprint custom events, and seamless co-op cruising.",
+      "added": "Introduced shared-world servers in Britain with synchronized weekly seasons reshaping road grip and routes.",
+      "src": [
+        {
+          "t": "Forza Horizon 3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Forza_Horizon_3"
+        }
+      ]
+    },
+    {
+      "from": "crash-bandicoot",
+      "to": "crash-bandicoot-n-sane-trilogy",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Naughty Dog's tight corridor 3D platforming, crate-smashing gems, and spin attacks.",
+      "added": "Rebuilt all three PlayStation classics in HD with unified physics, time trials, and playable Coco.",
+      "src": [
+        {
+          "t": "Crash Bandicoot N. Sane Trilogy — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Crash_Bandicoot_N._Sane_Trilogy"
+        }
+      ]
+    },
+    {
+      "from": "spyro-the-dragon",
+      "to": "spyro-reignited-trilogy",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Insomniac's playful gem-collecting 3D dragon gliding, charging, and flame exploration.",
+      "added": "Rebuilt the original PlayStation trilogy in Unreal Engine 4 with redesigned dragons and modern camera controls.",
+      "src": [
+        {
+          "t": "Spyro Reignited Trilogy — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Spyro_Reignited_Trilogy"
+        }
+      ]
+    },
+    {
+      "from": "mortal-kombat-2011",
+      "to": "mortal-kombat-11",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Cinematic story chapters, 2D-plane X-Ray clashes, and modernized Mortal Kombat kombos.",
+      "added": "Introduced Krushing Blows, Fatal Blow comebacks, custom move variations, and a time-bending Kronika saga.",
+      "src": [
+        {
+          "t": "Mortal Kombat 11 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Mortal_Kombat_11"
+        }
+      ]
+    },
+    {
+      "from": "mortal-kombat-11",
+      "to": "mortal-kombat-1",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Time-resetting Fire God Liu Kang ending and cinematic fighting presentation.",
+      "added": "Rebooted the universe with assist-style Kameo Fighters, air combos, and board-like Invasions mode.",
+      "src": [
+        {
+          "t": "Mortal Kombat 11 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Mortal_Kombat_11"
+        }
+      ]
+    },
+    {
+      "from": "the-last-of-us",
+      "to": "the-last-of-us-part-i",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Joel and Ellie's stealth-scavenging survival drama across post-pandemic America.",
+      "added": "Rebuilt the 2013 original from the ground up for PS5 using Part II's AI, visuals, and accessibility.",
+      "src": [
+        {
+          "t": "The Last of Us Part I — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Last_of_Us_Part_I"
+        }
+      ]
+    },
+    {
+      "from": "pok-mon-gold-and-silver",
+      "to": "pokemon-ruby-and-sapphire",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Turn-based monster catching, breeding, held items, and eight-gym regional journeys.",
+      "added": "Introduced 2-on-2 Double Battles, passive Pokémon Abilities, Natures, weather effects, and Pokémon Contests.",
+      "src": [
+        {
+          "t": "Pokémon Ruby and Sapphire — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Ruby_and_Sapphire"
+        }
+      ]
+    },
+    {
+      "from": "pokemon-ruby-and-sapphire",
+      "to": "pok-mon-diamond-and-pearl",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Double Battles, Pokémon Abilities, Natures, and competitive stat-training depth.",
+      "added": "Split physical and special attacks by individual move and launched global Wi-Fi trading and battles.",
+      "src": [
+        {
+          "t": "Pokémon Ruby and Sapphire — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Ruby_and_Sapphire"
+        }
+      ]
+    },
+    {
+      "from": "pok-mon-gold-and-silver",
+      "to": "pokemon-heartgold-and-soulsilver",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Johto-to-Kanto two-region adventure, day-night clock, and 16 Gym Badges.",
+      "added": "Remade Gen II for DS with following partner Pokémon, touch menus, Pokéathlon, and the Pokéwalker pedometer.",
+      "src": [
+        {
+          "t": "Pokémon HeartGold and SoulSilver — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_HeartGold_and_SoulSilver"
+        }
+      ]
+    },
+    {
+      "from": "pok-mon-diamond-and-pearl",
+      "to": "pokemon-black-and-white",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Physical/special move split, dual-screen DS interface, and Wi-Fi battling.",
+      "added": "Featured 156 all-new Unova species before post-game, animated sprites, Triple Battles, reusable TMs, and seasons.",
+      "src": [
+        {
+          "t": "Pokémon Black and White — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Black_and_White"
+        }
+      ]
+    },
+    {
+      "from": "pokemon-black-and-white",
+      "to": "pok-mon-x-and-y",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Reusable TMs, story-forward pacing, and dynamic animated monster battles.",
+      "added": "Transitioned mainline Pokémon to full 3D models with Fairy types, Mega Evolutions, and trainer customization.",
+      "src": [
+        {
+          "t": "Pokémon Black and White — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Black_and_White"
+        }
+      ]
+    },
+    {
+      "from": "pokemon-ruby-and-sapphire",
+      "to": "pokemon-omega-ruby-and-alpha-sapphire",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Hoenn's Groudon-versus-Kyogre conflict, Secret Bases, and Double Battle design.",
+      "added": "Rebuilt Hoenn in 3D with Mega Evolutions, Primal Reversion, free-flight Soaring, and the Delta Episode.",
+      "src": [
+        {
+          "t": "Pokémon Omega Ruby and Alpha Sapphire — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Omega_Ruby_and_Alpha_Sapphire"
+        }
+      ]
+    },
+    {
+      "from": "pok-mon-x-and-y",
+      "to": "pokemon-sun-and-moon",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Full 3D Pokémon battles, trainer customization, and streamlined online play.",
+      "added": "Replaced traditional Gyms with Alola Island Trials, added Regional Forms, Z-Moves, and Poké Ride mounts.",
+      "src": [
+        {
+          "t": "Pokémon Sun and Moon — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Sun_and_Moon"
+        }
+      ]
+    },
+    {
+      "from": "pokemon-yellow",
+      "to": "pokemon-lets-go-pikachu-and-lets-go-eevee",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Kanto's starter-following story starring Pikachu alongside Jessie, James, and classic gyms.",
+      "added": "Reimagined Yellow on Switch with roaming overworld encounters, two-player co-op, and optional Eevee partner.",
+      "src": [
+        {
+          "t": "Pokémon: Let's Go, Pikachu! and Let's Go, Eevee! — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Let%27s_Go,_Pikachu!_and_Let%27s_Go,_Eevee!"
+        }
+      ]
+    },
+    {
+      "from": "pok-mon-go",
+      "to": "pokemon-lets-go-pikachu-and-lets-go-eevee",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Motion-timed Poké Ball throws, CP candy upgrades, and direct mobile-to-console transfers.",
+      "added": "Replaced wild battle grinding with Pokémon Go catching rings and Poké Ball Plus controller support.",
+      "src": [
+        {
+          "t": "Pokémon: Let's Go, Pikachu! and Let's Go, Eevee! — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Let%27s_Go,_Pikachu!_and_Let%27s_Go,_Eevee!"
+        }
+      ]
+    },
+    {
+      "from": "just-dance",
+      "to": "just-dance-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Wii Remote motion-tracked pop choreography and accessible living-room party scoring.",
+      "added": "Added cooperative Duet routines, team Dance Battles, Just Sweat fitness mode, and DLC song packs.",
+      "src": [
+        {
+          "t": "Just Dance 2 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Just_Dance_2"
+        }
+      ]
+    },
+    {
+      "from": "just-dance-2",
+      "to": "just-dance-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Duet choreography, Just Sweat workouts, and upbeat pop party tracklists.",
+      "added": "Expanded beyond Wii to Kinect and Move with four-dancer crews, Mashups, and Hold My Hand mode.",
+      "src": [
+        {
+          "t": "Just Dance 3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Just_Dance_3"
+        }
+      ]
+    },
+    {
+      "from": "just-dance-3",
+      "to": "just-dance-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Multi-platform motion dancing, four-player choreography, and fitness routines.",
+      "added": "Introduced six-round head-to-head Battle Mode, calorie-tracking Sweat programs, and Wii U Puppet Master.",
+      "src": [
+        {
+          "t": "Just Dance 4 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Just_Dance_4"
+        }
+      ]
+    },
+    {
+      "from": "just-dance-4",
+      "to": "just-dance-2014",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Battle Mode, upgraded Just Sweat workouts, and asymmetrical party controls.",
+      "added": "Debuted World Dance Floor global online multiplayer, On-Stage backup trios, and integrated Karaoke scoring.",
+      "src": [
+        {
+          "t": "Just Dance 2014 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Just_Dance_2014"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-4-modern-warfare",
+      "to": "call-of-duty-world-at-war",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Infinity Ward's IW 3.0 engine, Create-a-Class perks, and killstreak multiplayer progression.",
+      "added": "Returned to gritty Pacific and Eastern Front WWII with four-player co-op and the debut of Zombies.",
+      "src": [
+        {
+          "t": "Call of Duty: World at War — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_World_at_War"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-world-at-war",
+      "to": "call-of-duty-black-ops",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Treyarch's gritty historical shooter framework, Reznov character arc, and round-based Zombies.",
+      "added": "Shifted to Cold War covert ops with wager matches, Combat Training, and expanded Zombies storylines.",
+      "src": [
+        {
+          "t": "Call of Duty: World at War — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_World_at_War"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-black-ops",
+      "to": "call-of-duty-black-ops-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Cold War conspiracy thriller storytelling, Treyarch gunplay, and Zombies survival.",
+      "added": "Introduced Pick 10 class building, Scorestreaks, branching 2025 campaign endings, and Strike Force missions.",
+      "src": [
+        {
+          "t": "Call of Duty: Black Ops II — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_II"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-modern-warfare-3",
+      "to": "call-of-duty-advanced-warfare",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Fast arena multiplayer and blockbuster set-pieces from MW3 co-developer Sledgehammer Games.",
+      "added": "Introduced Exo-suit double-jumps, air-dashes, Pick 13 classes, and Supply Drop weapon variants.",
+      "src": [
+        {
+          "t": "Call of Duty: Advanced Warfare — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Advanced_Warfare"
+        }
+      ],
+      "extra": "Sledgehammer co-developed Modern Warfare 3 before leading its first standalone Call of Duty."
+    },
+    {
+      "from": "call-of-duty-black-ops-ii",
+      "to": "call-of-duty-black-ops-iii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Pick 10 loadouts, Scorestreaks, and near-future Black Ops multiplayer design.",
+      "added": "Added wall-running thrust movement, hero-style Specialist abilities, four-player co-op campaign, and Mod Tools.",
+      "src": [
+        {
+          "t": "Call of Duty: Black Ops III — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_III"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-advanced-warfare",
+      "to": "call-of-duty-wwii",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Sledgehammer Games' cinematic production values and streamlined class-based multiplayer.",
+      "added": "Returned the series to boots-on-the-ground WWII with Divisions, objective War mode, and a social Headquarters.",
+      "src": [
+        {
+          "t": "Call of Duty: WWII — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_WWII"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-black-ops-iii",
+      "to": "call-of-duty-black-ops-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Specialist hero abilities, fast Treyarch gunplay, and multi-map Zombies.",
+      "added": "Dropped traditional campaign for manual healing, predictive recoil, and Blackout's 100-player battle royale.",
+      "src": [
+        {
+          "t": "Call of Duty: Black Ops 4 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_4"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-black-ops-4",
+      "to": "call-of-duty-mobile",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Fast Call of Duty multiplayer, Specialist Operator Skills, and battle royale templates.",
+      "added": "Distilled maps and modes from Modern Warfare and Black Ops into a free-to-play smartphone shooter.",
+      "src": [
+        {
+          "t": "Call of Duty: Mobile — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Mobile"
+        }
+      ]
+    },
+    {
+      "from": "pubg-mobile",
+      "to": "call-of-duty-mobile",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Tencent's high-frame-rate touchscreen shooter controls and 100-player mobile battle royale tech.",
+      "added": "Paired responsive touch FPS gunplay with classic 5v5 Call of Duty maps, scorestreaks, and loadouts.",
+      "src": [
+        {
+          "t": "Call of Duty: Mobile — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Mobile"
+        }
+      ],
+      "extra": "Developed by Tencent's TiMi Studio Group after Tencent scaled PUBG Mobile globally."
+    },
+    {
+      "from": "call-of-duty-black-ops",
+      "to": "call-of-duty-black-ops-cold-war",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "1960s-style espionage characters Mason and Woods alongside classic round-based Zombies.",
+      "added": "Continued the original 1980s Cold War storyline with optional spy evidence puzzles and cross-play Zombies.",
+      "src": [
+        {
+          "t": "Call of Duty: Black Ops Cold War — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_Cold_War"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-warzone",
+      "to": "call-of-duty-warzone-2-0",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Free-to-play 150-player battle royale with Gulag respawns and custom loadout drops.",
+      "added": "Launched Al Mazrah with proximity chat, swimming, AI strongholds, and the extraction-style DMZ mode.",
+      "src": [
+        {
+          "t": "Call of Duty: Warzone (2022 video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Warzone_(2022_video_game)"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-modern-warfare-ii",
+      "to": "call-of-duty-modern-warfare-iii-2023",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Modern Warfare II's weapon roster, Gunsmith attachments, and Task Force 141 narrative.",
+      "added": "Carried forward MWII gear while restoring slide-canceling, remastering all 16 MW2 (2009) maps, and open-world Zombies.",
+      "src": [
+        {
+          "t": "Call of Duty: Modern Warfare III (2023 video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Modern_Warfare_III_(2023_video_game)"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-black-ops-cold-war",
+      "to": "call-of-duty-black-ops-6",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Treyarch's spy-thriller safehouse campaign structure and classic Prestige progression.",
+      "added": "Introduced 360-degree Omnimovement sprinting and diving, a 1991 Gulf War spy campaign, and round-based Zombies.",
+      "src": [
+        {
+          "t": "Call of Duty: Black Ops 6 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_6"
+        }
+      ]
+    },
+    {
+      "from": "call-of-duty-black-ops-6",
+      "to": "call-of-duty-black-ops-7",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Treyarch and Raven's Omnimovement gunplay and round-based Zombies architecture.",
+      "added": "Jumped to 2035 with a cooperative near-future campaign, expanded Omnimovement, and next-era Zombies.",
+      "src": [
+        {
+          "t": "Call of Duty: Black Ops 7 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops_7"
+        }
+      ]
+    },
+    {
+      "from": "international-superstar-soccer",
+      "to": "iss-pro-evolution",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Konami's responsive arcade-simulation football controls and tactical match pacing.",
+      "added": "Launched KCET's Master League club-building career mode and deeper PlayStation passing physics.",
+      "src": [
+        {
+          "t": "ISS Pro Evolution — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/ISS_Pro_Evolution"
+        }
+      ]
+    },
+    {
+      "from": "iss-pro-evolution",
+      "to": "pro-evolution-soccer",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "KCET's Master League transfer career and tactile PlayStation football engine.",
+      "added": "Rebranded the Winning Eleven lineage for PlayStation 2 with physics-driven ball momentum and realism.",
+      "src": [
+        {
+          "t": "ISS Pro Evolution — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/ISS_Pro_Evolution"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer",
+      "to": "pro-evolution-soccer-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "PlayStation 2 ball-momentum physics, Master League club play, and tactical positioning.",
+      "added": "Quickened dribbling responsiveness, expanded Master League divisions, and added unlockable PES Points classics.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 2 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_2"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-2",
+      "to": "pro-evolution-soccer-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Responsive dribbling, Master League progression, and realistic shot weighting.",
+      "added": "Debuted a rewritten 3D graphics engine, tighter defensive AI, and the series' first PC Windows release.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 3 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_3"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-3",
+      "to": "pro-evolution-soccer-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Rewritten 3D animation engine, tactical defense, and PC/PS2 cross-platform base.",
+      "added": "Secured the series' first fully licensed top leagues (Serie A, La Liga, Eredivisie) and on-pitch referees.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 4 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_4"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-4",
+      "to": "pro-evolution-soccer-5",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Licensed European leagues, physical on-pitch referees, and 72-team Master League.",
+      "added": "Brought online PS2/PC divisions, stricter physical shielding, and the series' PlayStation Portable debut.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 5 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_5"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-5",
+      "to": "pro-evolution-soccer-6",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Online divisions, physical ball-shielding duels, and tight tactical midfield play.",
+      "added": "Made the series' Xbox 360 HD debut with snappier dribbling bursts and International Challenge mode.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 6 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_6"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-6",
+      "to": "pro-evolution-soccer-2008",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "High-tempo dribbling, responsive shooting, and HD console transition.",
+      "added": "Introduced Teamvision adaptive AI, manual diving, and native PlayStation 3 and Xbox 360 builds.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 2008 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_2008"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-2008",
+      "to": "pro-evolution-soccer-2009",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Next-gen console engine, Teamvision AI, and deep club edit suites.",
+      "added": "Debuted single-player career mode Become a Legend and the exclusive UEFA Champions League license.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 2009 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_2009"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-2009",
+      "to": "pro-evolution-soccer-2010",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Become a Legend career progression and official UEFA Champions League presentation.",
+      "added": "Added 360-degree dribbling, tactical strategy sliders, improved lighting, and the UEFA Europa League.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 2010 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_2010"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-2010",
+      "to": "pro-evolution-soccer-2011",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "360-degree movement, strategy sliders, and licensed European club competitions.",
+      "added": "Overhauled passing with full manual power gauges, Master League Online, and drag-and-drop formations.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 2011 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_2011"
+        }
+      ]
+    },
+    {
+      "from": "pro-evolution-soccer-2011",
+      "to": "pro-evolution-soccer-2012",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Manual passing power meters, Master League Online, and tactical formation tools.",
+      "added": "Introduced right-stick Teammate Control for off-the-ball runs and Active AI zonal defending.",
+      "src": [
+        {
+          "t": "Pro Evolution Soccer 2012 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_2012"
+        }
+      ]
+    },
+    {
+      "from": "fifa-international-soccer",
+      "to": "fifa-soccer-96",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "EA's isometric broadcast-angle football presentation and accessible arcade passing.",
+      "added": "Introduced real-time 3D Virtual Stadium arenas and the FIFPro license with real player names.",
+      "src": [
+        {
+          "t": "FIFA Soccer 96 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_Soccer_96"
+        }
+      ]
+    },
+    {
+      "from": "fifa-soccer-96",
+      "to": "fifa-97",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Virtual Stadium 3D camera presentation and real FIFPro player rosters.",
+      "added": "Replaced 2D sprites with polygonal 3D player models and debuted walled 6-a-side Indoor Soccer.",
+      "src": [
+        {
+          "t": "FIFA 97 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_97"
+        }
+      ]
+    },
+    {
+      "from": "fifa-97",
+      "to": "fifa-road-to-world-cup-98",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Polygonal 3D footballers, Indoor Soccer arenas, and responsive broadcast commentary.",
+      "added": "Included all 173 FIFA national teams for full World Cup qualifying plus offside and edit options.",
+      "src": [
+        {
+          "t": "FIFA: Road to World Cup 98 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA:_Road_to_World_Cup_98"
+        }
+      ]
+    },
+    {
+      "from": "fifa-road-to-world-cup-98",
+      "to": "fifa-99",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast polygonal 3D football, responsive controls, and licensed soundtrack presentation.",
+      "added": "Added smoother animation fluidity, customizable European Dream League cups, and expressive goal celebrations.",
+      "src": [
+        {
+          "t": "FIFA 99 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_99"
+        }
+      ]
+    },
+    {
+      "from": "fifa-99",
+      "to": "fifa-2000",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast 3D club football and European league tournament templates.",
+      "added": "Added multi-season promotion-relegation careers, MLS licensing, classic retro teams, and facial expressions.",
+      "src": [
+        {
+          "t": "FIFA 2000 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_2000"
+        }
+      ]
+    },
+    {
+      "from": "fifa-2000",
+      "to": "fifa-football-2002",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Licensed club leagues, multi-season structure, and broadcast TV graphics.",
+      "added": "Introduced precision power bars for every pass and licensed World Cup qualification campaigns.",
+      "src": [
+        {
+          "t": "FIFA Football 2002 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_Football_2002"
+        }
+      ]
+    },
+    {
+      "from": "fifa-football-2002",
+      "to": "fifa-football-2003",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Power-bar passing precision and authentic international club rosters.",
+      "added": "Rebuilt ball physics with right-stick Freestyle Control, Club Championship mode, and EA Trax music.",
+      "src": [
+        {
+          "t": "FIFA Football 2003 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_Football_2003"
+        }
+      ]
+    },
+    {
+      "from": "fifa-football-2003",
+      "to": "fifa-football-2004",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Freestyle ball control, revamped ball physics, and broadcast presentation.",
+      "added": "Introduced Off-the-Ball Control to trigger teammate runs and an expanded multi-season Career Mode.",
+      "src": [
+        {
+          "t": "FIFA Football 2004 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_Football_2004"
+        }
+      ]
+    },
+    {
+      "from": "fifa-football-2004",
+      "to": "fifa-football-2005",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Off-the-ball teammate control and 15-season club Career management.",
+      "added": "Added First Touch Control for instant traps and flicks alongside expanded Create-a-Player tools.",
+      "src": [
+        {
+          "t": "FIFA Football 2005 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_Football_2005"
+        }
+      ]
+    },
+    {
+      "from": "fifa-football-2005",
+      "to": "fifa-06",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "First Touch responsiveness and multi-season club management careers.",
+      "added": "Reworked Manager Mode with team chemistry, staff budgets, sponsorships, and smoother sixth-gen animation.",
+      "src": [
+        {
+          "t": "FIFA 06 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_06"
+        }
+      ]
+    },
+    {
+      "from": "fifa-06",
+      "to": "fifa-07",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Team chemistry, financial Manager Mode, and sixth-generation pitch pacing.",
+      "added": "Introduced real-world schedule Interactive Leagues and upgraded ball physics and physical shielding.",
+      "src": [
+        {
+          "t": "FIFA 07 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_07"
+        }
+      ]
+    },
+    {
+      "from": "fifa-07",
+      "to": "fifa-08",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Physical ball-shielding physics, Manager Mode, and online Interactive Leagues.",
+      "added": "Debuted single-player Be A Pro camera mode alongside full manual passing and shooting options.",
+      "src": [
+        {
+          "t": "FIFA 08 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_08"
+        }
+      ]
+    },
+    {
+      "from": "fifa-08",
+      "to": "fifa-09",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Be A Pro locked-player camera and next-generation console football physics.",
+      "added": "Launched FIFA Ultimate Team card squad-building as DLC alongside custom tactics and 10v10 online Clubs.",
+      "src": [
+        {
+          "t": "FIFA 09 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_09"
+        }
+      ]
+    },
+    {
+      "from": "fifa-09",
+      "to": "fifa-10",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Custom team tactics, Be A Pro, and Ultimate Team card collecting.",
+      "added": "Introduced 360-degree dribbling replacing eight-way movement plus Virtual Pro career persistence.",
+      "src": [
+        {
+          "t": "FIFA 10 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_10"
+        }
+      ]
+    },
+    {
+      "from": "fifa-10",
+      "to": "fifa-11",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "360-degree analog dribbling, Virtual Pro, and refined physical battles.",
+      "added": "Added Personality+ differentiating star playstyles, Pro Passing error curves, and playable Be A Goalkeeper.",
+      "src": [
+        {
+          "t": "FIFA 11 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_11"
+        }
+      ]
+    },
+    {
+      "from": "fifa-11",
+      "to": "fifa-12",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Personality+ player differentiation, 360-degree dribbling, and Be A Goalkeeper.",
+      "added": "Introduced the Player Impact collision engine, manual Tactical Defending, and built-in Ultimate Team.",
+      "src": [
+        {
+          "t": "FIFA 12 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_12"
+        }
+      ]
+    },
+    {
+      "from": "fifa-12",
+      "to": "fifa-13",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Player Impact collision physics, Tactical Defending, and core Ultimate Team.",
+      "added": "Added First Touch unpredictability, smarter Attacking Intelligence runs, Skill Games, and tactical free kicks.",
+      "src": [
+        {
+          "t": "FIFA 13 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_13"
+        }
+      ]
+    },
+    {
+      "from": "fifa-13",
+      "to": "fifa-14",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "First Touch ball physics, Attacking Intelligence, and Skill Games.",
+      "added": "Debuted the Ignite Engine on PS4/Xbox One with Pure Shot body adjustments and Real Ball Physics.",
+      "src": [
+        {
+          "t": "FIFA 14 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_14"
+        }
+      ]
+    },
+    {
+      "from": "fifa-14",
+      "to": "fifa-15",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Ignite Engine physics, Pure Shot striking, and deep Ultimate Team play.",
+      "added": "Added Emotional Intelligence player reactions, dynamic pitch turf wear, and Premier League stadium authenticity.",
+      "src": [
+        {
+          "t": "FIFA 15 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_15"
+        }
+      ]
+    },
+    {
+      "from": "fifa-15",
+      "to": "fifa-16",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Ignite Engine stadium atmosphere, agile dribbling, and Ultimate Team modes.",
+      "added": "Introduced Women's National Teams for the first time, No Touch Dribbling, and FUT Draft mode.",
+      "src": [
+        {
+          "t": "FIFA 16 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_16"
+        }
+      ]
+    },
+    {
+      "from": "fifa-16",
+      "to": "fifa-17",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Women's international football, FUT Draft, and nuanced midfield ball control.",
+      "added": "Moved the series onto DICE's Frostbite Engine and debuted The Journey narrative story mode.",
+      "src": [
+        {
+          "t": "FIFA 17 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_17"
+        }
+      ]
+    },
+    {
+      "from": "fifa-17",
+      "to": "fifa-18",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Frostbite Engine visuals, set-piece overhauls, and Alex Hunter's story campaign.",
+      "added": "Introduced Real Player Motion signature running styles, multi-platform FUT Icons, and The Journey sequel.",
+      "src": [
+        {
+          "t": "FIFA 18 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_18"
+        }
+      ]
+    },
+    {
+      "from": "fifa-18",
+      "to": "fifa-19",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Real Player Motion animations, FUT Icons, and Frostbite broadcast presentation.",
+      "added": "Acquired official UEFA Champions League licensing plus Active Touch, Timed Finishing, and Dynamic Tactics.",
+      "src": [
+        {
+          "t": "FIFA 19 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_19"
+        }
+      ]
+    },
+    {
+      "from": "fifa-19",
+      "to": "fifa-20",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "UEFA Champions League presentation, Timed Finishing, and Dynamic Tactics.",
+      "added": "Introduced VOLTA Football street and futsal modes alongside strafe dribbling and reworked set pieces.",
+      "src": [
+        {
+          "t": "FIFA 20 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_20"
+        }
+      ]
+    },
+    {
+      "from": "fifa-20",
+      "to": "fifa-21",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "VOLTA street football, strafe dribbling, and Ultimate Team live seasons.",
+      "added": "Added Agile Dribbling, Creative Runs for manual teammate direction, and Ultimate Team Co-Op.",
+      "src": [
+        {
+          "t": "FIFA 21 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_21"
+        }
+      ]
+    },
+    {
+      "from": "fifa-21",
+      "to": "fifa-22",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Agile Dribbling, Creative Runs, and PS5/Xbox Series hardware support.",
+      "added": "Debuted HyperMotion 11v11 full-match motion capture, Create-Your-Own-Club Career, and FUT Heroes.",
+      "src": [
+        {
+          "t": "FIFA 22 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_22"
+        }
+      ]
+    },
+    {
+      "from": "fifa-22",
+      "to": "fifa-23",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "HyperMotion motion-capture animations, VOLTA, and Create-Your-Own-Club Career.",
+      "added": "Closed the FIFA naming era with HyperMotion 2, cross-play, Women's Club leagues, and dual World Cups.",
+      "src": [
+        {
+          "t": "FIFA 23 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/FIFA_23"
+        }
+      ]
+    },
+    {
+      "from": "fifa-23",
+      "to": "ea-sports-fc-24",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "HyperMotion 2 match capture, cross-play, and licensed women's club football.",
+      "added": "Relaunched post-FIFA branding with HyperMotionV volumetric data, PlayStyles traits, and mixed-gender Ultimate Team.",
+      "src": [
+        {
+          "t": "EA Sports FC 24 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/EA_Sports_FC_24"
+        }
+      ]
+    },
+    {
+      "from": "ea-sports-fc-24",
+      "to": "ea-sports-fc-25",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "HyperMotionV animations, PlayStyles traits, and EA Sports FC live modes.",
+      "added": "Introduced 5v5 Rush mode replacing VOLTA and the data-driven FC IQ tactical role system.",
+      "src": [
+        {
+          "t": "EA Sports FC 25 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/EA_Sports_FC_25"
+        }
+      ]
+    },
+    {
+      "from": "ea-sports-fc-25",
+      "to": "ea-sports-fc-26",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "5v5 Rush matches, FC IQ tactical roles, and HyperMotionV pitch realism.",
+      "added": "Split tuning into Competitive online and Authentic offline presets alongside overhauled dribbling and Archetypes.",
+      "src": [
+        {
+          "t": "EA Sports FC 26 — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/EA_Sports_FC_26"
+        }
+      ]
+    }
+  ]
+}

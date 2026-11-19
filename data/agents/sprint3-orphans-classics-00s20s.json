@@ -1,0 +1,2374 @@
+{
+  "links": [
+    {
+      "from": "crazy-taxi",
+      "to": "jet-set-radio",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Timed Sega Dreamcast street runs through bright urban districts with loud licensed soundtracks.",
+      "added": "Swapped cab driving for cel-shaded inline skating, analog-stick graffiti tagging and rival street gangs.",
+      "src": [
+        {
+          "t": "VG247, Masayoshi Kikuchi & Ryuta Ueda retrospective, 2020",
+          "u": "https://www.vg247.com/20-years-later-the-rowdy-creators-of-tokyo-to-reflect-on-making-jet-set-radio"
+        },
+        {
+          "t": "Wikipedia: Jet Set Radio",
+          "u": "https://en.wikipedia.org/wiki/Jet_Set_Radio"
+        }
+      ],
+      "extra": "Director Masayoshi Kikuchi and Smilebit staff had previously worked on Sega's Panzer Dragoon team."
+    },
+    {
+      "from": "half-life",
+      "to": "no-one-lives-forever",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Seamless scripted story pacing and cohesive single-player campaign presentation in a PC first-person shooter.",
+      "added": "Brought 1960s spy-comedy flair, stealth gadgets, witty guard banter and hero Cate Archer.",
+      "src": [
+        {
+          "t": "Craig Hubbard (Monolith), Game Developer postmortem, 2001",
+          "u": "https://www.gamedeveloper.com/design/postmortem-monolith-s-i-no-one-lives-forever-i-"
+        },
+        {
+          "t": "Wikipedia: The Operative: No One Lives Forever",
+          "u": "https://en.wikipedia.org/wiki/The_Operative:_No_One_Lives_Forever"
+        }
+      ],
+      "extra": "Hubbard wrote that Half-Life pushed Monolith to prioritize storytelling polish after Shogo."
+    },
+    {
+      "from": "resident-evil-2",
+      "to": "resident-evil-code-veronica",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Claire Redfield's storyline, tank controls, item-box resource rationing and puzzle-locked horror facilities.",
+      "added": "Replaced pre-rendered backdrops with real-time 3D Dreamcast environments and a sweeping dynamic camera.",
+      "src": [
+        {
+          "t": "Wikipedia: Resident Evil – Code: Veronica",
+          "u": "https://en.wikipedia.org/wiki/Resident_Evil_%E2%80%93_Code:_Veronica"
+        }
+      ],
+      "extra": "Developed with Nextech as the first mainline Resident Evil built in full 3D."
+    },
+    {
+      "from": "the-legend-of-zelda-ocarina-of-time",
+      "to": "dark-cloud",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Third-person 3D lock-on sword combat and dungeon exploration across themed adventure areas.",
+      "added": "Paired procedurally generated dungeon floors with Georama town rebuilding and upgradeable weapon durability.",
+      "src": [
+        {
+          "t": "Wikipedia: Dark Cloud",
+          "u": "https://en.wikipedia.org/wiki/Dark_Cloud"
+        }
+      ],
+      "extra": "Sony marketed Level-5's PlayStation 2 debut alongside Ocarina of Time comparisons."
+    },
+    {
+      "from": "wizardry-proving-grounds-of-the-mad-overlord",
+      "to": "dark-cloud",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Risk-reward dungeon crawling with party management, floor-by-floor descent and scarce survival supplies.",
+      "added": "Combined randomized 3D dungeon delves with rescuing townsfolk capsules to reconstruct destroyed villages.",
+      "src": [
+        {
+          "t": "Wikipedia: Dark Cloud",
+          "u": "https://en.wikipedia.org/wiki/Dark_Cloud"
+        }
+      ],
+      "extra": "Level-5 founder Akihiro Hino cited classic PC dungeon crawlers as formative design influences."
+    },
+    {
+      "from": "syndicate",
+      "to": "desperados-wanted-dead-or-alive",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Isometric real-time squad tactics where specialists coordinate abilities across hostile urban maps.",
+      "added": "Translated vision-cone stealth puzzles to the American Old West with six playable outlaws and Quick Actions.",
+      "src": [
+        {
+          "t": "Wikipedia: Desperados: Wanted Dead or Alive",
+          "u": "https://en.wikipedia.org/wiki/Desperados:_Wanted_Dead_or_Alive"
+        }
+      ],
+      "extra": "Followed Pyro Studios' Commandos: Behind Enemy Lines (1998) in defining late-90s real-time tactics."
+    },
+    {
+      "from": "diablo",
+      "to": "baldurs-gate-dark-alliance",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Fast isometric dungeon looting, real-time monster hacking and potion-fueled action-RPG pacing.",
+      "added": "Adapted hack-and-slash looting for two-player couch co-op on PlayStation 2 using twin-stick gamepad controls.",
+      "src": [
+        {
+          "t": "Wikipedia: Baldur's Gate: Dark Alliance",
+          "u": "https://en.wikipedia.org/wiki/Baldur%27s_Gate:_Dark_Alliance"
+        }
+      ],
+      "extra": "Snowblind Studios' engine later powered Champions of Norrath and several licensed console ARPGs."
+    },
+    {
+      "from": "baldur-s-gate",
+      "to": "baldurs-gate-dark-alliance",
+      "tier": "series",
+      "rel": "variant",
+      "took": "The Forgotten Realms city of Baldur's Gate and Dungeons & Dragons third-edition monsters and spells.",
+      "added": "Traded pause-and-play CRPG party strategy for direct real-time sword swinging and local co-op.",
+      "src": [
+        {
+          "t": "Wikipedia: Baldur's Gate: Dark Alliance",
+          "u": "https://en.wikipedia.org/wiki/Baldur%27s_Gate:_Dark_Alliance"
+        }
+      ],
+      "extra": "First console spin-off of the Baldur's Gate franchise."
+    },
+    {
+      "from": "castlevania-symphony-of-the-night",
+      "to": "castlevania-circle-of-the-moon",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "An interconnected Dracula's castle with RPG leveling, secret walls and ability-gated backtracking.",
+      "added": "Brought the formula to Game Boy Advance launch hardware with a combinable Dual Setup System of magic cards.",
+      "src": [
+        {
+          "t": "Wikipedia: Castlevania: Circle of the Moon",
+          "u": "https://en.wikipedia.org/wiki/Castlevania:_Circle_of_the_Moon"
+        }
+      ],
+      "extra": "Developed by Konami Computer Entertainment Kobe rather than Koji Igarashi's Tokyo team."
+    },
+    {
+      "from": "mega-man",
+      "to": "mega-man-battle-network",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Blue Bomber characters, Robot Master rivals and collecting boss powers to counter enemy weaknesses.",
+      "added": "Reinvented Mega Man as an internet-era tactical RPG fought on a 3x6 grid using Battle Chip decks.",
+      "src": [
+        {
+          "t": "Masakazu Eguchi & Masahiro Yasuma, Frontline Gaming Japan translation, 2022",
+          "u": "https://www.frontlinejp.net/2022/06/28/mega-man-battle-network-developers-discuss-conception-and-possible-future-of-the-series-part-1/"
+        },
+        {
+          "t": "Wikipedia: Mega Man Battle Network (video game)",
+          "u": "https://en.wikipedia.org/wiki/Mega_Man_Battle_Network_(video_game)"
+        }
+      ],
+      "extra": "Launched alongside the Game Boy Advance in Japan in March 2001."
+    },
+    {
+      "from": "pok-mon-red-and-green",
+      "to": "mega-man-battle-network",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Handheld monster-collecting appeal, link-cable trading and accessible RPG adventure aimed at younger players.",
+      "added": "Replaced turn-based creature battles with real-time grid dodging and customizable trading-card Battle Chips.",
+      "src": [
+        {
+          "t": "Rockman Corner, Mega Man Battle Network developer retrospective, 2016",
+          "u": "https://www.rockman-corner.com/2016/03/mega-man-battle-network-started-out-as.html"
+        },
+        {
+          "t": "Frontline Gaming Japan, Battle Network developer interview, 2022",
+          "u": "https://www.frontlinejp.net/2022/06/28/mega-man-battle-network-developers-discuss-conception-and-possible-future-of-the-series-part-1/"
+        }
+      ],
+      "extra": "Director Masahiro Yasuma aimed to merge Capcom action with portable collecting and card strategy."
+    },
+    {
+      "from": "caesar-iii",
+      "to": "stronghold",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Agent-driven supply chains, worker housing and citizen happiness loops from Impressions Games' city builders.",
+      "added": "Merged medieval economy management with freeform stone castle construction and real-time siege warfare.",
+      "src": [
+        {
+          "t": "Simon Bradbury (Firefly Studios), interview, Arcade Attack, 2017",
+          "u": "https://www.arcadeattack.co.uk/simon-bradbury-sierra/"
+        },
+        {
+          "t": "Wikipedia: Stronghold (2001 video game)",
+          "u": "https://en.wikipedia.org/wiki/Stronghold_(2001_video_game)"
+        }
+      ],
+      "extra": "Firefly Studios co-founders Simon Bradbury and Eric Ouellette previously led Impressions' Caesar III."
+    },
+    {
+      "from": "age-of-empires-ii",
+      "to": "stronghold",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Medieval real-time strategy armies, archers, siege engines and fortified stone-wall defenses.",
+      "added": "Shifted focus from field skirmishes to building intricate multi-layered castles and starving out sieges.",
+      "src": [
+        {
+          "t": "Wikipedia: Stronghold (2001 video game)",
+          "u": "https://en.wikipedia.org/wiki/Stronghold_(2001_video_game)"
+        }
+      ],
+      "extra": "Included both dedicated military and peacetime economic campaigns."
+    },
+    {
+      "from": "railroad-tycoon-ii",
+      "to": "tropico",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "PopTop Software's crisp isometric economic graphs, historical humor and accessible PC management interface.",
+      "added": "Put players in charge of a Cold War Caribbean island balancing tourism, exports, elections and rebel coups.",
+      "src": [
+        {
+          "t": "Wikipedia: Tropico (video game)",
+          "u": "https://en.wikipedia.org/wiki/Tropico_(video_game)"
+        }
+      ],
+      "extra": "Designed by Phil Steinmeyer and PopTop Software immediately after Railroad Tycoon II."
+    },
+    {
+      "from": "simcity-2000",
+      "to": "tropico",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Isometric city zoning, infrastructure budgets and balancing competing municipal demands.",
+      "added": "Simulated individual named island citizens with political factions, edicts and satirical dictatorship mechanics.",
+      "src": [
+        {
+          "t": "Wikipedia: Tropico (video game)",
+          "u": "https://en.wikipedia.org/wiki/Tropico_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "star-fox-64",
+      "to": "star-wars-rogue-squadron-ii-rogue-leader",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Cinematic arcade starfighter combat with wingman chatter and dramatic capital-ship trench runs.",
+      "added": "Opened every mission into free-roaming 3D planetary airspace recreating original Star Wars trilogy battles on GameCube.",
+      "src": [
+        {
+          "t": "Wikipedia: Star Wars Rogue Squadron II: Rogue Leader",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars_Rogue_Squadron_II:_Rogue_Leader"
+        }
+      ],
+      "extra": "Built by Factor 5 as a GameCube launch title following Star Wars: Rogue Squadron (1998)."
+    },
+    {
+      "from": "x-wing",
+      "to": "star-wars-rogue-squadron-ii-rogue-leader",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Piloting Rebel X-Wings and Y-Wings against Imperial TIE fighters and Star Destroyers.",
+      "added": "Traded keyboard-heavy cockpit power management for fast console arcade dogfighting and film-accurate lighting.",
+      "src": [
+        {
+          "t": "Wikipedia: Star Wars Rogue Squadron II: Rogue Leader",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars_Rogue_Squadron_II:_Rogue_Leader"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "star-wars-jedi-knight-dark-forces-ii",
+      "to": "star-wars-jedi-knight-ii-jedi-outcast",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Kyle Katarn's blend of Star Wars first-person shooting, Force powers and lightsaber duels.",
+      "added": "Upgraded to the Quake III engine with fluid third-person lightsaber stances, directional swings and dismemberment.",
+      "src": [
+        {
+          "t": "Wikipedia: Star Wars Jedi Knight II: Jedi Outcast",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars_Jedi_Knight_II:_Jedi_Outcast"
+        }
+      ],
+      "extra": "Developed by Raven Software taking over the series from LucasArts."
+    },
+    {
+      "from": "metal-slug",
+      "to": "alien-hominid",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Frantic side-scrolling run-and-gun shooting, exaggerated cartoon animation and one-hit-death arcade challenge.",
+      "added": "Brought hand-drawn Flash animation to Newgrounds browsers before expanding into a full console release.",
+      "src": [
+        {
+          "t": "Wikipedia: Alien Hominid",
+          "u": "https://en.wikipedia.org/wiki/Alien_Hominid"
+        }
+      ],
+      "extra": "Created by Tom Fulp and Dan Paladin, whose partnership launched indie studio The Behemoth."
+    },
+    {
+      "from": "alien-hominid",
+      "to": "castle-crashers",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Dan Paladin's thick-outlined Flash cartoon art, irreverent slapstick humor and tight indie arcade polish.",
+      "added": "Pivoted from solo run-and-gun shooting to four-player co-op medieval beat-'em-up brawling with RPG leveling.",
+      "src": [
+        {
+          "t": "Wikipedia: Alien Hominid",
+          "u": "https://en.wikipedia.org/wiki/Alien_Hominid"
+        }
+      ],
+      "extra": "Second major release from The Behemoth after Alien Hominid's console jump."
+    },
+    {
+      "from": "the-longest-journey",
+      "to": "syberia",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Modern third-person point-and-click storytelling centered on a grounded female protagonist's cross-world quest.",
+      "added": "Framed Benoit Sokal's melancholic European clockwork-automaton art across moody pre-rendered industrial vistas.",
+      "src": [
+        {
+          "t": "Wikipedia: Syberia (video game)",
+          "u": "https://en.wikipedia.org/wiki/Syberia_(video_game)"
+        }
+      ],
+      "extra": "Created by Belgian comic artist Benoit Sokal after his 1999 adventure Amerzone."
+    },
+    {
+      "from": "fire-emblem",
+      "to": "fire-emblem-the-blazing-blade",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Grid-based medieval tactical warfare, weapon-triangle counters and permanent character death.",
+      "added": "Added a guided Lyn tutorial campaign and crisp GBA battle sprites for the series' first Western release.",
+      "src": [
+        {
+          "t": "Wikipedia: Fire Emblem: The Blazing Blade",
+          "u": "https://en.wikipedia.org/wiki/Fire_Emblem:_The_Blazing_Blade"
+        }
+      ],
+      "extra": "Released simply as Fire Emblem outside Japan in 2003."
+    },
+    {
+      "from": "ssx",
+      "to": "ssx-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Exaggerated arcade snowboarding, boost meters and mid-air Uber tricks down stylized runs.",
+      "added": "Linked every track into one continuous three-peak open mountain with a dynamic radio soundtrack.",
+      "src": [
+        {
+          "t": "Wikipedia: SSX 3",
+          "u": "https://en.wikipedia.org/wiki/SSX_3"
+        }
+      ],
+      "extra": "Let players ride unbroken from peak summit to base lodge for nearly half an hour."
+    },
+    {
+      "from": "hitman-2",
+      "to": "freedom-fighters",
+      "tier": "team",
+      "rel": "variant",
+      "took": "IO Interactive's Glacier engine, third-person shooting feel and Jesper Kyd's dramatic orchestral score.",
+      "added": "Replaced quiet solo assassinations with charisma-based resistance squad commands across Soviet-occupied New York.",
+      "src": [
+        {
+          "t": "Wikipedia: Freedom Fighters (video game)",
+          "u": "https://en.wikipedia.org/wiki/Freedom_Fighters_(video_game)"
+        }
+      ],
+      "extra": "Allowed players to recruit and direct up to twelve AI guerrillas with simple one-button orders."
+    },
+    {
+      "from": "final-fight",
+      "to": "dynasty-warriors-4",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Combo-driven melee crowd brawling against waves of enemies and towering stage bosses.",
+      "added": "Scaled brawling into huge 3D Three Kingdoms battlefields where one general cuts down hundreds of soldiers.",
+      "src": [
+        {
+          "t": "Wikipedia: Dynasty Warriors 4",
+          "u": "https://en.wikipedia.org/wiki/Dynasty_Warriors_4"
+        }
+      ],
+      "extra": "Omega Force's PlayStation 2 Musou peak set the template for its later licensed crossovers."
+    },
+    {
+      "from": "metroid",
+      "to": "metroid-zero-mission",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Samus Aran's original Planet Zebes mission, bosses and nonlinear power-up progression.",
+      "added": "Rebuilt the 1986 NES map with crisp GBA controls, new areas and a stealth epilogue without armor.",
+      "src": [
+        {
+          "t": "Wikipedia: Metroid: Zero Mission",
+          "u": "https://en.wikipedia.org/wiki/Metroid:_Zero_Mission"
+        }
+      ],
+      "extra": "Directed by Yoshio Sakamoto using the engine built for Metroid Fusion."
+    },
+    {
+      "from": "metroid-fusion",
+      "to": "metroid-zero-mission",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Fast Game Boy Advance sprite physics, ledge grabs and snappy directional aiming.",
+      "added": "Dropped Fusion's linear briefing locks to restore sequence-breaking freedom and classic Zebes exploration.",
+      "src": [
+        {
+          "t": "Wikipedia: Metroid: Zero Mission",
+          "u": "https://en.wikipedia.org/wiki/Metroid:_Zero_Mission"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "sly-cooper-and-the-thievius-raccoonus",
+      "to": "sly-2-band-of-thieves",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Cel-shaded cartoon stealth platforming, spire-jumping acrobatics and the Cooper gang's heist caper tone.",
+      "added": "Replaced linear obstacle courses with open hub cities, health bars and playable Bentley and Murray missions.",
+      "src": [
+        {
+          "t": "Wikipedia: Sly 2: Band of Thieves",
+          "u": "https://en.wikipedia.org/wiki/Sly_2:_Band_of_Thieves"
+        }
+      ],
+      "extra": "Shifted Sucker Punch toward open-city traversal ahead of Infamous."
+    },
+    {
+      "from": "quake",
+      "to": "painkiller",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "High-speed arena movement, bunny-hopping momentum and relentless gothic monster hordes.",
+      "added": "Added physics-driven stake-gun impaling, weapon alt-fire combos and tarot-card power-ups.",
+      "src": [
+        {
+          "t": "Wikipedia: Painkiller (video game)",
+          "u": "https://en.wikipedia.org/wiki/Painkiller_(video_game)"
+        }
+      ],
+      "extra": "People Can Fly's debut PC shooter revived old-school arena speed during the tactical-FPS boom."
+    },
+    {
+      "from": "dungeon-keeper",
+      "to": "evil-genius",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Building an underground villain base, managing quirky minions and laying traps for invading heroes.",
+      "added": "Recast dark fantasy dungeons as a 1960s spy-thriller island lair with world-map heists and super-agents.",
+      "src": [
+        {
+          "t": "Demis Hassabis (Elixir Studios), interview, IGN, Aug 2004",
+          "u": "https://www.ign.com/articles/2004/08/30/evil-genius-interview-3"
+        },
+        {
+          "t": "Wikipedia: Evil Genius (video game)",
+          "u": "https://en.wikipedia.org/wiki/Evil_Genius_(video_game)"
+        }
+      ],
+      "extra": "Elixir founder Demis Hassabis had earlier worked at Bullfrog on Theme Park before founding DeepMind."
+    },
+    {
+      "from": "kingdom-hearts",
+      "to": "kingdom-hearts-chain-of-memories",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Sora's Disney-meets-Final Fantasy cast, Keyblade combos and narrative bridge toward Kingdom Hearts II.",
+      "added": "Translated 3D action RPG combat to GBA arenas powered by real-time collectible card decks and sleights.",
+      "src": [
+        {
+          "t": "Wikipedia: Kingdom Hearts: Chain of Memories",
+          "u": "https://en.wikipedia.org/wiki/Kingdom_Hearts:_Chain_of_Memories"
+        }
+      ],
+      "extra": "Co-developed with Jupiter, whose team went straight on to build The World Ends with You."
+    },
+    {
+      "from": "tom-clancy-s-rainbow-six",
+      "to": "star-wars-republic-commando",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Lethal tactical squad firefights, room-breaching discipline and tight four-soldier team coordination.",
+      "added": "Streamlined squad tactics into one-button visor commands for Clone Wars Delta Squad across gritty sci-fi missions.",
+      "src": [
+        {
+          "t": "Brett Douville (LucasArts), retrospective interview, PCGamesN, 2019",
+          "u": "https://www.pcgamesn.com/star-wars-republic-commando/republic-commando"
+        },
+        {
+          "t": "Wikipedia: Star Wars: Republic Commando",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars:_Republic_Commando"
+        }
+      ],
+      "extra": "LucasArts developers credited office Rainbow Six: Rogue Spear sessions for shaping Delta Squad."
+    },
+    {
+      "from": "halo-combat-evolved",
+      "to": "star-wars-republic-commando",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Regenerating console shields, helmet HUD feedback and responsive twin-stick sci-fi gunplay.",
+      "added": "Added contextual squad-maneuver markers, teammate revives and visor wiper effects on Xbox and PC.",
+      "src": [
+        {
+          "t": "Wikipedia: Star Wars: Republic Commando",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars:_Republic_Commando"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "resident-evil",
+      "to": "dead-rising",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Capcom's zombie-outbreak survival tension, scarce saves and inventory pressure.",
+      "added": "Opened a crowded shopping mall sandbox where photojournalist Frank West improvises weapons on a 72-hour clock.",
+      "src": [
+        {
+          "t": "Wikipedia: Dead Rising (video game)",
+          "u": "https://en.wikipedia.org/wiki/Dead_Rising_(video_game)"
+        }
+      ],
+      "extra": "Created by Capcom producer Keiji Inafune, who previously produced Resident Evil 2."
+    },
+    {
+      "from": "ico",
+      "to": "locoroco",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Minimalist Sony Japan Studio environmental craft and conveying character emotion without spoken dialogue.",
+      "added": "Pivoted to bright pop-art PSP worlds tilted with two shoulder buttons to roll singing blob creatures.",
+      "src": [
+        {
+          "t": "Tsutomu Kouno (SCE Japan Studio), interview, Game Developer, 2006",
+          "u": "https://www.gamedeveloper.com/design/the-thoughtful-design-of-locoroco-tsutomu-kouno-speaks"
+        },
+        {
+          "t": "Wikipedia: LocoRoco",
+          "u": "https://en.wikipedia.org/wiki/LocoRoco"
+        }
+      ],
+      "extra": "Creator Tsutomu Kouno previously served as a designer on Team Ico's Ico."
+    },
+    {
+      "from": "harvest-moon",
+      "to": "viva-pinata",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Gentle day-by-day land tending, planting crops and shaping a cozy personal garden.",
+      "added": "Added an interlocking ecological food chain where terrain and plants attract paper-mache wildlife species.",
+      "src": [
+        {
+          "t": "Wikipedia: Viva Piñata (video game)",
+          "u": "https://en.wikipedia.org/wiki/Viva_Pi%C3%B1ata_(video_game)"
+        }
+      ],
+      "extra": "Developed by Rare for Xbox 360 and conceived initially as a Pocket PC gardening game."
+    },
+    {
+      "from": "animal-crossing",
+      "to": "viva-pinata",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Bright low-stress life simulation with colorful creature collecting and personalized decoration.",
+      "added": "Replaced village chores with terraforming soil, managing rival piñata predators and breeding garden variants.",
+      "src": [
+        {
+          "t": "Wikipedia: Viva Piñata (video game)",
+          "u": "https://en.wikipedia.org/wiki/Viva_Pi%C3%B1ata_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "kingdom-hearts-chain-of-memories",
+      "to": "the-world-ends-with-you",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Jupiter and Tetsuya Nomura's portable action-RPG pipeline and customizable combat deck structure.",
+      "added": "Split battles across both Nintendo DS screens in modern Shibuya using stylus-gesture psychic pins and fashion trends.",
+      "src": [
+        {
+          "t": "Tatsuya Kando & Tetsuya Nomura, Square Enix Creators Roundtable, 2007",
+          "u": "https://www.khinsider.com/the-world-ends-with-you/interviews/square-enix-members-creators-roundtable-part-2"
+        },
+        {
+          "t": "Wikipedia: The World Ends with You",
+          "u": "https://en.wikipedia.org/wiki/The_World_Ends_with_You"
+        }
+      ],
+      "extra": "Early DS research prototypes evolved directly out of the Chain of Memories collaboration."
+    },
+    {
+      "from": "locoroco",
+      "to": "patapon",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Playful PSP musical identity, crisp 2D silhouette visuals and composer Kemmei Adachi's buoyant audio spirit.",
+      "added": "Combined four-beat drum rhythm inputs with real-time tribal army marching, hunting and boss strategy.",
+      "src": [
+        {
+          "t": "Hiroyuki Kotani (SCE Japan Studio), interview, Pocket Gamer, 2008",
+          "u": "https://www.pocketgamer.com/patapon/talking-a-different-beat-with-patapons-designer-hiroyuki-kotani/"
+        },
+        {
+          "t": "Wikipedia: Patapon",
+          "u": "https://en.wikipedia.org/wiki/Patapon"
+        }
+      ],
+      "extra": "Co-developed by Pyramid and Japan Studio around French artist Rolito's tribal silhouettes."
+    },
+    {
+      "from": "pirates",
+      "to": "mount-and-blade",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Open-ended sandbox roaming, emergent faction politics and replayable mercenary career freedom.",
+      "added": "Moved sandbox adventuring to medieval Calradia with directional horseback combat and player-led warbands.",
+      "src": [
+        {
+          "t": "Armagan Yavuz (TaleWorlds), interview, Rock Paper Shotgun, 2008",
+          "u": "https://www.rockpapershotgun.com/the-horses-mouth-mount-blade-interview"
+        },
+        {
+          "t": "Wikipedia: Mount & Blade",
+          "u": "https://en.wikipedia.org/wiki/Mount_%26_Blade"
+        }
+      ],
+      "extra": "Yavuz also named Daggerfall and Elite 2 alongside Sid Meier's Pirates! as key influences."
+    },
+    {
+      "from": "rhythm-tengoku",
+      "to": "rhythm-heaven",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Tsunku's quirky rapid-fire musical minigames and strict beat-keeping cue design.",
+      "added": "Replaced GBA buttons with vertical Nintendo DS touch-screen tapping, flicking and sliding for its Western debut.",
+      "src": [
+        {
+          "t": "Wikipedia: Rhythm Heaven",
+          "u": "https://en.wikipedia.org/wiki/Rhythm_Heaven"
+        }
+      ],
+      "extra": "Built by Nintendo SPD Group No. 1, the core WarioWare development team."
+    },
+    {
+      "from": "warioware-inc-mega-microgames",
+      "to": "rhythm-heaven",
+      "tier": "team",
+      "rel": "variant",
+      "took": "WarioWare team's minimalist deadpan humor, brisk visual cues and rapid challenge remixes.",
+      "added": "Stretched microgames into two-minute musical routines judged purely on rhythmic precision.",
+      "src": [
+        {
+          "t": "Wikipedia: Rhythm Heaven",
+          "u": "https://en.wikipedia.org/wiki/Rhythm_Heaven"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-lost-vikings",
+      "to": "trine",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Switching among three distinct heroes whose complementary skills solve side-scrolling obstacle puzzles.",
+      "added": "Bound wizard, knight and thief into one swappable body with physics-driven box conjuring and three-player co-op.",
+      "src": [
+        {
+          "t": "Frozenbyte, Game Developer postmortem, 2009",
+          "u": "https://www.gamedeveloper.com/audio/postmortem-frozenbyte-s-i-trine-i-"
+        },
+        {
+          "t": "Wikipedia: Trine (video game)",
+          "u": "https://en.wikipedia.org/wiki/Trine_(video_game)"
+        }
+      ],
+      "extra": "Frozenbyte's postmortem credited the three-character puzzle-platformer heritage while streamlining single-player swapping."
+    },
+    {
+      "from": "gobliiins",
+      "to": "machinarium",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Compact single-screen European point-and-click puzzle scenes solved through quirky visual interactions.",
+      "added": "Told a completely wordless robot love story using hand-drawn ink art and comic thought bubbles.",
+      "src": [
+        {
+          "t": "Wikipedia: Machinarium",
+          "u": "https://en.wikipedia.org/wiki/Machinarium"
+        }
+      ],
+      "extra": "Created by Czech indie studio Amanita Design following its browser Samorost adventures."
+    },
+    {
+      "from": "red-faction",
+      "to": "red-faction-guerrilla",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Martian miner rebellion setting and Volition's hallmark environmental destruction technology.",
+      "added": "Switched from corridor FPS to a third-person open-world Mars where entire steel-and-concrete buildings collapse realistically.",
+      "src": [
+        {
+          "t": "Wikipedia: Red Faction: Guerrilla",
+          "u": "https://en.wikipedia.org/wiki/Red_Faction:_Guerrilla"
+        }
+      ],
+      "extra": "Geo-Mod 2.0 simulated structural stress rather than carving tunnels through terrain."
+    },
+    {
+      "from": "mercenaries-playground-of-destruction",
+      "to": "red-faction-guerrilla",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Open-world guerrilla warfare sandbox centered on sabotaging military outposts and blowing up structures.",
+      "added": "Replaced scripted building collapses with dynamic piece-by-piece physics demolition via sledgehammer and remote charges.",
+      "src": [
+        {
+          "t": "Wikipedia: Red Faction: Guerrilla",
+          "u": "https://en.wikipedia.org/wiki/Red_Faction:_Guerrilla"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "mount-and-blade",
+      "to": "mount-and-blade-warband",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Medieval Calradia sandbox roaming, directional swordplay and dynamic vassal-warband politics.",
+      "added": "Added 64-player online melee battles, player-founded kingdoms, marriage diplomacy and a lasting modding scene.",
+      "src": [
+        {
+          "t": "Wikipedia: Mount & Blade: Warband",
+          "u": "https://en.wikipedia.org/wiki/Mount_%26_Blade:_Warband"
+        }
+      ],
+      "extra": "Standalone expansion that became the definitive Mount & Blade release for a decade."
+    },
+    {
+      "from": "shogun-total-war",
+      "to": "total-war-shogun-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Turn-based Sengoku Japan clan conquest paired with real-time samurai battlefield tactics.",
+      "added": "Refined the series into a tight, balanced 3D campaign with naval battles, skill trees and avatar multiplayer.",
+      "src": [
+        {
+          "t": "Wikipedia: Total War: Shogun 2",
+          "u": "https://en.wikipedia.org/wiki/Total_War:_Shogun_2"
+        }
+      ],
+      "extra": "Returned Creative Assembly to its original 2000 setting after a decade of global entries."
+    },
+    {
+      "from": "dead-space",
+      "to": "dead-space-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Strategic limb dismemberment, diegetic spine-health HUD and claustrophobic sci-fi Necromorph horror.",
+      "added": "Gave Isaac Clarke a voice, faster kinesis impaling, free-floating zero-G thrusters and sprawling Sprawl set pieces.",
+      "src": [
+        {
+          "t": "Wikipedia: Dead Space 2",
+          "u": "https://en.wikipedia.org/wiki/Dead_Space_2"
+        }
+      ],
+      "extra": "Developed by Visceral Games, renamed from EA Redwood Shores after Dead Space."
+    },
+    {
+      "from": "littlebigplanet",
+      "to": "littlebigplanet-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Tactile craft-material 2.5D platforming, Sackboy physics and Play, Create, Share community levels.",
+      "added": "Expanded level tools with microchips, controllable Sackbots and logic gates to build shooters, racers and RPGs.",
+      "src": [
+        {
+          "t": "Wikipedia: LittleBigPlanet 2",
+          "u": "https://en.wikipedia.org/wiki/LittleBigPlanet_2"
+        }
+      ],
+      "extra": "Media Molecule billed it as a platform for games, bridging directly to Dreams."
+    },
+    {
+      "from": "skate",
+      "to": "skate-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Right-stick Flickit board control and physics-driven street skateboarding realism.",
+      "added": "Added team-based online co-op, customizable skate parks and viral Hall of Meat ragdoll challenges.",
+      "src": [
+        {
+          "t": "Wikipedia: Skate 3",
+          "u": "https://en.wikipedia.org/wiki/Skate_3"
+        }
+      ],
+      "extra": "Became an unexpected multi-year YouTube staple thanks to its flexible physics sandbox."
+    },
+    {
+      "from": "chrono-trigger",
+      "to": "to-the-moon",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "16-bit top-down pixel presentation, time-spanning narrative structure and melodic piano-led emotional scoring.",
+      "added": "Stripped away all JRPG combat and leveling to tell a four-hour story about altering a dying man's memories.",
+      "src": [
+        {
+          "t": "Kan Gao (Freebird Games), interview, Game Developer, 2012",
+          "u": "https://www.gamedeveloper.com/design/kan-gao-on-the-benefits-and-drawbacks-of-designing-in-rpg-maker"
+        },
+        {
+          "t": "Wikipedia: To the Moon",
+          "u": "https://en.wikipedia.org/wiki/To_the_Moon"
+        }
+      ],
+      "extra": "Built solo by Kan Gao in RPG Maker XP, which he described as a storytelling pencil."
+    },
+    {
+      "from": "theme-hospital",
+      "to": "game-dev-story",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Playful isometric workplace management with quirky staff stats, room upgrades and comedic pop-culture parody.",
+      "added": "Focused on running a game studio through genre-topic combos and console generations in bite-sized mobile sessions.",
+      "src": [
+        {
+          "t": "Wikipedia: Game Dev Story",
+          "u": "https://en.wikipedia.org/wiki/Game_Dev_Story"
+        }
+      ],
+      "extra": "Originally a 1997 Japanese Windows sim by Kairosoft before its 2010 smartphone breakout."
+    },
+    {
+      "from": "dragon-quest-viii-journey-of-the-cursed-king",
+      "to": "ni-no-kuni-wrath-of-the-white-witch",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Level-5's lush cel-shaded 3D overworld travel, orchestral score and storybook JRPG warmth.",
+      "added": "Partnered directly with Studio Ghibli for animation and blended real-time command combat with tameable familiars.",
+      "src": [
+        {
+          "t": "Akihiro Hino (Level-5), interview, Game Informer, Oct 2012",
+          "u": "https://gameinformer.com/b/features/archive/2012/10/19/extended-interview-level-5-president-akihiro-hino-talks-ni-no-kuni-and-studio-ghibli"
+        },
+        {
+          "t": "Eurogamer, 20 Years of Level-5 retrospective, 2018",
+          "u": "https://www.eurogamer.net/20-years-of-level-5"
+        }
+      ],
+      "extra": "First released on Nintendo DS in Japan in 2010 before its expanded PS3 edition."
+    },
+    {
+      "from": "pok-mon-red-and-green",
+      "to": "ni-no-kuni-wrath-of-the-white-witch",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Capturing, feeding and evolving wild creatures to fight alongside the player across elemental matchups.",
+      "added": "Integrated creature-taming familiars into an active-movement JRPG battle arena with Studio Ghibli cutscenes.",
+      "src": [
+        {
+          "t": "Wikipedia: Ni no Kuni: Wrath of the White Witch",
+          "u": "https://en.wikipedia.org/wiki/Ni_no_Kuni:_Wrath_of_the_White_Witch"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "kingdom-hearts-ii",
+      "to": "kingdom-hearts-birth-by-sleep",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast Keyblade action-RPG combat, Disney worlds and overarching series mythology.",
+      "added": "Split the prequel across three playable Keyblade wielders with a customizable Command Deck and melding system on PSP.",
+      "src": [
+        {
+          "t": "Wikipedia: Kingdom Hearts Birth by Sleep",
+          "u": "https://en.wikipedia.org/wiki/Kingdom_Hearts_Birth_by_Sleep"
+        }
+      ],
+      "extra": "Developed by Square Enix's Osaka team, which went on to lead Kingdom Hearts III."
+    },
+    {
+      "from": "castlevania",
+      "to": "castlevania-lords-of-shadow",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Belmont monster hunting, gothic castle settings and whip-based melee combat.",
+      "added": "Rebooted the timeline as a 3D Spanish-developed dark fantasy epic with Light and Shadow magic stances.",
+      "src": [
+        {
+          "t": "Wikipedia: Castlevania: Lords of Shadow",
+          "u": "https://en.wikipedia.org/wiki/Castlevania:_Lords_of_Shadow"
+        }
+      ],
+      "extra": "Developed by MercurySteam with supervisory input from Kojima Productions."
+    },
+    {
+      "from": "god-of-war",
+      "to": "castlevania-lords-of-shadow",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Fixed-camera 3D arena brawling with sweeping chain-weapon combos and cinematic quick-time finishers.",
+      "added": "Added tactical Light-healing and Shadow-damage meters alongside climbable giant Titan boss encounters.",
+      "src": [
+        {
+          "t": "Wikipedia: Castlevania: Lords of Shadow",
+          "u": "https://en.wikipedia.org/wiki/Castlevania:_Lords_of_Shadow"
+        }
+      ],
+      "extra": "Reviewers also compared its climbable colossus bosses to Team Ico's Shadow of the Colossus."
+    },
+    {
+      "from": "sonic-the-hedgehog",
+      "to": "sonic-colors",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "High-speed ring collecting, looping side-scrolling courses and Dr. Eggman's colorful robot theme worlds.",
+      "added": "Blended 3D boost corridors with 2D platforming and alien Wisp power-ups like Laser and Drill.",
+      "src": [
+        {
+          "t": "Takashi Iizuka (Sonic Team), interview, SPOnG, 2010",
+          "u": "https://spong.com/feature/10110209/interview-sonic-colours-producer-takashi-iizuka"
+        },
+        {
+          "t": "Wikipedia: Sonic Colors",
+          "u": "https://en.wikipedia.org/wiki/Sonic_Colors"
+        }
+      ],
+      "extra": "Refined the daytime Boost formula from Sonic Unleashed while keeping Sonic the sole playable hero."
+    },
+    {
+      "from": "infamous",
+      "to": "infamous-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-city superhero parkour, electric combat powers and binary good-or-evil karma choices.",
+      "added": "Moved Cole MacGrath to New Marais with melee Amp combos, ice or napalm powers and user-created missions.",
+      "src": [
+        {
+          "t": "Wikipedia: Infamous 2",
+          "u": "https://en.wikipedia.org/wiki/Infamous_2"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dragon-age-origins",
+      "to": "dragon-age-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "The dark fantasy world of Thedas, companion approval rivalries and party-based tactical RPG combat.",
+      "added": "Focused on a decade in one city, Kirkwall, with faster combat animations and a voiced dialogue wheel.",
+      "src": [
+        {
+          "t": "Wikipedia: Dragon Age II",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Age_II"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "mass-effect-2",
+      "to": "dragon-age-ii",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "BioWare's voiced protagonist structure and tone-coded radial conversation wheel.",
+      "added": "Applied cinematic dialogue pacing to a fantasy refugee family saga tracked across three multi-year acts.",
+      "src": [
+        {
+          "t": "Wikipedia: Dragon Age II",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Age_II"
+        }
+      ],
+      "extra": "Built by BioWare in roughly 16 months between Origins and Inquisition."
+    },
+    {
+      "from": "crysis",
+      "to": "crysis-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Nanosuit stealth-and-armor toggling and open-ended tactical sci-fi firefights.",
+      "added": "Brought CryEngine 3 to consoles and shifted combat from tropical jungles to a ruined vertical New York City.",
+      "src": [
+        {
+          "t": "Wikipedia: Crysis 2",
+          "u": "https://en.wikipedia.org/wiki/Crysis_2"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "doom-3",
+      "to": "rage",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "id Software's crisp first-person gunfeel, expressive enemy hit reactions and proprietary engine showcase.",
+      "added": "Introduced MegaTexture wasteland visuals, hub-connected vehicle combat and craftable wingstick gadgets.",
+      "src": [
+        {
+          "t": "Wikipedia: Rage (video game)",
+          "u": "https://en.wikipedia.org/wiki/Rage_(video_game)"
+        }
+      ],
+      "extra": "Final id Software game shipped under co-founder John Carmack's technical direction."
+    },
+    {
+      "from": "borderlands",
+      "to": "rage",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Post-apocalyptic desert raiders, armored dune buggies and quest hubs linking first-person shooting arenas.",
+      "added": "Replaced randomized loot RPG tables with realistic animation, racing circuits and tight arcade gunplay.",
+      "src": [
+        {
+          "t": "Wikipedia: Rage (video game)",
+          "u": "https://en.wikipedia.org/wiki/Rage_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "warhammer-40000-dawn-of-war",
+      "to": "warhammer-40-000-space-marine",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Relic Entertainment's grim Warhammer 40,000 Space Marine faction lore, Orks and heavy audio punch.",
+      "added": "Stepped down from RTS command into third-person chainsword-and-bolter brawling powered by health-restoring executions.",
+      "src": [
+        {
+          "t": "Wikipedia: Warhammer 40,000: Space Marine",
+          "u": "https://en.wikipedia.org/wiki/Warhammer_40,000:_Space_Marine"
+        }
+      ],
+      "extra": "Relic deliberately omitted chest-high cover mechanics to reward aggressive forward melee momentum."
+    },
+    {
+      "from": "marvel-vs-capcom-2",
+      "to": "marvel-vs-capcom-3-fate-of-two-worlds",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Hyper-fast three-on-three tag-team superhero crossovers, aerial raves and character assist combos.",
+      "added": "Moved the series to comic-shaded 3D models with simplified three-button attacks and comeback X-Factor bursts.",
+      "src": [
+        {
+          "t": "Wikipedia: Marvel vs. Capcom 3: Fate of Two Worlds",
+          "u": "https://en.wikipedia.org/wiki/Marvel_vs._Capcom_3:_Fate_of_Two_Worlds"
+        }
+      ],
+      "extra": "Co-developed by Capcom and Eighting, reviving the crossover after an eleven-year gap."
+    },
+    {
+      "from": "painkiller",
+      "to": "bulletstorm",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "People Can Fly's unapologetically fast arcade shooter momentum and creative environmental kills.",
+      "added": "Added an energy leash, power-slide kicks and a Skillshot combo scoring system rewarding stylish takedowns.",
+      "src": [
+        {
+          "t": "People Can Fly, Classic Postmortem, Game Developer, 2012",
+          "u": "https://www.gamedeveloper.com/audio/classic-postmortem-people-can-fly-s-i-bulletstorm-i-"
+        },
+        {
+          "t": "Wikipedia: Bulletstorm",
+          "u": "https://en.wikipedia.org/wiki/Bulletstorm"
+        }
+      ],
+      "extra": "Co-developed with Epic Games on Unreal Engine 3."
+    },
+    {
+      "from": "forza-motorsport",
+      "to": "forza-motorsport-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Simulation circuit racing, deep car-tuning telemetry and community livery painting on Xbox.",
+      "added": "Partnered with Top Gear, added interactive Autovista car walkarounds and scaled up to 16-car online grids.",
+      "src": [
+        {
+          "t": "Wikipedia: Forza Motorsport 4",
+          "u": "https://en.wikipedia.org/wiki/Forza_Motorsport_4"
+        }
+      ],
+      "extra": "Widely regarded as Turn 10 Studios' high-water mark on Xbox 360."
+    },
+    {
+      "from": "assassin-s-creed-ii",
+      "to": "assassins-creed-revelations",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Ezio Auditore's rooftop freerunning, hidden-blade stealth assassinations and historical city climbing.",
+      "added": "Closed Ezio and Altair's arcs in Ottoman Constantinople with hookblade ziplining and customizable bombs.",
+      "src": [
+        {
+          "t": "Wikipedia: Assassin's Creed Revelations",
+          "u": "https://en.wikipedia.org/wiki/Assassin%27s_Creed_Revelations"
+        }
+      ],
+      "extra": "Concluded the Ezio trilogy following Assassin's Creed: Brotherhood (2010)."
+    },
+    {
+      "from": "canabalt",
+      "to": "tiny-wings",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Minimalist one-touch mobile momentum chasing where clean timing sustains speed across endless runs.",
+      "added": "Replaced rooftop jumping with holding to dive down procedurally painted hills and launching into flight before nightfall.",
+      "src": [
+        {
+          "t": "Andreas Illiger, interview, Kill Screen, 2011",
+          "u": "https://www.killscreen.com/one-andreas-illiger/"
+        },
+        {
+          "t": "Wikipedia: Tiny Wings",
+          "u": "https://en.wikipedia.org/wiki/Tiny_Wings"
+        }
+      ],
+      "extra": "Solo developer Andreas Illiger also credited indie game Wavespark for the slope-diving physics."
+    },
+    {
+      "from": "simtower",
+      "to": "tiny-tower",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Cross-section skyscraper building where players stack residential and commercial floors around an elevator shaft.",
+      "added": "Streamlined tower simulation into pixel-art mobile idle loops, Bitizen job matching and real-time restock timers.",
+      "src": [
+        {
+          "t": "Wikipedia: Tiny Tower",
+          "u": "https://en.wikipedia.org/wiki/Tiny_Tower"
+        }
+      ],
+      "extra": "Won Apple's 2011 iPhone Game of the Year for NimbleBit."
+    },
+    {
+      "from": "cut-the-rope",
+      "to": "wheres-my-water",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Bite-sized touchscreen physics puzzles with three-star collectibles and charming mascot animation.",
+      "added": "Centered every level on swiping paths through dirt to guide realistic flowing water, steam and acid to Swampy.",
+      "src": [
+        {
+          "t": "Wikipedia: Where's My Water?",
+          "u": "https://en.wikipedia.org/wiki/Where%27s_My_Water%3F"
+        }
+      ],
+      "extra": "Created by Tim FitzRandolph's Disney Mobile team as an original mobile IP."
+    },
+    {
+      "from": "bloons-tower-defense",
+      "to": "bloons-tower-defense-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Dart-throwing monkeys placed along winding paths to pop layered waves of colored balloons.",
+      "added": "Introduced deep branching upgrade paths, persistent XP ranks, Sandbox testing and mobile ports.",
+      "src": [
+        {
+          "t": "Wikipedia: Bloons Tower Defense",
+          "u": "https://en.wikipedia.org/wiki/Bloons_Tower_Defense"
+        }
+      ],
+      "extra": "Cemented Ninja Kiwi's tower defense spin-off as a browser and early iOS staple."
+    },
+    {
+      "from": "guitar-hero",
+      "to": "rocksmith",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Color-coded scrolling fretboard note highways that turn rock songs into scored rhythm gameplay.",
+      "added": "Ditched plastic five-button controllers for any real electric guitar via USB cable and dynamic difficulty scaling.",
+      "src": [
+        {
+          "t": "Wikipedia: Rocksmith",
+          "u": "https://en.wikipedia.org/wiki/Rocksmith"
+        }
+      ],
+      "extra": "Developed by Ubisoft San Francisco to teach real guitar technique through rhythm-game feedback."
+    },
+    {
+      "from": "kirby-s-dream-land",
+      "to": "kirbys-return-to-dream-land",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Floating side-scrolling Kirby platforming and inhaling enemies across cheerful Dream Land stages.",
+      "added": "Brought four-player drop-in Wii co-op and screen-clearing Super Abilities back to classic 2D Kirby design.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby's Return to Dream Land",
+          "u": "https://en.wikipedia.org/wiki/Kirby%27s_Return_to_Dream_Land"
+        }
+      ],
+      "extra": "Rebuilt HAL Laboratory's modern 2D Kirby template after an eleven-year gap since Kirby 64."
+    },
+    {
+      "from": "new-super-mario-bros-wii",
+      "to": "kirbys-return-to-dream-land",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Simultaneous four-player Nintendo Wii couch co-op across 2.5D side-scrolling levels.",
+      "added": "Added cooperative piggyback rides, team attacks and distinct playable movesets for Dedede, Meta Knight and Waddle Dee.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby's Return to Dream Land",
+          "u": "https://en.wikipedia.org/wiki/Kirby%27s_Return_to_Dream_Land"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "trine",
+      "to": "trine-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Physics-driven fairy-tale puzzle platforming built around swapping between wizard, knight and thief.",
+      "added": "Added online three-player co-op, elemental water-and-plant growth puzzles and richer hand-painted art.",
+      "src": [
+        {
+          "t": "Wikipedia: Trine 2",
+          "u": "https://en.wikipedia.org/wiki/Trine_2"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "professor-layton-and-the-curious-village",
+      "to": "professor-layton-and-the-lost-future",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Hand-drawn European mystery storytelling woven around stylus-solved brainteasers by Akira Tago.",
+      "added": "Concluded the original Nintendo DS trilogy with a time-traveling London mystery, memo tools and Super Hints.",
+      "src": [
+        {
+          "t": "Wikipedia: Professor Layton and the Unwound Future",
+          "u": "https://en.wikipedia.org/wiki/Professor_Layton_and_the_Unwound_Future"
+        }
+      ],
+      "extra": "European title for Professor Layton and the Unwound Future, released in PAL regions in 2010."
+    },
+    {
+      "from": "call-of-duty-4-modern-warfare",
+      "to": "spec-ops-the-line",
+      "tier": "dev",
+      "rel": "variant",
+      "took": "Modern military shooter tropes, radio chatter and spectacle-driven tactical squad campaigns.",
+      "added": "Deliberately subverted military power fantasies into a Heart of Darkness psychological critique in sand-buried Dubai.",
+      "src": [
+        {
+          "t": "Walt Williams (Yager), interview, GamesRadar+, 2012",
+          "u": "https://www.gamesradar.com/spec-ops-line-learn-about-story-lead-writer-walt-williams/"
+        },
+        {
+          "t": "Wikipedia: Spec Ops: The Line",
+          "u": "https://en.wikipedia.org/wiki/Spec_Ops:_The_Line"
+        }
+      ],
+      "extra": "Lead writer Walt Williams explicitly contrasted the campaign's raw psychological toll against Call of Duty."
+    },
+    {
+      "from": "gears-of-war",
+      "to": "spec-ops-the-line",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Third-person chest-high cover shooting, blind fire and squad-flanking firefights on Unreal Engine 3.",
+      "added": "Used familiar cover-shooter muscle memory to lure players into disturbing moral choices and unreliable hallucinations.",
+      "src": [
+        {
+          "t": "Wikipedia: Spec Ops: The Line",
+          "u": "https://en.wikipedia.org/wiki/Spec_Ops:_The_Line"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "silent-hill",
+      "to": "gravity-rush",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Director Keiichiro Toyama's surreal atmospheric world-building and knack for uncanny floating spaces.",
+      "added": "Pivoted away from psychological horror into a Moebius-inspired comic city where Kat falls in any chosen direction.",
+      "src": [
+        {
+          "t": "Keiichiro Toyama (SCE Japan Studio), interview, Siliconera, 2012",
+          "u": "https://www.siliconera.com/gravity-rush-was-ten-years-in-the-making/"
+        },
+        {
+          "t": "Wikipedia: Gravity Rush",
+          "u": "https://en.wikipedia.org/wiki/Gravity_Rush"
+        }
+      ],
+      "extra": "Toyama conceived the PlayStation Vita original over a decade after leaving Konami's Silent Hill team."
+    },
+    {
+      "from": "dynasty-warriors-4",
+      "to": "hyrule-warriors",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Omega Force's one-versus-thousand Musou battlefield combos, keep captures and officer duels.",
+      "added": "Fused Musou crowd combat with Legend of Zelda heroes, classic items like bombs and giant weak-point bosses.",
+      "src": [
+        {
+          "t": "Wikipedia: Hyrule Warriors",
+          "u": "https://en.wikipedia.org/wiki/Hyrule_Warriors"
+        }
+      ],
+      "extra": "Co-developed by Omega Force and Team Ninja for Wii U."
+    },
+    {
+      "from": "the-legend-of-zelda-ocarina-of-time",
+      "to": "hyrule-warriors",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Hyrule's familiar locations, musical themes, Z-targeting duels and item-based boss weak points.",
+      "added": "Recast Zelda's adventure cast into large-scale real-time army battles across multiple franchise eras.",
+      "src": [
+        {
+          "t": "Wikipedia: Hyrule Warriors",
+          "u": "https://en.wikipedia.org/wiki/Hyrule_Warriors"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "transport-tycoon",
+      "to": "mini-metro",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Connecting growing passenger hubs with efficient rail lines to avoid station overcrowding.",
+      "added": "Distilled transit management into a clean vector subway-map puzzle with procedural generative audio.",
+      "src": [
+        {
+          "t": "Peter & Robert Curry (Dinosaur Polo Club), Vice feature, 2016",
+          "u": "https://www.vice.com/en/article/we-asked-a-transit-planner-how-to-up-our-mini-metro-game/"
+        },
+        {
+          "t": "Wikipedia: Mini Metro (video game)",
+          "u": "https://en.wikipedia.org/wiki/Mini_Metro_(video_game)"
+        }
+      ],
+      "extra": "Born from a 2013 Ludum Dare prototype inspired by navigating the London Underground."
+    },
+    {
+      "from": "max-payne",
+      "to": "superhot",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Slow-motion bullet-time gunfights where players dodge incoming fire in mid-air.",
+      "added": "Tied time directly to player motion, turning minimalist white-and-red arenas into tactical first-person puzzles.",
+      "src": [
+        {
+          "t": "Piotr Iwanicki (Superhot Team), Road to the IGF, Game Developer, 2014",
+          "u": "https://www.gamedeveloper.com/design/road-to-the-igf-superhot-team-s-i-superhot-i-"
+        },
+        {
+          "t": "Wikipedia: Superhot",
+          "u": "https://en.wikipedia.org/wiki/Superhot"
+        }
+      ],
+      "extra": "Originated during the August 2013 7DFPS game jam."
+    },
+    {
+      "from": "bioshock",
+      "to": "bendy-and-the-ink-machine",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Early-20th-century industrial decay, first-person exploration and employee audio logs uncovering corporate madness.",
+      "added": "Replaced Rapture's Art Deco sci-fi with a cursed 1930s rubberhose animation studio oozing living ink.",
+      "src": [
+        {
+          "t": "theMeatly, Game Jolt developer interview, 2017",
+          "u": "https://gamejolt.com/p/themeatly-theinterviewly-the-first-ever-interview-with-the-puppet-hwe4gbxv"
+        },
+        {
+          "t": "Wikipedia: Bendy and the Ink Machine",
+          "u": "https://en.wikipedia.org/wiki/Bendy_and_the_Ink_Machine"
+        }
+      ],
+      "extra": "Co-creator theMeatly credited BioShock's atmosphere and audio storytelling as a primary inspiration."
+    },
+    {
+      "from": "five-nights-at-freddys",
+      "to": "bendy-and-the-ink-machine",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Corrupting wholesome childhood mascots into episodic indie survival horror packed with fan-decoded lore.",
+      "added": "Freed mascot horror from static security cameras into free-roaming first-person puzzles and cartoon ink monsters.",
+      "src": [
+        {
+          "t": "Wikipedia: Bendy and the Ink Machine",
+          "u": "https://en.wikipedia.org/wiki/Bendy_and_the_Ink_Machine"
+        }
+      ],
+      "extra": "Helped establish the free-roaming mascot-horror blueprint later expanded by Poppy Playtime."
+    },
+    {
+      "from": "silent-hill-2",
+      "to": "hellblade-senuas-sacrifice",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Externalizing grief, guilt and inner trauma through oppressive psychological horror imagery.",
+      "added": "Collaborated with neuroscientists and used binaural 3D audio voices to portray Senua's psychosis in Norse myth.",
+      "src": [
+        {
+          "t": "Wikipedia: Hellblade: Senua's Sacrifice",
+          "u": "https://en.wikipedia.org/wiki/Hellblade:_Senua%27s_Sacrifice"
+        }
+      ],
+      "extra": "Self-published by Ninja Theory as a mid-budget 'independent AAA' production."
+    },
+    {
+      "from": "the-legend-of-zelda-breath-of-the-wild",
+      "to": "a-short-hike",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Stamina-governed cliff climbing, open-ended gliding and curiosity-driven exploration without map clutter.",
+      "added": "Compressed open-world discovery into a cozy 90-minute island park hike powered by collectible Golden Feathers.",
+      "src": [
+        {
+          "t": "Adam Robinson-Yu, Road to the IGF, Game Developer, 2020",
+          "u": "https://www.gamedeveloper.com/business/road-to-the-igf-adam-robinson-yu-s-i-a-short-hike-i-"
+        },
+        {
+          "t": "Wikipedia: A Short Hike",
+          "u": "https://en.wikipedia.org/wiki/A_Short_Hike"
+        }
+      ],
+      "extra": "Won the 2020 Independent Games Festival Seumas McNally Grand Prize."
+    },
+    {
+      "from": "animal-crossing",
+      "to": "a-short-hike",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Warm low-stakes escapism populated by chatty anthropomorphic animal neighbors and gentle side errands.",
+      "added": "Paired relaxing island socializing with crisp 3D platforming toward a mountain summit to get cell reception.",
+      "src": [
+        {
+          "t": "Adam Robinson-Yu, interview, MCV/Develop, 2019",
+          "u": "https://mcvuk.com/business-news/the-first-time-somebody-was-reading-the-dialogue-i-had-to-leave-the-room-i-was-too-embarrassed-how-adamgryu-overcame-writers-block-and-creative-burnout-in-the-development-of-a-short/"
+        },
+        {
+          "t": "Wikipedia: A Short Hike",
+          "u": "https://en.wikipedia.org/wiki/A_Short_Hike"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "beat-saber",
+      "to": "pistol-whip",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Physical VR rhythm scoring synchronized to pulsing electronic tracks and ducking incoming obstacles.",
+      "added": "Swapped dual lightsabers for on-rails gun-fu shooting where firing on the beat boosts score multipliers.",
+      "src": [
+        {
+          "t": "Road to VR, Pistol Whip preview & Cloudhead Games interview, 2019",
+          "u": "https://roadtovr.com/pistol-whip-preview/"
+        },
+        {
+          "t": "Wikipedia: Pistol Whip",
+          "u": "https://en.wikipedia.org/wiki/Pistol_Whip"
+        }
+      ],
+      "extra": "Critics widely dubbed Cloudhead Games' VR hit 'Beat Saber meets Superhot'."
+    },
+    {
+      "from": "superhot",
+      "to": "pistol-whip",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Stylized low-poly geometry, bullet dodging and hyper-choreographed action-movie gunplay.",
+      "added": "Put players on a driving forward rhythm rail where leaning around slow bullets feels like an action film.",
+      "src": [
+        {
+          "t": "Road to VR, Pistol Whip preview, 2019",
+          "u": "https://roadtovr.com/pistol-whip-preview/"
+        },
+        {
+          "t": "Wikipedia: Pistol Whip",
+          "u": "https://en.wikipedia.org/wiki/Pistol_Whip"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "littlebigplanet-2",
+      "to": "dreams",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Media Molecule's Play, Create, Share ethos and visual wire-based logic chips for player-made games.",
+      "added": "Removed the 2.5D platformer frame to become a full 3D PS4 engine for sculpting, music, animation and games.",
+      "src": [
+        {
+          "t": "Wikipedia: Dreams (video game)",
+          "u": "https://en.wikipedia.org/wiki/Dreams_(video_game)"
+        }
+      ],
+      "extra": "Allowed PlayStation users to remix and share complete multi-genre games, art and tracks."
+    },
+    {
+      "from": "crash-bandicoot-warped",
+      "to": "crash-bandicoot-4-its-about-time",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Corridor 3D precision jumping, crate-smashing completion runs and tight spin-and-slide platforming.",
+      "added": "Added four Quantum Masks bending gravity and time, playable side characters and forgiving Modern checkpoint mode.",
+      "src": [
+        {
+          "t": "Wikipedia: Crash Bandicoot 4: It's About Time",
+          "u": "https://en.wikipedia.org/wiki/Crash_Bandicoot_4:_It%27s_About_Time"
+        }
+      ],
+      "extra": "Developed by Toys for Bob as a direct narrative sequel to Naughty Dog's 1998 trilogy closer."
+    },
+    {
+      "from": "mirrors-edge",
+      "to": "ghostrunner",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Momentum-driven first-person wall-running, sliding and kinetic rooftop parkour traversal.",
+      "added": "Fused acrobatic first-person parkour with cyber-ninja katana slicing, grapple hooks and slow-motion air dashes.",
+      "src": [
+        {
+          "t": "One More Level, interview, Inverse, Oct 2020",
+          "u": "https://www.inverse.com/gaming/ghostrunner-interview-cyberpunk-hotline-miami"
+        },
+        {
+          "t": "Wikipedia: Ghostrunner",
+          "u": "https://en.wikipedia.org/wiki/Ghostrunner"
+        }
+      ],
+      "extra": "Polish studio One More Level studied Mirror's Edge to keep high-speed 3D wall-running readable."
+    },
+    {
+      "from": "hotline-miami",
+      "to": "ghostrunner",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "One-hit-kill combat lethality paired with instant zero-load respawns turning rooms into speed puzzles.",
+      "added": "Translated top-down trial-and-error lethality into a vertical cyberpunk tower climb.",
+      "src": [
+        {
+          "t": "Radek Ratusznik (One More Level), interview, Inverse, Oct 2020",
+          "u": "https://www.inverse.com/gaming/ghostrunner-interview-cyberpunk-hotline-miami"
+        },
+        {
+          "t": "Wikipedia: Ghostrunner",
+          "u": "https://en.wikipedia.org/wiki/Ghostrunner"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "desperados-wanted-dead-or-alive",
+      "to": "desperados-iii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "John Cooper's Wild West outlaw squad, vision-cone stealth puzzles and synchronized Quick Action plans.",
+      "added": "Modernized real-time tactics with Mimimi's Showdown pause-queue mode, fluid gamepad controls and five specialists.",
+      "src": [
+        {
+          "t": "PC Gamer, Mimimi Games on Desperados III, 2018",
+          "u": "https://www.pcgamer.com/desperados-3-announced-developed-by-shadow-tactics-developer-mimimi/"
+        },
+        {
+          "t": "Game Developer, Designing the Real-Time Stealth of Desperados III, 2020",
+          "u": "https://www.gamedeveloper.com/design/designing-the-real-time-stealth-and-combat-of-i-desperados-iii-i-"
+        }
+      ],
+      "extra": "Built by Mimimi Games on the stealth-strategy toolkit they refined in Shadow Tactics: Blades of the Shogun."
+    },
+    {
+      "from": "resident-evil-3-nemesis",
+      "to": "resident-evil-3-2020",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Jill Valentine's desperate Raccoon City escape while stalked relentlessly by the bioweapon Nemesis.",
+      "added": "Rebuilt the 1999 classic in RE Engine with over-the-shoulder aiming, a perfect-dodge counter and cinematic pacing.",
+      "src": [
+        {
+          "t": "Wikipedia: Resident Evil 3 (2020 video game)",
+          "u": "https://en.wikipedia.org/wiki/Resident_Evil_3_(2020_video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "resident-evil-2-2019",
+      "to": "resident-evil-3-2020",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Capcom's RE Engine over-the-shoulder survival horror controls, lighting and modern Raccoon City assets.",
+      "added": "Leaned harder into action set pieces, Carlos Oliveira combat segments and agile dodge-roll timing.",
+      "src": [
+        {
+          "t": "Wikipedia: Resident Evil 3 (2020 video game)",
+          "u": "https://en.wikipedia.org/wiki/Resident_Evil_3_(2020_video_game)"
+        }
+      ],
+      "extra": "Co-developed by Capcom and M-Two concurrently with Resident Evil 2 (2019)."
+    },
+    {
+      "from": "mafia",
+      "to": "mafia-definitive-edition",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Tommy Angelo's 1930s Lost Heaven mobster rise, period cars and grounded Prohibition crime drama.",
+      "added": "Rebuilt the 2002 classic from the ground up with modern cover shooting, motorcycles and expanded character scenes.",
+      "src": [
+        {
+          "t": "Wikipedia: Mafia: Definitive Edition",
+          "u": "https://en.wikipedia.org/wiki/Mafia:_Definitive_Edition"
+        }
+      ],
+      "extra": "Developed by Hangar 13 on an upgraded Mafia III engine."
+    },
+    {
+      "from": "tony-hawk-s-pro-skater",
+      "to": "tony-hawks-pro-skater-1-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Two-minute arcade skatepark runs, score goals and classic Warehouse-to-Venice levels.",
+      "added": "Rebuilt both games in crisp HD while folding in later revert, spine-transfer and wall-plant combo tools.",
+      "src": [
+        {
+          "t": "Wikipedia: Tony Hawk's Pro Skater 1 + 2",
+          "u": "https://en.wikipedia.org/wiki/Tony_Hawk%27s_Pro_Skater_1_%2B_2"
+        }
+      ],
+      "extra": "Developed by Vicarious Visions, returning to the franchise after its acclaimed GBA ports."
+    },
+    {
+      "from": "tony-hawk-s-pro-skater-2",
+      "to": "tony-hawks-pro-skater-1-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Manuals linking aerial tricks across parks, custom park builders and career stat points.",
+      "added": "Added modern pro skaters, online multiplayer playlists and unified challenges across both campaigns.",
+      "src": [
+        {
+          "t": "Wikipedia: Tony Hawk's Pro Skater 1 + 2",
+          "u": "https://en.wikipedia.org/wiki/Tony_Hawk%27s_Pro_Skater_1_%2B_2"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "trackmania",
+      "to": "trackmania-2020",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Precision time-trial stunt tracks, instant resets, no-collision ghost racing and a built-in block editor.",
+      "added": "Reinvented the series as a live-service seasonal platform with daily Tracks of the Day and Cup competitions.",
+      "src": [
+        {
+          "t": "Wikipedia: Trackmania (2020 video game)",
+          "u": "https://en.wikipedia.org/wiki/Trackmania_(2020_video_game)"
+        }
+      ],
+      "extra": "Ubisoft Nadeo's reboot of its Trackmania Nations competitive standard."
+    },
+    {
+      "from": "wii-sports",
+      "to": "walkabout-mini-golf",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Intuitive motion-swung golf accessible to non-gamers in friendly living-room multiplayer.",
+      "added": "Moved casual putting into social VR across fantastical themed courses, lost-ball hunts and natural voice hangouts.",
+      "src": [
+        {
+          "t": "Lucas Martell (Mighty Coconut), interview, MIXED, 2023",
+          "u": "https://mixed-news.com/en/walkabout-mini-golf-vr-is-one-of-the-most-successful-vr-games-we-spoke-with-its-creator/"
+        },
+        {
+          "t": "Wikipedia: Walkabout Mini Golf",
+          "u": "https://en.wikipedia.org/wiki/Walkabout_Mini_Golf"
+        }
+      ],
+      "extra": "Created during 2020 lockdowns by filmmaker Lucas Martell using an earlier mobile AR engine."
+    },
+    {
+      "from": "the-walking-dead",
+      "to": "the-walking-dead-saints-and-sinners",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Robert Kirkman's zombie apocalypse world and harsh moral choices between desperate human factions.",
+      "added": "Pioneered weighty physics-based VR melee combat, physical backpack scavenging and crafting in flooded New Orleans.",
+      "src": [
+        {
+          "t": "Wikipedia: The Walking Dead: Saints & Sinners",
+          "u": "https://en.wikipedia.org/wiki/The_Walking_Dead:_Saints_%26_Sinners"
+        }
+      ],
+      "extra": "Released by Skydance Interactive in January 2020, two months before Half-Life: Alyx."
+    },
+    {
+      "from": "dying-light",
+      "to": "the-walking-dead-saints-and-sinners",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "First-person zombie scavenging loops balancing weapon durability, stamina drain and escalating danger timers.",
+      "added": "Translated melee survival tension to full VR hand physics where blades stick inside zombie skulls.",
+      "src": [
+        {
+          "t": "Wikipedia: The Walking Dead: Saints & Sinners",
+          "u": "https://en.wikipedia.org/wiki/The_Walking_Dead:_Saints_%26_Sinners"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "hollow-knight",
+      "to": "ender-lilies-quietus-of-the-knights",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Melancholic ruined-kingdom atmosphere, interconnected 2D Metroidvania exploration and demanding boss encounters.",
+      "added": "Made protagonist Lily defenseless, fighting purely through purified boss spirits with customizable cooldown loadouts.",
+      "src": [
+        {
+          "t": "Hiroyuki Kobayashi (Binary Haze Interactive), quoted by mxdwn, 2024",
+          "u": "https://games.mxdwn.com/news/2d-action-rpg-ender-magnolia-bloom-in-the-mist-receives-its-final-trailer-before-release/"
+        },
+        {
+          "t": "Wikipedia: Ender Lilies: Quietus of the Knights",
+          "u": "https://en.wikipedia.org/wiki/Ender_Lilies:_Quietus_of_the_Knights"
+        }
+      ],
+      "extra": "Co-developed by Adglobe and Live Wire with music by Mili."
+    },
+    {
+      "from": "castlevania-aria-of-sorrow",
+      "to": "ender-lilies-quietus-of-the-knights",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Absorbing defeated enemies' souls to equip varied spectral attacks and traversal skills.",
+      "added": "Built the entire combat moveset around mixing three active spirit summons per weapon set.",
+      "src": [
+        {
+          "t": "Wikipedia: Ender Lilies: Quietus of the Knights",
+          "u": "https://en.wikipedia.org/wiki/Ender_Lilies:_Quietus_of_the_Knights"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "nier",
+      "to": "nier-replicant-ver-1-22474487139",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Yoko Taro's tragic multi-ending story, bullet-hell magic combat and Keiichi Okabe's vocal soundtrack.",
+      "added": "Brought Japan's brother-protagonist Replicant version worldwide with revamped combat, full voice acting and a new ending.",
+      "src": [
+        {
+          "t": "Wikipedia: Nier (video game)",
+          "u": "https://en.wikipedia.org/wiki/Nier_(video_game)"
+        }
+      ],
+      "extra": "Developed by Toylogic with combat supervision from PlatinumGames' Takahisa Taura."
+    },
+    {
+      "from": "nier-automata",
+      "to": "nier-replicant-ver-1-22474487139",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Smooth combo chaining, agile dodging and responsive action-RPG combat feel from Automata's designers.",
+      "added": "Retrofitted Automata-style fluidity onto the 2010 original while preserving its smaller village-and-quest rhythm.",
+      "src": [
+        {
+          "t": "Wikipedia: Nier (video game)",
+          "u": "https://en.wikipedia.org/wiki/Nier_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "littlebigplanet-2",
+      "to": "sackboy-a-big-adventure",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Sackboy's stitched Craftworld materials, charming knit costumes and playful four-player family co-op.",
+      "added": "Dropped user-generated level tools and floaty 2.5D physics for tight, 60fps curated 3D platforming.",
+      "src": [
+        {
+          "t": "Sumo Digital, interview, GamesRadar+, 2020",
+          "u": "https://www.gamesradar.com/sackboy-a-big-adventure-ps5-interview-preview-feature/"
+        },
+        {
+          "t": "Wikipedia: Sackboy: A Big Adventure",
+          "u": "https://en.wikipedia.org/wiki/Sackboy:_A_Big_Adventure"
+        }
+      ],
+      "extra": "Sumo Digital previously developed LittleBigPlanet 3 before launching Sackboy on PS5."
+    },
+    {
+      "from": "super-mario-3d-world",
+      "to": "sackboy-a-big-adventure",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Fixed-angle isometric 3D obstacle courses built around simultaneous four-player couch platforming.",
+      "added": "Paired tactile fabric-and-cardboard worlds with rhythmic licensed music levels and slap-and-roll co-op hijinks.",
+      "src": [
+        {
+          "t": "Wikipedia: Sackboy: A Big Adventure",
+          "u": "https://en.wikipedia.org/wiki/Sackboy:_A_Big_Adventure"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "paper-mario",
+      "to": "paper-mario-the-origami-king",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Paper-craft humor, flat storybook Mario characters and expressive self-aware adventure writing.",
+      "added": "Introduced seamless open-zone exploration, stretchy 1,000-Fold Arms and concentric ring-sliding battle puzzles.",
+      "src": [
+        {
+          "t": "Wikipedia: Paper Mario: The Origami King",
+          "u": "https://en.wikipedia.org/wiki/Paper_Mario:_The_Origami_King"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "hyrule-warriors",
+      "to": "hyrule-warriors-age-of-calamity",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Omega Force's Zelda-themed Musou crowd battles, playable champions and weak-point gauge breaks.",
+      "added": "Set the action 100 years before Breath of the Wild with Sheikah Slate runes and Divine Beast missions.",
+      "src": [
+        {
+          "t": "Wikipedia: Hyrule Warriors: Age of Calamity",
+          "u": "https://en.wikipedia.org/wiki/Hyrule_Warriors:_Age_of_Calamity"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-breath-of-the-wild",
+      "to": "hyrule-warriors-age-of-calamity",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Breath of the Wild's cel-shaded Hyrule art, Four Champions, Sheikah runes and flurry-rush timing.",
+      "added": "Reframed the Calamity backstory as large-scale Musou battlefield skirmishes before Hyrule fell.",
+      "src": [
+        {
+          "t": "Wikipedia: Hyrule Warriors: Age of Calamity",
+          "u": "https://en.wikipedia.org/wiki/Hyrule_Warriors:_Age_of_Calamity"
+        }
+      ],
+      "extra": "Developed by Omega Force in close narrative collaboration with Nintendo's Zelda team."
+    },
+    {
+      "from": "persona-5",
+      "to": "persona-5-strikers",
+      "tier": "series",
+      "rel": "variant",
+      "took": "The Phantom Thieves' stylish UI, Persona fusion, baton passes and direct story continuation.",
+      "added": "Replaced turn-based dungeon battles with a real-time summer road trip across Japan in Musou style.",
+      "src": [
+        {
+          "t": "Wikipedia: Persona 5 Strikers",
+          "u": "https://en.wikipedia.org/wiki/Persona_5_Strikers"
+        }
+      ],
+      "extra": "Co-developed by Omega Force and Atlus's P-Studio."
+    },
+    {
+      "from": "dynasty-warriors-4",
+      "to": "persona-5-strikers",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Omega Force's combo-driven crowd-clearing action combat against huge waves of enemies.",
+      "added": "Blended real-time hack-and-slash hordes with pause-to-cast Persona spells and elemental weakness strikes.",
+      "src": [
+        {
+          "t": "Wikipedia: Persona 5 Strikers",
+          "u": "https://en.wikipedia.org/wiki/Persona_5_Strikers"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "league-of-legends",
+      "to": "league-of-legends-wild-rift",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Five-on-five three-lane Summoner's Rift strategy, champion kits and teamfight objective control.",
+      "added": "Rebuilt the game from scratch for touchscreens with twin-stick controls, smaller maps and 15-minute matches.",
+      "src": [
+        {
+          "t": "Wikipedia: League of Legends: Wild Rift",
+          "u": "https://en.wikipedia.org/wiki/League_of_Legends:_Wild_Rift"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "honor-of-kings",
+      "to": "league-of-legends-wild-rift",
+      "tier": "mech",
+      "rel": "fast-follow",
+      "took": "Twin-stick mobile MOBA layout, streamlined item shopping and crisp 15-minute phone match pacing.",
+      "added": "Brought Riot's official League champions, skillshot targeting and PC mechanical depth to mobile.",
+      "src": [
+        {
+          "t": "Wikipedia: League of Legends: Wild Rift",
+          "u": "https://en.wikipedia.org/wiki/League_of_Legends:_Wild_Rift"
+        }
+      ],
+      "extra": "Followed Tencent's massive mobile MOBA breakthrough in China."
+    },
+    {
+      "from": "watch-dogs-2",
+      "to": "watch-dogs-legion",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-world drone hacking, ctOS security puzzles and playful DedSec activist tech gadgets.",
+      "added": "Dropped a single hero so any simulated London pedestrian can be recruited into the resistance.",
+      "src": [
+        {
+          "t": "Wikipedia: Watch Dogs: Legion",
+          "u": "https://en.wikipedia.org/wiki/Watch_Dogs:_Legion"
+        }
+      ],
+      "extra": "Directed by Clint Hocking at Ubisoft Toronto."
+    },
+    {
+      "from": "diablo",
+      "to": "the-ascent",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Isometric action-RPG progression, loot stats, skill upgrades and cooperative monster-clearing momentum.",
+      "added": "Swapped dark fantasy dungeons for twin-stick cyberpunk gunfights, height-aiming cover and dense Blade Runner alleys.",
+      "src": [
+        {
+          "t": "Arcade Berg & Tor Frick (Neon Giant), Unreal Engine interview, 2021",
+          "u": "https://www.unrealengine.com/developer-interviews/11-person-studio-neon-giant-delivering-next-gen-passion-project-the-ascent"
+        },
+        {
+          "t": "Wikipedia: The Ascent (video game)",
+          "u": "https://en.wikipedia.org/wiki/The_Ascent_(video_game)"
+        }
+      ],
+      "extra": "Built by a twelve-person Swedish studio of former Wolfenstein, Doom and Bulletstorm veterans."
+    },
+    {
+      "from": "syndicate",
+      "to": "the-ascent",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Isometric megacorporation-run cyberpunk streets, cybernetic upgrades and heavy sci-fi firepower.",
+      "added": "Focused on direct twin-stick solo and co-op shooting inside a towering vertical arcology.",
+      "src": [
+        {
+          "t": "Wikipedia: The Ascent (video game)",
+          "u": "https://en.wikipedia.org/wiki/The_Ascent_(video_game)"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "bendy-and-the-ink-machine",
+      "to": "poppy-playtime",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Episodic first-person mascot horror set inside a decaying entertainment company's abandoned workplace.",
+      "added": "Swapped 1930s cartoons for a sinister toy factory, VHS lore tapes and relentless chases by Huggy Wuggy.",
+      "src": [
+        {
+          "t": "Wikipedia: Poppy Playtime",
+          "u": "https://en.wikipedia.org/wiki/Poppy_Playtime"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "portal",
+      "to": "poppy-playtime",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "First-person environmental traversal puzzles inside an eerie abandoned corporate research complex.",
+      "added": "Replaced the portal gun with the dual-handed GrabPack for conducting circuits and swinging past toy monsters.",
+      "src": [
+        {
+          "t": "Wikipedia: Poppy Playtime",
+          "u": "https://en.wikipedia.org/wiki/Poppy_Playtime"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "among-us",
+      "to": "goose-goose-duck",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Task-based map movement, emergency body-report meetings and voting out hidden killers among friends.",
+      "added": "Added built-in proximity voice chat, neutral wildcard factions and dozens of distinct goose and duck roles.",
+      "src": [
+        {
+          "t": "Wikipedia: Goose Goose Duck",
+          "u": "https://en.wikipedia.org/wiki/Goose_Goose_Duck"
+        }
+      ],
+      "extra": "Surged past 700,000 concurrent Steam players in early 2023."
+    },
+    {
+      "from": "town-of-salem",
+      "to": "goose-goose-duck",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Role-heavy social deduction where neutral jesters, executioners and special investigators complicate voting.",
+      "added": "Brought multi-role social deception into real-time 2D movement maps with proximity voice chat.",
+      "src": [
+        {
+          "t": "Wikipedia: Goose Goose Duck",
+          "u": "https://en.wikipedia.org/wiki/Goose_Goose_Duck"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "clash-of-clans",
+      "to": "cookie-run-kingdom",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Upgradeable castle hub, worker-capped construction timers and resource-producing village layouts on mobile.",
+      "added": "Paired cozy customizable cookie kingdom building with gacha squad-RPG story campaigns and arena battles.",
+      "src": [
+        {
+          "t": "Wikipedia: Cookie Run: Kingdom",
+          "u": "https://en.wikipedia.org/wiki/Cookie_Run:_Kingdom"
+        }
+      ],
+      "extra": "Expanded Devsisters' Cookie Run endless-runner IP into a hybrid RPG city builder."
+    },
+    {
+      "from": "hitman",
+      "to": "007-first-light",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "IO Interactive's Glacier engine, social stealth sandboxes and modular level-design pipeline.",
+      "added": "Applied systemic spy tradecraft to a young James Bond origin story with gadgets, chases and cinematic action.",
+      "src": [
+        {
+          "t": "Hakan Abrak (IO Interactive), interview, IGN, 2025",
+          "u": "https://www.ign.com/articles/io-interactives-secret-to-developing-james-bond-007-first-light-is-literally-down-the-pan"
+        },
+        {
+          "t": "Radio Times, IO Interactive on 007 First Light, 2025",
+          "u": "https://www.radiotimes.com/technology/gaming/007-first-light-hitman-developers-exclusive-newsupdate/"
+        }
+      ],
+      "extra": "Originally announced as Project 007; uses IOI's Hitman: World of Assassination production architecture."
+    },
+    {
+      "from": "goldeneye-007",
+      "to": "007-first-light",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Interactive James Bond espionage fantasy balancing spy gadgets, infiltration objectives and cinematic gunfights.",
+      "added": "Shifted from 1990s N64 corridor FPS missions to a third-person systemic spy-action origin adventure.",
+      "src": [
+        {
+          "t": "Wikipedia: 007 First Light",
+          "u": "https://en.wikipedia.org/wiki/007_First_Light"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "pubg",
+      "to": "naraka-bladepoint",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Sixty-player drop-in scavenging on a shrinking island until one survivor or trio remains.",
+      "added": "Replaced firearms with wuxia martial arts duels, rock-paper-scissors parries and omnidirectional grappling hooks.",
+      "src": [
+        {
+          "t": "Rock Paper Shotgun, Naraka: Bladepoint preview, 2021",
+          "u": "https://www.rockpapershotgun.com/naraka-bladepoint-looks-like-sekiro-battle-royale"
+        },
+        {
+          "t": "Wikipedia: Naraka: Bladepoint",
+          "u": "https://en.wikipedia.org/wiki/Naraka:_Bladepoint"
+        }
+      ],
+      "extra": "Lead producer Ray Kuan previously worked on 2002 wuxia classic Meteor Butterfly Sword."
+    },
+    {
+      "from": "sekiro-shadows-die-twice",
+      "to": "naraka-bladepoint",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Vertical grappling-hook traversal, blade-clashing deflects and high-stakes melee counter timing.",
+      "added": "Adapted tense samurai-style sword clashes and vertical mobility into a competitive 60-player battle royale.",
+      "src": [
+        {
+          "t": "Rock Paper Shotgun, Naraka: Bladepoint preview, 2021",
+          "u": "https://www.rockpapershotgun.com/naraka-bladepoint-looks-like-sekiro-battle-royale"
+        },
+        {
+          "t": "Wikipedia: Naraka: Bladepoint",
+          "u": "https://en.wikipedia.org/wiki/Naraka:_Bladepoint"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "ape-escape",
+      "to": "bugsnax",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Observing quirky creature behaviors and using specialized nets, tripwires and gadgets to capture them.",
+      "added": "Built a first-person story mystery about half-bug, half-snack critters that transform villagers who eat them.",
+      "src": [
+        {
+          "t": "Young Horses, interview, Shacknews, Nov 2020",
+          "u": "https://www.shacknews.com/article/121073/young-horses-on-whether-you-can-pet-the-bugsnax-in-bugsnax"
+        },
+        {
+          "t": "Young Horses, interview, TheSixthAxis, Jun 2020",
+          "u": "https://www.thesixthaxis.com/2020/06/19/bugsnax-interview-young-horses-ps4-ps4-pc/"
+        }
+      ],
+      "extra": "Young Horses co-founders also cited Pokemon Snap alongside Ape Escape for its creature-catching puzzles."
+    },
+    {
+      "from": "pokemon-snap",
+      "to": "bugsnax",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Studying creature routines and luring critters with sauces and bait to trigger interactions.",
+      "added": "Added free-roaming island exploration, trap-chaining puzzles and character interviews across Snaktooth Island.",
+      "src": [
+        {
+          "t": "Young Horses, interview, TheSixthAxis, Jun 2020",
+          "u": "https://www.thesixthaxis.com/2020/06/19/bugsnax-interview-young-horses-ps4-ps4-pc/"
+        },
+        {
+          "t": "Wikipedia: Bugsnax",
+          "u": "https://en.wikipedia.org/wiki/Bugsnax"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "overcooked",
+      "to": "moving-out",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Chaotic top-down four-player couch co-op built around timed household tasks and frantic shouting.",
+      "added": "Swapped kitchen assembly lines for slapstick physics furniture hauling, window-tossing and flexible assist modes.",
+      "src": [
+        {
+          "t": "Wikipedia: Moving Out (video game)",
+          "u": "https://en.wikipedia.org/wiki/Moving_Out_(video_game)"
+        }
+      ],
+      "extra": "Co-developed by SMG Studio and DevM Games and published by Overcooked publisher Team17."
+    },
+    {
+      "from": "threes",
+      "to": "merge-mansion",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Combining matching tiles on a tight mobile grid to create progressively higher-tier pieces.",
+      "added": "Pioneered the free-drag Merge-2 mobile hit loop tied to mansion renovation and soap-opera mystery ads.",
+      "src": [
+        {
+          "t": "Wikipedia: Merge Mansion",
+          "u": "https://en.wikipedia.org/wiki/Merge_Mansion"
+        }
+      ],
+      "extra": "Metacore's 2020 breakout sparked a major wave of narrative Merge-2 puzzle games."
+    },
+    {
+      "from": "five-nights-at-freddys",
+      "to": "five-nights-at-freddys-security-breach",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Surviving until 6 AM against lethal Fazbear animatronics using camera feeds and limited battery power.",
+      "added": "Expanded the single security office into a free-roaming 3D Mega Pizzaplex mall with an allied Freddy.",
+      "src": [
+        {
+          "t": "Wikipedia: Five Nights at Freddy's: Security Breach",
+          "u": "https://en.wikipedia.org/wiki/Five_Nights_at_Freddy%27s:_Security_Breach"
+        }
+      ],
+      "extra": "Developed by Steel Wool Studios following VR entry Help Wanted."
+    },
+    {
+      "from": "warioware-inc-mega-microgames",
+      "to": "warioware-get-it-together",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Five-second rapid-fire microgames ramping relentlessly in speed with eccentric Nintendo humor.",
+      "added": "Put playable WarioWare crew members directly inside every microgame with distinct movement rules and two-player co-op.",
+      "src": [
+        {
+          "t": "Wikipedia: WarioWare: Get It Together!",
+          "u": "https://en.wikipedia.org/wiki/WarioWare:_Get_It_Together!"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "mirrors-edge",
+      "to": "neon-white",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Clean first-person parkour readability and shaving seconds off momentum-driven speedrun courses.",
+      "added": "Turned collectible weapons into discardable movement cards for mid-air jumps, dashes and rocket boosts.",
+      "src": [
+        {
+          "t": "Ben Esposito, interview, Inverse, 2021",
+          "u": "https://www.inverse.com/gaming/neon-white-annapurna-showcase-ben-esposito"
+        },
+        {
+          "t": "Ben Esposito, Game Developer interview, 2022",
+          "u": "https://www.gamedeveloper.com/business/-neon-white-and-designing-for-player-creativity"
+        }
+      ],
+      "extra": "Esposito also cited Quake and Super Monkey Ball for its bite-sized speedrun level structure."
+    },
+    {
+      "from": "super-monkey-ball",
+      "to": "neon-white",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Short, endlessly replayable arcade courses designed around discovering risky shortcut lines.",
+      "added": "Built a card-driven first-person speedrunner wrapped in early-2000s anime visual-novel banter.",
+      "src": [
+        {
+          "t": "Ben Esposito, interview, Game Developer, 2022",
+          "u": "https://www.gamedeveloper.com/business/-neon-white-and-designing-for-player-creativity"
+        },
+        {
+          "t": "Wikipedia: Neon White",
+          "u": "https://en.wikipedia.org/wiki/Neon_White"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "jet-set-radio",
+      "to": "bomb-rush-cyberfunk",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Cel-shaded Tokyo street style, inline-skate rail grinding, graffiti tagging and Hideki Naganuma beats.",
+      "added": "Added trick-combo multipliers, skateboards, BMX bikes and a boost pack across interconnected Neo-Amsterdam boroughs.",
+      "src": [
+        {
+          "t": "Dion Koster & Tim Remmers (Team Reptile), GamesIndustry.biz, 2023",
+          "u": "https://www.gamesindustry.biz/team-reptile-from-megabyte-punch-to-bomb-rush-cyberfunk"
+        },
+        {
+          "t": "Kotaku, Bomb Rush Cyberfunk spiritual successor feature, 2022",
+          "u": "https://kotaku.com/this-jet-set-radio-spiritual-successor-continues-to-blo-1848309992"
+        }
+      ],
+      "extra": "Reunited original Jet Set Radio composer Hideki Naganuma with Dutch indie studio Team Reptile."
+    },
+    {
+      "from": "warhammer-40-000-space-marine",
+      "to": "warhammer-40-000-space-marine-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Captain Titus's aggressive chainsword-and-bolter brawling and health-restoring execution loops.",
+      "added": "Powered massive Tyranid swarms on Saber's Swarm Engine with three-player co-op Operations and parry gun-strikes.",
+      "src": [
+        {
+          "t": "Wikipedia: Warhammer 40,000: Space Marine 2",
+          "u": "https://en.wikipedia.org/wiki/Warhammer_40,000:_Space_Marine_2"
+        }
+      ],
+      "extra": "Developed by Saber Interactive thirteen years after Relic's 2011 original."
+    },
+    {
+      "from": "sekiro-shadows-die-twice",
+      "to": "nine-sols",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Rhythm-based blade deflection, posture-breaking parries and punishing skill-check boss duels.",
+      "added": "Translated deflection combat to hand-drawn 2D Taopunk battles powered by qi-charged exploding talismans.",
+      "src": [
+        {
+          "t": "Red Candle Games, Nine Sols official campaign page, 2022",
+          "u": "https://shop.redcandlegames.com/projects/ninesols"
+        },
+        {
+          "t": "Vincent Yang (Red Candle Games), interview, PCGamesN, 2024",
+          "u": "https://www.pcgamesn.com/nine-sols/interview"
+        }
+      ],
+      "extra": "Taiwanese horror studio Red Candle explicitly pitched Nine Sols as Sekiro-inspired 2D action."
+    },
+    {
+      "from": "hollow-knight",
+      "to": "nine-sols",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Crisp hand-drawn 2D Metroidvania exploration, interconnected sci-fi fantasy biomes and tight platforming.",
+      "added": "Layered deep character-driven Taoist cyberpunk storytelling over deflection-first melee combat.",
+      "src": [
+        {
+          "t": "Red Candle Games, Nine Sols official campaign page, 2022",
+          "u": "https://shop.redcandlegames.com/projects/ninesols"
+        },
+        {
+          "t": "Wikipedia: Nine Sols",
+          "u": "https://en.wikipedia.org/wiki/Nine_Sols"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-chronicles-of-riddick-escape-from-butcher-bay",
+      "to": "indiana-jones-and-the-great-circle",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Intimate first-person melee brawling, stealth traversal and grounded cinematic immersion.",
+      "added": "Applied Starbreeze-lineage first-person craft to whip-swinging, disguises, tomb puzzles and globe-trotting adventure.",
+      "src": [
+        {
+          "t": "Jens Andersson & Jerk Gustafsson (MachineGames), PC Gamer, 2024",
+          "u": "https://www.pcgamer.com/games/fps/indiana-jones-and-the-great-circle-devs-say-an-indy-game-could-never-be-a-shooter-should-never-be-a-shooter-so-they-re-embracing-his-signature-whip-improvised-brawls-and-disguise-based-stealth-instead/"
+        },
+        {
+          "t": "Wikipedia: Indiana Jones and the Great Circle",
+          "u": "https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Great_Circle"
+        }
+      ],
+      "extra": "Design director Jens Andersson and MachineGames founders previously led Escape from Butcher Bay."
+    },
+    {
+      "from": "wolfenstein-the-new-order",
+      "to": "indiana-jones-and-the-great-circle",
+      "tier": "team",
+      "rel": "variant",
+      "took": "MachineGames' id Tech engine, sharp Nazi-era character writing and punchy first-person animation.",
+      "added": "De-emphasized gunplay in favor of improvised frying-pan brawls, stealth disguises and archaeological puzzles.",
+      "src": [
+        {
+          "t": "MachineGames, interview, PC Gamer, 2024",
+          "u": "https://www.pcgamer.com/games/fps/indiana-jones-and-the-great-circle-devs-say-an-indy-game-could-never-be-a-shooter-should-never-be-a-shooter-so-they-re-embracing-his-signature-whip-improvised-brawls-and-disguise-based-stealth-instead/"
+        },
+        {
+          "t": "Wikipedia: Indiana Jones and the Great Circle",
+          "u": "https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Great_Circle"
+        }
+      ],
+      "extra": ""
+    }
+  ]
+}

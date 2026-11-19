@@ -76,6 +76,7 @@
       "cc": "JP",
       "genres": ["space", "shooter"],
       "plats": ["SNES"],
+      "status": "cancelled",
       "pop": 4,
       "note": "Completely finished, localized, and bug-tested in 1995 using the upgraded Super FX 2 chip—then locked in Nintendo's vault for 22 years so its flat-shaded 3D wouldn't look dated beside the upcoming N64. Its all-range dogfights carried directly into Star Fox 64, and lead programmer Dylan Cuthbert noted its early 3D camera and movement tests helped inform Nintendo EAD heading into Super Mario 64 (finally released in 2017)."
     },

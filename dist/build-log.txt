@@ -1,8 +1,8 @@
-Built 2026-11-19 02:44  ->  dist\index.html (11.3 KB shell) + app.f6e6986d92.css (93.1 KB) + app.54f4683df0.js (551.9 KB) + data.3817b99494.json (1917 KB)  |  standalone dist\inspired-by.html (2562 KB)
-Agent files: 78  |  games: 4251 (in family tree: 2062, in catalog: 3777, new from agents: 3400)
-Links: 2834  |  
-dev=798 team=583 series=727 critic=446 mech=248 disp=32
-Covers: 4212  |  YouTube IDs: 1205  |  MobyGames IDs: 3216  |  Studios curated: 75
+Built 2026-11-19 04:29  ->  dist\index.html (11.3 KB shell) + app.0970df7dbd.css (96.3 KB) + app.0ab4121ddc.js (579.1 KB) + data.460df8c14d.json (2161 KB)  |  standalone dist\inspired-by.html (2837 KB)
+Agent files: 81  |  games: 4251 (in family tree: 2389, in catalog: 3777, new from agents: 3400)
+Links: 3271  |  
+dev=832 team=661 series=917 critic=527 mech=302 disp=32
+Covers: 4251  |  YouTube IDs: 1575  |  MobyGames IDs: 3216  |  Studios curated: 75
 Updates applied: 1014  |  games without genre: 0  |  unresolved link ids: 0
 
 Unresolved ids (count):
@@ -143,4 +143,4 @@ pair conflict: dikumud>everquest kept dev over critic [wrpg-5.json vs roots-2.js
 pair conflict: dikumud>ultima-online kept dev over critic [roots-2.json vs wrpg-5.json]
 pair conflict: everquest>world-of-warcraft kept dev over critic [wrpg-5.json vs roots-2.json]
 pair conflict: frontier-elite-ii>elite-dangerous kept series over series [wrpg-5.json vs openworld-4.json]
-recycled old asset: app.8b9b3bbaa2.js
+recycled old asset: app.e111c7094f.js

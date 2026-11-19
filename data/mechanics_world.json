@@ -976,7 +976,10 @@
   "coverFixes": {
     "fortnite-br": "w:en/a/ae/Fortnite_Save_The_World.jpg",
     "dead-space": "w:en/5/57/Dead_Space_Box_Art.jpg",
-    "doom-2016": "w:en/2/28/Doom_Cover.jpg"
+    "doom-2016": "w:en/2/28/Doom_Cover.jpg",
+    "portal": "w:en/9/9f/Portal_standalonebox.jpg",
+    "skifree": "w:en/c/cf/Skifree_screenshot.png",
+    "dayz-standalone": "w:en/a/a8/Day_Z_cover.jpg"
   },
   "prices": {
     "cpi": {

@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Played & Made — Life in Games",
   "short_name": "Played&Made",
-  "description": "Build your childhood or dev-career gaming timeline, trace 4,245+ games & legendary mods back to the 1950s, and celebrate the makers behind the art.",
+  "description": "Build your childhood or dev-career gaming timeline, trace 4,251+ games & legendary mods back to the 1950s, and celebrate the makers behind the art.",
   "lang": "en",
   "start_url": "./",
   "scope": "./",
@@ -69,9 +69,9 @@
     },
     {
       "name": "Explore Family Tree",
-      "short_name": "Explore",
+      "short_name": "Family Tree",
       "description": "Trace 60+ years of video game lineage & trivia",
-      "url": "./#explore",
+      "url": "./#tree",
       "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {

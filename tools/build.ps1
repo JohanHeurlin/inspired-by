@@ -455,6 +455,7 @@ $aka = @{
 # ---------------- media, culture, mechanics & studios ----------------
 function NormImg([string]$u) {
   if (-not $u) { return '' }
+  if ($u -match '\?utm_source=') { $u = ($u -split '\?')[0] }
   if ($u.StartsWith('https://thumb.wikimedia.org/wikipedia/')) { return 'wt:' + $u.Substring(38) }
   if ($u.StartsWith('https://upload.wikimedia.org/wikipedia/')) { $u = 'w:' + $u.Substring(39) }
   if ($u.StartsWith('w:') -and $u.Contains('/thumb/')) { return 'wt:' + $u.Substring(2) }

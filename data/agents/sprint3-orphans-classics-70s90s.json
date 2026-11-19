@@ -1,0 +1,2264 @@
+{
+  "links": [
+    {
+      "from": "pong",
+      "to": "video-olympics",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Atari's two-paddle ball-and-volley rally rules and quick arcade scoring.",
+      "added": "Packed 50 paddle-game variations for up to four players onto an Atari 2600 launch cartridge.",
+      "src": [
+        {
+          "t": "Wikipedia: Video Olympics",
+          "u": "https://en.wikipedia.org/wiki/Video_Olympics"
+        }
+      ],
+      "extra": "Programmed by Joe Decuir as one of nine Atari 2600 launch cartridges in September 1977."
+    },
+    {
+      "from": "breakout",
+      "to": "super-breakout",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Bouncing a ball off a sliding paddle to chip through rows of colored overhead bricks.",
+      "added": "Introduced Progressive advancing walls, Double stacked paddles, and Cavity multi-ball liberation modes.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Breakout",
+          "u": "https://en.wikipedia.org/wiki/Super_Breakout"
+        }
+      ],
+      "extra": "Designed at Atari by Ed Rotberg and Ed Logg."
+    },
+    {
+      "from": "ball-game-and-watch",
+      "to": "donkey-kong-game-and-watch",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Pocket LCD timing gameplay, digital clock hardware, and simple reflexes built by Gunpei Yokoi's R&D1.",
+      "added": "Folded two screens into a clamshell casing and debuted Nintendo's cross-shaped directional pad.",
+      "src": [
+        {
+          "t": "Nintendo Iwata Asks: Game & Watch (Ball)",
+          "u": "https://iwataasks.nintendo.com/interviews/clubn/game-and-watch-ball-reward/0/1/"
+        },
+        {
+          "t": "Wikipedia: Game & Watch",
+          "u": "https://en.wikipedia.org/wiki/Game_%26_Watch"
+        }
+      ],
+      "extra": "Ball launched Nintendo's handheld line in April 1980; Donkey Kong's 1982 D-pad later defined console controllers."
+    },
+    {
+      "from": "ball-game-and-watch",
+      "to": "super-mario-land",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Gunpei Yokoi and Satoru Okada's portable LCD hardware craft focused on battery life and pick-up play.",
+      "added": "Swapped fixed LCD segments for interchangeable Game Boy cartridges and a full scrolling Mario adventure.",
+      "src": [
+        {
+          "t": "Nintendo Iwata Asks: Game & Watch (Ball)",
+          "u": "https://iwataasks.nintendo.com/interviews/clubn/game-and-watch-ball-reward/0/1/"
+        },
+        {
+          "t": "Wikipedia: Ball (video game)",
+          "u": "https://en.wikipedia.org/wiki/Ball_(video_game)"
+        }
+      ],
+      "extra": "Both games came out of Nintendo R&D1 under Gunpei Yokoi and Satoru Okada."
+    },
+    {
+      "from": "donkey-kong",
+      "to": "donkey-kong-game-and-watch",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Mario climbing girders, leaping over rolling barrels, and rescuing Pauline from Donkey Kong.",
+      "added": "Split the climb across two clamshell LCD screens and replaced the arcade joystick with a flat D-pad.",
+      "src": [
+        {
+          "t": "Wikipedia: List of LCD games featuring Mario",
+          "u": "https://en.wikipedia.org/wiki/List_of_LCD_games_featuring_Mario"
+        },
+        {
+          "t": "KMUW, Gunpei Yokoi and the Game & Watch D-pad, Oct 2016",
+          "u": "https://www.kmuw.org/your-move/2016-10-20/your-move-yokois-creativity-propelled-nintendo"
+        }
+      ],
+      "extra": "Its dual-screen clamshell also prefigured the Nintendo DS two decades later."
+    },
+    {
+      "from": "galaxian",
+      "to": "phoenix",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Swooping alien attack formations and colorful fixed-screen space shooting.",
+      "added": "Added regenerating bird enemies, a brief protective shield, and a multi-layered mothership boss fight.",
+      "src": [
+        {
+          "t": "Wikipedia: Phoenix (1980 video game)",
+          "u": "https://en.wikipedia.org/wiki/Phoenix_(1980_video_game)"
+        }
+      ],
+      "extra": "Early arcade shooter credited with introducing a dedicated end-of-loop mothership boss encounter."
+    },
+    {
+      "from": "breakout",
+      "to": "warlords",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Rotary paddle deflection and chipping through layered defensive brick walls with bouncing projectiles.",
+      "added": "Turned solo brick-breaking into four corner fortresses defending kings against simultaneous multiplayer fireballs.",
+      "src": [
+        {
+          "t": "Roger Hector interview, Atari Compendium, 2013",
+          "u": "https://www.ataricompendium.com/archives/interviews/roger_hector/interview_roger_hector.html"
+        },
+        {
+          "t": "Wikipedia: Warlords (1981 video game)",
+          "u": "https://en.wikipedia.org/wiki/Warlords_(1981_video_game)"
+        }
+      ],
+      "extra": "Conceived by Atari designer Roger Hector and ported to Atari 2600 by Carla Meninsky."
+    },
+    {
+      "from": "berzerk",
+      "to": "wizard-of-wor",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Single-screen corridor maze gunfights against patrolling foes paired with taunting synthesized arcade speech.",
+      "added": "Added simultaneous two-player co-op or friendly-fire betrayal, radar tracking, invisible monsters, and a teleporting boss.",
+      "src": [
+        {
+          "t": "Wikipedia: Wizard of Wor",
+          "u": "https://en.wikipedia.org/wiki/Wizard_of_Wor"
+        }
+      ],
+      "extra": "Prototyped as Invisible Monsters in 1980 by Dave Nutting Associates before its Midway arcade release."
+    },
+    {
+      "from": "wizard-of-wor",
+      "to": "gauntlet",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized simultaneous multiplayer monster-hunting inside walled arcade mazes with ranged attacks.",
+      "added": "Scaled arena skirmishes to four-player scrolling fantasy dungeons with distinct classes and monster generators.",
+      "src": [
+        {
+          "t": "Wikipedia: Wizard of Wor",
+          "u": "https://en.wikipedia.org/wiki/Wizard_of_Wor"
+        }
+      ],
+      "extra": "Helped bridge single-screen maze shooters and multi-player arcade dungeon crawlers."
+    },
+    {
+      "from": "zork",
+      "to": "zork-i",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "The MIT mainframe dungeon's prose, puzzles, underground lamp exploration, and rich verb parser.",
+      "added": "Split the massive mainframe game into a commercial home-computer episode running on Infocom's portable Z-machine.",
+      "src": [
+        {
+          "t": "Dave Lebling, Classic Game Postmortem: Zork, GDC Vault, Mar 2014",
+          "u": "https://www.gdcvault.com/play/1020612/Classic-Game-Postmortem"
+        },
+        {
+          "t": "Wikipedia: Zork",
+          "u": "https://en.wikipedia.org/wiki/Zork"
+        }
+      ],
+      "extra": "Infocom's Z-machine interpreter let Zork I ship across Apple II, DOS, C64, Mac, and Amiga."
+    },
+    {
+      "from": "zork-i",
+      "to": "the-hobbit",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Home-computer text adventure exploration built around parsing typed commands across interconnected locations.",
+      "added": "Added compressed room illustrations, the Inglish full-sentence parser, object weight physics, and independent real-time NPCs.",
+      "src": [
+        {
+          "t": "Wikipedia: The Hobbit (1982 video game)",
+          "u": "https://en.wikipedia.org/wiki/The_Hobbit_(1982_video_game)"
+        }
+      ],
+      "extra": "Created by Veronika Megler and Philip Mitchell at Beam Software for Melbourne House."
+    },
+    {
+      "from": "rally-x",
+      "to": "bosconian",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Namco's omnidirectional scrolling hardware board and side-mounted radar tracking distant targets.",
+      "added": "Moved scrolling chases into open space with dual front-and-rear cannons, voice alerts, and rotating starbases.",
+      "src": [
+        {
+          "t": "Wikipedia: Bosconian",
+          "u": "https://en.wikipedia.org/wiki/Bosconian"
+        }
+      ],
+      "extra": "Designed by Seiichi Sato at Namco specifically to reuse Rally-X arcade circuit boards."
+    },
+    {
+      "from": "freeway",
+      "to": "pitfall",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "David Crane's crisp Atari 2600 sprite animation routines and split-second obstacle-timing design at Activision.",
+      "added": "Expanded single-screen highway sprints into a 255-screen flip-screen jungle adventure with vines, pits, and treasures.",
+      "src": [
+        {
+          "t": "Wikipedia: Freeway (video game)",
+          "u": "https://en.wikipedia.org/wiki/Freeway_(video_game)"
+        }
+      ],
+      "extra": "David Crane coded Freeway in July 1981 before building Pitfall! the following year."
+    },
+    {
+      "from": "freeway",
+      "to": "crossy-road",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Popularized steering a chicken across multi-lane highways of speeding traffic for timed high scores.",
+      "added": "Blended endless lane-dodging chicken sprints with Frogger's river logs, voxel art, and collectible characters.",
+      "src": [
+        {
+          "t": "Wikipedia: Freeway (video game)",
+          "u": "https://en.wikipedia.org/wiki/Freeway_(video_game)"
+        }
+      ],
+      "extra": "David Crane conceived Freeway independently in 1981 after dodging traffic on Chicago's Lake Shore Drive."
+    },
+    {
+      "from": "breakout",
+      "to": "kaboom",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Popularized precision horizontal sliding with the Atari 2600 rotary paddle controller.",
+      "added": "Replaced brick walls with three water buckets catching accelerating bombs dropped by an animated Mad Bomber.",
+      "src": [
+        {
+          "t": "Wikipedia: Kaboom! (video game)",
+          "u": "https://en.wikipedia.org/wiki/Kaboom!_(video_game)"
+        },
+        {
+          "t": "Game Developer, The History of Activision, Jul 2007",
+          "u": "https://www.gamedeveloper.com/business/the-history-of-activision"
+        }
+      ],
+      "extra": "Larry Kaplan openly adapted Atari's 1978 arcade game Avalanche while David Crane drew the expressive bomber."
+    },
+    {
+      "from": "blockade",
+      "to": "qix",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized steering a continuous trail across an open arcade rectangle without colliding into lines.",
+      "added": "Turned trail-drawing into territory capture enclosing an erratic line creature with fast-draw and risky slow-draw multipliers.",
+      "src": [
+        {
+          "t": "Wikipedia: Qix",
+          "u": "https://en.wikipedia.org/wiki/Qix"
+        }
+      ],
+      "extra": "Designed by husband-and-wife team Randy and Sandy Pfeiffer for Taito."
+    },
+    {
+      "from": "defender",
+      "to": "stargate",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Wraparound horizontal planet defense, scanner radar, smart bombs, and rescuing falling humanoids.",
+      "added": "Introduced an Inviso cloaking button, mid-screen Stargate warps to endangered humanoids, and deadlier alien waves.",
+      "src": [
+        {
+          "t": "Wikipedia: Stargate (1981 video game)",
+          "u": "https://en.wikipedia.org/wiki/Stargate_(1981_video_game)"
+        }
+      ],
+      "extra": "Created by Eugene Jarvis and Larry DeMar at Vid Kidz; later retitled Defender II on home consoles."
+    },
+    {
+      "from": "monaco-gp",
+      "to": "turbo",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Sega's fast traffic-weaving Formula racing loop across changing road environments.",
+      "added": "Shifted to a behind-the-car 2.5D view with scaling sprites, weather shifts, and dusk-to-night lighting transitions.",
+      "src": [
+        {
+          "t": "Wikipedia: Turbo (video game)",
+          "u": "https://en.wikipedia.org/wiki/Turbo_(video_game)"
+        }
+      ],
+      "extra": "Designed and programmed solo by Steve Hanawa on Sega's VCO Object arcade board."
+    },
+    {
+      "from": "turbo",
+      "to": "pole-position",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Rear-view third-person arcade racing using scaling roadside objects and traffic-passing speed.",
+      "added": "Introduced smooth curved track geometry modeled on Fuji Speedway, qualifying laps, and realistic steering physics.",
+      "src": [
+        {
+          "t": "Wikipedia: Turbo (video game)",
+          "u": "https://en.wikipedia.org/wiki/Turbo_(video_game)"
+        }
+      ],
+      "extra": "Turbo debuted behind-the-car scaling-sprite racing one year before Namco's Pole Position."
+    },
+    {
+      "from": "donkey-kong",
+      "to": "q-bert",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Popularized single-screen arcade platform climbing while dodging tumbling hazards and patrolling enemies.",
+      "added": "Moved hopping onto an isometric cube pyramid where diagonal jumps flip block colors under Coily's pursuit.",
+      "src": [
+        {
+          "t": "Wikipedia: Q*bert",
+          "u": "https://en.wikipedia.org/wiki/Q*bert"
+        }
+      ],
+      "extra": "Created by Warren Davis and Jeff Lee at Gottlieb with a diagonally mounted four-way joystick."
+    },
+    {
+      "from": "q-bert",
+      "to": "snake-rattle-n-roll",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Isometric diagonal hopping across stacked blocks with bottomless drop-offs and chasing hazards.",
+      "added": "Expanded cube-hopping into eleven scrolling NES obstacle courses where eating pellets lengthens your snake tail.",
+      "src": [
+        {
+          "t": "Wikipedia: Snake Rattle 'n' Roll",
+          "u": "https://en.wikipedia.org/wiki/Snake_Rattle_%27n%27_Roll"
+        }
+      ],
+      "extra": "Combined Q*bert's isometric leaps with Rare's Marble Madness NES conversion engine."
+    },
+    {
+      "from": "star-castle",
+      "to": "yars-revenge",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Chipping through rotating concentric energy barriers to strike an enemy cannon hidden inside.",
+      "added": "Rebuilt the duel horizontally for Atari 2600 with a shield-nibbling fly, safe Neutral Zone, and Zorlon Cannon.",
+      "src": [
+        {
+          "t": "Howard Scott Warshaw interview, Atari Newsroom, May 2024",
+          "u": "https://atari.com/blogs/newsroom/an-interview-with-yars-revenge-creator-howard-scott-warshaw"
+        },
+        {
+          "t": "Game Developer, Howard Scott Warshaw GDC Postmortem, Dec 2014",
+          "u": "https://www.gamedeveloper.com/audio/howard-s-warshaw-revisits-i-yars-revenge-i-in-gdc-classic-game-postmortem"
+        }
+      ],
+      "extra": "Began as an Atari 2600 conversion of Cinematronics' vector arcade hit before Warshaw pitched an original pivot."
+    },
+    {
+      "from": "space-invaders",
+      "to": "yars-revenge",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Single-screen arcade shooting centered on eroding defensive barriers before destroying the foe behind them.",
+      "added": "Rotated the duel horizontally with 360-degree flight, a static-filled Neutral Zone, and a charged super-shot.",
+      "src": [
+        {
+          "t": "Wikipedia: Yars' Revenge",
+          "u": "https://en.wikipedia.org/wiki/Yars%27_Revenge"
+        }
+      ],
+      "extra": "Became Atari's best-selling original Atari 2600 cartridge."
+    },
+    {
+      "from": "scramble",
+      "to": "zaxxon",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Forced-scrolling canyon raids where blowing up ground fuel tanks keeps your ship airborne.",
+      "added": "Pioneered isometric scrolling where cast shadows and an altimeter govern flying over fortress walls.",
+      "src": [
+        {
+          "t": "Wikipedia: Zaxxon",
+          "u": "https://en.wikipedia.org/wiki/Zaxxon"
+        }
+      ],
+      "extra": "Developed by Sega with Ikegami Tsushinki, the contract studio that programmed Donkey Kong."
+    },
+    {
+      "from": "zaxxon",
+      "to": "paperboy",
+      "tier": "dev",
+      "rel": "variant",
+      "took": "A 60-degree diagonal isometric scrolling street perspective showing depth and approaching obstacles.",
+      "added": "Traded space combat for steering a BMX with handlebars, tossing newspapers to subscribers while dodging suburbia.",
+      "src": [
+        {
+          "t": "John Salwitz, Making of Atari's Paperboy, Thumbsticks",
+          "u": "https://www.thumbsticks.com/john-salwitz-making-of-atari-paperboy/"
+        },
+        {
+          "t": "Wikipedia: Paperboy (video game)",
+          "u": "https://en.wikipedia.org/wiki/Paperboy_(video_game)"
+        }
+      ],
+      "extra": "John Salwitz and Dave Ralston built Paperboy on Atari System 2 hardware."
+    },
+    {
+      "from": "paperboy",
+      "to": "crazy-taxi",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized high-speed timed street deliveries weaving past chaotic urban traffic and pedestrians.",
+      "added": "Moved frantic arcade errands into a sunny 3D open city with drifting cabs, stunt ramps, and fares.",
+      "src": [
+        {
+          "t": "Wikipedia: Paperboy (video game)",
+          "u": "https://en.wikipedia.org/wiki/Paperboy_(video_game)"
+        }
+      ],
+      "extra": "Bridged 1980s route-delivery coin-ops and 3D arcade driving sandboxes."
+    },
+    {
+      "from": "battlezone",
+      "to": "star-wars",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Atari's 3D wireframe vector engine and dual-handle yoke developed for its military Battlezone simulator.",
+      "added": "Added color vector Tie Fighters, digitized film voices, and a three-phase Death Star trench run.",
+      "src": [
+        {
+          "t": "Wikipedia: Star Wars (1983 video game)",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars_(1983_video_game)"
+        }
+      ],
+      "extra": "Designed by Mike Hally; its flight yoke reused tooling from Atari's Army Battlezone trainer."
+    },
+    {
+      "from": "star-wars",
+      "to": "x-wing",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "First-person cockpit X-Wing combat against Tie Fighters culminating in the Death Star trench run.",
+      "added": "Replaced on-rails wireframe waves with free-roaming 3D space missions, shield-weapon power routing, and Rebel campaigns.",
+      "src": [
+        {
+          "t": "Wikipedia: Star Wars (1983 video game)",
+          "u": "https://en.wikipedia.org/wiki/Star_Wars_(1983_video_game)"
+        }
+      ],
+      "extra": "Carried Atari's 1983 cockpit fantasy into 1990s PC space simulation."
+    },
+    {
+      "from": "donkey-kong",
+      "to": "bomb-jack",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized fixed-screen platform navigation dodging enemies across floating ledges for escalating score runs.",
+      "added": "Replaced ladder climbing with soaring high jumps, rapid mid-air gliding, and sequential lit-bomb score bonuses.",
+      "src": [
+        {
+          "t": "Wikipedia: Bomb Jack",
+          "u": "https://en.wikipedia.org/wiki/Bomb_Jack"
+        }
+      ],
+      "extra": "Created by Michitaka Tsuruta and Kazutoshi Ueda at Tehkan."
+    },
+    {
+      "from": "colossal-cave-adventure",
+      "to": "the-lords-of-midnight",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Open-ended fantasy questing across named landmarks, items, and storied perils.",
+      "added": "Fused adventure exploration with army wargaming across 4,000 first-person panoramic 'landscaping' views.",
+      "src": [
+        {
+          "t": "Wikipedia: The Lords of Midnight",
+          "u": "https://en.wikipedia.org/wiki/The_Lords_of_Midnight"
+        }
+      ],
+      "extra": "Written solo by Mike Singleton on the ZX Spectrum with dual quest and military victory paths."
+    },
+    {
+      "from": "mario-bros",
+      "to": "ice-climber",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Two-player cooperative-or-mischievous platforming centered on bumping overhead blocks to knock foes loose.",
+      "added": "Turned single-screen pipes into vertically scrolling icy mountains climbed with mallets and bonus-peak condors.",
+      "src": [
+        {
+          "t": "Wikipedia: Ice Climber",
+          "u": "https://en.wikipedia.org/wiki/Ice_Climber"
+        }
+      ],
+      "extra": "Produced by Shigeru Miyamoto and Masayuki Uemura with Mario Bros. programmer Toshihiko Nakago."
+    },
+    {
+      "from": "ice-climber",
+      "to": "super-mario-bros",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Programmer Kazuaki Morita's early NES jump-physics and scrolling tile practice under Nintendo's core team.",
+      "added": "Refined momentum jumping and smooth horizontal scrolling across eight sprawling Mushroom Kingdom worlds.",
+      "src": [
+        {
+          "t": "Wikipedia: Ice Climber",
+          "u": "https://en.wikipedia.org/wiki/Ice_Climber"
+        }
+      ],
+      "extra": "Released in January 1985; Morita called Ice Climber his warm-up before programming Super Mario Bros."
+    },
+    {
+      "from": "bomberman",
+      "to": "spy-vs-spy",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Popularized laying timed explosive traps across interconnected rooms to outsmart opponents.",
+      "added": "Introduced simultaneous 'Simulvision' split-screen espionage duels where rivals booby-trap furniture and race to escape.",
+      "src": [
+        {
+          "t": "Wikipedia: Spy vs. Spy (1984 video game)",
+          "u": "https://en.wikipedia.org/wiki/Spy_vs._Spy_(1984_video_game)"
+        }
+      ],
+      "extra": "Programmed by Mike Riedel at First Star Software, pioneering competitive split-screen mind games."
+    },
+    {
+      "from": "metroid",
+      "to": "kid-icarus",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Nintendo R&D1's Famicom Disk System engine, physics routines, password structure, and even Metroid-like Komayto foes.",
+      "added": "Swapped sci-fi corridors for Greek-myth vertical climbing, weapon shops, eggplant curses, and maze fortresses.",
+      "src": [
+        {
+          "t": "Wikipedia: Kid Icarus",
+          "u": "https://en.wikipedia.org/wiki/Kid_Icarus"
+        },
+        {
+          "t": "Nintendo World Report, Making of a Myth: Kid Icarus, Mar 2012",
+          "u": "https://www.nintendoworldreport.com/feature/29565/making-of-a-myth-the-grueling-development-of-the-original-kid-icarus"
+        }
+      ],
+      "extra": "Metroid shipped in August 1986; Yoshio Sakamoto and the Metroid team then helped Toru Osawa finish Kid Icarus by December."
+    },
+    {
+      "from": "donkey-kong",
+      "to": "rampage",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Popularized climbing multi-story arcade structures featuring a giant gorilla fending off hazards.",
+      "added": "Let up to three players control giant movie monsters climbing and punching entire city skyscrapers to rubble.",
+      "src": [
+        {
+          "t": "Wikipedia: Rampage (video game)",
+          "u": "https://en.wikipedia.org/wiki/Rampage_(video_game)"
+        }
+      ],
+      "extra": "Designed by Brian Colin and Jeff Nauman at Bally Midway with a 'no wrong way to play' ethos."
+    },
+    {
+      "from": "rampage",
+      "to": "the-incredible-hulk-ultimate-destruction",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized playing an unstoppable giant scaling skyscrapers, smashing buildings, and swatting military choppers.",
+      "added": "Translated side-view urban demolition into a free-roaming 3D sandbox with car-glove weapons and leap physics.",
+      "src": [
+        {
+          "t": "Wikipedia: Rampage (video game)",
+          "u": "https://en.wikipedia.org/wiki/Rampage_(video_game)"
+        }
+      ],
+      "extra": "Carried Rampage's playful city-smashing fantasy into 3D open-world action."
+    },
+    {
+      "from": "rebelstar-raiders",
+      "to": "rebelstar",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Julian Gollop's turn-based ZX Spectrum squad tactics with action points, line of sight, and sci-fi raids.",
+      "added": "Rebuilt the engine in fast machine code with a larger scrolling map and a single-player computer opponent.",
+      "src": [
+        {
+          "t": "Wikipedia: Rebelstar",
+          "u": "https://en.wikipedia.org/wiki/Rebelstar"
+        }
+      ],
+      "extra": "Bridge between Gollop's 1984 debut and his 1988 hit Laser Squad."
+    },
+    {
+      "from": "rebelstar",
+      "to": "laser-squad",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Action-point squad movement, hidden enemy fog, and turn-based sci-fi firefights on scrolling maps.",
+      "added": "Expanded into multi-scenario missions with custom weapon loadouts, destructible walls, and multi-system 16-bit releases.",
+      "src": [
+        {
+          "t": "Wikipedia: Rebelstar",
+          "u": "https://en.wikipedia.org/wiki/Rebelstar"
+        }
+      ],
+      "extra": "Julian Gollop's direct stepping stone from Rebelstar toward UFO: Enemy Unknown."
+    },
+    {
+      "from": "space-harrier",
+      "to": "after-burner",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Yu Suzuki's into-the-screen Super Scaler sprite engine and full-body hydraulic arcade motion cabinet.",
+      "added": "Swapped fantasy running for a supersonic F-14 Tomcat with radar lock-on missiles and barrel rolls.",
+      "src": [
+        {
+          "t": "Wikipedia: After Burner",
+          "u": "https://en.wikipedia.org/wiki/After_Burner"
+        }
+      ],
+      "extra": "Built by Yu Suzuki and Satoshi Mifune on Sega's X Board hardware."
+    },
+    {
+      "from": "after-burner",
+      "to": "air-combat",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Fast-paced arcade fighter-jet dogfighting built around rapid radar missile locks and dramatic banking.",
+      "added": "Moved supersonic air combat out of scaled rails into free-roaming 3D polygonal airspace and mission contracts.",
+      "src": [
+        {
+          "t": "Wikipedia: After Burner",
+          "u": "https://en.wikipedia.org/wiki/After_Burner"
+        }
+      ],
+      "extra": "Namco's 1995 PlayStation debut launched the Ace Combat lineage."
+    },
+    {
+      "from": "softporn-adventure",
+      "to": "leisure-suit-larry",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Chuck Benton's 1981 adult-comedy text adventure plot, locations, and tongue-in-cheek puzzles.",
+      "added": "Rebuilt it as an animated graphic adventure with Al Lowe's slapstick writing and an age-verification quiz.",
+      "src": [
+        {
+          "t": "Wikipedia: Leisure Suit Larry in the Land of the Lounge Lizards",
+          "u": "https://en.wikipedia.org/wiki/Leisure_Suit_Larry_in_the_Land_of_the_Lounge_Lizards"
+        }
+      ],
+      "extra": "Al Lowe pitched remaking Softporn Adventure to Ken Williams after Sierra lost its Disney license."
+    },
+    {
+      "from": "kings-quest",
+      "to": "leisure-suit-larry",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Sierra On-Line's AGI animated walking-character adventure engine and typed command parser.",
+      "added": "Traded fairy-tale quests for a satirical Lost Wages lounge comedy with close-up character portraits.",
+      "src": [
+        {
+          "t": "Wikipedia: Leisure Suit Larry in the Land of the Lounge Lizards",
+          "u": "https://en.wikipedia.org/wiki/Leisure_Suit_Larry_in_the_Land_of_the_Lounge_Lizards"
+        }
+      ],
+      "extra": "Showed Sierra's adventure engine could power adult humor alongside fantasy."
+    },
+    {
+      "from": "duck-hunt",
+      "to": "operation-wolf",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized aiming a physical optical light gun directly at moving on-screen targets.",
+      "added": "Added horizontal rail scrolling, hostage protection, ammo management, and a mounted recoil-feedback submachine gun.",
+      "src": [
+        {
+          "t": "Wikipedia: Operation Wolf",
+          "u": "https://en.wikipedia.org/wiki/Operation_Wolf"
+        },
+        {
+          "t": "Den of Geek, The Unlikely Origins of the First-Person Shooter",
+          "u": "https://www.denofgeek.com/games/the-unlikely-origins-of-the-first-person-shooter/"
+        }
+      ],
+      "extra": "Popularized arcade military light-gun rail shooters across late-1980s and 1990s coin-ops."
+    },
+    {
+      "from": "operation-wolf",
+      "to": "virtua-cop",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Scrolling arcade light-gun rail shooting balancing hostile gunmen, reload timing, and civilian hostages.",
+      "added": "Moved light-gun action into 3D Model 2 polygons with targeting reticles and limb-specific hit animations.",
+      "src": [
+        {
+          "t": "Wikipedia: Operation Wolf",
+          "u": "https://en.wikipedia.org/wiki/Operation_Wolf"
+        }
+      ],
+      "extra": "Bridged 2D sprite light-gun cabinets and Sega's 3D arcade shooter wave."
+    },
+    {
+      "from": "gradius",
+      "to": "wizball",
+      "tier": "dev",
+      "rel": "variant",
+      "took": "A collectible power-up bar letting players choose movement and weapon upgrades mid-flight.",
+      "added": "Turned horizontal shooting into a bouncing wizard orb and Catellite restoring stolen colors to monochrome landscapes.",
+      "src": [
+        {
+          "t": "Wikipedia: Wizball",
+          "u": "https://en.wikipedia.org/wiki/Wizball"
+        }
+      ],
+      "extra": "Jon Hare told Retro Gamer (2006) Wizball began as a Nemesis (Gradius)-inspired Commodore 64 shooter."
+    },
+    {
+      "from": "wizball",
+      "to": "microprose-soccer",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Sensible Software's crisp Commodore 64 sprite control, humor, and responsive arcade feel by Jon Hare and Chris Yates.",
+      "added": "Pivoted from surreal color-restoration shooting to fast overhead soccer with banana-shot swerves and indoor modes.",
+      "src": [
+        {
+          "t": "Wikipedia: Wizball",
+          "u": "https://en.wikipedia.org/wiki/Wizball"
+        }
+      ],
+      "extra": "Jon Hare and Chris Yates followed Wizball with MicroProse Soccer, launching their Sensible Soccer and Cannon Fodder lineage."
+    },
+    {
+      "from": "wonder-boy",
+      "to": "wonder-boy-in-monster-land",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Ryuichi Nishizawa's brisk arcade side-scrolling platform feel and charming fantasy protagonist.",
+      "added": "Swapped skateboarding and axes for RPG towns, gold-dropping monsters, armor shops, and spell upgrades.",
+      "src": [
+        {
+          "t": "Wikipedia: Wonder Boy in Monster Land",
+          "u": "https://en.wikipedia.org/wiki/Wonder_Boy_in_Monster_Land"
+        }
+      ],
+      "extra": "Pioneered arcade action-RPG platforming at Westone."
+    },
+    {
+      "from": "dragon-quest",
+      "to": "wonder-boy-in-monster-land",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Fantasy RPG towns, equipment upgrades, gold economies, and tavern hint-gathering.",
+      "added": "Compressed RPG progression into a real-time, timer-driven arcade side-scrolling platform adventure.",
+      "src": [
+        {
+          "t": "Wikipedia: Wonder Boy in Monster Land",
+          "u": "https://en.wikipedia.org/wiki/Wonder_Boy_in_Monster_Land"
+        }
+      ],
+      "extra": "Director Ryuichi Nishizawa explicitly blended emerging RPG hits like Dragon Quest and Wizardry into arcade action."
+    },
+    {
+      "from": "wonder-boy-in-monster-land",
+      "to": "wonder-boy-iii-the-dragons-trap",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sword-and-shield platform combat, coin-funded equipment shops, and fantasy boss encounters.",
+      "added": "Opened linear arcade stages into a non-linear world explored via six cursed animal forms with unique powers.",
+      "src": [
+        {
+          "t": "Wikipedia: Wonder Boy in Monster Land",
+          "u": "https://en.wikipedia.org/wiki/Wonder_Boy_in_Monster_Land"
+        }
+      ],
+      "extra": "Direct sequel opening right after Monster Land's final dragon battle."
+    },
+    {
+      "from": "starglider",
+      "to": "carrier-command",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Realtime Games' experience adapting fast 3D vector flight combat for Rainbird on home computers.",
+      "added": "Merged direct 3D piloting of amphibious tanks and jets with real-time strategic archipelago conquest.",
+      "src": [
+        {
+          "t": "Wikipedia: Carrier Command",
+          "u": "https://en.wikipedia.org/wiki/Carrier_Command"
+        },
+        {
+          "t": "Ian Oliver interview, Sega Retro / Bohemia Interactive, May 2012",
+          "u": "https://segaretro.org/Interview:_%20Ian_Oliver_(2012-05-10)_by_Bohemia_Interactive"
+        }
+      ],
+      "extra": "Ian Oliver and Graeme Baird coded the entire 3D polygon and RTS engine in 68000 assembly."
+    },
+    {
+      "from": "out-run",
+      "to": "chase-h-q",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "High-speed pseudo-3D scaling highways, branching forks, and racing against a ticking timer.",
+      "added": "Turned scenic cruising into turbo-boosted police chases where players ram armed suspects off the road.",
+      "src": [
+        {
+          "t": "Wikipedia: Chase H.Q.",
+          "u": "https://en.wikipedia.org/wiki/Chase_H.Q."
+        }
+      ],
+      "extra": "Designed by Hiroguki Sakou on Taito's Z System arcade hardware."
+    },
+    {
+      "from": "chase-h-q",
+      "to": "driver",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Frantic timed street pursuits weaving through traffic to intercept and ram fleeing vehicles.",
+      "added": "Expanded linear highway chases into four open 3D cities with wheelman physics and movie-style replays.",
+      "src": [
+        {
+          "t": "Wikipedia: Chase H.Q.",
+          "u": "https://en.wikipedia.org/wiki/Chase_H.Q."
+        }
+      ],
+      "extra": "Cited by historians as a key arcade precursor to Driver's urban pursuit design."
+    },
+    {
+      "from": "chase-h-q",
+      "to": "burnout",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Aggressive high-speed weaving through oncoming traffic paired with violent vehicular ramming.",
+      "added": "Built entire 3D arcade races around risky near-miss boost meters and slow-motion crash spectacle.",
+      "src": [
+        {
+          "t": "Wikipedia: Chase H.Q.",
+          "u": "https://en.wikipedia.org/wiki/Chase_H.Q."
+        }
+      ],
+      "extra": "Carried Chase H.Q.'s traffic-dodging ramming thrill into modern arcade racers."
+    },
+    {
+      "from": "r-type",
+      "to": "menace",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Methodical horizontal alien-corridor shooting with biomechanical bosses and attachable defensive firepower.",
+      "added": "Brought smooth 50 fps Amiga scrolling and token-collected weapon upgrades in DMA Design's debut release.",
+      "src": [
+        {
+          "t": "Wikipedia: Menace (video game)",
+          "u": "https://en.wikipedia.org/wiki/Menace_(video_game)"
+        }
+      ],
+      "extra": "First game programmed by David Jones in Dundee before DMA Design made Lemmings and GTA."
+    },
+    {
+      "from": "maniac-mansion",
+      "to": "zak-mckracken",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Lucasfilm's SCUMM point-and-click verb bar and switching between multiple playable characters.",
+      "added": "Expanded a single mansion into a globe-trotting alien conspiracy spanning Earth, Mars, and psychic animals.",
+      "src": [
+        {
+          "t": "Wikipedia: Zak McKracken and the Alien Mindbenders",
+          "u": "https://en.wikipedia.org/wiki/Zak_McKracken_and_the_Alien_Mindbenders"
+        },
+        {
+          "t": "David Fox interview, Popkulturowy Kociolek, Feb 2024",
+          "u": "https://popkulturowykociolek.pl/wywiad-david-fox-kulisy-gier-lucasfilm/"
+        }
+      ],
+      "extra": "Second title built on SCUMM, directed by David Fox with comedy polish suggested by Ron Gilbert."
+    },
+    {
+      "from": "out-run",
+      "to": "batman-the-movie",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Behind-the-car pseudo-3D scaling streets racing at high speed past traffic and tight turns.",
+      "added": "Combined Batmobile street chases with grappling platform levels, Batcave chemical puzzles, and Batwing stages.",
+      "src": [
+        {
+          "t": "Wikipedia: Batman (1989 video game)",
+          "u": "https://en.wikipedia.org/wiki/Batman_(1989_video_game)"
+        }
+      ],
+      "extra": "Ocean Software's multi-genre tie-in became a blueprint for late-1980s European movie games."
+    },
+    {
+      "from": "bionic-commando",
+      "to": "batman-the-movie",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Mechanical tether grappling to hoist a hero up vertical architecture instead of ordinary jumps.",
+      "added": "Paired Bat-grapple traversal and Batarang fights with driving, flying, and deduction stages across Gotham.",
+      "src": [
+        {
+          "t": "Wikipedia: Batman (1989 video game)",
+          "u": "https://en.wikipedia.org/wiki/Batman_(1989_video_game)"
+        }
+      ],
+      "extra": "Transferred grappling-line platforming into Tim Burton's Axis Chemical Plant and Cathedral levels."
+    },
+    {
+      "from": "menace",
+      "to": "blood-money",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "David Jones's smooth Amiga scrolling shoot-'em-up framework and alien stage bosses at DMA Design.",
+      "added": "Added four distinct stage vehicles, an in-level coin weapon shop, two-player co-op, and blitter color depth.",
+      "src": [
+        {
+          "t": "Wikipedia: Blood Money (video game)",
+          "u": "https://en.wikipedia.org/wiki/Blood_Money_(video_game)"
+        }
+      ],
+      "extra": "DMA Design's sophomore Amiga hit directly preceded Lemmings."
+    },
+    {
+      "from": "blood-money",
+      "to": "walker",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "DMA Design's meticulous Amiga sprite animation pipeline and arcade-grade shooting polish.",
+      "added": "Shifted from horizontal space vehicles to piloting a bipedal mech with mouse-aimed twin turrets.",
+      "src": [
+        {
+          "t": "Wikipedia: Blood Money (video game)",
+          "u": "https://en.wikipedia.org/wiki/Blood_Money_(video_game)"
+        }
+      ],
+      "extra": "Blood Money's animation inspired Gary Timmons to join DMA Design and animate Walker."
+    },
+    {
+      "from": "kings-quest",
+      "to": "heros-quest-so-you-want-to-be-a-hero",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Sierra On-Line's animated graphic adventure rooms, typed command parser, and fairy-tale humor.",
+      "added": "Layered three RPG classes, skill leveling, real-time sword combat, and multiple class-based puzzle solutions.",
+      "src": [
+        {
+          "t": "Wikipedia: Quest for Glory: So You Want to Be a Hero",
+          "u": "https://en.wikipedia.org/wiki/Quest_for_Glory:_So_You_Want_to_Be_a_Hero"
+        }
+      ],
+      "extra": "Designed by Corey and Lori Ann Cole; later retitled Quest for Glory due to a trademark conflict."
+    },
+    {
+      "from": "defender-of-the-crown",
+      "to": "north-and-south",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Territory-conquest strategic maps resolved through brief real-time arcade combat minigames.",
+      "added": "Brought two-player head-to-head rivalry, train robberies, fort assaults, and Belgian comic slapstick to the Civil War.",
+      "src": [
+        {
+          "t": "Wikipedia: North & South (video game)",
+          "u": "https://en.wikipedia.org/wiki/North_%26_South_(video_game)"
+        }
+      ],
+      "extra": "Adapted by Infogrames from the Belgian comic strip Les Tuniques Bleues."
+    },
+    {
+      "from": "pole-position",
+      "to": "stunt-car-racer",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "High-speed rear-view circuit racing balancing cornering lines against aggressive rival cars.",
+      "added": "Built elevated 3D polygonal roller-coaster tracks with true suspension physics, drawbridge gaps, and nitro boosts.",
+      "src": [
+        {
+          "t": "Wikipedia: Stunt Car Racer",
+          "u": "https://en.wikipedia.org/wiki/Stunt_Car_Racer"
+        }
+      ],
+      "extra": "Geoff Crammond clarified he did not draw from Hard Drivin', seeing it only near completion."
+    },
+    {
+      "from": "zelda-ii-the-adventure-of-link",
+      "to": "teenage-mutant-ninja-turtles",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Popularized pairing a top-down overworld map with side-scrolling action stages on the NES.",
+      "added": "Let players swap on the fly between all four Turtles' distinct weapon reaches and rescue captured teammates.",
+      "src": [
+        {
+          "t": "Wikipedia: Teenage Mutant Ninja Turtles (NES video game)",
+          "u": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles_(NES_video_game)"
+        }
+      ],
+      "extra": "Konami's 1989 NES hit also introduced pizza as the franchise's recurring health pickup."
+    },
+    {
+      "from": "teenage-mutant-ninja-turtles",
+      "to": "teenage-mutant-ninja-turtles-iii-the-manhattan-project",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Konami's NES Turtles cast, cartoon villains, and pizza health recovery items.",
+      "added": "Pivoted from overworld platforming to dedicated two-player belt-scrolling brawling with signature special moves.",
+      "src": [
+        {
+          "t": "Wikipedia: Teenage Mutant Ninja Turtles (NES video game)",
+          "u": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles_(NES_video_game)"
+        }
+      ],
+      "extra": "Continued Konami's home-console Turtles line after the 1989 NES debut."
+    },
+    {
+      "from": "populous",
+      "to": "actraiser",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Top-down divine world-shaping where miracles clear terrain and help fledgling human settlements grow.",
+      "added": "Paired town-building god-sim phases directly with side-scrolling sword action stages and boss battles.",
+      "src": [
+        {
+          "t": "Wikipedia: ActRaiser",
+          "u": "https://en.wikipedia.org/wiki/ActRaiser"
+        }
+      ],
+      "extra": "Quintet's Super Famicom launch-window hybrid directed by Masaya Hashimoto with music by Yuzo Koshiro."
+    },
+    {
+      "from": "castlevania",
+      "to": "actraiser",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Deliberate gothic side-scrolling action stages culminating in mythic creature boss fights.",
+      "added": "Linked every cleared action stage to an overhead simulation where growing towns power up the hero.",
+      "src": [
+        {
+          "t": "Wikipedia: ActRaiser",
+          "u": "https://en.wikipedia.org/wiki/ActRaiser"
+        }
+      ],
+      "extra": "Bridged classic Japanese 16-bit action platformers and Western god games."
+    },
+    {
+      "from": "actraiser",
+      "to": "illusion-of-gaia",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Quintet's world-restoration themes, mythic storytelling, and snappy SNES action combat.",
+      "added": "Unified action and story into a continuous globe-trotting action-RPG with three transformable forms.",
+      "src": [
+        {
+          "t": "Wikipedia: ActRaiser",
+          "u": "https://en.wikipedia.org/wiki/ActRaiser"
+        }
+      ],
+      "extra": "Second pillar in Quintet's unofficial SNES Heaven and Earth trilogy."
+    },
+    {
+      "from": "knight-lore",
+      "to": "cadaver",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Flip-screen isometric dungeon rooms built around object-pushing and spatial puzzles.",
+      "added": "Upgraded to 16-bit metallic pixel art, context-sensitive verb menus, and deep scripted item interactions.",
+      "src": [
+        {
+          "t": "Wikipedia: Cadaver (video game)",
+          "u": "https://en.wikipedia.org/wiki/Cadaver_(video_game)"
+        }
+      ],
+      "extra": "The Bitmap Brothers built Cadaver atop their custom Adventure Level Editor and ACL scripting language."
+    },
+    {
+      "from": "cadaver",
+      "to": "the-chaos-engine",
+      "tier": "team",
+      "rel": "variant",
+      "took": "The Bitmap Brothers' signature metallic 16-bit tile craft, secret triggers, and tight room design.",
+      "added": "Replaced solo isometric dungeon puzzles with fast two-player co-op steampunk top-down shooting.",
+      "src": [
+        {
+          "t": "Wikipedia: Cadaver (video game)",
+          "u": "https://en.wikipedia.org/wiki/Cadaver_(video_game)"
+        }
+      ],
+      "extra": "Mike Montgomery and Eric Matthews carried Bitmap Brothers' visual identity across both Amiga hits."
+    },
+    {
+      "from": "ducktales",
+      "to": "castle-of-illusion",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Expressive Disney character animation paired with bounce-based enemy stomping and hidden treasures.",
+      "added": "Delivered lush 16-bit Genesis fairy-tale stages, thrown apple projectiles, and technical completion bonuses.",
+      "src": [
+        {
+          "t": "Wikipedia: Castle of Illusion Starring Mickey Mouse",
+          "u": "https://en.wikipedia.org/wiki/Castle_of_Illusion_Starring_Mickey_Mouse"
+        }
+      ],
+      "extra": "Directed by Emiko Yamamoto at Sega, setting the benchmark for 16-bit Disney platformers."
+    },
+    {
+      "from": "dragon-quest-iii",
+      "to": "dragon-quest-iv",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Yuji Horii and Chunsoft's expansive overworld questing, turn-based combat, and multi-character party.",
+      "added": "Structured the story into five converging character chapters and introduced selectable AI battle tactics.",
+      "src": [
+        {
+          "t": "Wikipedia: Dragon Quest IV",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Quest_IV"
+        }
+      ],
+      "extra": "Also introduced the party wagon, letting players swap reserve companions mid-journey."
+    },
+    {
+      "from": "dragon-quest-iv",
+      "to": "dragon-quest-v-hand-of-the-heavenly-bride",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Wagon party swapping, ensemble storytelling arcs, and AI-assisted companion battle commands.",
+      "added": "Spanned three generations of one hero's life with marriage choices and recruitable enemy monsters.",
+      "src": [
+        {
+          "t": "Wikipedia: Dragon Quest IV",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Quest_IV"
+        }
+      ],
+      "extra": "Direct continuation of Chunsoft's Zenithia trilogy."
+    },
+    {
+      "from": "dragon-quest-iv",
+      "to": "final-fantasy-xii",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Guiding AI-controlled party members via high-level tactical postures instead of every manual turn.",
+      "added": "Turned fixed party tactics into granular, player-programmed conditional Gambit scripts in real-time combat.",
+      "src": [
+        {
+          "t": "Game Developer, The History of Dragon Quest",
+          "u": "https://www.gamedeveloper.com/game-platforms/the-history-of-dragon-quest"
+        },
+        {
+          "t": "Wikipedia: Dragon Quest IV",
+          "u": "https://en.wikipedia.org/wiki/Dragon_Quest_IV"
+        }
+      ],
+      "extra": "Dragon Quest IV's Chapter 5 AI Tactics menu is widely noted as an early precursor to Gambits."
+    },
+    {
+      "from": "final-fantasy",
+      "to": "final-fantasy-iii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Four Warriors of Light, turn-based class combat, airships, and elemental crystal quests.",
+      "added": "Introduced an on-the-fly Job System, summoned monsters, Moogles, and Square's Ether scripting engine.",
+      "src": [
+        {
+          "t": "Wikipedia: Final Fantasy III",
+          "u": "https://en.wikipedia.org/wiki/Final_Fantasy_III"
+        }
+      ],
+      "extra": "Directed by Hironobu Sakaguchi and programmed by Nasir Gebelli for the Famicom."
+    },
+    {
+      "from": "final-fantasy-iii",
+      "to": "final-fantasy-v",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "A swappable Job System letting four heroes change classes between battles.",
+      "added": "Let characters retain learned active and passive skills across jobs for deep hybrid builds.",
+      "src": [
+        {
+          "t": "Wikipedia: Final Fantasy III",
+          "u": "https://en.wikipedia.org/wiki/Final_Fantasy_III"
+        }
+      ],
+      "extra": "Refined Final Fantasy III's job-swapping blueprint into a lasting JRPG customization template."
+    },
+    {
+      "from": "ghosts-n-goblins",
+      "to": "gargoyles-quest",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Capcom's gothic demon realm, grueling enemy patterns, and nemesis Red Arremer (Firebrand).",
+      "added": "Made the gargoyle the hero with hovering flight, wall-clinging, and a top-down RPG overworld.",
+      "src": [
+        {
+          "t": "Wikipedia: Gargoyle's Quest",
+          "u": "https://en.wikipedia.org/wiki/Gargoyle%27s_Quest"
+        }
+      ],
+      "extra": "Produced by Tokuro Fujiwara and designed by Kenshi Naruse for Game Boy."
+    },
+    {
+      "from": "ducktales",
+      "to": "little-nemo-the-dream-master",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Producer Tokuro Fujiwara's polished Capcom NES licensed platforming and non-linear stage exploration.",
+      "added": "Replaced pogo traversal with feeding candy to dream creatures and wearing their digging and flying powers.",
+      "src": [
+        {
+          "t": "Wikipedia: Little Nemo: The Dream Master",
+          "u": "https://en.wikipedia.org/wiki/Little_Nemo:_The_Dream_Master"
+        }
+      ],
+      "extra": "Designed by Tatsuya Minami with music by Junko Tamiya."
+    },
+    {
+      "from": "little-nemo-the-dream-master",
+      "to": "kirbys-adventure",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Acquiring distinct traversal and attack powers from stage creatures to solve platforming obstacles.",
+      "added": "Streamlined creature abilities into instant inhale-and-copy powers across colorful floating platform stages.",
+      "src": [
+        {
+          "t": "Wikipedia: Little Nemo: The Dream Master",
+          "u": "https://en.wikipedia.org/wiki/Little_Nemo:_The_Dream_Master"
+        }
+      ],
+      "extra": "Critics note Little Nemo's animal-power swaps anticipated Kirby's Adventure three years later."
+    },
+    {
+      "from": "ninja-gaiden",
+      "to": "ninja-gaiden-ii-the-dark-sword-of-chaos",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast katana platforming, wall-clinging jumps, ninpo sub-weapons, and dramatic NES anime cutscenes.",
+      "added": "Added full wall climbing, trailing shadow-clone doubles mirroring attacks, and wind, rain, and darkness hazards.",
+      "src": [
+        {
+          "t": "Wikipedia: Ninja Gaiden II: The Dark Sword of Chaos",
+          "u": "https://en.wikipedia.org/wiki/Ninja_Gaiden_II:_The_Dark_Sword_of_Chaos"
+        }
+      ],
+      "extra": "Directed by Masato Kato at Tecmo."
+    },
+    {
+      "from": "river-city-ransom",
+      "to": "nintendo-world-cup",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Technos Japan's big-headed Kunio-kun sprites, slapstick brawling physics, and knock-down tackles.",
+      "added": "Moved Kunio onto a four-player NES soccer pitch with weather-slick turf and physics-defying super shots.",
+      "src": [
+        {
+          "t": "Wikipedia: Nintendo World Cup",
+          "u": "https://en.wikipedia.org/wiki/Nintendo_World_Cup"
+        }
+      ],
+      "extra": "Directly reused Kunio-kun character sprites from River City Ransom (Downtown Nekketsu Story)."
+    },
+    {
+      "from": "phantasy-star-ii",
+      "to": "phantasy-star-iii-generations-of-doom",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sega's 16-bit science-fantasy RPG universe, turn-based party battles, and icon menus.",
+      "added": "Set the quest aboard a multi-biome generation ship with marriage choices spanning three generations and four endings.",
+      "src": [
+        {
+          "t": "Wikipedia: Phantasy Star III",
+          "u": "https://en.wikipedia.org/wiki/Phantasy_Star_III"
+        }
+      ],
+      "extra": "Its branching family tree predated Dragon Quest V's generational marriage storyline."
+    },
+    {
+      "from": "phantasy-star-iii-generations-of-doom",
+      "to": "phantasy-star-iv-the-end-of-the-millennium",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sega's Genesis RPG engine conventions and sweeping multi-era Algol lore.",
+      "added": "Added manga-panel cutscenes, combination attacks, programmable battle macros, and seamless town-to-dungeon flow.",
+      "src": [
+        {
+          "t": "Wikipedia: Phantasy Star IV",
+          "u": "https://en.wikipedia.org/wiki/Phantasy_Star_IV"
+        }
+      ],
+      "extra": "Co-directed by Rieko Kodama to close out the classic Algol saga."
+    },
+    {
+      "from": "phantasy-star-iv-the-end-of-the-millennium",
+      "to": "phantasy-star-online",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Clean sci-fi RPG combat aesthetics, technique magic, and Hunters Guild quest framing.",
+      "added": "Brought the franchise into 3D real-time Dreamcast action with four-player online lobby co-op.",
+      "src": [
+        {
+          "t": "Wikipedia: Phantasy Star IV",
+          "u": "https://en.wikipedia.org/wiki/Phantasy_Star_IV"
+        }
+      ],
+      "extra": "IGN highlighted Phantasy Star IV's accessible mechanics as a direct influence on Phantasy Star Online."
+    },
+    {
+      "from": "f-zero",
+      "to": "pilotwings",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Nintendo EAD's SNES Mode 7 hardware scaling and rotation simulating 3D depth over flat maps.",
+      "added": "Swapped high-speed racing for serene biplane, skydiving, rocketbelt, and hang-glider license tests.",
+      "src": [
+        {
+          "t": "Wikipedia: Pilotwings",
+          "u": "https://en.wikipedia.org/wiki/Pilotwings"
+        }
+      ],
+      "extra": "F-Zero launched with the Super Famicom in November 1990; Pilotwings followed one month later."
+    },
+    {
+      "from": "pilotwings",
+      "to": "pilotwings-64",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Scored aerial license challenges using hang gliders, rocketbelts, and precision target landings.",
+      "added": "Replaced Mode 7 planes with full 3D N64 islands, gyrocopters, human cannonballs, and Little States sightseeing.",
+      "src": [
+        {
+          "t": "Wikipedia: Pilotwings 64",
+          "u": "https://en.wikipedia.org/wiki/Pilotwings_64"
+        }
+      ],
+      "extra": "Co-developed by Paradigm Simulation and Nintendo EAD for the Nintendo 64 launch."
+    },
+    {
+      "from": "pilotwings",
+      "to": "wii-sports-resort",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Nintendo's breezy island flight school, skydiving rings, and tourist-island sightseeing loop.",
+      "added": "Brought motion-controlled plane tours and skydiving onto Wuhu Island alongside twelve resort sports.",
+      "src": [
+        {
+          "t": "Wikipedia: Pilotwings",
+          "u": "https://en.wikipedia.org/wiki/Pilotwings"
+        }
+      ],
+      "extra": "Wuhu Island later hosted 2011's Pilotwings Resort, directly uniting both Nintendo series."
+    },
+    {
+      "from": "heros-quest-so-you-want-to-be-a-hero",
+      "to": "quest-for-glory-ii-trial-by-fire",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sierra's three-class adventure-RPG hybrid, skill progression, and class-specific puzzle paths.",
+      "added": "Let players import saved characters into Shapeir's day-night Arabian city with timed events and elemental battles.",
+      "src": [
+        {
+          "t": "Wikipedia: Quest for Glory II: Trial by Fire",
+          "u": "https://en.wikipedia.org/wiki/Quest_for_Glory_II:_Trial_by_Fire"
+        }
+      ],
+      "extra": "Designed by Lori Ann Cole and Corey Cole using Sierra's parser-driven SCI engine."
+    },
+    {
+      "from": "f-15-strike-eagle",
+      "to": "red-baron-1990",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Accessible combat-flight dogfighting balancing historical theater immersion with approachable controls.",
+      "added": "Brought 3D polygonal World War I biplane duels, rotary-engine torque, gun jams, and rival ace encounters.",
+      "src": [
+        {
+          "t": "Wikipedia: Red Baron (1990 video game)",
+          "u": "https://en.wikipedia.org/wiki/Red_Baron_(1990_video_game)"
+        }
+      ],
+      "extra": "Created by Damon Slye at Dynamix for Sierra On-Line."
+    },
+    {
+      "from": "rick-dangerous",
+      "to": "rick-dangerous-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Core Design's trap-filled trial-and-error platform rooms and slapstick puzzle timing.",
+      "added": "Traded Indiana Jones tombs for alien worlds with laser blasters, sliding bombs, and flying-disc stages.",
+      "src": [
+        {
+          "t": "Wikipedia: Rick Dangerous 2",
+          "u": "https://en.wikipedia.org/wiki/Rick_Dangerous_2"
+        }
+      ],
+      "extra": "Designed and programmed by Simon Phipps at Core Design."
+    },
+    {
+      "from": "simcity",
+      "to": "simearth",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Will Wright's open-ended 'software toy' design and interlocking system feedback loops at Maxis.",
+      "added": "Scaled simulation from one city to planetary tectonics, Gaia climate dynamics, and evolving species.",
+      "src": [
+        {
+          "t": "Wikipedia: SimEarth",
+          "u": "https://en.wikipedia.org/wiki/SimEarth"
+        }
+      ],
+      "extra": "Co-designed by Will Wright and Fred Haslam with Gaia theorist James Lovelock advising."
+    },
+    {
+      "from": "simearth",
+      "to": "spore",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Will Wright's ambition to simulate planetary ecology and the rise of intelligent life at Maxis.",
+      "added": "Swapped spreadsheet graphs for tactile creature editors and five playful stages from tidepool to galaxy.",
+      "src": [
+        {
+          "t": "Wikipedia: SimEarth",
+          "u": "https://en.wikipedia.org/wiki/SimEarth"
+        }
+      ],
+      "extra": "Will Wright's long-gestating return to SimEarth's evolutionary sandbox."
+    },
+    {
+      "from": "marble-madness",
+      "to": "snake-rattle-n-roll",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Isometric sloped obstacle courses and ledge physics from Rare's 1989 NES conversion of Marble Madness.",
+      "added": "Swapped rolling marbles for two co-op snakes hopping across traps and eating pellets to weigh down exits.",
+      "src": [
+        {
+          "t": "Wikipedia: Snake Rattle 'n' Roll",
+          "u": "https://en.wikipedia.org/wiki/Snake_Rattle_%27n%27_Roll"
+        }
+      ],
+      "extra": "Wikipedia documents Snake Rattle 'n' Roll derived directly from Rare's NES Marble Madness port."
+    },
+    {
+      "from": "zelda",
+      "to": "startropics",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Nintendo's top-down NES action-adventure loop alternating overworld exploration with puzzle dungeons.",
+      "added": "Created a Western-exclusive tropical chapter story featuring jumping dungeon tiles, baseball gear, and a yo-yo.",
+      "src": [
+        {
+          "t": "Wikipedia: StarTropics",
+          "u": "https://en.wikipedia.org/wiki/StarTropics"
+        }
+      ],
+      "extra": "Directed and written by Genyo Takeda of Nintendo R&D3 specifically for Western audiences."
+    },
+    {
+      "from": "super-sprint",
+      "to": "super-cars",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Top-down miniature circuit racing with sharp drifting corners and multi-lap arcade pacing.",
+      "added": "Added prize-money garages for upgrading engines, armor, front missiles, and rear land mines between races.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Cars",
+          "u": "https://en.wikipedia.org/wiki/Super_Cars"
+        }
+      ],
+      "extra": "Developed by Magnetic Fields (Gremlin) before their Lotus racing trilogy."
+    },
+    {
+      "from": "super-cars",
+      "to": "micro-machines",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Popularized crisp top-down miniature car racing on 16-bit European home computers.",
+      "added": "Shifted overhead circuits onto pool tables, breakfast counters, and bathtubs with knockout screen-scrolling multiplayer.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Cars",
+          "u": "https://en.wikipedia.org/wiki/Super_Cars"
+        }
+      ],
+      "extra": "Part of the vibrant British top-down racer wave on Amiga, ST, and NES."
+    },
+    {
+      "from": "gauntlet",
+      "to": "alien-breed",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Top-down cooperative maze shooting, key hunting, and relentless enemy swarms through narrow corridors.",
+      "added": "Infused sci-fi horror atmosphere inspired by Alien with computer ammo terminals and claustrophobic lighting.",
+      "src": [
+        {
+          "t": "Wikipedia: Alien Breed",
+          "u": "https://en.wikipedia.org/wiki/Alien_Breed"
+        }
+      ],
+      "extra": "Breakout Amiga hit for Team17, designed by Rico Holmes and produced by Martyn Brown."
+    },
+    {
+      "from": "alien-breed",
+      "to": "project-x",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Team17's high-contrast Amiga sci-fi art direction, heavy synth audio, and upgrade-shop polish.",
+      "added": "Pivoted from top-down corridor horror to a punishing horizontal arcade shoot-'em-up.",
+      "src": [
+        {
+          "t": "Wikipedia: Alien Breed",
+          "u": "https://en.wikipedia.org/wiki/Alien_Breed"
+        }
+      ],
+      "extra": "Cemented Team17's early-1990s reputation as an Amiga action powerhouse."
+    },
+    {
+      "from": "f-15-strike-eagle",
+      "to": "falcon-30",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Modern jet-fighter cockpit combat simulations across multi-mission military campaigns.",
+      "added": "Pushed PC fidelity with real-simulator F-16 aerodynamics, padlock target view, wingman orders, and dynamic wars.",
+      "src": [
+        {
+          "t": "Wikipedia: Falcon 3.0",
+          "u": "https://en.wikipedia.org/wiki/Falcon_3.0"
+        }
+      ],
+      "extra": "Designed by Gilman Louie and Les Watts at Sphere for Spectrum HoloByte."
+    },
+    {
+      "from": "flight-simulator",
+      "to": "falcon-30",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized realistic 3D cockpit instrument flying and aerodynamic modeling on personal computers.",
+      "added": "Applied math-coprocessor flight physics to F-16 radar avionics, air-to-air missiles, and dynamic war theaters.",
+      "src": [
+        {
+          "t": "Wikipedia: Falcon 3.0",
+          "u": "https://en.wikipedia.org/wiki/Falcon_3.0"
+        }
+      ],
+      "extra": "Falcon 3.0 set a new 1990s high-water mark for civilian-PC military flight realism."
+    },
+    {
+      "from": "stunt-car-racer",
+      "to": "formula-one-grand-prix",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Geoff Crammond's custom 3D polygonal vehicle physics and smooth home-computer frame rates.",
+      "added": "Delivered a realistic 16-track Formula One season with cornering telemetry, racing lines, and optional driving aids.",
+      "src": [
+        {
+          "t": "Wikipedia: Formula One Grand Prix (video game)",
+          "u": "https://en.wikipedia.org/wiki/Formula_One_Grand_Prix_(video_game)"
+        }
+      ],
+      "extra": "Known as World Circuit in North America; set the benchmark for 1990s PC sim racing."
+    },
+    {
+      "from": "formula-one-grand-prix",
+      "to": "grand-prix-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Geoff Crammond's rigorous Formula One handling model, millisecond timing, and scalable driving aids.",
+      "added": "Added official 1994 FIA licensing, texture-mapped 3D circuits, engine and gearbox failures, and active modding.",
+      "src": [
+        {
+          "t": "Wikipedia: Grand Prix 2",
+          "u": "https://en.wikipedia.org/wiki/Grand_Prix_2"
+        }
+      ],
+      "extra": "Geoff Crammond's DOS sequel became a pillar of PC sim-racing communities."
+    },
+    {
+      "from": "cadaver",
+      "to": "gods",
+      "tier": "team",
+      "rel": "variant",
+      "took": "The Bitmap Brothers' shaded metallic Amiga pixel art, lever puzzles, and compact inventory management.",
+      "added": "Shifted to side-scrolling mythic Hercules platforming featuring adaptive AI that rewards skilled play with secret rooms.",
+      "src": [
+        {
+          "t": "Wikipedia: Gods (video game)",
+          "u": "https://en.wikipedia.org/wiki/Gods_(video_game)"
+        }
+      ],
+      "extra": "Designed by Eric Matthews and Steve Tall with a Nation 12 soundtrack."
+    },
+    {
+      "from": "populous",
+      "to": "populous-ii-trials-of-the-olympian-gods",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Bullfrog's isometric land-raising god game pitting rival tribes of worshipers across islands.",
+      "added": "Expanded from eight powers to thirty Greek-myth elemental miracles, wandering heroes, and earned skill points.",
+      "src": [
+        {
+          "t": "Wikipedia: Populous II: Trials of the Olympian Gods",
+          "u": "https://en.wikipedia.org/wiki/Populous_II:_Trials_of_the_Olympian_Gods"
+        }
+      ],
+      "extra": "Designed by Peter Molyneux and Glenn Corpes at Bullfrog Productions."
+    },
+    {
+      "from": "ghouls-n-ghosts",
+      "to": "super-ghouls-n-ghosts",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sir Arthur's two-hit armor loop, treasure-chest weapons, and unforgiving gothic action stages.",
+      "added": "Introduced Arthur's signature mid-air double jump, magic-charging gold armor, and SNES Mode 7 rotating chambers.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Ghouls 'n Ghosts",
+          "u": "https://en.wikipedia.org/wiki/Super_Ghouls_%27n_Ghosts"
+        }
+      ],
+      "extra": "Directed by Tatsuya Minami and produced by Tokuro Fujiwara as the series' first console-native entry."
+    },
+    {
+      "from": "rogue",
+      "to": "toejam-and-earl",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Procedurally generated floors, hidden passages, and unidentified items you risk opening to learn their effects.",
+      "added": "Reimagined dungeon crawling as a split-screen funky Genesis co-op hunt for spaceship pieces.",
+      "src": [
+        {
+          "t": "Greg Johnson interview, Mega Visions, Mar 2019",
+          "u": "https://www.megavisions.net/a-conversation-with-toejam-earl-co-creator-greg-johnson/"
+        },
+        {
+          "t": "Wikipedia: ToeJam & Earl",
+          "u": "https://en.wikipedia.org/wiki/ToeJam_%26_Earl"
+        }
+      ],
+      "extra": "Greg Johnson played mainframe Rogue until 4 a.m. in college and built ToeJam & Earl on its loops."
+    },
+    {
+      "from": "ghosts-n-goblins",
+      "to": "toki",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Deliberate, one-hit-kill arcade side-scrolling pacing where enemy timing matters more than speed.",
+      "added": "Turned a cursed warrior into a slow-moving ape spitting upgradeable fireballs, helmets, and jumping boots.",
+      "src": [
+        {
+          "t": "Wikipedia: Toki (video game)",
+          "u": "https://en.wikipedia.org/wiki/Toki_(video_game)"
+        }
+      ],
+      "extra": "Developed by TAD Corporation (former Data East staff) in 1989 arcades before widespread 1991 home ports."
+    },
+    {
+      "from": "choplifter",
+      "to": "desert-strike-return-to-the-gulf",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Piloting a combat helicopter behind enemy lines to destroy threats and airlift stranded hostages.",
+      "added": "Expanded rescues into open isometric Gulf campaigns juggling finite fuel, ammo, armor, and multi-stage targets.",
+      "src": [
+        {
+          "t": "Wikipedia: Desert Strike",
+          "u": "https://en.wikipedia.org/wiki/Desert_Strike"
+        }
+      ],
+      "extra": "EA founder Trip Hawkins specifically suggested Mike Posehn build a game inspired by Apple II Choplifter."
+    },
+    {
+      "from": "contra",
+      "to": "super-star-wars",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Relentless side-scrolling run-and-gun blasting, weapon power-ups, and multi-directional aiming.",
+      "added": "Adapted A New Hope with three playable heroes, lightsaber swings, and Mode 7 landspeeder and X-Wing stages.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Star Wars",
+          "u": "https://en.wikipedia.org/wiki/Super_Star_Wars"
+        }
+      ],
+      "extra": "Built by Sculptured Software and LucasArts with John Williams's score arranged for the SNES sound chip."
+    },
+    {
+      "from": "rc-pro-am",
+      "to": "rock-n-roll-racing",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Isometric four-car combat racing with missile pickups and cash-bought engine and tire upgrades.",
+      "added": "Added sloped alien tracks, licensed classic rock arrangements, and enthusiastic race announcer Larry Huffman.",
+      "src": [
+        {
+          "t": "Wikipedia: Rock n' Roll Racing",
+          "u": "https://en.wikipedia.org/wiki/Rock_n%27_Roll_Racing"
+        }
+      ],
+      "extra": "Developed by Silicon & Synapse right before the studio renamed itself Blizzard Entertainment."
+    },
+    {
+      "from": "bomberman",
+      "to": "super-bomberman",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Grid-maze block blasting, chain-reaction bomb blasts, and flame-range power-ups.",
+      "added": "Bundled with the SNES Multitap, making four-player couch battle arenas and sudden-death closing walls a staple.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Bomberman",
+          "u": "https://en.wikipedia.org/wiki/Super_Bomberman"
+        }
+      ],
+      "extra": "Published by Hudson Soft and developed by Produce! in 1993."
+    },
+    {
+      "from": "kings-quest",
+      "to": "the-7th-guest",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Popularized graphical PC storytelling structured around exploring rooms and solving thematic puzzles.",
+      "added": "Replaced text parsers with pre-rendered 3D mansion walk-throughs, 21 logic puzzles, and streamed CD-ROM actors.",
+      "src": [
+        {
+          "t": "Wikipedia: The 7th Guest",
+          "u": "https://en.wikipedia.org/wiki/The_7th_Guest"
+        }
+      ],
+      "extra": "Built by Rob Landeros and Graeme Devine at Trilobyte, driving early PC CD-ROM adoption alongside Myst."
+    },
+    {
+      "from": "the-7th-guest",
+      "to": "phantasmagoria",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "CD-ROM haunted-mansion horror combining pre-rendered interiors with filmed live-action actors.",
+      "added": "Shifted from abstract board puzzles to a seven-CD cinematic psychological thriller directed by Roberta Williams.",
+      "src": [
+        {
+          "t": "Wikipedia: The 7th Guest",
+          "u": "https://en.wikipedia.org/wiki/The_7th_Guest"
+        }
+      ],
+      "extra": "Part of the mid-1990s CD-ROM full-motion-video horror wave."
+    },
+    {
+      "from": "gauntlet",
+      "to": "zombies-ate-my-neighbors",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Popularized top-down two-player maze shooting against relentless swarms of varied monsters.",
+      "added": "Traded dark fantasy dungeons for B-movie suburbia rescues armed with squirt guns, silverware, and weedwackers.",
+      "src": [
+        {
+          "t": "Wikipedia: Zombies Ate My Neighbors",
+          "u": "https://en.wikipedia.org/wiki/Zombies_Ate_My_Neighbors"
+        }
+      ],
+      "extra": "Designed by Mike Ebert at LucasArts with music by Joe McDermott and George Sanger."
+    },
+    {
+      "from": "donkey-kong",
+      "to": "donkey-kong-1994",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "The four 1981 arcade stages where Mario climbs girders and dodges barrels to rescue Pauline.",
+      "added": "Unfolded into 97 acrobatic Game Boy key-and-switch puzzle levels with handstands, backflips, and bridge blocks.",
+      "src": [
+        {
+          "t": "Wikipedia: Donkey Kong (1994 video game)",
+          "u": "https://en.wikipedia.org/wiki/Donkey_Kong_(1994_video_game)"
+        },
+        {
+          "t": "VG247, Daily Classic: Donkey Kong's Game Boy Reinvention, Feb 2014",
+          "u": "https://www.vg247.com/daily-classic-donkey-kongs-unlikely-game-boy-reinvention"
+        }
+      ],
+      "extra": "Produced by Shigeru Miyamoto; laid the puzzle-platformer blueprint for Mario vs. Donkey Kong."
+    },
+    {
+      "from": "civilization",
+      "to": "sid-meiers-colonization",
+      "tier": "team",
+      "rel": "variant",
+      "took": "MicroProse's tile-grid world map, turn-based city management, and historical grand-strategy loop.",
+      "added": "Focused tightly on New World colonies with raw-to-finished trade chains, specialist citizens, and an independence war.",
+      "src": [
+        {
+          "t": "Wikipedia: Sid Meier's Colonization",
+          "u": "https://en.wikipedia.org/wiki/Sid_Meier%27s_Colonization"
+        }
+      ],
+      "extra": "Co-designed by Brian Reynolds and Sid Meier at MicroProse."
+    },
+    {
+      "from": "virtua-fighter",
+      "to": "virtua-fighter-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Yu Suzuki's three-button punch-kick-guard 3D martial arts duels and ring-out arenas.",
+      "added": "Moved onto Sega Model 2 hardware with texture-mapped fighters, motion-captured animations, and 60 fps fluidity.",
+      "src": [
+        {
+          "t": "Wikipedia: Virtua Fighter 2",
+          "u": "https://en.wikipedia.org/wiki/Virtua_Fighter_2"
+        }
+      ],
+      "extra": "Added drunken-fist master Shun Di and praying-mantis fighter Lion Rafale."
+    },
+    {
+      "from": "streets-of-rage-2",
+      "to": "comix-zone",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Hard-hitting Sega Genesis side-scrolling combo brawling and urban enemy waves.",
+      "added": "Staged fights directly inside comic-book panels where Sketch Turner rips paper planes and puzzles across gutters.",
+      "src": [
+        {
+          "t": "Wikipedia: Comix Zone",
+          "u": "https://en.wikipedia.org/wiki/Comix_Zone"
+        },
+        {
+          "t": "Sega-16, Developer's Den: Sega Technical Institute, Jun 2007",
+          "u": "https://www.sega-16.com/2007/06/developers-den-sega-technical-institute/"
+        }
+      ],
+      "extra": "Conceived by Peter Morawiec at Sega Technical Institute."
+    },
+    {
+      "from": "doom",
+      "to": "descent",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Fast first-person corridor combat, colored key hunts, shareware distribution, and moddable archive files.",
+      "added": "Replaced 2.5D flat planes with true polygonal 3D mines, full six-degrees-of-freedom flight, and reactor escapes.",
+      "src": [
+        {
+          "t": "Wikipedia: Descent (video game)",
+          "u": "https://en.wikipedia.org/wiki/Descent_(video_game)"
+        },
+        {
+          "t": "Game Informer, The Secret History of Volition, Mar 2011",
+          "u": "https://www.gameinformer.com/b/features/archive/2011/03/30/the-secret-history-of-volition.aspx"
+        }
+      ],
+      "extra": "Directed by Parallax Software co-founders Mike Kulas and Matt Toschlog."
+    },
+    {
+      "from": "descent",
+      "to": "descent-freespace-the-great-war",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Parallax Software's 3D cockpit engineering, smooth polygonal rendering, and mission-focused combat feel.",
+      "added": "Left claustrophobic zero-G mines for vast fleet-scale space wars with power routing and subsystem targeting.",
+      "src": [
+        {
+          "t": "Wikipedia: Descent: FreeSpace – The Great War",
+          "u": "https://en.wikipedia.org/wiki/Descent:_FreeSpace_%E2%80%93_The_Great_War"
+        },
+        {
+          "t": "Game Informer, The Secret History of Volition, Mar 2011",
+          "u": "https://www.gameinformer.com/b/features/archive/2011/03/30/the-secret-history-of-volition.aspx"
+        }
+      ],
+      "extra": "Built by Volition after Parallax Software split into Volition and Outrage Entertainment."
+    },
+    {
+      "from": "space-harrier",
+      "to": "panzer-dragoon",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Sega's forward-moving rail shooter structure dodging hazards and blasting incoming aerial formations.",
+      "added": "Added 3D Saturn dragon flight, 360-degree camera rotation, multi-target homing lasers, and a Moebius-inspired world.",
+      "src": [
+        {
+          "t": "Game Developer, The History of Panzer Dragoon, Apr 2008",
+          "u": "https://www.gamedeveloper.com/game-platforms/the-history-of-panzer-dragoon"
+        },
+        {
+          "t": "Wikipedia: Panzer Dragoon (video game)",
+          "u": "https://en.wikipedia.org/wiki/Panzer_Dragoon_(video_game)"
+        }
+      ],
+      "extra": "Directed by Yukio Futatsugi at Sega's Team Andromeda."
+    },
+    {
+      "from": "panzer-dragoon",
+      "to": "panzer-dragoon-saga",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Team Andromeda's post-apocalyptic dragon lore, 360-degree camera awareness, and homing-laser combat.",
+      "added": "Rebuilt the Saturn shooter as a 3D RPG where players orbit enemies across four tactical combat quadrants.",
+      "src": [
+        {
+          "t": "Wikipedia: Panzer Dragoon Saga",
+          "u": "https://en.wikipedia.org/wiki/Panzer_Dragoon_Saga"
+        }
+      ],
+      "extra": "Directed by Yukio Futatsugi with on-the-fly dragon stat morphing."
+    },
+    {
+      "from": "illusion-of-gaia",
+      "to": "terranigma",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Quintet's top-down SNES action-RPG structure, Mode 7 overworld travel, and cosmic rebirth storytelling.",
+      "added": "Accelerated spear combat with dashing and jumping attacks as Ark resurrects continents, ecosystems, and civilization.",
+      "src": [
+        {
+          "t": "Wikipedia: Terranigma",
+          "u": "https://en.wikipedia.org/wiki/Terranigma"
+        }
+      ],
+      "extra": "Directed by Tomoyoshi Miyazaki as the climax of Quintet's unofficial Heaven and Earth trilogy."
+    },
+    {
+      "from": "beneath-a-steel-sky",
+      "to": "broken-sword",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Revolution Software's Virtual Theatre engine with independent wandering NPCs and clean context-sensitive mouse controls.",
+      "added": "Upgraded to hand-drawn animated cinema visuals for a globe-trotting Knights Templar thriller in Paris.",
+      "src": [
+        {
+          "t": "Wikipedia: Broken Sword: The Shadow of the Templars",
+          "u": "https://en.wikipedia.org/wiki/Broken_Sword:_The_Shadow_of_the_Templars"
+        },
+        {
+          "t": "GamesIndustry.biz, Can you solve the mystery of the Broken Sword?, Nov 2005",
+          "u": "https://www.gamesindustry.biz/can-you-solve-the-mystery-of-the-broken-sword"
+        }
+      ],
+      "extra": "Directed by Charles Cecil with animation led by former Don Bluth artists."
+    },
+    {
+      "from": "the-secret-of-monkey-island",
+      "to": "broken-sword",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized witty, fair point-and-click adventures centered on conversation trees and logical inventory puzzles.",
+      "added": "Replaced text verb lists with direct context-sensitive clicking and hand-animated European conspiracy storytelling.",
+      "src": [
+        {
+          "t": "Wikipedia: Broken Sword: The Shadow of the Templars",
+          "u": "https://en.wikipedia.org/wiki/Broken_Sword:_The_Shadow_of_the_Templars"
+        }
+      ],
+      "extra": "Helped keep 2D point-and-click adventures thriving across PC and PlayStation in the mid-1990s."
+    },
+    {
+      "from": "kirbys-adventure",
+      "to": "kirby-super-star",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Kirby's floating platform traversal and inhaling enemies to copy their signature powers.",
+      "added": "Expanded each copy ability into multi-move directional arsenals, co-op Helpers, and seven distinct anthology modes.",
+      "src": [
+        {
+          "t": "Masahiro Sakurai, Kirby Super Star SNES Classic Interview, Nintendo, Oct 2017",
+          "u": "https://www.nintendo.com/super-nes-classic/interview-kirby/"
+        },
+        {
+          "t": "Wikipedia: Kirby Super Star",
+          "u": "https://en.wikipedia.org/wiki/Kirby_Super_Star"
+        }
+      ],
+      "extra": "Directed by Masahiro Sakurai and produced by Satoru Iwata at HAL Laboratory."
+    },
+    {
+      "from": "kirby-super-star",
+      "to": "super-smash-bros",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Masahiro Sakurai's accessible directional fighting-style movesets, crisp menus, and boss choreography at HAL Laboratory.",
+      "added": "Turned single-button plus direction combat into a four-player Nintendo crossover platform fighter.",
+      "src": [
+        {
+          "t": "Masahiro Sakurai, Kirby Super Star SNES Classic Interview, Nintendo, Oct 2017",
+          "u": "https://www.nintendo.com/super-nes-classic/interview-kirby/"
+        },
+        {
+          "t": "Wikipedia: Kirby Super Star",
+          "u": "https://en.wikipedia.org/wiki/Kirby_Super_Star"
+        }
+      ],
+      "extra": "Sakurai pivoted straight from Kirby Super Star into prototyping Super Smash Bros. at HAL."
+    },
+    {
+      "from": "wipeout",
+      "to": "wipeout-2097",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Psygnosis's futuristic airbrake anti-gravity racing, weapon pads, and club-culture graphic design.",
+      "added": "Smoothed wall-scraping physics, added ship destruction, pit-lane shields, and licensed Prodigy and Chemical Brothers tracks.",
+      "src": [
+        {
+          "t": "Wikipedia: Wipeout 2097",
+          "u": "https://en.wikipedia.org/wiki/Wipeout_2097"
+        }
+      ],
+      "extra": "Released as Wipeout XL in North America; grew out of a planned track add-on."
+    },
+    {
+      "from": "command-conquer",
+      "to": "blade-runner",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Westwood Studios' high-production PC storytelling, atmospheric audio, and custom software-rendering craft.",
+      "added": "Built a real-time voxel detective adventure with autonomous NPCs, ESPER photo scanning, and randomized replicants.",
+      "src": [
+        {
+          "t": "Wikipedia: Blade Runner (1997 video game)",
+          "u": "https://en.wikipedia.org/wiki/Blade_Runner_(1997_video_game)"
+        }
+      ],
+      "extra": "Executive-produced and coded by Westwood co-founder Louis Castle with composer Frank Klepacki."
+    },
+    {
+      "from": "the-secret-of-monkey-island",
+      "to": "blade-runner",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Popularized mouse-driven point-and-click adventures centered on dialogue, clues, and atmospheric storytelling.",
+      "added": "Dropped verb bars for a live real-time noir world, Voight-Kampff empathy tests, and thirteen branching endings.",
+      "src": [
+        {
+          "t": "Wikipedia: Blade Runner (1997 video game)",
+          "u": "https://en.wikipedia.org/wiki/Blade_Runner_(1997_video_game)"
+        }
+      ],
+      "extra": "Told an original parallel 'sidequel' intersecting Ridley Scott's 1982 film."
+    },
+    {
+      "from": "duke-nukem-3d",
+      "to": "blood",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Ken Silverman's Build engine, interactive room-over-room geometry, and wisecracking first-person gunplay.",
+      "added": "Added voxel props, real-time shadows, dynamite bundles, pitchforks, and macabre gothic-horror camp.",
+      "src": [
+        {
+          "t": "Wikipedia: Blood (video game)",
+          "u": "https://en.wikipedia.org/wiki/Blood_(video_game)"
+        }
+      ],
+      "extra": "Started under 3D Realms before Monolith Productions acquired the rights and shipped it in 1997."
+    },
+    {
+      "from": "blood",
+      "to": "dusk",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Cultist backwoods horror atmosphere, occult shotgun-and-pitchfork arsenals, and brisk 1990s shooter pacing.",
+      "added": "Combined Build-engine folk-horror vibes with Quake's bunny-hopping speed and acrobatic 3D verticality.",
+      "src": [
+        {
+          "t": "Wikipedia: Blood (video game)",
+          "u": "https://en.wikipedia.org/wiki/Blood_(video_game)"
+        }
+      ],
+      "extra": "Blood became a touchstone of the late-2010s retro 'boomer shooter' revival."
+    },
+    {
+      "from": "samurai-shodown",
+      "to": "bushido-blade",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "High-tension Japanese sword duels where spacing, feints, and single clean slashes outweigh combos.",
+      "added": "Removed health bars, timers, and arena walls in favor of limb injuries, stances, and one-hit kills.",
+      "src": [
+        {
+          "t": "Wikipedia: Bushido Blade (video game)",
+          "u": "https://en.wikipedia.org/wiki/Bushido_Blade_(video_game)"
+        }
+      ],
+      "extra": "Directed by Kunihiko Nakata at Lightweight as a 'swordsmanship simulator' for PlayStation."
+    },
+    {
+      "from": "virtua-cop",
+      "to": "the-house-of-the-dead",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Sega's Model 2 3D polygon light-gun rail shooting, off-screen reloads, and hostage rescues.",
+      "added": "Swapped static gunmen for charging undead hordes, destructible limbs, boss weak points, and branching routes.",
+      "src": [
+        {
+          "t": "Wikipedia: The House of the Dead (video game)",
+          "u": "https://en.wikipedia.org/wiki/The_House_of_the_Dead_(video_game)"
+        }
+      ],
+      "extra": "Directed by Takashi Oda at Sega AM1; became Japan's top-grossing arcade cabinet of 1998."
+    },
+    {
+      "from": "quake",
+      "to": "turok-dinosaur-hunter",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Full 3D polygonal first-person shooter arenas, vertical architecture, and fast weapon switching.",
+      "added": "Brought console analog-stick FPS navigation, platforming leaps, bows, and hunting dinosaurs to Nintendo 64.",
+      "src": [
+        {
+          "t": "Wikipedia: Turok: Dinosaur Hunter",
+          "u": "https://en.wikipedia.org/wiki/Turok:_Dinosaur_Hunter"
+        }
+      ],
+      "extra": "Designed by David Dienstbier at Iguana Entertainment, arriving months before GoldenEye 007."
+    },
+    {
+      "from": "cannon-fodder",
+      "to": "commandos-behind-enemy-lines",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Top-down mouse-driven control of a small vulnerable war squad across detailed hostile terrain.",
+      "added": "Inverted arcade gunfire into methodical WWII puzzle-stealth built around enemy vision cones and patrol timing.",
+      "src": [
+        {
+          "t": "Wikipedia: Commandos: Behind Enemy Lines",
+          "u": "https://en.wikipedia.org/wiki/Commandos:_Behind_Enemy_Lines"
+        },
+        {
+          "t": "Jon Beltran de Heredia (Pyro Studios) interview, Arcade Attack, Mar 2020",
+          "u": "https://www.arcadeattack.co.uk/jon-beltran-de-heredia/"
+        }
+      ],
+      "extra": "Designed by Gonzalo Suarez and Ignacio Perez Dolset at Madrid's Pyro Studios."
+    },
+    {
+      "from": "the-lost-vikings",
+      "to": "commandos-behind-enemy-lines",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Asymmetric puzzle design requiring distinct non-overlapping character tools to clear each bottleneck.",
+      "added": "Scaled specialist cooperation to six WWII commandos coordinating disguises, lures, sniping, and demolitions.",
+      "src": [
+        {
+          "t": "Wikipedia: Commandos: Behind Enemy Lines",
+          "u": "https://en.wikipedia.org/wiki/Commandos:_Behind_Enemy_Lines"
+        }
+      ],
+      "extra": "Sparked the real-time tactics stealth subgenre later revived by Desperados and Shadow Tactics."
+    },
+    {
+      "from": "metal-gear",
+      "to": "commandos-behind-enemy-lines",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Popularized stealth infiltration built around dodging enemy patrol routes and avoiding lethal alarms.",
+      "added": "Turned solo espionage into real-time isometric six-specialist WWII tactics with visible enemy sight cones.",
+      "src": [
+        {
+          "t": "Wikipedia: Commandos: Behind Enemy Lines",
+          "u": "https://en.wikipedia.org/wiki/Commandos:_Behind_Enemy_Lines"
+        }
+      ],
+      "extra": "Adapted stealth patrol reading into a tabletop-like overhead tactical puzzle."
+    },
+    {
+      "from": "tie-fighter",
+      "to": "descent-freespace-the-great-war",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Energy shunting between shields, engines, and weapons alongside crisp starfighter dogfight and escort missions.",
+      "added": "Added subsystem targeting, directional hull collision physics, and towering Shivan capital ships in an original setting.",
+      "src": [
+        {
+          "t": "Wikipedia: Descent: FreeSpace – The Great War",
+          "u": "https://en.wikipedia.org/wiki/Descent:_FreeSpace_%E2%80%93_The_Great_War"
+        }
+      ],
+      "extra": "Volition cited TIE Fighter and Wing Commander as primary inspirations for FreeSpace's flight model."
+    },
+    {
+      "from": "descent-freespace-the-great-war",
+      "to": "freespace-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Volition's power-shunting space combat engine, wingman orders, and Shivan interstellar conflict.",
+      "added": "Scaled up to colossal capital-ship beam duels, sensor-scrambling nebulae, and an enduring open-source mod engine.",
+      "src": [
+        {
+          "t": "Wikipedia: FreeSpace 2",
+          "u": "https://en.wikipedia.org/wiki/FreeSpace_2"
+        }
+      ],
+      "extra": "Widely regarded as the peak of 1990s PC space-combat simulations."
+    },
+    {
+      "from": "f-zero",
+      "to": "f-zero-x",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Ultra-fast futuristic hovercraft cornering, boost management, and recharge pit strips.",
+      "added": "Trimmed scenery to run 30 racers at 60 fps across twisting 3D pipes, loops, and spin attacks.",
+      "src": [
+        {
+          "t": "Wikipedia: F-Zero X",
+          "u": "https://en.wikipedia.org/wiki/F-Zero_X"
+        }
+      ],
+      "extra": "Directed by Tadashi Sugiyama and produced by Shigeru Miyamoto for Nintendo 64."
+    },
+    {
+      "from": "final-fantasy-vii",
+      "to": "parasite-eve",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "A modified Final Fantasy VII PlayStation engine, Active Time Battle pacing, and cinematic pre-rendered scenes.",
+      "added": "Fused real-time movement dodging and firearm customization with a six-day Manhattan biological horror thriller.",
+      "src": [
+        {
+          "t": "Wikipedia: Parasite Eve (video game)",
+          "u": "https://en.wikipedia.org/wiki/Parasite_Eve_(video_game)"
+        },
+        {
+          "t": "Kotaku, Parasite Eve Had More In Common With Final Fantasy Than Horror Games, Oct 2016",
+          "u": "https://www.kotaku.com.au/2016/10/parasite-eve-had-more-in-common-with-final-fantasy-than-horror-games/"
+        }
+      ],
+      "extra": "Directed by Takashi Tokita and produced by Hironobu Sakaguchi as a 'cinematic RPG'."
+    },
+    {
+      "from": "resident-evil",
+      "to": "parasite-eve",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Pre-rendered urban survival-horror corridors, police-protagonist framing, and mutating biological monsters.",
+      "added": "Replaced tank-control aiming with Active Time Battle domes, RPG leveling, and weapon stat tuning.",
+      "src": [
+        {
+          "t": "Wikipedia: Parasite Eve (video game)",
+          "u": "https://en.wikipedia.org/wiki/Parasite_Eve_(video_game)"
+        }
+      ],
+      "extra": "Sequel to Hideaki Sena's 1995 horror novel, bridging PlayStation JRPGs and survival horror."
+    },
+    {
+      "from": "dig-dug",
+      "to": "mr-driller",
+      "tier": "dev",
+      "rel": "variant",
+      "took": "Namco's subterranean digging premise, crushing boulders, and Dig Dug hero Taizo Hori's lineage.",
+      "added": "Turned underground tunneling into a frantic color-matching puzzle descent racing against falling blocks and oxygen.",
+      "src": [
+        {
+          "t": "Retronauts, Dig Dug & Mr. Driller, Jul 2017",
+          "u": "https://retronauts.com/article/464/how-should-i-play-it-dig-dug-mr-driller"
+        },
+        {
+          "t": "Wikipedia: Mr. Driller",
+          "u": "https://en.wikipedia.org/wiki/Mr._Driller"
+        }
+      ],
+      "extra": "Yasuhito Nagaoka originally drafted the 1998 prototype as Dig Dug 3 before Hideo Yoshizawa reshaped it."
+    },
+    {
+      "from": "star-ocean",
+      "to": "valkyrie-profile",
+      "tier": "team",
+      "rel": "variant",
+      "took": "tri-Ace's fast action-leaning JRPG combat sensibility, voice-acted battles, and multi-ending narrative craft.",
+      "added": "Paired Norse soul-reaping chapters and side-scrolling platform dungeons with four-button combo-juggling turn combat.",
+      "src": [
+        {
+          "t": "Wikipedia: Valkyrie Profile (video game)",
+          "u": "https://en.wikipedia.org/wiki/Valkyrie_Profile_(video_game)"
+        }
+      ],
+      "extra": "Directed by Yoshiharu Gotanda and designed by Masaki Norimoto with Motoi Sakuraba's score."
+    }
+  ]
+}
