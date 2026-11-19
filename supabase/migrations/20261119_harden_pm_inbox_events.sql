@@ -1,0 +1,54 @@
+-- Sprint 2 hardening for pm_inbox & pm_events (idempotent, zero PII)
+-- Apply via Supabase SQL / MCP execute_sql if desired.
+
+-- 1. Harden pm_inbox length & content constraints
+do $$
+begin
+  if to_regclass('public.pm_inbox') is not null then
+    alter table public.pm_inbox enable row level security;
+
+    if not exists (select 1 from pg_constraint where conname = 'pm_inbox_title_len') then
+      alter table public.pm_inbox
+        add constraint pm_inbox_title_len check (char_length(trim(coalesce(title, ''))) between 2 and 200);
+    end if;
+
+    if not exists (select 1 from pg_constraint where conname = 'pm_inbox_details_len') then
+      alter table public.pm_inbox
+        add constraint pm_inbox_details_len check (char_length(coalesce(details, '')) <= 2000);
+    end if;
+
+    if not exists (select 1 from pg_constraint where conname = 'pm_inbox_category_len') then
+      alter table public.pm_inbox
+        add constraint pm_inbox_category_len check (char_length(coalesce(category, '')) <= 120);
+    end if;
+
+    -- Prevent anon SELECT/UPDATE/DELETE; allow INSERT only
+    revoke select, update, delete on public.pm_inbox from anon;
+  end if;
+end $$;
+
+-- 2. Harden pm_events constraints (strict allowlist of event names, zero birth year / PII)
+do $$
+begin
+  if to_regclass('public.pm_events') is not null then
+    alter table public.pm_events enable row level security;
+
+    if not exists (select 1 from pg_constraint where conname = 'pm_events_event_allowlist') then
+      alter table public.pm_events
+        add constraint pm_events_event_allowlist check (
+          event in (
+            'visit','view','timeline_started','share_link','export_png',
+            'video_play','trivia_streak','roots_complete','steam_import',
+            'friend_match','credits_roll'
+          )
+        );
+    end if;
+
+    if not exists (select 1 from pg_constraint where conname = 'pm_events_section_len') then
+      alter table public.pm_events
+        add constraint pm_events_section_len check (char_length(coalesce(section, '')) <= 48);
+    end if;
+
+    revoke select, update, delete on public.pm_events from anon;
+  end if;
+end $$;

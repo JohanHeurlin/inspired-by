@@ -1,4 +1,4 @@
-Built 2026-11-19 00:20  ->  dist\inspired-by.html (2365 KB, data 1823 KB)
+Built 2026-11-19 01:33  ->  dist\index.html (11.3 KB shell) + app.54cb16bb94.css (92.1 KB) + app.61c7a235c2.js (545.5 KB) + data.1111828a4d.json (1917 KB)  |  standalone dist\inspired-by.html (2555 KB)
 Agent files: 78  |  games: 4251 (in family tree: 2062, in catalog: 3777, new from agents: 3400)
 Links: 2834  |  
 dev=798 team=583 series=727 critic=446 mech=248 disp=32
@@ -143,3 +143,4 @@ pair conflict: dikumud>everquest kept dev over critic [wrpg-5.json vs roots-2.js
 pair conflict: dikumud>ultima-online kept dev over critic [roots-2.json vs wrpg-5.json]
 pair conflict: everquest>world-of-warcraft kept dev over critic [wrpg-5.json vs roots-2.json]
 pair conflict: frontier-elite-ii>elite-dangerous kept series over series [wrpg-5.json vs openworld-4.json]
+recycled old asset: app.881c458e28.js

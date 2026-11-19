@@ -336,6 +336,64 @@ public static class GraphTools {
     }
     return res;
   }
+
+  public static int[] BestRootLinks(int n, int[] years, int[] pops, int[] laneMask, int[] genreBits, int[] primGen, string[] studios, int[] from, int[] to, double[] tierW, int[] skip) {
+    var upLinks = new List<int>[n];
+    for (int i = 0; i < n; i++) upLinks[i] = new List<int>();
+    for (int i = 0; i < from.Length; i++) {
+      if (skip[i] != 0) continue;
+      upLinks[to[i]].Add(i);
+    }
+    var minY = new int[n];
+    var done = new bool[n];
+    var visiting = new bool[n];
+    System.Func<int, int> reach = null;
+    reach = (int v) => {
+      if (done[v]) return minY[v];
+      if (visiting[v]) return years[v];
+      visiting[v] = true;
+      int m = years[v];
+      var ul = upLinks[v];
+      for (int k = 0; k < ul.Count; k++) {
+        int r = reach(from[ul[k]]);
+        if (r < m) m = r;
+      }
+      visiting[v] = false;
+      done[v] = true;
+      minY[v] = m;
+      return m;
+    };
+    var best = new int[n];
+    for (int v = 0; v < n; v++) {
+      best[v] = -1;
+      var ul = upLinks[v];
+      if (ul.Count == 0) continue;
+      double bs = -1e9;
+      int fv = laneMask[v];
+      int gvBits = genreBits[v];
+      int pv0 = primGen[v];
+      string sv = studios[v];
+      for (int k = 0; k < ul.Count; k++) {
+        int li = ul[k];
+        int p = from[li];
+        if (p == v) continue;
+        int fp = laneMask[p];
+        int gpBits = genreBits[p];
+        double aff = (gpBits == 0 || (fp & fv) != 0) ? 1.0 : ((fp & 1) != 0 ? 0.7 : 0.25);
+        double prim = 0.0;
+        if (primGen[p] >= 0 && pv0 >= 0) {
+          if (primGen[p] == pv0) prim = 0.6;
+          else if ((gvBits & (1 << primGen[p])) != 0 || (gpBits & (1 << pv0)) != 0) prim = 0.25;
+        }
+        double same = (sv.Length > 0 && studios[p] == sv) ? 0.5 : 0.0;
+        double span = (years[v] - reach(p)) / 10.0;
+        if (span > 6.0) span = 6.0;
+        double sc = tierW[li] * aff + 0.25 * span + prim + same + 0.05 * pops[p];
+        if (sc > bs) { bs = sc; best[v] = li; }
+      }
+    }
+    return best;
+  }
 }
 "@
 $gi = @{}; for ($i = 0; $i -lt $games.Count; $i++) { $gi[$games[$i].id] = $i }
@@ -346,6 +404,38 @@ $sa = [int[]]($links | ForEach-Object { if ($_.tier -eq 'series') { 1 } else { 0
 $ska = [int[]]($links | ForEach-Object { if ($_.tier -eq 'disp' -or $minorBuild.ContainsKey("$($_.from.id)>$($_.to.id)")) { 1 } else { 0 } })
 $reach = [GraphTools]::CrossReach($games.Count, $fa, $ta, $sa, $ska)
 for ($i = 0; $i -lt $games.Count; $i++) { $games[$i].inf = $reach[$i] }
+
+# Precompute default rootsChain best-parent link index per game (matching client lane & tier weights)
+$laneMap = @{
+  'roots'=0; 'arcade'=1; 'shmup'=1; 'platformer'=2; 'metroidvania'=2;
+  'action-adventure'=3; 'open-world'=3; 'fps'=4; 'shooter'=4; 'battle-royale'=4;
+  'immersive-sim'=5; 'horror'=5; 'rpg'=6; 'jrpg'=6; 'arpg'=6; 'mmo'=6;
+  'roguelike'=7; 'strategy'=8; 'moba'=8; 'sim'=9; 'survival'=9;
+  'adventure'=10; 'puzzle'=10; 'fighting'=11; 'beat-em-up'=11;
+  'racing'=12; 'sports'=12; 'party'=13; 'card'=13; 'space'=14
+}
+$rootWeightMap = @{ dev=3.0; team=2.5; critic=2.0; mech=1.4; series=0.9; disp=0.0 }
+$yearsArr = [int[]]($games | ForEach-Object { [int]$_.year })
+$popsArr = [int[]]($games | ForEach-Object { [int]$_.pop })
+$laneMaskArr = New-Object int[] $games.Count
+$genreBitsArr = New-Object int[] $games.Count
+$primGenArr = New-Object int[] $games.Count
+$studiosArr = New-Object string[] $games.Count
+for ($i = 0; $i -lt $games.Count; $i++) {
+  $gm = $games[$i]
+  $lm = 0; $gb = 0
+  foreach ($gk in $gm.genres) {
+    if ($laneMap.ContainsKey($gk)) { $lm = $lm -bor (1 -shl $laneMap[$gk]) }
+    if ($genreIdx.ContainsKey($gk)) { $gb = $gb -bor (1 -shl [int]$genreIdx[$gk]) }
+  }
+  $laneMaskArr[$i] = $lm
+  $genreBitsArr[$i] = $gb
+  $primGenArr[$i] = if ($gm.genres.Count -gt 0 -and $genreIdx.ContainsKey($gm.genres[0])) { [int]$genreIdx[$gm.genres[0]] } else { -1 }
+  $stName = (($gm.dev -split '\s*(?:/|;|,)\s*')[0]).Trim().ToLowerInvariant()
+  $studiosArr[$i] = $stName
+}
+$tierWArr = [double[]]($links | ForEach-Object { [double]$rootWeightMap[$_.tier] })
+$rootLinks = [GraphTools]::BestRootLinks($games.Count, $yearsArr, $popsArr, $laneMaskArr, $genreBitsArr, $primGenArr, $studiosArr, $fa, $ta, $tierWArr, $ska)
 
 # ---------------- aliases people type ----------------
 $aka = @{
@@ -456,9 +546,39 @@ foreach ($st in $studiosRaw) {
   $stLogo = NormImg (Str (Get $mwStudioLogos $stid))
   [void]$sb.Append('[' + (J $stid) + ',' + (J (Str (Get $st 'name'))) + ',[' + $als + '],' + (J (Str (Get $st 'cc'))) + ',' + $fnd + ',' + $cls + ',' + (J (Str (Get $st 'status'))) + ',' + (J (Str (Get $st 'hq'))) + ',[' + $mks + '],' + (J (Str (Get $st 'bio'))) + ',[' + $dias + '],' + (J $stLogo) + ']')
 }
-[void]$sb.Append('],"culture":' + $cultureJson + ',"mw":' + $mwJson + '}')
+$loreQuizJson = '[]'
+if (Test-Path 'data\lore_quiz.json') {
+  $lqDoc = ReadJson 'data\lore_quiz.json'
+  $loreQuizJson = $ser2.Serialize($lqDoc)
+}
+$rlJson = '[' + ($rootLinks -join ',') + ']'
+[void]$sb.Append('],"culture":' + $cultureJson + ',"mw":' + $mwJson + ',"rl":' + $rlJson + ',"loreQuiz":' + $loreQuizJson + '}')
 $json = $sb.ToString()
 [IO.File]::WriteAllText((Join-Path $root 'dist\data.json'), $json, $utf8)
+
+function Sha10([string]$text) {
+  $sha = [System.Security.Cryptography.SHA256]::Create()
+  try {
+    $hb = $sha.ComputeHash($utf8.GetBytes($text))
+    return ([BitConverter]::ToString($hb).Replace('-', '').ToLowerInvariant()).Substring(0, 10)
+  } finally {
+    $sha.Dispose()
+  }
+}
+Add-Type -AssemblyName Microsoft.VisualBasic
+function RecycleSuperseded([string]$dir, [string]$pattern, [string]$keepName) {
+  foreach ($f in (Get-ChildItem -Path $dir -Filter $pattern -File -ErrorAction SilentlyContinue)) {
+    if ($f.Name -eq $keepName -or $f.Name -eq 'data.json') { continue }
+    [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($f.FullName, 'OnlyErrorDialogs', 'SendToRecycleBin')
+    Note "recycled old asset: $($f.Name)"
+  }
+}
+
+$distDir = Join-Path $root 'dist'
+$dataHash = Sha10 $json
+$dataAsset = "data.$dataHash.json"
+[IO.File]::WriteAllText((Join-Path $distDir $dataAsset), $json, $utf8)
+RecycleSuperseded $distDir 'data.*.json' $dataAsset
 
 $countrySet = @{}; foreach ($g in $games) { if ($g.cc) { $countrySet[$g.cc] = 1 } }
 $countryCount = $countrySet.Count
@@ -468,26 +588,57 @@ $treeCount = $inTreeEarly.Count
 $tpl = [IO.File]::ReadAllText((Join-Path $root 'src\app.html'), [Text.Encoding]::UTF8)
 if ($tpl -notmatch '/\*__DATA__\*/') { throw 'src\app.html has no /*__DATA__*/ placeholder' }
 $tpl = $tpl.Replace('__GAME_COUNT__', $games.Count.ToString('N0')).Replace('__TREE_COUNT__', $treeCount.ToString('N0')).Replace('__LINK_COUNT__', $links.Count.ToString('N0')).Replace('__COUNTRY_COUNT__', $countryCount.ToString('N0'))
+
+# Standalone single-file HTML for local file:// opening (everything inline)
 $html = $tpl.Replace('/*__DATA__*/', $json)
 [IO.File]::WriteAllText((Join-Path $root $Out), $html, $utf8)
-# Standalone web document + installable PWA + Google/AI-search (GEO) structured metadata
+
+# Split web build for playedmade.com: <55 KB instant HTML shell + content-hashed app.<hash>.css, app.<hash>.js, data.<hash>.json
 $SiteUrl = "https://playedmade.com/"
 $todayIso = (Get-Date).ToString("yyyy-MM-dd")
-$jsonLd = '{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"' + $SiteUrl + '#website","url":"' + $SiteUrl + '","name":"Played & Made","alternateName":["Played & Made — Life in Games","Played&Made","Played and Made","Inspired By Video Game Family Tree"],"description":"Build your childhood or dev-career gaming timeline, trace ' + $games.Count + '+ video games back to the 1950s, play game lore trivia, and celebrate the human makers and hardware behind the art.","creator":{"@type":"Person","name":"Johan Heurlin"}},{"@type":"WebApplication","@id":"' + $SiteUrl + '#app","name":"Played & Made — Life in Games","url":"' + $SiteUrl + '","applicationCategory":"GameApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Personal childhood and industry-career video game timeline builder","Interactive video game lineage and family tree (' + $treeCount + ' games in tree, ' + $games.Count + ' catalog games, ' + $links.Count + ' sourced links)","Game Lore, Deep Cuts & Lineage Trivia + 12-wedge Lucky Wheel","The Almanac: Vault, Mods, Mobile craft, Price history (1977-2026), Studios, and ' + $countryCount + '-country World Map","Thank-you postcards and tributes to video game developers and shuttered studios"]},{"@type":"Dataset","@id":"' + $SiteUrl + '#dataset","name":"Played & Made Video Game Lineage, Studio History & Hardware Archive","url":"' + $SiteUrl + '","description":"Curated historical graph of ' + $games.Count + ' video games across ' + $countryCount + ' countries, ' + $links.Count + ' documented inspiration links, ' + $studiosRaw.Count + ' studio diaspora profiles, cancelled and sunsetted games, and 1977-2026 inflation-adjusted launch prices.","creator":{"@type":"Person","name":"Johan Heurlin"},"dateModified":"' + $todayIso + '"}]}'
-$seoMain = '<main id="main"><div class="wrap" style="padding:24px 18px"><h1>Played &amp; Made — Life in Games</h1><p>Build your shareable childhood or game-industry career timeline in two minutes, trace ' + $games.Count + '+ video games and ' + $links.Count + '+ sourced inspiration links from the 1950s to today, test your knowledge in 6-mode Game Lore &amp; Lineage Trivia, explore cancelled masterpieces and sunsetted online worlds in The Almanac (including Dendy, Gizmondo, Atari''s Alamogordo dig, Project Titan, Van Buren, and TecToy Brazil), compare 1977–2026 game prices against inflation, and send thank-you postcards to the human creators behind the art.</p></div></main>'
-$htmlWithSeo = $html.Replace('<main id="main"></main>', $seoMain)
-# Cleanly splice <link>/<style> from src\app.html into <head> (stripping duplicate <title> from body)
-$headExtra = ''
-$bodyPart = $htmlWithSeo
-if ($htmlWithSeo -match '(?s)^\s*(.*?)(<header\b.*)$') {
-  $preHeader = $matches[1]
-  $bodyPart = $matches[2]
-  $headExtra = [regex]::Replace($preHeader, '(?is)<title\b[^>]*>.*?</title>\s*', '')
+$jsonLd = '{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"' + $SiteUrl + '#website","url":"' + $SiteUrl + '","name":"Played & Made","alternateName":["Played & Made — Life in Games","Played&Made","Played and Made","Inspired By Video Game Family Tree"],"description":"Build your childhood or dev-career gaming timeline, trace ' + $games.Count + '+ video games back to the 1950s, play ROOTS daily game history trivia, and celebrate the human makers and hardware behind the art.","creator":{"@type":"Person","name":"Johan Heurlin"}},{"@type":"WebApplication","@id":"' + $SiteUrl + '#app","name":"Played & Made — Life in Games","url":"' + $SiteUrl + '","applicationCategory":"GameApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Personal childhood and industry-career video game timeline builder","Interactive video game lineage and family tree (' + $treeCount + ' games in tree, ' + $games.Count + ' catalog games, ' + $links.Count + ' sourced links)","ROOTS #N 60-second daily game history ritual, 6-mode endless trivia & 12-wedge Lucky Wheel","The Almanac: Vault, Mods, Mobile craft, Price history (1977-2026), Studios, and ' + $countryCount + '-country World Map","Thank-you postcards and tributes to video game developers and shuttered studios"]},{"@type":"Dataset","@id":"' + $SiteUrl + '#dataset","name":"Played & Made Video Game Lineage, Studio History & Hardware Archive","url":"' + $SiteUrl + '","description":"Curated historical graph of ' + $games.Count + ' video games across ' + $countryCount + ' countries, ' + $links.Count + ' documented inspiration links, ' + $studiosRaw.Count + ' studio diaspora profiles, cancelled and sunsetted games, and 1977-2026 inflation-adjusted launch prices.","creator":{"@type":"Person","name":"Johan Heurlin"},"dateModified":"' + $todayIso + '"}]}'
+
+# Extract <style> and main <script> from $tpl cleanly
+$styleMatch = [regex]::Match($tpl, '(?is)<style>\s*(.*?)\s*</style>')
+if (-not $styleMatch.Success) { throw 'src\app.html has no <style> block' }
+$cssText = $styleMatch.Groups[1].Value
+$cssHash = Sha10 $cssText
+$cssAsset = "app.$cssHash.css"
+[IO.File]::WriteAllText((Join-Path $distDir $cssAsset), $cssText, $utf8)
+RecycleSuperseded $distDir 'app.*.css' $cssAsset
+
+$scriptMatch = [regex]::Match($tpl, '(?is)<script id="data" type="application/json">/\*__DATA__\*/</script>\s*<script>\s*(.*?)\s*</script>')
+if (-not $scriptMatch.Success) { throw 'src\app.html has no data+main script block' }
+$jsText = $scriptMatch.Groups[1].Value
+$jsHash = Sha10 $jsText
+$jsAsset = "app.$jsHash.js"
+[IO.File]::WriteAllText((Join-Path $distDir $jsAsset), $jsText, $utf8)
+RecycleSuperseded $distDir 'app.*.js' $jsAsset
+
+# Extract head <link>s (before <style>) and body markup (between </style> and <script id="data">)
+$headLinks = ''
+if ($tpl -match '(?is)^(.*?)<style>') {
+  $headLinks = [regex]::Replace($matches[1], '(?is)<title\b[^>]*>.*?</title>\s*', '').Trim()
 }
-$skelHead = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Played &amp; Made — Life in Games</title><meta name="description" content="Played &amp; Made — Life in Games: build your childhood or dev-career gaming timeline, trace ' + $games.Count + '+ games back to the 1950s, play game lore trivia, explore cancelled &amp; sunsetted worlds, and celebrate the makers behind the art."><link rel="canonical" href="' + $SiteUrl + '"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta name="application-name" content="Played&amp;Made"><meta name="apple-mobile-web-app-title" content="Played&amp;Made"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#EAF0F7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"><meta property="og:site_name" content="Played &amp; Made"><meta property="og:title" content="Played &amp; Made — Life in Games"><meta name="twitter:title" content="Played &amp; Made — Life in Games"><meta property="og:description" content="What worlds raised you growing up, and who built them? Build your shareable gaming timeline in two minutes, play deep-cut lore trivia, and trace 60+ years of game lineage."><meta property="og:type" content="website"><meta property="og:url" content="' + $SiteUrl + '"><meta property="og:image" content="' + $SiteUrl + 'og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="' + $SiteUrl + 'og-card.png"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 17 17%27 shape-rendering=%27crispEdges%27%3E%3Crect width=%2717%27 height=%2717%27 rx=%274%27 fill=%27%231D6AE5%27 shape-rendering=%27geometricPrecision%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 3h3v1h1v1h1V4h1V3h3v1h1v1h1v3h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5v-1H4V9H3V8H2V5h1V4h1z%27/%3E%3Cpath fill=%27%23FF5442%27 d=%27M4 4h3v1h1v1h1V5h1V4h3v1h1v3h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5V9H4V8H3V5h1z%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 5h2v1H5v1H4z%27/%3E%3C/svg%3E"><script type="application/ld+json">' + $jsonLd + '</script><style>:root{color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:calc(3.5rem + env(safe-area-inset-top,0px));scroll-padding-bottom:calc(4.5rem + env(safe-area-inset-bottom,0px))}body{margin:0;padding:0;font:15px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000;overflow-wrap:break-word}img{max-inline-size:100%;block-size:auto}[hidden]:not([hidden=until-found i]){display:none!important}</style>' + $headExtra + '</head><body>'
+$shellMarkup = ''
+if ($tpl -match '(?is)</style>\s*(.*?)\s*<script id="data"') {
+  $shellMarkup = $matches[1].Trim()
+}
+
+# Zero-CLS skeleton matching hero dimensions + full SEO copy for crawlers
+$skelTiles = (1..16 | ForEach-Object { '<div class="sk-tile"><div class="sk-cov"></div><div class="sk-line"></div></div>' }) -join ''
+$seoSkelMain = '<main id="main"><section class="wrap hero-pick sk-hero" aria-busy="true" aria-label="Loading Played &amp; Made"><div class="hero-head"><div style="min-width:0;max-width:68ch"><h1 class="h1" style="margin-bottom:6px">What worlds raised you growing up?</h1><p class="lede" style="margin:0">Build your childhood or game-industry career timeline, trace ' + $games.Count + '+ video games and ' + $links.Count + '+ sourced inspiration links back to the 1950s, and play ROOTS daily game history trivia.</p></div></div><div class="sk-bar"></div><div class="hero-wall sk-wall">' + $skelTiles + '</div></section></main>'
+$shellBody = $shellMarkup.Replace('<main id="main"></main>', $seoSkelMain)
+
+$critCss = ':root{color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--paper:#EAF0F7;--card:#FFFFFF;--ink:#131726;--ink2:#363D50;--line:#D5DCE6;--accent:#1A63D8}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F141C;--card:#171F2C;--ink:#E8ECF6;--ink2:#C6CCDB;--line:#263144;--accent:#8AB4F8}}html{scroll-padding-top:calc(3.5rem + env(safe-area-inset-top,0px));scroll-padding-bottom:calc(4.5rem + env(safe-area-inset-bottom,0px))}body{margin:0;padding:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);overflow-wrap:break-word}img{max-inline-size:100%;block-size:auto}[hidden]:not([hidden=until-found i]){display:none!important}.sk-bar{height:38px;margin:14px 0 12px;border-radius:10px;background:var(--card);border:1px solid var(--line)}.sk-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:12px;min-height:420px}.sk-tile{display:flex;flex-direction:column;gap:6px}.sk-cov{aspect-ratio:3/4;border-radius:9px;background:var(--card);border:1px solid var(--line)}.sk-line{height:12px;width:72%;border-radius:4px;background:var(--line);opacity:.55}@media(prefers-reduced-motion:no-preference){.sk-cov,.sk-bar{animation:skp 1.4s ease-in-out infinite alternate}@keyframes skp{from{opacity:.62}to{opacity:1}}}'
+
+$skelHead = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Played &amp; Made — Life in Games</title><meta name="description" content="Played &amp; Made — Life in Games: build your childhood or dev-career gaming timeline, trace ' + $games.Count + '+ games back to the 1950s, play ROOTS daily game history trivia, explore cancelled &amp; sunsetted worlds, and celebrate the makers behind the art."><link rel="canonical" href="' + $SiteUrl + '"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta name="application-name" content="Played&amp;Made"><meta name="apple-mobile-web-app-title" content="Played&amp;Made"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#EAF0F7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"><meta property="og:site_name" content="Played &amp; Made"><meta property="og:title" content="Played &amp; Made — Life in Games"><meta name="twitter:title" content="Played &amp; Made — Life in Games"><meta property="og:description" content="What worlds raised you growing up, and who built them? Build your shareable gaming timeline in two minutes, play ROOTS daily trivia, and trace 60+ years of game lineage."><meta property="og:type" content="website"><meta property="og:url" content="' + $SiteUrl + '"><meta property="og:image" content="' + $SiteUrl + 'og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="' + $SiteUrl + 'og-card.png"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 17 17%27 shape-rendering=%27crispEdges%27%3E%3Crect width=%2717%27 height=%2717%27 rx=%274%27 fill=%27%231D6AE5%27 shape-rendering=%27geometricPrecision%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 3h3v1h1v1h1V4h1V3h3v1h1v1h1v3h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5v-1H4V9H3V8H2V5h1V4h1z%27/%3E%3Cpath fill=%27%23FF5442%27 d=%27M4 4h3v1h1v1h1V5h1V4h3v1h1v3h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5V9H4V8H3V5h1z%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 5h2v1H5v1H4z%27/%3E%3C/svg%3E"><link rel="preload" href="./' + $dataAsset + '" as="fetch" crossorigin><script type="application/ld+json">' + $jsonLd + '</script><style>' + $critCss + '</style>' + $headLinks + '<link rel="stylesheet" href="./' + $cssAsset + '"></head><body>'
+$bootTag = '<script>window.__PM_DATA_URL__="./' + $dataAsset + '";</script><script defer src="./' + $jsAsset + '"></script>'
 $cfBeacon = '<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=''{"token": "f451905c66ce4b59ae83e05481aa6745"}''></script><!-- End Cloudflare Web Analytics -->'
-$indexDoc = $skelHead + $bodyPart + $cfBeacon + '</body></html>'
-[IO.File]::WriteAllText((Join-Path $root 'dist\index.html'), $indexDoc, $utf8)
+$indexDoc = $skelHead + $shellBody + $bootTag + $cfBeacon + '</body></html>'
+[IO.File]::WriteAllText((Join-Path $distDir 'index.html'), $indexDoc, $utf8)
+$indexBytes = $utf8.GetByteCount($indexDoc)
+if ($indexBytes -ge 55 * 1024) { Note "WARNING: dist\index.html exceeded 55 KB ($indexBytes bytes)" }
 
 $robotsTxt = @"
 User-agent: *
@@ -550,12 +701,10 @@ if (Test-Path $manifestSrc) {
 }
 $swSrc = Join-Path $root 'src\sw.js'
 if (Test-Path $swSrc) {
-  $sha = [System.Security.Cryptography.SHA256]::Create()
-  $hashBytes = $sha.ComputeHash($utf8.GetBytes($indexDoc))
-  $buildHash = ([BitConverter]::ToString($hashBytes).Replace('-', '').ToLowerInvariant()).Substring(0, 10)
-  $sha.Dispose()
+  $buildHash = Sha10 ($indexDoc + "`n" + $cssText + "`n" + $jsText + "`n" + $json)
   $swTpl = [IO.File]::ReadAllText($swSrc, [Text.Encoding]::UTF8)
-  [IO.File]::WriteAllText((Join-Path $root 'dist\sw.js'), $swTpl.Replace('__BUILD_HASH__', $buildHash), $utf8)
+  $swOut = $swTpl.Replace('__BUILD_HASH__', $buildHash).Replace('__DATA_ASSET__', "./$dataAsset").Replace('__CSS_ASSET__', "./$cssAsset").Replace('__JS_ASSET__', "./$jsAsset")
+  [IO.File]::WriteAllText((Join-Path $root 'dist\sw.js'), $swOut, $utf8)
 }
 if (-not (Test-Path (Join-Path $root 'dist\icon-512.png'))) {
   & (Join-Path $PSScriptRoot 'make-pwa-assets.ps1') | Out-Null
@@ -566,7 +715,7 @@ $tierCount = @{}; foreach ($l in $links) { $tierCount[$l.tier] = 1 + [int]$tierC
 $inTree = @{}; foreach ($l in $links) { $inTree[$l.from.id] = 1; $inTree[$l.to.id] = 1 }
 $noGenre = ($games | Where-Object { -not $_.genres.Count }).Count
 $rep = @(
-  "Built $(Get-Date -Format 'yyyy-MM-dd HH:mm')  ->  $Out ($([Math]::Round($html.Length/1KB)) KB, data $([Math]::Round($json.Length/1KB)) KB)",
+  "Built $(Get-Date -Format 'yyyy-MM-dd HH:mm')  ->  dist\index.html ($([Math]::Round($indexBytes/1KB,1)) KB shell) + $cssAsset ($([Math]::Round($utf8.GetByteCount($cssText)/1KB,1)) KB) + $jsAsset ($([Math]::Round($utf8.GetByteCount($jsText)/1KB,1)) KB) + $dataAsset ($([Math]::Round($utf8.GetByteCount($json)/1KB)) KB)  |  standalone $Out ($([Math]::Round($html.Length/1KB)) KB)",
   "Agent files: $($files.Count)  |  games: $($games.Count) (in family tree: $($inTree.Count), in catalog: $(($games | Where-Object { $_.inCat }).Count), new from agents: $agentGameCount)",
   "Links: $($links.Count)  |  " + (($TIERS | ForEach-Object { "$_=$([int]$tierCount[$_])" }) -join ' '),
   "Covers: $coverCount  |  YouTube IDs: $ytCount  |  MobyGames IDs: $mobyCount  |  Studios curated: $($studiosRaw.Count)",
