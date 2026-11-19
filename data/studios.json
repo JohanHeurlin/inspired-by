@@ -2380,6 +2380,231 @@
       ],
       "bio": "Founded in Burbank by Ted Price and brothers Alex and Brian Hastings right next door to longtime friends and engine-sharing neighbors Naughty Dog, building Spyro the Dragon, gadget platformer Ratchet & Clank, Resistance, Sunset Overdrive and Marvel's Spider-Man across three decades before joining PlayStation Studios in 2019.",
       "diaspora": []
+    },
+    {
+      "id": "king",
+      "name": "King",
+      "aliases": [
+        "King.com",
+        "King Digital Entertainment",
+        "Midasplayer"
+      ],
+      "cc": "SE",
+      "founded": 2003,
+      "status": "active",
+      "hq": "Stockholm & London",
+      "makers": [
+        "Riccardo Zacconi",
+        "Sebastian Knutsson",
+        "Tommy Palm",
+        "Lars Markgren",
+        "Patrik Stymne"
+      ],
+      "bio": "Founded in Stockholm in 2003 as browser skill-portal Midasplayer before pivoting to touchscreens—turning Candy Crush Saga's tactile, hand-tuned puzzle boards into a daily ritual for hundreds of millions of commuters, parents, and grandparents worldwide.",
+      "diaspora": [
+        {
+          "studio": "Resolution Games",
+          "note": "Candy Crush 'Games Guru' Tommy Palm founded Stockholm VR/XR pioneer Resolution Games (Demeo, Blaston)."
+        }
+      ]
+    },
+    {
+      "id": "supercell",
+      "name": "Supercell",
+      "aliases": [
+        "Supercell Oy"
+      ],
+      "cc": "FI",
+      "founded": 2010,
+      "status": "active",
+      "hq": "Helsinki, Finland",
+      "makers": [
+        "Ilkka Paananen",
+        "Mikko Kodisoja",
+        "Lassi Leppinen",
+        "Jonathan Dower"
+      ],
+      "bio": "Built around tiny, autonomous 'cells' where 6-to-12-person teams make calls without bureaucracy—famously popping champagne when killing prototypes that fall short of decades-long play so Clash of Clans, Hay Day, Clash Royale, and Brawl Stars could thrive.",
+      "diaspora": [
+        {
+          "studio": "Metacore",
+          "note": "Helsinki neighbor backed by Supercell carrying forward craft-focused mobile puzzle narratives (Merge Mansion)."
+        }
+      ]
+    },
+    {
+      "id": "rovio-entertainment",
+      "name": "Rovio Entertainment",
+      "aliases": [
+        "Rovio",
+        "Rovio Mobile",
+        "Relude"
+      ],
+      "cc": "FI",
+      "founded": 2003,
+      "status": "absorbed",
+      "closed": 2023,
+      "hq": "Espoo, Finland (joined Sega 2023)",
+      "makers": [
+        "Niklas Hed",
+        "Jaakko Iisalo",
+        "Jarno Väkeväinen",
+        "Kim Dikert",
+        "Peter Vesterbacka"
+      ],
+      "bio": "Built 51 modest mobile Java/smartphone games on the brink of bankruptcy before game #52—Jaakko Iisalo's pitch of grumpy round birds slung via capacitive touch physics—made Angry Birds smartphone gaming's first global household phenomenon.",
+      "diaspora": []
+    },
+    {
+      "id": "popcap-games",
+      "name": "PopCap Games",
+      "aliases": [
+        "PopCap",
+        "Sexy Action Cool"
+      ],
+      "cc": "US",
+      "founded": 2000,
+      "status": "absorbed",
+      "closed": 2011,
+      "hq": "Seattle, Washington (joined EA 2011)",
+      "makers": [
+        "John Vechey",
+        "Brian Fiete",
+        "Jason Kapalka",
+        "George Fan",
+        "Laura Shigihara",
+        "Tod Semple"
+      ],
+      "bio": "Proved 'casual' never meant shallow craft: obsessed over tactile audiovisual juice in Bejeweled, Peggle's Ode to Joy crescendos, and George Fan's Plants vs. Zombies—bridging desktop browsers and the early iPhone era.",
+      "diaspora": [
+        {
+          "studio": "All Yes Good",
+          "note": "Plants vs. Zombies creator George Fan returned to quirky solo/small-team indie design (Octogeddon, Hard Hat Mack tributes)."
+        }
+      ]
+    },
+    {
+      "id": "ustwo-games",
+      "name": "ustwo games",
+      "aliases": [
+        "ustwo"
+      ],
+      "cc": "GB",
+      "founded": 2014,
+      "status": "active",
+      "hq": "London, UK",
+      "makers": [
+        "Ken Wong",
+        "Neil McFarland",
+        "Dan Gray",
+        "Stafford Bawler"
+      ],
+      "bio": "Spun out of a London digital design studio to craft Monument Valley, Alba: A Wildlife Adventure, and Assemble with Care—treating phone touchscreens like tactile Escher puzzle boxes and intimate hand-illustrated picture books.",
+      "diaspora": [
+        {
+          "studio": "Mountains",
+          "note": "Monument Valley lead designer Ken Wong returned to Melbourne to craft interactive mobile novella Florence (2018)."
+        }
+      ]
+    },
+    {
+      "id": "niantic",
+      "name": "Niantic",
+      "aliases": [
+        "Niantic Labs",
+        "Niantic, Inc."
+      ],
+      "cc": "US",
+      "founded": 2010,
+      "status": "active",
+      "hq": "San Francisco, California",
+      "makers": [
+        "John Hanke",
+        "Tatsuo Nomura",
+        "Dennis Hwang"
+      ],
+      "bio": "Grew out of Keyhole / Google Earth inside Google to build geo-spatial AR pioneer Ingress and 2016's Pokémon GO—getting hundreds of millions of people walking outside into city parks, libraries, and neighborhood landmarks together.",
+      "diaspora": []
+    },
+    {
+      "id": "mojang-studios",
+      "name": "Mojang Studios",
+      "aliases": [
+        "Mojang",
+        "Mojang AB"
+      ],
+      "cc": "SE",
+      "founded": 2009,
+      "status": "active",
+      "hq": "Stockholm, Sweden",
+      "makers": [
+        "Markus Persson",
+        "Jens Bergensten",
+        "Daniel Kaplan",
+        "Agnes Larsson",
+        "C418 (Daniel Rosenfeld)"
+      ],
+      "bio": "Turned a Stockholm indie alpha inspired by Infiniminer and Dwarf Fortress into history's best-selling game (300M+ copies)—handing an entire generation of kids their first architecture sandbox, Redstone logic circuits, and modded servers.",
+      "diaspora": []
+    },
+    {
+      "id": "roblox-corporation",
+      "name": "Roblox Corporation",
+      "aliases": [
+        "Roblox",
+        "DynaBlocks"
+      ],
+      "cc": "US",
+      "founded": 2004,
+      "status": "active",
+      "hq": "San Mateo, California",
+      "makers": [
+        "David Baszucki",
+        "Erik Cassel"
+      ],
+      "bio": "Evolved directly out of Baszucki and Cassel's 1989 classroom physics simulator Interactive Physics—giving tens of millions of young players free Lua scripting, 3D building tools, and instant multiplayer servers to ship worlds for their peers.",
+      "diaspora": []
+    },
+    {
+      "id": "epic-games",
+      "name": "Epic Games",
+      "aliases": [
+        "Potomac Computer Systems",
+        "Epic MegaGames"
+      ],
+      "cc": "US",
+      "founded": 1991,
+      "status": "active",
+      "hq": "Cary, North Carolina",
+      "makers": [
+        "Tim Sweeney",
+        "Cliff Bleszinski",
+        "Mark Rein",
+        "Donald Mustard"
+      ],
+      "bio": "Started by Tim Sweeney shipping ZZT shareware floppy disks out of his parents' Maryland house in 1991—growing through Jazz Jackrabbit, Unreal, Gears of War, Fortnite, and Unreal Engine / UEFN into one of gaming's foundational toolmakers.",
+      "diaspora": []
+    },
+    {
+      "id": "hoyoverse",
+      "name": "HoYoverse (miHoYo)",
+      "aliases": [
+        "miHoYo",
+        "HoYoverse",
+        "Cognosphere"
+      ],
+      "cc": "CN",
+      "founded": 2012,
+      "status": "active",
+      "hq": "Shanghai & Singapore",
+      "makers": [
+        "Cai Haoyu",
+        "Liu Wei",
+        "Luo Yuhao",
+        "Yu-Peng Chen"
+      ],
+      "bio": "Founded by three Shanghai Jiao Tong University dormmates with a custom anime rendering plugin—proving with Genshin Impact and Honkai: Star Rail that phones, consoles, and PCs could share seamless open-world cross-progression and orchestral scores.",
+      "diaspora": []
     }
   ]
 }

@@ -218,9 +218,9 @@ button.chip:hover{border-color:var(--line2)}
 @media (max-width:820px){.hero{grid-template-columns:minmax(0,1fr);gap:14px;padding-block:12px 6px}}
 .heromosaic{display:none}
 @media (max-width:820px){
-  .heromosaic{display:flex;gap:8px;overflow-x:auto;max-inline-size:100%;padding:2px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .heromosaic{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;max-inline-size:100%;padding:2px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .heromosaic::-webkit-scrollbar{display:none}
-  .heromosaic .mbook{flex:none;width:62px;border:0;background:none;padding:0;border-radius:6px;cursor:pointer;position:relative}
+  .heromosaic .mbook{flex:none;width:62px;scroll-snap-align:start;border:0;background:none;padding:0;border-radius:6px;cursor:pointer;position:relative}
   .heromosaic .mbook .cv{border-radius:6px;box-shadow:0 6px 16px rgb(0 0 0 / .28)}
 }
 .tlshelf{display:flex;gap:9px;overflow-x:auto;max-inline-size:100%;padding:8px 2px 6px;margin-top:8px;scroll-snap-type:inline proximity;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
@@ -478,7 +478,7 @@ dl.ta dd.add{font-weight:600;color:var(--ink)}
 .stpad:hover:not([disabled]){border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
 .stpad:active:not([disabled]){scale:.96}
 .stpad[disabled]{opacity:.28;cursor:default;box-shadow:none}
-.stcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px 18px;box-shadow:var(--shadow);min-inline-size:0;max-inline-size:100%;box-sizing:border-box}
+.stcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px 18px;box-shadow:var(--shadow);min-inline-size:0;max-inline-size:100%;box-sizing:border-box;touch-action:pan-y;will-change:transform}
 @media (max-width:640px){.stcard{padding:16px 15px 14px;border-radius:15px}}
 .stbody{min-inline-size:0}
 .stin{display:grid;grid-template-columns:minmax(0,204px) minmax(0,1fr);gap:26px;align-items:center;width:100%}
@@ -597,8 +597,21 @@ details.gtadet[open] > summary::before{rotate:90deg}
 .hlcard .hlyr{font-family:var(--f-mono);font-size:11px;color:var(--love);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
 .hlcard b{font-family:var(--f-display);font-size:13px;line-height:1.25}
 .hlcard p{margin:0;font-size:12px;color:var(--ink2);line-height:1.4}
-.eramem{display:flex;flex-wrap:wrap;gap:6px 12px;margin:2px 0 8px;padding:6px 10px;background:var(--card);border:1px dashed var(--line2);border-radius:8px;font-size:12px;color:var(--ink2)}
-.eramem b{font-family:var(--f-mono);font-size:11px;color:var(--muted);text-transform:uppercase}
+details.eramem{margin:2px 0 8px;background:var(--card);border:1px dashed var(--line2);border-radius:8px;font-size:12px;color:var(--ink2)}
+details.eramem > summary{list-style:none;display:flex;align-items:center;gap:6px;padding:6px 10px;cursor:pointer;user-select:none}
+details.eramem > summary::-webkit-details-marker{display:none}
+details.eramem > summary:hover{background:color-mix(in srgb,var(--accent-soft) 45%,var(--card));border-radius:8px}
+details.eramem .eramem-chev{display:inline-block;font-size:11px;color:var(--muted);rotate:0deg}
+details.eramem[open] .eramem-chev{rotate:90deg}
+@media (prefers-reduced-motion:no-preference){
+  details.eramem .eramem-chev{transition:rotate .18s}
+  details.eramem::details-content{interpolate-size:allow-keywords;overflow:clip;contain:layout;transition:block-size .22s ease-out,content-visibility .22s ease-out,display .22s ease-out;transition-behavior:allow-discrete}
+}
+details.eramem:not([open])::details-content{block-size:0}
+details.eramem > summary b{font-family:var(--f-mono);font-size:11px;color:var(--muted);text-transform:uppercase}
+details.eramem .eramem-act{margin-inline-start:auto;font-family:var(--f-mono);font-size:10.5px;color:var(--accent);font-weight:600}
+details.eramem[open] .when-closed,details.eramem:not([open]) .when-open{display:none}
+details.eramem .eramem-body{display:flex;flex-wrap:wrap;gap:6px 12px;padding:0 10px 7px}
 .personacard{background:linear-gradient(135deg,var(--card),color-mix(in srgb,var(--accent-soft) 55%,var(--card)));border:1.5px solid var(--accent);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
 .pyrstack{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:12px}
 .pyrtier{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;border-radius:8px;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));box-sizing:border-box;min-width:min(100%,180px);font-size:12.5px}
@@ -724,15 +737,17 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
 .wmapsvg circle.ccdot:hover{stroke-width:2.2;opacity:1}
 /* in-app screenshots, title screens & artwork gallery */
 .galbox{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
-.galstrip{display:flex;gap:10px;overflow-x:auto;max-width:100%;padding:6px 2px 8px;scrollbar-width:thin}
-.galcard{flex:none;width:168px;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:5px;text-align:left;color:inherit;cursor:pointer}
+.galstrip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;max-width:100%;padding:6px 2px 8px;scrollbar-width:thin}
+.galcard{flex:none;width:168px;scroll-snap-align:start;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:5px;text-align:left;color:inherit;cursor:pointer}
 .galcard:hover,.galcard[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
 .galcard .galthumb{width:100%;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#0B0E16;display:grid;place-items:center}
 .galcard .galthumb img{width:100%;height:100%;object-fit:cover;display:block}
 .galcard.box .galthumb img{object-fit:contain}
 .galcard small{font-family:var(--f-mono);font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
 .galcard span{font-size:11.5px;color:var(--ink2);line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.galstage{color-scheme:dark;background:#0B0E16;color:#EEF2FA;accent-color:#8AB4F8;border:1px solid #252C3D;border-radius:12px;padding:10px 12px;margin-top:8px}
+.galstage{color-scheme:dark;background:#0B0E16;color:#EEF2FA;accent-color:#8AB4F8;border:1px solid #252C3D;border-radius:12px;padding:10px 12px;margin-top:8px;touch-action:pan-y pinch-zoom}
+.treebox{cursor:grab}
+.treebox.dragging{cursor:grabbing;user-select:none}
 .galstage .galimgwrap{width:100%;max-height:min(54vh,440px);display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:8px;background:#05070C}
 .galstage .galimgwrap img{max-width:100%;max-height:min(54vh,440px);width:auto;height:auto;object-fit:contain;display:block}
 .slotreels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
@@ -1509,7 +1524,7 @@ function friendList(){
 /* ================================================================
    Router and views
    ================================================================ */
-const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),showArtWhy:store.get("ib3-artwhy",1),makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),mechTab:"mechanics",priceReal:false,priceComp:false,priceEra:3,genreSel:"",worldCC:"",worldMine:false,quizMode:"lineage",posterMode:"wall",mapMode:"pillars",mapStrong:true,listIdx:0,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+const state={route:{view:"start"},infMode:store.get("ib2-inf","direct"),cmpMode:"age",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),showArtWhy:store.get("ib3-artwhy",1),makerRole:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),eraFold:store.get("ib3-erafold",{}),mechTab:"mechanics",priceReal:false,priceComp:false,priceEra:3,genreSel:"",worldCC:"",worldMine:false,quizMode:"lineage",posterMode:"wall",mapMode:"pillars",mapStrong:true,listIdx:0,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
 state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
 const isDevMode=()=>!!(state.devMode||workedEntries(hist).length||(hist.workedStudios&&hist.workedStudios.length));
 function renderSandboxBar(){
@@ -1532,8 +1547,9 @@ function parseHash(){
   if(h==="lineage")return {view:"lineage",id:state.linId||""};
   if(h.startsWith("lineage-")&&byId.has(h.slice(8))){state.linId=h.slice(8);return {view:"lineage",id:state.linId}}
   if(h==="explore")return {view:"explore"};
+  if(h==="about"||h==="johan"||h==="creator")return {view:"about"};
   if(h==="trivia"){if(!state.quizMode||state.quizMode==="lineage")state.quizMode="lore";return {view:"trivia"}}
-  if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":"mechanics";return {view:"mechanics",mt:state.mechTab}}
+  if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"||h==="mobile"||h==="ugc"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":h==="mobile"?"mobile":h==="ugc"?"ugc":"mechanics";return {view:"mechanics",mt:state.mechTab}}
   if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
   if(h==="world"){return {view:"world"}}
   if(h.startsWith("country-")&&/^[A-Za-z]{2}$/.test(h.slice(8))){state.worldCC=h.slice(8).toUpperCase();return {view:"world",cc:state.worldCC}}
@@ -1564,6 +1580,7 @@ function render(){
   else if(r.view==="timeline")renderTimeline(m);
   else if(r.view==="lineage")renderLineage(m,r.id);
   else if(r.view==="explore")renderExplore(m);
+  else if(r.view==="about")renderAbout(m);
   else if(r.view==="trivia")renderTrivia(m);
   else if(r.view==="mechanics")renderMechanics(m);
   else if(r.view==="world")renderWorld(m);
@@ -1597,19 +1614,22 @@ const footer=()=>`<footer class="wrap foot-about">
       <button type="button" class="chip" data-act="listsSheet">📋 Custom lists</button>
       <a class="chip" href="#explore">Explore</a>
       <a class="chip" href="#mechanics">Genres &amp; mechanics</a>
+      <a class="chip" href="#mobile">📱 Mobile craft</a>
+      <a class="chip" href="#ugc">🧱 Mods &amp; UGC</a>
       <a class="chip" href="#prices">💸 Game prices</a>
       <a class="chip" href="#world">🌍 World map</a>
       <a class="chip" href="#vault">🕯️ Vault &amp; lore</a>
       <a class="chip" href="#gratitude">💌 Makers &amp; stories</a>
       <a class="chip" href="#giveback">❤️ Support makers &amp; kids</a>
       <a class="chip" href="#friends">Friends</a>
+      <a class="chip" href="#about">👋 About Johan</a>
       <button type="button" class="chip" data-act="featureSheet">➕ Suggest console, game or idea</button>
     </div>
     <button type="button" class="btn sm ghost" data-act="scrollTop">↑ Back to top</button>
   </div>
   <p><b>Played &amp; Made — your life in games, and the humans who built them.</b> For many of us, video games weren't a distraction — they were safe harbors growing up, bridges to friends, and living art built by designers, engineers, writers, painters, and musicians. Every link here honors what teams built on and what they added.</p>
   <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">➕ Suggest console, game or feature</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <a class="link" href="#giveback">❤️ Support youth, devs &amp; preservation ▸</a> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button><span data-install-ui hidden> · <button type="button" class="link" data-act="installApp">📲 Install app</button></span></p>
-  <p style="margin-top:6px;font-size:12px;opacity:.85">Created by <b>Johan Heurlin</b> · Built ${esc(RAW.built||"")}.</p></footer>`;
+  <p style="margin-top:6px;font-size:12px;opacity:.9">Created by <a href="#about" style="font-weight:700">Johan Heurlin — About, career &amp; my gaming timeline ▸</a> · Built ${esc(RAW.built||"")}.</p></footer>`;
 
 function eraMomentsHTML(from,to){
   if(!state.eraMem)return "";
@@ -1618,7 +1638,8 @@ function eraMomentsHTML(from,to){
   if(!hits.length)return "";
   const items=[];hits.forEach(h=>(h.moments||[]).slice(0,2).forEach(m=>{if(items.length<4&&!items.includes(m))items.push(m)}));
   if(!items.length)return "";
-  return `<div class="eramem"><b>Meanwhile (${from}–${to}):</b>${items.map(m=>`<span>${esc(m)}</span>`).join("")}</div>`;
+  const key=`${from}-${to}`,folded=!!(state.eraFold&&state.eraFold[key]);
+  return `<details class="eramem" data-era="${esc(key)}"${folded?"":" open"}><summary><span class="eramem-chev" aria-hidden="true">▸</span><b>📻 Meanwhile (${from}–${to})</b><span class="eramem-act"><span class="when-open">Fold ▴</span><span class="when-closed">Peek pop culture ▸</span></span></summary><div class="eramem-body">${items.map(m=>`<span>${esc(m)}</span>`).join("")}</div></details>`;
 }
 function gtaviSpotlight(){
   const gta=byId.get("grand-theft-auto-vi")||byId.get("grand-theft-auto-v");if(!gta)return "";
@@ -2386,14 +2407,16 @@ function renderExplore(m){
       <div class="search bigsearch"><input class="input" id="q1" type="search" placeholder="Search a game, like Grand Theft Auto VI or Stardew Valley" autocomplete="off" aria-label="Search a game"><div class="results" id="r1" hidden></div></div>
       <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","the-legend-of-zelda-breath-of-the-wild","doom","2048","Baldur's Gate 3"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}<button class="chip" data-act="slotSpin">🎰 Spin lucky reel</button><button class="chip" data-act="random">Surprise me</button></div>
       <nav class="subnav" aria-label="Explore sections" style="margin-top:10px">
+        <a class="chip" href="#lineage">⑂ Interactive org-chart</a>
         <button type="button" class="chip" data-act="map">🗺️ Big Picture (5 views)</button>
+        <a class="chip" href="#mobile">📱 Mobile &amp; 3B pockets</a>
+        <a class="chip" href="#ugc">🧱 Mods &amp; UGC worlds</a>
         <a class="chip" href="#mechanics">⚙️ Mechanics that stuck</a>
         <a class="chip" href="#genres">🧬 How genres breed</a>
         <a class="chip" href="#boardgames">🎲 Boardgame roots</a>
         <a class="chip" href="#prices">💸 Game prices over time</a>
         <a class="chip" href="#world">🌍 World map (46 countries)</a>
         <a class="chip" href="#vault">🕯️ Cancelled, sunsetted &amp; lore</a>
-        <button type="button" class="chip" data-act="bandJump" data-to="quizSec">🎮 Arcade trivia</button>
         <button type="button" class="chip" data-act="bandJump" data-to="inflSec">🏆 Most influential</button>
       </nav>
       ${gtaviSpotlight()}
@@ -2866,6 +2889,124 @@ function renderPricesHTML(){
     </div>
   </section>`;
 }
+function renderCraftPillarGrid(pillars){
+  return `<div class="mechgrid">${(pillars||[]).map(p=>{
+    const exs=(p.games||[]).map(gameRef).filter(Boolean);
+    return `<article class="mechcard">
+      <span class="eyebrow" style="margin:0">${esc(p.tag||"")}</span>
+      <h2 class="h2" style="font-size:18px;margin:2px 0">${esc(p.title||"")}</h2>
+      <p style="margin:0;font-size:13.5px;color:var(--ink2);line-height:1.48">${esc(p.body||"")}</p>
+      ${exs.length?`<div class="shelfrow" style="gap:8px;padding-top:8px;margin-top:auto">${exs.map(g=>`<button type="button" class="sbook" style="width:64px" data-act="quickLook" data-id="${g.id}">${cover(g,{showYear:false})}<span class="yr">${g.year}</span><b style="font-size:10.5px">${esc(g.title)}</b></button>`).join("")}</div>`:""}
+    </article>`;
+  }).join("")}</div>`;
+}
+function renderMobileCraftHTML(){
+  const pillars=CULT.mobilePillars||[];
+  const mobGames=G.filter(g=>playable(g)&&sysOfGame(g).some(p=>p==="iPhone / iPad"||p==="Android"||p==="Mobile (feature phone)")&&g.pop>=3).sort((a,b)=>b.pop-a.pop||b.inf-a.inf||a.year-b.year).slice(0,24);
+  const mobStudios=["king","supercell","rovio-entertainment","popcap-games","ustwo-games","niantic","hoyoverse"].map(id=>STUDIOS.get(id)).filter(Boolean);
+  return `<section class="wrap sec">
+    <div class="personacard" style="margin-bottom:20px">
+      <div class="row" style="justify-content:space-between;align-items:flex-start;gap:12px">
+        <div style="max-width:74ch">
+          <p class="eyebrow" style="margin-bottom:4px">📱 Beyond console &amp; PC elitism · 3+ billion players</p>
+          <h2 class="h2" style="margin:0 0 6px">Hardcore forums love to sneer at mobile — yet pocket screens brought half of humanity into play</h2>
+          <p class="sub" style="margin:0;font-size:13.8px">For billions of commuters, parents, grandparents, and kids in mobile-first countries where a $500 console + TV wasn't an option, a phone was their very first game machine. Beneath noisy ad-driven clones sits genuine, fiercely disciplined craft: one-thumb touch physics, 90-second session pacing, autonomous 8-person studio cells, and thermal/battery engineering miracles.</p>
+        </div>
+        <div class="row" style="gap:6px">
+          <button type="button" class="btn sm primary" data-act="makerSheet">🛠 Work in mobile games? Log your credits</button>
+          <button type="button" class="btn sm" data-act="featureSheet" data-cat="🎮 Missing Game / Classic">➕ Suggest mobile classic</button>
+        </div>
+      </div>
+    </div>
+    ${renderCraftPillarGrid(pillars)}
+  </section>
+  ${mobStudios.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">The studios &amp; makers behind pocket play</p><h2 class="h2">Mobile pioneers &amp; studio cultures</h2><p class="sub">Tap any studio to see its games, alumni diaspora, or mark <b>🛠 I worked here</b> on your Maker Timeline.</p></div></div>
+    <div class="stgrid">${mobStudios.map(studioCardHTML).join("")}</div></section>`:""}
+  ${mobGames.length?`<section class="wrap sec"><h2 class="h2" style="margin-bottom:10px">Landmark mobile &amp; cross-pocket games (${mobGames.length})</h2>
+    <div class="grid">${mobGames.map(g=>tileHTML(g,hist,{act:"quickLook",quickTick:!!hist.birth})).join("")}</div></section>`:""}`;
+}
+function renderUgcCraftHTML(){
+  const pillars=CULT.ugcPillars||[];
+  const ugcIds=["interactive-physics","quake","team-fortress","half-life","counter-strike","warcraft-iii","defense-of-the-ancients","garrys-mod","the-stanley-parable","dayz","littlebigplanet","minecraft","hypixel-skyblock","super-mario-maker","fivem-gta-rp","roblox","adopt-me","brookhaven-rp","doors-roblox","dress-to-impress","dota-auto-chess","fortnite-creative-uefn","vrchat","dreams"];
+  const ugcGames=ugcIds.map(gameRef).filter(Boolean);
+  const ugcStudios=["mojang-studios","roblox-corporation","valve","epic-games"].map(id=>STUDIOS.get(id)).filter(Boolean);
+  return `<section class="wrap sec">
+    <div class="personacard" style="margin-bottom:20px">
+      <div class="row" style="justify-content:space-between;align-items:flex-start;gap:12px">
+        <div style="max-width:74ch">
+          <p class="eyebrow" style="margin-bottom:4px">🧱 Mods, level editors &amp; creator platforms · 1996–2026</p>
+          <h2 class="h2" style="margin:0 0 6px">From Quake &amp; Half-Life bedroom mods to Minecraft, Roblox &amp; Fortnite UEFN</h2>
+          <p class="sub" style="margin:0;font-size:13.8px">Traditionalists sometimes bristle at user-generated platforms — yet tactical shooters (<i>Counter-Strike</i>), class shooters (<i>Team Fortress</i>), MOBAs (<i>DotA</i>), Battle Royale (<i>DayZ / ARMA</i>), and auto-battlers (<i>Auto Chess</i>) were <b>all</b> born when players opened another game's editor. Today, millions of teenagers and small teams ship their first multiplayer worlds the exact same way.</p>
+        </div>
+        <div class="row" style="gap:6px">
+          <a class="btn sm primary" href="#lineage-roblox">⑂ Open Roblox lineage tree ▸</a>
+          <button type="button" class="btn sm" data-act="featureSheet" data-cat="🎮 Missing Game / Classic">➕ Suggest iconic mod / UGC hit</button>
+        </div>
+      </div>
+    </div>
+    ${renderCraftPillarGrid(pillars)}
+  </section>
+  ${ugcStudios.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Toolmakers &amp; sandbox pioneers</p><h2 class="h2">Studios that handed players the keys</h2></div></div>
+    <div class="stgrid">${ugcStudios.map(studioCardHTML).join("")}</div></section>`:""}
+  ${ugcGames.length?`<section class="wrap sec"><h2 class="h2" style="margin-bottom:10px">Iconic mods, sandboxes &amp; UGC worlds (${ugcGames.length})</h2>
+    <div class="grid">${ugcGames.map(g=>tileHTML(g,hist,{act:"quickLook",quickTick:!!hist.birth})).join("")}</div></section>`:""}`;
+}
+function renderAbout(m){
+  const bio=CULT.aboutCreator||{name:"Johan Heurlin",born:1984,chapters:[]};
+  const pinnedCode=(bio.timelineCode||"").trim();
+  const pinnedData=pinnedCode?decodeShare(pinnedCode):null;
+  const localHas=!!(hist.birth&&entries(hist).length);
+  const showTl=pinnedData||(localHas?hist:null);
+  const tlSt=showTl?timelineStats(showTl):null;
+  const tlPicks=showTl?entries(showTl).filter(x=>x.g).sort((a,b)=>b.lv-a.lv||a.y-b.y).slice(0,14):[];
+  m.innerHTML=`<section class="wrap exhero">
+    <nav class="trail" style="padding-top:0;margin-bottom:6px"><button type="button" class="navback" data-act="navBack" data-fb="timeline">◂ Back</button><span class="cur">About the creator</span></nav>
+    <p class="eyebrow">🇸🇪 → 🇺🇸 · Builder of Played &amp; Made · Born ${esc(bio.born||1984)}</p>
+    <h1 class="h1" style="margin-bottom:8px">Hi, I'm ${esc(bio.name||"Johan Heurlin")}</h1>
+    <p class="lede" style="max-width:70ch">${esc(bio.tagline||"")}</p>
+    <div class="card" style="margin-top:14px;max-width:78ch">
+      <p style="margin:0;font-size:14.8px;line-height:1.6;color:var(--ink)">${esc(bio.intro||"")}</p>
+      <div class="row" style="margin-top:14px;gap:8px">
+        ${bio.linkedin?`<a class="btn sm primary" href="${esc(bio.linkedin)}" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>`:""}
+        <a class="btn sm" href="#mobile">📱 Mobile craft spotlight</a>
+        <a class="btn sm" href="#ugc">🧱 Mods &amp; UGC spotlight</a>
+        <button type="button" class="btn sm ghost" data-act="featureSheet">📥 Send a note or game idea</button>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec">
+    <div class="sechead"><div><p class="eyebrow">16+ years at the intersection of games, platforms &amp; studios</p><h2 class="h2">Casual career snapshot</h2><p class="sub">Where I've had the privilege of working alongside game makers across mobile, PC, and cross-platform ecosystems.</p></div></div>
+    <div class="mechgrid">${(bio.chapters||[]).map(ch=>{
+      const stRef=ch.org==="King"?STUDIOS.get("king"):null;
+      return `<article class="mechcard">
+        <div class="row" style="justify-content:space-between;gap:8px"><span class="eyebrow" style="margin:0">${esc(ch.years||"")}</span>${stRef?`<button type="button" class="link" style="font-size:12px" data-act="studio" data-st="${esc(stRef.id)}">Studio page ▸</button>`:""}</div>
+        <h3 class="h2" style="font-size:18px;margin:2px 0">${esc(ch.org)}</h3>
+        <small style="font-weight:700;color:var(--accent)">${esc(ch.role||"")}</small>
+        <p style="margin:4px 0 0;font-size:13.5px;color:var(--ink2);line-height:1.48">${esc(ch.note||"")}</p>
+      </article>`;
+    }).join("")}</div>
+  </section>
+  <section class="wrap sec" id="johanTimeline">
+    <div class="personacard">
+      <div class="row" style="justify-content:space-between;align-items:flex-start;gap:12px">
+        <div>
+          <p class="eyebrow" style="margin-bottom:3px">🕹️ ${pinnedData?"Creator's gaming timeline":"Johan's gaming timeline"}</p>
+          <h2 class="h2" style="margin:0 0 4px">${pinnedData?`Johan's life in games (${tlSt.n} games · ${tlSt.sys} systems · peak year ${tlSt.peak||"—"})`:localHas?`Your live timeline preview on this device (${tlSt.n} games)`:"Building my personal 1984–2026 gaming timeline"}</h2>
+          <p class="sub" style="margin:0;max-width:68ch">${pinnedData?"Tap any cover below to inspect it, or compare your own childhood & career timeline side-by-side with Johan's."
+            :localHas?"Once you've finished picking all your childhood & career games on My timeline, tap Copy creator link below and paste it into Antigravity so it's permanently pinned here for every visitor!"
+            :"Start picking the consoles and games you grew up with (and worked on!), then pin your #t1-… link right here so visitors can compare their timelines with yours."}</p>
+        </div>
+        <div class="row" style="gap:6px">
+          ${pinnedData?`<a class="btn sm primary" href="#${esc(pinnedCode)}">Open &amp; compare with Johan's ▸</a>`
+            :localHas?`<button type="button" class="btn sm primary" data-act="copyCreatorCode">📌 Copy my #t1-… creator link</button><a class="btn sm" href="#picks">🕹️ Add more games</a>`
+            :`<a class="btn sm primary" href="#picks">🕹️ Pick my games ▸</a>`}
+        </div>
+      </div>
+      ${tlPicks.length?`<div class="tlshelf" style="margin-top:12px" role="region" aria-label="Timeline highlights">${tlPicks.map(x=>`<button type="button" class="tlcov lv${x.lv}" data-act="quickLook" data-id="${x.g.id}">${cover(x.g,{showYear:false})}<small><span>${x.y}</span><span>${x.e.wk?"🛠":LV[x.lv].m}</span></small></button>`).join("")}</div>`:""}
+    </div>
+  </section>
+  ${footer()}`;
+}
 function renderMechanics(m){
   const tab=state.mechTab||"mechanics";
   const mechs=MW.mechanics||[],genMeta=MW.genres||{},bgs=MW.boardgames||[];
@@ -2873,21 +3014,26 @@ function renderMechanics(m){
   const selInfo=genMeta[selG.k]||{};
   const genGames=tab==="genres"?G.filter(g=>g.gen.includes(selG.i)).sort((a,b)=>b.pop-a.pop||b.inf-a.inf).slice(0,36):[];
   m.innerHTML=`<section class="wrap exhero">
-    <p class="eyebrow">${tab==="prices"?"50 years of sticker shock & inflation":"Design vocabulary & lineage"}</p>
-    <h1 class="h1">${tab==="prices"?"Are video games actually getting more expensive?":tab==="genres"?"How game genres fit & breed":tab==="boardgames"?"From cardboard & dice to pixels":"The mechanics that stuck"}</h1>
+    <p class="eyebrow">${tab==="prices"?"50 years of sticker shock & inflation":tab==="mobile"?"Pocket screens & 3+ billion players":tab==="ugc"?"Mods, sandboxes & creator ecosystems":"Design vocabulary & lineage"}</p>
+    <h1 class="h1">${tab==="prices"?"Are video games actually getting more expensive?":tab==="mobile"?"How mobile turned 3 billion non-gamers into players":tab==="ugc"?"When players grab the editor: Mods, Minecraft, Roblox & UEFN":tab==="genres"?"How game genres fit & breed":tab==="boardgames"?"From cardboard & dice to pixels":"The mechanics that stuck"}</h1>
     <p class="lede">${tab==="prices"?"Gamers love debating $70 price tags — so let's trace 50 years of arcade quarters, $80 SNES cartridges, $1 PlayStation CDs, and $15 indies, then compare them against movies, music, burgers, and rent."
+      :tab==="mobile"?"From 1997 Nokia Snake and Angry Birds touch physics to Candy Crush commutes, Supercell's small-cell craft, Monument Valley, and Genshin Impact — why pocket gaming's design and reach deserve real respect."
+      :tab==="ugc"?"Counter-Strike, Team Fortress, DotA, Garry's Mod, DayZ, and Auto Chess all started as player mods — the exact same creative spark now powering Minecraft servers, GTA RP, Roblox hits, and Fortnite UEFN."
       :tab==="genres"?"Genres aren't rigid boxes — new ones are born whenever designers cross-pollinate two earlier traditions into something fresh."
       :tab==="boardgames"?"Long before GPUs, tabletop wargames, pen-and-paper RPGs, and physical deckbuilders invented hit points, fog of war, tech trees, and synergistic combos."
       :"Players remember worlds, yet single tactile mechanics — a mid-air double jump, fog of war, or recovering lost souls — quietly leap across hundreds of games."}</p>
     <div class="row" style="margin-top:12px">
-      <button type="button" class="chip" data-act="mechTab" data-t="mechanics" aria-pressed="${tab==="mechanics"}">⚙️ Mechanics that stuck (${mechs.length})</button>
-      <button type="button" class="chip" data-act="mechTab" data-t="genres" aria-pressed="${tab==="genres"}">🧬 Genres & hybrids (${GEN.length})</button>
-      <button type="button" class="chip" data-act="mechTab" data-t="boardgames" aria-pressed="${tab==="boardgames"}">🎲 Tabletop & boardgame roots (${bgs.length})</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="mechanics" aria-pressed="${tab==="mechanics"}">⚙️ Mechanics (${mechs.length})</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="genres" aria-pressed="${tab==="genres"}">🧬 Genres &amp; hybrids (${GEN.length})</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="mobile" aria-pressed="${tab==="mobile"}">📱 Mobile &amp; 3B pockets</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="ugc" aria-pressed="${tab==="ugc"}">🧱 Mods &amp; UGC worlds</button>
+      <button type="button" class="chip" data-act="mechTab" data-t="boardgames" aria-pressed="${tab==="boardgames"}">🎲 Tabletop roots (${bgs.length})</button>
       <button type="button" class="chip" data-act="mechTab" data-t="prices" aria-pressed="${tab==="prices"}">💸 Game prices &amp; inflation</button>
-      <a class="chip" href="#world">🌍 World map ▸</a>
     </div>
   </section>
   ${tab==="prices"?renderPricesHTML()
+  :tab==="mobile"?renderMobileCraftHTML()
+  :tab==="ugc"?renderUgcCraftHTML()
   :tab==="mechanics"?`<section class="wrap sec"><div class="mechgrid">${mechs.map(mc=>{
       const og=mc.origin&&gameRef(mc.origin);
       const exs=(mc.games||[]).map(gameRef).filter(Boolean);
@@ -3417,9 +3563,32 @@ function drawStory(){
   </div></div>`;
   const sb=$("#storyBody");
   if(sb){
-    let sx=0,sy=0;
-    sb.addEventListener("pointerdown",ev=>{sx=ev.clientX;sy=ev.clientY});
-    sb.addEventListener("pointerup",ev=>{const dx=ev.clientX-sx,dy=ev.clientY-sy;if(Math.abs(dx)>54&&Math.abs(dx)>Math.abs(dy)*1.8)storyStep(dx>0?-1:1)});
+    let pid=null,sx=0,sy=0,dx=0,dy=0;
+    const resetCard=()=>{sb.style.transition="transform .18s ease-out";sb.style.transform=""};
+    sb.addEventListener("pointerdown",ev=>{
+      if(ev.button&&ev.button!==0)return;
+      if(ev.target.closest("button,a,input"))return;
+      pid=ev.pointerId;sx=ev.clientX;sy=ev.clientY;dx=0;dy=0;
+      sb.style.transition="none";
+    });
+    sb.addEventListener("pointermove",ev=>{
+      if(ev.pointerId!==pid)return;
+      dx=ev.clientX-sx;dy=ev.clientY-sy;
+      if(Math.abs(dx)>10&&Math.abs(dx)>Math.abs(dy)*1.2){
+        sb.style.transform=`translate3d(${Math.max(-90,Math.min(90,dx*0.32))}px,0,0)`;
+      }
+    });
+    const finish=ev=>{
+      if(ev.pointerId!==pid)return;
+      pid=null;
+      const fx=(ev.clientX||sx)-sx||dx,fy=(ev.clientY||sy)-sy||dy;
+      resetCard();
+      if(Math.abs(fx)>42&&Math.abs(fx)>Math.abs(fy)*1.25){storyStep(fx>0?-1:1);return}
+      const scroller=sb.closest(".story");
+      if(fy>88&&Math.abs(fy)>Math.abs(fx)*1.8&&(!scroller||scroller.scrollTop<=4))closeStory();
+    };
+    sb.addEventListener("pointerup",finish);
+    sb.addEventListener("pointercancel",()=>{pid=null;resetCard()});
   }
 }
 
@@ -4698,7 +4867,7 @@ const ACTIONS={
     });
   },
   slotSpin(){openSlotSheet()},
-  mechTab(el){state.mechTab=el.dataset.t;go(el.dataset.t==="boardgames"?"boardgames":el.dataset.t==="genres"?"genres":el.dataset.t==="prices"?"prices":"mechanics")},
+  mechTab(el){state.mechTab=el.dataset.t;go(["boardgames","genres","prices","mobile","ugc"].includes(el.dataset.t)?el.dataset.t:"mechanics")},
   goPrices(){clearLayer();state.mechTab="prices";go("prices")},
   priceReal(el){state.priceReal=el.dataset.v==="1";const y=window.scrollY;render();window.scrollTo({top:y})},
   priceComp(){state.priceComp=!state.priceComp;render();const top=$("#priceTop");if(top)top.scrollIntoView({behavior:"smooth",block:"start"})},
@@ -4827,6 +4996,7 @@ const ACTIONS={
   },
   linFocus(el){const id=el.dataset.id;if(!id)return;state.linId=id;state.treeMore={};go("lineage-"+id)},
   linRandom(){const pool=TREE.filter(g=>g.pop>=3&&(UP[g.i].length+DOWN[g.i].length>=2));const pick=pool[Math.floor(Math.random()*pool.length)]||TREE[0];state.linId=pick.id;state.treeMore={};go("lineage-"+pick.id)},
+  copyCreatorCode(){const code=encodeShare(hist);copyText(code);toast("Copied creator timeline code (#t1-…) — paste it in chat to pin permanently!")},
   goGiveBack(){clearLayer();go("giveback")},
   toDna(){const s=$("#dna");if(s)s.scrollIntoView({behavior:"smooth",block:"start"})},
   quizMode(el){state.quizMode=el.dataset.m||"lineage";quiz=newQuiz();renderQuiz()},
@@ -4980,8 +5150,90 @@ document.addEventListener("click",e=>{const el=e.target.closest("[data-act]");if
   if(el.tagName==="A")e.preventDefault();fn(el,e)});
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"&&!story&&$("#layer").innerHTML){e.preventDefault();closeLayer();return}
+  if(!story&&ACTIVE_GAL.idx>=0&&ACTIVE_GAL.items.length>1&&$(ACTIVE_GAL.boxSel+" .galstage")){
+    if(e.key==="ArrowLeft"||e.key==="ArrowRight"){
+      e.preventDefault();
+      const g=byId.get(ACTIVE_GAL.gid),len=ACTIVE_GAL.items.length;
+      if(g)drawGalleryBox(g,ACTIVE_GAL.boxSel,ACTIVE_GAL.items,(ACTIVE_GAL.idx+(e.key==="ArrowLeft"?-1:1)+len)%len);
+      return;
+    }
+  }
   if((e.key==="Enter"||e.key===" ")&&e.target.matches&&e.target.matches("g.wnode")){e.preventDefault();e.target.dispatchEvent(new MouseEvent("click",{bubbles:true}))}
 });
+/* Persist fold/peek state on Meanwhile era strips (toggle does not bubble -> capture:true) */
+document.addEventListener("toggle",ev=>{
+  const d=ev.target;
+  if(!d||!d.matches||!d.matches("details.eramem[data-era]"))return;
+  const k=d.dataset.era;if(!k)return;
+  if(!state.eraFold)state.eraFold={};
+  if(d.open)delete state.eraFold[k];else state.eraFold[k]=1;
+  store.set("ib3-erafold",state.eraFold);
+},{capture:true});
+/* Delegated natural swipe & drag gestures: gallery zoom, trivia next, year sheet, bottom-sheet dismiss & org-chart mouse pan */
+(()=>{
+  let gState=null,suppressClickUntil=0;
+  document.addEventListener("click",ev=>{if(Date.now()<suppressClickUntil){ev.stopPropagation();ev.preventDefault()}},true);
+  document.addEventListener("pointerdown",ev=>{
+    if(ev.button&&ev.button!==0)return;
+    const tb=ev.target.closest&&ev.target.closest(".treebox");
+    if(tb&&ev.pointerType==="mouse"){
+      gState={kind:"treepan",el:tb,pid:ev.pointerId,sx:ev.clientX,sy:ev.clientY,sl:tb.scrollLeft,st:tb.scrollTop,moved:false};
+      return;
+    }
+    if(ev.target.closest&&ev.target.closest("input,textarea,select"))return;
+    const gs=ev.target.closest&&ev.target.closest(".galstage");
+    if(gs){gState={kind:"gal",pid:ev.pointerId,sx:ev.clientX,sy:ev.clientY};return}
+    const qz=ev.target.closest&&ev.target.closest("#quiz");
+    if(qz&&quiz&&quiz.picked!=null){gState={kind:"quiz",pid:ev.pointerId,sx:ev.clientX,sy:ev.clientY};return}
+    const dlg=ev.target.closest&&ev.target.closest("#sheetDlg");
+    if(dlg&&dlg.open){
+      const inHead=!!(ev.target.closest&&ev.target.closest(".sheethead"));
+      const yrPrev=dlg.querySelector('[data-act="yearNav"]');
+      gState={kind:"dlg",dlg,inHead,hasYr:!!yrPrev,pid:ev.pointerId,sx:ev.clientX,sy:ev.clientY};
+    }
+  });
+  document.addEventListener("pointermove",ev=>{
+    if(!gState||ev.pointerId!==gState.pid)return;
+    if(gState.kind==="treepan"){
+      const dx=ev.clientX-gState.sx,dy=ev.clientY-gState.sy;
+      if(!gState.moved&&Math.hypot(dx,dy)>6){gState.moved=true;gState.el.classList.add("dragging")}
+      if(gState.moved){gState.el.scrollLeft=gState.sl-dx;gState.el.scrollTop=gState.st-dy}
+    }
+  });
+  const endGesture=ev=>{
+    if(!gState||ev.pointerId!==gState.pid)return;
+    const st=gState;gState=null;
+    const dx=ev.clientX-st.sx,dy=ev.clientY-st.sy;
+    if(st.kind==="treepan"){
+      st.el.classList.remove("dragging");
+      if(st.moved)suppressClickUntil=Date.now()+180;
+      return;
+    }
+    if(st.kind==="gal"&&ACTIVE_GAL.idx>=0&&ACTIVE_GAL.items.length>1){
+      if(Math.abs(dx)>42&&Math.abs(dx)>Math.abs(dy)*1.3){
+        const g=byId.get(ACTIVE_GAL.gid),len=ACTIVE_GAL.items.length;
+        if(g)drawGalleryBox(g,ACTIVE_GAL.boxSel,ACTIVE_GAL.items,(ACTIVE_GAL.idx+(dx>0?-1:1)+len)%len);
+      }else if(dy>75&&Math.abs(dy)>Math.abs(dx)*1.7){
+        const g=byId.get(ACTIVE_GAL.gid);
+        if(g)drawGalleryBox(g,ACTIVE_GAL.boxSel,ACTIVE_GAL.items,-1);
+      }
+      return;
+    }
+    if(st.kind==="quiz"&&dx<-48&&Math.abs(dx)>Math.abs(dy)*1.4){
+      quiz=newQuiz();renderQuiz();return;
+    }
+    if(st.kind==="dlg"){
+      if(st.inHead&&dy>72&&Math.abs(dy)>Math.abs(dx)*1.6&&st.dlg.scrollTop<=6){st.dlg.close();return}
+      if(st.hasYr&&Math.abs(dx)>58&&Math.abs(dx)>Math.abs(dy)*1.6){
+        const btns=[...st.dlg.querySelectorAll('[data-act="yearNav"]')];
+        const target=dx>0?btns[0]:btns[btns.length-1];
+        if(target)target.click();
+      }
+    }
+  };
+  document.addEventListener("pointerup",endGesture);
+  document.addEventListener("pointercancel",()=>{if(gState&&gState.kind==="treepan")gState.el.classList.remove("dragging");gState=null});
+})();
 
 /* ---------- PWA install, theme-color sync & offline service worker ---------- */
 const PWA={

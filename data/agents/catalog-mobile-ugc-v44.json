@@ -1,0 +1,304 @@
+{
+  "games": [
+    {
+      "id": "hypixel-skyblock",
+      "title": "Hypixel SkyBlock (Minecraft UGC)",
+      "year": 2019,
+      "dev": "Hypixel Studios / Community Creators",
+      "cc": "CA",
+      "genres": [
+        "survival",
+        "mmo",
+        "rpg"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Mac",
+        "Linux"
+      ],
+      "pop": 4,
+      "note": "Started from a minimalist 2011 floating-island survival map inside Minecraft and evolved on the player-run Hypixel server into a persistent MMO economy with millions of concurrent builders, dungeons, and auction houses."
+    },
+    {
+      "id": "fivem-gta-rp",
+      "title": "FiveM / GTA Roleplay (NoPixel)",
+      "year": 2015,
+      "dev": "Cfx.re & Community Modders (later joined Rockstar)",
+      "cc": "NL",
+      "genres": [
+        "open-world",
+        "mmo",
+        "sim"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 4,
+      "note": "Community multiplayer modification framework for Grand Theft Auto V that turned Los Santos into player-governed improv stages—paramedics, courtroom lawyers, mechanics, and heist crews—driving billions of livestream hours before Rockstar officially acquired Cfx.re in 2023."
+    },
+    {
+      "id": "adopt-me",
+      "title": "Adopt Me! (Roblox)",
+      "year": 2017,
+      "dev": "Uplift Games (NewFissy & Bethink)",
+      "cc": "GB",
+      "genres": [
+        "mmo",
+        "sim"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "iPhone / iPad",
+        "Android",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "pop": 4,
+      "note": "Co-created inside Roblox Studio by two young developers (Josh Ling and Bethink), growing into a remote 40-person studio whose virtual pet-trading and home-decorating world hit nearly 2 million simultaneous players."
+    },
+    {
+      "id": "brookhaven-rp",
+      "title": "Brookhaven RP (Roblox)",
+      "year": 2020,
+      "dev": "Wolfpaq",
+      "cc": "US",
+      "genres": [
+        "mmo",
+        "sim"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "iPhone / iPad",
+        "Android",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "pop": 4,
+      "note": "Built by solo creator Wolfpaq inside Roblox with zero grind gates or paywalled progression—just an open digital neighborhood dollhouse where hundreds of millions of kids invent their own stories together."
+    },
+    {
+      "id": "doors-roblox",
+      "title": "DOORS (Roblox)",
+      "year": 2022,
+      "dev": "LSPLASH & RediblesQW",
+      "cc": "US",
+      "genres": [
+        "horror",
+        "roguelike"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "iPhone / iPad",
+        "Android",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "pop": 4,
+      "note": "Crafted by two young indie creators inside Roblox with original acoustic sound design and learn-by-dying monster tells—proving UGC toolsets could deliver atmospheric co-op horror played billions of times."
+    },
+    {
+      "id": "fortnite-creative-uefn",
+      "title": "Fortnite Creative & UEFN",
+      "year": 2023,
+      "dev": "Epic Games & Island Creators",
+      "cc": "US",
+      "genres": [
+        "survival",
+        "shooter",
+        "party"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "Switch",
+        "Android"
+      ],
+      "pop": 4,
+      "note": "Opened Unreal Engine 5's Verse scripting, custom assets, and direct creator revenue-sharing inside Fortnite—turning a battle royale into a live user-generated arcade where small indie teams ship instant cross-platform islands."
+    },
+    {
+      "id": "dress-to-impress",
+      "title": "Dress to Impress (Roblox)",
+      "year": 2023,
+      "dev": "Dress To Impress Group (Gigi & team)",
+      "cc": "US",
+      "genres": [
+        "party",
+        "sim"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "iPhone / iPad",
+        "Android",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "pop": 4,
+      "note": "Launched by a 17-year-old lead creator and a small student team on Roblox, turning timed runway styling, layering creativity, and peer voting into a cultural phenomenon across Gen Z, streamers, and mainstream fashion collaborations."
+    }
+  ],
+  "links": [
+    {
+      "from": "interactive-physics",
+      "to": "roblox",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "David Baszucki and Erik Cassel's 2D/3D educational physics sandbox where students built hinges, motors, and colliding contraptions to test 'what happens if…'",
+      "added": "Turned that classroom physics lab into a networked 3D social creation engine (Roblox Studio + Lua) with avatar identity, server hosting, and creator economies",
+      "src": [
+        {
+          "t": "David Baszucki on Interactive Physics to Roblox — Wikipedia / VentureBeat",
+          "u": "https://en.wikipedia.org/wiki/Roblox#History"
+        }
+      ]
+    },
+    {
+      "from": "roblox",
+      "to": "adopt-me",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Roblox Studio's instant cross-platform mobile/PC multiplayer networking, Lua scripting, and social avatar servers",
+      "added": "Built a warm, scam-guarded virtual pet nursery, seasonal trading economy, and customizable family homes that scaled a two-person duo into Uplift Games",
+      "src": [
+        {
+          "t": "Adopt Me! development history — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Adopt_Me!"
+        }
+      ]
+    },
+    {
+      "from": "roblox",
+      "to": "brookhaven-rp",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Roblox's drop-in mobile and console town servers and expressive avatar props",
+      "added": "Stripped away XP bars and timers for pure childhood make-believe—spawnable houses, vehicles, and town secrets for unscripted neighborhood roleplay",
+      "src": [
+        {
+          "t": "Brookhaven (Roblox) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Brookhaven_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "roblox",
+      "to": "doors-roblox",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Roblox's co-op lobby matchmaking and cross-device 3D engine",
+      "added": "Procedural 100-door hotel runs, bespoke sound cues, and die-and-learn entity rules inspired by Spooky's Jump Scare Mansion",
+      "src": [
+        {
+          "t": "Doors (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Doors_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "roblox",
+      "to": "dress-to-impress",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Roblox's social lobbies, avatar customization pipeline, and instant phone-to-console crossplay",
+      "added": "Five-minute themed fashion design sprints, freeform garment layering, and live catwalk judging built by teen creators",
+      "src": [
+        {
+          "t": "Dress to Impress (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Dress_to_Impress_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "minecraft",
+      "to": "hypixel-skyblock",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Minecraft's block-by-block survival crafting, server plugin architecture, and classic 2011 SkyBlock map challenge",
+      "added": "Expanded a tiny void island into a full persistent RPG economy with custom weapons, co-op catacombs, and player-driven markets",
+      "src": [
+        {
+          "t": "Hypixel — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Hypixel"
+        }
+      ]
+    },
+    {
+      "from": "grand-theft-auto-v",
+      "to": "fivem-gta-rp",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Rockstar's richly simulated Los Santos streets, vehicles, physics, and character animations",
+      "added": "Dedicated community roleplay servers, proximity voice chat, custom civilian jobs, and unscripted player storytelling—later brought officially under Rockstar",
+      "src": [
+        {
+          "t": "Rockstar Games acquires Cfx.re (FiveM) — Rockstar Wire / Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Grand_theft_auto_roleplay"
+        }
+      ]
+    },
+    {
+      "from": "fortnite-br",
+      "to": "fortnite-creative-uefn",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Fortnite's cross-platform 100-player netcode, building props, and global social locker",
+      "added": "Full Unreal Editor for Fortnite (UEFN), Verse programming language, and 40% creator engagement payouts so independent studios build genres inside Fortnite",
+      "src": [
+        {
+          "t": "Unreal Editor for Fortnite — Epic Games",
+          "u": "https://en.wikipedia.org/wiki/Fortnite_Creative"
+        }
+      ]
+    },
+    {
+      "from": "bejeweled",
+      "to": "candy-crush-saga",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "PopCap's crisp gem-swapping match-3 grid and cascading combo feedback",
+      "added": "Hand-crafted objective-based puzzle boards (jelly clearing, blockers, move budgets) along a social world map tuned for one-thumb mobile commutes",
+      "src": [
+        {
+          "t": "Candy Crush Saga design lineage — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Candy_Crush_Saga"
+        }
+      ]
+    },
+    {
+      "from": "canabalt",
+      "to": "subway-surfers",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Adam Saltsman's instant-restart endless-runner momentum on touchscreens",
+      "added": "Three-lane vertical swipe dodging, vibrant graffiti street-art world tours, and buttery 60fps gesture responsiveness across billions of phones",
+      "src": [
+        {
+          "t": "Subway Surfers — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Subway_Surfers"
+        }
+      ]
+    },
+    {
+      "from": "coin-master",
+      "to": "monopoly-go",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Moon Active's brisk social board-building, friend heist loops, and bite-sized mobile session pacing",
+      "added": "Hasbro's classic 1935 Monopoly board movement, cooperative sticker albums, and landmark upgrades scaled to tens of millions of daily players",
+      "src": [
+        {
+          "t": "Monopoly Go! design & launch — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Monopoly_Go!"
+        }
+      ]
+    }
+  ],
+  "updates": [
+    {
+      "id": "roblox",
+      "field": "pop",
+      "value": 5
+    }
+  ]
+}

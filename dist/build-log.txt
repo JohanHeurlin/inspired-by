@@ -1,9 +1,9 @@
-Built 2026-11-18 19:22  ->  dist\inspired-by.html (2277 KB, data 1780 KB)
-Agent files: 75  |  games: 4227 (in family tree: 2038, in catalog: 3753, new from agents: 3376)
-Links: 2794  |  
-dev=792 team=580 series=725 critic=444 mech=221 disp=32
-Covers: 4194  |  YouTube IDs: 1187  |  MobyGames IDs: 3216  |  Studios curated: 65
-Updates applied: 1013  |  games without genre: 0  |  unresolved link ids: 0
+Built 2026-11-18 19:40  ->  dist\inspired-by.html (2312 KB, data 1797 KB)
+Agent files: 76  |  games: 4234 (in family tree: 2045, in catalog: 3760, new from agents: 3383)
+Links: 2802  |  
+dev=794 team=579 series=725 critic=444 mech=228 disp=32
+Covers: 4194  |  YouTube IDs: 1187  |  MobyGames IDs: 3216  |  Studios curated: 75
+Updates applied: 1014  |  games without genre: 0  |  unresolved link ids: 0
 
 Unresolved ids (count):
 
@@ -17,12 +17,14 @@ year update: Need for Speed 1995 -> 1994 (The Need for Speed first came out on t
 year update: Tekken 3 1998 -> 1997 (Tekken 3 launched in Japanese arcades in March 1997; the PlayStation version followed in 1998.)
 year update: Street Fighter IV 2009 -> 2008 (Street Fighter IV launched in Japanese arcades in July 2008; console versions followed in February 2009.)
 dev update: Kick Off 'Anco' -> 'Dino Dini (Anco)'
+pair conflict: coin-master>monopoly-go kept critic over mech [hits-v28-1.json vs catalog-mobile-ugc-v44.json]
 pair conflict: shin-megami-tensei>undertale kept dev over dev [jrpg-1.json vs indie-5.json]
 pair conflict: pubg>elden-ring-nightreign kept mech over mech [jrpg-4.json vs indie-5.json]
 pair conflict: god-of-war-2018>black-myth-wukong kept critic over critic [jrpg-4.json vs indie-5.json]
 pair conflict: pubg>fortnite-br kept dev over critic [marquee-v28-1.json vs base]
 pair conflict: elite>grand-theft-auto kept dev over dev [marquee-v28-1.json vs base]
 pair conflict: pac-man>grand-theft-auto kept dev over dev [marquee-v28-1.json vs base]
+pair conflict: interactive-physics>roblox kept dev over team [catalog-mobile-ugc-v44.json vs marquee-v28-2.json]
 pair conflict: shenmue>yakuza kept team over critic [openworld-1.json vs jrpg-3.json]
 pair conflict: honkai-impact-3rd>genshin-impact kept team over team [openworld-2.json vs jrpg-3.json]
 pair conflict: minecraft>terraria kept dev over critic [openworld-3.json vs indie-5.json]
@@ -104,6 +106,7 @@ pair conflict: kings-quest>maniac-mansion kept dev over dev [story-1.json vs roo
 pair conflict: dragon-s-lair>shenmue kept mech over mech [story-2.json vs openworld-1.json]
 pair conflict: the-portopia-serial-murder-case>metal-gear kept dev over critic [story-2.json vs roots-1.json]
 pair conflict: the-portopia-serial-murder-case>dragon-quest kept dev over team [jrpg-1.json vs story-2.json]
+pair conflict: bejeweled>candy-crush-saga kept critic over critic [story-4.json vs catalog-mobile-ugc-v44.json]
 pair conflict: empire-1977>civilization kept dev over dev [strategy-1.json vs roots-6.json]
 pair conflict: civilization-board-game>civilization kept dev over disp [strategy-2.json vs roots-6.json]
 pair conflict: simcity>civilization kept dev over dev [strategy-2.json vs roots-6.json]

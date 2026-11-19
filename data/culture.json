@@ -1035,5 +1035,147 @@
       "source": "Child's Play Charity & Desert Bus for Hope Official Records",
       "body": "What began in 2003 with players sending consoles to Seattle Children's Hospital grew into Child's Play across 190+ pediatric hospitals worldwide. Four years later, comedy troupe LoadingReadyRun rescued Penn & Teller's cancelled 1995 Sega CD curio Desert Bus from obscurity—driving its virtual Tucson-to-Vegas highway nonstop every November to raise over $11 million for hospital playrooms."
     }
+  ],
+  "aboutCreator": {
+    "name": "Johan Heurlin",
+    "born": 1984,
+    "tagline": "16+ years working alongside game developers, studios & platforms — from early iOS and mobile's breakout years to PC & cross-platform ecosystems.",
+    "linkedin": "https://www.linkedin.com/search/results/all/?keywords=Johan%20Heurlin",
+    "timelineCode": "",
+    "intro": "I grew up in Sweden in the late '80s and '90s swapping floppies and cartridges with friends, studied economics in Ohio, and have spent the last sixteen years working directly with the teams who build games and the platforms that carry them. I built Played & Made as a hobby love letter to two things: the worlds that quietly carried us through growing up, and the real human designers, engineers, writers, and artists whose craft deserves credit—especially in an era of studio closures and instant fast-follow clones.",
+    "chapters": [
+      {
+        "org": "Google",
+        "role": "Strategic Partnerships & Product — Google Play Games & Play Games on PC",
+        "years": "2016–present · New York",
+        "note": "Partnering with global mobile, PC, and engine studios on platform growth, device performance, and GenAI/XR ecosystem strategy—including a hands-on PM rotation leading User Pre-Registration and Paid Games for Google Play Games on PC."
+      },
+      {
+        "org": "King",
+        "role": "Mobile Partnerships & Ad Tech Manager",
+        "years": "2012–2016 · San Francisco",
+        "note": "Joined right as Candy Crush Saga and mobile free-to-play brought hundreds of millions of non-gamers into daily play—building King's first direct platform partnerships (Google, Apple, Amazon, Microsoft) and early mobile ad stack."
+      },
+      {
+        "org": "Apple",
+        "role": "iOS Developer Relations, App Specialist",
+        "years": "2010–2012 · Cupertino",
+        "note": "Worked 1-on-1 with third-party iOS developers at the dawn of the App Store, Game Center, iCloud, and mobile business models."
+      },
+      {
+        "org": "Denison University",
+        "role": "B.A. in Economics · Swedish roots (🇸🇪 → 🇺🇸)",
+        "years": "2006–2010 · Granville, Ohio",
+        "note": "President of the Denison Lecture Series; fluent in Swedish and English (with intermediate German & Spanish)."
+      }
+    ]
+  },
+  "mobilePillars": [
+    {
+      "tag": "👆 Touch-First Physics · 1997–2011",
+      "title": "Reinventing Game Feel for One Thumb & Capacitive Glass",
+      "body": "Translating D-pads onto glass failed until designers built around direct touch: Nokia's Snake (1997) in pockets worldwide, Rovio's slingshot trajectories in Angry Birds (game #52 after 51 near-misses), Halfbrick's multi-touch blade arcs in Fruit Ninja and Jetpack Joyride, ZeptoLab's Cut the Rope, and Tiny Wings.",
+      "games": [
+        "snake",
+        "angry-birds",
+        "fruit-ninja",
+        "cut-the-rope",
+        "jetpack-joyride",
+        "tiny-wings"
+      ]
+    },
+    {
+      "tag": "🌍 3 Billion Players · 2012–Today",
+      "title": "Welcoming Parents, Commuters & Mobile-First Nations",
+      "body": "Hardcore forums often overlook that a $500 console and living-room TV were out of reach for most of humanity. Mobile turned subway rides and waiting rooms into playgrounds across every age and country—led by King's Candy Crush Saga, SYBO's Subway Surfers, Dream Games' Royal Match, Scopely's Monopoly GO!, and Tencent's Honor of Kings.",
+      "games": [
+        "candy-crush-saga",
+        "subway-surfers",
+        "royal-match",
+        "monopoly-go",
+        "honor-of-kings",
+        "plants-vs-zombies"
+      ]
+    },
+    {
+      "tag": "🥂 Small-Cell Craft & 3-Minute Strategy",
+      "title": "Autonomous Studio Cells & Deep Pocket Tactics",
+      "body": "In Helsinki, Supercell pioneered 6-to-12-person autonomous 'cells' that famously toast champagne when killing prototypes that aren't generational—yielding decade-long hits Clash of Clans, Clash Royale, and Brawl Stars. Meanwhile Second Dinner distilled collectible card mind-games into 3-minute Marvel Snap duels alongside Balatro and Vampire Survivors.",
+      "games": [
+        "clash-of-clans",
+        "clash-royale",
+        "brawl-stars",
+        "marvel-snap",
+        "balatro",
+        "vampire-survivors"
+      ]
+    },
+    {
+      "tag": "🎨 Pocket Art, Real-World Parks & Silicon Limits",
+      "title": "From Escher Puzzle Boxes & AR Summers to Console GPUs",
+      "body": "Mobile also birthed intimate interactive art and technical marvels: Asher Vollmer's Threes! (and the famous 2048 clone lesson), ustwo's Monument Valley, Ken Wong's Florence, inkle's 80 Days, Niantic's Pokémon GO filling summer 2016 parks with neighbors, and HoYoverse pushing phone thermals and shaders to open-world scale in Genshin Impact.",
+      "games": [
+        "threes",
+        "monument-valley",
+        "florence",
+        "80-days",
+        "pok-mon-go",
+        "genshin-impact"
+      ]
+    }
+  ],
+  "ugcPillars": [
+    {
+      "tag": "🛠️ Bedroom Mods → Billion-Dollar Genres · 1996–2013",
+      "title": "Plot Twist for Purists: PC Gaming's Biggest Genres Started as Mods",
+      "body": "Before dismissing modern UGC, remember how core PC genres began: Robin Walker's Quake mod Team Fortress (1996), Minh Le & Jess Cliffe's dorm-room Half-Life mod Counter-Strike (1999), Warcraft III custom map Defense of the Ancients (2003) birthing MOBAs, Garry's Mod & The Stanley Parable on Source, and Dean Hall's DayZ + Brendan Greene's ARMA mods sparking Battle Royale.",
+      "games": [
+        "team-fortress",
+        "counter-strike",
+        "defense-of-the-ancients",
+        "garrys-mod",
+        "the-stanley-parable",
+        "dayz"
+      ]
+    },
+    {
+      "tag": "⛏️ Sandbox Worlds & Player-Run Servers · 2008–Today",
+      "title": "Play, Create, Share: Minecraft, LittleBigPlanet, Mario Maker & FiveM",
+      "body": "Media Molecule's LittleBigPlanet (2008) and Nintendo's Super Mario Maker handed console players the level editor, while Mojang's Minecraft became digital LEGO—spawning working Redstone CPUs and massive RPG servers like Hypixel SkyBlock. On PC, Cfx.re's FiveM turned GTA V into unscripted improv theater before officially joining Rockstar.",
+      "games": [
+        "minecraft",
+        "hypixel-skyblock",
+        "littlebigplanet",
+        "super-mario-maker",
+        "dreams",
+        "fivem-gta-rp"
+      ]
+    },
+    {
+      "tag": "🧱 Teenagers Shipping Hits for Millions · Roblox",
+      "title": "From a 1989 Physics Classroom Sim to Gen Z's Indie Incubator",
+      "body": "David Baszucki and Erik Cassel's 1989 educational lab Interactive Physics evolved into Roblox—where solo creators, college dormmates, and 17-year-old designers ship instant cross-platform phenomena like Adopt Me!, Brookhaven RP, co-op horror hit DOORS, and runaway fashion sensation Dress to Impress.",
+      "games": [
+        "interactive-physics",
+        "roblox",
+        "adopt-me",
+        "brookhaven-rp",
+        "doors-roblox",
+        "dress-to-impress"
+      ]
+    },
+    {
+      "tag": "🌐 Live Engines as Platforms · UEFN, Auto Chess & VRChat",
+      "title": "When Games Become Operating Systems for New Genres",
+      "body": "From Drodo Studio inventing the auto-battler craze inside Dota 2's Workshop (Dota Auto Chess → Teamfight Tactics) to social avatars in VRChat and Epic opening Unreal Editor & Verse scripting inside Fortnite (UEFN), today's sharpest new mechanics often sprout inside another game's tools first.",
+      "games": [
+        "dota-auto-chess",
+        "teamfight-tactics",
+        "fortnite-br",
+        "fortnite-creative-uefn",
+        "lego-fortnite",
+        "vrchat"
+      ]
+    }
   ]
 }
