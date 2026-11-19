@@ -159,6 +159,13 @@ button.chip:hover{border-color:var(--line2)}
 .res small{font-size:12px;color:var(--muted)}
 .res .y{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
 .res .tag{font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+.resrow{display:flex;align-items:center;gap:4px}
+.resrow > .res{flex:1;min-width:0}
+.respick{flex:none;border:1px solid var(--line2);background:var(--paper);color:var(--ink);border-radius:8px;padding:4px 9px;font-size:12px;font-weight:700;min-block-size:32px;white-space:nowrap}
+.respick:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.respick.lv1{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.respick.lv2{background:var(--hook);border-color:var(--hook);color:var(--hook-ink)}
+.respick.lv3{background:var(--love);border-color:var(--love);color:var(--love-ink)}
 
 /* ---------- covers ---------- */
 .cv{--h:220;--ph:120;position:relative;display:block;aspect-ratio:3/4;width:100%;max-width:100%;border-radius:5px;overflow:hidden;color:#fff;container-type:inline-size;isolation:isolate;flex:none;
@@ -820,9 +827,9 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
 @media (prefers-reduced-motion:reduce){.wheel-win{animation:none}}
 @media (max-width:520px){
   .wheel-stage{gap:10px}
-  .wheel-wrap{width:min(280px,calc(100vw - 108px))}
-  .lever-housing{width:50px;height:186px}
-  .lever-knob{width:40px;height:40px}
+  .wheel-wrap{width:min(280px,calc(100vw - 114px))}
+  .lever-housing{width:54px;height:188px}
+  .lever-knob{width:44px;height:44px}
 }
 #toast[popover]{margin:0;inset:auto auto calc(22px + env(safe-area-inset-bottom,0px)) 50%;border:0}
 /* v38: intrinsic grid/flex containment & native mobile phone ergonomics */
@@ -1408,7 +1415,14 @@ function wireSearch(input,box,onPick,opts={}){
   let items=[],on=0;
   const draw=()=>{const v=input.value.trim();if(!v){box.hidden=true;return}
     items=searchGames(v,opts);on=0;
-    box.innerHTML=items.map((g,i)=>`<button type="button" class="res${i===0?" on":""}" data-i="${i}">${cover(g,{showYear:false})}<span><b>${esc(g.title)}</b><small>${flag(g.cc)} ${esc(studio(g)||"")}${g.tree?` · <span class="tag">in the family tree</span>`:""}</small></span><span class="y">${g.year}</span></button>`).join("")
+    box.innerHTML=items.map((g,i)=>{
+      const mainBtn=`<button type="button" class="res${i===0?" on":""}" data-i="${i}">${cover(g,{showYear:false})}<span><b>${esc(g.title)}</b><small>${flag(g.cc)} ${esc(studio(g)||"")}${g.tree?` · <span class="tag">in the family tree</span>`:""}</small></span><span class="y">${g.year}</span></button>`;
+      if(opts.quickPick&&playable(g)){
+        const lv=levelOf(hist,g);
+        return `<div class="resrow">${mainBtn}<button type="button" class="respick${lv?" lv"+lv:""}" data-qpick="${i}" aria-label="${lv?`${LV[lv].label}: ${esc(g.title)} — tap to cycle`:`Add ${esc(g.title)} to my timeline`}">${lv?LV[lv].m:"+ Pick"}</button></div>`;
+      }
+      return mainBtn;
+    }).join("")
       +(opts.custom&&!items.some(g=>g.n===norm(v))?`<button type="button" class="res" data-custom="1"><span></span><span><b>Add “${esc(v)}”</b><small>As your own entry</small></span><span class="y">+</span></button>`:"")
       +(!items.length&&!opts.custom?`<p class="empty" style="padding:8px 10px 4px">No match yet (${G.length.toLocaleString()} games so far).</p>`:"")
       +(items.length<4?`<button type="button" class="res" data-req="1"><span class="mono" style="font-size:16px;text-align:center">+</span><span><b>Request “${esc(v)}” for the catalog</b><small>Missing game or console? Let us know</small></span><span class="y">▸</span></button>`:"");
@@ -1420,7 +1434,13 @@ function wireSearch(input,box,onPick,opts={}){
     if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();if(!bs.length)return;on=(on+(e.key==="ArrowDown"?1:-1)+bs.length)%bs.length;bs.forEach((b,i)=>b.classList.toggle("on",i===on));bs[on].scrollIntoView({block:"nearest"})}
     else if(e.key==="Enter"){e.preventDefault();if(box.hidden||!input.value.trim())return;const b=bs[on]||bs[0];if(b)b.click()}
     else if(e.key==="Escape"){box.hidden=true}});
-  box.addEventListener("click",e=>{const b=e.target.closest(".res");if(!b)return;
+  box.addEventListener("click",e=>{
+    const qp=e.target.closest("[data-qpick]");
+    if(qp&&opts.onQuickPick){
+      const g=items[+qp.dataset.qpick];if(!g)return;
+      opts.onQuickPick(g,qp);return;
+    }
+    const b=e.target.closest(".res");if(!b)return;
     const rawQ=input.value.trim();input.value="";box.hidden=true;
     if(b.dataset.req){openFeatureSheet({cat:"Missing Game / Classic",title:rawQ});return}
     const pick=b.dataset.custom?{custom:rawQ}:items[+b.dataset.i];onPick(pick)});
@@ -1946,7 +1966,7 @@ function renderStart(m){
   if(hb){
     const applyBirth=()=>{
       const raw=hb.value.trim();
-      if(!raw){state.heroBirth=null;hist.birth=null;save();renderStart(m);return}
+      if(!raw){state.heroBirth=null;hist.birth=null;hist.era=state.heroEra||"90s";save();renderStart(m);return}
       const y=parseInt(raw,10);
       if(raw.length===4&&y>=1940&&y<=NOW-3){
         state.heroBirth=y;hist.birth=y;hist.era=String(Math.floor(y/10)*10).slice(-2)+"s";state.heroShuffle=0;save();
@@ -1957,7 +1977,20 @@ function renderStart(m){
     };
     hb.addEventListener("input",applyBirth);
   }
-  wireSearch($("#q0"),$("#r0"),g=>{if(!g||!g.id)return;go(g.id)},{});
+  wireSearch($("#q0"),$("#r0"),g=>{if(!g||!g.id)return;go(g.id)},{
+    quickPick:true,
+    onQuickPick:(g,btn)=>{
+      if(!hist.birth&&!hist.era){hist.era=state.heroEra||"90s";save()}
+      const wasEmpty=!entries(hist).length;
+      const nl=cycleLevel(g);playBlip(nl);
+      if(wasEmpty&&nl>0)trackEvent("timeline_started","search");
+      btn.className="respick"+(nl?" lv"+nl:"");
+      btn.textContent=nl?LV[nl].m:"+ Pick";
+      $$(`.art[data-id="${CSS.escape(g.id)}"]`).forEach(el=>refreshTile(el,g));
+      updateHeroBar();
+      if(nl>0)toast(`${LV[nl].m} ${LV[nl].label}: ${g.title}`);
+    }
+  });
 }
 function updateHeroBar(){
   const n=entries(hist).length,bar=$("#heroBar");if(!bar)return;
@@ -3251,7 +3284,7 @@ function renderAbout(m){
     <h1 class="h1" style="margin-bottom:8px">Hi, I'm ${esc(bio.name||"Johan Heurlin")}</h1>
     <p class="lede" style="max-width:70ch">${esc(bio.tagline||"")}</p>
     <div class="card" style="margin-top:14px;max-width:78ch">
-      <p style="margin:0 0 12px;font-size:14.8px;line-height:1.62;color:var(--ink)">${esc(bio.intro||"")} Just like a favorite album or book, games stay with us because real teams weave art, music, architecture, writing, and systems into worlds we actually inhabit — safe harbors through rough seasons, late-night couch rivalries, and crafts whose ripples outlast studios and hardware generations.</p>
+      <p style="margin:0 0 12px;font-size:14.8px;line-height:1.62;color:var(--ink)">${esc(bio.intro||"")}</p>
       <p style="margin:0;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:13px;color:var(--ink2);line-height:1.5"><b>Disclaimer:</b> Independent personal hobby project — views and notes are my own and not affiliated with Google or past employers.</p>
       <div class="row" style="margin-top:14px;gap:8px">
         ${bio.linkedin?`<a class="btn sm primary" href="${esc(bio.linkedin)}" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>`:""}
@@ -3448,7 +3481,7 @@ let quiz=null,quizStreak=0,quizBest=store.get("ib2-best",0),loreRecent=[];
 const QUIZ_MODES=[["lore","Lore & Deep Cuts"],["lineage","Lineage"],["year","Year"],["studio","Studio"],["country","Country"],["system","System"]];
 const LORE_QUIZ=[
   {id:"overwatch",q:"Which cancelled 7-year Blizzard MMO did Jeff Kaplan's team salvage into Overwatch?",ans:"Project Titan",wrong:["StarCraft: Ghost","Warcraft Adventures","Project Nomad"],fact:"After Blizzard cancelled Project Titan in 2013, the team distilled its near-future Earth and time-blinking Jumper class ('Tracer') into Overwatch."},
-  {id:"sticky-balls",q:"Which handheld imploded in a $300M Uppsala Mafia scandal & a 162-mph Malibu Ferrari Enzo crash?",ans:"Gizmondo",wrong:["Nokia N-Gage","Infinium Phantom","Tapwave Zodiac"],fact:"Co-run by former Uppsala Mafia figure Stefan Eriksson, Tiger Telematics shipped <25,000 Gizmondo units before Eriksson wrecked an embezzled Ferrari Enzo on PCH and blamed an imaginary driver named 'Dietrich'."},
+  {id:"sticky-balls",q:"Which 2005 GPS handheld collapsed amid ~$300M in reported losses & a 2006 Malibu Ferrari Enzo crash?",ans:"Gizmondo",wrong:["Nokia N-Gage","Infinium Phantom","Tapwave Zodiac"],fact:"Tiger Telematics shipped under 25,000 Gizmondo units before bankruptcy in early 2006; executive Stefan Eriksson wrecked a leased Ferrari Enzo on PCH and blamed an imaginary driver named 'Dietrich' before pleading no contest to embezzlement (Wired, LA Times)."},
   {id:"et-the-extra-terrestrial",q:"How many weeks was Atari star coder Howard Scott Warshaw given to solo-make E.T. in 1982?",ans:"5 weeks",wrong:["6 months","14 weeks","10 months"],fact:"Handed 5 weeks before Christmas instead of half a year, Warshaw delivered a finished ROM on time; in 2014, ~1,300 buried Atari carts were unearthed in Alamogordo, New Mexico and placed in the Smithsonian."},
   {id:"glitch",q:"When Tiny Speck sunsetted its gentle browser MMO Glitch in 2012, what tool did its devs spin out?",ans:"Slack",wrong:["Discord","Twitch","Figma"],fact:"Stewart Butterfield's team released Glitch's art into the public domain and turned the internal messaging tool they built to make the game into Slack."},
   {id:"fallout-new-vegas",q:"Which cancelled Black Isle 'Fallout 3' originated Caesar's Legion and Joshua Graham before New Vegas?",ans:"Van Buren",wrong:["Project Jefferson","Torn","Meantime"],fact:"Interplay shut down Black Isle in Dec 2003 right before Van Buren finished — so Josh Sawyer and Chris Avellone carried its factions and Hoover Dam war into Fallout: New Vegas at Obsidian."},
@@ -3544,7 +3577,7 @@ function renderQuiz(){
       :mode==="country"?`Released in ${g.year} — pick the country where its team built it:`
       :`Released in ${g.year} — pick one of its original platforms:`);
     const covHTML=(hideCover&&picked==null)
-      ?`<div class="cv mystery" aria-label="Mystery game cover — revealed after answering"><span>?</span><small>${g.year}</small></div>`
+      ?`<div class="cv mystery" aria-label="Mystery game cover — revealed after answering"><b>?</b><small>${g.year}</small></div>`
       :cover(g,{showYear:mode!=="year"});
     el.innerHTML=`<div class="sechead" style="margin:0"><div><p class="eyebrow">${mode==="lore"?"Industry &amp; folklore challenge":"Arcade trivia"}</p><h2 class="h2">${esc(qTitle)}</h2></div><span class="row" style="gap:6px"><span class="streak">${quizStreak?`${quizStreak} in a row`:""}${quizBest?` · best ${quizBest}`:""}</span>${streakShare}</span></div>
       ${tabs}
@@ -4011,6 +4044,7 @@ function stopLuckyWheel(){
   if(!WHEEL)return;
   if(WHEEL.raf)cancelAnimationFrame(WHEEL.raf);
   if(WHEEL.keyFn)document.removeEventListener("keydown",WHEEL.keyFn);
+  if(WHEEL.resizeFn)removeEventListener("resize",WHEEL.resizeFn);
   WHEEL=null;
 }
 function openSheet(html,label,opts={}){
@@ -4509,8 +4543,8 @@ function openLuckyWheel(){
     WSTATE.settledIdx=idx;
     drawWheel();
     const g=games[idx];if(!g||!winBox)return;
-    const lv=levelOf(hist,g),dc=directCrossLinks(g).length,upC=(UP[g.i]||[]).length;
-    const infBit=(dc>0||g.inf>0)?` · Inspired <b>${dc}</b> directly · <b>${g.inf.toLocaleString()}</b> across genres`:(upC>0?` · Built on <b>${upC}</b> earlier game${upC===1?"":"s"}`:(GEN[g.g]?` · ${esc(GEN[g.g].name)}`:""));
+    const lv=levelOf(hist,g),dc=directCrossLinks(g).length,upC=(UP[g.i]||[]).length,genObj=genreOf(g);
+    const infBit=(dc>0||g.inf>0)?` · Inspired <b>${dc}</b> directly · <b>${g.inf.toLocaleString()}</b> across genres`:(upC>0?` · Built on <b>${upC}</b> earlier game${upC===1?"":"s"}`:(genObj?` · ${esc(genObj.label)}`:""));
     playBlip(2);
     winBox.innerHTML=`<div class="wheel-win">
       <div class="gsheet">${cover(g)}
@@ -4532,6 +4566,7 @@ function openLuckyWheel(){
     if(again)again.addEventListener("click",()=>triggerAutoYank());
     announceSR(`Lucky Wheel landed on ${g.title}, ${g.year}`);
   };
+  const ensureLoop=()=>{if(WHEEL===WSTATE&&!WSTATE.raf){WSTATE.lastT=0;WSTATE.raf=requestAnimationFrame(tick)}};
   const launchWithPull=p=>{
     if(WSTATE.spinning)return;
     WSTATE.settledIdx=-1;
@@ -4545,11 +4580,13 @@ function openLuckyWheel(){
     WSTATE.omega=8.6+Math.max(0.2,p)*14.8+Math.random()*2.6;
     WSTATE.lastPegIdx=wedgeInfo(WSTATE.theta).pegIdx;
     if(hint)hint.textContent="Spinning…";
+    ensureLoop();
   };
   const triggerAutoYank=()=>{
     if(WSTATE.spinning||WSTATE.pulling)return;
     if(reduced){launchWithPull(0.8);return}
     WSTATE.autoYank={t:0,target:0.78+Math.random()*0.18,phase:"down"};
+    ensureLoop();
   };
 
   /* spring pull-arm pointer capture */
@@ -4566,8 +4603,8 @@ function openLuckyWheel(){
     const travel=Math.max(84,(housing.clientHeight||196)-74);
     const p=Math.max(0,Math.min(1,(e.clientY-startY)/travel));
     WSTATE.pull=p;renderLever();
-    if(p>=0.35&&!didTick35){didTick35=true;playWheelTick(1.2)}
-    if(p>=0.75&&!didTick75){didTick75=true;playWheelTick(2.4)}
+    if(p>=0.35&&!didTick35){didTick35=true;playWheelTick(0.35,true)}
+    if(p>=0.75&&!didTick75){didTick75=true;playWheelTick(0.65)}
   };
   const onUp=e=>{
     if(e.pointerId!==dragId)return;
@@ -4575,11 +4612,12 @@ function openLuckyWheel(){
     const p=WSTATE.pull;
     if(p>=0.14){launchWithPull(p)}
     else{triggerAutoYank()}
+    ensureLoop();
   };
   housing.addEventListener("pointerdown",onDown);
   housing.addEventListener("pointermove",onMove);
   housing.addEventListener("pointerup",onUp);
-  housing.addEventListener("pointercancel",()=>{dragId=null;WSTATE.pulling=false;housing.classList.remove("pulling")});
+  housing.addEventListener("pointercancel",()=>{dragId=null;WSTATE.pulling=false;housing.classList.remove("pulling");ensureLoop()});
   knob.addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();triggerAutoYank()}});
   WSTATE.keyFn=e=>{
     if(e.key===" "&&$("#sheetDlg")&&$("#sheetDlg").open&&!e.target.closest("input,textarea,button:not(#leverKnob)")){
@@ -4588,11 +4626,13 @@ function openLuckyWheel(){
   };
   document.addEventListener("keydown",WSTATE.keyFn);
 
-  /* rAF physics loop: lever spring return + peg-flapper barrier torque + rock-back settle */
+  /* demand-driven rAF physics loop: lever spring return + peg-flapper barrier torque + rock-back settle (0% idle CPU) */
   const tick=now=>{
+    WSTATE.raf=0;
     if(WHEEL!==WSTATE)return;
     const dt=Math.min(0.032,Math.max(0.004,(now-(WSTATE.lastT||now))/1000));
     WSTATE.lastT=now;
+    let wheelDirty=false;
     /* auto-yank pull animation */
     if(WSTATE.autoYank){
       WSTATE.autoYank.t+=dt;
@@ -4610,6 +4650,7 @@ function openLuckyWheel(){
     }
     /* wheel & peg-flapper physics */
     if(WSTATE.spinning){
+      wheelDirty=true;
       const subSteps=4,h=dt/subSteps;
       for(let s=0;s<subSteps;s++){
         const info=wedgeInfo(WSTATE.theta);
@@ -4623,30 +4664,35 @@ function openLuckyWheel(){
           /* extra rubber contact damping */
           alpha+=-0.95*WSTATE.omega*(1-ad/CONTACT);
         }
+        const prevTheta=WSTATE.theta;
         WSTATE.omega+=alpha*h;
         WSTATE.theta+=WSTATE.omega*h;
-        /* detect peg crest crossing for tick audio + haptics + inelastic kick */
-        const nInfo=wedgeInfo(WSTATE.theta);
-        if(Math.sign(info.dPeg)!==Math.sign(nInfo.dPeg)&&Math.abs(info.dPeg)<CONTACT&&Math.abs(nInfo.dPeg)<CONTACT){
+        /* exact slice-boundary peg crossing detection (never drops ticks even at 30fps) */
+        const prevSlot=Math.floor((-Math.PI/2-prevTheta)/SLICE);
+        const nextSlot=Math.floor((-Math.PI/2-WSTATE.theta)/SLICE);
+        if(prevSlot!==nextSlot){
           const spd=Math.abs(WSTATE.omega);
           if(spd>0.28){
-            playWheelTick(spd);
+            playWheelTick(Math.min(1,spd/12));
             if(spd<4.5&&navigator.vibrate)try{navigator.vibrate(5)}catch(_){}
             WSTATE.omega*=spd>3?0.972:0.93;
-            WSTATE.flapperV+=(WSTATE.omega>=0?1:-1)*Math.min(14,4+spd*1.1);
+            /* snap-back flick when peg slips past rubber tip */
+            WSTATE.flapperV+=(WSTATE.omega>=0?1:-1)*Math.min(8,2.5+spd*0.45);
           }
         }
         /* knife-edge guard: never balance dead-on a peg crest; rock back cleanly */
+        const nInfo=wedgeInfo(WSTATE.theta);
         if(Math.abs(nInfo.dPeg)<0.012&&Math.abs(WSTATE.omega)<0.12){
           WSTATE.omega=-0.34;
         }
       }
-      /* flexible rubber flapper target angle (up to ~26° = 0.454 rad) */
+      /* flexible rubber flapper target angle (up to ~26° = 0.454 rad):
+         clockwise wheel (omega>0) pushes hanging flapper tip RIGHT -> negative Canvas rotation */
       const cur=wedgeInfo(WSTATE.theta),ad=Math.abs(cur.dPeg);
       let targetFlap=0;
       if(ad<CONTACT){
         const bend=(1-ad/CONTACT)*0.454;
-        targetFlap=WSTATE.omega>=0?bend:-bend*0.75;
+        targetFlap=WSTATE.omega>=0?-bend:bend*0.75;
       }
       const fAcc=(targetFlap-WSTATE.flapper)*360-WSTATE.flapperV*22;
       WSTATE.flapperV+=fAcc*dt;
@@ -4664,15 +4710,20 @@ function openLuckyWheel(){
         WSTATE.stillTime=0;
       }
     }else if(Math.abs(WSTATE.flapper)>0.002||Math.abs(WSTATE.flapperV)>0.01){
+      wheelDirty=true;
       const fAcc=-WSTATE.flapper*320-WSTATE.flapperV*20;
       WSTATE.flapperV+=fAcc*dt;WSTATE.flapper+=WSTATE.flapperV*dt;
+      if(Math.abs(WSTATE.flapper)<0.002&&Math.abs(WSTATE.flapperV)<0.01){WSTATE.flapper=0;WSTATE.flapperV=0}
     }
-    drawWheel();
-    WSTATE.raf=requestAnimationFrame(tick);
+    if(wheelDirty)drawWheel();
+    const active=WSTATE.spinning||WSTATE.pulling||!!WSTATE.autoYank||WSTATE.pull>0.001||Math.abs(WSTATE.pullV)>0.01||Math.abs(WSTATE.flapper)>0.002||Math.abs(WSTATE.flapperV)>0.01;
+    if(active)WSTATE.raf=requestAnimationFrame(tick);
+    else WSTATE.lastT=0;
   };
+  WSTATE.resizeFn=()=>{if(WHEEL===WSTATE){renderLever();drawWheel()}};
+  addEventListener("resize",WSTATE.resizeFn);
   renderLever();
   drawWheel();
-  WSTATE.raf=requestAnimationFrame(tick);
 }
 
 function openGameSheet(y,t,ro){
@@ -5203,7 +5254,7 @@ function openShare(){
       <button class="btn sm" data-act="emailSelf">Email link to myself</button>
       <button class="btn sm" data-act="dlJson">Download backup (.json)</button>
     </div>
-    <h3 class="h3" style="margin-top:16px">Shareable PNG cards &amp; Box Pile</h3><p class="sub">Export high-resolution cards stamped with playedmade.com (${state.shareBirth&&hist.birth?`born ${hist.birth}`:esc(eraLbl)}).</p>
+    <h3 class="h3" style="margin-top:16px">Shareable PNG cards &amp; Box Pile</h3><p class="sub" id="sharePngSub">Export high-resolution cards stamped with playedmade.com (${state.shareBirth&&hist.birth?`born ${hist.birth}`:esc(eraLbl)}).</p>
     <div class="row">
       <button class="btn" data-act="png" data-kind="card">Save story card</button>
       <button class="btn" data-act="png" data-kind="favs">♥ Save favorites grid</button>
@@ -5212,7 +5263,10 @@ function openShare(){
       ${st.wk?`<button class="btn craft" data-act="png" data-kind="maker">🛠 Save Maker Legacy card</button>`:""}
       <button class="btn" data-act="png" data-kind="wall">Save 4K poster</button>
     </div><div id="imgout"></div>`,"Share");
-  const syncShareUrl=()=>{const sl=$("#shareLink");if(sl)sl.value=currentShareURL()};
+  const syncShareUrl=()=>{
+    const sl=$("#shareLink");if(sl)sl.value=currentShareURL();
+    const ps=$("#sharePngSub");if(ps)ps.textContent=`Export high-resolution cards stamped with playedmade.com (${state.shareBirth&&hist.birth?`born ${hist.birth}`:eraLbl}).`;
+  };
   $("#shareName").addEventListener("input",e=>{hist.name=e.target.value.trim().slice(0,24);save();syncShareUrl()});
   const sb=$("#shareBirthChk"),sn=$("#shareNotesChk");
   if(sb)sb.addEventListener("change",()=>{state.shareBirth=sb.checked;syncShareUrl()});
@@ -5421,9 +5475,20 @@ function drawCoverOrBox(x,g,title,year,h,glyph,bx,by,w,hh,imgMap){
   }
   canvasCover(x,title,year,h,glyph,bx,by,w,hh);
 }
-function wrapText(x,text,px,py,maxW,lh,maxLines){const words=String(text).split(/\s+/);let line="",n=0;
-  for(const w of words){const t=line?line+" "+w:w;if(x.measureText(t).width>maxW&&line){x.fillText(line,px,py+n*lh);n++;line=w;if(n>=maxLines-1&&words.indexOf(w)<words.length-1){line=w+"…";break}}else line=t}
-  if(line&&n<maxLines)x.fillText(line,px,py+n*lh)}
+function wrapText(x,text,px,py,maxW,lh,maxLines){
+  const words=String(text).split(/\s+/).filter(Boolean);let line="",n=0;
+  for(let i=0;i<words.length;i++){
+    const w=words[i],t=line?line+" "+w:w;
+    if(x.measureText(t).width>maxW&&line){
+      if(n>=maxLines-1){
+        let ell=line;while(ell.length>1&&x.measureText(ell+"…").width>maxW)ell=ell.slice(0,-1);
+        x.fillText(ell.trimEnd()+"…",px,py+n*lh);return;
+      }
+      x.fillText(line,px,py+n*lh);n++;line=w;
+    }else line=t;
+  }
+  if(line&&n<maxLines)x.fillText(line,px,py+n*lh,maxW);
+}
 function pngEraBadge(d){
   if(state.shareBirth&&d&&d.birth)return `born ${d.birth}`;
   return eraKidLabel(d)||"Life in Games";
@@ -5432,12 +5497,12 @@ function drawWallpaper(d,name,imgMap){
   const W=3840,H=2160,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
   const es=entries(d),byY={};es.forEach(e=>(byY[e.y]=byY[e.y]||[]).push(e));const ys=Object.keys(byY).map(Number);
   if(!ys.length)return cv;
-  const from=d.birth?Math.min(d.birth,...ys):Math.min(...ys),to=Math.max(...ys),years=[];for(let y=from;y<=to;y++)years.push(y);
+  const from=(state.shareBirth&&d.birth)?Math.min(d.birth,...ys):Math.min(...ys),to=Math.max(...ys),years=[];for(let y=from;y<=to;y++)years.push(y);
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0C1222");bg.addColorStop(1,"#1A1532");x.fillStyle=bg;x.fillRect(0,0,W,H);
   x.strokeStyle="rgba(140,157,255,.06)";x.lineWidth=2;for(let gx=0;gx<W;gx+=64){x.beginPath();x.moveTo(gx,0);x.lineTo(gx,H);x.stroke()}for(let gy=0;gy<H;gy+=64){x.beginPath();x.moveTo(0,gy);x.lineTo(W,gy);x.stroke()}
   const M=120,colW=(W-M*2)/years.length,tw=Math.min(colW*.84,180),th=tw*4/3;
-  x.fillStyle="#E8ECF6";x.font="700 66px Unbounded, Arial Black, sans-serif";x.fillText(`${name||(d.name?d.name+"'s":"My")} gaming years`,M,150);
-  x.font="500 32px IBM Plex Mono, monospace";x.fillStyle="#98A1B6";x.fillText(`${from}–${to} · ${pngEraBadge(d)} · ${es.length} games`,M,204);
+  x.fillStyle="#E8ECF6";x.font="700 66px Unbounded, Arial Black, sans-serif";x.fillText(`${name||(d.name?d.name+"'s":"My")} gaming years`,M,150,W-M*2);
+  x.font="500 32px IBM Plex Mono, monospace";x.fillStyle="#98A1B6";x.fillText(`${from===to?from:`${from}–${to}`} · ${pngEraBadge(d)} · ${es.length} games`,M,204,W-M*2);
   const boxes={};
   years.forEach((y,i)=>{const cx=M+i*colW+colW/2;
     x.fillStyle="#98A1B6";x.font=`500 ${Math.max(16,Math.min(26,colW*.28))}px IBM Plex Mono, monospace`;x.textAlign="center";x.fillText(String(y),cx,H-90);x.textAlign="left";
@@ -5454,11 +5519,11 @@ function drawWallpaper(d,name,imgMap){
 function cardStagesFor(d){
   const es=entries(d);
   if(d.birth){
-    return [["Childhood",0,12],["Teens",13,19],["Twenties",20,29],["Thirties",30,39],["Forties",40,49]].map(([label,a,b])=>({
+    return [["Childhood",0,12],["Teens",13,19],["Twenties",20,29],["Thirties",30,39],["Forties",40,49],["Fifty+",50,120]].map(([label,a,b])=>({
       label,xs:es.filter(e=>e.y-d.birth>=a&&e.y-d.birth<=b).sort((p,q)=>q.lv-p.lv||((q.g&&q.g.pop)||0)-((p.g&&p.g.pop)||0)).slice(0,5)
     })).filter(s=>s.xs.length);
   }
-  const decs=[[1980,1989,"1980s"],[1990,1999,"1990s"],[2000,2009,"2000s"],[2010,2019,"2010s"],[2020,NOW,"2020s"]];
+  const decs=[[1950,1979,"1950s–70s"],[1980,1989,"1980s"],[1990,1999,"1990s"],[2000,2009,"2000s"],[2010,2019,"2010s"],[2020,NOW,"2020s"]];
   return decs.map(([a,b,label])=>({
     label,xs:es.filter(e=>e.y>=a&&e.y<=b).sort((p,q)=>q.lv-p.lv||((q.g&&q.g.pop)||0)-((p.g&&p.g.pop)||0)).slice(0,5)
   })).filter(s=>s.xs.length);
@@ -5468,9 +5533,9 @@ function drawCard(d,name,imgMap){
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0E1428");bg.addColorStop(1,"#23163C");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const st=timelineStats(d),persona=gamerPersonaOf(d);
   x.fillStyle="#8C9DFF";x.font="600 26px IBM Plex Mono, monospace";x.fillText("MY LIFE IN GAMES",72,115);
-  x.fillStyle="#F2F4F8";x.font="700 68px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"My timeline"),72,196);
-  x.fillStyle="#AEB6C8";x.font="500 28px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)} · ${st.n} games · ${st.sys} systems`,72,248);
-  if(persona){x.fillStyle="#FF8A78";x.font="600 28px IBM Plex Sans, sans-serif";x.fillText(persona.title,72,292)}
+  x.fillStyle="#F2F4F8";x.font="700 68px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"My timeline"),72,196,W-144);
+  x.fillStyle="#AEB6C8";x.font="500 28px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)} · ${st.n} games · ${st.sys} systems`,72,248,W-144);
+  if(persona){x.fillStyle="#FF8A78";x.font="600 28px IBM Plex Sans, sans-serif";x.fillText(persona.title,72,292,W-144)}
   let yy=356;
   for(const {label,xs} of cardStagesFor(d)){if(yy>1520)break;
     x.fillStyle="#8C9DFF";x.font="600 24px IBM Plex Mono, monospace";x.fillText(label.toUpperCase(),72,yy);yy+=24;
@@ -5492,8 +5557,8 @@ function drawFavsCard(d,name,imgMap){
   const es=entries(d),{t10,picks}=favCardPicks(d);
   const persona=gamerPersonaOf(d);
   x.fillStyle="#FF6E5A";x.font="600 26px IBM Plex Mono, monospace";x.fillText(t10.length?`MY TOP ${t10.length} GAMES`:"MY ALL-TIME FAVORITES",72,110);
-  x.fillStyle="#F2F4F8";x.font="700 62px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"My Favorites"),72,186);
-  x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)}${persona?" · "+persona.title:""}`,72,236);
+  x.fillStyle="#F2F4F8";x.font="700 62px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"My Favorites"),72,186,W-144);
+  x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)}${persona?" · "+persona.title:""}`,72,236,W-144);
   const cols=4,w=212,h=282,gapX=29,gapY=54,startY=290;
   picks.forEach((e,idx)=>{
     const r=Math.floor(idx/cols),c=idx%cols,bx=72+c*(w+gapX),by=startY+r*(h+gapY),g=e.g;
@@ -5503,7 +5568,7 @@ function drawFavsCard(d,name,imgMap){
     x.fillStyle="#CBD2E1";x.font="500 21px IBM Plex Mono, monospace";x.fillText(String(e.y),bx,by+h+28);
   });
   const sys=(d.owned&&d.owned.length?d.owned:[...new Set(es.flatMap(e=>sysListOf(e.e,d)))]).slice(0,6);
-  if(sys.length){x.fillStyle="#98A1B6";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played on: "+sys.join(" · "),72,H-115)}
+  if(sys.length){x.fillStyle="#98A1B6";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played on: "+sys.join(" · "),72,H-115,W-144)}
   x.fillStyle="#8E98B0";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played & Made · playedmade.com",72,H-64);
   return cv;
 }
@@ -5519,15 +5584,15 @@ function drawConsolesCard(d,name,imgMap){
   const es=entries(d),{bySys,rows}=consoleCardRows(d);
   const hwMap=new Map((CULT.hardware||[]).map(h=>[h.sys,h]));
   x.fillStyle="#8C9DFF";x.font="600 26px IBM Plex Mono, monospace";x.fillText("THE MACHINES THAT RAISED ME",72,115);
-  x.fillStyle="#F2F4F8";x.font="700 62px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"Consoles & Favorites"),72,192);
-  x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)} · ${plural(bySys.size,"system")} · ${plural(es.length,"game")}`,72,244);
+  x.fillStyle="#F2F4F8";x.font="700 62px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"Consoles & Favorites"),72,192,W-144);
+  x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)} · ${plural(bySys.size,"system")} · ${plural(es.length,"game")}`,72,244,W-144);
   let yy=305;
   rows.forEach(({sys,arr,top})=>{
     const hw=hwMap.get(sys);
     canvasHardware(x,sys,72,yy,310,256);
     x.fillStyle="#F2F4F8";x.font="700 30px Unbounded, Arial Black, sans-serif";wrapText(x,sys,92,yy+118,270,34,2);
-    x.fillStyle="#98A1B6";x.font="500 21px IBM Plex Mono, monospace";x.fillText(hw?hw.maker:`${arr.length} games`,92,yy+190);
-    x.fillStyle="#8C9DFF";x.font="600 22px IBM Plex Mono, monospace";x.fillText(plural(arr.length,"game")+" played",92,yy+226);
+    x.fillStyle="#98A1B6";x.font="500 20px IBM Plex Mono, monospace";x.fillText(hw?hw.maker:`${arr.length} games`,92,yy+190,270);
+    x.fillStyle="#8C9DFF";x.font="600 22px IBM Plex Mono, monospace";x.fillText(plural(arr.length,"game")+" played",92,yy+226,270);
     top.forEach((e,k)=>{
       const cw=142,ch=190,bx=406+k*(cw+14),by=yy+33,g=e.g;
       drawCoverOrBox(x,g,g?g.title:e.e.t,e.y,g?g.h:hueOf(norm(e.e.t)),g?glyphOf(g):"stick",bx,by,cw,ch,imgMap);
@@ -5543,9 +5608,10 @@ function drawMakerCard(d,name,imgMap){
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#14120E");bg.addColorStop(1,"#1B2030");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const mk=makerLegacyOf(d)||{wk:[],studios:[],reachCount:0,desc:[]};
   x.fillStyle="#E8A948";x.font="600 26px IBM Plex Mono, monospace";x.fillText("MY WORK IN GAMES",72,120);
-  x.fillStyle="#F2F4F8";x.font="700 68px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"Maker Legacy"),72,205);
+  x.fillStyle="#F2F4F8";x.font="700 68px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"Maker Legacy"),72,205,W-144);
   x.fillStyle="#AEB6C8";x.font="500 28px IBM Plex Mono, monospace";
-  x.fillText(`${plural(mk.wk.length,"project")}${mk.studios.length?` · ${plural(mk.studios.length,"studio")}`:""}${mk.from?` · ${mk.from}–${mk.to}`:""}`,72,262);
+  const span=mk.from?(mk.from===mk.to?String(mk.from):`${mk.from}–${mk.to}`):"";
+  x.fillText(`${plural(mk.wk.length,"project")}${mk.studios.length?` · ${plural(mk.studios.length,"studio")}`:""}${span?` · ${span}`:""}`,72,262,W-144);
   let yy=340;
   if(mk.wk.length){
     x.fillStyle="#E8A948";x.font="600 24px IBM Plex Mono, monospace";x.fillText("GAMES I HELPED BUILD",72,yy);yy+=24;
@@ -5688,7 +5754,10 @@ const ACTIONS={
     const v=+el.dataset.lv;
     ensureTimelineReady(()=>{
       const cur=levelOf(hist,g),nl=v===cur?0:v;
-      const res=setLevel(g,nl);playBlip(nl);openQuickLook(g);
+      const res=setLevel(g,nl);playBlip(nl);
+      $$(`.art[data-id="${CSS.escape(g.id)}"]`).forEach(btn=>refreshTile(btn,g));
+      updatePickBar();updateHeroBar();
+      openQuickLook(g);
       if(res&&res.removed)toast(`Removed ${g.title}`,{ms:6000,undo:()=>restoreRemovedEntry(res.removed)});
       else toast(nl?`${LV[nl].label}: ${g.title}`:`Removed ${g.title}`);
     });
@@ -5734,7 +5803,7 @@ const ACTIONS={
   openDendyPack(){state.pickMode="packs";state.packKey="dendy";render()},
   openModsPack(){clearLayer();state.pickMode="packs";state.packKey="mods";go("picks")},
   packSheetPick(el){state.packKey=el.dataset.k;openPackSheet()},
-  packCycle(el){const g=byId.get(el.dataset.id);if(!g)return;ensureTimelineReady(()=>{const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g)})},
+  packCycle(el){const g=byId.get(el.dataset.id);if(!g)return;ensureTimelineReady(()=>{const nl=cycleLevel(g);playBlip(nl);$$(`.art[data-id="${CSS.escape(g.id)}"]`).forEach(btn=>refreshTile(btn,g));updatePickBar();updateHeroBar()})},
   watchTv(el){const g=byId.get(el.dataset.id);if(g)openVideoSheet(g,null,false)},
   gratSheet(el){
     const o={};
@@ -6150,9 +6219,10 @@ if("serviceWorker" in navigator&&(location.protocol==="https:"||location.hostnam
   const dlg=$("#sheetDlg");
   if(dlg){
     dlg.addEventListener("close",()=>{
+      if(dlg.open)return;
       stopLuckyWheel();
       dlg.returnValue="";dlg.classList.remove("wide");dlg.innerHTML="";
-      if(state.route.view==="timeline"||state.route.view==="start"){const y=window.scrollY;render();window.scrollTo({top:y})}
+      if(state.route.view==="timeline"||state.route.view==="start"||state.route.view==="picks"){const y=window.scrollY;render();window.scrollTo({top:y})}
     });
     if(!("closedBy" in HTMLDialogElement.prototype)){
       const outside=(ev,d)=>{const r=d.getBoundingClientRect();return ev.clientX<r.left||ev.clientX>r.right||ev.clientY<r.top||ev.clientY>r.bottom};
