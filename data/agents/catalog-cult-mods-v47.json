@@ -1,0 +1,617 @@
+{
+  "games": [
+    {
+      "id": "vampire-slayer",
+      "title": "Vampire Slayer",
+      "year": 2000,
+      "dev": "Routetwo & Katharii (Half-Life Mod)",
+      "cc": "GB",
+      "genres": [
+        "fps",
+        "horror"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 4,
+      "note": "Cult-beloved GoldSrc Half-Life multiplayer mod (often remembered as 'Vampire Hunters') pitting human Slayers—huddling inside creaking gothic mansions with pump and double-barreled shotguns, crossbows, and wooden stakes—against nocturnal Vampires bounding silently across moonlit rooftops, turning invisible in shadows, and regenerating unless staked through the heart while downed."
+    },
+    {
+      "id": "the-hidden-source",
+      "title": "The Hidden: Source",
+      "year": 2005,
+      "dev": "IRIS Team (Half-Life 2 Mod)",
+      "cc": "GB",
+      "genres": [
+        "fps",
+        "horror"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 4,
+      "note": "Terrifying 1-vs-8 asymmetric Source-engine mod where one nearly invisible, wall-clinging experiment (Subject 617) armed with a combat knife, pipe bombs, and whispered voice taunts stalks a panicked IRIS SWAT squad sweeping dark corridors."
+    },
+    {
+      "id": "the-specialists",
+      "title": "The Specialists",
+      "year": 2002,
+      "dev": "Filippo De Luca & Lorenzo Pasqui (Half-Life Mod)",
+      "cc": "IT",
+      "genres": [
+        "fps",
+        "arcade"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 4,
+      "note": "Turned Half-Life multiplayer into The Matrix meets John Woo: multiplayer slow-motion bullet-time bubbles, wall-flips, Max Payne dives through lobby glass, kung-fu weapon disarms, katanas, and dual-wielded Colts."
+    },
+    {
+      "id": "science-and-industry",
+      "title": "Science and Industry",
+      "year": 1999,
+      "dev": "Invisible Hand (Half-Life Mod)",
+      "cc": "US",
+      "genres": [
+        "fps",
+        "strategy"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 3,
+      "note": "Deadpan corporate-espionage Half-Life mod where rival megacorporations raid each other's offices to club and kidnap labcoat scientists over their shoulders—because whichever team holds more scientists researches bizarre prototype weapons faster."
+    },
+    {
+      "id": "natural-selection",
+      "title": "Natural Selection",
+      "year": 2002,
+      "dev": "Charlie Cleveland / Unknown Worlds (Half-Life Mod)",
+      "cc": "US",
+      "genres": [
+        "fps",
+        "strategy",
+        "horror"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 4,
+      "note": "Fused real-time strategy with claustrophobic FPS horror inside Half-Life: one Marine sat in a top-down RTS Command Chair welding doors and dropping ammo while teammates crept down dark vents hunted by ceiling-crawling Skulk aliens—launching Unknown Worlds (later creators of Subnautica)."
+    },
+    {
+      "id": "sven-co-op",
+      "title": "Sven Co-op",
+      "year": 1999,
+      "dev": "Daniel 'Sven Viking' Fearon & Sven Co-op Team",
+      "cc": "GB",
+      "genres": [
+        "fps",
+        "action-adventure"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Linux"
+      ],
+      "pop": 4,
+      "note": "Launched just two months after Half-Life so LAN friends could play the entire Black Mesa campaign and hundreds of chaotic community puzzle and boss maps cooperatively—eventually gifted standalone GoldSrc engine rights by Valve."
+    },
+    {
+      "id": "they-hunger",
+      "title": "They Hunger",
+      "year": 1999,
+      "dev": "Neil Manke / Black Widow Games (Half-Life Mod)",
+      "cc": "CA",
+      "genres": [
+        "fps",
+        "horror"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 3,
+      "note": "Three-episode George A. Romero-style zombie horror total conversion distributed free on PC Gamer cover discs, turning Half-Life into foggy country churches, undead sheriffs, and asylum escapes years before Resident Evil 4."
+    },
+    {
+      "id": "cry-of-fear",
+      "title": "Cry of Fear",
+      "year": 2012,
+      "dev": "Team Psykskallar / Andreas Rönnberg (Half-Life Mod)",
+      "cc": "SE",
+      "genres": [
+        "horror",
+        "fps"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 4,
+      "note": "Built over four years by young Swedish modder Andreas Rönnberg and Team Psykskallar, pushing 1998 GoldSrc to psychological survival-horror limits across dark, rain-slicked Stockholm streets illuminated only by a flip-phone screen."
+    },
+    {
+      "id": "desert-combat",
+      "title": "Desert Combat (Battlefield 1942 Mod)",
+      "year": 2003,
+      "dev": "Frank DeLise / Trauma Studios",
+      "cc": "US",
+      "genres": [
+        "fps",
+        "shooter"
+      ],
+      "plats": [
+        "PC (Windows)"
+      ],
+      "pop": 4,
+      "note": "Overhauled DICE's WWII Battlefield 1942 into modern combined-arms warfare with M1A1 Abrams tanks, A-10 Warthogs, and famously high-skill AH-6 Little Bird helicopters—so popular that DICE acquired Trauma Studios to help build Battlefield 2."
+    },
+    {
+      "id": "threewave-ctf",
+      "title": "Threewave Capture the Flag (Quake Mod)",
+      "year": 1996,
+      "dev": "Dave 'Zoid' Kirsch",
+      "cc": "US",
+      "genres": [
+        "fps"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Mac",
+        "Linux"
+      ],
+      "pop": 4,
+      "note": "Coded over a weekend for Quake, inventing symmetric red-vs-blue Capture the Flag bases, Tech runes, and the frantic off-hand grappling hook—leading Valve to hire Zoid and Retro Studios to recruit him onto Metroid Prime."
+    },
+    {
+      "id": "trouble-in-terrorist-town",
+      "title": "Trouble in Terrorist Town (TTT)",
+      "year": 2009,
+      "dev": "Bad King Urgrain (Garry's Mod)",
+      "cc": "NL",
+      "genres": [
+        "party",
+        "fps"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Mac",
+        "Linux"
+      ],
+      "pop": 4,
+      "note": "Built inside Garry's Mod using Counter-Strike: Source assets, turning firefights into hilarious voice-chat social deduction—Innocents, hidden Traitors, and a Detective with a DNA scanner—nine years before Among Us went global."
+    },
+    {
+      "id": "prop-hunt",
+      "title": "Prop Hunt",
+      "year": 2009,
+      "dev": "Andrew 'AMT' Theis & Garry's Mod Community",
+      "cc": "US",
+      "genres": [
+        "party",
+        "shooter"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Mac",
+        "Linux"
+      ],
+      "pop": 4,
+      "note": "Turned Source physics props into pure multiplayer slapstick: one team disguised themselves as coffee mugs, traffic cones, and office chairs while Hunters took damage every time they shot an innocent trash can—later adopted into Call of Duty and Fortnite."
+    },
+    {
+      "id": "black-mesa",
+      "title": "Black Mesa",
+      "year": 2012,
+      "dev": "Crowbar Collective",
+      "cc": "US",
+      "genres": [
+        "fps",
+        "action-adventure"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Linux"
+      ],
+      "pop": 4,
+      "note": "Started in 2004 by over 40 volunteer modders determined to rebuild Half-Life inside Source with a completely reimagined Xen alien world—eventually blessed by Valve for a full commercial release after 16 years of craft."
+    },
+    {
+      "id": "long-war",
+      "title": "XCOM: Long War",
+      "year": 2013,
+      "dev": "JohnnyLump & Pavonis Interactive (XCOM Mod)",
+      "cc": "US",
+      "genres": [
+        "strategy"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "Mac",
+        "Linux"
+      ],
+      "pop": 4,
+      "note": "Expanded XCOM: Enemy Unknown into a grueling 120-hour global guerrilla campaign with eight soldier classes, fatigue rosters, and strategic alien research—so revered that Firaxis lead designer Jake Solomon called his own game 'basically a 20-hour tutorial for Long War.'"
+    }
+  ],
+  "links": [
+    {
+      "from": "half-life",
+      "to": "vampire-slayer",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "GoldSrc multiplayer SDK, round-based team spawns, and close-quarters mansion/interior brushwork",
+      "added": "Asymmetric Hunters-vs-Vampires night warfare: human Slayers huddling indoors with shotguns and wooden stakes against rooftop-leaping, stealth-cloaking Vampires who resurrect unless staked while downed",
+      "src": [
+        {
+          "t": "Vampire Slayer — Valve Developer Community",
+          "u": "https://developer.valvesoftware.com/wiki/Vampire_Slayer"
+        }
+      ]
+    },
+    {
+      "from": "team-fortress-classic",
+      "to": "vampire-slayer",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Distinct three-character class rosters per team with contrasting movement speeds and weapon loadouts",
+      "added": "Predator-vs-prey gothic horror tension where rooftops belonged to agile melee Vampires and lamp-lit mansion hallways belonged to shotgun-toting Slayers",
+      "src": [
+        {
+          "t": "Vampire Slayer Mod Archive & Classes",
+          "u": "https://developer.valvesoftware.com/wiki/Vampire_Slayer"
+        }
+      ]
+    },
+    {
+      "from": "vampire-slayer",
+      "to": "the-hidden-source",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Asymmetric GoldSrc horror dynamic pitting shotgun-armed human squads huddled inside rooms against a leaping, stealth-cloaking supernatural hunter",
+      "added": "1-vs-8 Source physics terror: wall-clinging pounces, pinned ragdoll corpses, motion-blur invisibility, and chilling proximity voice taunts",
+      "src": [
+        {
+          "t": "The Hidden (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Hidden_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "vampire-slayer",
+      "to": "left-4-dead",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Multiplayer horror contrast of four shotgun-toting humans backing into corners together while rooftop-leaping predators wait to pounce from the dark",
+      "added": "Valve & Turtle Rock's AI Director, cooperative safe-room pacing, and four specialized Special Infected roles in Versus mode",
+      "src": [
+        {
+          "t": "Left 4 Dead Versus & GoldSrc mod heritage",
+          "u": "https://en.wikipedia.org/wiki/Left_4_Dead"
+        }
+      ]
+    },
+    {
+      "from": "the-hidden-source",
+      "to": "dead-by-daylight",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "1-vs-many asymmetric multiplayer slasher tension where one supernatural killer stalks human survivors through claustrophobic arenas",
+      "added": "Third-person survivor generator repairs, meat-hook rescues, and an expandable roster of horror icons",
+      "src": [
+        {
+          "t": "Asymmetric horror lineage — The Hidden to Dead by Daylight",
+          "u": "https://en.wikipedia.org/wiki/Dead_by_Daylight"
+        }
+      ]
+    },
+    {
+      "from": "half-life-2",
+      "to": "the-hidden-source",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Source SDK ragdoll physics, refractive shader distortion, and tactical combine weapon handling",
+      "added": "Near-invisible refractive stealth shader, wall-sticking pounce physics, and 1-vs-squad SWAT paranoia",
+      "src": [
+        {
+          "t": "The Hidden: Source — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Hidden_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "half-life",
+      "to": "the-specialists",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "GoldSrc multiplayer deathmatch movement and custom weapon animation hooks",
+      "added": "Localized multiplayer slow-motion bullet-time powerups, wall-flips, Max Payne dives, kung-fu kicks, and John Woo dual-pistol gun ballet",
+      "src": [
+        {
+          "t": "The Specialists — ModDB / Valve Developer Wiki",
+          "u": "https://developer.valvesoftware.com/wiki/The_Specialists"
+        }
+      ]
+    },
+    {
+      "from": "action-quake-2",
+      "to": "the-specialists",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Hong Kong action-cinema gunfights, diving stunts, and weapon-dropping stunt kills",
+      "added": "Full Matrix-style slow-motion time-dilation spheres inside live multiplayer servers plus martial-arts melee combos",
+      "src": [
+        {
+          "t": "Action Quake 2 to The Specialists lineage",
+          "u": "https://en.wikipedia.org/wiki/Action_Quake_2"
+        }
+      ]
+    },
+    {
+      "from": "half-life",
+      "to": "science-and-industry",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Black Mesa's bespectacled labcoat scientists, briefcase props, and GoldSrc team multiplayer",
+      "added": "Satirical R&D warfare where teams kidnap rival scientists to vote-research upgraded weapons and implants mid-match",
+      "src": [
+        {
+          "t": "Science and Industry — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Science_and_Industry"
+        }
+      ]
+    },
+    {
+      "from": "half-life",
+      "to": "natural-selection",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "GoldSrc first-person corridors, vent shafts, and atmospheric industrial lighting",
+      "added": "Hybrid RTS+FPS gameplay with a live top-down Marine Commander building bases while Alien players evolve from wall-crawling Skulks into towering Onos beasts",
+      "src": [
+        {
+          "t": "Natural Selection (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Natural_Selection_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "starcraft",
+      "to": "natural-selection",
+      "tier": "dev",
+      "rel": "inspiration",
+      "took": "Asymmetric Terran Marines vs. Zerg-like alien hive evolution and resource-node map control",
+      "added": "Put individual human players directly inside every Marine helmet and Alien jaw while one Commander played top-down RTS",
+      "src": [
+        {
+          "t": "Charlie Cleveland on Natural Selection's StarCraft & Half-Life roots",
+          "u": "https://en.wikipedia.org/wiki/Natural_Selection_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "natural-selection",
+      "to": "subnautica",
+      "tier": "team",
+      "rel": "spiritual",
+      "took": "Unknown Worlds founder Charlie Cleveland's fascination with alien ecosystems, base-building habitats, and vulnerable first-person exploration",
+      "added": "Non-violent deep-ocean survival, bioluminescent alien reefs, and handcrafted submarine progression",
+      "src": [
+        {
+          "t": "Unknown Worlds Entertainment — Natural Selection to Subnautica",
+          "u": "https://en.wikipedia.org/wiki/Unknown_Worlds_Entertainment"
+        }
+      ]
+    },
+    {
+      "from": "half-life",
+      "to": "sven-co-op",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Half-Life's single-player AI monsters, tram rides, and scripted Black Mesa sequences",
+      "added": "Drop-in cooperative multiplayer campaign netcode, reviving downed friends, and a 25-year library of wild community co-op maps",
+      "src": [
+        {
+          "t": "Sven Co-op — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Sven_Co-op"
+        }
+      ]
+    },
+    {
+      "from": "half-life",
+      "to": "they-hunger",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "GoldSrc single-player scripting, trains, and first-person weapon sandbox",
+      "added": "A three-episode 1950s Romero zombie pulp horror story across rural churches, swamps, and asylums",
+      "src": [
+        {
+          "t": "They Hunger — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/They_Hunger"
+        }
+      ]
+    },
+    {
+      "from": "they-hunger",
+      "to": "cry-of-fear",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Total-conversion single-player horror storytelling built atop 1998 GoldSrc Half-Life",
+      "added": "Custom skeletal shaders, dual-wielded flip-phone light + pistol inventory tension, and bleak nocturnal Stockholm streets",
+      "src": [
+        {
+          "t": "Cry of Fear — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Cry_of_Fear"
+        }
+      ]
+    },
+    {
+      "from": "half-life",
+      "to": "cry-of-fear",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "GoldSrc engine foundation pushed 14 years past its original 1998 limits",
+      "added": "Full psychological survival-horror overhaul with branching endings and 4-player co-op campaign",
+      "src": [
+        {
+          "t": "Cry of Fear — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Cry_of_Fear"
+        }
+      ]
+    },
+    {
+      "from": "battlefield-1942",
+      "to": "desert-combat",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "DICE's 64-player Conquest ticket bleed and combined land-sea-air vehicle sandbox",
+      "added": "Modern Gulf War weaponry, supersonic jets, guided missiles, and razor-sharp AH-6 Little Bird & Apache helicopter flight skill",
+      "src": [
+        {
+          "t": "Desert Combat & Trauma Studios — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Trauma_Studios"
+        }
+      ]
+    },
+    {
+      "from": "desert-combat",
+      "to": "battlefield-2",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Modern combined-arms vehicle combat and Trauma Studios' mod team (acquired directly by DICE in 2004)",
+      "added": "Squad-leader spawns, VoIP, Commander artillery/UAV tools, and persistent rank unlocks",
+      "src": [
+        {
+          "t": "DICE acquires Desert Combat creators Trauma Studios for Battlefield 2",
+          "u": "https://en.wikipedia.org/wiki/Battlefield_2"
+        }
+      ]
+    },
+    {
+      "from": "quake",
+      "to": "threewave-ctf",
+      "tier": "dev",
+      "rel": "mod",
+      "took": "id Software's true-3D QuakeC scripting and client-server arena netcode",
+      "added": "Symmetric Capture the Flag bases, Tech power-up runes, and the off-hand grappling hook that slung players across caverns",
+      "src": [
+        {
+          "t": "Dave 'Zoid' Kirsch & Threewave CTF — Quake Wiki",
+          "u": "https://en.wikipedia.org/wiki/Capture_the_flag#Video_games"
+        }
+      ]
+    },
+    {
+      "from": "threewave-ctf",
+      "to": "metroid-prime",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Threewave CTF creator Dave 'Zoid' Kirsch's senior engineering & 3D grapple/arena feel after joining Retro Studios",
+      "added": "Translated responsive PC first-person spatial traversal into Samus Aran's GameCube Scan Visor, Morph Ball, and Grapple Beam adventure",
+      "src": [
+        {
+          "t": "Metroid Prime engineering credits (Dave 'Zoid' Kirsch)",
+          "u": "https://en.wikipedia.org/wiki/Metroid_Prime"
+        }
+      ]
+    },
+    {
+      "from": "garrys-mod",
+      "to": "trouble-in-terrorist-town",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Garry's Mod Lua gamemode scripting and Counter-Strike: Source ragdolls and weapons",
+      "added": "Hidden-role social deduction where Traitors use C4, disguisers, and silent knives while a Detective scans corpses for DNA clues",
+      "src": [
+        {
+          "t": "Trouble in Terrorist Town — Garry's Mod Official Gamemode",
+          "u": "https://en.wikipedia.org/wiki/Garry%27s_Mod"
+        }
+      ]
+    },
+    {
+      "from": "trouble-in-terrorist-town",
+      "to": "among-us",
+      "tier": "critic",
+      "rel": "inspiration",
+      "took": "Real-time spatial social deduction—discovering bodies in hallways, alibis, and frantic voice/chat accusations",
+      "added": "Accessible 2D spaceship tasks, emergency-button meetings, and instant phone/PC cross-play for non-FPS players",
+      "src": [
+        {
+          "t": "Social deduction video game lineage — TTT to Among Us",
+          "u": "https://en.wikipedia.org/wiki/Among_Us"
+        }
+      ]
+    },
+    {
+      "from": "team-fortress-2",
+      "to": "prop-hunt",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Source engine map props, Pyro/Scout movement speed, and lighthearted slapstick readability",
+      "added": "Asymmetric hide-and-seek where Hiders morph into everyday map furniture and Hunters lose health for shooting innocent props",
+      "src": [
+        {
+          "t": "Prop Hunt origin in TF2 & Garry's Mod — PC Gamer",
+          "u": "https://www.pcgamer.com/"
+        }
+      ]
+    },
+    {
+      "from": "garrys-mod",
+      "to": "prop-hunt",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Source prop libraries and custom Lua server modes",
+      "added": "Dedicated prop-rotation locking, taunt whistles that give away hiding spots, and viral party chaos",
+      "src": [
+        {
+          "t": "Garry's Mod Prop Hunt — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Garry%27s_Mod"
+        }
+      ]
+    },
+    {
+      "from": "half-life",
+      "to": "black-mesa",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Gordon Freeman's entire 1998 Black Mesa Research Facility journey, enemy roster, and environmental storytelling",
+      "added": "16-year volunteer Source-engine remake featuring a completely rebuilt, awe-inspiring Xen alien final act approved by Valve",
+      "src": [
+        {
+          "t": "Black Mesa (video game) — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Black_Mesa_(video_game)"
+        }
+      ]
+    },
+    {
+      "from": "xcom-enemy-unknown",
+      "to": "long-war",
+      "tier": "mech",
+      "rel": "mod",
+      "took": "Firaxis's streamlined 2012 turn-based tactical cover system and satellite-defense strategy layer",
+      "added": "Eight deep soldier classes, squad fatigue requiring a 50-soldier barracks, independent alien strategic AI, and 120-hour war-of-attrition campaigns",
+      "src": [
+        {
+          "t": "Long War (mod) & Jake Solomon quote — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Long_War_(mod)"
+        }
+      ]
+    },
+    {
+      "from": "long-war",
+      "to": "xcom-2",
+      "tier": "dev",
+      "rel": "inspiration",
+      "took": "Long War's guerrilla-resistance framing (humanity losing the first war) and first-day official modding partnership with Pavonis Interactive",
+      "added": "Procedural ambush maps, mobile Avenger base, and Steam Workshop mod support built directly into launch day",
+      "src": [
+        {
+          "t": "Firaxis partners with Long War creators for XCOM 2 — Polygon / Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Long_War_(mod)"
+        }
+      ]
+    }
+  ]
+}

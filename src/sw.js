@@ -55,19 +55,31 @@ self.addEventListener("fetch", (event) => {
 
   if (url.origin !== self.location.origin) return;
 
-  if (req.mode === "navigate" || url.pathname.endsWith("/") || url.pathname.endsWith("/index.html")) {
+  if (
+    req.mode === "navigate" ||
+    url.pathname.endsWith("/") ||
+    url.pathname.endsWith("/index.html") ||
+    url.pathname.endsWith("/manifest.webmanifest") ||
+    url.pathname.endsWith("/pwa-desktop.png") ||
+    url.pathname.endsWith("/pwa-mobile.png") ||
+    url.pathname.endsWith("/og-card.png")
+  ) {
+    const isHtml = req.mode === "navigate" || url.pathname.endsWith("/") || url.pathname.endsWith("/index.html");
     event.respondWith(
-      fetch(req)
+      fetch(req, { cache: "no-cache" })
         .then((res) => {
           if (res && res.ok) {
             const copy = res.clone();
-            caches.open(CACHE_NAME).then((c) => c.put("./index.html", copy));
+            caches.open(CACHE_NAME).then((c) => c.put(isHtml ? "./index.html" : req, copy));
           }
           return res;
         })
         .catch(async () => {
           const cache = await caches.open(CACHE_NAME);
-          return (await cache.match(req)) || (await cache.match("./index.html")) || (await cache.match("./"));
+          if (isHtml) {
+            return (await cache.match(req)) || (await cache.match("./index.html")) || (await cache.match("./"));
+          }
+          return await cache.match(req);
         })
     );
     return;

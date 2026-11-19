@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Played & Made — Life in Games",
   "short_name": "Played&Made",
-  "description": "Build your childhood or dev-career gaming timeline, trace 4,230+ games back to the 1950s, and celebrate the human teams and machines behind the art.",
+  "description": "Build your childhood or dev-career gaming timeline, trace 4,245+ games & legendary mods back to the 1950s, and celebrate the makers behind the art.",
   "lang": "en",
   "start_url": "./",
   "scope": "./",
@@ -38,11 +38,11 @@
   ],
   "screenshots": [
     {
-      "src": "./og-card.png",
-      "sizes": "1200x630",
+      "src": "./pwa-desktop.png",
+      "sizes": "1280x800",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Explore 4,190+ games, studio histories & build your personal gaming timeline"
+      "label": "Interactive video game lineage org-chart, personal timeline & 6-mode game lore trivia"
     },
     {
       "src": "./pwa-mobile.png",

@@ -1177,5 +1177,131 @@
         "vrchat"
       ]
     }
+  ],
+  "modStories": [
+    {
+      "tag": "🦇 Cult Asymmetric GoldSrc Gem · 2000",
+      "title": "Huddling in a Mansion With Shotguns: Vampire Slayer (“Vampire Hunters”)",
+      "cc": "GB",
+      "games": [
+        "vampire-slayer",
+        "half-life",
+        "the-hidden-source",
+        "left-4-dead"
+      ],
+      "body": "Long before Left 4 Dead Versus or Dead by Daylight, UK coder Routetwo's Half-Life mod Vampire Slayer (fondly remembered by LAN regulars as 'Vampire Hunters') nailed hilarious, heart-pounding asymmetric horror. Human Slayers huddled shoulder-to-shoulder inside creaking gothic mansions clutching pump and double-barreled shotguns, terrified of the dark—while Team Vampire leapt silently across moonlit rooftops outside, equally scared to drop into shotgun range because a downed vampire could be permanently staked through the heart before regenerating. Somebody genuinely needs to bring this exact dynamic back."
+    },
+    {
+      "tag": "🎯 Dorm-Room Mod → Forever Sport · 1998–1999",
+      "title": "20 Hours a Week in a University Bedroom: Action Quake 2 to Counter-Strike",
+      "cc": "CA",
+      "games": [
+        "action-quake-2",
+        "half-life",
+        "counter-strike",
+        "counter-strike-2"
+      ],
+      "body": "Before Counter-Strike, Simon Fraser University student Minh 'Gooseman' Le co-created Action Quake 2 (John Woo shootouts in Quake II). During his final semester in Burnaby, BC, he spent 20 hours a week modeling realistic weapons in the Half-Life SDK while 17-year-old Jess Cliffe ran the website, curated community maps, and recorded the 'Counter-Terrorists Win' voice prompt himself. Beta 1.0 dropped free in June 1999; within months it eclipsed every retail shooter on Earth."
+    },
+    {
+      "tag": "🪂 Mod of a Mod → Global Phenomenon · 2012–2017",
+      "title": "From Czech Mil-Sim ARMA 2 to DayZ, Battle Royale & PUBG",
+      "cc": "IE",
+      "games": [
+        "arma-2",
+        "dayz",
+        "dayz-battle-royale",
+        "pubg"
+      ],
+      "body": "New Zealand designer Dean Hall channeled military survival training into DayZ (2012), a brutal permadeath zombie mod whose tension spiked three-year-old ARMA 2 sales by 500%. Watching DayZ Survivor GameZ players camp in forests, Irish photographer and DJ Brendan 'PlayerUnknown' Greene taught himself scripting to build a mod of a mod—DayZ: Battle Royale (2013)—adding cargo-plane drops and a shrinking zone inspired by the 2000 Japanese film Battle Royale, igniting H1Z1, PUBG, Fortnite BR, and Warzone."
+    },
+    {
+      "tag": "🛠️ Class Shooters & Grapple Hooks · 1996",
+      "title": "Three Melbourne Students & a Weekend Hack: Team Fortress & Threewave CTF",
+      "cc": "AU",
+      "games": [
+        "quake",
+        "team-fortress",
+        "threewave-ctf",
+        "team-fortress-2",
+        "metroid-prime"
+      ],
+      "body": "Within months of id Software shipping QuakeC in 1996, two mods rewired multiplayer DNA. In Melbourne, students Robin Walker, John Cook, and Ian Caughley built Team Fortress—inventing Medic, Spy, Sniper, and Engineer roles before Gabe Newell flew them to Seattle (where Walker later led TF2 and Half-Life: Alyx). Weeks later, Dave 'Zoid' Kirsch coded Threewave Capture the Flag with an off-hand grappling hook, launching a path from Valve straight to Retro Studios' Metroid Prime."
+    },
+    {
+      "tag": "🚁 Total Conversion → Studio Deal · 2003–2015",
+      "title": "When DICE Hired the Modders: Desert Combat → Battlefield 2 & Squad",
+      "cc": "SE",
+      "games": [
+        "battlefield-1942",
+        "desert-combat",
+        "battlefield-2",
+        "project-reality",
+        "squad"
+      ],
+      "body": "New York mod team Trauma Studios overhauled Stockholm studio DICE's WWII Battlefield 1942 into Desert Combat (2003), introducing supersonic jets, M1A1 tanks, and notoriously high-skill AH-6 Little Bird helicopters. Rather than shutting them down, DICE acquired Trauma Studios to help build Battlefield 2 (2005)—whose own realism modders then built Project Reality and founded Offworld Industries to ship Squad."
+    },
+    {
+      "tag": "👽 FPS + RTS Hybrid · 2002–2014",
+      "title": "One Marine in a Command Chair, Skulks in the Vents: Natural Selection → Subnautica",
+      "cc": "US",
+      "games": [
+        "half-life",
+        "natural-selection",
+        "subnautica"
+      ],
+      "body": "Solo coder Charlie Cleveland fused StarCraft with Half-Life in 2002's Natural Selection: one player stepped into a top-down RTS Command Chair welding doors and dropping ammo packs while squadmates crept down dark corridors hunted by player-controlled Skulk aliens skittering across ceilings. Its success funded Unknown Worlds—eventually trading corridor firefights for deep-ocean wonder in Subnautica."
+    },
+    {
+      "tag": "🕴️ Fearless GoldSrc & Source Experiments · 1999–2005",
+      "title": "Kidnapping Scientists, Matrix Bullet-Time & Invisible Stalkers",
+      "cc": "IT",
+      "games": [
+        "science-and-industry",
+        "the-specialists",
+        "the-hidden-source",
+        "sven-co-op"
+      ],
+      "body": "With zero publisher focus groups to please, early Valve modders shipped gloriously weird multiplayer ideas: Science and Industry had rival megacorps clubbing and kidnapping each other's labcoat scientists to research bizarre weapons faster; The Specialists pulled off live multiplayer Matrix bullet-time dives and kung-fu kicks; Sven Co-op kept Half-Life co-op alive for 25+ years; and The Hidden: Source pit eight terrified SWAT officers against one nearly invisible knife-wielding stalker whispering over VoIP."
+    },
+    {
+      "tag": "🕵️ Mods Inside a Mod · 2004–2009",
+      "title": "Coffee Mugs & Paranoia: Trouble in Terrorist Town & Prop Hunt",
+      "cc": "NL",
+      "games": [
+        "garrys-mod",
+        "trouble-in-terrorist-town",
+        "prop-hunt",
+        "among-us"
+      ],
+      "body": "In 2004, 22-year-old Garry Newman stripped every goal out of Source so players could weld ragdolls to rockets. Inside Garry's Mod, community Lua scripters built mods inside a mod: Bad King Urgrain's Trouble in Terrorist Town (TTT) pioneered Traitor/Detective social deduction nine years before Among Us swept the world, while Prop Hunt turned players disguised as office chairs and coffee mugs into a party staple later adopted by Call of Duty and Fortnite."
+    },
+    {
+      "tag": "🗺️ Two Map Editors → Three Genres · 1998–2019",
+      "title": "StarEdit & World Editor: Aeon of Strife, DotA, Tower Defense & Auto Chess",
+      "cc": "US",
+      "games": [
+        "starcraft",
+        "aeon-of-strife",
+        "warcraft-iii",
+        "defense-of-the-ancients",
+        "dota-auto-chess"
+      ],
+      "body": "Blizzard's StarCraft and Warcraft III map editors served as an open game-design school. StarCraft custom map Aeon of Strife inspired Eul, Guinsoo, and IceFrog's Defense of the Ancients (DotA)—birthing MOBAs (League of Legends, Dota 2, Honor of Kings) alongside Wintermaul / Element TD Tower Defense—and in 2019, Drodo Studio used Dota 2's Workshop to invent auto-battlers with Dota Auto Chess."
+    },
+    {
+      "tag": "🕯️ Solo Obsession & Overhauls · 1999–2021",
+      "title": "PC Gamer Cover Discs, Nocturnal Stockholm & 120-Hour XCOM",
+      "cc": "SE",
+      "games": [
+        "they-hunger",
+        "cry-of-fear",
+        "black-mesa",
+        "long-war",
+        "the-stanley-parable",
+        "the-forgotten-city"
+      ],
+      "body": "Mods transformed single-player gaming too: Neil Manke's Romero zombie trilogy They Hunger rode out on PC Gamer cover CDs; young Swedish creator Andreas Rönnberg (Team Psykskallar) turned dark Stockholm streets into GoldSrc horror classic Cry of Fear; 40+ volunteers spent 16 years remaking Half-Life as Black Mesa; Skyrim mystery mod The Forgotten City won a Writers' Guild award; and XCOM's lead designer called his own game 'basically a 20-hour tutorial for the Long War mod.'"
+    }
   ]
 }

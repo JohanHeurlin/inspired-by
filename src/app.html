@@ -1200,6 +1200,7 @@ const updateSynthBtn=updateAudioBtns;
 
 /* ---------- curated mood, vibe & memory packs (casual timeline browsing) ---------- */
 const MEMORY_PACKS=[
+  {k:"mods",title:"🧱 Legendary & Cult Mods",sub:"Dorm-room hacks & LAN obsessions — Counter-Strike, DayZ, Team Fortress, PUBG, Vampire Slayer ('Vampire Hunters'), Desert Combat, Natural Selection, TTT & DotA.",ids:["counter-strike","dayz","team-fortress","team-fortress-classic","team-fortress-2","pubg","vampire-slayer","action-quake-2","threewave-ctf","desert-combat","natural-selection","the-specialists","science-and-industry","sven-co-op","they-hunger","cry-of-fear","the-hidden-source","garrys-mod","trouble-in-terrorist-town","prop-hunt","defense-of-the-ancients","dota-auto-chess","dayz-battle-royale","project-reality","the-stanley-parable","black-mesa","long-war","the-forgotten-city"]},
   {k:"coop",title:"🍕 Couch Co-op & Split-Screen",sub:"Shoulder-to-shoulder chaos, screen-peeking, and controller-passing.",ids:["goldeneye-007","super-mario-kart","mario-kart-64","worms","street-fighter-ii","super-smash-bros-melee","halo-combat-evolved","silkworm","speedball-2","micro-machines","bomberman","nba-jam","teenage-mutant-ninja-turtles-turtles-in-time","diablo-iii","left-4-dead-2","overcooked","it-takes-two","rocket-league","guitar-hero","wii-sports"]},
   {k:"floppy",title:"💾 Older Sibling's Floppy Box",sub:"80s & early-90s Amiga, C64, and DOS disks passed down at home.",ids:["defender-of-the-crown","the-secret-of-monkey-island","lemmings","pinball-dreams","pinball-fantasies","speedball-2","ports-of-call","moonstone-a-hard-days-knight","wings-1990","another-world","prince-of-persia","sensible-soccer","cannon-fodder","dune-ii","the-settlers","turrican-ii","shadow-of-the-beast","pirates","california-games","benefactor"]},
   {k:"arcade",title:"🕹️ Quarter-Munchers at the Arcade",sub:"Sticky joysticks, loud attract modes, and pocketfuls of coins.",ids:["pac-man","donkey-kong","space-invaders","galaga","out-run","bubble-bobble","double-dragon","r-type","golden-axe","final-fight","street-fighter-ii","mortal-kombat","metal-slug","daytona-usa","time-crisis","virtua-fighter-2","crazy-taxi","dance-dance-revolution","nba-jam","gauntlet"]},
@@ -1275,7 +1276,7 @@ function searchGames(q,{limit=8,treeOnly=false,catFirst=false,playOnly=false}={}
     let s=-1;
     if(g.n===v||g.nr===vr)s=120;
     else if(g.n.startsWith(v)||g.nr.startsWith(vr))s=88;
-    else if(g.aka&&g.aka.split(" ").some(a=>a===q.trim().toLowerCase()||norm(a)===v))s=110;
+    else if(g.aka&&(norm(g.aka).includes(v)||g.aka.split(" ").some(a=>a===q.trim().toLowerCase()||norm(a)===v)))s=112;
     else if(g.n.includes(v)||g.nr.includes(vr))s=60;
     else if(words.length>1){const tw=fold(g.title).toLowerCase().split(/[^a-z0-9]+/);if(words.every(w=>tw.some(t=>t.startsWith(w)||(ROMAN[t]&&String(ROMAN[t])===w))))s=55}
     if(s<0)continue;
@@ -1604,7 +1605,7 @@ function parseHash(){
   if(h==="explore")return {view:"explore"};
   if(h==="about"||h==="johan"||h==="creator")return {view:"about"};
   if(h==="trivia"){if(!state.quizMode||state.quizMode==="lineage")state.quizMode="lore";return {view:"trivia"}}
-  if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"||h==="mobile"||h==="ugc"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":h==="mobile"?"mobile":h==="ugc"?"ugc":"mechanics";return {view:"mechanics",mt:state.mechTab}}
+  if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"||h==="mobile"||h==="ugc"||h==="mods"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":h==="mobile"?"mobile":(h==="ugc"||h==="mods")?"ugc":"mechanics";return {view:"mechanics",mt:state.mechTab,jumpMods:h==="mods"}}
   if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
   if(h==="world"){return {view:"world"}}
   if(h.startsWith("country-")&&/^[A-Za-z]{2}$/.test(h.slice(8))){state.worldCC=h.slice(8).toUpperCase();return {view:"world",cc:state.worldCC}}
@@ -1622,12 +1623,14 @@ function go(h){state.navCount++;if(location.hash.slice(1)===h)route();else locat
 function navBack(fallbackHash){if(state.navCount>0){state.navCount=Math.max(0,state.navCount-1);history.back()}else go(fallbackHash||"explore")}
 let lastView="",hasBooted=false;
 function route(){
+  document.title="Played & Made — Life in Games";
   if(story)closeStory();
   else if($("#layer").innerHTML||($("#sheetDlg")&&$("#sheetDlg").open))clearLayer();
   if(typeof VID_STATE!=="undefined"&&VID_STATE.open&&VID_STATE.mode==="theater")minimizeVidDock();
   if(hasBooted)playUiTick("tap");
   state.route=parseHash();
   render();
+  if(state.route&&state.route.jumpMods)requestAnimationFrame(()=>{const el=$("#modStories");if(el)el.scrollIntoView({behavior:"smooth",block:"start"})});
   hasBooted=true;
 }
 addEventListener("hashchange",route);
@@ -2665,6 +2668,7 @@ function vaultSectionHTML(){
         <button type="button" class="chip" data-act="bandJump" data-to="vSunset">🌅 Servers Gone Dark (${sunsetted.length})</button>
         <button type="button" class="chip" data-act="bandJump" data-to="vLore">🕵️ Scams, Desert Myths &amp; Parallel Universes (${lore.length})</button>
         <button type="button" class="chip" data-act="bandJump" data-to="vDeepHw">🕹️ Obscure &amp; Regional Hardware (${deepHw.length})</button>
+        <a class="chip" href="#mods" style="text-decoration:none">🦇 Mod Origin Stories &amp; Cult Gems ▸</a>
       </div>
     </div>
 
@@ -2991,28 +2995,38 @@ function renderMobileCraftHTML(){
 }
 function renderUgcCraftHTML(){
   const pillars=CULT.ugcPillars||[];
-  const ugcIds=["interactive-physics","quake","team-fortress","half-life","counter-strike","warcraft-iii","defense-of-the-ancients","garrys-mod","the-stanley-parable","dayz","littlebigplanet","minecraft","hypixel-skyblock","super-mario-maker","fivem-gta-rp","roblox","adopt-me","brookhaven-rp","doors-roblox","dress-to-impress","dota-auto-chess","fortnite-creative-uefn","vrchat","dreams"];
+  const stories=CULT.modStories||[];
+  const ugcIds=["counter-strike","dayz","team-fortress","pubg","vampire-slayer","action-quake-2","threewave-ctf","desert-combat","natural-selection","the-specialists","science-and-industry","sven-co-op","they-hunger","cry-of-fear","the-hidden-source","garrys-mod","trouble-in-terrorist-town","prop-hunt","defense-of-the-ancients","dota-auto-chess","dayz-battle-royale","project-reality","squad","the-stanley-parable","black-mesa","long-war","the-forgotten-city","minecraft","hypixel-skyblock","fivem-gta-rp","littlebigplanet","super-mario-maker","roblox","adopt-me","brookhaven-rp","doors-roblox","dress-to-impress","fortnite-creative-uefn","vrchat","dreams"];
   const ugcGames=ugcIds.map(gameRef).filter(Boolean);
-  const ugcStudios=["mojang-studios","roblox-corporation","valve","epic-games"].map(id=>STUDIOS.get(id)).filter(Boolean);
+  const ugcStudios=["valve","mojang-studios","roblox-corporation","epic-games"].map(id=>STUDIOS.get(id)).filter(Boolean);
   return `<section class="wrap sec">
     <div class="personacard" style="margin-bottom:20px">
       <div class="row" style="justify-content:space-between;align-items:flex-start;gap:12px">
         <div style="max-width:74ch">
-          <p class="eyebrow" style="margin-bottom:4px">🧱 Mods, level editors &amp; creator platforms · 1996–2026</p>
-          <h2 class="h2" style="margin:0 0 6px">From Quake &amp; Half-Life bedroom mods to Minecraft, Roblox &amp; Fortnite UEFN</h2>
-          <p class="sub" style="margin:0;font-size:13.8px">Traditionalists sometimes bristle at user-generated platforms — yet tactical shooters (<i>Counter-Strike</i>), class shooters (<i>Team Fortress</i>), MOBAs (<i>DotA</i>), Battle Royale (<i>DayZ / ARMA</i>), and auto-battlers (<i>Auto Chess</i>) were <b>all</b> born when players opened another game's editor. Today, millions of teenagers and small teams ship their first multiplayer worlds the exact same way.</p>
+          <p class="eyebrow" style="margin-bottom:4px">🧱 Mods, cult total conversions &amp; creator platforms · 1996–2026</p>
+          <h2 class="h2" style="margin:0 0 6px">Most of modern multiplayer wasn't invented in a boardroom — it started as a mod</h2>
+          <p class="sub" style="margin:0;font-size:13.8px">Tactical shooters (<i>Counter-Strike</i>), class shooters (<i>Team Fortress</i>), Battle Royale (<i>DayZ → PUBG</i>), MOBAs (<i>DotA</i>), social deduction (<i>TTT</i>), and unforgettable late-night LAN gems like <i>Vampire Slayer (“Vampire Hunters”)</i>, <i>Desert Combat</i>, <i>Natural Selection</i>, and <i>The Specialists</i> were all built when players opened another game's editor.</p>
         </div>
         <div class="row" style="gap:6px">
-          <a class="btn sm primary" href="#lineage-roblox">⑂ Open Roblox lineage tree ▸</a>
-          <button type="button" class="btn sm" data-act="featureSheet" data-cat="🎮 Missing Game / Classic">➕ Suggest iconic mod / UGC hit</button>
+          <button type="button" class="btn sm primary" data-act="openModsPack">🕹️ Add mods to my timeline ▸</button>
+          <button type="button" class="btn sm" data-act="featureSheet" data-cat="🎮 Missing Game / Classic" data-title="Mod: ">➕ Suggest an obscure mod</button>
         </div>
       </div>
+      <div class="pickstrip" style="margin-top:12px;padding-bottom:0">
+        ${stories.length?`<button type="button" class="chip" data-act="bandJump" data-to="modStories">🦇 Mod Origin Stories &amp; Cult Gems (${stories.length})</button>`:""}
+        <button type="button" class="chip" data-act="bandJump" data-to="ugcPillarsSec">🧱 4 Eras of Modding &amp; UGC</button>
+        <button type="button" class="chip" data-act="bandJump" data-to="ugcCatalogSec">🎮 Browse ${ugcGames.length} Mods &amp; UGC Worlds</button>
+      </div>
     </div>
-    ${renderCraftPillarGrid(pillars)}
+    ${stories.length?`<div id="modStories" style="margin-bottom:28px">
+      <div class="sechead"><div><p class="eyebrow">Dorm-room miracles, cult GoldSrc/Source nights &amp; studio deals</p><h2 class="h2">🦇 Mod Stories: When bedroom hacks rewired gaming (and the cult classics that need a comeback)</h2><p class="sub">Tap any game chip inside a story to inspect its lineage tree, watch gameplay in the floating mini-player, or add it to your personal timeline.</p></div></div>
+      <div class="mechgrid">${stories.map(loreCardHTML).join("")}</div>
+    </div>`:""}
+    <div id="ugcPillarsSec">${renderCraftPillarGrid(pillars)}</div>
   </section>
   ${ugcStudios.length?`<section class="wrap sec"><div class="sechead"><div><p class="eyebrow">Toolmakers &amp; sandbox pioneers</p><h2 class="h2">Studios that handed players the keys</h2></div></div>
     <div class="stgrid">${ugcStudios.map(studioCardHTML).join("")}</div></section>`:""}
-  ${ugcGames.length?`<section class="wrap sec"><h2 class="h2" style="margin-bottom:10px">Iconic mods, sandboxes &amp; UGC worlds (${ugcGames.length})</h2>
+  ${ugcGames.length?`<section class="wrap sec" id="ugcCatalogSec"><div class="sechead"><div><h2 class="h2">Iconic mods, cult total conversions &amp; UGC worlds (${ugcGames.length})</h2><p class="sub">Tap <b>+ Played</b> to log any mod onto your timeline, or tap a cover for screenshots, gameplay footage, and lineage.</p></div><button type="button" class="btn sm primary" data-act="openModsPack">🧱 Open Mods picker pack ▸</button></div>
     <div class="grid">${ugcGames.map(g=>tileHTML(g,hist,{act:"quickLook",quickTick:!!hist.birth})).join("")}</div></section>`:""}`;
 }
 function renderAbout(m){
@@ -3228,7 +3242,11 @@ const LORE_QUIZ=[
   {id:"chromehounds",q:"Before Demon's Souls and Elden Ring, which cult Xbox 360 persistent mech war did FromSoftware run from 2006–2010?",ans:"Chromehounds",wrong:["Phantom Crash","Metal Wolf Chaos","Ring of Red"],fact:"In Chromehounds, squads bolted custom mechs together and had to control physical radio-relay towers on the map just to hear teammates' voice chat across distance."},
   {id:"resident-evil-7-biohazard",q:"Which delisted 2014 PS4 'playable teaser' by Hideo Kojima & Guillermo del Toro reshaped modern first-person horror?",ans:"P.T. (Silent Hills)",wrong:["Allison Road","Siren: Blood Curse","Haunting Ground"],fact:"Disguised under fake studio '7780s Studio,' P.T. hid the reveal of Silent Hills inside a single looping hallway—electrifying horror design even after Konami cancelled the full game."},
   {id:"lemmings",q:"Which Scottish studio went from crafting Amiga puzzle smash Lemmings in Dundee to inventing Grand Theft Auto?",ans:"DMA Design",wrong:["Psygnosis","Sensible Software","Bitmap Brothers"],fact:"Founded by Dave Jones in Dundee, DMA Design built Menace, Lemmings, Body Harvest, and Grand Theft Auto before becoming Rockstar North."},
-  {id:"atari-jaguar",gFb:"tempest",q:"What did eagle-eyed fans catch inside the 'Coleco Chameleon' retro console prototype at the 2016 NY Toy Fair?",ans:"A video-capture card in a clear Jaguar shell",wrong:["A Raspberry Pi Zero","An Android TV stick","An empty cardboard brick"],fact:"After initially faking a prototype with a SNES Jr. board, the team displayed a translucent Atari Jaguar case containing an off-the-shelf PCI video-capture card—killing the campaign instantly."}
+  {id:"atari-jaguar",gFb:"tempest",q:"What did eagle-eyed fans catch inside the 'Coleco Chameleon' retro console prototype at the 2016 NY Toy Fair?",ans:"A video-capture card in a clear Jaguar shell",wrong:["A Raspberry Pi Zero","An Android TV stick","An empty cardboard brick"],fact:"After initially faking a prototype with a SNES Jr. board, the team displayed a translucent Atari Jaguar case containing an off-the-shelf PCI video-capture card—killing the campaign instantly."},
+  {id:"vampire-slayer",gFb:"half-life",q:"In cult 2000 Half-Life mod Vampire Slayer ('Vampire Hunters'), how did shotgun-toting Slayers permanently finish a downed vampire?",ans:"Drive a wooden stake through its heart",wrong:["Lure it into UV floodlights","Toss holy-water grenades","Shoot a silver flare"],fact:"Huddling inside dark mansions with pump and double-barreled shotguns only knocked rooftop-leaping Vampires flat temporarily—Slayers had to sprint up and stake them before they regenerated."},
+  {id:"desert-combat",gFb:"battlefield-1942",q:"Which Battlefield 1942 modern-warfare mod was so beloved that Stockholm's DICE bought its New York team to co-build Battlefield 2?",ans:"Desert Combat (Trauma Studios)",wrong:["Forgotten Hope","Eve of Destruction","Point of Existence"],fact:"Frank DeLise's Trauma Studios built Desert Combat (2003) with supersonic jets and razor-sharp Little Bird helicopters before joining DICE for Battlefield 2."},
+  {id:"pubg",gFb:"dayz",q:"PUBG began as a 'mod of a mod' — which ARMA 2 mod did Brendan 'PlayerUnknown' Greene originally mod in 2013?",ans:"DayZ (DayZ: Battle Royale)",wrong:["Project Reality","Insurgency","Invasion 1944"],fact:"After Dean Hall's DayZ spiked ARMA 2 sales by 500%, Brendan Greene modded DayZ into DayZ: Battle Royale (2013), inspiring H1Z1, PUBG, Fortnite BR, and Warzone."},
+  {id:"natural-selection",gFb:"subnautica",q:"Before creating Subnautica, which asymmetric RTS+FPS Half-Life mod launched Charlie Cleveland's Unknown Worlds?",ans:"Natural Selection",wrong:["Science and Industry","The Specialists","Firearms"],fact:"In 2002's Natural Selection, one Marine commanded from a top-down RTS chair while teammates fought player-controlled ceiling-crawling Skulk aliens in first person."}
 ];
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 function newQuiz(){
@@ -5112,6 +5130,7 @@ const ACTIONS={
   openSweatPack(){state.packKey="sweat";openPackSheet()},
   openHarborPack(){state.packKey="harbor";openPackSheet()},
   openDendyPack(){state.pickMode="packs";state.packKey="dendy";render()},
+  openModsPack(){clearLayer();state.pickMode="packs";state.packKey="mods";go("picks")},
   packSheetPick(el){state.packKey=el.dataset.k;openPackSheet()},
   packCycle(el){const g=byId.get(el.dataset.id);if(!g)return;ensureBirthThen(()=>{const nl=cycleLevel(g);playBlip(nl);refreshTile(el,g)})},
   watchTv(el){const g=byId.get(el.dataset.id);if(g)openVideoSheet(g,null,false)},
@@ -5533,7 +5552,7 @@ if(window.matchMedia){
 }
 if("serviceWorker" in navigator&&(location.protocol==="https:"||location.hostname==="localhost"||location.hostname==="127.0.0.1")){
   window.addEventListener("load",()=>{
-    navigator.serviceWorker.register("./sw.js",{scope:"./"}).catch(()=>{});
+    navigator.serviceWorker.register("./sw.js",{scope:"./",updateViaCache:"none"}).then(r=>r.update()).catch(()=>{});
   });
 }
 
