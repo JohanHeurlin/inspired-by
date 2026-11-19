@@ -3,9 +3,12 @@
 AI Inbox & Feature Request Triage Scanner for Played & Made.
 
 Reads zero-login submissions from:
-  1. Google Sheet `Played & Made — AI Triage Inbox` (ID: 1rz8vmu8JSWOl7RdoLC8z1qxLRnj6VSSFD3PiyYfWTmA)
-     via the `gsheets` CLI (including linked Google Form responses in `Form Responses 1` + `Inbox`), and
-  2. Open GitHub issues labeled `feature-request` (via `gh issue list`),
+  1. Supabase Postgres `public.pm_inbox` (`played-and-made`, project ref `bplcmxwkhpvqogqincmq`)
+     — queried directly by AI via Supabase MCP (`execute_sql` on `public.pm_inbox` where `status = 'new'`),
+     or via `SUPABASE_SECRET_KEY` env var if running standalone CLI,
+  2. Google Sheet `Played & Made — AI Triage Inbox` (ID: 1rz8vmu8JSWOl7RdoLC8z1qxLRnj6VSSFD3PiyYfWTmA)
+     via the `gsheets` CLI, and
+  3. Open GitHub issues labeled `feature-request` (via `gh issue list`),
 
 filters spam, classifies each submission into:
   - rollout = "catalog-addition" (missing console, game, cancelled project, or lore story)
@@ -34,7 +37,8 @@ import tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BACKLOG_PATH = ROOT / "data" / "feature_backlog.json"
 SHEET_ID = "1rz8vmu8JSWOl7RdoLC8z1qxLRnj6VSSFD3PiyYfWTmA"
-RELAY_TOPIC = "pm-inbox-4e82b9d1c6a073f5"
+SUPABASE_PROJECT_ID = "bplcmxwkhpvqogqincmq"
+SUPABASE_REST_URL = f"https://{SUPABASE_PROJECT_ID}.supabase.co/rest/v1/pm_inbox"
 
 SPAM_PATTERNS = re.compile(
     r"(crypto|casino|airdrop|telegram|whatsapp|seo\s+service|backlink|viagra|loan\s+offer)",
@@ -165,49 +169,49 @@ def fetch_sheet_submissions() -> tuple[list[dict], set[str]]:
     return submissions, known_inbox_ids
 
 
-def fetch_relay_submissions(known_ids: set[str]) -> list[dict]:
+def fetch_supabase_submissions(known_ids: set[str]) -> list[dict]:
     import urllib.request
 
-    url = f"https://ntfy.sh/{RELAY_TOPIC}/json?poll=1&since=24h"
+    secret_key = os.environ.get("SUPABASE_SECRET_KEY", "").strip()
+    if not secret_key:
+        # Note: Inside Antigravity, query `SELECT * FROM public.pm_inbox WHERE status = 'new'` via Supabase MCP.
+        return []
+    url = f"{SUPABASE_REST_URL}?status=eq.new&order=created_at.asc&limit=200"
+    req = urllib.request.Request(
+        url,
+        headers={
+            "apikey": secret_key,
+            "Authorization": f"Bearer {secret_key}",
+            "Accept": "application/json",
+        },
+    )
     out: list[dict] = []
     try:
-        with urllib.request.urlopen(url, timeout=10) as resp:
-            raw_lines = resp.read().decode("utf-8", errors="ignore").splitlines()
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            rows = json.loads(resp.read().decode("utf-8"))
     except Exception as exc:
-        print(f"[note] Could not poll live relay ({exc}).")
+        print(f"[note] Could not query Supabase REST ({exc}).")
         return out
 
-    for ln in raw_lines:
-        if not ln.strip():
-            continue
-        try:
-            env = json.loads(ln)
-            if env.get("event") != "message":
-                continue
-            payload = json.loads(env.get("message") or "{}")
-        except Exception:
-            continue
-        title = (payload.get("title") or "").strip()
+    for r in rows:
+        title = (r.get("title") or "").strip()
         if not title:
             continue
-        cat = (payload.get("cat") or "General").strip()
-        body = (payload.get("body") or "").strip()
-        sub_id = (payload.get("id") or "").strip() or make_sub_id(cat, title, body)
+        cat = (r.get("category") or "General").strip()
+        body = (r.get("details") or "").strip()
+        sub_id = (r.get("submission_id") or "").strip() or make_sub_id(cat, title, body)
         if sub_id in known_ids:
             continue
         known_ids.add(sub_id)
-        ts = payload.get("ts") or datetime.datetime.fromtimestamp(
-            env.get("time", 0), tz=datetime.timezone.utc
-        ).strftime("%Y-%m-%d %H:%M:%SZ")
         out.append(
             {
                 "id": sub_id,
-                "ts": ts,
+                "ts": r.get("created_at") or "",
                 "category": cat,
                 "title": title,
                 "body": body,
-                "scope": (payload.get("scope") or "Let AI & maintainer decide").strip(),
-                "page": (payload.get("page") or "").strip(),
+                "scope": (r.get("scope") or "Let AI & maintainer decide").strip(),
+                "page": (r.get("source_page") or "").strip(),
                 "sheetStatus": "New",
                 "fromForm": True,
             }
@@ -350,11 +354,13 @@ def main():
     doc = json.loads(BACKLOG_PATH.read_text(encoding="utf-8")) if BACKLOG_PATH.exists() else {"schema": 1, "items": []}
     doc["sheetId"] = SHEET_ID
     doc["sheetUrl"] = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit"
+    doc["supabaseProjectId"] = SUPABASE_PROJECT_ID
+    doc["supabaseTable"] = "public.pm_inbox"
     existing_ids = {it["id"] for it in doc.get("items", [])}
 
     sheet_subs, known_inbox_ids = fetch_sheet_submissions()
-    relay_subs = fetch_relay_submissions(set(known_inbox_ids))
-    sheet_subs.extend(relay_subs)
+    sb_subs = fetch_supabase_submissions(set(known_inbox_ids))
+    sheet_subs.extend(sb_subs)
     inbox_append_rows: list[list[str]] = []
     added_sheet = 0
     for sub in sheet_subs:
