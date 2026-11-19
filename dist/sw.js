@@ -1,13 +1,13 @@
 /* Played & Made — Offline-capable Service Worker (Sprint 2: split shell + immutable hashed assets + SWR) */
 "use strict";
 
-const CACHE_NAME = "pm-shell-150c87ed8b";
+const CACHE_NAME = "pm-shell-6f34e2575d";
 const RUNTIME_CACHE = "pm-runtime-v2";
 const FONT_CACHE = "pm-fonts-v1";
 const PRECACHE = [
   "./index.html",
   "./app.f6e6986d92.css",
-  "./app.8b9b3bbaa2.js",
+  "./app.54f4683df0.js",
   "./data.3817b99494.json",
   "./manifest.webmanifest",
   "./icon-192.png",

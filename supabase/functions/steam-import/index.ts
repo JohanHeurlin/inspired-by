@@ -55,11 +55,11 @@ function parseSteamInput(raw: string): { kind: "id64" | "vanity"; value: string 
   let s = String(raw || "").trim();
   if (!s || s.length > 200) return null;
 
-  // Accept full Steam profile URLs
-  const profileMatch = s.match(/steamcommunity\.com\/profiles\/(7656\d{13})/i);
+  // Accept full Steam profile URLs with strict host & segment boundary checks
+  const profileMatch = s.match(/^(?:https?:\/\/)?(?:www\.)?steamcommunity\.com\/profiles\/(7656\d{13})(?:[/?#]|$)/i);
   if (profileMatch) return { kind: "id64", value: profileMatch[1] };
 
-  const vanityMatch = s.match(/steamcommunity\.com\/id\/([a-zA-Z0-9_-]{2,64})/i);
+  const vanityMatch = s.match(/^(?:https?:\/\/)?(?:www\.)?steamcommunity\.com\/id\/([a-zA-Z0-9_-]{2,64})(?:[/?#]|$)/i);
   if (vanityMatch) return { kind: "vanity", value: vanityMatch[1] };
 
   // Strip accidental slashes or @ prefix
@@ -69,15 +69,35 @@ function parseSteamInput(raw: string): { kind: "id64" | "vanity"; value: string 
   return null;
 }
 
+const XML_NAMED_ENTITIES: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+};
+
 function decodeXmlEntities(s: string): string {
-  return s
-    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
+  const unwrapped = s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1");
+  return unwrapped
+    .replace(/&(#x[0-9a-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (full, ent: string) => {
+      const lower = ent.toLowerCase();
+      if (lower in XML_NAMED_ENTITIES) return XML_NAMED_ENTITIES[lower];
+      const cp = lower.startsWith("#x")
+        ? parseInt(lower.slice(2), 16)
+        : lower.startsWith("#")
+          ? parseInt(lower.slice(1), 10)
+          : -1;
+      if (cp > 0 && cp <= 0x10ffff && !(cp >= 0xd800 && cp <= 0xdfff)) {
+        return String.fromCodePoint(cp);
+      }
+      return full;
+    })
     .trim();
+}
+
+function isHtmlDoc(s: string): boolean {
+  return /<!doctype\s+html\b|<html\b/i.test(s);
 }
 
 function extractTag(xml: string, tag: string): string {
@@ -184,31 +204,43 @@ Deno.serve(async (req: Request) => {
         : `https://steamcommunity.com/id/${encodeURIComponent(parsed.value)}/?xml=1`;
 
     const profRes = await fetchWithTimeout(profileUrl, 7500);
-    const profText = await profRes.text();
     if (profRes.status === 429) {
+      await profRes.body?.cancel().catch(() => {});
       return jsonResponse(
         { ok: false, code: "upstream_rate_limited", message: "Steam is throttling lookups right now — use the instant Paste tab below." },
         502,
       );
     }
-    if (profText.includes("<error>")) {
-      const errMsg = extractTag(profText, "error");
-      return jsonResponse(
-        { ok: false, code: "not_found", message: errMsg || "Steam profile not found." },
-        404,
-      );
+    if (profRes.status >= 500) {
+      await profRes.body?.cancel().catch(() => {});
+      if (!steamId64) {
+        return jsonResponse(
+          { ok: false, code: "upstream_error", message: "Steam is temporarily unavailable — try again or use the instant Paste tab below." },
+          502,
+        );
+      }
+      profileName = parsed.value;
+    } else {
+      const profText = await profRes.text();
+      if (profText.includes("<error>")) {
+        const errMsg = extractTag(profText, "error");
+        return jsonResponse(
+          { ok: false, code: "not_found", message: errMsg || "Steam profile not found." },
+          404,
+        );
+      }
+      if (!steamId64 && (profRes.url?.includes("/login") || (!profText.includes("<profile>") && isHtmlDoc(profText)))) {
+        return jsonResponse({
+          ok: false,
+          code: "steam_login_gate",
+          message: "Steam asked for sign-in while looking up that profile — use the instant Paste tab below!",
+        });
+      }
+      const resolved64 = extractTag(profText, "steamID64");
+      if (/^7656\d{13}$/.test(resolved64)) steamId64 = resolved64;
+      profileName = extractTag(profText, "steamID") || parsed.value;
+      privacyState = extractTag(profText, "privacyState");
     }
-    if (!steamId64 && (profRes.url?.includes("/login") || (!profText.includes("<profile>") && profText.includes("<!DOCTYPE html")))) {
-      return jsonResponse({
-        ok: false,
-        code: "steam_login_gate",
-        message: "Steam asked for sign-in while looking up that profile — use the instant Paste tab below!",
-      });
-    }
-    const resolved64 = extractTag(profText, "steamID64");
-    if (/^7656\d{13}$/.test(resolved64)) steamId64 = resolved64;
-    profileName = extractTag(profText, "steamID") || parsed.value;
-    privacyState = extractTag(profText, "privacyState");
 
     if (!steamId64) {
       return jsonResponse(
@@ -269,17 +301,24 @@ Deno.serve(async (req: Request) => {
     // Step 3: Zero-key fallback — public Steam XML endpoint
     const xmlUrl = `https://steamcommunity.com/profiles/${steamId64}/games?tab=all&xml=1`;
     const xmlRes = await fetchWithTimeout(xmlUrl, 8500);
-    const finalUrl = xmlRes.url || "";
-    const xmlText = await xmlRes.text();
-
     if (xmlRes.status === 429) {
+      await xmlRes.body?.cancel().catch(() => {});
       return jsonResponse(
         { ok: false, code: "upstream_rate_limited", message: "Steam is throttling lookups right now — use the instant Paste tab below." },
         502,
       );
     }
+    if (xmlRes.status >= 500) {
+      await xmlRes.body?.cancel().catch(() => {});
+      return jsonResponse(
+        { ok: false, code: "upstream_error", message: "Steam is temporarily unavailable — try again or use the instant Paste tab below." },
+        502,
+      );
+    }
+    const finalUrl = xmlRes.url || "";
+    const xmlText = await xmlRes.text();
 
-    if (finalUrl.includes("/login") || (!xmlText.includes("<gamesList>") && xmlText.includes("<!DOCTYPE html"))) {
+    if (finalUrl.includes("/login") || (!xmlText.includes("<gamesList>") && isHtmlDoc(xmlText))) {
       return jsonResponse({
         ok: false,
         code: "steam_login_gate",
@@ -298,6 +337,13 @@ Deno.serve(async (req: Request) => {
         profileName,
         message: extractTag(xmlText, "error") || "Game details are private — use the Paste tab below.",
       });
+    }
+
+    if (!xmlRes.ok) {
+      return jsonResponse(
+        { ok: false, code: "upstream_error", message: "Steam refused the lookup right now — use the instant Paste tab below." },
+        502,
+      );
     }
 
     const games = parseGamesListXml(xmlText);
@@ -320,7 +366,8 @@ Deno.serve(async (req: Request) => {
       games,
     });
   } catch (err) {
-    const isTimeout = err instanceof DOMException && err.name === "AbortError";
+    const errName = (err as { name?: string })?.name || "";
+    const isTimeout = errName === "AbortError" || errName === "TimeoutError";
     return jsonResponse(
       {
         ok: false,

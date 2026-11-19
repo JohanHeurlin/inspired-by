@@ -4819,12 +4819,16 @@ const ANALYTICS_IN_SAMPLE=(()=>{
     return v<ANALYTICS_SAMPLE_RATE;
   }catch(e){return Math.random()<ANALYTICS_SAMPLE_RATE}
 })();
+function clipUtf(s,max){
+  const arr=Array.from(String(s==null?"":s)).filter(ch=>{const c=ch.codePointAt(0);return c<0xD800||c>0xDFFF});
+  return arr.slice(0,max).join("");
+}
 function cleanRefHost(){
   try{
     if(!document.referrer)return "";
     const h=new URL(document.referrer).hostname.toLowerCase().replace(/^www\./,"");
     if(!h||h==="playedmade.com"||h.endsWith(".github.io")||h==="localhost"||h==="127.0.0.1")return "";
-    return h.slice(0,80);
+    return clipUtf(h,80);
   }catch(e){return ""}
 }
 function deviceBucket(){
@@ -4844,11 +4848,11 @@ function trackEvent(event,section=""){
       if(ANALYTICS_SEEN.has(key)||ANALYTICS_SEEN.size>=16)return;
       ANALYTICS_SEEN.add(key);
     }
-    const tz=((Intl&&Intl.DateTimeFormat&&Intl.DateTimeFormat().resolvedOptions().timeZone)||"").slice(0,48);
+    const tz=clipUtf((Intl&&Intl.DateTimeFormat&&Intl.DateTimeFormat().resolvedOptions().timeZone)||"",48);
     /* Strictly aggregate fields — never birth year, age, name, or personal memory text */
     const body=JSON.stringify({
-      event:String(event||"").slice(0,40),
-      section:String(section||"").slice(0,48),
+      event:clipUtf(event||"",40),
+      section:clipUtf(section||"",48),
       ref_host:event==="visit"?cleanRefHost():"",
       device:deviceBucket(),
       tz
@@ -4891,18 +4895,23 @@ function saveLocalRequest(t,b,cat){
 async function submitInboxPayload(payload){
   if(inboxSessionCount()>=5)return {ok:false,reason:"limit"};
   if(Date.now()-inboxLastSent<10000)return {ok:false,reason:"cooldown"};
-  const title=String(payload.title||"").trim().slice(0,160).trim();
-  const details=String(payload.body||"").trim().slice(0,1500);
+  const title=clipUtf(String(payload.title||"").trim(),160).trim();
+  if(Array.from(title).length<2)return {ok:false,reason:"short"};
+  const details=clipUtf(String(payload.body||"").trim(),1500).trim();
   const urlCount=((title+" "+details).match(/https?:\/\//gi)||[]).length;
   if(urlCount>3)return {ok:false,reason:"links"};
+  const catRaw=clipUtf(String(payload.cat||"").trim(),120).trim();
+  const category=Array.from(catRaw).length>=2?catRaw:"General";
+  const scope=clipUtf(String(payload.scope||"").trim()||"Default",120).trim()||"Default";
+  const source_page=clipUtf(String(location.hash||"#start").trim()||"#start",160);
   const id="sub-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6);
   const row={
     submission_id:id,
-    category:String(payload.cat||"General").trim().slice(0,120),
+    category,
     title,
     details,
-    scope:String(payload.scope||"Default").trim().slice(0,120),
-    source_page:String(location.hash||"#start").slice(0,160)
+    scope,
+    source_page
   };
   try{
     const r=await fetch(SUPABASE_INBOX_URL,{
@@ -4962,7 +4971,7 @@ function openFeatureSheet(opts={}){
   const clearErr=()=>{if(er&&!er.dataset.ok){er.hidden=true;er.textContent=""}if(ft)ft.removeAttribute("aria-invalid")};
   if(ft){
     ft.addEventListener("input",()=>{FEAT_DRAFT.title=ft.value;clearErr()});
-    ft.addEventListener("blur",()=>{if(ft.value.trim().length>0&&ft.value.trim().length<2){ft.setAttribute("aria-invalid","true");if(er){delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;er.textContent="Please enter at least 2 characters."}}});
+    ft.addEventListener("blur",()=>{const tLen=Array.from(ft.value.trim()).length;if(tLen>0&&tLen<2){ft.setAttribute("aria-invalid","true");if(er){delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;er.textContent="Please enter at least 2 characters."}}});
   }
   if(fb)fb.addEventListener("input",()=>{FEAT_DRAFT.body=fb.value});
   if(fm)fm.addEventListener("submit",async ev=>{
@@ -4970,9 +4979,9 @@ function openFeatureSheet(opts={}){
     if(($("#featHp")||{}).value)return;
     if(Date.now()-featOpenedAt<1500){toast("Take a second to review before submitting");return}
     const t=(ft?ft.value:"").trim(),b=(fb?fb.value:"").trim();
-    if(t.length<2){
+    if(Array.from(t).length<2){
       if(ft){ft.setAttribute("aria-invalid","true");ft.focus()}
-      if(er){delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;er.textContent="Please enter the console, game, or idea title before submitting."}
+      if(er){delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;er.textContent="Please enter at least 2 characters for the console, game, or idea title."}
       return;
     }
     if(sb){sb.disabled=true;sb.textContent="Sending…"}
@@ -4987,7 +4996,8 @@ function openFeatureSheet(opts={}){
       if(er2){er2.dataset.ok="1";er2.style.color="var(--craft)";er2.hidden=false;er2.textContent=`✓ Logged “${t}” in the review queue. Thank you!`}
     }else if(er){
       delete er.dataset.ok;er.style.color="var(--love)";er.hidden=false;
-      er.textContent=res.reason==="cooldown"?"Submitted — wait 10 seconds before sending another."
+      er.textContent=res.reason==="short"?"Please enter at least 2 characters for the title."
+        :res.reason==="cooldown"?"Submitted — wait 10 seconds before sending another."
         :res.reason==="limit"?"Session limit reached (5 submissions) — use GitHub Issues for bulk additions."
         :res.reason==="links"?"Please include at most 3 links per submission."
         :"Network couldn't reach the review queue right now — check your connection or use the GitHub Issue link.";
@@ -6467,7 +6477,7 @@ const ACTIONS={
   featScope(el){FEAT_DRAFT.scope=el.dataset.v;openFeatureSheet()},
   featGh(el){
     const t=(($("#featTitle")||{}).value||"").trim(),b=(($("#featBody")||{}).value||"").trim();
-    if(t.length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
+    if(Array.from(t).length<2){toast("Enter the console, game, or idea name first");const inp=$("#featTitle");if(inp)inp.focus();return}
     FEAT_DRAFT.title=t;FEAT_DRAFT.body=b;saveLocalRequest(t,b,FEAT_DRAFT.cat);
     const repo=el.dataset.repo||"https://github.com/JohanHeurlin/inspired-by";
     const isVault=FEAT_DRAFT.cat.includes("Cancelled"),isConsole=FEAT_DRAFT.cat.includes("Console"),isGame=FEAT_DRAFT.cat.includes("Game"),isLineage=FEAT_DRAFT.cat.includes("Lineage");
@@ -6482,7 +6492,7 @@ const ACTIONS={
   async gratSubmitReal(el){
     const note=(($("#gratNote")||{}).value||GRAT_DRAFT.note||"").trim();
     const who=(($("#gratWho")||{}).value||GRAT_DRAFT.who||"").trim();
-    if(note.length<12){toast("Write a short memory or thank-you note first");const inp=$("#gratNote");if(inp)inp.focus();return}
+    if(Array.from(note).length<12){toast("Write a short memory or thank-you note first");const inp=$("#gratNote");if(inp)inp.focus();return}
     const gm=GRAT_DRAFT.id?byId.get(GRAT_DRAFT.id):null;
     const st=GRAT_DRAFT.st?findStudio(GRAT_DRAFT.st):(gm?findStudio(studio(gm)):null);
     const target=gm&&st?`${gm.title} (${st.name})`:gm?gm.title:st?st.name:"Game makers";
@@ -6495,8 +6505,10 @@ const ACTIONS={
       if(msg){msg.hidden=false;msg.style.color="var(--craft)";msg.textContent="✓ Sent to the review queue."}
     }else if(msg){
       msg.hidden=false;msg.style.color="var(--love)";
-      msg.textContent=res&&res.reason==="cooldown"?"Sent — wait 10 seconds before submitting another."
+      msg.textContent=res&&res.reason==="short"?"Please write a slightly longer title or note before submitting."
+        :res&&res.reason==="cooldown"?"Sent — wait 10 seconds before submitting another."
         :res&&res.reason==="limit"?"Session limit reached (5 submissions)."
+        :res&&res.reason==="links"?"Please include at most 3 links per submission."
         :"Couldn't reach the review queue right now — please try again in a moment.";
     }
   },
