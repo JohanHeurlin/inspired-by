@@ -1031,6 +1031,7 @@ body.tron-grid{background-image:linear-gradient(rgb(0 229 255 / .12) 1px,transpa
   <hr>
   <a class="popitem" href="#about" data-close-pop="gearMenu"><span>About &amp; Credits</span><small>▸</small></a>
   <button type="button" class="popitem" id="devModeMenuBtn" data-act="devModeTog"><span>Work in games?</span><small>Off</small></button>
+  <button type="button" class="popitem" data-act="settings" data-close-pop="gearMenu"><span>Timeline &amp; reset…</span><small>▸</small></button>
 </div>
 <div id="sandboxBar"></div>
 <div class="sr" id="srLive" aria-live="polite"></div>
@@ -2064,8 +2065,8 @@ function renderSandboxBar(){
   const stashed=store.get("ib3-stashed-hist");
   if(!stashed){sb.innerHTML="";return}
   const n=entries(cleanTimeline(stashed)).length;
-  sb.innerHTML=`<div class="sbar"><div class="wrap in"><span><b>New-visitor preview mode:</b> your real timeline (${plural(n,"game")}) is safely saved while you test onboarding.</span>
-    <span class="row"><button type="button" class="btn sm primary" data-act="sandboxExit">◂ Back to my saved timeline (${n})</button><button type="button" class="btn sm ghost" data-act="sandboxCommit">Replace saved with this one</button></span></div></div>`;
+  sb.innerHTML=`<div class="sbar"><div class="wrap in"><span><b>Fresh-start preview:</b> your saved timeline (${plural(n,"game")}) is safe.</span>
+    <span class="row"><button type="button" class="btn sm primary" data-act="sandboxExit">◂ Back to my timeline (${n})</button><button type="button" class="btn sm ghost" data-act="sandboxCommit">Keep this one instead</button></span></div></div>`;
 }
 function parseHash(){
   let h="";try{h=decodeURIComponent(location.hash.slice(1))}catch(e){h=location.hash.slice(1)}
@@ -6645,13 +6646,18 @@ function openSettings(){
       <button type="button" class="chip" data-act="eraMemTog" aria-pressed="${!!state.eraMem}">Era headlines: ${state.eraMem?"On":"Off"}</button>
       <button type="button" class="chip ${isDevMode()?"craftchip":""}" data-act="devModeTog" aria-pressed="${isDevMode()}">🛠 Work in games (Maker mode): ${isDevMode()?"On":"Off"}</button>
     </div>
-    ${DEV_QUERY||hasStash?`<h3 class="h3" style="margin-top:16px">Visitor onboarding preview</h3>
-      <p class="sub">Test the fresh visitor flow without losing your saved timeline.</p>
-      <div class="row">${hasStash?`<button type="button" class="btn primary" data-act="sandboxExit">◂ Return to my saved timeline</button>`:`<button type="button" class="btn" data-act="sandboxEnter">Test new-visitor onboarding</button>`}</div>`:""}
     <h3 class="h3" style="margin-top:16px">Backup &amp; restore</h3>
     <p class="sub">Your timeline saves automatically in this browser. Export or import a JSON backup anytime.</p>
     <div class="row"><button class="btn sm" data-act="dlJson">Export backup (.json)</button><label class="btn sm" style="cursor:pointer">Import backup (.json)<input type="file" id="impJson" accept=".json,application/json" hidden></label></div>
-    <h3 class="h3" style="margin-top:16px">Start over</h3><p class="sub">Removes every game from your timeline on this device.</p><button class="btn" data-act="resetAsk">Clear my timeline</button><div id="resetBox"></div>`,"Settings");
+    <h3 class="h3" style="margin-top:16px">First-time onboarding &amp; reset</h3>
+    <p class="sub">Replay the first-time experience (or hand your screen to a friend) without losing your games, or wipe this browser back to a clean slate.</p>
+    <div class="row">
+      ${hasStash
+        ?`<button type="button" class="btn primary" data-act="sandboxExit">◂ Return to my saved timeline</button>`
+        :(entries(hist).length?`<button type="button" class="btn" data-act="sandboxEnter">Preview first-time start (keeps mine safe)</button>`:"")}
+      <button type="button" class="btn ghost" data-act="resetAsk">Reset to first-time experience…</button>
+    </div>
+    <div id="resetBox"></div>`,"Settings");
   $("#setForm").onsubmit=e=>{e.preventDefault();const raw=$("#setBirth").value.trim(),y=parseInt(raw,10);if(!raw){hist.birth=null}else if(y>=1940&&y<=NOW-3){hist.birth=y;hist.era=String(Math.floor(y/10)*10).slice(-2)+"s"}hist.name=$("#setName").value.trim().slice(0,24);save();closeLayer();toast("Saved")};
   const imp=$("#impJson");if(imp)imp.onchange=async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;try{const raw=JSON.parse(await f.text());const c=cleanTimeline(raw);if(!c.birth&&!c.era&&!Object.keys(c.years||{}).length)throw 0;hist=c;save();closeLayer();toast("Timeline restored");go("timeline")}catch(err){toast("Couldn't read that backup file")}};
 }
@@ -7625,20 +7631,24 @@ const ACTIONS={
   },
   sandboxEnter(){
     store.set("ib3-stashed-hist",packHist(hist));
-    hist=blankHist();save();clearLayer();
-    toast("Testing fresh visitor flow — your timeline is stashed above");
+    store.set("ib3-stashed-dev",state.devMode?1:0);
+    hist=blankHist();state.heroBirth=null;state.heroEra="90s";state.heroShuffle=0;state.devMode=0;
+    store.set("ib3-devmode",0);save();updateGearMenu();clearLayer();
+    toast("First-time preview — your saved timeline is safe in the bar above");
     go("start");
   },
   sandboxExit(){
     const raw=store.get("ib3-stashed-hist");if(!raw)return;
     const restored=cleanTimeline(raw);
     if(restored.birth||restored.era||Object.keys(restored.years||{}).length)hist=restored;
-    store.del("ib3-stashed-hist");save();clearLayer();
+    const oldDev=store.get("ib3-stashed-dev",null);
+    if(oldDev!==null){state.devMode=oldDev?1:0;store.set("ib3-devmode",state.devMode);store.del("ib3-stashed-dev")}
+    store.del("ib3-stashed-hist");save();updateGearMenu();clearLayer();
     toast("Returned to your saved timeline");
     go("timeline");
   },
   sandboxCommit(){
-    store.del("ib3-stashed-hist");renderSandboxBar();
+    store.del("ib3-stashed-hist");store.del("ib3-stashed-dev");renderSandboxBar();
     toast("Kept current timeline");
   },
   quickLook(el){const g=byId.get(el.dataset.id);if(g)openQuickLook(g)},
@@ -8028,9 +8038,19 @@ const ACTIONS={
       el.removeAttribute("aria-disabled");
     }
   },
-  resetAsk(){$("#resetBox").innerHTML=`<div class="banner"><p>Clear all ${plural(entries(hist).length,"game")} from your timeline?</p><div class="row"><button class="btn love" data-act="resetDo">Clear it</button><button class="btn" data-act="resetNo">Keep it</button></div></div>`},
-  resetNo(){$("#resetBox").innerHTML=""},
-  resetDo(){hist=blankHist();save();store.del("ib2-revealed");clearLayer();go("start");render();toast("Cleared")},
+  resetAsk(){
+    const n=entries(hist).length;
+    $("#resetBox").innerHTML=`<div class="banner" style="margin-top:10px"><p style="margin:0 0 10px">Reset this browser to the first-time experience? This clears ${n?`all <b>${plural(n,"game")}</b>, `:""}your birth year, preferences, and daily streak on this device.</p><div class="row" style="gap:8px">${n?`<button type="button" class="btn sm" data-act="dlJson">Download backup first</button>`:""}<button type="button" class="btn sm love" data-act="resetDo">Yes, reset everything</button><button type="button" class="btn sm" data-act="resetNo">Cancel</button></div></div>`;
+  },
+  resetNo(){const rb=$("#resetBox");if(rb)rb.innerHTML=""},
+  resetDo(){
+    hist=blankHist();
+    ["ib-history","ib2-revealed","ib3-stashed-hist","ib3-stashed-dev","ib3-devmode","ib3-erafold","pm-challenger","pm-roots-v1","ib2-best"].forEach(k=>store.del(k));
+    state.heroBirth=null;state.heroEra="90s";state.heroShuffle=0;state.devMode=0;state.eraFold={};quizBest=0;
+    updateGearMenu();renderSandboxBar();clearLayer();
+    if(location.hash&&location.hash!=="#start")history.replaceState(null,"","#start");
+    go("start");render();toast("Reset to first-time experience");
+  },
   tier(el){const tb=$("#treebox");if(tb)state.treeKeepScroll=tb.scrollLeft;const k=el.dataset.tier;state.tiers[k]=state.tiers[k]?0:1;store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
   allTiers(){const tb=$("#treebox");if(tb)state.treeKeepScroll=tb.scrollLeft;TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
   moreLinks(el){state.treeMore[el.dataset.dir]=1;const y=window.scrollY;render();window.scrollTo({top:y})},
