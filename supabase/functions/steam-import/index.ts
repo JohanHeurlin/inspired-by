@@ -272,6 +272,13 @@ Deno.serve(async (req: Request) => {
     const finalUrl = xmlRes.url || "";
     const xmlText = await xmlRes.text();
 
+    if (xmlRes.status === 429) {
+      return jsonResponse(
+        { ok: false, code: "upstream_rate_limited", message: "Steam is throttling lookups right now — use the instant Paste tab below." },
+        502,
+      );
+    }
+
     if (finalUrl.includes("/login") || (!xmlText.includes("<gamesList>") && xmlText.includes("<!DOCTYPE html"))) {
       return jsonResponse({
         ok: false,

@@ -4891,18 +4891,18 @@ function saveLocalRequest(t,b,cat){
 async function submitInboxPayload(payload){
   if(inboxSessionCount()>=5)return {ok:false,reason:"limit"};
   if(Date.now()-inboxLastSent<10000)return {ok:false,reason:"cooldown"};
-  const title=String(payload.title||"").trim().slice(0,200);
-  const details=String(payload.body||"").trim().slice(0,2000);
+  const title=String(payload.title||"").trim().slice(0,160).trim();
+  const details=String(payload.body||"").trim().slice(0,1500);
   const urlCount=((title+" "+details).match(/https?:\/\//gi)||[]).length;
   if(urlCount>3)return {ok:false,reason:"links"};
   const id="sub-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6);
   const row={
     submission_id:id,
-    category:String(payload.cat||"General").slice(0,120),
+    category:String(payload.cat||"General").trim().slice(0,120),
     title,
     details,
-    scope:String(payload.scope||"Default").slice(0,120),
-    source_page:String(location.hash||"#start").slice(0,200)
+    scope:String(payload.scope||"Default").trim().slice(0,120),
+    source_page:String(location.hash||"#start").slice(0,160)
   };
   try{
     const r=await fetch(SUPABASE_INBOX_URL,{
