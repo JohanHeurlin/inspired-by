@@ -370,8 +370,11 @@ button.chip:hover{border-color:var(--line2)}
 .meta{font-size:14px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
 .meta .mono{color:var(--muted)}
 .gnote{font-size:15px;color:var(--ink2);max-width:62ch;margin:10px 0 0}
-.gstats{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:13px;color:var(--muted)}
+.gstats{display:flex;flex-wrap:wrap;gap:7px 9px;margin-top:12px;font-size:13px;color:var(--muted);align-items:center}
 .gstats b{color:var(--ink);font-weight:700}
+.gstatbtn{border:1px solid var(--line2);background:var(--card);color:var(--ink2);border-radius:999px;padding:4px 11px;font-size:12.5px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;transition:border-color .15s,background .15s}
+.gstatbtn:hover:not(:disabled){border-color:var(--accent);color:var(--ink);background:var(--accent-soft)}
+.gstatbtn:disabled{opacity:.58;cursor:default;border-style:dashed}
 .mylv{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:14px}
 .seg{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--line2);border-radius:11px;background:var(--paper);max-inline-size:100%;box-sizing:border-box}
 .seg button{border:0;background:none;border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;color:var(--ink2);white-space:nowrap;flex:1 1 auto;text-align:center}
@@ -393,7 +396,8 @@ button.chip:hover{border-color:var(--line2)}
 .wnode:focus-visible rect{stroke:var(--accent);stroke-width:3}
 .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
 @media (max-width:820px){.cols{grid-template-columns:minmax(0,1fr)}}
-.panel{border-radius:14px;padding:16px}
+.panel{border-radius:14px;padding:16px;transition:box-shadow .28s ease}
+.panel.flash{box-shadow:0 0 0 3px var(--accent)}
 .panel.up{background:var(--up)}
 .panel.down{background:var(--down)}
 .panel > h2{font-family:var(--f-display);font-size:16px;margin:0;display:flex;gap:8px;align-items:center}
@@ -2211,7 +2215,7 @@ function renderTimeline(m){
   const dx=st.n>=3?dnaOf(d):null;
   const wkMode=state.tlMode==="worked"&&!!mk;
   const peakAge=st.peakY&&d.birth?st.peakY-d.birth:null;
-  const teaser=dx&&dx.oldest?`<p class="lede" style="margin:14px 0 0;font-size:15px">Your games trace back to <b>${dx.allCount.toLocaleString()}</b> earlier games, all the way to <a href="#${dx.oldest.g.id}">${esc(dx.oldest.g.title)}</a> (${dx.oldest.g.year}).${dx.top[0]?` Your biggest root is <b>${esc(dx.top[0].g.title)}</b>.`:""} <button class="link" data-act="toDna">See your gaming DNA</button></p>`:"";
+  const teaser=dx&&dx.oldest?`<p class="lede" style="margin:14px 0 0;font-size:15px">Your games trace back to <button type="button" class="link" style="font-weight:700;font-size:inherit" data-act="toDna">${dx.allCount.toLocaleString()} earlier games</button>, all the way to <a href="#${dx.oldest.g.id}">${esc(dx.oldest.g.title)}</a> (${dx.oldest.g.year}).${dx.top[0]?` Your biggest root is <a href="#${dx.top[0].g.id}" style="font-weight:700">${esc(dx.top[0].g.title)}</a>.`:""} <button class="link" data-act="toDna">See your gaming DNA ▸</button></p>`:"";
   const hasStash=!!store.get("ib3-stashed-hist");
   const yrSpanTxt=st.from&&st.from!==st.to?`${st.from}–${st.to}`:st.from?String(st.from):"";
   const reelEntries=entries(d).slice().sort((a,b)=>(!!b.e.wk-!!a.e.wk)||b.lv-a.lv||a.y-b.y).slice(0,18);
@@ -2433,7 +2437,7 @@ function renderLineage(m,focusId){
           <div style="width:44px;flex:none">${cover(g,{showYear:false})}</div>
           <div style="min-width:0">
             <div class="row" style="gap:6px"><b style="font-size:15.5px">${esc(g.title)}</b><span class="mono muted" style="font-size:12.5px">${g.year}</span>${statusBadgeHTML(g)}</div>
-            <small class="muted" style="display:block">${flag(g.cc)} ${esc(studio(g))} · <b>${ups.length}</b> direct ancestor${ups.length===1?"":"s"} · <b>${downs.length}</b> direct descendant${downs.length===1?"":"s"} · <b>${g.inf.toLocaleString()}</b> total reach</small>
+            <small class="muted" style="display:block">${flag(g.cc)} ${esc(studio(g))} · <button type="button" class="link" style="font-size:inherit" data-act="jumpPanel" data-id="${g.id}" data-dir="up"><b>${ups.length}</b> direct ancestor${ups.length===1?"":"s"}</button> · <button type="button" class="link" style="font-size:inherit" data-act="jumpPanel" data-id="${g.id}" data-dir="down"><b>${downs.length}</b> direct descendant${downs.length===1?"":"s"}</button> · ${g.inf?`<button type="button" class="link" style="font-size:inherit" data-act="reachSheet" data-id="${g.id}" data-dir="down"><b>${g.inf.toLocaleString()}</b> total reach ▸</button>`:`<b>0</b> total reach`}</small>
           </div>
         </div>
         <div class="row" style="gap:6px">
@@ -3532,7 +3536,7 @@ function linkCard(l,dir,focus){
 function panelHTML(dir,ls,g){
   const shown=ls.filter(tierOn).sort((a,b)=>TIERS[b.t].w-TIERS[a.t].w||(G[dir==="up"?b.from:b.to].pop-G[dir==="up"?a.from:a.to].pop)),hid=ls.length-shown.length;
   const cap=state.treeMore[dir]?999:8;
-  return `<section class="panel ${dir}"><h2>${dir==="up"?"▲ Inspired by":"▼ Went on to inspire"} <span class="mono" style="font-size:13px;font-weight:500">${shown.length}</span></h2>
+  return `<section class="panel ${dir}" id="panel-${dir}"><h2 tabindex="-1" style="outline:none">${dir==="up"?"▲ Inspired by":"▼ Went on to inspire"} <span class="mono" style="font-size:13px;font-weight:500">${shown.length}</span></h2>
     <p>${dir==="up"?`Earlier games ${esc(g.title)} built on`:`Later games that borrowed from ${esc(g.title)}`}</p>
     ${ls.length?"":`<p class="empty">Nothing recorded yet.</p>`}
     ${shown.slice(0,cap).map(l=>linkCard(l,dir,g)).join("")}
@@ -3554,7 +3558,7 @@ function renderGame(m,id){
         <div class="meta"><span class="mono">${g.year}${g.cancelled?" (cancelled)":""}</span><span style="display:inline-flex;align-items:center;gap:7px">${studioLogoHTML(findStudio(studio(g)))}<span>${flag(g.cc)} ${studioLinks(g.dev||"")}</span></span>${g.cc?`<button type="button" class="stbtn" data-act="country" data-cc="${esc(g.cc)}">${esc(countryName(g.cc))} ▸</button>`:""}</div>
         ${g.plats.length?`<p class="sub" style="margin:6px 0 0">${g.cancelled?"Target platforms: ":""}${esc(sysOfGame(g).join(" · "))}</p>`:""}
         ${g.note?`<p class="gnote">${esc(g.note)}</p>`:""}
-        <div class="gstats">${g.tree?`<span><b>${ups.length}</b> direct inspiration${ups.length===1?"":"s"}</span><span><b>${downs.length}</b> game${downs.length===1?"":"s"} it inspired directly</span><span><b>${g.inf.toLocaleString()}</b> later game${g.inf===1?"":"s"} trace${g.inf===1?"s":""} back to it</span>`:""}${!g.cancelled&&age!=null?`<span>${age>=0?`First released when you were <b>${age}</b>`:`Released <b>${-age}</b> years before you were born`}</span>`:""}</div>
+        <div class="gstats">${g.tree?`<button type="button" class="gstatbtn" data-act="jumpPanel" data-id="${g.id}" data-dir="up" ${ups.length?"":"disabled"}>▲ <b>${ups.length}</b> direct inspiration${ups.length===1?"":"s"}</button><button type="button" class="gstatbtn" data-act="jumpPanel" data-id="${g.id}" data-dir="down" ${downs.length?"":"disabled"}>▼ <b>${downs.length}</b> game${downs.length===1?"":"s"} it inspired directly</button><button type="button" class="gstatbtn" data-act="reachSheet" data-id="${g.id}" data-dir="down" ${g.inf?"":"disabled"}>🌊 <b>${g.inf.toLocaleString()}</b> later game${g.inf===1?"":"s"} trace${g.inf===1?"s":""} back to it${g.inf?" ▸":""}</button>`:""}${!g.cancelled&&age!=null?`<span style="padding-left:2px">${age>=0?`First released when you were <b>${age}</b>`:`Released <b>${-age}</b> years before you were born`}</span>`:""}</div>
         ${g.cancelled
           ?`<div class="mylv"><span class="sync">🕯️ Unreleased project — honored for the team who built it:</span><button type="button" class="btn sm ${wk?"craft":"primary"}" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on this ✓":"I worked on this project"}</button>${wk?DEV_ROLES.map(r=>`<button type="button" class="chip craftchip" data-act="setWkRole" data-id="${g.id}" data-role="${esc(r)}" aria-pressed="${ent&&ent.role===r}">${esc(r)}</button>`).join(""):""}</div>`
           :`<div class="mylv"><span class="sync">In my timeline:</span><span class="seg" role="group" aria-label="In my timeline">${[1,2,3].map(v=>`<button class="${v===3?"l3":v===2?"l2":""}" data-act="setlv" data-id="${g.id}" data-lv="${v}" aria-pressed="${lv===v}">${LV[v].m} ${v===1?"Played":v===2?"Played a ton":"Favorite"}</button>`).join("")}</span>${lv&&!wk?`<button class="btn sm ghost" data-act="setlv" data-id="${g.id}" data-lv="0">Remove</button>`:""}</div>
@@ -4025,8 +4029,8 @@ function openQuickLook(g){
         ${!g.cancelled?`<p class="sub" style="margin:0 0 8px;font-size:12.5px">📦 ${esc(eraBoxContext(g))} · <button type="button" class="link" style="font-size:12px" data-act="goPrices">Compare era prices ▸</button></p>`:""}
         ${ps.length?`<p class="sub" style="margin:0 0 10px;font-size:12.5px"><b>${g.cancelled?"Target systems:":"Systems:"}</b> ${esc(ps.join(" · "))}</p>`:""}
         <p style="margin:0 0 10px;font-size:14.5px;line-height:1.5;color:var(--ink)">${esc(g.note||`${g.title} launched in ${g.year} from ${g.dev||"its development team"}.`)}</p>
-        ${topUp?`<div class="diascard" style="margin:0 0 10px;padding:9px 12px"><small class="muted" style="display:block">Key lineage spark: <b>${esc(G[topUp.from].title)} (${G[topUp.from].year})</b></small><span style="font-size:13px"><b>Built on:</b> ${esc(topUp.took)} · <b>Added:</b> ${esc(topUp.added)}</span></div>`:""}
-        ${g.tree?`<p class="sub" style="margin:0 0 10px;font-size:12.5px">⑂ Built on <b>${ups.length}</b> earlier ${ups.length===1?"game":"games"} · directly inspired <b>${downs.length}</b> · <b>${g.inf.toLocaleString()}</b> total descendants</p>`:""}
+        ${topUp?`<div class="diascard" style="margin:0 0 10px;padding:9px 12px"><small class="muted" style="display:block">Key lineage spark: <button type="button" class="link" style="font-size:inherit;font-weight:700" data-act="game" data-id="${G[topUp.from].id}" data-close="1">${esc(G[topUp.from].title)} (${G[topUp.from].year}) ▸</button></small><span style="font-size:13px"><b>Built on:</b> ${esc(topUp.took)} · <b>Added:</b> ${esc(topUp.added)}</span></div>`:""}
+        ${g.tree?`<p class="sub" style="margin:0 0 10px;font-size:12.5px">⑂ Built on ${ups.length?`<button type="button" class="link" style="font-size:inherit" data-act="jumpPanel" data-id="${g.id}" data-dir="up"><b>${ups.length}</b> earlier ${ups.length===1?"game":"games"}</button>`:`<b>0</b> earlier games`} · directly inspired ${downs.length?`<button type="button" class="link" style="font-size:inherit" data-act="jumpPanel" data-id="${g.id}" data-dir="down"><b>${downs.length}</b></button>`:`<b>0</b>`} · ${g.inf?`<button type="button" class="link" style="font-size:inherit" data-act="reachSheet" data-id="${g.id}" data-dir="down"><b>${g.inf.toLocaleString()}</b> total descendants ▸</button>`:`<b>0</b> total descendants`}</p>`:""}
         ${g.cancelled
           ?`<div class="mylv" style="margin-top:6px"><span class="sync">🕯️ Unreleased — honored for its makers:</span><button type="button" class="btn sm ${isWorked(hist,g)?"craft":"primary"}" data-act="toggleWk" data-id="${g.id}" aria-pressed="${isWorked(hist,g)}">🛠 ${isWorked(hist,g)?"Worked on this ✓":"I worked on this"}</button></div>`
           :playable(g)?`<div class="mylv" style="margin-top:6px"><span class="sync">${py?`On timeline (${py}):`:"Add to timeline:"}</span>
@@ -4048,6 +4052,108 @@ function openQuickLook(g){
     </div>
     <div id="qlGalBox"></div>`,g.title,{wide:true});
   mountGameGallery(g,"#qlGalBox");
+}
+let panelScrollToken=0,panelFlashTimer=null;
+function scrollIntoViewAsync(element,options,scroller=window){
+  const result=element.scrollIntoView(options);
+  if(result instanceof Promise)return result;
+  return new Promise(resolve=>{
+    let timeoutId;
+    const finish=()=>{
+      clearTimeout(timeoutId);
+      scroller.removeEventListener("scrollend",finish);
+      scroller.removeEventListener("scroll",onScroll);
+      resolve();
+    };
+    const onScroll=()=>{
+      clearTimeout(timeoutId);
+      timeoutId=setTimeout(finish,110);
+    };
+    scroller.addEventListener("scrollend",finish,{once:true});
+    scroller.addEventListener("scroll",onScroll,{passive:true});
+    timeoutId=setTimeout(finish,110);
+  });
+}
+async function jumpToPanel(dir,gid){
+  playUiTick("tap");
+  let sec=$(`#panel-${dir}`);
+  const curId=(state.route&&(state.route.id||state.linId))||"";
+  if(!sec||(gid&&curId&&gid!==curId)||($("#sheetDlg")&&$("#sheetDlg").open)){
+    if($("#sheetDlg")&&$("#sheetDlg").open)clearLayer();
+    if(gid&&state.route.view!=="game"&&state.route.view!=="lineage")go(gid);
+    else if(gid&&gid!==curId)go(gid);
+    await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+    sec=$(`#panel-${dir}`);
+  }
+  if(!sec)return;
+  const tok=++panelScrollToken;
+  $$(".panel.flash").forEach(p=>p.classList.remove("flash"));
+  await scrollIntoViewAsync(sec,{behavior:"smooth",block:"start"});
+  if(tok!==panelScrollToken)return;
+  sec.classList.add("flash");
+  clearTimeout(panelFlashTimer);
+  panelFlashTimer=setTimeout(()=>sec.classList.remove("flash"),1500);
+  const h2=sec.querySelector("h2");
+  if(h2)h2.focus({preventScroll:true});
+}
+const REACH_STATE={gid:"",dir:"down",step:"all",q:"",cap:48};
+function computeReachList(g,dir="down"){
+  const seen=new Map([[g.i,0]]),out=[],q=[g.i];
+  while(q.length){
+    const u=q.shift(),d=seen.get(u);
+    const edges=dir==="up"?UP[u]:DOWN[u];
+    for(const l of edges){
+      const v=dir==="up"?l.from:l.to;
+      if(!seen.has(v)){
+        seen.set(v,d+1);
+        out.push({g:G[v],steps:d+1,via:G[u],tier:TIERS[l.t]});
+        q.push(v);
+      }
+    }
+  }
+  out.sort((a,b)=>a.steps-b.steps||(dir==="up"?b.g.year-a.g.year:a.g.year-b.g.year)||b.g.pop-a.g.pop);
+  return out;
+}
+function openReachSheet(g,dir="down",reset=true){
+  if(!g)return;
+  if(reset){REACH_STATE.gid=g.id;REACH_STATE.dir=dir;REACH_STATE.step="all";REACH_STATE.q="";REACH_STATE.cap=48}
+  const all=computeReachList(g,REACH_STATE.dir);
+  const c1=all.filter(x=>x.steps===1).length,c2=all.filter(x=>x.steps===2).length,c3=all.filter(x=>x.steps>=3).length;
+  const isUp=REACH_STATE.dir==="up";
+  openSheet(`<div class="sheethead"><div>
+      <p class="eyebrow" style="margin-bottom:2px">${isUp?"▲ Full upstream ancestry":"🌊 Full downstream ripple effect"} · ${all.length.toLocaleString()} ${all.length===1?"game":"games"}</p>
+      <h2>${isUp?`Every earlier game behind ${esc(g.title)}`:`Every later game that traces back to ${esc(g.title)}`}</h2>
+      <p class="sub" style="margin:2px 0 0">${esc(g.title)} (${g.year}) ${isUp?`stands on <b>${all.length.toLocaleString()}</b> documented earlier works`:`helped shape <b>${all.length.toLocaleString()}</b> later games across generations`}.</p>
+    </div><button class="x" type="button" data-act="closeLayer" aria-label="Close">×</button></div>
+    <div class="row" style="gap:6px;margin-bottom:10px;justify-content:space-between">
+      <div class="pickstrip" style="padding:0;gap:5px">
+        <button type="button" class="chip" data-act="reachStep" data-s="all" aria-pressed="${REACH_STATE.step==="all"}">All (${all.length})</button>
+        ${c1?`<button type="button" class="chip" data-act="reachStep" data-s="1" aria-pressed="${REACH_STATE.step==="1"}">Direct · 1 step (${c1})</button>`:""}
+        ${c2?`<button type="button" class="chip" data-act="reachStep" data-s="2" aria-pressed="${REACH_STATE.step==="2"}">2 steps (${c2})</button>`:""}
+        ${c3?`<button type="button" class="chip" data-act="reachStep" data-s="3+" aria-pressed="${REACH_STATE.step==="3+"}">3+ steps (${c3})</button>`:""}
+      </div>
+      ${all.length>12?`<input class="input" id="reachQIn" type="search" style="max-width:240px;padding:6px 10px;font-size:13px" placeholder="Filter ${all.length} games…" value="${esc(REACH_STATE.q)}" aria-label="Filter games in reach list">`:""}
+    </div>
+    <div id="reachGridWrap"></div>`,isUp?`Roots of ${g.title}`:`Descendants of ${g.title}`,{wide:true});
+  const drawGrid=()=>{
+    const wrap=$("#reachGridWrap");if(!wrap)return;
+    const qv=norm(REACH_STATE.q);
+    const filt=all.filter(x=>{
+      if(REACH_STATE.step==="1"&&x.steps!==1)return false;
+      if(REACH_STATE.step==="2"&&x.steps!==2)return false;
+      if(REACH_STATE.step==="3+"&&x.steps<3)return false;
+      if(qv&&!x.g.n.includes(qv)&&!(x.g.aka&&norm(x.g.aka).includes(qv))&&!norm(studio(x.g)).includes(qv))return false;
+      return true;
+    });
+    const slice=filt.slice(0,REACH_STATE.cap);
+    wrap.innerHTML=slice.length
+      ?`<div class="grid">${slice.map(x=>tileHTML(x.g,hist,{act:"reachOpenGame",sub:`${x.g.year} · ${x.steps===1?"direct":x.steps+" steps via "+x.via.title}`,quickTick:!!hist.birth})).join("")}</div>
+        ${filt.length>slice.length?`<button type="button" class="more" style="margin-top:12px;text-align:center" data-act="reachMore"><b>Show ${Math.min(48,filt.length-slice.length)} more</b> (${filt.length-slice.length} remaining)</button>`:""}`
+      :`<p class="empty">No matching games in this filter.</p>`;
+  };
+  drawGrid();
+  const inp=$("#reachQIn");
+  if(inp)inp.addEventListener("input",()=>{REACH_STATE.q=inp.value;REACH_STATE.cap=48;drawGrid()});
 }
 function openSlotSheet(){
   const pool=TREE.filter(x=>x.pop>=3&&playable(x));
@@ -5291,6 +5397,11 @@ const ACTIONS={
   },
   linFocus(el){const id=el.dataset.id;if(!id)return;playUiTick("node");state.linId=id;state.treeMore={};go("lineage-"+id)},
   linRandom(){const pool=TREE.filter(g=>g.pop>=3&&(UP[g.i].length+DOWN[g.i].length>=2));const pick=pool[Math.floor(Math.random()*pool.length)]||TREE[0];playUiTick("node");state.linId=pick.id;state.treeMore={};go("lineage-"+pick.id)},
+  jumpPanel(el){jumpToPanel(el.dataset.dir||"up",el.dataset.id||"")},
+  reachSheet(el){const g=byId.get(el.dataset.id);if(!g)return;playUiTick("tap");openReachSheet(g,el.dataset.dir||"down",true)},
+  reachStep(el){const g=byId.get(REACH_STATE.gid);if(!g)return;REACH_STATE.step=el.dataset.s||"all";REACH_STATE.cap=48;playUiTick("tap");openReachSheet(g,REACH_STATE.dir,false)},
+  reachMore(){const g=byId.get(REACH_STATE.gid);if(!g)return;REACH_STATE.cap+=48;playUiTick("tap");openReachSheet(g,REACH_STATE.dir,false)},
+  reachOpenGame(el){const id=el.dataset.id;if(!id)return;clearLayer();go(id)},
   vidMinimize(){minimizeVidDock()},
   vidExpand(){expandVidDock()},
   vidClose(){closeVidDock()},
