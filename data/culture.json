@@ -1042,6 +1042,31 @@
     "tagline": "16+ years working alongside game developers, studios & platforms — from early iOS and mobile's breakout years to PC & cross-platform ecosystems.",
     "linkedin": "https://www.linkedin.com/search/results/all/?keywords=Johan%20Heurlin",
     "timelineCode": "",
+    "currentlyPlaying": [
+      {
+        "id": "dayz-badlands",
+        "blurb": "Scavenging Nasdara's 267 km² desert heat, sandstorms & radio signals"
+      },
+      {
+        "id": "hell-let-loose",
+        "blurb": "50v50 WWII squad radio comms, garrisons & frontline teamwork"
+      },
+      {
+        "id": "hell-let-loose-vietnam",
+        "blurb": "Huey insertions, river boats & asymmetric jungle platoon tactics"
+      },
+      {
+        "id": "the-battle-of-polytopia",
+        "blurb": "Stockholm-made 30-minute pocket 4X strategy between flights & commutes"
+      }
+    ],
+    "favoriteMods": [
+      "counter-strike",
+      "dayz",
+      "team-fortress",
+      "pubg",
+      "vampire-slayer"
+    ],
     "intro": "I grew up in Sweden in the late '80s and '90s swapping floppies and cartridges with friends, studied economics in Ohio, and have spent the last sixteen years working directly with the teams who build games and the platforms that carry them. I built Played & Made as a hobby love letter to two things: the worlds that quietly carried us through growing up, and the real human designers, engineers, writers, and artists whose craft deserves credit—especially in an era of studio closures and instant fast-follow clones.",
     "chapters": [
       {

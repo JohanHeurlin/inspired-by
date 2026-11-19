@@ -1603,7 +1603,7 @@ function parseHash(){
   if(h==="lineage")return {view:"lineage",id:state.linId||""};
   if(h.startsWith("lineage-")&&byId.has(h.slice(8))){state.linId=h.slice(8);return {view:"lineage",id:state.linId}}
   if(h==="explore")return {view:"explore"};
-  if(h==="about"||h==="johan"||h==="creator")return {view:"about"};
+  if(h==="about"||h==="johan"||h==="creator"||h==="credits"||h==="sources")return {view:"about",jumpCredits:h==="credits"||h==="sources"};
   if(h==="trivia"){if(!state.quizMode||state.quizMode==="lineage")state.quizMode="lore";return {view:"trivia"}}
   if(h==="mechanics"||h==="boardgames"||h==="genres"||h==="prices"||h==="mobile"||h==="ugc"||h==="mods"){state.mechTab=h==="boardgames"?"boardgames":h==="genres"?"genres":h==="prices"?"prices":h==="mobile"?"mobile":(h==="ugc"||h==="mods")?"ugc":"mechanics";return {view:"mechanics",mt:state.mechTab,jumpMods:h==="mods"}}
   if(h.startsWith("genre-")&&GEN_BY_K.has(h.slice(6))){state.mechTab="genres";state.genreSel=h.slice(6);return {view:"mechanics",gen:h.slice(6)}}
@@ -1631,6 +1631,7 @@ function route(){
   state.route=parseHash();
   render();
   if(state.route&&state.route.jumpMods)requestAnimationFrame(()=>{const el=$("#modStories");if(el)el.scrollIntoView({behavior:"smooth",block:"start"})});
+  if(state.route&&state.route.jumpCredits)requestAnimationFrame(()=>{const el=$("#creditsSec");if(el)el.scrollIntoView({behavior:"smooth",block:"start"})});
   hasBooted=true;
 }
 addEventListener("hashchange",route);
@@ -1695,7 +1696,8 @@ const footer=()=>`<footer class="wrap foot-about">
   </div>
   <p><b>Played &amp; Made — Life in Games.</b> For many of us, video games weren't a distraction — they were safe harbors growing up, bridges to friends, and living art built by designers, engineers, writers, painters, and musicians. Every link here honors what teams built on and what they added.</p>
   <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">➕ Suggest console, game or feature</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <a class="link" href="#giveback">❤️ Support youth, devs &amp; preservation ▸</a> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button><span data-install-ui hidden> · <button type="button" class="link" data-act="installApp">📲 Install app</button></span></p>
-  <p style="margin-top:6px;font-size:12px;opacity:.9">Created by <a href="#about" style="font-weight:700">Johan Heurlin — About, career &amp; my gaming timeline ▸</a> · Built ${esc(RAW.built||"")}.</p></footer>`;
+  <p style="margin-top:6px;font-size:12px;opacity:.9">Created by <a href="#about" style="font-weight:700">Johan Heurlin — About, career &amp; what I'm playing ▸</a> · <a href="#credits">📚 Sources, box-art &amp; data credits</a> · Built ${esc(RAW.built||"")}.</p>
+  <p style="margin-top:4px;font-size:11.5px;opacity:.76">Non-commercial archival &amp; educational tribute · Box art, screenshots &amp; metadata via Wikipedia / Wikimedia Commons (CC BY-SA 4.0), MobyGames, Steam, Libretro, IGDB &amp; ModDB; maps via Natural Earth; CPI via U.S. BLS. All game titles, artwork &amp; studio marks belong to their respective creators and rightsholders.</p></footer>`;
 
 function eraMomentsHTML(from,to){
   if(!state.eraMem)return "";
@@ -3031,6 +3033,8 @@ function renderUgcCraftHTML(){
 }
 function renderAbout(m){
   const bio=CULT.aboutCreator||{name:"Johan Heurlin",born:1984,chapters:[]};
+  const curPlaying=(bio.currentlyPlaying||[]).map(it=>({g:gameRef(it.id),blurb:it.blurb||""})).filter(x=>x.g);
+  const favMods=(bio.favoriteMods||[]).map(gameRef).filter(Boolean);
   const pinnedCode=(bio.timelineCode||"").trim();
   const pinnedData=pinnedCode?decodeShare(pinnedCode):null;
   const localHas=!!(hist.birth&&entries(hist).length);
@@ -3038,7 +3042,7 @@ function renderAbout(m){
   const tlSt=showTl?timelineStats(showTl):null;
   const tlPicks=showTl?entries(showTl).filter(x=>x.g).sort((a,b)=>b.lv-a.lv||a.y-b.y).slice(0,14):[];
   m.innerHTML=`<section class="wrap exhero">
-    <nav class="trail" style="padding-top:0;margin-bottom:6px"><button type="button" class="navback" data-act="navBack" data-fb="timeline">◂ Back</button><span class="cur">About the creator</span></nav>
+    <nav class="trail" style="padding-top:0;margin-bottom:6px"><button type="button" class="navback" data-act="navBack" data-fb="timeline">◂ Back</button><span class="cur">About &amp; credits</span></nav>
     <p class="eyebrow">🇸🇪 → 🇺🇸 · Builder of Played &amp; Made · Born ${esc(bio.born||1984)}</p>
     <h1 class="h1" style="margin-bottom:8px">Hi, I'm ${esc(bio.name||"Johan Heurlin")}</h1>
     <p class="lede" style="max-width:70ch">${esc(bio.tagline||"")}</p>
@@ -3046,12 +3050,35 @@ function renderAbout(m){
       <p style="margin:0;font-size:14.8px;line-height:1.6;color:var(--ink)">${esc(bio.intro||"")}</p>
       <div class="row" style="margin-top:14px;gap:8px">
         ${bio.linkedin?`<a class="btn sm primary" href="${esc(bio.linkedin)}" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>`:""}
-        <a class="btn sm" href="#mobile">📱 Mobile craft spotlight</a>
-        <a class="btn sm" href="#ugc">🧱 Mods &amp; UGC spotlight</a>
+        <a class="btn sm" href="#mods">🦇 Mod stories</a>
+        <a class="btn sm" href="#mobile">📱 Mobile craft</a>
         <button type="button" class="btn sm ghost" data-act="featureSheet">📥 Send a note or game idea</button>
       </div>
     </div>
   </section>
+  ${curPlaying.length?`<section class="wrap sec" id="currentlyPlaying">
+    <div class="sechead"><div><p class="eyebrow">In rotation right now · Squad comms, survival &amp; pocket 4X</p><h2 class="h2">🎮 What I'm currently playing</h2><p class="sub">Tap any game for its lineage tree, info, or trailer in the floating mini-player.</p></div></div>
+    <div class="mechgrid">${curPlaying.map(({g,blurb})=>`<article class="mechcard">
+      <div class="today" style="grid-template-columns:72px minmax(0,1fr);gap:12px">
+        ${cover(g,{tag:"button",attrs:`type="button" data-act="${g.tree?"game":"quickLook"}" data-id="${g.id}" aria-label="Inspect ${esc(g.title)}"`,showYear:false})}
+        <div style="min-width:0">
+          <span class="eyebrow" style="margin:0">${g.year} · ${flag(g.cc)} ${esc(studio(g))}</span>
+          <h3 class="h2" style="font-size:16.5px;margin:2px 0"><button type="button" class="stbtn" style="font-weight:700;text-decoration:none;text-align:left" data-act="${g.tree?"game":"quickLook"}" data-id="${g.id}">${esc(g.title)}</button></h3>
+          <p style="margin:3px 0 0;font-size:13px;color:var(--ink2);line-height:1.45">${esc(blurb||g.note||"")}</p>
+        </div>
+      </div>
+      <footer class="row" style="margin-top:auto;padding-top:8px;gap:6px">
+        <button type="button" class="btn sm ghost" data-act="watchTv" data-id="${g.id}">▶ Trailer</button>
+        <button type="button" class="btn sm ghost" data-act="${g.tree?"game":"quickLook"}" data-id="${g.id}">${g.tree?"⑂ Lineage tree":"ⓘ Game info"}</button>
+      </footer>
+    </article>`).join("")}</div>
+    ${favMods.length?`<div class="card" style="margin-top:14px;padding:12px 15px">
+      <div class="row" style="justify-content:space-between;align-items:center;gap:10px">
+        <div class="row" style="gap:6px"><span class="sync">🦇 All-time favorite mods:</span>${favMods.map(g=>`<button type="button" class="chip" style="padding:3px 9px;font-size:12px" data-act="${g.tree?"game":"quickLook"}" data-id="${g.id}">${esc(g.title)} (${g.year})</button>`).join("")}</div>
+        <a class="link" style="font-size:12.5px" href="#mods">Read all 10 Mod Stories ▸</a>
+      </div>
+    </div>`:""}
+  </section>`:""}
   <section class="wrap sec">
     <div class="sechead"><div><p class="eyebrow">16+ years at the intersection of games, platforms &amp; studios</p><h2 class="h2">Casual career snapshot</h2><p class="sub">Where I've had the privilege of working alongside game makers across mobile, PC, and cross-platform ecosystems.</p></div></div>
     <div class="mechgrid">${(bio.chapters||[]).map(ch=>{
@@ -3081,6 +3108,26 @@ function renderAbout(m){
         </div>
       </div>
       ${tlPicks.length?`<div class="tlshelf" style="margin-top:12px" role="region" aria-label="Timeline highlights">${tlPicks.map(x=>`<button type="button" class="tlcov lv${x.lv}" data-act="quickLook" data-id="${x.g.id}">${cover(x.g,{showYear:false})}<small><span>${x.y}</span><span>${x.e.wk?"🛠":LV[x.lv].m}</span></small></button>`).join("")}</div>`:""}
+    </div>
+  </section>
+  <section class="wrap sec" id="creditsSec">
+    <div class="sechead"><div><p class="eyebrow">Attribution, open archives &amp; fair-use notice</p><h2 class="h2">📚 Sources, box-art &amp; data credits</h2><p class="sub">Played &amp; Made is a non-commercial, ad-free historical &amp; educational tribute to video games and the human teams who build them.</p></div></div>
+    <div class="mechgrid">
+      <article class="mechcard">
+        <span class="eyebrow" style="margin:0">🖼️ Cover art, screenshots &amp; logos</span>
+        <h3 class="h3">Open encyclopedias, preservation archives &amp; storefronts</h3>
+        <p style="margin:2px 0 0;font-size:13.2px;color:var(--ink2);line-height:1.5">Low-resolution box-art thumbnails, in-game screenshots, and studio emblems are referenced directly from <b><a href="https://www.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a> &amp; <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a></b> (under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> and historical identification commentary), <b><a href="https://thumbnails.libretro.com/" target="_blank" rel="noopener">Libretro Thumbnails</a></b>, <b><a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a></b>, <b><a href="https://www.igdb.com/" target="_blank" rel="noopener">IGDB</a></b>, and <b><a href="https://www.moddb.com/" target="_blank" rel="noopener">ModDB</a></b>, with 1-click links on every title to <b><a href="https://www.mobygames.com/" target="_blank" rel="noopener">MobyGames</a></b> full developer credit rolls, retail box scans, and official <b>Steam / GOG</b> store pages.</p>
+      </article>
+      <article class="mechcard">
+        <span class="eyebrow" style="margin:0">⑂ Lineage links &amp; studio histories</span>
+        <h3 class="h3">Primary developer interviews, postmortems &amp; archives</h3>
+        <p style="margin:2px 0 0;font-size:13.2px;color:var(--ink2);line-height:1.5">Every game-to-game connection in the ${L.length.toLocaleString()}-link family tree is tagged by evidence tier (<i>Developer said so</i>, <i>Same team / code</i>, <i>Series</i>, <i>Critics / historians</i>, <i>Shared mechanic</i>, or <i>Disputed</i>) and cites its source—drawing from <b>GDC Vault</b> postmortems, published developer interviews, books, <b>Wikipedia (CC BY-SA 4.0)</b>, and <b>MobyGames</b> credit histories.</p>
+      </article>
+      <article class="mechcard">
+        <span class="eyebrow" style="margin:0">🌍 Maps, inflation &amp; rightsholders</span>
+        <h3 class="h3">Public-domain datasets &amp; creator respect</h3>
+        <p style="margin:2px 0 0;font-size:13.2px;color:var(--ink2);line-height:1.5">World map vector geometry is courtesy of <b><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a></b> (110m public domain), and 1977–2026 real-dollar price comparisons use the <b>U.S. Bureau of Labor Statistics CPI-U</b> public-domain series. All game titles, characters, box art, and trademarks remain the property of their respective studios and publishers. Developers or rightsholders can request a credit fix, source addition, or image update anytime via <button type="button" class="link" data-act="featureSheet">Submit an update ▸</button>.</p>
+      </article>
     </div>
   </section>
   ${footer()}`;

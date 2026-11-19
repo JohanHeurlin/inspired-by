@@ -314,7 +314,8 @@ $aka = @{
   'battlefield-1942'='bf1942 bf 1942'; 'age-of-empires-ii'='aoe2 aoe 2'; 'team-fortress-2'='tf2'; 'clair-obscur-expedition-33'='expedition 33 e33';
   'battle-city'='tanki tanchiki dendy tanks 1990'; 'darkwing-duck'='cherniy plashch dendy'; 'chip-n-dale-rescue-rangers'='chip and dale dendy'; 'teenage-mutant-ninja-turtles-iii-the-manhattan-project'='tmnt 3 tmnt3 dendy';
   'penn-and-tellers-smoke-and-mirrors'='desert bus smoke and mirrors'; 'et-the-extra-terrestrial'='et atari landfill alamogordo'; 'project-titan'='titan blizzard overwatch mmo'; 'van-buren'='fallout 3 black isle van buren'; 'star-wars-1313'='1313 boba fett lucasarts'; 'bs-the-legend-of-zelda'='satellaview bs zelda';
-  'vampire-slayer'='vampire hunters vampire hunter vsmod vs_mansion halflife vampire mod'; 'trouble-in-terrorist-town'='ttt gmod ttt'; 'desert-combat'='dc bf1942 desert combat'; 'natural-selection'='ns1 skulk'; 'the-specialists'='ts matrix mod'; 'science-and-industry'='si s&i kidnap scientists'; 'threewave-ctf'='3wave ctf zoid'; 'sven-co-op'='svencoop'; 'the-hidden-source'='hidden source iris'; 'long-war'='xcom long war'
+  'vampire-slayer'='vampire hunters vampire hunter vsmod vs_mansion halflife vampire mod'; 'trouble-in-terrorist-town'='ttt gmod ttt'; 'desert-combat'='dc bf1942 desert combat'; 'natural-selection'='ns1 skulk'; 'the-specialists'='ts matrix mod'; 'science-and-industry'='si s&i kidnap scientists'; 'threewave-ctf'='3wave ctf zoid'; 'sven-co-op'='svencoop'; 'the-hidden-source'='hidden source iris'; 'long-war'='xcom long war';
+  'the-battle-of-polytopia'='polytopia battle of polytopia'; 'hell-let-loose'='hll'; 'hell-let-loose-vietnam'='hll vietnam'; 'dayz-badlands'='badlands nasdara'
 }
 
 # ---------------- media, culture, mechanics & studios ----------------

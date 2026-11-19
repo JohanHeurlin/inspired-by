@@ -179,7 +179,10 @@
     "prop-hunt": "s:1509230",
     "black-mesa": "s:362890",
     "long-war": "https://media.moddb.com/images/mods/1/30/29016/LWHeader3a.jpg",
-    "aeon-of-strife": "w:en/9/93/StarCraft_box_art.jpg"
+    "aeon-of-strife": "w:en/9/93/StarCraft_box_art.jpg",
+    "dayz-badlands": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3816030/a14cce662d9a779789852279c1d2006e48a1cb03/header.jpg",
+    "hell-let-loose-vietnam": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3079210/2e52f99e70e827b57a2205469dc5d529e8e0490a/header.jpg",
+    "the-battle-of-polytopia": "s:874390"
   },
   "yt": {
     "1942": "~kdICR49vbvg",
@@ -1387,6 +1390,10 @@
     "trouble-in-terrorist-town": "~kjX8xI0YK3M",
     "prop-hunt": "~suq2nmMzyoM",
     "black-mesa": "V7vDsarvyoc",
-    "long-war": "~_ziuxYNdicU"
+    "long-war": "~_ziuxYNdicU",
+    "dayz-badlands": "BtCYqSpQrpg",
+    "hell-let-loose": "S3hLu58KXg8",
+    "hell-let-loose-vietnam": "tkNdpNP-wWI",
+    "the-battle-of-polytopia": "_IigpXPZkHA"
   }
 }

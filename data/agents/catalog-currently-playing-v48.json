@@ -1,0 +1,133 @@
+{
+  "games": [
+    {
+      "id": "dayz-badlands",
+      "title": "DayZ: Badlands",
+      "year": 2026,
+      "dev": "Bohemia Interactive",
+      "cc": "CZ",
+      "genres": [
+        "survival",
+        "open-world",
+        "shooter"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "pop": 4,
+      "note": "October 2026 arid expansion for DayZ set across Nasdara—a 267 km² desert frontier on the western edge of Takistan—introducing sandstorms, drought and heatstroke survival, motorbikes, rebuildable outposts, and Morse-code radio scavenging."
+    },
+    {
+      "id": "hell-let-loose-vietnam",
+      "title": "Hell Let Loose: Vietnam",
+      "year": 2026,
+      "dev": "Expression Games / Team17",
+      "cc": "GB",
+      "genres": [
+        "fps",
+        "strategy"
+      ],
+      "plats": [
+        "PC (Windows)",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "pop": 4,
+      "note": "50-vs-50 platoon-scale Vietnam War tactical shooter launched in August 2026, bringing asymmetric jungle tunnel ambushes, river patrol boats, Huey helicopter air-cavalry insertions, and squad radio coordination to Hell Let Loose's frontline formula."
+    },
+    {
+      "id": "the-battle-of-polytopia",
+      "title": "The Battle of Polytopia",
+      "year": 2016,
+      "dev": "Midjiwan",
+      "cc": "SE",
+      "genres": [
+        "strategy"
+      ],
+      "plats": [
+        "iPhone / iPad",
+        "Android",
+        "PC (Windows)",
+        "Mac",
+        "Linux",
+        "Switch"
+      ],
+      "pop": 4,
+      "note": "Created in Stockholm by Felix Ekenstam's indie studio Midjiwan, distilling Civilization-style 4X exploration, tech trees, and asymmetric tribe warfare into crisp, 30-minute low-poly turn-based matches across phones, PC, Switch, and even car dashboards."
+    }
+  ],
+  "links": [
+    {
+      "from": "dayz-standalone",
+      "to": "dayz-badlands",
+      "tier": "series",
+      "rel": "sequel",
+      "took": "DayZ's high-stakes permadeath scavenging, medical trauma simulation, and tense player-encounter stories",
+      "added": "A 267 km² Takistani desert frontier (Nasdara) with drought, sandstorm, and heatstroke mechanics, motorbikes, and Morse-code radio stashes",
+      "src": [
+        {
+          "t": "DayZ Badlands official announcement — Bohemia Interactive",
+          "u": "https://dayz.com/"
+        }
+      ]
+    },
+    {
+      "from": "arma-2",
+      "to": "dayz-badlands",
+      "tier": "team",
+      "rel": "inspiration",
+      "took": "Bohemia Interactive's fictional Central Asian republic of Takistan introduced in Arma 2: Operation Arrowhead",
+      "added": "Reimagined western Takistan's war-scarred desert as DayZ's largest-ever survival sandbox",
+      "src": [
+        {
+          "t": "Bohemia Interactive — Nasdara & Takistan lore in DayZ Badlands",
+          "u": "https://dayz.com/"
+        }
+      ]
+    },
+    {
+      "from": "project-reality",
+      "to": "hell-let-loose",
+      "tier": "critic",
+      "rel": "inspiration",
+      "took": "50-vs-50 squad-leader radio hierarchy, player-built garrison spawn logistics, and lethal suppression",
+      "added": "Accessible WWII sector-capture grid supply lines and cinematic Unreal Engine 4 frontline immersion",
+      "src": [
+        {
+          "t": "Hell Let Loose — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Hell_Let_Loose"
+        }
+      ]
+    },
+    {
+      "from": "hell-let-loose",
+      "to": "hell-let-loose-vietnam",
+      "tier": "series",
+      "rel": "sequel",
+      "took": "50-vs-50 Commander/Officer/Squad communication chain and supply-line sector warfare",
+      "added": "Asymmetric Vietnam War jungle tunnel networks, Huey air-cavalry drops, riverine gunboats, and dense foliage ambushes",
+      "src": [
+        {
+          "t": "Hell Let Loose: Vietnam — Team17 & Expression Games",
+          "u": "https://en.wikipedia.org/wiki/Hell_Let_Loose"
+        }
+      ]
+    },
+    {
+      "from": "civilization",
+      "to": "the-battle-of-polytopia",
+      "tier": "dev",
+      "rel": "inspiration",
+      "took": "4X fog-of-war exploration, city-border growth, branching tech research, and distinct historical/fantasy civilizations",
+      "added": "Streamlined 30-turn scoring, zero-clutter isometric low-poly readability, and one-thumb mobile/cross-platform multiplayer",
+      "src": [
+        {
+          "t": "The Battle of Polytopia — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/The_Battle_of_Polytopia"
+        }
+      ]
+    }
+  ]
+}
