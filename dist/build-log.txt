@@ -1,4 +1,4 @@
-Built 2026-11-18 21:16  ->  dist\inspired-by.html (2374 KB, data 1823 KB)
+Built 2026-11-18 21:19  ->  dist\inspired-by.html (2374 KB, data 1823 KB)
 Agent files: 78  |  games: 4251 (in family tree: 2062, in catalog: 3777, new from agents: 3400)
 Links: 2834  |  
 dev=798 team=583 series=727 critic=446 mech=248 disp=32

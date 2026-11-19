@@ -1,7 +1,7 @@
 /* Played & Made — Offline-capable Service Worker */
 "use strict";
 
-const CACHE_NAME = "pm-shell-37e5695687";
+const CACHE_NAME = "pm-shell-a48e6ed2ca";
 const FONT_CACHE = "pm-fonts-v1";
 const PRECACHE = [
   "./",
