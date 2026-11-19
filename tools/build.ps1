@@ -418,10 +418,72 @@ $tpl = [IO.File]::ReadAllText((Join-Path $root 'src\app.html'), [Text.Encoding]:
 if ($tpl -notmatch '/\*__DATA__\*/') { throw 'src\app.html has no /*__DATA__*/ placeholder' }
 $html = $tpl.Replace('/*__DATA__*/', $json)
 [IO.File]::WriteAllText((Join-Path $root $Out), $html, $utf8)
-# Standalone web document + installable PWA assets for GitHub Pages and local preview
-$skel = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Played &amp; Made — Your Life in Games &amp; the Humans Who Built Them</title><meta name="description" content="Played &amp; Made: build your childhood or dev-career gaming timeline, trace 4,195+ games back to the 1950s, and send love to the human teams and machines that raised you."><meta name="application-name" content="Played&amp;Made"><meta name="apple-mobile-web-app-title" content="Played&amp;Made"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#EAF0F7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"><meta property="og:site_name" content="Played &amp; Made"><meta property="og:title" content="Played &amp; Made — Your Life in Games &amp; the Humans Who Built Them"><meta property="og:description" content="What games carried you growing up, and who built them? Build your shareable timeline in two minutes, explore 60+ years of game lineage, and celebrate the makers behind the art."><meta property="og:type" content="website"><meta property="og:url" content="https://johanheurlin.github.io/inspired-by/"><meta property="og:image" content="https://johanheurlin.github.io/inspired-by/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://johanheurlin.github.io/inspired-by/og-card.png"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 17 17%27 shape-rendering=%27crispEdges%27%3E%3Crect width=%2717%27 height=%2717%27 rx=%274%27 fill=%27%231D6AE5%27 shape-rendering=%27geometricPrecision%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 3h3v1h1v1h1V4h1V3h3v1h1v1h1v3h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5v-1H4V9H3V8H2V5h1V4h1z%27/%3E%3Cpath fill=%27%23FF5442%27 d=%27M4 4h3v1h1v1h1V5h1V4h3v1h1v3h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5V9H4V8H3V5h1z%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 5h2v1H5v1H4z%27/%3E%3C/svg%3E"><style>:root{color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:calc(3.5rem + env(safe-area-inset-top,0px));scroll-padding-bottom:calc(4.5rem + env(safe-area-inset-bottom,0px))}body{margin:0;padding:0;font:15px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000;overflow-wrap:break-word}img{max-inline-size:100%;block-size:auto}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>'
-$indexDoc = $skel + $html + '</body></html>'
+# Standalone web document + installable PWA + Google/AI-search (GEO) structured metadata
+$SiteUrl = "https://johanheurlin.github.io/inspired-by/"
+$todayIso = (Get-Date).ToString("yyyy-MM-dd")
+$jsonLd = '{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"' + $SiteUrl + '#website","url":"' + $SiteUrl + '","name":"Played & Made","alternateName":["Played&Made","Played and Made","Inspired By Video Game Family Tree"],"description":"Build your childhood or dev-career gaming timeline, trace ' + $games.Count + '+ video games back to the 1950s, play game lore trivia, and celebrate the human makers and hardware behind the art.","creator":{"@type":"Person","name":"Johan Heurlin"}},{"@type":"WebApplication","@id":"' + $SiteUrl + '#app","name":"Played & Made — Your Life in Games & the Humans Who Built Them","url":"' + $SiteUrl + '","applicationCategory":"GameApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Personal childhood and industry-career video game timeline builder","Interactive video game lineage and family tree (' + $games.Count + ' games, ' + $links.Count + ' sourced links)","Game Lore, Deep Cuts & Lineage Trivia","The Vault: cancelled games, sunsetted online worlds, regional consoles (Dendy, TecToy, Subor, Sharp X68000, Vectrex) and gaming folklore","Video game price history and inflation comparison (1977-2026)","Thank-you postcards and tributes to video game developers and shuttered studios"]},{"@type":"Dataset","@id":"' + $SiteUrl + '#dataset","name":"Played & Made Video Game Lineage, Studio History & Hardware Archive","url":"' + $SiteUrl + '","description":"Curated historical graph of ' + $games.Count + ' video games across 46 countries, ' + $links.Count + ' documented inspiration links, ' + $studiosRaw.Count + ' studio diaspora profiles, cancelled and sunsetted games, and 1977-2026 inflation-adjusted launch prices.","creator":{"@type":"Person","name":"Johan Heurlin"},"dateModified":"' + $todayIso + '"}]}'
+$seoMain = '<main id="main"><div class="wrap" style="padding:24px 18px"><h1>Played &amp; Made — Your Life in Games &amp; the Humans Who Built Them</h1><p>Build your shareable childhood or game-industry career timeline in two minutes, trace ' + $games.Count + '+ video games and ' + $links.Count + '+ sourced inspiration links from the 1950s to today, test your knowledge in 6-mode Game Lore &amp; Lineage Trivia, explore cancelled masterpieces and sunsetted online worlds in The Vault (including Dendy, Gizmondo, Atari''s Alamogordo dig, Project Titan, Van Buren, and TecToy Brazil), compare 1977–2026 game prices against inflation, and send thank-you postcards to the human creators behind the art.</p></div></main>'
+$htmlWithSeo = $html.Replace('<main id="main"></main>', $seoMain)
+$skel = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Played &amp; Made — Your Life in Games, Game Lineage Tree &amp; Who Built Them</title><meta name="description" content="Played &amp; Made: build your childhood or dev-career gaming timeline, trace ' + $games.Count + '+ games back to the 1950s, play game lore trivia, explore cancelled &amp; sunsetted worlds, and celebrate the makers behind the art."><link rel="canonical" href="' + $SiteUrl + '"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta name="application-name" content="Played&amp;Made"><meta name="apple-mobile-web-app-title" content="Played&amp;Made"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#EAF0F7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0F141C" media="(prefers-color-scheme: dark)"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"><meta property="og:site_name" content="Played &amp; Made"><meta property="og:title" content="Played &amp; Made — Your Life in Games &amp; the Humans Who Built Them"><meta property="og:description" content="What games carried you growing up, and who built them? Build your shareable timeline in two minutes, play deep-cut lore trivia, explore 60+ years of game lineage, and celebrate the makers."><meta property="og:type" content="website"><meta property="og:url" content="' + $SiteUrl + '"><meta property="og:image" content="' + $SiteUrl + 'og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="' + $SiteUrl + 'og-card.png"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 17 17%27 shape-rendering=%27crispEdges%27%3E%3Crect width=%2717%27 height=%2717%27 rx=%274%27 fill=%27%231D6AE5%27 shape-rendering=%27geometricPrecision%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 3h3v1h1v1h1V4h1V3h3v1h1v1h1v3h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5v-1H4V9H3V8H2V5h1V4h1z%27/%3E%3Cpath fill=%27%23FF5442%27 d=%27M4 4h3v1h1v1h1V5h1V4h3v1h1v3h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5V9H4V8H3V5h1z%27/%3E%3Cpath fill=%27%23fff%27 d=%27M4 5h2v1H5v1H4z%27/%3E%3C/svg%3E"><script type="application/ld+json">' + $jsonLd + '</script><style>:root{color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:calc(3.5rem + env(safe-area-inset-top,0px));scroll-padding-bottom:calc(4.5rem + env(safe-area-inset-bottom,0px))}body{margin:0;padding:0;font:15px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000;overflow-wrap:break-word}img{max-inline-size:100%;block-size:auto}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>'
+$indexDoc = $skel + $htmlWithSeo + '</body></html>'
 [IO.File]::WriteAllText((Join-Path $root 'dist\index.html'), $indexDoc, $utf8)
+
+$robotsTxt = @"
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: $($SiteUrl)sitemap.xml
+"@
+[IO.File]::WriteAllText((Join-Path $root 'dist\robots.txt'), $robotsTxt, $utf8)
+
+$sitemapXml = @"
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>$SiteUrl</loc>
+    <lastmod>$todayIso</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+"@
+[IO.File]::WriteAllText((Join-Path $root 'dist\sitemap.xml'), $sitemapXml, $utf8)
+
+$llmsTxt = @"
+# Played & Made (Played&Made)
+
+> Interactive personal video game timeline builder, $($games.Count)-game historical lineage tree, game lore & deep-cuts trivia, and tribute to the human makers, studios, and hardware engineers behind video games.
+
+Canonical URL: $SiteUrl
+Author: Johan Heurlin
+
+## Core Capabilities & Sections
+- **Personal Gaming Timeline (`#timeline` & `#picks`)**: Build a year-by-year childhood or game-industry career timeline across $($platList.Count) consoles, home computers, and regional platforms (including Amiga, Commodore 64, NES, Dendy, Subor, Sharp X68000, NEC PC-98, Vectrex, PlayStation, Xbox, Switch, and PC), with shareable serverless links and PNG cards.
+- **Video Game Family Tree (`#explore`)**: Trace $($games.Count) games and $($links.Count) primary-source inspiration links from 1950s lab mainframes and tabletop wargames to modern releases, documenting what each studio built on and what it added.
+- **Game Lore & Lineage Trivia (`#trivia`)**: 6-mode interactive quiz covering Deep-Cut Gaming & Industry Lore, Lineage, Launch Year, Studio, Country, and System.
+- **The Vault — Cancelled Games, Sunsetted Worlds & Hardware Folklore (`#vault`)**: Honors unshipped developer craft (Project Titan -> Overwatch, Van Buren -> Fallout: New Vegas, Star Wars 1313, Silent Hills, Thrill Kill -> Wu-Tang: Shaolin Style, Star Fox 2), sunsetted online worlds (Glitch -> Slack, Chromehounds, Star Wars Galaxies, City of Heroes, Echo VR, Knockout City), and strange-but-true gaming history (Gizmondo, Atari's Alamogordo New Mexico cartridge dig, TecToy Brazil, Sega Channel, Satellaview, Desert Bus).
+- **Genres, Mechanics & Game Prices vs. Inflation (`#mechanics`, `#genres`, `#boardgames`, `#prices`)**: Explores 16 core mechanics, 30 genres, 14 tabletop roots, and 1977–2026 game prices in nominal vs. 2026 CPI-adjusted dollars compared against movies, concerts, food, and rent.
+- **Makers, Studios & Global Map (`#studios`, `#gratitude`, `#world`)**: Profiles $($studiosRaw.Count) studios (active and shuttered, tracing alumni diaspora), 35 pioneers, 26 hardware engineering teams, 46 countries, and downloadable Thank-You Postcards for game developers.
+"@
+[IO.File]::WriteAllText((Join-Path $root 'dist\llms.txt'), $llmsTxt, $utf8)
 
 $manifestSrc = Join-Path $root 'src\manifest.webmanifest'
 if (Test-Path $manifestSrc) {
