@@ -1740,43 +1740,102 @@ function whyGamesSectionHTML(compact=false){
     <div class="artgrid">${pillars.map(p=>`<div class="artcard"><span class="eyebrow" style="margin:0">${esc(p.icon||"✦")} ${esc(p.eyebrow||"")}</span><b style="font-family:var(--f-display);font-size:14.5px;line-height:1.25">${esc(p.title)}</b><p style="margin:2px 0 0;font-size:13px;color:var(--ink2);line-height:1.48">${esc(p.body)}</p></div>`).join("")}</div></section>`;
 }
 
-/* ---------- start: new visitors ---------- */
-const HERO_IDS=["grand-theft-auto-vi","elden-ring","Fortnite Battle Royale","minecraft","the-legend-of-zelda-breath-of-the-wild","hades","Baldur's Gate 3","half-life","arc-raiders"];
-function heroGame(){const gta=byId.get("grand-theft-auto-vi");if(gta&&rootsChain(gta.i).length>=4)return gta;const ok=HERO_IDS.map(gameRef).filter(g=>g&&rootsChain(g.i).length>=5);const day=Math.floor(Date.now()/864e5);return ok.length?ok[day%ok.length]:TREE.slice().sort((a,b)=>b.pop-a.pop||b.inf-a.inf)[0]}
-const MOSAIC_IDS=["pac-man","super-mario-bros-3","the-secret-of-monkey-island","street-fighter-ii","chrono-trigger","final-fantasy-vii","the-legend-of-zelda-ocarina-of-time","half-life","grand-theft-auto-iii","halo-combat-evolved","world-of-warcraft","minecraft","the-legend-of-zelda-breath-of-the-wild","hades","elden-ring","baldurs-gate-3"];
+/* ---------- start: new visitors (rotates spotlight, mosaic & true stories every visit + 1-tap shuffle) ---------- */
+const VISIT_SEED=(()=>{const n=(store.get("ib3-vseed",0)|0)+1;store.set("ib3-vseed",n);return n})();
+let heroIdxOffset=0,storyDeckOffset=0,mosaicOffset=0;
+const HERO_IDS=["grand-theft-auto-vi","counter-strike","elden-ring","pubg","the-legend-of-zelda-breath-of-the-wild","baldurs-gate-3","minecraft","world-of-warcraft","hades","stardew-valley","half-life","super-mario-64","subnautica","the-elder-scrolls-v-skyrim"];
+function heroPool(){const ok=HERO_IDS.map(gameRef).filter(g=>g&&rootsChain(g.i).length>=4);return ok.length?ok:TREE.slice().sort((a,b)=>b.pop-a.pop||b.inf-a.inf).slice(0,10)}
+function heroGame(){const ok=heroPool();return ok[(VISIT_SEED+heroIdxOffset)%ok.length]}
+const MOSAIC_POOL=["pac-man","tetris","super-mario-bros-3","the-secret-of-monkey-island","lemmings","street-fighter-ii","doom","chrono-trigger","super-mario-64","quake","final-fantasy-vii","starcraft","the-legend-of-zelda-ocarina-of-time","half-life","counter-strike","vampire-slayer","diablo-ii","the-sims","grand-theft-auto-iii","halo-combat-evolved","battlefield-1942","world-of-warcraft","half-life-2","garrys-mod","portal","minecraft","dayz","candy-crush-saga","the-witcher-3-wild-hunt","stardew-valley","the-battle-of-polytopia","the-legend-of-zelda-breath-of-the-wild","pubg","subnautica","hades","elden-ring","baldurs-gate-3","grand-theft-auto-vi"];
+function currentMosaic(){
+  const pool=MOSAIC_POOL.map(gameRef).filter(Boolean);
+  if(pool.length<=16)return pool;
+  const out=[],step=7,start=(VISIT_SEED*5+mosaicOffset*11)%pool.length;
+  for(let i=0;out.length<16&&i<pool.length*2;i++){
+    const g=pool[(start+i*step)%pool.length];
+    if(g&&!out.includes(g))out.push(g);
+  }
+  return out.sort((a,b)=>a.year-b.year);
+}
+function rotatingStoriesHTML(compact=false){
+  const mods=CULT.modStories||[],lore=CULT.vaultLore||[],real=CULT.realStories||[];
+  const seed=VISIT_SEED+storyDeckOffset;
+  const picks=[];
+  if(mods.length)picks.push({kind:"mod",href:"#mods",moreLbl:"All 10 Mod Stories ▸",it:mods[seed%mods.length]});
+  if(lore.length)picks.push({kind:"lore",href:"#vault",moreLbl:"Explore The Vault ▸",it:lore[(seed*3+1)%lore.length]});
+  if(real.length){
+    const r=real[(seed*5+2)%real.length];
+    picks.push({kind:"real",href:"#gratitude",moreLbl:"More maker stories ▸",it:{tag:`💌 ${r.tag||"True Story"}`,title:r.title,body:r.body,games:r.game?[r.game]:[]}});
+  }
+  if(!picks.length)return "";
+  return `<section class="wrap sec" id="homeStories">
+    <div class="sechead">
+      <div>
+        <p class="eyebrow">Fresh every visit · Dorm-room mods, folklore &amp; human makers</p>
+        <h2 class="h2">True stories from 70 years of games</h2>
+        <p class="sub">From shotgun-toting mansion LAN mods and buried desert cartridges to the real developers behind the worlds that raised us.</p>
+      </div>
+      <div class="row" style="gap:6px">
+        <button type="button" class="btn sm primary" data-act="shuffleStories">🔀 Deal 3 more stories</button>
+        <a class="btn sm" href="#mods">🦇 Mod stories</a>
+        <a class="btn sm" href="#vault">🕯️ The Vault</a>
+      </div>
+    </div>
+    <div class="mechgrid">${picks.map(p=>{
+      const it=p.it,gs=(it.games||[]).map(gameRef).filter(Boolean);
+      return `<article class="mechcard">
+        <div class="row" style="justify-content:space-between;gap:8px"><span class="eyebrow" style="margin:0">${esc(it.tag||"Story")}</span><span>${it.cc?flag(it.cc):""}</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          ${it.sys?`<div style="flex:none;width:50px;padding-top:2px">${hwSVG(it.sys)}</div>`:""}
+          <h3 class="h2" style="font-size:16.5px;margin:0;line-height:1.3">${esc(it.title)}</h3>
+        </div>
+        <p style="margin:2px 0;font-size:13.3px;color:var(--ink2);line-height:1.48">${esc(it.body||"")}</p>
+        <footer class="row" style="margin-top:auto;padding-top:6px;justify-content:space-between;gap:6px">
+          <span class="row" style="gap:5px">${gs.slice(0,2).map(g=>`<button type="button" class="chip" style="padding:3px 8px;font-size:11.5px" data-act="${g.tree?"game":"quickLook"}" data-id="${g.id}">${esc(g.title)} (${g.year}) ▸</button>`).join("")}</span>
+          <a class="link" style="font-size:12px;white-space:nowrap" href="${p.href}">${p.moreLbl}</a>
+        </footer>
+      </article>`;
+    }).join("")}</div>
+  </section>`;
+}
 function renderStart(m){
   if(hist.birth&&hist.stage){renderOnboard(m);return}
   const hg=heroGame(),full=hg?rootsChain(hg.i):[],chain=compressChain(full).reverse();
   const span=chain.length?hg.year-chain[0].g.year:0;
   const fl=friendList();
-  const mosaic=MOSAIC_IDS.map(gameRef).filter(Boolean);
+  const mosaic=currentMosaic();
+  const tryPool=["grand-theft-auto-vi","counter-strike","vampire-slayer","dayz","elden-ring","minecraft","baldurs-gate-3","hades","tetris","doom","subnautica","the-battle-of-polytopia"];
   m.innerHTML=`<section class="wrap hero">
     <div style="min-width:0">
       ${mosaic.length?`<div class="heromosaic" role="region" aria-label="Iconic games across decades">${mosaic.map(g=>`<button type="button" class="mbook" data-act="quickLook" data-id="${g.id}" aria-label="${esc(g.title)} (${g.year})">${cover(g,{showYear:true})}</button>`).join("")}</div>`:""}
       <p class="eyebrow" style="margin-bottom:5px">Played &amp; Made · Life in Games</p>
       <h1 class="h1" style="margin-bottom:8px">What worlds raised you growing up?</h1>
-      <p class="lede" style="margin-bottom:14px">Tap the games and machines that carried you through childhood to build your shareable gaming timeline, trace 4,225+ games to the 1950s, and thank the human teams behind the art.</p>
+      <p class="lede" style="margin-bottom:14px">Tap the games, mods, and machines that carried you through childhood to build your shareable gaming timeline, trace ${G.length.toLocaleString()}+ games to the 1950s, and thank the human teams behind the art.</p>
       <form class="start" id="startForm" novalidate>
         <label class="field" for="birthIn">Year you were born<input class="input" id="birthIn" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1984" autocomplete="off"></label>
         <button class="btn primary" type="submit">Start my timeline</button>
       </form>
-      <div class="row" style="margin-top:10px;gap:8px"><a class="btn sm" href="#picks">🕹️ Browse &amp; pick games ▸</a><a class="btn sm" href="#lineage">⑂ Lineage tree</a><a class="btn sm" href="#trivia">🎯 Lore trivia</a><a class="btn sm ghost" href="#giveback">❤️ Give back</a></div>
+      <div class="row" style="margin-top:10px;gap:8px"><a class="btn sm" href="#picks">🕹️ Browse &amp; pick games ▸</a><a class="btn sm" href="#lineage">⑂ Lineage tree</a><a class="btn sm" href="#trivia">🎯 Lore trivia</a><a class="btn sm" href="#mods">🦇 Mod stories</a><a class="btn sm ghost" href="#giveback">❤️ Give back</a></div>
       <p class="sub" id="birthErr" style="margin-top:8px" hidden></p>
       ${isDevMode()?`<p class="sub" style="margin-top:10px;font-size:13.5px">🛠 Industry mode active · <button type="button" class="link" data-act="makerSheet">Add dev / studio credits ▸</button></p>`:""}
     </div>
-    ${chain.length?`<div class="shelf">
-      <h2><b>${esc(hg.title)}</b> stands on ${span} years of game design</h2>
+    ${chain.length?`<div class="shelf" id="heroShelfCard">
+      <div class="row" style="justify-content:space-between;align-items:baseline;gap:8px">
+        <h2 style="margin:0"><b>${esc(hg.title)}</b> stands on ${span} years of game design</h2>
+        <button type="button" class="link" style="font-size:12px;flex:none" data-act="nextHeroGame">🔀 Next game ▸</button>
+      </div>
       <div class="shelfrow" id="heroShelf" tabindex="0" role="region" aria-label="Lineage preview">${chain.map((s,k)=>`${k?(s.collapsed?`<span class="rfold" style="margin-top:0;align-self:center">… ${s.collapsed.n} more …</span>`:`<span class="sarrow" aria-hidden="true">▸</span>`):""}<button class="sbook" data-act="game" data-id="${s.g.id}">${cover(s.g)}<span class="yr">${s.g.year}</span><b>${esc(s.g.title)}</b></button>`).join("")}</div>
-      <div class="foot"><span>${plural(full.length-1,"step")} from ${esc(chain[0].g.title)}</span><button class="btn sm primary" data-act="walk" data-id="${hg.id}">Walk the roots ▸</button></div>
+      <div class="foot"><span>${plural(full.length-1,"step")} from ${esc(chain[0].g.title)} (${chain[0].g.year})</span><span class="row" style="gap:6px"><button type="button" class="btn sm ghost" data-act="watchTv" data-id="${hg.id}">▶ Trailer</button><button class="btn sm primary" data-act="walk" data-id="${hg.id}">Walk the roots ▸</button></span></div>
     </div>`:""}
   </section>
-  <section class="wrap">${gtaviSpotlight()}</section>
+  ${rotatingStoriesHTML(true)}
+  ${hg&&hg.id==="grand-theft-auto-vi"?"":`<section class="wrap">${gtaviSpotlight()}</section>`}
   ${whyGamesSectionHTML(true)}
   <section class="wrap sec">
     <h2 class="h2">Or trace any game's family tree</h2>
-    <p class="sub">Search any game to see what inspired it, what it went on to inspire, and the makers behind it.</p>
-    <div class="search bigsearch"><input class="input" id="q0" type="search" placeholder="Search a game, like Grand Theft Auto VI or Hollow Knight" autocomplete="off" aria-label="Search a game"><div class="results" id="r0" hidden></div></div>
-    <div class="trybar"><span>Try</span>${["grand-theft-auto-vi","elden-ring","minecraft","Fortnite Battle Royale","hades","tetris","doom","2048","arc-raiders"].map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}<button class="chip" data-act="slotSpin">🎰 I'm feeling lucky</button></div>
+    <p class="sub">Search any game or mod to see what inspired it, what it went on to inspire, and the makers behind it.</p>
+    <div class="search bigsearch"><input class="input" id="q0" type="search" placeholder="Search 4,250+ games & mods — e.g. Grand Theft Auto VI, Counter-Strike, Vampire Slayer…" autocomplete="off" aria-label="Search a game"><div class="results" id="r0" hidden></div></div>
+    <div class="trybar"><span>Try</span>${tryPool.map(gameRef).filter(Boolean).map(g=>`<button class="chip" data-act="game" data-id="${g.id}">${esc(g.title)}</button>`).join("")}<button class="chip" data-act="slotSpin">🎰 I'm feeling lucky</button></div>
   </section>
   ${fl.length?`<section class="wrap sec"><h2 class="h2">Timelines from friends</h2><p class="sub">Open one to compare it with yours.</p><div class="fgrid">${fl.slice(0,6).map(friendCard).join("")}</div></section>`:""}
   ${footer()}`;
@@ -2255,6 +2314,7 @@ function renderTimeline(m){
     ${pyramidSection(d,true,dx)}
     ${dnaSection(d,true,dx)}
     ${statsSection(d,true)}
+    ${rotatingStoriesHTML(true)}
     ${state.showArtWhy?whyGamesSectionHTML(true):""}
     ${footer()}`;
   if(first)store.set("ib2-revealed",true);
@@ -2390,7 +2450,7 @@ const JOURNEYS=[
   {id:"grand-theft-auto-v",title:"The open-world road",sub:"Cities you can go anywhere in."},
   {id:"stardew-valley",title:"Life on the farm",sub:"Calm, seasons and a town that remembers you."}];
 function journeyList(){return JOURNEYS.map(j=>{const g=gameRef(j.id);if(!g)return null;const ch=rootsChain(g.i);return ch.length>=3?{...j,g,ch}:null}).filter(Boolean)}
-function todayGame(){const pool=TREE.filter(g=>g.pop>=3&&UP[g.i].length>=2&&DOWN[g.i].length>=1);if(!pool.length)return TREE[0];const day=Math.floor(Date.now()/864e5);return pool[(day*7919)%pool.length]}
+function todayGame(){const pool=TREE.filter(g=>g.pop>=3&&UP[g.i].length>=2&&DOWN[g.i].length>=1);if(!pool.length)return TREE[0];const day=Math.floor(Date.now()/864e5);return pool[(day*7919+VISIT_SEED*37+storyDeckOffset*13)%pool.length]}
 function cloneLensSection(){
   const synth=[["infiniminer","minecraft"],["magic-survival","vampire-survivors"],["half-life","counter-strike"],["harvest-moon","stardew-valley"]].map(([a,b])=>[byId.get(a),byId.get(b)]).filter(([a,b])=>a&&b);
   const fast=[["threes","2048"],["happy-farm","farmville"],["pubg","fortnite-br"],["tarkov","arena-breakout-infinite"]].map(([a,b])=>[byId.get(a),byId.get(b)]).filter(([a,b])=>a&&b);
@@ -2473,7 +2533,9 @@ function renderExplore(m){
   const direct=state.infMode==="direct",dcount=new Map(TREE.map(g=>[g.i,DOWN[g.i].filter(l=>l.tier!=="series").length])),val=g=>direct?dcount.get(g.i):g.inf;
   const infl=TREE.slice().sort((a,b)=>val(b)-val(a)||b.pop-a.pop).slice(0,25),maxInf=Math.max(1,infl.length?val(infl[0]):1);
   const tc={};L.forEach(l=>tc[l.tier]=(tc[l.tier]||0)+1);
-  const shut=[...STUDIOS.values()].filter(s=>s.curated&&(s.status==="closed"||s.status==="revived"||s.status==="absorbed")).slice(0,6);
+  const shutPool=[...STUDIOS.values()].filter(s=>s.curated&&(s.status==="closed"||s.status==="revived"||s.status==="absorbed"));
+  const shut=[];
+  for(let i=0;i<Math.min(6,shutPool.length);i++)shut.push(shutPool[(VISIT_SEED*3+storyDeckOffset+i)%shutPool.length]);
   m.innerHTML=`<section class="wrap exhero">
       <p class="eyebrow">The family tree of games</p>
       <h1 class="h1">Where did your favorite game come from?</h1>
@@ -2493,8 +2555,10 @@ function renderExplore(m){
         <a class="chip" href="#vault">🕯️ Cancelled, sunsetted &amp; lore</a>
         <button type="button" class="chip" data-act="bandJump" data-to="inflSec">🏆 Most influential</button>
       </nav>
-      ${gtaviSpotlight()}
+      ${VISIT_SEED%2===0?gtaviSpotlight():""}
     </section>
+    ${rotatingStoriesHTML()}
+    ${VISIT_SEED%2!==0?`<section class="wrap">${gtaviSpotlight()}</section>`:""}
     ${js.length?`<section class="wrap sec"><div class="sechead"><div><h2 class="h2">Journeys</h2><p class="sub">Step back through a genre, one game at a time.</p></div></div>
       <div class="journeys">${js.map(j=>{const old=j.ch[j.ch.length-1].g;const picks=[j.ch[j.ch.length-1],j.ch[Math.floor(j.ch.length/2)],j.ch[0]].map(s=>s.g);
         return `<button class="jcard" data-act="walk" data-id="${j.g.id}"><span class="jstack">${picks.map((g,k)=>cover(g,{showYear:false,attrs:`style="--h:${g.h};--r:${(k-1)*5}deg"`})).join("")}</span><b>${esc(j.title)}</b><p>${esc(j.sub)}</p><small>${plural(j.ch.length-1,"step")} · ${old.year} → ${j.g.year}</small></button>`}).join("")}</div></section>`:""}
@@ -5461,6 +5525,8 @@ const ACTIONS={
   },
   linFocus(el){const id=el.dataset.id;if(!id)return;playUiTick("node");state.linId=id;state.treeMore={};go("lineage-"+id)},
   linRandom(){const pool=TREE.filter(g=>g.pop>=3&&(UP[g.i].length+DOWN[g.i].length>=2));const pick=pool[Math.floor(Math.random()*pool.length)]||TREE[0];playUiTick("node");state.linId=pick.id;state.treeMore={};go("lineage-"+pick.id)},
+  nextHeroGame(){heroIdxOffset++;mosaicOffset++;playUiTick("fwd");const y=window.scrollY;render();window.scrollTo({top:y})},
+  shuffleStories(){storyDeckOffset++;playUiTick("fwd");const cur=$("#homeStories");if(cur){const tmp=document.createElement("div");tmp.innerHTML=rotatingStoriesHTML();if(tmp.firstElementChild)cur.replaceWith(tmp.firstElementChild)}else{const y=window.scrollY;render();window.scrollTo({top:y})}},
   jumpPanel(el){jumpToPanel(el.dataset.dir||"up",el.dataset.id||"")},
   reachSheet(el){const g=byId.get(el.dataset.id);if(!g)return;playUiTick("tap");openReachSheet(g,el.dataset.dir||"down",true)},
   reachStep(el){const g=byId.get(REACH_STATE.gid);if(!g)return;REACH_STATE.step=el.dataset.s||"all";REACH_STATE.cap=48;playUiTick("tap");openReachSheet(g,REACH_STATE.dir,false)},
