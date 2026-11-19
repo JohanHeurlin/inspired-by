@@ -1,4 +1,4 @@
-<title>Played &amp; Made</title>
+<title>Played &amp; Made — Life in Games</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -809,7 +809,7 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
 
 <header class="top">
   <div class="wrap topin">
-    <a class="logo" href="#explore" aria-label="Played & Made — your life in games and the humans who built them"><svg class="logosvg" viewBox="0 0 17 17" width="24" height="24" aria-hidden="true" shape-rendering="crispEdges"><rect width="17" height="17" rx="4" fill="#1D6AE5" shape-rendering="geometricPrecision"/><path fill="#fff" d="M4 3h3v1h1v1h1V4h1V3h3v1h1v1h1v3h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5v-1H4V9H3V8H2V5h1V4h1z"/><path fill="#FF5442" d="M4 4h3v1h1v1h1V5h1V4h3v1h1v3h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5V9H4V8H3V5h1z"/><path fill="#fff" d="M4 5h2v1H5v1H4z"/></svg><b>Played &amp; Made</b><small>LIFE IN GAMES</small></a>
+    <a class="logo" href="#explore" aria-label="Played & Made — Life in Games"><svg class="logosvg" viewBox="0 0 17 17" width="24" height="24" aria-hidden="true" shape-rendering="crispEdges"><rect width="17" height="17" rx="4" fill="#1D6AE5" shape-rendering="geometricPrecision"/><path fill="#fff" d="M4 3h3v1h1v1h1V4h1V3h3v1h1v1h1v3h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5v-1H4V9H3V8H2V5h1V4h1z"/><path fill="#FF5442" d="M4 4h3v1h1v1h1V5h1V4h3v1h1v3h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1H6v-1H5V9H4V8H3V5h1z"/><path fill="#fff" d="M4 5h2v1H5v1H4z"/></svg><b>Played &amp; Made</b><small>LIFE IN GAMES</small></a>
     <nav class="tabs" aria-label="Sections">
       <a class="tab" href="#timeline" data-tab="timeline">My timeline</a>
       <a class="tab" href="#picks" data-tab="picks">🕹️ Pick games</a>
@@ -1690,7 +1690,7 @@ const footer=()=>`<footer class="wrap foot-about">
     </div>
     <button type="button" class="btn sm ghost" data-act="scrollTop">↑ Back to top</button>
   </div>
-  <p><b>Played &amp; Made — your life in games, and the humans who built them.</b> For many of us, video games weren't a distraction — they were safe harbors growing up, bridges to friends, and living art built by designers, engineers, writers, painters, and musicians. Every link here honors what teams built on and what they added.</p>
+  <p><b>Played &amp; Made — Life in Games.</b> For many of us, video games weren't a distraction — they were safe harbors growing up, bridges to friends, and living art built by designers, engineers, writers, painters, and musicians. Every link here honors what teams built on and what they added.</p>
   <p>${TREE.length.toLocaleString()} games in the family tree · ${L.length.toLocaleString()} documented links · ${G.length.toLocaleString()} games in the catalog · ${[...STUDIOS.values()].filter(s=>s.curated).length||STUDIOS.size.toLocaleString()} studio profiles · <button class="link" data-act="featureSheet">➕ Suggest console, game or feature</button> · <button class="link" data-act="suggest">Cite a lineage source</button> · <a class="link" href="#giveback">❤️ Support youth, devs &amp; preservation ▸</a> · <button class="link" data-act="devModeTog">${isDevMode()?"🛠 Industry maker mode: On":"Work in the game industry?"}</button><span data-install-ui hidden> · <button type="button" class="link" data-act="installApp">📲 Install app</button></span></p>
   <p style="margin-top:6px;font-size:12px;opacity:.9">Created by <a href="#about" style="font-weight:700">Johan Heurlin — About, career &amp; my gaming timeline ▸</a> · Built ${esc(RAW.built||"")}.</p></footer>`;
 
@@ -1743,7 +1743,7 @@ function renderStart(m){
   m.innerHTML=`<section class="wrap hero">
     <div style="min-width:0">
       ${mosaic.length?`<div class="heromosaic" role="region" aria-label="Iconic games across decades">${mosaic.map(g=>`<button type="button" class="mbook" data-act="quickLook" data-id="${g.id}" aria-label="${esc(g.title)} (${g.year})">${cover(g,{showYear:true})}</button>`).join("")}</div>`:""}
-      <p class="eyebrow" style="margin-bottom:5px">Played &amp; Made · Your life in games &amp; who built them</p>
+      <p class="eyebrow" style="margin-bottom:5px">Played &amp; Made · Life in Games</p>
       <h1 class="h1" style="margin-bottom:8px">What worlds raised you growing up?</h1>
       <p class="lede" style="margin-bottom:14px">Tap the games and machines that carried you through childhood to build your shareable gaming timeline, trace 4,225+ games to the 1950s, and thank the human teams behind the art.</p>
       <form class="start" id="startForm" novalidate>
@@ -4852,7 +4852,7 @@ function drawWallpaper(d,name,imgMap){
       boxes[norm(e.e.t)]={x:bx,y:top,w,h}})});
   wallLinks(d).forEach(({a,b})=>{const A=boxes[a],B=boxes[b];if(!A||!B)return;const x1=A.x+A.w,y1=A.y+A.h/2,x2=B.x,y2=B.y+B.h/2,dx=Math.max(40,Math.abs(x2-x1)/2);
     x.strokeStyle="rgba(140,157,255,.8)";x.lineWidth=4;x.beginPath();x.moveTo(x1,y1);x.bezierCurveTo(x1+dx,y1,x2-dx,y2,x2,y2);x.stroke()});
-  x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillStyle="#B9C1D2";x.fillText("Played & Made · your life in games & the humans who built them",M,H-40);
+  x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillStyle="#B9C1D2";x.fillText("Played & Made · Life in Games",M,H-40);
   return cv;
 }
 function drawCard(d,name,imgMap){
@@ -4870,7 +4870,7 @@ function drawCard(d,name,imgMap){
     yy+=226+60}
   const dna=dnaOf(d);if(dna.top.length&&yy<1700){const a=dna.top[0];x.fillStyle="#8C9DFF";x.font="400 26px Silkscreen, IBM Plex Mono, monospace";x.fillText("MY GAMING DNA",72,yy);yy+=50;
     x.fillStyle="#F2F4F8";x.font="600 34px IBM Plex Sans, sans-serif";wrapText(x,`${a.n} of my games descend from ${a.g.title} (${a.g.year}).`,72,yy,936,44,2)}
-  x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Played & Made · your life in games & the humans who built them",72,H-70);
+  x.fillStyle="#7B84A0";x.font="italic 400 28px IBM Plex Sans, sans-serif";x.fillText("Played & Made · Life in Games",72,H-70);
   return cv;
 }
 function drawFavsCard(d,name,imgMap){
@@ -4893,7 +4893,7 @@ function drawFavsCard(d,name,imgMap){
   });
   const sys=(d.owned&&d.owned.length?d.owned:[...new Set(es.flatMap(e=>sysListOf(e.e,d)))]).slice(0,6);
   if(sys.length){x.fillStyle="#98A1B6";x.font="500 24px IBM Plex Mono, monospace";x.fillText("Played on: "+sys.join(" · "),72,H-115)}
-  x.fillStyle="#7B84A0";x.font="italic 400 26px IBM Plex Sans, sans-serif";x.fillText("Played & Made · your life in games & the humans who built them",72,H-64);
+  x.fillStyle="#7B84A0";x.font="italic 400 26px IBM Plex Sans, sans-serif";x.fillText("Played & Made · Life in Games",72,H-64);
   return cv;
 }
 function drawConsolesCard(d,name,imgMap){
@@ -4991,7 +4991,7 @@ function drawListCard(lst,imgMap){
     x.fillStyle="#FF8A78";x.font="700 20px IBM Plex Mono, monospace";x.fillText("#"+(idx+1),bx+14,by+31);
     x.fillStyle="#E8ECF6";x.font="600 18px IBM Plex Sans, sans-serif";wrapText(x,note||g.title,bx,by+h+24,w,22,2);
   });
-  x.fillStyle="#8E98B0";x.font="italic 400 24px IBM Plex Sans, sans-serif";x.fillText("Played & Made · your life in games & the humans who built them",68,H-42);
+  x.fillStyle="#8E98B0";x.font="italic 400 24px IBM Plex Sans, sans-serif";x.fillText("Played & Made · Life in Games",68,H-42);
   return cv;
 }
 async function exportCanvasPng(gamesToPreload,buildFn,fname,outSel){

@@ -1,8 +1,8 @@
-# Played & Made — Your Life in Games & the Humans Who Built Them
+# Played & Made — Life in Games
 
 Live site: **<https://johanheurlin.github.io/inspired-by/>**
 
-An interactive family tree of video game history (1950s to today), a heartfelt tribute to the human makers, studios, and hardware engineers behind the art, and a shareable two-minute **"My Life in Games"** childhood & industry-career timeline.
+An interactive family tree of video game history (1950s to today), a heartfelt tribute to the human makers, studios, and hardware engineers behind the art, and a shareable two-minute **"Life in Games"** childhood & industry-career timeline.
 
 ## Features
 

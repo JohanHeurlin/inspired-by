@@ -173,8 +173,8 @@ function Save-MobilePreview([string]$outPath) {
   $fCard  = [System.Drawing.Font]::new("Segoe UI", 12, [System.Drawing.FontStyle]::Bold)
 
   $g.DrawString("PLAYED & MADE", $fEye, $accent, [single]90, [single]62)
-  $g.DrawString("Your Life in Games`n& Who Built Them", $fTitle, $white, [System.Drawing.RectangleF]::new(38, 112, 464, 110))
-  $g.DrawString("Tap childhood favorites across every console & home computer, trace 4,195+ games to their roots, and send thank-you postcards to the makers.", $fSub, $sub, [System.Drawing.RectangleF]::new(40, 226, 460, 96))
+  $g.DrawString("Life in Games`n& Who Built Them", $fTitle, $white, [System.Drawing.RectangleF]::new(38, 112, 464, 110))
+  $g.DrawString("Tap childhood favorites across every console & home computer, trace 4,230+ games to their roots, and send thank-you postcards to the makers.", $fSub, $sub, [System.Drawing.RectangleF]::new(40, 226, 460, 96))
 
   $cards = @(
     @{ x=40;  y=346; w=142; h=188; yr="1989 · Game Boy"; t="Tetris";            r1=36;  g1=110; b1=168; r2=16; g2=48; b2=82;  tag="✓ Played" },

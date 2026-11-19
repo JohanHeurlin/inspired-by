@@ -93,15 +93,15 @@ $fTitle   = [System.Drawing.Font]::new("Segoe UI", 44, [System.Drawing.FontStyle
 $fSub     = [System.Drawing.Font]::new("Segoe UI", 19, [System.Drawing.FontStyle]::Regular)
 $fStats   = [System.Drawing.Font]::new("Consolas", 14, [System.Drawing.FontStyle]::Bold)
 
-$g.DrawString("PLAYED & MADE  ·  GAME HISTORY & MAKERS", $fEyebrow, $accentBrush, [single]114, [single]74)
+$g.DrawString("PLAYED & MADE  ·  GAME HISTORY, TIMELINE & MAKERS", $fEyebrow, $accentBrush, [single]114, [single]74)
 $hRect = [System.Drawing.RectangleF]::new([single]60, [single]128, [single]595, [single]160)
-$g.DrawString("Your Life in Games`n& Who Built Them", $fTitle, $white, $hRect)
+$g.DrawString("Played & Made:`nLife in Games", $fTitle, $white, $hRect)
 
 $subBrush = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(255, 198, 206, 222))
 $sRect = [System.Drawing.RectangleF]::new([single]64, [single]296, [single]585, [single]180)
-$g.DrawString("Build your childhood or dev-career timeline in two minutes, celebrate the creators and machines that raised you, and trace 4,195+ games back to the 1950s.", $fSub, $subBrush, $sRect)
+$g.DrawString("Build your childhood or dev-career timeline in two minutes, celebrate the creators and machines behind the art, and trace 4,230+ games back to the 1950s.", $fSub, $subBrush, $sRect)
 
-$g.DrawString("4,195+ games  ·  2,760+ sourced links  ·  46 countries", $fStats, $accentBrush, [single]64, [single]538)
+$g.DrawString("4,230+ games  ·  2,800+ sourced links  ·  46 countries", $fStats, $accentBrush, [single]64, [single]538)
 
 $outPath = Join-Path $root 'dist\og-card.png'
 $bmp.Save($outPath, [System.Drawing.Imaging.ImageFormat]::Png)
