@@ -1,0 +1,1664 @@
+{
+  "links": [
+    {
+      "from": "batman-arkham-city",
+      "to": "batman-arkham-origins",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Freeflow rhythm melee combat, predator stealth rooms, and open-district gliding across Gotham.",
+      "added": "Rewound to Batman's second year with detective crime-scene reconstructions and eight hired assassins.",
+      "src": [],
+      "extra": "Developed by WB Games Montréal on Rocksteady's modified Unreal Engine 3 foundation."
+    },
+    {
+      "from": "company-of-heroes",
+      "to": "company-of-heroes-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Directional squad cover, destructible terrain, and territory supply lines tied to fuel and munitions.",
+      "added": "Shifted to the Eastern Front with TrueSight line-of-sight fog, deep snow, and blizzard frostbite.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "devil-may-cry-3-dantes-awakening",
+      "to": "dmc-devil-may-cry",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Rank-graded stylish combo juggling, mid-air sword-and-gun canceling, and rival encounters with Vergil.",
+      "added": "Reframed Dante in a shifting limbo city with hold-trigger angel and demon weapon stances.",
+      "src": [],
+      "extra": "Reimagined by Ninja Theory under Capcom supervision as a Western-developed reboot."
+    },
+    {
+      "from": "golden-axe",
+      "to": "dragons-crown",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Side-scrolling high-fantasy arcade brawling with distinct warrior classes, mountable beasts, and screen-clearing magic.",
+      "added": "Paired hand-painted 2D animation with six asymmetric classes, branching dungeon paths, and four-player co-op.",
+      "src": [
+        {
+          "t": "Siliconera, George Kamitani (Vanillaware) interview, 2013",
+          "u": "https://www.siliconera.com/a-conversation-with-dragons-crown-director-george-kamitani/"
+        }
+      ],
+      "extra": "Director George Kamitani previously worked on Capcom's arcade brawler Dungeons & Dragons: Tower of Doom."
+    },
+    {
+      "from": "diablo",
+      "to": "dragons-crown",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Randomized dungeon treasure drops, item appraisal loops, and repeatable endgame gear grinding.",
+      "added": "Transplanted loot-driven dungeon crawling directly into a belt-scrolling fantasy beat 'em up.",
+      "src": [
+        {
+          "t": "Forbes, George Kamitani (Vanillaware) interview, 2013",
+          "u": "https://www.forbes.com/sites/erikkain/2013/08/16/dragons-crown-developer-george-kamitani-talks-gameplay-controversy/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "lego-star-wars-the-complete-saga",
+      "to": "lego-city-undercover",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Slapstick brick-smashing humor, stud collecting, and ability-gated secret hunting by TT Games.",
+      "added": "Left licensed movie chapters behind for an original undercover-cop story with disguise-swapping puzzles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "gta3",
+      "to": "lego-city-undercover",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Grand Theft Auto III popularized open-city sandbox exploration with drivable traffic, missions, and side activities.",
+      "added": "Turned the crime-sandbox structure into a family-friendly police chase across twenty brick-built city districts.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "metro-2033",
+      "to": "metro-last-light",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Claustrophobic Moscow subway stealth, gas-mask filter timers, and military-grade ammo used as currency.",
+      "added": "Expanded outdoor wasteland stretches, non-lethal stealth takedowns, and an original story co-written with Dmitry Glukhovsky.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pikmin-2",
+      "to": "pikmin-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Multi-captain Pikmin squad multitasking, elemental hazards, and timed daylight scavenging expeditions.",
+      "added": "Added three switchable explorers, glass-shattering Rock and flying Winged Pikmin, and daily fruit rations.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "simcity-4",
+      "to": "simcity-2013",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Zone-based residential, commercial, and industrial urban growth balanced against municipal budgets and traffic.",
+      "added": "Replaced statistical grid models with GlassBox individual-agent tracking and asynchronous multi-city region play.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "simcity-2013",
+      "to": "cities-skylines",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Modern agent-driven 3D city simulation and curved road zoning introduced in Maxis's reboot.",
+      "added": "Answered its always-online launch and cramped plots with offline play, multi-tile expansion, and mod support.",
+      "src": [
+        {
+          "t": "GamesIndustry.biz, Mariina Hallikainen (Colossal Order) interview",
+          "u": "https://www.gamesindustry.biz/colossal-order-selling-cities-skylines"
+        }
+      ],
+      "extra": "Hallikainen stated Paradox greenlit Cities: Skylines because SimCity (2013)'s troubled launch proved unmet demand."
+    },
+    {
+      "from": "littlebigplanet",
+      "to": "tearaway",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Media Molecule's tactile arts-and-crafts world design and playful player self-expression.",
+      "added": "Shifted from 2.5D creation tools to a papercraft 3D adventure using every PS Vita camera and touch pad.",
+      "src": [],
+      "extra": "Directed by Rex Crowle at Media Molecule with printable real-world papercraft templates."
+    },
+    {
+      "from": "rome-total-war",
+      "to": "total-war-rome-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Classical Mediterranean turn-based empire strategy paired with real-time Roman legion battlefield tactics.",
+      "added": "Merged naval fleets directly into coastal amphibious sieges and introduced province-level administration.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pok-mon-red-and-green",
+      "to": "yo-kai-watch",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Pokémon popularized befriending, evolving, and battling a vast catalog of quirky collectible creatures.",
+      "added": "Swapped turn-based menus for a rotating real-time battle wheel and hidden folklore spirits across a Japanese town.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "professor-layton-and-the-curious-village",
+      "to": "yo-kai-watch",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Level-5's charming storybook town exploration and stylus-driven environmental inspection on Nintendo handhelds.",
+      "added": "Turned touchscreen scanning into a lens for uncovering mischievous Yo-kai lurking inside everyday objects.",
+      "src": [],
+      "extra": "Produced by Level-5 president Akihiro Hino as a cross-media franchise spanning games, toys, and anime."
+    },
+    {
+      "from": "assassin-s-creed-iv-black-flag",
+      "to": "assassins-creed-unity",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-city rooftop parkour, social-stealth crowds, and multi-approach assassination targets on Ubisoft's Anvil engine.",
+      "added": "Rebuilt stealth with dedicated crouch and parkour-down controls, seamless interiors, and four-player co-op heists in 1789 Paris.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "super-mario-3d-world",
+      "to": "captain-toad-treasure-tracker",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Compact rotating diorama puzzle stages where a backpack-laden Toad cannot jump.",
+      "added": "Expanded those bonus interludes into a full standalone puzzle adventure with minecarts, turnip tossing, and boss gauntlets.",
+      "src": [],
+      "extra": "Spun directly out of the Captain Toad bonus levels in Nintendo EAD Tokyo's Super Mario 3D World."
+    },
+    {
+      "from": "rayman-legends",
+      "to": "child-of-light",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Ubisoft's UbiArt Framework 2D rigging pipeline that turns hand-painted artwork directly into playable stages.",
+      "added": "Used the engine for a storybook watercolor fairy tale with free-flying exploration and rhyming dialogue.",
+      "src": [],
+      "extra": "Directed by Patrick Plourde at Ubisoft Montreal using the engine created at Ubisoft Montpellier."
+    },
+    {
+      "from": "final-fantasy-vi",
+      "to": "child-of-light",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Final Fantasy VI popularized Active Time Battle gauges that blend turn-based command selection with real-time pacing.",
+      "added": "Unified allies and enemies on a single visible timeline where timed hits interrupt casting and a firefly slows foes.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "forza-horizon",
+      "to": "forza-horizon-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Music-festival open-world driving built on Forza's tire-physics model with seamless road events.",
+      "added": "Removed roadside fences for cross-country off-roading across southern France and Italy with dynamic rainstorms.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "forza-horizon-2",
+      "to": "forza-horizon-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-field cross-country Horizon racing, dynamic weather, and shared Drivatar road convoys.",
+      "added": "Relocated to Australia's diverse biomes and cast the player as festival director customizing races and blueprints.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "final-fantasy-v",
+      "to": "granblue-fantasy",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Classic Japanese RPG job-class customization, airship-era fantasy tone, and turn-based elemental party synergy.",
+      "added": "Adapted classic JRPG party building into a browser-and-mobile live-service game with multi-player co-op raids.",
+      "src": [],
+      "extra": "Art director Hideo Minaba and composer Nobuo Uematsu brought direct 1990s Final Fantasy creative pedigree to Cygames."
+    },
+    {
+      "from": "granblue-fantasy",
+      "to": "granblue-fantasy-versus",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Skyfaring fantasy cast, primal-beast lore, and cooldown-driven special skills from Cygames' browser RPG.",
+      "added": "Rebuilt the roster into an approachable 2.5D fighting game by Arc System Works with one-button cooldown specials.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "hitman-blood-money",
+      "to": "hitman-go",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Agent 47's disguises, distractions, briefcase sniper rifles, and silent-assassin target planning.",
+      "added": "Distilled social stealth into turn-based tabletop diorama board puzzles where guards follow strict grid rules.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "hitman-go",
+      "to": "lara-croft-go",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Square Enix Montreal's turn-based node-grid puzzle architecture designed for touchscreens.",
+      "added": "Swapped board-game figurines for animated tomb climbing, collapsing floors, switches, and spear-throwing puzzles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "metal-gear-solid-4",
+      "to": "metal-gear-solid-v-ground-zeroes",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Over-the-shoulder tactical aiming, crouch-walking stealth, and cinematic Kojima military storytelling.",
+      "added": "Transitioned the series to the Fox Engine with a single open sandbox base, enemy tagging, and slow-motion Reflex saves.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "metal-gear-solid-v-ground-zeroes",
+      "to": "metal-gear-solid-v-the-phantom-pain",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fox Engine sandbox infiltration, binocular tagging, Reflex slow-motion alerts, and dynamic guard patrol shifts.",
+      "added": "Scaled Camp Omega's blueprint across vast Afghan and African open maps with Mother Base building and Fulton extraction.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "bushido-blade",
+      "to": "nidhogg",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Health-bar-free lethal sword duels focused on stance reads, spacing, and sudden one-hit kills.",
+      "added": "Compressed fencing into a three-height pixel tug-of-war where each kill lets you sprint toward the next screen.",
+      "src": [
+        {
+          "t": "Kill Screen, Mark Essen (Messhof) interview",
+          "u": "https://www.killscreen.com/how-fighting-game-found-new-life-through-instant-death2/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "plants-vs-zombies",
+      "to": "plants-vs-zombies-garden-warfare",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Peashooters, Chompers, Sunflowers, and suburban undead humor from PopCap's lane-defense original.",
+      "added": "Reimagined each plant and zombie archetype as a playable third-person shooter class in Frostbite-powered arenas.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "team-fortress-2",
+      "to": "plants-vs-zombies-garden-warfare",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Team Fortress 2 popularized cartoon class-based team shooters with healing beams, turrets, and distinct silhouettes.",
+      "added": "Merged asymmetric plant-versus-zombie abilities with deployable potted-plant defenses in tug-of-war garden sieges.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "paper-mario",
+      "to": "south-park-the-stick-of-truth",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Flat cutout visuals paired with turn-based battles driven by timed button prompts for attacking and blocking.",
+      "added": "Applied active reflex commands to South Park's television animation style and irreverent neighborhood fantasy quests.",
+      "src": [
+        {
+          "t": "Kotaku, South Park: The Stick of Truth / Paper Mario coverage, 2011",
+          "u": "https://kotaku.com/south-park-the-game-is-sorta-like-paper-mario-only-wi-5867353"
+        }
+      ],
+      "extra": "Co-creators Trey Parker and Matt Stone brought their love of Paper Mario directly to Obsidian Entertainment."
+    },
+    {
+      "from": "earthbound",
+      "to": "south-park-the-stick-of-truth",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Suburban modern-day RPG adventuring where kids battle absurd everyday enemies across an American small town.",
+      "added": "Turned South Park's entire town map into a playable backyard LARP satire with status effects and buddy skills.",
+      "src": [
+        {
+          "t": "GamesRadar+, Trey Parker & Obsidian interview",
+          "u": "https://www.gamesradar.com/south-park-stick-truth-inspired-earthbound-sounds-really-tough-make/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-walking-dead",
+      "to": "tales-from-the-borderlands",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Telltale's five-episode interactive drama format with timed dialogue choices and tracked character relationships.",
+      "added": "Swapped grim survival melodrama for dual unreliable narrators, heist comedy, and rapid-fire slapstick timing.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "borderlands-2",
+      "to": "tales-from-the-borderlands",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Pandora's cel-shaded wasteland setting, Vault-hunting corporate satire, and Handsome Jack's lingering shadow.",
+      "added": "Replaced looter-shooter gunplay with an episodic adventure starring corporate hustler Rhys and con artist Fiona.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "rayman-legends",
+      "to": "valiant-hearts-the-great-war",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Ubisoft Montpellier's UbiArt Framework 2D animation engine built for expressive hand-drawn characters.",
+      "added": "Directed the comic-book art pipeline toward a somber World War I puzzle-adventure weaving four intertwined lives.",
+      "src": [],
+      "extra": "Built by a small Ubisoft Montpellier team drawing on real Great War letters and archival notes."
+    },
+    {
+      "from": "tiny-wings",
+      "to": "altos-adventure",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "One-touch downhill slope momentum and serene, artfully crafted mobile arcade play.",
+      "added": "Combined one-button snowboarding backflips and bunting grinds with dynamic day-night cycles and alpine weather.",
+      "src": [
+        {
+          "t": "80.lv, Ryan Cash & Harry Nesbitt (Team Alto) interview",
+          "u": "https://80.lv/articles/altos-adventure-a-game-with-style"
+        }
+      ],
+      "extra": "Snowman co-founder Ryan Cash credited playing Tiny Wings with convincing him a mobile game could feel like moving art."
+    },
+    {
+      "from": "journey",
+      "to": "altos-adventure",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Minimalist silhouetted landscapes, wordless atmospheric mood, and contemplative traversal flow.",
+      "added": "Translated serene sand-surfing emotion into an endless mountain descent with llama herding and Zen mode.",
+      "src": [
+        {
+          "t": "Game Developer, Alto's Adventure case study",
+          "u": "https://www.gamedeveloper.com/design/alto-s-adventure-case-study"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "assassins-creed-unity",
+      "to": "assassins-creed-syndicate",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Dedicated stealth crouch, parkour-down descent, and dense multi-story European urban assassination sandboxes.",
+      "added": "Introduced dual switchable siblings Jacob and Evie Frye, horse-drawn carriages, and a zip-line rope launcher in Victorian London.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "colin-mcrae-rally",
+      "to": "dirt-rally",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Co-driver pace notes, point-to-point gravel stages, and mechanical damage carried across rally events.",
+      "added": "Dropped DiRT's festival flair to return to unforgiving simulation handling developed through Steam Early Access feedback.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "fire-emblem-awakening",
+      "to": "fire-emblem-fates",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Unit Pair Up stat synergies, character romance supports, and optional Casual mode without permadeath.",
+      "added": "Split its war story across three distinct campaigns with Dragon Vein terrain-altering powers and balanced Attack/Guard stances.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "halo-4",
+      "to": "halo-5-guardians",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "343 Industries' Promethean enemies, sprint movement, and cinematic Master Chief character arc.",
+      "added": "Standardized Spartan thruster dashes, clamber, and ground-pound mobility alongside large-scale PvPvE Warzone matches.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "halo-5-guardians",
+      "to": "halo-infinite",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Snappy 60fps arena gunplay, ledge clamber, and modern competitive Halo movement polish.",
+      "added": "Pared back universal Spartan thrusters for pickup equipment like the Grappleshot and an open-zone ring campaign.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "mortal-kombat-2011",
+      "to": "mortal-kombat-x",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "2.5D competitive fighting fundamentals, X-Ray super moves, and a full cinematic story mode.",
+      "added": "Gave every fighter three selectable combat Variations, interactive stage props, and a stamina-gated run button.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "mortal-kombat-x",
+      "to": "mortal-kombat-11",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Character combat variations, cinematic chapter storytelling, and stage interactions from NetherRealm's modern era.",
+      "added": "Slowed neutral footsies, split meter into offensive and defensive gauges, and replaced X-Rays with comeback Fatal Blows.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "tekken-5",
+      "to": "tekken-7",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Four-limb 3D martial arts inputs, sidestepping footsies, and wall-splat juggle combos.",
+      "added": "Introduced low-health Rage Arts, armored Power Crushes, slow-motion clutch finishes, and crossover fighters like Akuma.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "tekken-7",
+      "to": "tekken-8",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Rage Art comeback supers, Power Crush armor, and dramatic slow-motion final-hit exchanges.",
+      "added": "Built a Heat aggression burst meter and recoverable chip damage to reward relentless forward pressure.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "xenoblade-chronicles",
+      "to": "xenoblade-chronicles-x",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "MMO-style cooldown Arts palettes, positional auto-attack combat, and soaring landmark-driven exploration.",
+      "added": "Expanded onto a seamless alien planet traversed on foot and inside customizable flying Skell mechs.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "gears-of-war-3",
+      "to": "gears-of-war-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Active-reload cover shooting, chainsaw Lancer brawls, and wave-based Horde survival co-op.",
+      "added": "Handed the torch to JD Fenix's generation with Windflare storms, close-cover yank executions, and portable Horde Fabricators.",
+      "src": [],
+      "extra": "Marked The Coalition's first original entry after taking over the franchise from Epic Games."
+    },
+    {
+      "from": "kid-icarus",
+      "to": "owlboy",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Vertical sky-world exploration and classic NES dungeon structure starring a winged hero.",
+      "added": "Fulfilled the unfulfilled promise of Pit's wings by letting Otus fly freely anywhere while carrying gun-toting companions.",
+      "src": [
+        {
+          "t": "Alternative Magazine Online, D-Pad Studio interview, 2017",
+          "u": "https://alternativemagazineonline.co.uk/2017/12/05/interview-in-conversation-with-d-pad-studio-creators-of-owlboy/"
+        }
+      ],
+      "extra": "Creator Simon Stafsnes Andersen built Owlboy around letting a winged character truly explore the open sky."
+    },
+    {
+      "from": "super-mario-bros-3",
+      "to": "owlboy",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "The thrill of brief Tanooki-suit aerial gliding and floating cloud stages.",
+      "added": "Turned limited glide tapping into full 360-degree flight with high-detail pixel art and companion swapping.",
+      "src": [
+        {
+          "t": "Alternative Magazine Online, D-Pad Studio interview, 2017",
+          "u": "https://alternativemagazineonline.co.uk/2017/12/05/interview-in-conversation-with-d-pad-studio-creators-of-owlboy/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "hearthstone",
+      "to": "shadowverse",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Hearthstone popularized streamlined digital collectible card duels with auto-scaling mana curves and class-specific decks.",
+      "added": "Introduced mid-match Evolve points that empower followers on demand alongside anime-styled story campaigns.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "street-fighter-iv",
+      "to": "street-fighter-v",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Six-button 2D-plane Capcom fundamentals, EX special bars, and 3D character models.",
+      "added": "Replaced Focus Attacks with character-specific V-Skills and V-Triggers built around an ongoing esports season model.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "street-fighter-v",
+      "to": "street-fighter-6",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Distinct character utility tools, cross-platform online play, and esports-focused tournament framing.",
+      "added": "Unified universal mechanics into the Drive Gauge while adding World Tour single-player exploration and Modern controls.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "superhot",
+      "to": "superhot-vr",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Time advancing only when the player moves, turning red-and-white shootouts into tactical action puzzles.",
+      "added": "Rebuilt stages from scratch for room-scale VR so dodging bullets, dual-wielding, and catching thrown weapons use real body motion.",
+      "src": [],
+      "extra": "Released in December 2016 after the February 2016 flat-screen original."
+    },
+    {
+      "from": "punch-out",
+      "to": "arms",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Behind-the-boxer third-person camera framing and telegraph-reading counter-punch duels.",
+      "added": "Opened the ring into full 3D arena movement with extendable spring-loaded limbs and mix-and-match elemental gloves.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "wii-sports",
+      "to": "arms",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Nintendo's intuitive dual-hand motion-controlled boxing punches built for instant living-room readability.",
+      "added": "Refined motion punching with Joy-Con wrist twisting to curve shots mid-air inside a competitive Switch fighter.",
+      "src": [],
+      "extra": "Produced by Kosuke Yabuki's Nintendo EPD group."
+    },
+    {
+      "from": "bushido-blade",
+      "to": "for-honor",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "High-stakes melee dueling psychology where reading an opponent's guard and punishing a single mistake decide the fight.",
+      "added": "Created the three-stance Art of Battle directional guard system for knights, Vikings, and samurai across 4v4 battles.",
+      "src": [
+        {
+          "t": "IGN, Jason VandenBerghe (Ubisoft Montreal) E3 interview, 2015",
+          "u": "https://www.ign.com/articles/2015/06/15/e3-2015-for-honors-combat-is-brutal-and-unforgiving"
+        }
+      ],
+      "extra": "Creative director Jason VandenBerghe remarked that in some ways For Honor's story began with Bushido Blade."
+    },
+    {
+      "from": "gran-turismo-5",
+      "to": "gran-turismo-sport",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Polyphony Digital's precision track physics, cockpit interiors, and real-world manufacturer car encyclopedias.",
+      "added": "Pivoted toward FIA-sanctioned online esports racing governed by Driver and Sportsmanship matchmaking ratings.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "gran-turismo-sport",
+      "to": "gran-turismo-7",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Rated online Sport Mode matchmaking, Scapes photo stages, and modern PS4-era driving physics.",
+      "added": "Restored the traditional Gran Turismo career mode, dynamic rain radar, and car-tuning shop alongside Sport racing.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "harvest-moon",
+      "to": "slime-rancher",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Daily cozy homestead routines centered on feeding livestock, tending crops, and selling harvests for upgrades.",
+      "added": "Turned farm management into first-person alien planet exploration using a vacuum pack to corral and crossbreed bouncy slimes.",
+      "src": [
+        {
+          "t": "Game Developer, Nick Popovich (Monomi Park) interview",
+          "u": "https://www.gamedeveloper.com/design/it-s-not-actually-poop-a-look-at-i-slime-rancher-i-s-plort-system"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "star-wars-battlefront-ii",
+      "to": "star-wars-battlefront-ii-2017",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Multi-era Star Wars trooper warfare spanning Prequel, Original, and space-dogfight battlefields with playable heroes.",
+      "added": "Updated the formula with Frostbite visuals, an original Imperial campaign, and Battle Point hero call-ins across all three film eras.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "battlefield-1",
+      "to": "star-wars-battlefront-ii-2017",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "DICE's Frostbite Engine photogrammetry, class-based squad gunplay, and large-scale objective pushes.",
+      "added": "Layered blaster heat cooling, lightsaber hero duels, and Criterion-built starfighter assault onto DICE's shooter framework.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "total-war-warhammer",
+      "to": "total-war-warhammer-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Real-time Warhammer Fantasy battles featuring flying monsters, spellcasting lords, and asymmetric faction mechanics.",
+      "added": "Added four New World races, a narrative Great Vortex race, and the combined Mortal Empires mega-campaign map.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "cookie-clicker",
+      "to": "universal-paperclips",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Manual clicking escalating into automated exponential production curves inside a minimalist browser interface.",
+      "added": "Turned endless incremental escalation into a finite parable about a rogue paperclip-maximizing AI consuming the universe.",
+      "src": [
+        {
+          "t": "Vice, Frank Lantz on Universal Paperclips, 2017",
+          "u": "https://www.vice.com/en/article/this-game-about-paperclips-will-make-you-ponder-the-apocalypse/"
+        }
+      ],
+      "extra": "Created by NYU Game Center director Frank Lantz around philosopher Nick Bostrom's AI alignment thought experiment."
+    },
+    {
+      "from": "second-life",
+      "to": "vrchat",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Second Life popularized user-created 3D social worlds inhabited by custom player avatars and community events.",
+      "added": "Brought custom Unity avatars and user-built hangout worlds into tracked VR with full-body motion and spatial voice chat.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "wolfenstein-the-new-order",
+      "to": "wolfenstein-ii-the-new-colossus",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Dual-wielding id Tech gunplay paired with MachineGames' heartfelt resistance ensemble in an alternate-history 1960s.",
+      "added": "Shifted the rebellion to occupied America with independent dual-weapon mixing, swappable contraptions, and a mobile U-boat hub.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "journey",
+      "to": "gris",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Wordless emotional storytelling, flowing scarf-like movement, and non-punishing audiovisual set pieces.",
+      "added": "Brought illustrator Conrad Roset's watercolor fine art to 2D platforming where restoring colors maps the stages of grief.",
+      "src": [
+        {
+          "t": "Red Bull, Conrad Roset (Nomada Studio) interview, 2018",
+          "u": "https://www.redbull.com/us-en/gris-preview-interview"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "hitman",
+      "to": "hitman-2-2018",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Clockwork sandbox assassination levels built around disguises, mission stories, and creative accident kills.",
+      "added": "Restored the concealable briefcase, added picture-in-picture guard alerts and foliage hiding, and launched all six locations at once.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "hitman-2-2018",
+      "to": "hitman-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Foliage concealment, briefcase smuggling, and unified live-map progression across the World of Assassination.",
+      "added": "Added persistent unlockable level shortcuts, a hackable camera tool, and a murder-mystery manor while absorbing all trilogy maps.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "planet-coaster",
+      "to": "jurassic-world-evolution",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Frontier Developments' Cobra Engine park-management interface, guest satisfaction metrics, and curving path tools.",
+      "added": "Focused construction on dinosaur enclosures, genetic trait splicing, and emergency containment teams during tropical storms.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "zoo-tycoon",
+      "to": "jurassic-world-evolution",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Zoo Tycoon popularized balancing animal habitat comfort, exhibit visibility, and visitor amenities in wildlife park sims.",
+      "added": "Escalated animal comfort management into lethal security risks where stressed prehistoric predators smash through electrified fences.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "life-is-strange",
+      "to": "life-is-strange-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Episodic supernatural coming-of-age drama shaped by quiet observational scenes and lasting moral choices.",
+      "added": "Moved the supernatural power to an AI younger brother whose morality mirrors how you raise him across a cross-country road trip.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "shadow-colossus",
+      "to": "shadow-of-the-colossus-2018",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sixteen giant climbing-puzzle colossi across a desolate forbidden land navigated by sword-beam light.",
+      "added": "Rebuilt every model, texture, and lighting system from the ground up on PS4 with modern control options and a photo mode.",
+      "src": [],
+      "extra": "Remade by Bluepoint Games while preserving the exact physics and layout of Team Ico's 2005 PlayStation 2 original."
+    },
+    {
+      "from": "brothers-a-tale-of-two-sons",
+      "to": "a-plague-tale-innocence",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "An intimate sibling bond expressed directly through cooperative environmental traversal and protective gameplay.",
+      "added": "Set the sibling journey in 14th-century plague-ridden France with fire-versus-rat-swarm stealth puzzles.",
+      "src": [
+        {
+          "t": "GameWatcher, Kevin Choteau (Asobo Studio) interview",
+          "u": "https://www.gamewatcher.com/interviews/a-plague-tale-innocence-interview/12792"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "the-last-of-us",
+      "to": "a-plague-tale-innocence",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Character-focused linear stealth pacing, improvised crafting, and vulnerable protagonists navigating hostile patrols.",
+      "added": "Replaced firearms with Amicia's alchemical sling and light-sensitive oceans of thousands of plague rats.",
+      "src": [
+        {
+          "t": "GameWatcher, Kevin Choteau (Asobo Studio) interview",
+          "u": "https://www.gamewatcher.com/interviews/a-plague-tale-innocence-interview/12792"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "nier-automata",
+      "to": "astral-chain",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Fluid PlatinumGames dodge-offset action pacing led by NieR: Automata lead game designer Takahisa Taura.",
+      "added": "Tethered each player to a controllable Legion partner via a physical energy chain that binds enemies and launches sync attacks.",
+      "src": [
+        {
+          "t": "Nintendo Life, PlatinumGames studio blog on Astral Chain, 2019",
+          "u": "https://www.nintendolife.com/news/2019/02/studio_head_of_platinumgames_talks_about_astral_chain_in_official_blog_post"
+        }
+      ],
+      "extra": "Marked Takahisa Taura's directorial debut with Bayonetta creator Hideki Kamiya supervising."
+    },
+    {
+      "from": "half-life-2",
+      "to": "boneworks",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Physics-driven single-player shooter storytelling built around improvised environmental manipulation and crowbar combat.",
+      "added": "Simulated a full-body kinematic VR avatar where every weapon, crate, climbable ledge, and enemy responds to mass and friction.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "borderlands-2",
+      "to": "borderlands-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Four-player co-op looter-shooter gunplay with procedurally generated manufacturer weapons and three-tree Vault Hunter builds.",
+      "added": "Expanded across multiple planets with sliding, mantling, alternate firing modes, and swappable Action Skills.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "gears-of-war-4",
+      "to": "gears-5",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "The Coalition's cover-shooter feel, Swarm enemies, and sequel trilogy cast.",
+      "added": "Shifted the lead role to Kait Diaz with open skiff-sailing hubs, upgradeable Jack bot abilities, and Escape hive runs.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "hotline-miami",
+      "to": "katana-zero",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Neon-soaked synthwave atmosphere, instant-retry one-hit-kill rooms, and unreliable drug-addled mission briefings.",
+      "added": "Translated lethal room-clearing puzzles into side-scrolling katana combat with bullet deflection, time slowing, and branching dialogue.",
+      "src": [],
+      "extra": "Creator Justin Stander noted Samurai Gunn influenced the lethal feel more directly than Hotline Miami."
+    },
+    {
+      "from": "kingdom-hearts-ii",
+      "to": "kingdom-hearts-iii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast aerial Keyblade combo strings, Disney companion team-ups, and multi-form combat transformations.",
+      "added": "Unified seamless Pixar and Disney worlds on Unreal Engine 4 with three swappable Keyblade forms and theme-park Attractions.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "metro-last-light",
+      "to": "metro-exodus",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Diegetic wrist-watch gear checks, scarce gas-mask survival, and Artyom's quiet human stakes.",
+      "added": "Left Moscow's tunnels aboard the Aurora steam train to explore seasonal open-sandbox Russian regions with field weapon crafting.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "stalker",
+      "to": "metro-exodus",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Post-Soviet open wasteland scavenging, hostile anomaly zones, and gritty weapon maintenance from ex-GSC Game World veterans.",
+      "added": "Blended S.T.A.L.K.E.R.'s open-zone exploration with Metro's authored linear chapters and traveling train crew.",
+      "src": [],
+      "extra": "4A Games was founded in Kyiv by former S.T.A.L.K.E.R. engine architects Oles Shishkovtsov and Alexander Maximchuk."
+    },
+    {
+      "from": "persona-5",
+      "to": "persona-5-royal",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Stylish Tokyo school-life calendar management paired with turn-based Palace heists and Baton Pass chains.",
+      "added": "Appended an entire third school semester, grappling-hook Palace traversal, Showtime duo attacks, and Kichijoji hangouts.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "rez",
+      "to": "sayonara-wild-hearts",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Synesthetic on-rails arcade spectacle fusing high-speed visuals directly with an electronic music soundtrack.",
+      "added": "Structured each stage as a playable synth-pop album track mixing motorcycle chases, archery, and tarot-themed boss duels.",
+      "src": [
+        {
+          "t": "Simogo, Sayonara Wild Hearts official work page",
+          "u": "https://simogo.com/work/sayonara-wild-hearts/"
+        }
+      ],
+      "extra": "Simogo explicitly cited Rez, OutRun, and WarioWare as ingredients in its pop-album arcade soup."
+    },
+    {
+      "from": "warioware-inc-mega-microgames",
+      "to": "sayonara-wild-hearts",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Rapid-fire shifts between bite-sized, single-button arcade scenarios that teach rules in seconds.",
+      "added": "Wove shifting micro-mechanics—drifting, rhythm taps, sword clashes, and rail shooting—into one continuous heartbreak pop album.",
+      "src": [
+        {
+          "t": "Simogo, Sayonara Wild Hearts official work page",
+          "u": "https://simogo.com/work/sayonara-wild-hearts/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "super-mario-maker",
+      "to": "super-mario-maker-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Touch-friendly drag-and-drop 2D Mario level creation across four classic game styles with global sharing.",
+      "added": "Added slopes, Super Mario 3D World's style, custom clear conditions, four-player multiplayer, and a 100-course Story Mode.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-link-s-awakening",
+      "to": "the-legend-of-zelda-links-awakening-2019",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Koholint Island's grid-crafted dungeon puzzles, quirky trading sequence, and melancholy Wind Fish mystery.",
+      "added": "Rebuilt the Game Boy classic as a tilt-shift toy-diorama Switch remake with seamless scrolling and dedicated item buttons.",
+      "src": [],
+      "extra": "Developed by Grezzo with a Chamber Dungeon tile-arranging editor."
+    },
+    {
+      "from": "stardew-valley",
+      "to": "spiritfarer",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Warm daily life-sim cycles of farming, cooking, crafting, and upgrading a personal home base.",
+      "added": "Placed the cozy management loop aboard a ferryboat carrying departing animal spirits toward peaceful farewells.",
+      "src": [
+        {
+          "t": "Pocket Tactics, Nicolas Guérin (Thunder Lotus) interview",
+          "u": "https://www.pockettactics.com/spiritfarer/interview"
+        }
+      ],
+      "extra": "Creative director Nicolas Guérin pitched Spiritfarer as a cozy game about dying that played like Stardew Valley."
+    },
+    {
+      "from": "animal-crossing-new-leaf",
+      "to": "spiritfarer",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Gentle community care built around learning each animal resident's favorite foods, personality quirks, and daily routines.",
+      "added": "Gave every passenger a finite emotional arc culminating in accompanying them to the Everdoor, anchored by a dedicated hug button.",
+      "src": [
+        {
+          "t": "GamesRadar+, Spiritfarer E3 2019 preview & developer interview",
+          "u": "https://www.gamesradar.com/spiritfarer-preview-e3-2019/"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "far-cry-5",
+      "to": "far-cry-6",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-world outpost liberation, animal companions, and chaotic vehicle-and-wingsuit guerrilla sandboxes.",
+      "added": "Set its revolution on Caribbean island Yara with improvised Resolver weapons, Supremo backpacks, and ammo-type counters.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "little-nightmares",
+      "to": "little-nightmares-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Macabre dollhouse-scale 2.5D stealth platforming past grotesque oversized pursuers.",
+      "added": "Paired protagonist Mono with AI partner Six for two-character puzzles, flashlight defense, and television portal jumps.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "mass-effect-2",
+      "to": "marvels-guardians-of-the-galaxy",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Mass Effect 2 popularized ship-hub squad banter, dialogue choices, and pausing combat to trigger teammate power combos.",
+      "added": "Focused play solely on Star-Lord issuing real-time comic-book team commands backed by an 1980s licensed rock Huddle mechanic.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pokemon-snap",
+      "to": "new-pokemon-snap",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "On-rails wildlife safari photography scored on pose, framing, and item-triggered Pokémon behavior.",
+      "added": "Expanded across the Lental archipelago with day-and-night course variations, Illumina Orbs, and branching research routes.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "shin-megami-tensei-iii-nocturne",
+      "to": "shin-megami-tensei-v",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Post-apocalyptic Tokyo demon negotiation, fusion builds, and the high-stakes Press Turn weakness combat system.",
+      "added": "Opened wasteland exploration into vertical Unreal Engine 4 zones with visible roaming demons and Magatsuhi super skills.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "fall-guys",
+      "to": "stumble-guys",
+      "tier": "mech",
+      "rel": "fast-follow",
+      "took": "Fall Guys popularized colorful last-bean-standing multiplayer obstacle courses styled after TV game shows.",
+      "added": "Brought 32-player knockout rounds directly to mobile devices with fast lobbies, air-dash emotes, and cross-platform play.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "a-plague-tale-innocence",
+      "to": "a-plague-tale-requiem",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Amicia and Hugo's protective sibling bond, sling alchemy, and light-versus-rat stealth puzzles.",
+      "added": "Scaled arenas into wider stealth sandboxes with a crossbow, tar-and-fire tools, and Hugo's direct rat-swarm control.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "bayonetta-2",
+      "to": "bayonetta-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Witch Time last-second dodges, kinetic combo weaves, and extravagant angelic set pieces.",
+      "added": "Let players directly pilot colossal Infernal Demons mid-combo via Demon Slave alongside katana-wielding newcomer Viola.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "disco-elysium",
+      "to": "citizen-sleeper",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Combat-free literary RPG storytelling examining precarious survival in the wreckage of late capitalism.",
+      "added": "Adapted tabletop Blades in the Dark dice pools and countdown clocks to daily life as a fugitive android on a derelict space station.",
+      "src": [
+        {
+          "t": "Game Developer, Gareth Damian Martin on Citizen Sleeper",
+          "u": "https://www.gamedeveloper.com/business/how-citizen-sleeper-was-inspired-by-tabletop-rpgs-and-gig-work"
+        }
+      ],
+      "extra": "Creator Gareth Damian Martin built its dice-and-clocks loop directly from John Harper's tabletop RPG Blades in the Dark."
+    },
+    {
+      "from": "mini-metro",
+      "to": "dorfromantik",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Minimalist score-chasing spatial puzzle clarity that turns quiet system optimization into a meditative loop.",
+      "added": "Replaced transit urgency with serene hexagonal pastoral tile-laying matching forests, villages, rivers, and railways.",
+      "src": [
+        {
+          "t": "GOG, Toukana Interactive interview on Dorfromantik",
+          "u": "https://www.gog.com/en/news/binterview_toukana_interactive_tells_us_more_about_dorfromantikb"
+        }
+      ],
+      "extra": "Later adapted into Dorfromantik: The Board Game, winner of the 2023 Spiel des Jahres."
+    },
+    {
+      "from": "dwarf-fortress",
+      "to": "dwarf-fortress-steam-edition",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Deep simulated fantasy histories, geological fort building, and emergent dwarven moods built by Tarn and Zach Adams.",
+      "added": "Replaced raw ASCII screens with official pixel-art tilesets, mouse-first menus, tutorials, and a newly composed soundtrack.",
+      "src": [],
+      "extra": "Published with Kitfox Games, bringing Bay 12's 16-year freeware simulation to a mainstream Steam audience."
+    },
+    {
+      "from": "dusk",
+      "to": "iron-lung",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Solo developer David Szymanski's lo-fi retro visual grit and keen instinct for unsettling atmosphere.",
+      "added": "Stripped away fast shooter mobility to weld the player inside a blind miniature submarine navigating a moon's blood ocean by coordinates.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "subnautica",
+      "to": "iron-lung",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Thalassophobic deep-sea dread where invisible underwater giants lurk beyond limited visibility.",
+      "added": "Removed free swimming and windows entirely, forcing players to steer purely by map radar and grainy snapshot photography.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "doom-2016",
+      "to": "metal-hellsinger",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Relentless forward-pushing arena demon slaying, glory-kill executions, and heavy metal momentum.",
+      "added": "Tied every gunshot, reload, and dash to an original metal album's beat so staying in rhythm unlocks layered guest vocals.",
+      "src": [
+        {
+          "t": "Windows Central, David Goldfarb & Two Feathers interview, 2022",
+          "u": "https://www.windowscentral.com/gaming/metal-hellsinger-interview-composing-the-music-soundtrack-with-two-feathers"
+        }
+      ],
+      "extra": "Director David Goldfarb conceived the game while playing Doom (2016) to Meshuggah's 'Bleed'."
+    },
+    {
+      "from": "crypt-of-the-necrodancer",
+      "to": "metal-hellsinger",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Locking every combat action and movement multiplier to a strict musical pulse.",
+      "added": "Translated beat-synced combat from top-down roguelike grids into a 3D first-person demon shooter.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "sonic-adventure",
+      "to": "sonic-frontiers",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "3D open hub-field Sonic exploration linking hub discoveries to high-speed action stages.",
+      "added": "Merged hub and stage into five sprawling Open Zone islands packed with boost rails, cyber-space portals, and giant Titan fights.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "borderlands-3",
+      "to": "tiny-tinas-wonderlands",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Borderlands 3's responsive gunplay, sliding movement, and multi-manufacturer loot guns.",
+      "added": "Reframed the looter-shooter as a tabletop fantasy campaign with spells replacing grenades, multiclassing, and a miniature overworld.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "total-war-warhammer-ii",
+      "to": "total-war-warhammer-iii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Asymmetric Warhammer Fantasy faction campaigns and combined multi-game world map warfare.",
+      "added": "Added Chaos Daemon realms, Grand Cathay, Kislev, reworked siege defenses, and the trilogy-spanning Immortal Empires map.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "valheim",
+      "to": "v-rising",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Valheim popularized boss-gated survival progression where defeating regional foes unlocks new crafting tiers and base pieces.",
+      "added": "Cast players as sun-fearing vampires building gothic castles and drinking V Blood bosses to steal their abilities.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "diablo-iii",
+      "to": "v-rising",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Diablo III popularized isometric action-RPG cooldown abilities and crisp dark-fantasy monster clearing.",
+      "added": "Paired skillshot-heavy top-down ARPG combat from Battlerite veterans Stunlock Studios with open-world castle survival.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "amnesia-the-dark-descent",
+      "to": "amnesia-the-bunker",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Physics-grabbed door opening, scarce light management, and helpless dread in pitch-black corridors.",
+      "added": "Restructured horror into a semi-open WWI bunker with a noisy wind-up flashlight, fuel generator, and revolver resource puzzles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "alien-isolation",
+      "to": "amnesia-the-bunker",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "A single unscripted, noise-reactive stalker monster hunting dynamically through wall vents and locked rooms.",
+      "added": "Combined systemic predator stealth with immersive-sim tool improvisation like blowing wooden doors open with grenades.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "sekiro-shadows-die-twice",
+      "to": "armored-core-vi-fires-of-rubicon",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Relentless offensive pressure aimed at breaking an enemy's posture bar to trigger massive critical punishes.",
+      "added": "Translated posture breaks into an Attitude Control System stagger gauge driven by customizable mech loadouts and missile barrages.",
+      "src": [
+        {
+          "t": "IGN, Masaru Yamamura (FromSoftware) interview, 2023",
+          "u": "https://www.ign.com/articles/armored-core-6-interview"
+        }
+      ],
+      "extra": "Directed by Masaru Yamamura, who previously served as lead game designer on Sekiro: Shadows Die Twice."
+    },
+    {
+      "from": "chromehounds",
+      "to": "armored-core-vi-fires-of-rubicon",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "FromSoftware's deep garage mech engineering balancing weight, energy drain, and weapon recoil across customizable chassis.",
+      "added": "Revived FromSoftware's flagship high-speed Armored Core mech series with hard-lock dodging and multi-ending Rubicon missions.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "assassins-creed-valhalla",
+      "to": "assassins-creed-mirage",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Basim's character origin and Anvil engine foundation from Ubisoft's sprawling Viking RPG.",
+      "added": "Trimmed RPG bloat back into a focused 20-hour Baghdad stealth adventure built around pickpocketing, notoriety, and black-box hits.",
+      "src": [],
+      "extra": "Conceived originally as a Valhalla expansion before Ubisoft Bordeaux expanded it into a standalone return to series roots."
+    },
+    {
+      "from": "assassin-s-creed",
+      "to": "assassins-creed-mirage",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Middle Eastern walled-city rooftop traversal, crowd blending, bureau investigations, and deliberate assassination planning.",
+      "added": "Modernized the 2007 blueprint with Eagle vision tagging, upgradeable stealth gadgets, and multi-target Assassin's Focus strikes.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pok-mon-red-and-green",
+      "to": "cassette-beasts",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Turn-based monster collecting, elemental type charts, and creature evolution battles.",
+      "added": "Let players transform via cassette tapes, fuse any two monsters mid-battle, and exploit chemical type-reaction status combos.",
+      "src": [
+        {
+          "t": "Nintendo Life, Bytten Studio interview on Cassette Beasts",
+          "u": "https://www.nintendolife.com/features/cassette-beasts-dev-on-doing-what-pokemon-doesnt-in-a-zelda-inspired-overworld"
+        }
+      ],
+      "extra": "Co-founders Jay Baylis and Tom Coxon designed Cassette Beasts around doing mechanics Pokémon never tried."
+    },
+    {
+      "from": "the-legend-of-zelda-a-link-to-the-past",
+      "to": "cassette-beasts",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "A dense, interconnected open overworld unlocked progressively through new movement and traversal abilities.",
+      "added": "Wove ability-gated island exploration and dungeon puzzles directly into a monster-collecting RPG structure.",
+      "src": [
+        {
+          "t": "Nintendo Life, Bytten Studio interview on Cassette Beasts",
+          "u": "https://www.nintendolife.com/features/cassette-beasts-dev-on-doing-what-pokemon-doesnt-in-a-zelda-inspired-overworld"
+        }
+      ],
+      "extra": ""
+    },
+    {
+      "from": "dead-space",
+      "to": "dead-space-2023",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Strategic Plasma Cutter limb dismemberment, diegetic spine health bars, and USG Ishimura industrial horror.",
+      "added": "Rebuilt the ship on Frostbite as one seamless interconnected hull with peeling flesh layers, voiced Isaac, and an Intensity Director.",
+      "src": [],
+      "extra": "Remade by EA Motive Studio with revamped zero-gravity free flight."
+    },
+    {
+      "from": "fire-emblem-three-houses",
+      "to": "fire-emblem-engage",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Modern Switch tactical grid presentation, Divine Pulse turn rewinds, and hub base preparation.",
+      "added": "Restored the classic weapon triangle with Break disarms and let units fuse with Emblem Rings channeling past Fire Emblem heroes.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "human-fall-flat",
+      "to": "party-animals",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Human: Fall Flat popularized floppy physics-driven ragdoll grabbing and comedic clumsy locomotion.",
+      "added": "Focused wobbling ragdoll physics into chaotic plush-animal brawling arenas with dropkicks, props, and shrinking hazards.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "pikmin-3",
+      "to": "pikmin-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Tactical color-coded Pikmin squad management, fruit-and-treasure hauling, and split-task route planning.",
+      "added": "Introduced rideable rescue dog Oatchi, freezing Ice Pikmin, nighttime tower-defense expeditions, and competitive Dandori Battles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "half-life",
+      "to": "abiotic-factor",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "A 1990s underground research complex thrown into chaos by an interdimensional resonance containment breach.",
+      "added": "Cast up to six co-op players as ordinary office scientists barricading hallways with filing cabinets and crafting gadgets from lab scrap.",
+      "src": [
+        {
+          "t": "PC Gamer, Geoff Keene (Deep Field Games) interview, 2024",
+          "u": "https://www.pcgamer.com/games/survival-crafting/abiotic-factor-interview-survival-immersive-sim/"
+        }
+      ],
+      "extra": "Deep Field Games pitched the game around playing the trapped Black Mesa-style scientists rather than Gordon Freeman."
+    },
+    {
+      "from": "valheim",
+      "to": "abiotic-factor",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Valheim popularized cooperative PvE survival crafting structured around clearing distinct biomes to unlock new tech.",
+      "added": "Replaced wilderness forests with interconnected corporate lab sectors, tram shortcuts, and surreal portal worlds.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "age-of-mythology",
+      "to": "age-of-mythology-retold",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Greek, Norse, Egyptian, and Atlantean RTS warfare blending villagers with myth units and cataclysmic god powers.",
+      "added": "Rebuilt visuals on the Bang Engine with reusable cooldown god powers, manual myth-unit abilities, and a larger Wonder Age.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "dragon-quest-iii",
+      "to": "dragon-quest-iii-hd-2d-remake",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Open-ended vocation switching at Alltrades Abbey, custom party creation, and Erdrick's foundational JRPG quest.",
+      "added": "Rebuilt the 1988 Famicom touchstone in HD-2D with full voice acting, Monster Wrangler class, and Monster Arena battles.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "octopath-traveler",
+      "to": "dragon-quest-iii-hd-2d-remake",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Square Enix Team Asano's HD-2D visual pipeline combining classic pixel sprites with 3D lighting and depth-of-field tilt shift.",
+      "added": "Applied the modernized diorama aesthetic to rebuild one of Japan's earliest world-spanning JRPGs.",
+      "src": [],
+      "extra": "Produced under Tomoya Asano's HD-2D initiative with Artdink developing."
+    },
+    {
+      "from": "silent-hill",
+      "to": "mouthwashing",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Low-poly PlayStation-era texture grit, industrial surrealism, and psychological dread over cheap jump scares.",
+      "added": "Confined its fractured non-linear story aboard a wrecked space freighter where a stranded crew unravels in corporate neglect.",
+      "src": [
+        {
+          "t": "Skybox Critics, Johanna Kasurinen (Wrong Organ) interview, 2025",
+          "u": "https://skyboxcritics.com/2025/07/14/mouthwashings-genesis-sick-jokes-and-the-thin-line-between-goofy-and-grotesque-an-interview-with-wrong-organ/"
+        }
+      ],
+      "extra": "Art lead Johanna Kasurinen cited childhood memories of Silent Hill and Crash Bandicoot for its PS1 visual tone."
+    },
+    {
+      "from": "stalker",
+      "to": "pacific-drive",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Exploring an eerie, walled-off Exclusion Zone filled with indifferent reality-warping anomalies inspired by Roadside Picnic.",
+      "added": "Anchored survival around repairing, upgrading, and driving an old station wagon through roguelite Pacific Northwest storm runs.",
+      "src": [
+        {
+          "t": "The Guardian, Alex Dracott (Ironwood Studios) interview, 2023",
+          "u": "https://www.theguardian.com/games/2023/jul/27/pacific-drive-the-video-game-road-trip-inspired-by-the-weird-fiction-of-jeff-vandermeer"
+        }
+      ],
+      "extra": "Creative director Alex Dracott cited Roadside Picnic and Tarkovsky's Stalker alongside weird-fiction ecology."
+    },
+    {
+      "from": "persona-3",
+      "to": "persona-3-reload",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "The calendar-driven Social Link structure, Tartarus tower crawling, and Dark Hour existential themes.",
+      "added": "Remade the 2006 PS2 classic in Unreal Engine 4 with full direct party control, Theurgy burst skills, and expanded Link Episodes.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "persona-5",
+      "to": "persona-3-reload",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Atlus P-Studio's kinetic UI menus, Baton Pass turn handoffs, and modern dungeon quality-of-life pacing.",
+      "added": "Retrofitted Persona 5's snappy Shift combat flow and stylish menu flair onto Persona 3's tragic story.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "nioh-2",
+      "to": "rise-of-the-ronin",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Team Ninja's multi-stance weapon switching, stamina-recovery Ki Pulses, and demanding parry timing.",
+      "added": "Moved from mission-based dark fantasy into open-world Bakumatsu Japan with grappling hooks, gliders, and historical faction choices.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "ghost-of-tsushima",
+      "to": "rise-of-the-ronin",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Historical Japanese open-world horseback exploration, samurai duels, and region-liberation camps.",
+      "added": "Shifted to 1860s Western-contact Yokohama and Edo with faster multi-weapon parry chains and switchable mission allies.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "stalker",
+      "to": "s-t-a-l-k-e-r-2-heart-of-chornobyl",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Harsh survival ballistics, bolt-throwing anomaly navigation, artifact hunting, and emergent A-Life Zone factions.",
+      "added": "Unified the Chornobyl Exclusion Zone into a single seamless Unreal Engine 5 open world with branching faction endings.",
+      "src": [],
+      "extra": "Completed by Ukrainian studio GSC Game World amid the ongoing war."
+    },
+    {
+      "from": "hellblade-senuas-sacrifice",
+      "to": "senuas-saga-hellblade-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Binaural 3D voice audio depicting psychosis, perspective-matching rune puzzles, and close-quarters cinematic sword duels.",
+      "added": "Pushed Unreal Engine 5 photorealism across 10th-century Iceland with one-on-one motion-captured combat and giant encounters.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-links-awakening-2019",
+      "to": "the-legend-of-zelda-echoes-of-wisdom",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Grezzo's miniature toybox top-down Zelda engine, bright diorama art direction, and dungeon-room readability.",
+      "added": "Made Princess Zelda the playable hero who solves puzzles and fights by conjuring Echo copies of objects and monsters.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-tears-of-the-kingdom",
+      "to": "the-legend-of-zelda-echoes-of-wisdom",
+      "tier": "series",
+      "rel": "synthesis",
+      "took": "Open-ended, player-invented physics solutions where multiple tools solve any obstacle.",
+      "added": "Brought Tears of the Kingdom's multiplicative problem-solving philosophy back into a classic top-down Zelda adventure.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "the-legend-of-zelda-a-link-between-world",
+      "to": "the-plucky-squire",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Seamlessly shifting between flat 2D plane traversal and a 3D environment to bypass puzzles.",
+      "added": "Turned an illustrated children's picture book on a kid's desk into a portal-hopping action adventure where you rearrange story words.",
+      "src": [
+        {
+          "t": "Nintendo Life, The Plucky Squire hands-on & James Turner interview",
+          "u": "https://www.nintendolife.com/previews/hands-on-the-plucky-squire-wit-and-charm-enough-to-make-nintendo-jealous"
+        }
+      ],
+      "extra": "Co-directed by former Pokémon art director James Turner at All Possible Futures."
+    },
+    {
+      "from": "ogre-battle-the-march-of-the-black-queen",
+      "to": "unicorn-overlord",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Real-time overworld squad marching where multi-unit formations clash in automated tactical battles.",
+      "added": "Layered Vanillaware's hand-painted 2D art over programmable conditional gambit tactics and over sixty recruitable classes.",
+      "src": [
+        {
+          "t": "Persona Central, Takafumi Noma (Vanillaware) developer interview",
+          "u": "https://personacentral.com/unicorn-overlord-developer-interview/"
+        }
+      ],
+      "extra": "Director Takafumi Noma spent a decade realizing a modern heir to 1990s real-time tactical RPGs."
+    },
+    {
+      "from": "genshin-impact",
+      "to": "wuthering-waves",
+      "tier": "mech",
+      "rel": "fast-follow",
+      "took": "Genshin Impact popularized free-to-play open-world anime action RPGs with four-character party swapping and gacha banners.",
+      "added": "Emphasized faster parry-and-dodge combat, parkour wall running, and equippable Echo monster abilities captured in the wild.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "honkai-impact-3rd",
+      "to": "zenless-zone-zero",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "HoYoverse's stage-based, rapid tag-in character action combat built around dodge slows and combo switches.",
+      "added": "Shifted to a retro-urban post-apocalyptic city with parry-assist swaps, stun Chain Attacks, and expressive cartoon animation.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "borderlands-3",
+      "to": "borderlands-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Co-op looter-shooter gun variety, manufacturer quirks, and multi-tree Vault Hunter builds.",
+      "added": "Opened planet Kairos into a seamless world with grappling hooks, double jumps, gliding, and mix-and-match licensed weapon parts.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "dynasty-warriors-4",
+      "to": "dynasty-warriors-origins",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Three Kingdoms one-versus-thousands melee battlefields driven by shifting officer morale and Musou gauges.",
+      "added": "Refocused on a single nameless protagonist with parry-and-dodge officer duels and colossal coordinated troop charges.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "mafia-definitive-edition",
+      "to": "mafia-the-old-country",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Hangar 13's linear, cinema-first period crime storytelling rooted in classic Mafia atmosphere.",
+      "added": "Moved the story to 1900s Sicily with horseback travel, knife duels, and an intimate prequel origin for the mob.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "metal-gear-solid-3",
+      "to": "metal-gear-solid-delta-snake-eater",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Cold War jungle camouflage, field wound surgery, stamina hunting, and Naked Snake's 1964 espionage story.",
+      "added": "Rebuilt every jungle zone in Unreal Engine 5 with persistent mud-and-scar wear and optional over-the-shoulder modern controls.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "metroid-prime",
+      "to": "metroid-prime-4-beyond",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "First-person alien world scanning, visor switching, lock-on beam combat, and interconnected Morph Ball exploration.",
+      "added": "Introduced Samus's new psychic abilities on planet Viewros alongside high-frame-rate and mouse-style Switch 2 controls.",
+      "src": [],
+      "extra": "Returned Retro Studios to the first-person Metroid series eighteen years after Metroid Prime 3."
+    },
+    {
+      "from": "the-revenge-of-shinobi",
+      "to": "shinobi-art-of-vengeance",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Joe Musashi's kunai throws, double-jump somersaults, and screen-wide Ninjutsu spells against NEO Zeed.",
+      "added": "Expanded stages into semi-open exploration layouts with combo execution finishers and hand-drawn 2D animation.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "streets-of-rage-4",
+      "to": "shinobi-art-of-vengeance",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Lizardcube's fluid hand-drawn 2D comic art pipeline and crisp Sega arcade revival sensibility.",
+      "added": "Applied its brush-ink art craft and modern combo canceling from beat 'em ups to 2D ninja action-platforming.",
+      "src": [],
+      "extra": ""
+    },
+    {
+      "from": "tony-hawks-pro-skater-1-2",
+      "to": "tony-hawks-pro-skater-3-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Modernized Unreal Engine skate physics, revert-to-manual combo links, and faithful two-minute goal remasters.",
+      "added": "Rebuilt the third and fourth installments' classic parks with cross-platform multiplayer and newly added skate stages.",
+      "src": [],
+      "extra": "Developed by Iron Galaxy on the modern revival blueprint established by Vicarious Visions."
+    },
+    {
+      "from": "two-point-campus",
+      "to": "two-point-museum",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Two Point Studios' whimsical British management humor, room-template building, and guest-need balancing.",
+      "added": "Shifted management to curating museum wings, sending staff on risky relic expeditions, and protecting exhibits from thieves.",
+      "src": [],
+      "extra": ""
+    }
+  ]
+}

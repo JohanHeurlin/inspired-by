@@ -1,0 +1,2018 @@
+{
+  "links": [
+    {
+      "from": "advance-wars",
+      "to": "advance-wars-2-black-hole-rising",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Grid-based turn-by-turn combined-arms tactics led by Commanding Officers with distinct unit buffs and signature powers.",
+      "added": "Expanded the roster with Super CO Powers, heavy Neotanks, terrain-firing Black Cannons, and a four-continent campaign against Sturm.",
+      "src": [
+        {
+          "t": "Wikipedia: Advance Wars 2: Black Hole Rising"
+        }
+      ],
+      "extra": "Intelligent Systems refined the Game Boy Advance tactics blueprint just two years after the original."
+    },
+    {
+      "from": "scrabble",
+      "to": "bookworm",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Scoring longer words and high-value letter tiles through vocabulary mastery across a shared tile grid.",
+      "added": "Swapped turn-based crossword board placement for a real-time collapsing hex grid with burning red tiles that end the run if they reach the bottom.",
+      "src": [
+        {
+          "t": "Wikipedia: Bookworm (video game)"
+        }
+      ]
+    },
+    {
+      "from": "bejeweled",
+      "to": "bookworm",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "PopCap's bright, low-friction casual cascade loop where clearing tiles drops fresh pieces into place with snappy audio feedback.",
+      "added": "Replaced color-matching gems with adjacent-letter word chaining and bonus tiles guided by Lex the bookworm.",
+      "src": [
+        {
+          "t": "Wikipedia: Bookworm (video game); PopCap Games studio lineage"
+        }
+      ],
+      "extra": "PopCap's word-puzzle hit later spun off into Bookworm Adventures' turn-based RPG battles."
+    },
+    {
+      "from": "wwf-no-mercy",
+      "to": "def-jam-vendetta",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "AKI Corporation's tap-versus-hold grapple system, momentum meters, and crisp counter-reversal wrestling engine.",
+      "added": "Transplanted AKI's celebrated N64 wrestling feel onto PS2 and GameCube underground hip-hop arenas starring licensed Def Jam rappers.",
+      "src": [
+        {
+          "t": "Wikipedia: Def Jam Vendetta; AKI Corporation"
+        }
+      ],
+      "extra": "AKI adapted the grappling foundation it perfected across WCW/nWo Revenge and WWF No Mercy."
+    },
+    {
+      "from": "def-jam-vendetta",
+      "to": "def-jam-fight-for-ny",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Underground hip-hop brawling powered by AKI's grapple reversals, Blazin' finishers, and Def Jam artist rosters.",
+      "added": "Broadened pure pro-wrestling rings into five swappable martial-arts styles, environmental crowd-weapon hazards, and deep character customization.",
+      "src": [
+        {
+          "t": "Wikipedia: Def Jam: Fight for NY"
+        }
+      ]
+    },
+    {
+      "from": "taiko-no-tatsujin",
+      "to": "donkey-konga",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Namco's horizontal scrolling rhythm-note track built around hitting distinct percussion zones in time with pop songs.",
+      "added": "Replaced arcade taiko drums with Nintendo's two-pad GameCube DK Bongos and added microphone-sensed hand claps.",
+      "src": [
+        {
+          "t": "Wikipedia: Donkey Konga; developed by Namco's Taiko team"
+        }
+      ]
+    },
+    {
+      "from": "fatal-frame",
+      "to": "fatal-frame-ii-crimson-butterfly",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "First-person Camera Obscura ghost exorcism rewarding players for snapping lethal Fatal Frame shots at the moment spirits lunge.",
+      "added": "Moved the haunting from a single mansion to the fog-choked abandoned Minakami Village and centered the story on twin sisters Mio and Mayu.",
+      "src": [
+        {
+          "t": "Wikipedia: Fatal Frame II: Crimson Butterfly"
+        }
+      ],
+      "extra": "Widely regarded by horror critics as the apex of Tecmo's atmospheric Japanese folklore survival-horror trilogy."
+    },
+    {
+      "from": "final-fantasy",
+      "to": "final-fantasy-crystal-chronicles",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Iconic jobs, Moogles, elemental spells, and crystal mythology rooted in Square's flagship fantasy universe.",
+      "added": "Rebuilt the series as a four-player GameCube caravan action RPG tethered to a protective Crystal Chalice and individual GBA link-cable radar screens.",
+      "src": [
+        {
+          "t": "Wikipedia: Final Fantasy Crystal Chronicles"
+        }
+      ]
+    },
+    {
+      "from": "secret-of-mana",
+      "to": "final-fantasy-crystal-chronicles",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Couch co-op real-time sword swinging, charged special strikes, and cooperative spell-casting in colorful fantasy dungeons.",
+      "added": "Required teammates to carry the miasma-warding chalice and fuse timed magic rings into higher-tier spells like Gravity and Holy.",
+      "src": [
+        {
+          "t": "Wikipedia: Final Fantasy Crystal Chronicles"
+        }
+      ]
+    },
+    {
+      "from": "final-fantasy-tactics",
+      "to": "final-fantasy-tactics-advance",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Isometric grid-based tactical combat set in Ivalice with mix-and-match job classes and learned support abilities.",
+      "added": "Tailored the formula for Game Boy Advance with race-specific jobs, equipment-taught skills, and referee-enforced battlefield Laws.",
+      "src": [
+        {
+          "t": "Wikipedia: Final Fantasy Tactics Advance"
+        }
+      ]
+    },
+    {
+      "from": "harvest-moon",
+      "to": "harvest-moon-a-wonderful-life",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Seasonal crop tending, livestock care, village friendships, and marriage in a peaceful rural life simulation.",
+      "added": "Introduced full 3D GameCube life-stage chapters spanning decades in Forget-Me-Not Valley where your child grows up shaped by your parenting.",
+      "src": [
+        {
+          "t": "Wikipedia: Harvest Moon: A Wonderful Life"
+        }
+      ]
+    },
+    {
+      "from": "kirby-super-star",
+      "to": "kirby-air-ride",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Masahiro Sakurai's copy-ability mechanics, bright Dream Land enemies, and multi-mode anthology structure.",
+      "added": "Distilled kart racing down to a single boost-and-inhale button while debuting City Trial's chaotic five-minute open-arena stat scavenger hunt.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby Air Ride; directed by Masahiro Sakurai"
+        }
+      ]
+    },
+    {
+      "from": "super-smash-bros-melee",
+      "to": "kirby-air-ride",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "HAL Laboratory's snappy couch-multiplayer party energy and achievement-driven unlockable trophies.",
+      "added": "Introduced Sakurai's grid-based Checklist wall of hundreds of bite-sized challenges, a UI template he later carried directly into Super Smash Bros. Brawl.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby Air Ride; HAL Laboratory / Masahiro Sakurai"
+        }
+      ]
+    },
+    {
+      "from": "gta3",
+      "to": "manhunt",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Rockstar North's RenderWare 3D engine, gritty urban wasteland aesthetic, and shared fictional universe referencing Carcer City.",
+      "added": "Swapped open-city driving for claustrophobic nocturnal stealth survival scored by escalating melee executions filmed as a snuff broadcast.",
+      "src": [
+        {
+          "t": "Wikipedia: Manhunt (video game); Rockstar North"
+        }
+      ]
+    },
+    {
+      "from": "metal-gear-solid",
+      "to": "manhunt",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Line-of-sight shadow hiding, sound-luring wall knocks, and radar-tracked enemy alertness phases.",
+      "added": "Turned espionage evasion into visceral psychological horror where holding an attack behind hunters charges increasingly brutal improvised kills.",
+      "src": [
+        {
+          "t": "Wikipedia: Manhunt (video game)"
+        }
+      ]
+    },
+    {
+      "from": "everquest",
+      "to": "maplestory",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Persistent-server class specialization, guild raids, social town plazas, and long-horizon RPG level grinding.",
+      "added": "Reinvented the MMORPG as a bright 2D side-scrolling platformer popularized by free-to-play microtransactions and expressive chibi avatar fashion.",
+      "src": [
+        {
+          "t": "Wikipedia: MapleStory"
+        }
+      ],
+      "extra": "Wizet's Korean hit helped pioneer the global free-to-play cosmetic Cash Shop business model."
+    },
+    {
+      "from": "out-run",
+      "to": "outrun-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Blue-sky Ferrari road trips across branching scenic highways raced against checkpoint timers with a passenger beside you.",
+      "added": "Brought full 3D Chihiro arcade visuals, licensed Ferrari fleets, and Heart Attack mode's stunt-request challenges.",
+      "src": [
+        {
+          "t": "Wikipedia: OutRun 2"
+        }
+      ]
+    },
+    {
+      "from": "daytona-usa",
+      "to": "outrun-2",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Sega AM2's tactile brake-tap powersliding physics that turn sweeping corners into rhythmic high-speed drifts.",
+      "added": "Merged AM2's crisp drift-steering mastery with OutRun's sun-drenched coastal vistas and seamless gear-shift slides.",
+      "src": [
+        {
+          "t": "Wikipedia: OutRun 2; Sega AM2"
+        }
+      ]
+    },
+    {
+      "from": "project-gotham-racing",
+      "to": "project-gotham-racing-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Tightly modeled real-world city circuits where players earn Kudos points for chaining clean drifts, overtakes, and stylish lines.",
+      "added": "Integrated Xbox Live global ghost leaderboards, expanded real-world cities like Edinburgh and Florence, and tucked a playable arcade cabinet inside the car garage.",
+      "src": [
+        {
+          "t": "Wikipedia: Project Gotham Racing 2"
+        }
+      ]
+    },
+    {
+      "from": "project-gotham-racing-2",
+      "to": "geometry-wars-retro-evolved",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "The twin-stick neon vector shooter Easter egg originally built by Stephen Cakebread to test Xbox controllers inside PGR2's garage.",
+      "added": "Broke out as a standalone Xbox Live Arcade launch sensation with HD bloom visuals, score multipliers, and escalating geometric enemy waves.",
+      "src": [
+        {
+          "t": "Wikipedia: Geometry Wars; Bizarre Creations"
+        }
+      ],
+      "extra": "Geometry Wars began life literally as a playable cabinet inside Project Gotham Racing 2."
+    },
+    {
+      "from": "star-wars-jedi-knight-ii-jedi-outcast",
+      "to": "star-wars-jedi-knight-jedi-academy",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Raven Software's fluid Quake III-engine lightsaber dueling, Force push/pull physics, and dismembering melee stances.",
+      "added": "Opened immediately with a customizable Force apprentice wielding dual sabers or a double-bladed staff across selectable mission tiers.",
+      "src": [
+        {
+          "t": "Wikipedia: Star Wars Jedi Knight: Jedi Academy"
+        }
+      ]
+    },
+    {
+      "from": "tom-clancys-rainbow-six-rogue-spear",
+      "to": "tom-clancys-rainbow-six-3-raven-shield",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Pre-mission blueprint waypoint planning, one-shot lethality, and synchronized go-code room breaches.",
+      "added": "Moved Red Storm's hardcore tactical shooter onto Unreal Engine 2 with visible first-person weapon models, incremental door opening, and fluid peeking.",
+      "src": [
+        {
+          "t": "Wikipedia: Tom Clancy's Rainbow Six 3: Raven Shield"
+        }
+      ]
+    },
+    {
+      "from": "goldeneye-007",
+      "to": "xiii",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Objective-based espionage FPS missions mixing silenced stealth takedowns, security gadgets, and brisk console gunplay.",
+      "added": "Wrapped a conspiracy-thriller spy campaign in striking cel-shaded Franco-Belgian comic art with pop-out headshot panels and floating sound-effect lettering.",
+      "src": [
+        {
+          "t": "Wikipedia: XIII (2003 video game)"
+        }
+      ]
+    },
+    {
+      "from": "ace-combat-04-shattered-skies",
+      "to": "ace-combat-5-the-unsung-war",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "High-speed PS2 arcade jet dogfighting over fictional Strangereal wars framed by earnest operatic storytelling.",
+      "added": "Added four-plane Wardog Squadron wingman commands, mid-mission yes/no radio responses, and an expansive 32-mission anti-war campaign.",
+      "src": [
+        {
+          "t": "Wikipedia: Ace Combat 5: The Unsung War"
+        }
+      ]
+    },
+    {
+      "from": "everquest",
+      "to": "city-of-heroes",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Persistent 3D online group combat structured around tank, healer, crowd-control, and damage archetypes.",
+      "added": "Replaced fantasy loot treadmills with a landmark superhero costume creator, exhilarating flight and super-jump traversal, and sidekick level-scaling.",
+      "src": [
+        {
+          "t": "Wikipedia: City of Heroes"
+        }
+      ]
+    },
+    {
+      "from": "john-madden-football",
+      "to": "espn-nfl-2k5",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Behind-the-quarterback broadcast NFL simulation balancing playbook strategy with direct arcade-fluid player control.",
+      "added": "Pushed sports presentation with Chris Berman ESPN halftime highlights, Crib trophies, and a disruptive $19.99 launch price that triggered EA's exclusive NFL license.",
+      "src": [
+        {
+          "t": "Wikipedia: ESPN NFL 2K5"
+        }
+      ],
+      "extra": "Widely celebrated as a high-water mark of football simulation and the catalyst for EA's 2004 NFL exclusivity deal."
+    },
+    {
+      "from": "mike-tysons-punch-out",
+      "to": "fight-night-2004",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Reading opponent tells, slipping punches cleanly, and timing devastating counter-hooks in one-on-one boxing duels.",
+      "added": "Replaced face-button arcade inputs with EA Chicago's Total Punch Control right-analog swing mechanics and physics-driven ragdoll knockouts.",
+      "src": [
+        {
+          "t": "Wikipedia: Fight Night 2004"
+        }
+      ]
+    },
+    {
+      "from": "halo-combat-evolved",
+      "to": "killzone",
+      "tier": "critic",
+      "rel": "fast-follow",
+      "took": "Console-first sci-fi first-person shooting designed around dual-stick aiming, two-weapon loadouts, and cinematic alien-frontline warfare.",
+      "added": "Anchored Sony's PlayStation 2 flagship shooter in mud-splattered WWII-inflected Helghast trenches with four switchable squad perspectives.",
+      "src": [
+        {
+          "t": "Wikipedia: Killzone (video game)"
+        }
+      ]
+    },
+    {
+      "from": "kirby-super-star",
+      "to": "kirby-and-the-amazing-mirror",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Multi-move Copy Abilities, expressive sprite combat, and cooperative buddy exploration.",
+      "added": "Turned Kirby's linear stages into a sprawling non-linear Mirror World where four color-coded Kirbys split up and summon each other by cell phone.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby & the Amazing Mirror"
+        }
+      ]
+    },
+    {
+      "from": "super-metroid",
+      "to": "kirby-and-the-amazing-mirror",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Interconnected labyrinthine world design built around map discovery, secret switches, and backtracking for hidden collectibles.",
+      "added": "Blended Metroidvania room-to-room exploration with Kirby's carefree flying platforming and four-player link-cable co-op.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby & the Amazing Mirror"
+        }
+      ]
+    },
+    {
+      "from": "donkey-kong-1994",
+      "to": "mario-vs-donkey-kong",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Acrobatic handstand jumps, color-coded switch puzzles, and carrying keys to locked exit doors across compact single-screen stages.",
+      "added": "Revived the Game Boy puzzle-platformer formula on GBA while adding wind-up Mini-Mario toys that follow Mario in Lemmings-like rescue levels.",
+      "src": [
+        {
+          "t": "Wikipedia: Mario vs. Donkey Kong"
+        }
+      ]
+    },
+    {
+      "from": "metroid-prime",
+      "to": "metroid-prime-2-echoes",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "First-person lock-on exploration, visor scanning lore, and interconnected alien biome backtracking crafted by Retro Studios.",
+      "added": "Split planet Aether into a toxic Dark World parallel dimension with safe-zone light crystals, ammo-managed Light and Dark Beams, and the Screw Attack.",
+      "src": [
+        {
+          "t": "Wikipedia: Metroid Prime 2: Echoes"
+        }
+      ]
+    },
+    {
+      "from": "lode-runner",
+      "to": "n",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Compact single-screen puzzle-platforming rooms built around collecting scattered gold while outmaneuvering lethal automated traps.",
+      "added": "Rebuilt room-clearing survival around fluid momentum-physics wall jumping, rocket-dodging parkour, and zero-delay Flash restarts.",
+      "src": [
+        {
+          "t": "Wikipedia: N (video game)"
+        }
+      ]
+    },
+    {
+      "from": "n",
+      "to": "super-meat-boy",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Brutally unforgiving single-screen precision platforming driven by tight momentum control and instantaneous zero-downtime retries.",
+      "added": "Paired Metanet's try-die-retry flow state with wall-sliding gore trails, simultaneous death replays, and unlockable Dark World gauntlets.",
+      "src": [
+        {
+          "t": "Edmund McMillen, 'Why So Hard?' postmortem via Game Developer"
+        },
+        {
+          "t": "Wikipedia: Super Meat Boy"
+        }
+      ],
+      "extra": "Edmund McMillen explicitly cited N/N+ as setting the modern difficulty and instant-respawn standard for precision platformers."
+    },
+    {
+      "from": "pokemon-ruby-and-sapphire",
+      "to": "pokemon-emerald",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Hoenn's Gen III monster-catching RPG featuring Double Battles, Pokémon Abilities, and rival eco-villain teams.",
+      "added": "Unified Team Magma and Team Aqua's storylines around Rayquaza, added animated battle sprites, and introduced the iconic seven-facility Battle Frontier.",
+      "src": [
+        {
+          "t": "Wikipedia: Pokémon Emerald"
+        }
+      ]
+    },
+    {
+      "from": "ratchet-clank-going-commando",
+      "to": "ratchet-and-clank-up-your-arsenal",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Third-person platforming fused with upgradable gadget arsenals, strafing gunplay, and arena gauntlets.",
+      "added": "Polished PS2 action with lock-strafe dual-stick controls, eight-player PS2 online Siege matches, Doctor Nefarious, and playable 2D Captain Qwark vid-comics.",
+      "src": [
+        {
+          "t": "Wikipedia: Ratchet & Clank: Up Your Arsenal"
+        }
+      ]
+    },
+    {
+      "from": "dynasty-warriors-4",
+      "to": "samurai-warriors",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Omega Force's 1-versus-1,000 Musou hack-and-slash battlefield warfare built around combo finishers and morale objectives.",
+      "added": "Shifted the historical theater from China's Three Kingdoms to Japan's Sengoku period with branching officer storylines and claustrophobic indoor castle sieges.",
+      "src": [
+        {
+          "t": "Wikipedia: Samurai Warriors; Omega Force"
+        }
+      ]
+    },
+    {
+      "from": "silent-hill-3",
+      "to": "silent-hill-4-the-room",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Team Silent's oppressive industrial nightmares, symbolic monsters, and Akira Yamaoka's unsettling soundscapes.",
+      "added": "Anchored the horror in a chained first-person apartment hub that gradually turns hostile while adding real-time inventory limits and invincible haunting ghosts.",
+      "src": [
+        {
+          "t": "Wikipedia: Silent Hill 4: The Room"
+        }
+      ]
+    },
+    {
+      "from": "command-and-conquer-generals",
+      "to": "the-lord-of-the-rings-the-battle-for-middle-earth",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "EA's 3D SAGE real-time strategy engine featuring cinematic special powers, leveling squads, and dramatic battlefield physics.",
+      "added": "Replaced freeform base construction with fixed fortress building plots, multi-soldier battalions, and a living Middle-earth campaign map.",
+      "src": [
+        {
+          "t": "Wikipedia: The Lord of the Rings: The Battle for Middle-earth; EA Los Angeles SAGE engine"
+        }
+      ]
+    },
+    {
+      "from": "tom-clancys-splinter-cell",
+      "to": "tom-clancys-splinter-cell-pandora-tomorrow",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Light-and-shadow espionage built around night-vision goggles, split jumps, and methodical non-lethal infiltration.",
+      "added": "Introduced the landmark asymmetric Spies vs. Mercs multiplayer pitting agile third-person infiltrators against heavily armed first-person guards.",
+      "src": [
+        {
+          "t": "Wikipedia: Tom Clancy's Splinter Cell: Pandora Tomorrow"
+        }
+      ]
+    },
+    {
+      "from": "tom-clancys-splinter-cell-pandora-tomorrow",
+      "to": "tom-clancys-splinter-cell-chaos-theory",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Dynamic shadow stealth refinement alongside the tense third-person Spies versus first-person Mercenaries online rivalry.",
+      "added": "Expanded Sam Fisher's moveset with sound meters, close-quarters knife takedowns, co-op campaign missions, and open-ended sandbox infiltration maps.",
+      "src": [
+        {
+          "t": "Wikipedia: Tom Clancy's Splinter Cell: Chaos Theory"
+        }
+      ]
+    },
+    {
+      "from": "baldurs-gate-dark-alliance",
+      "to": "x-men-legends",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Accessible four-button console hack-and-slash dungeon crawling with isometric camera angles and drop-in couch co-op.",
+      "added": "Adapted the action-RPG format to four-hero mutant squads with swappable teammates, destructible environments, and synced X-Treme super-combos.",
+      "src": [
+        {
+          "t": "Wikipedia: X-Men Legends"
+        }
+      ]
+    },
+    {
+      "from": "medal-of-honor-allied-assault",
+      "to": "brothers-in-arms-road-to-hill-30",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Cinematic World War II Normandy storytelling inspired by Saving Private Ryan and Band of Brothers.",
+      "added": "Replaced lone-wolf gallery shooting with authentic 'Find, Fix, Flank, Finish' squad suppression orders and an overhead situational-awareness view.",
+      "src": [
+        {
+          "t": "Wikipedia: Brothers in Arms: Road to Hill 30"
+        }
+      ]
+    },
+    {
+      "from": "half-life-opposing-force",
+      "to": "brothers-in-arms-road-to-hill-30",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Gearbox Software's military-squad FPS scripting and disciplined combat pacing honed on Half-Life expansions.",
+      "added": "Launched Gearbox's first original franchise centered on historically researched 101st Airborne hedgerow firefights.",
+      "src": [
+        {
+          "t": "Wikipedia: Brothers in Arms: Road to Hill 30; Gearbox Software"
+        }
+      ]
+    },
+    {
+      "from": "gta3",
+      "to": "destroy-all-humans",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Open-area urban sandboxes driven by escalating wanted-level chaos and tongue-in-cheek pop-culture satire.",
+      "added": "Cast players as wisecracking alien invader Crypto terrorizing 1950s American suburbs with telekinesis, holobob disguises, and a destructible flying saucer.",
+      "src": [
+        {
+          "t": "Wikipedia: Destroy All Humans! (2005 video game)"
+        }
+      ]
+    },
+    {
+      "from": "mercenaries-playground-of-destruction",
+      "to": "destroy-all-humans",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Pandemic Studios' physics-heavy open-sandbox destruction and playful military escalation systems.",
+      "added": "Traded contemporary geopolitical warfare for campy B-movie sci-fi parody and brain-stem harvesting gadgets.",
+      "src": [
+        {
+          "t": "Wikipedia: Destroy All Humans! (2005 video game); Pandemic Studios"
+        }
+      ]
+    },
+    {
+      "from": "dragon-ball-z-budokai-3",
+      "to": "dragon-ball-z-budokai-tenkaichi",
+      "tier": "series",
+      "rel": "variant",
+      "took": "High-energy Dragon Ball Z beam clashes, mid-fight Saiyan transformations, and massive anime character rosters.",
+      "added": "Abandoned 2.5D side-view fighting planes for a behind-the-shoulder 3D flying arena-fighter template with destructible terrain that defined anime brawlers.",
+      "src": [
+        {
+          "t": "Wikipedia: Dragon Ball Z: Budokai Tenkaichi"
+        }
+      ]
+    },
+    {
+      "from": "fire-emblem-the-blazing-blade",
+      "to": "fire-emblem-path-of-radiance",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Permadeath grid tactics, weapon-triangle rock-paper-scissors strategy, and character support conversations.",
+      "added": "Brought Fire Emblem back to home consoles in full 3D on GameCube with mercenary lead Ike, shapeshifting Laguz allies, and base-camp bonus XP.",
+      "src": [
+        {
+          "t": "Wikipedia: Fire Emblem: Path of Radiance"
+        }
+      ]
+    },
+    {
+      "from": "kirby-s-dream-land",
+      "to": "kirby-canvas-curse",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Approachable Dream Land platforming, Kirby's signature enemy-copy powers, and playful boss encounters.",
+      "added": "Stripped away D-pad controls completely, turning Kirby into a rolling ball guided exclusively by stylus-drawn rainbow lines on the Nintendo DS touchscreen.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby: Canvas Curse"
+        }
+      ]
+    },
+    {
+      "from": "need-for-speed-underground",
+      "to": "midnight-club-3-dub-edition",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Tuner car culture, deep aftermarket visual customization, and neon-drenched nighttime street racing.",
+      "added": "Merged licensed automotive tuning with Rockstar San Diego's checkpoint-free open-city traffic weaving across San Diego, Atlanta, and Detroit.",
+      "src": [
+        {
+          "t": "Wikipedia: Midnight Club 3: DUB Edition"
+        }
+      ]
+    },
+    {
+      "from": "driver",
+      "to": "midnight-club-3-dub-edition",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "High-speed arcade driving through living open-plan American city streets filled with oncoming traffic and shortcuts.",
+      "added": "Layered specialized vehicle class abilities like Zone slow-motion and Agro ramming onto motorcycles, muscle cars, and SUVs.",
+      "src": [
+        {
+          "t": "Wikipedia: Midnight Club 3: DUB Edition"
+        }
+      ]
+    },
+    {
+      "from": "monster-hunter",
+      "to": "monster-hunter-freedom",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Deliberate animation-locked weapon combat, wyvern part-breaking, and crafting gear from hunted monster drops.",
+      "added": "Adapted Capcom's PS2 action RPG for PSP with four-player local ad-hoc hunting and a personal Kokoto Farm, igniting Japan's handheld co-op phenomenon.",
+      "src": [
+        {
+          "t": "Wikipedia: Monster Hunter Freedom"
+        }
+      ]
+    },
+    {
+      "from": "monster-hunter-freedom",
+      "to": "monster-hunter-freedom-unite",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Portable four-player ad-hoc PSP wyvern hunts paired with village farm gathering and deliberate stamina management.",
+      "added": "Expanded the portable hunting loop with G-Rank endgame quests, AI Felyne Comrade companions, and hundreds of hours of weapon trees.",
+      "src": [
+        {
+          "t": "Wikipedia: Monster Hunter Freedom Unite"
+        }
+      ]
+    },
+    {
+      "from": "tom-clancys-ghost-recon",
+      "to": "sniper-elite",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Patient, realistic military marksmanship across open combat zones where positioning and stealth outweigh run-and-gun firefights.",
+      "added": "Centered an entire WWII Berlin campaign around wind drift, bullet drop, elevated heart-rate sway, sound-masked shots, and dramatic slow-motion bullet cams.",
+      "src": [
+        {
+          "t": "Wikipedia: Sniper Elite"
+        }
+      ]
+    },
+    {
+      "from": "sonic-the-hedgehog-2",
+      "to": "sonic-rush",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Blistering 2D momentum-based loop-de-loops, ring-protection survival, and high-speed side-scrolling platforming.",
+      "added": "Introduced the trick-refilled Boost gauge across both Nintendo DS screens alongside dual playable rival Blaze the Cat and Hideki Naganuma's funk soundtrack.",
+      "src": [
+        {
+          "t": "Wikipedia: Sonic Rush"
+        }
+      ]
+    },
+    {
+      "from": "sonic-rush",
+      "to": "sonic-colors",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Speed-focused Boost-gauge propulsion rewarded by chaining enemies and aerial tricks without losing forward flow.",
+      "added": "Fused Dimps' Boost-era pacing with 3D-to-2D corridor transitions and color-coded alien Wisp power-ups.",
+      "src": [
+        {
+          "t": "Wikipedia: Sonic Colors"
+        }
+      ]
+    },
+    {
+      "from": "mario-tennis",
+      "to": "super-mario-strikers",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Accessible arcade Nintendo sports built around exaggerated special moves, power-ups, and Mushroom Kingdom rosters.",
+      "added": "Handed Mario soccer to Next Level Games for aggressive five-on-five electric-fenced matches featuring bruising body checks and two-point Super Strikes.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Mario Strikers"
+        }
+      ]
+    },
+    {
+      "from": "theme-hospital",
+      "to": "the-movies",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Peter Molyneux's quirky British tycoon lineage blending humorous staff management with escalating facility simulations.",
+      "added": "Applied playful business management to running a Hollywood film lot from the 1920s onward while bundling a full machinima movie editor.",
+      "src": [
+        {
+          "t": "Wikipedia: The Movies; Lionhead Studios"
+        }
+      ]
+    },
+    {
+      "from": "the-sims",
+      "to": "the-movies",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Managing eccentric AI characters' moods, relationships, and vanity needs across customizable architectural lots.",
+      "added": "Focused domestic life-sim management onto temperamental movie stars, scriptwriting genres, and player-directed shareable short films.",
+      "src": [
+        {
+          "t": "Wikipedia: The Movies"
+        }
+      ]
+    },
+    {
+      "from": "timesplitters-2",
+      "to": "timesplitters-future-perfect",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Fast 60fps arcade FPS gunplay, deep custom MapMaker tools, and eccentric multiplayer bot modes from GoldenEye veterans.",
+      "added": "Unified the time-hopping eras into a cohesive comedic narrative starring Cortez cooperating with his own past and future selves alongside online play.",
+      "src": [
+        {
+          "t": "Wikipedia: TimeSplitters: Future Perfect"
+        }
+      ]
+    },
+    {
+      "from": "battlefield-2",
+      "to": "battlefield-2142",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Squad-leader orders, commander artillery support, and large-scale combined-arms Conquest battles.",
+      "added": "Pushed DICE's shooter into an ice-age sci-fi war featuring walking Battlewalkers and Titan Mode's assault-and-board flying warships.",
+      "src": [
+        {
+          "t": "Wikipedia: Battlefield 2142"
+        }
+      ]
+    },
+    {
+      "from": "burnout-3-takedown",
+      "to": "black",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Criterion Games' obsession with visceral crash spectacle, booming sound design, and explosive RenderWare destruction.",
+      "added": "Translated Burnout's cinematic mayhem into a gun-centric console FPS where concrete pillars shatter, glass explodes, and weapons serve as the true stars.",
+      "src": [
+        {
+          "t": "Wikipedia: Black (video game); Criterion Games"
+        }
+      ]
+    },
+    {
+      "from": "goldeneye-007",
+      "to": "black",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Objective-tier mission checklists on higher difficulties paired with punchy, action-movie interior shootouts.",
+      "added": "Elevated console gun-feel with layered foley acoustics, destructible cover physics, and relentless shell-casing spectacle on PS2 and Xbox.",
+      "src": [
+        {
+          "t": "Wikipedia: Black (video game)"
+        }
+      ]
+    },
+    {
+      "from": "warioware-inc-mega-microgames",
+      "to": "cooking-mama",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Rapid-fire bursts of playful, immediately readable microgames timed down to the second on Nintendo handhelds.",
+      "added": "Strung stylus chopping, stirring, flipping, and microphone-blowing tasks into cohesive step-by-step culinary recipes graded by Mama.",
+      "src": [
+        {
+          "t": "Wikipedia: Cooking Mama"
+        }
+      ]
+    },
+    {
+      "from": "flatout",
+      "to": "flatout-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Physics-driven demolition racing with thousands of smashable trackside props and windshield-ejecting ragdoll drivers.",
+      "added": "Expanded Bugbear's dirt-track mayhem into wider multi-surface courses, distinct derby/race/street car classes, and outrageous ragdoll stunt minigames.",
+      "src": [
+        {
+          "t": "Wikipedia: FlatOut 2"
+        }
+      ]
+    },
+    {
+      "from": "flatout-2",
+      "to": "wreckfest",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Full-contact banger racing powered by soft-body chassis damage, flying debris, and reckless figure-eight demolition tracks.",
+      "added": "Revived Bugbear's cult demolition-racer DNA on modern physics hardware with realistic metal crumpling and deep mechanical durability tuning.",
+      "src": [
+        {
+          "t": "Wikipedia: Wreckfest; Bugbear Entertainment"
+        }
+      ],
+      "extra": "Bugbear explicitly built Wreckfest (originally Next Car Game) as its spiritual successor to FlatOut and FlatOut 2."
+    },
+    {
+      "from": "x-men-legends",
+      "to": "marvel-ultimate-alliance",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Raven Software's four-player isometric superhero action-RPG engine with swappable teams and combo finishers.",
+      "added": "Opened the roster across the entire Marvel Universe from Spider-Man to Thor with customizable team bonuses, alternate costumes, and branching epilogues.",
+      "src": [
+        {
+          "t": "Wikipedia: Marvel: Ultimate Alliance; Raven Software"
+        }
+      ]
+    },
+    {
+      "from": "diablo-ii",
+      "to": "marvel-ultimate-alliance",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Isometric horde-clearing combat, skill-tree point allocation, and equippable stat-boosting gear drops.",
+      "added": "Streamlined PC loot crawling for living-room gamepad squads fighting iconic Marvel supervillains from Doctor Doom to Galactus.",
+      "src": [
+        {
+          "t": "Wikipedia: Marvel: Ultimate Alliance"
+        }
+      ]
+    },
+    {
+      "from": "test-drive",
+      "to": "test-drive-unlimited",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Point-to-point exotic supercar driving on scenic public highways while weaving past traffic and pursuing police.",
+      "added": "Built a 1:1 GPS-mapped open island of Oahu where online players seamlessly cruised together, bought homes, and challenged passersby with a headlight flash.",
+      "src": [
+        {
+          "t": "Wikipedia: Test Drive Unlimited"
+        }
+      ]
+    },
+    {
+      "from": "test-drive-unlimited",
+      "to": "forza-horizon",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Open-road autophilia letting drivers cruise freely across a vast scenic playground rather than being locked onto closed race circuits.",
+      "added": "Paired open-world exploration with Turn 10's Forza handling physics and a high-energy Colorado music-festival progression structure.",
+      "src": [
+        {
+          "t": "Gavin Raeburn (Playground Games) interviews via Eurogamer"
+        },
+        {
+          "t": "Wikipedia: Forza Horizon"
+        }
+      ],
+      "extra": "Playground co-founder Gavin Raeburn openly praised Test Drive Unlimited for capturing the joy of open-road cruising."
+    },
+    {
+      "from": "trackmania",
+      "to": "trackmania-nations",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Snap-together stunt track building and instant-restart ghost time trials driven by pure millisecond precision.",
+      "added": "Distributed a free-to-play Stadium-environment edition tailored for international esports ladders that drew millions of competitive racers.",
+      "src": [
+        {
+          "t": "Wikipedia: TrackMania Nations"
+        }
+      ]
+    },
+    {
+      "from": "virtua-fighter-2",
+      "to": "virtua-fighter-5",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sega AM2's uncompromising 3D ring-out martial arts built on frame-accurate strike, throw, and guard triangles.",
+      "added": "Introduced Offensive Move side-step repositioning, fighters El Blaze and Eileen, and Lindbergh arcade visuals that set the technical benchmark for 3D fighters.",
+      "src": [
+        {
+          "t": "Wikipedia: Virtua Fighter 5"
+        }
+      ]
+    },
+    {
+      "from": "frequency",
+      "to": "audiosurf",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Gliding along multi-lane futuristic neon highways synchronized to driving electronic musical beats.",
+      "added": "Analyzed players' own local MP3 libraries to procedurally generate roller-coaster speedways whose hills and traffic mirrored each song's tempo.",
+      "src": [
+        {
+          "t": "Wikipedia: Audiosurf"
+        }
+      ]
+    },
+    {
+      "from": "columns",
+      "to": "audiosurf",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Stacking falling colored blocks into a compact vertical grid to trigger matching-color chain clears.",
+      "added": "Embedded a three-column color-matching puzzle rack directly behind a music-reactive racer piloted across song-generated tracks.",
+      "src": [
+        {
+          "t": "Wikipedia: Audiosurf"
+        }
+      ]
+    },
+    {
+      "from": "final-fantasy-vii",
+      "to": "crisis-core-final-fantasy-vii",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Midgar's Mako-fueled dystopia, Materia spell-slotting, and the fateful SOLDIER history preceding Cloud Strife's arrival.",
+      "added": "Reimagined Final Fantasy VII's prequel as a real-time PSP action RPG starring Zack Fair with a slot-machine Digital Mind Wave limit system.",
+      "src": [
+        {
+          "t": "Wikipedia: Crisis Core: Final Fantasy VII"
+        }
+      ]
+    },
+    {
+      "from": "counter-strike",
+      "to": "crossfire",
+      "tier": "critic",
+      "rel": "fast-follow",
+      "took": "Round-based bomb-defusal tactical shooting, crisp recoil discipline, and low-spec PC accessibility.",
+      "added": "Delivered a free-to-play microtransaction tactical shooter with invisible-assassin Ghost Mode that became a colossal PC phenomenon across China and Asia.",
+      "src": [
+        {
+          "t": "Wikipedia: Crossfire (2007 video game)"
+        }
+      ]
+    },
+    {
+      "from": "metroid-prime-2-echoes",
+      "to": "metroid-prime-3-corruption",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Retro Studios' atmospheric first-person exploration, visor scanning, and dark-energy hazard design.",
+      "added": "Concluded the Phazon trilogy on Wii with responsive IR pointer free-aiming, multi-planet gunship travel, and risk-reward Hypermode overload powers.",
+      "src": [
+        {
+          "t": "Wikipedia: Metroid Prime 3: Corruption"
+        }
+      ]
+    },
+    {
+      "from": "paper-mario-the-thousand-year-door",
+      "to": "super-paper-mario",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Flat storybook character humor, witty meta-narrative writing, and clever paper-craft environmental gags.",
+      "added": "Traded turn-based stage battles for real-time side-scrolling platforming anchored by Mario's instant 2D-to-3D perspective flip.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Paper Mario"
+        }
+      ]
+    },
+    {
+      "from": "banjo-tooie",
+      "to": "banjo-kazooie-nuts-and-bolts",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Rare's cheeky self-aware humor, Jiggy-collecting hub progression, and colorful Showdown Town characters.",
+      "added": "Pivoted away from on-foot collectathon platforming into a Lego-like physics garage where players engineer custom cars, boats, and aircraft from modular parts.",
+      "src": [
+        {
+          "t": "Wikipedia: Banjo-Kazooie: Nuts & Bolts"
+        }
+      ]
+    },
+    {
+      "from": "banjo-kazooie-nuts-and-bolts",
+      "to": "the-legend-of-zelda-tears-of-the-kingdom",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Physics-simulated modular vehicle engineering using snap-together engines, wheels, wings, and thrusters to solve open-ended sandbox challenges.",
+      "added": "Integrated contraption building seamlessly into live open-world exploration through Ultrahand gluing and Zonai devices across Hyrule's skies and depths.",
+      "src": [
+        {
+          "t": "Wikipedia: Banjo-Kazooie: Nuts & Bolts; widely compared by critics upon Tears of the Kingdom's 2023 release"
+        }
+      ],
+      "extra": "Critics and Rare veterans alike highlighted how Nuts & Bolts anticipated Tears of the Kingdom's modular physics vehicle design by fifteen years."
+    },
+    {
+      "from": "command-and-conquer-red-alert-2",
+      "to": "command-and-conquer-red-alert-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Campy alternate-history Cold War RTS warfare, FMV live-action briefings, and eccentric super-units.",
+      "added": "Added a third high-tech Empire of the Rising Sun faction, full co-op campaign play, and amphibious naval base construction across water maps.",
+      "src": [
+        {
+          "t": "Wikipedia: Command & Conquer: Red Alert 3"
+        }
+      ]
+    },
+    {
+      "from": "devil-may-cry-3-dantes-awakening",
+      "to": "devil-may-cry-4",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "High-skill stylish-action juggling, mid-air cancels, and four distinct Dante combat styles.",
+      "added": "Introduced newcomer Nero's grappling Devil Bringer arm and revvable Red Queen sword while letting Dante swap all four combat styles live mid-combo.",
+      "src": [
+        {
+          "t": "Wikipedia: Devil May Cry 4"
+        }
+      ]
+    },
+    {
+      "from": "devil-may-cry-4",
+      "to": "devil-may-cry-5",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Dual-protagonist stylish combat pairing Nero's Exceed revving and grapple flow with Dante's real-time Style switching.",
+      "added": "Rebuilt the formula on Capcom's RE Engine with interchangeable Devil Breaker prosthetics, third playable summoner V, and dynamic rank-reactive music.",
+      "src": [
+        {
+          "t": "Wikipedia: Devil May Cry 5"
+        }
+      ]
+    },
+    {
+      "from": "desktop-tower-defense",
+      "to": "fieldrunners",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Open-field tower defense where players sculpt their own winding mazes out of gun emplacements to redirect enemy waves.",
+      "added": "Adapted open-maze strategy to early iPhone multi-touch controls with crisp hand-painted military art, helping define mobile tower defense.",
+      "src": [
+        {
+          "t": "Wikipedia: Fieldrunners"
+        }
+      ]
+    },
+    {
+      "from": "grand-theft-auto",
+      "to": "grand-theft-auto-chinatown-wars",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Overhead urban crime mayhem where players tear through traffic-choked grids escaping escalating police barricades.",
+      "added": "Returned GTA to an angled top-down Nintendo DS showcase with tactile stylus hotwiring, Molotov crafting, and an addictive buy-low-sell-high drug economy.",
+      "src": [
+        {
+          "t": "Wikipedia: Grand Theft Auto: Chinatown Wars"
+        }
+      ]
+    },
+    {
+      "from": "grand-theft-auto-iv",
+      "to": "grand-theft-auto-chinatown-wars",
+      "tier": "series",
+      "rel": "variant",
+      "took": "HD-era Liberty City boroughs, gritty Triad criminal storylines, and modern GPS route navigation.",
+      "added": "Compressed Liberty City onto handheld hardware with cel-shaded comic cutscenes and crash-to-disable police chase takedowns.",
+      "src": [
+        {
+          "t": "Wikipedia: Grand Theft Auto: Chinatown Wars"
+        }
+      ]
+    },
+    {
+      "from": "dragon-ball-z-budokai-tenkaichi",
+      "to": "naruto-ultimate-ninja-storm",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Behind-the-character 3D anime arena brawling focused on rapid chakra dashes, cinematic ultimates, and spectacle over strict 2D frame inputs.",
+      "added": "Set a new visual benchmark on PS3 with anime-indistinguishable cel shading, wall-running duels, squad-support assists, and QTE giant-boss clashes.",
+      "src": [
+        {
+          "t": "Wikipedia: Naruto: Ultimate Ninja Storm"
+        }
+      ]
+    },
+    {
+      "from": "pok-mon-diamond-and-pearl",
+      "to": "pokemon-platinum",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Sinnoh's Gen IV DS adventure introducing the physical/special move split and global Nintendo Wi-Fi trading.",
+      "added": "Accelerated Diamond and Pearl's sluggish battle speed, added the gravity-warping Distortion World centered on Giratina, and expanded the Battle Frontier.",
+      "src": [
+        {
+          "t": "Wikipedia: Pokémon Platinum"
+        }
+      ]
+    },
+    {
+      "from": "colin-mcrae-dirt",
+      "to": "race-driver-grid",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Codemasters' EGO engine crash physics, dramatic visual damage modeling, and approachable sim-cade handling.",
+      "added": "Moved from rally stages to global circuit, drift, and Le Mans racing while popularizing the instant 'Flashback' crash-rewind mechanic across racing games.",
+      "src": [
+        {
+          "t": "Wikipedia: Race Driver: Grid; Codemasters"
+        }
+      ],
+      "extra": "GRID's Flashback time-rewind feature quickly became a staple across Forza, DiRT, and F1 racing series."
+    },
+    {
+      "from": "tales-of-symphonia",
+      "to": "tales-of-vesperia",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Real-time Linear Motion Battle System combos, animated character Skits, and ensemble anime adventure pacing.",
+      "added": "Brought the series to HD consoles with unrestricted Free Run dodging, Fatal Strike finishers, and pragmatic vigilante protagonist Yuri Lowell.",
+      "src": [
+        {
+          "t": "Wikipedia: Tales of Vesperia"
+        }
+      ]
+    },
+    {
+      "from": "anno-1602",
+      "to": "anno-1404",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Island-hopping maritime supply chains where satisfying tiered citizen needs unlocks wealthier social classes.",
+      "added": "Paired Renaissance Occidental settlements with desert Oriental spice-and-irrigation chains, monumental cathedral projects, and intricate ship logistics.",
+      "src": [
+        {
+          "t": "Wikipedia: Anno 1404"
+        }
+      ]
+    },
+    {
+      "from": "anno-1404",
+      "to": "anno-1800",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Dual-culture trade networks balancing Old World luxury demands against distant exotic island production chains.",
+      "added": "Advanced the formula into the Industrial Revolution with multi-session continents, commuter piers, electricity grids, and workforce tier balancing.",
+      "src": [
+        {
+          "t": "Wikipedia: Anno 1800"
+        }
+      ]
+    },
+    {
+      "from": "herzog-zwei",
+      "to": "brutal-legend",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Direct avatar-commander action-RTS warfare where a flying hero swoops over battlefields to rally squads and join front-line skirmishes.",
+      "added": "Reimagined avatar-led strategy as heavy-metal Stage Battles where roadie Eddie Riggs shreds guitar solos, leads headbanger armies, and performs unit Double Teams.",
+      "src": [
+        {
+          "t": "Tim Schafer interviews via Eurogamer, Kotaku, and Rock Paper Shotgun"
+        },
+        {
+          "t": "Wikipedia: Brütal Legend"
+        }
+      ],
+      "extra": "Tim Schafer repeatedly cited Sega Genesis classic Herzog Zwei as the core design blueprint behind Brütal Legend's Stage Battles."
+    },
+    {
+      "from": "psychonauts",
+      "to": "brutal-legend",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Double Fine's offbeat comedic writing, expressive caricatured art direction, and affectionate genre subversion.",
+      "added": "Traded psychic summer-camp platforming for an open-world album-cover heavy metal mythology voiced by Jack Black and rock legends.",
+      "src": [
+        {
+          "t": "Wikipedia: Brütal Legend; Double Fine Productions"
+        }
+      ]
+    },
+    {
+      "from": "medieval-ii-total-war",
+      "to": "empire-total-war",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Turn-based grand-strategy empire maps paired with real-time thousands-strong battlefield formations.",
+      "added": "Shifted Total War into the 18th-century Enlightenment with musket-line volley tactics, multi-theater global maps, and the series' first playable 3D naval broadsides.",
+      "src": [
+        {
+          "t": "Wikipedia: Empire: Total War"
+        }
+      ]
+    },
+    {
+      "from": "final-fantasy-xii",
+      "to": "final-fantasy-xiii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Automated party AI behavior rules paired with active-time combat in lush sci-fantasy worlds.",
+      "added": "Condensed party automation into fast-paced live Paradigm Shift role-swapping built around staggering enemy Chain Gauges across HD cinematic corridors.",
+      "src": [
+        {
+          "t": "Wikipedia: Final Fantasy XIII"
+        }
+      ]
+    },
+    {
+      "from": "final-fantasy-xiii",
+      "to": "final-fantasy-xiii-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Stagger-driven Active Time Battle combat and rapid live Paradigm Shift job deck switching.",
+      "added": "Opened up the rigid linearity with time-traveling Historia Crux branching timelines and a catchable monster-ally third party slot.",
+      "src": [
+        {
+          "t": "Wikipedia: Final Fantasy XIII-2"
+        }
+      ]
+    },
+    {
+      "from": "age-of-empires-iii",
+      "to": "halo-wars",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Ensemble Studios' accessible real-time strategy pacing, clear counter-unit silhouettes, and rapid base-building economy.",
+      "added": "Re-engineered RTS controls from the ground up for console gamepads using radial base menus, one-button army selection, and streamlined Covenant vs. UNSC battles.",
+      "src": [
+        {
+          "t": "Wikipedia: Halo Wars; Ensemble Studios"
+        }
+      ],
+      "extra": "Halo Wars was the final game developed by Age of Empires creator Ensemble Studios before its closure."
+    },
+    {
+      "from": "halo-3",
+      "to": "halo-wars",
+      "tier": "series",
+      "rel": "variant",
+      "took": "UNSC Warthogs, Spartans, Scorpions, and Covenant Scarabs locked in humanity's desperate sci-fi war.",
+      "added": "Pulled the camera high above the battlefield twenty years before Halo: Combat Evolved to command full combined-arms forces from orbit.",
+      "src": [
+        {
+          "t": "Wikipedia: Halo Wars"
+        }
+      ]
+    },
+    {
+      "from": "unreal-tournament-2004",
+      "to": "killing-floor",
+      "tier": "dev",
+      "rel": "mod",
+      "took": "Unreal Engine 2.5's moddable first-person combat framework that hosted Alex Quick's 2005 survival-horror total conversion.",
+      "added": "Graduated into a standalone Tripwire Interactive six-player co-op wave shooter famed for weldable doors, specialist Perks, Zed Time slow-motion, and gritty British locales.",
+      "src": [
+        {
+          "t": "Wikipedia: Killing Floor (video game); originated as Alex Quick's UT2004 mod"
+        }
+      ],
+      "extra": "Tripwire Interactive hired mod creator Alex Quick and key Shatterline modders to turn the UT2004 total conversion into a commercial hit."
+    },
+    {
+      "from": "left-4-dead",
+      "to": "killing-floor",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Cooperative squad survival against relentless mutant hordes demanding focused callouts and team ammo discipline.",
+      "added": "Swapped point-to-point campaign sprints for between-wave Trader weapon shopping, iron-sight gunplay, and defensive holdouts against boss waves.",
+      "src": [
+        {
+          "t": "Wikipedia: Killing Floor (video game)"
+        }
+      ]
+    },
+    {
+      "from": "killzone",
+      "to": "killzone-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Heavy, mud-caked sci-fi military gunplay pitting ISA troopers against the glowing-eyed Helghast army.",
+      "added": "Elevated Guerrilla's franchise into a PS3 technical showcase with weighty momentum aiming, first-person lean cover, and dynamic Warzone objective cycling.",
+      "src": [
+        {
+          "t": "Wikipedia: Killzone 2"
+        }
+      ]
+    },
+    {
+      "from": "killzone-2",
+      "to": "killzone-shadow-fall",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Industrial Helghast military aesthetics, gritty tactical firefights, and dynamic multi-mode Warzone multiplayer.",
+      "added": "Launched PlayStation 4 with open-ended sandbox levels, a multifunctional OWL combat drone, and stark Cold War visual contrasts on Vekta.",
+      "src": [
+        {
+          "t": "Wikipedia: Killzone Shadow Fall"
+        }
+      ]
+    },
+    {
+      "from": "mario-and-luigi-superstar-saga",
+      "to": "mario-and-luigi-bowsers-inside-story",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "AlphaDream's rhythm-timed Mario and Luigi counterattacks, dual-button Bro moves, and slapstick RPG humor.",
+      "added": "Made Bowser a full co-protagonist whose overworld rampages interact directly with Mario and Luigi exploring organs on the Nintendo DS lower screen.",
+      "src": [
+        {
+          "t": "Wikipedia: Mario & Luigi: Bowser's Inside Story"
+        }
+      ]
+    },
+    {
+      "from": "monster-hunter-freedom-unite",
+      "to": "monster-hunter-tri",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Skill-driven wyvern tracking, crafted armor skills, and four-player cooperative boss battles.",
+      "added": "Rebuilt the monster ecology for Nintendo Wii with monster stamina exhaustion, the transforming Switch Axe, and full 3D underwater hunting.",
+      "src": [
+        {
+          "t": "Wikipedia: Monster Hunter Tri"
+        }
+      ]
+    },
+    {
+      "from": "mike-tysons-punch-out",
+      "to": "punch-out-2009",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Pattern-recognition boxing puzzles built around telegraph tells, Star Punches, and unforgettable international contenders.",
+      "added": "Faithfully revived Little Mac on Wii with cel-shaded animation, Title Defense rematches introducing trickier patterns, and optional motion-control punching.",
+      "src": [
+        {
+          "t": "Wikipedia: Punch-Out!! (2009 video game)"
+        }
+      ]
+    },
+    {
+      "from": "resident-evil-4",
+      "to": "resident-evil-5",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Over-the-shoulder laser-sight aiming, stun-to-melee crowd control, and upgradeable weapon loadouts.",
+      "added": "Reengineered the formula around mandatory two-player cooperative play starring Chris Redfield and Sheva Alomar under harsh African daylight.",
+      "src": [
+        {
+          "t": "Wikipedia: Resident Evil 5"
+        }
+      ]
+    },
+    {
+      "from": "the-incredible-machine",
+      "to": "scribblenauts",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Lateral-thinking physics puzzle solving where players combine everyday objects and contraptions to reach a goal.",
+      "added": "Replaced fixed toolboxes with an unprecedented Nintendo DS dictionary parser that lets players type almost any noun to summon interactive objects onscreen.",
+      "src": [
+        {
+          "t": "Wikipedia: Scribblenauts"
+        }
+      ]
+    },
+    {
+      "from": "dance-dance-revolution",
+      "to": "dance-central",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "High-energy choreography-driven arcade dancing scored on rhythmic timing and song mastery.",
+      "added": "Ditched plastic four-arrow footpads for Xbox Kinect's full-body camera tracking, reading authentic arms-and-legs hip-hop routines created by Harmonix.",
+      "src": [
+        {
+          "t": "Wikipedia: Dance Central"
+        }
+      ]
+    },
+    {
+      "from": "dead-rising",
+      "to": "dead-rising-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "72-hour ticking-clock zombie survival sandboxes where nearly every storefront prop doubles as an improvised weapon.",
+      "added": "Moved the outbreak to Las Vegas-inspired Fortune City with Combo Card weapon crafting, Zombrex daughter-survival timers, and two-player online co-op.",
+      "src": [
+        {
+          "t": "Wikipedia: Dead Rising 2"
+        }
+      ]
+    },
+    {
+      "from": "deus-ex",
+      "to": "epic-mickey",
+      "tier": "dev",
+      "rel": "variant",
+      "took": "Warren Spector's 'playstyle matters' philosophy where player tools reshape levels, NPC reactions, and narrative outcomes.",
+      "added": "Translated systemic player agency into a Disney platform-adventure where Mickey's Paint restores Wasteland allies while Thinner erases obstacles and enemies.",
+      "src": [
+        {
+          "t": "Warren Spector interviews via Kotaku and Game Informer"
+        },
+        {
+          "t": "Wikipedia: Epic Mickey"
+        }
+      ],
+      "extra": "Spector explicitly framed Epic Mickey's Paint-versus-Thinner choices as applying his Deus Ex playstyle design to cartoon adventure."
+    },
+    {
+      "from": "punch-out",
+      "to": "infinity-blade",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Intimate one-on-one boss duels centered on reading enemy wind-up telegraphs, dodging left or right, and punishing brief openings.",
+      "added": "Pitched by ChAIR as 'Punch-Out!! with swords and monsters,' pairing Unreal Engine 3 iOS visuals with swipe parrying and generational roguelike bloodlines.",
+      "src": [
+        {
+          "t": "Donald Mustard (ChAIR Entertainment) interviews via Game Developer and Eurogamer"
+        },
+        {
+          "t": "Wikipedia: Infinity Blade"
+        }
+      ],
+      "extra": "Creative director Donald Mustard explicitly modeled Infinity Blade's touch combat after Punch-Out!!'s one-on-one pattern-reading loop."
+    },
+    {
+      "from": "kirby-s-dream-land",
+      "to": "kirbys-epic-yarn",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Breezy, welcoming Dream Land platforming accessible to younger players while rewarding observant collectors.",
+      "added": "Reimagined Kirby as a single outline of knitted thread unraveling cloth-and-button Wii worlds with a yarn whip and zero-death gem-drop stakes.",
+      "src": [
+        {
+          "t": "Wikipedia: Kirby's Epic Yarn"
+        }
+      ]
+    },
+    {
+      "from": "metal-gear-solid-3",
+      "to": "metal-gear-solid-peace-walker",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Big Boss's Cold War jungle stealth, Close Quarters Combat throws, and military-survival storytelling.",
+      "added": "Restructured stealth espionage for PSP around bite-sized missions, Fulton balloon soldier recruitment, and growing an offshore Mother Base R&D army.",
+      "src": [
+        {
+          "t": "Wikipedia: Metal Gear Solid: Peace Walker"
+        }
+      ]
+    },
+    {
+      "from": "monster-hunter-freedom-unite",
+      "to": "metal-gear-solid-peace-walker",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Japan's PSP ad-hoc four-player co-op hunting craze built on repeatable mission boards and coordinated giant-boss takedowns.",
+      "added": "Adopted mission-based four-player CO-OPS boss battles against AI weapons—and even included official Capcom crossover hunts against Rathalos and Tigrex.",
+      "src": [
+        {
+          "t": "Hideo Kojima interviews via GameSpot, IGN, and Game Informer"
+        },
+        {
+          "t": "Wikipedia: Metal Gear Solid: Peace Walker"
+        }
+      ],
+      "extra": "Kojima openly credited Monster Hunter Portable's handheld co-op phenomenon with shaping Peace Walker's mission structure."
+    },
+    {
+      "from": "metal-gear-solid-peace-walker",
+      "to": "metal-gear-solid-v-the-phantom-pain",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Episodic mission-select deployment, Fulton balloon staff extraction, and Mother Base weapon development tiers.",
+      "added": "Scaled Peace Walker's handheld base-management loop into vast open-world Afghanistan and Africa stealth sandboxes powered by the Fox Engine.",
+      "src": [
+        {
+          "t": "Wikipedia: Metal Gear Solid V: The Phantom Pain"
+        }
+      ]
+    },
+    {
+      "from": "rock-band",
+      "to": "rock-band-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Full-band living-room plastic-instrument rhythm play uniting guitar, bass, drums, and vocals on synchronized note highways.",
+      "added": "Reached the technical summit of music-peripheral games with three-part vocal harmonies, a five-lane keyboard, and Pro Mode teaching real guitar and drum notation.",
+      "src": [
+        {
+          "t": "Wikipedia: Rock Band 3"
+        }
+      ]
+    },
+    {
+      "from": "tom-clancys-splinter-cell-chaos-theory",
+      "to": "tom-clancys-splinter-cell-conviction",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "High-contrast shadow stealth, gadget improvisation, and Sam Fisher's covert agency thriller.",
+      "added": "Pivoted to aggressive 'panther' predator stealth with Last Known Position silhouettes, Mark & Execute chain kills, and environment-projected objectives.",
+      "src": [
+        {
+          "t": "Wikipedia: Tom Clancy's Splinter Cell: Conviction"
+        }
+      ]
+    },
+    {
+      "from": "gears-of-war",
+      "to": "vanquish",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Chest-high waist-cover positioning and third-person firefights popularized across seventh-generation console shooters.",
+      "added": "Subverted slow stop-and-pop cover pacing with rocket-propelled knee sliding, AR Mode bullet-time dives, and breakneck arcade score-attack momentum.",
+      "src": [
+        {
+          "t": "Shinji Mikami interviews via GameSpot and Game Developer"
+        },
+        {
+          "t": "Wikipedia: Vanquish (video game)"
+        }
+      ],
+      "extra": "Director Shinji Mikami explicitly engineered Vanquish's boost slide to eliminate the sluggish tempo of cover-to-cover shooters."
+    },
+    {
+      "from": "resident-evil-4",
+      "to": "vanquish",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Shinji Mikami's crisp over-the-shoulder aiming, enemy stagger reads, and tightly choreographed combat arenas.",
+      "added": "Exchanged methodical horror tension for hyper-kinetic PlatinumGames sci-fi spectacle aboard a sun-orbiting space colony.",
+      "src": [
+        {
+          "t": "Shinji Mikami interviews via Kotaku and GameSpot"
+        },
+        {
+          "t": "Wikipedia: Vanquish (video game)"
+        }
+      ]
+    },
+    {
+      "from": "resistance-fall-of-man",
+      "to": "resistance-3",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Insomniac's alternate-history 1950s Chimera invasion powered by imaginative secondary-fire alien weaponry and health-pack tension.",
+      "added": "Grounded the trilogy finale as an intimate cross-country American road trip restoring the full upgradeable weapon wheel and non-regenerating health.",
+      "src": [
+        {
+          "t": "Wikipedia: Resistance 3"
+        }
+      ]
+    },
+    {
+      "from": "tekken-tag-tournament",
+      "to": "tekken-tag-tournament-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Two-on-two 3D martial arts tag bouts where losing either fighter ends the round.",
+      "added": "Expanded the competitive sandbox to over fifty fighters with Tag Assault dual-character juggles, Tag Crash saves, and interactive multi-tier balcony breaks.",
+      "src": [
+        {
+          "t": "Wikipedia: Tekken Tag Tournament 2"
+        }
+      ]
+    },
+    {
+      "from": "defense-of-the-ancients",
+      "to": "awesomenauts",
+      "tier": "critic",
+      "rel": "variant",
+      "took": "Three-lane minion pushing, defensive turrets, gold-bought mid-match item builds, and asymmetric hero kits.",
+      "added": "Translated top-down PC MOBA strategy into a brisk 3-versus-3 2D side-scrolling action platformer dressed in Saturday-morning-cartoon sci-fi flair.",
+      "src": [
+        {
+          "t": "Wikipedia: Awesomenauts"
+        }
+      ]
+    },
+    {
+      "from": "angry-birds",
+      "to": "bad-piggies",
+      "tier": "team",
+      "rel": "variant",
+      "took": "Rovio's comical bird-versus-pig rivalry and tactile 2D physics tumbling across destructible wood-and-stone courses.",
+      "added": "Flipped perspective to the green pigs, swapping slingshot aiming for grid-assembled makeshift carts and aircraft powered by soda bottles and bellows.",
+      "src": [
+        {
+          "t": "Wikipedia: Bad Piggies; Rovio Entertainment"
+        }
+      ]
+    },
+    {
+      "from": "the-incredible-machine",
+      "to": "bad-piggies",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Rube Goldberg contraption building where combining fans, wheels, springs, and motors creates emergent physics solutions.",
+      "added": "Distilled mechanical puzzle engineering for mobile touchscreens with live player-triggered booster and umbrella controls mid-run.",
+      "src": [
+        {
+          "t": "Wikipedia: Bad Piggies"
+        }
+      ]
+    },
+    {
+      "from": "half-life-2",
+      "to": "chivalry-medieval-warfare",
+      "tier": "dev",
+      "rel": "mod",
+      "took": "Valve's Source engine mod ecosystem that birthed Team Chivalry's 2007 first-person medieval melee conversion Age of Chivalry.",
+      "added": "Rebuilt the mod's directional sword swinging, feints, and objective castle sieges as Torn Banner's standalone Unreal Engine 3 slasher.",
+      "src": [
+        {
+          "t": "Wikipedia: Chivalry: Medieval Warfare; originated as Half-Life 2 mod Age of Chivalry"
+        }
+      ],
+      "extra": "Torn Banner Studios formed directly from the Age of Chivalry Source mod team."
+    },
+    {
+      "from": "mount-and-blade",
+      "to": "chivalry-medieval-warfare",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Skill-based directional melee swings, deliberate blocking arcs, and chaotic medieval siege skirmishes.",
+      "added": "Zoomed tightly into visceral first-person combat featuring live mouse-dragged swing acceleration, stamina-timed parries, and brutal dismemberment.",
+      "src": [
+        {
+          "t": "Wikipedia: Chivalry: Medieval Warfare"
+        }
+      ]
+    },
+    {
+      "from": "darksiders",
+      "to": "darksiders-ii",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Apocalyptic Horsemen action-adventure blending Zelda-style puzzle dungeons with heavy hack-and-slash combat.",
+      "added": "Shifted focus to nimble horseman Death with Prince of Persia wall-running, dual-scythe acrobatics, and randomized Diablo-style weapon loot.",
+      "src": [
+        {
+          "t": "Wikipedia: Darksiders II"
+        }
+      ]
+    },
+    {
+      "from": "castlevania-symphony-of-the-night",
+      "to": "dust-an-elysian-tail",
+      "tier": "mech",
+      "rel": "synthesis",
+      "took": "Side-scrolling interconnected map exploration, RPG leveling, item crafting, and ability-gated secret alcoves.",
+      "added": "Paired Metroidvania exploration with lush hand-animated art and whirlwind aerial combo juggling crafted largely by solo creator Dean Dodrill.",
+      "src": [
+        {
+          "t": "Wikipedia: Dust: An Elysian Tail"
+        }
+      ]
+    },
+    {
+      "from": "ingress",
+      "to": "pok-mon-go",
+      "tier": "dev",
+      "rel": "evolution",
+      "took": "Niantic's GPS real-world geospatial platform and vast crowdsourced database of pedestrian landmarks submitted as Portals.",
+      "added": "Transformed Ingress's global portal map directly into PokéStops and Gyms while pairing AR location walking with mass-market Pokémon catching.",
+      "src": [
+        {
+          "t": "John Hanke (Niantic) interviews via Forbes, PocketGamer.biz, and Business Insider"
+        },
+        {
+          "t": "Wikipedia: Ingress (video game)"
+        }
+      ],
+      "extra": "Pokémon GO's initial global PokéStop and Gym locations were seeded directly from Ingress's player-mapped Portal network."
+    },
+    {
+      "from": "kid-icarus",
+      "to": "kid-icarus-uprising",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Angelic hero Pit, goddess Palutena, mythological Underworld foes, and Nintendo's tongue-in-cheek classical fantasy tone.",
+      "added": "Resurrected the dormant 1986 NES franchise on 3DS with Sakurai's rapid-fire comedic banter, risk-reward Fiend's Cauldron difficulty betting, and deep weapon fusion.",
+      "src": [
+        {
+          "t": "Wikipedia: Kid Icarus: Uprising"
+        }
+      ]
+    },
+    {
+      "from": "star-fox-64",
+      "to": "kid-icarus-uprising",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "High-tempo Nintendo rail-shooting flights filled with snappy squad radio dialogue and arcade score-chasing paths.",
+      "added": "Paired free-aiming touchscreen aerial rail battles with agile third-person ground arenas after Masahiro Sakurai chose Pit over Fox for wider camera freedom.",
+      "src": [
+        {
+          "t": "Masahiro Sakurai interview via Iwata Asks & Nintendo Life"
+        },
+        {
+          "t": "Wikipedia: Kid Icarus: Uprising"
+        }
+      ],
+      "extra": "Sakurai revealed he initially considered Star Fox for his 3DS aerial-plus-ground shooter pitch before choosing Kid Icarus."
+    },
+    {
+      "from": "lego-star-wars-the-complete-saga",
+      "to": "lego-batman-2-dc-super-heroes",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Traveller's Tales' drop-in co-op brick-smashing puzzle levels, ability-swapping rosters, and lighthearted franchise slapstick.",
+      "added": "Marked two major milestones for TT's LEGO template by introducing full spoken voice acting and a seamless explorable open-world Gotham City hub.",
+      "src": [
+        {
+          "t": "Wikipedia: Lego Batman 2: DC Super Heroes; Traveller's Tales"
+        }
+      ]
+    },
+    {
+      "from": "luigi-s-mansion",
+      "to": "luigis-mansion-dark-moon",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Flashlight-stunning specters and tugging them into Professor E. Gadd's Poltergust vacuum inside playful haunted halls.",
+      "added": "Expanded ghost hunting across five distinct Evershade Valley mansions structured into portable 3DS missions with Strobulb charging and co-op ScareScraper climbs.",
+      "src": [
+        {
+          "t": "Wikipedia: Luigi's Mansion: Dark Moon"
+        }
+      ]
+    },
+    {
+      "from": "wii-sports",
+      "to": "nintendo-land",
+      "tier": "team",
+      "rel": "evolution",
+      "took": "Nintendo EAD's accessible pack-in hardware showcase introducing living-room groups to a new console controller through playful themes.",
+      "added": "Demonstrated Wii U's asymmetric GamePad screen through twelve Nintendo-franchise attractions like Mario Chase and Luigi's Ghost Mansion.",
+      "src": [
+        {
+          "t": "Wikipedia: Nintendo Land; Nintendo EAD"
+        }
+      ]
+    },
+    {
+      "from": "persona-4",
+      "to": "persona-4-golden",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Inaba's small-town murder-mystery calendar loop balancing daytime Social Links with turn-based dungeon crawling.",
+      "added": "Elevated the PS2 RPG into a PlayStation Vita system-seller by adding Marie's Hollow Forest arc, extra winter months, scooter outings, and online SOS rescues.",
+      "src": [
+        {
+          "t": "Wikipedia: Persona 4 Golden"
+        }
+      ]
+    },
+    {
+      "from": "simearth",
+      "to": "plague-inc",
+      "tier": "mech",
+      "rel": "variant",
+      "took": "Global planetary-scale systems simulation unfolding across an interactive world map driven by interconnected biological rules.",
+      "added": "Focused global simulation into a tense mobile contagion strategy hit where players evolve symptoms and transmission routes faster than humanity develops a cure.",
+      "src": [
+        {
+          "t": "Wikipedia: Plague Inc."
+        }
+      ],
+      "extra": "Ndemic Creations founder James Vaughan directly evolved the 2008 Flash browser hit Pandemic 2 into a deep mobile strategy phenomenon."
+    },
+    {
+      "from": "battlefield-2",
+      "to": "planetside-2",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Combined-arms infantry classes, armor columns, and air-support squad play vying over linked territory control points.",
+      "added": "Scaled squad warfare into a persistent free-to-play MMOFPS supporting over a thousand players battling simultaneously across three empires on seamless continents.",
+      "src": [
+        {
+          "t": "Wikipedia: PlanetSide 2"
+        }
+      ]
+    },
+    {
+      "from": "everquest",
+      "to": "planetside-2",
+      "tier": "team",
+      "rel": "synthesis",
+      "took": "Sony Online Entertainment's large-scale persistent-server online infrastructure and long-running community guild organization.",
+      "added": "Applied SOE's MMO live-service architecture to perpetual continental shooter campaigns run by player-led Outfits.",
+      "src": [
+        {
+          "t": "Wikipedia: PlanetSide 2; Sony Online Entertainment"
+        }
+      ]
+    },
+    {
+      "from": "super-smash-bros-brawl",
+      "to": "playstation-all-stars-battle-royale",
+      "tier": "critic",
+      "rel": "fast-follow",
+      "took": "Four-player mascot crossover platform fighting on dynamic multi-tier stages celebrating a console maker's gaming history.",
+      "added": "Swapped ring-out knockback percentages for three-tier AP Super meters required to score knockouts across mashed-up PlayStation franchise stages.",
+      "src": [
+        {
+          "t": "Wikipedia: PlayStation All-Stars Battle Royale"
+        }
+      ]
+    },
+    {
+      "from": "pokemon-black-and-white",
+      "to": "pokemon-black-2-and-white-2",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Unova's story-driven Gen V region featuring animated sprites, seasonal terrain shifts, and Team Plasma's ideology.",
+      "added": "Broke from Pokémon's traditional third-version remixes as the franchise's first direct two-year narrative sequels with new starting towns and the Pokémon World Tournament.",
+      "src": [
+        {
+          "t": "Wikipedia: Pokémon Black 2 and White 2"
+        }
+      ]
+    },
+    {
+      "from": "pok-mon-red-and-green",
+      "to": "puzzle-and-dragons",
+      "tier": "dev",
+      "rel": "synthesis",
+      "took": "Addictive elemental monster collecting, party synergies, leveling, and creature evolution loops.",
+      "added": "Fused monster collection with free-drag match-3 orb comboing and mobile gacha monetization, becoming the first mobile game to surpass $1 billion in revenue.",
+      "src": [
+        {
+          "t": "Daisuke Yamamoto interviews via TechCrunch"
+        },
+        {
+          "t": "Wikipedia: Puzzle & Dragons"
+        }
+      ],
+      "extra": "Producer Daisuke Yamamoto cited Pokémon's monster-collection loop alongside mobile puzzle-RPG Dungeon Raid."
+    },
+    {
+      "from": "puzzle-quest-challenge-of-the-warlords",
+      "to": "puzzle-and-dragons",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Resolving RPG dungeon combat and elemental mana attacks through color-matching puzzle boards.",
+      "added": "Replaced single-tile adjacent swaps with timed free-path orb dragging across the board to chain multi-combo dungeon sweeps on smartphones.",
+      "src": [
+        {
+          "t": "Wikipedia: Puzzle & Dragons"
+        }
+      ]
+    },
+    {
+      "from": "resident-evil-4",
+      "to": "resident-evil-revelations",
+      "tier": "series",
+      "rel": "evolution",
+      "took": "Over-the-shoulder precision aiming and episodic action-horror pacing.",
+      "added": "Returned to claustrophobic ammo-scarce survival horror aboard the ghost cruise ship Queen Zenobia with a Genesis scanner and addictive Raid Mode.",
+      "src": [
+        {
+          "t": "Wikipedia: Resident Evil: Revelations"
+        }
+      ]
+    },
+    {
+      "from": "street-fighter-iv",
+      "to": "street-fighter-x-tekken",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Capcom's 2.5D ink-brushed fighting engine, six-button normals, EX specials, and accessible combo cancels.",
+      "added": "Crossed over Bandai Namco's Tekken cast onto a 2D tag-team plane with Cross Rush launchers, Pandora comebacks, and customizable Stat Gems.",
+      "src": [
+        {
+          "t": "Wikipedia: Street Fighter X Tekken"
+        }
+      ]
+    },
+    {
+      "from": "tekken-5",
+      "to": "street-fighter-x-tekken",
+      "tier": "series",
+      "rel": "variant",
+      "took": "Iconic Mishima martial artists, limb-string chains, and juggled combo pressure from Bandai Namco's 3D fighting mainstay.",
+      "added": "Adapted Tekken's cast to Capcom's 2D fireball-and-footsies space as part of a landmark publisher crossover.",
+      "src": [
+        {
+          "t": "Wikipedia: Street Fighter X Tekken"
+        }
+      ]
+    },
+    {
+      "from": "tempest",
+      "to": "super-hexagon",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "Hypnotic neon vector geometry revolving around a central radial playfield under relentlessly escalating arcade tempo.",
+      "added": "Stripped arcade survival down to two-button rotation around a pulsing hexagon synced to Chipzel's chiptune soundtrack with instant split-second retries.",
+      "src": [
+        {
+          "t": "Wikipedia: Super Hexagon"
+        }
+      ],
+      "extra": "Terry Cavanagh expanded Super Hexagon from a three-hour IGF Pirate Kart game-jam prototype."
+    },
+    {
+      "from": "elasto-mania",
+      "to": "trials-evolution",
+      "tier": "mech",
+      "rel": "evolution",
+      "took": "2D physics-driven dirt-bike weight-shifting puzzles where delicate throttle and lean balance conquer impossible obstacles.",
+      "added": "Brought RedLynx's stunt-bike formula outdoors with curving 3D track camera sweeps, four-player live racing, and a deep scripting track editor.",
+      "src": [
+        {
+          "t": "Wikipedia: Trials Evolution"
+        }
+      ]
+    },
+    {
+      "from": "demon-s-souls",
+      "to": "zombiu",
+      "tier": "critic",
+      "rel": "synthesis",
+      "took": "Unforgiving high-stakes exploration anchored by a safe hub, asynchronous survivor warnings, and tracking back to reclaim lost gear after death.",
+      "added": "Applied corpse-run recovery to Wii U London zombie permadeath where slain survivors turn undead and force your next civilian to hunt down their old backpack.",
+      "src": [
+        {
+          "t": "Ubisoft Montpellier interviews via Nintendo Life and Forbes"
+        },
+        {
+          "t": "Wikipedia: ZombiU"
+        }
+      ]
+    },
+    {
+      "from": "resident-evil",
+      "to": "zombiu",
+      "tier": "critic",
+      "rel": "evolution",
+      "took": "Tense resource-rationed survival horror where every slow zombie encounter threatens fatal bites and inventory management invites vulnerability.",
+      "added": "Used the Wii U GamePad as a real-time backpack and sonar scanner that forces players to look down from the TV screen mid-ambush.",
+      "src": [
+        {
+          "t": "Ubisoft Montpellier interviews via Nintendo Life"
+        },
+        {
+          "t": "Wikipedia: ZombiU"
+        }
+      ]
+    }
+  ]
+}

@@ -401,7 +401,7 @@
       "extra": ""
     },
     {
-      "from": "adventure-atari-2600",
+      "from": "adventure",
       "to": "atic-atac",
       "tier": "mech",
       "took": "Adventure popularized hunting colored keys and artifacts across flip-screen castle rooms.",

@@ -607,9 +607,12 @@ const glyphOf=g=>{const gen=genreOf(g);return GENRE_GLYPH[gen?gen.k:"arcade"]||"
 const eraOf=y=>y<1977?0:y<1984?1:y<1990?2:y<1996?3:y<2002?4:y<2013?5:6;
 
 /* a generated box: the era sets the packaging style, the genre sets the pixel glyph; real box art fades in over it when available */
-function coverHTML(title,year,h,glyph,{tag="div",attrs="",cls="",showYear=true,img=""}={}){
+function coverHTML(title,year,h,glyph,{tag="div",attrs="",cls="",showYear=true,img="",eager=false,hiPri=false}={}){
   const ph=h%2?120:38,lw=Math.max(...String(title).split(/[\s\-–:]+/).map(w=>w.length)),k=lw>7?Math.max(.55,7.4/lw).toFixed(2):1;
-  const im=img?`<img class="cimg" src="${esc(img)}" alt="" loading="lazy" decoding="async" onload="_covFit(this)" onerror="_covErr(this)">`:"";
+  const isWiki=img&&(img.startsWith("https://upload.wikimedia.org/")||img.startsWith("https://thumb.wikimedia.org/"));
+  const cors=isWiki?' crossorigin="anonymous" referrerpolicy="no-referrer"':"";
+  const loadAttr=eager?(hiPri?' fetchpriority="high"':""):' loading="lazy"';
+  const im=img?`<img class="cimg" src="${esc(img)}" alt=""${loadAttr} decoding="async"${cors} onload="_covFit(this)" onerror="_covErr(this)">`:"";
   return `<${tag} class="cv e${eraOf(year||2000)} gl-${glyph} ${cls}" style="--h:${h};--ph:${ph};--k:${k}" ${attrs}>${im}<span class="ct">${esc(title)}</span><i class="gl" aria-hidden="true"></i>${showYear&&year?`<span class="cy">${year}</span>`:""}</${tag}>`}
 const cover=(g,o={})=>coverHTML(g.title,g.year,g.h,glyphOf(g),{img:g.img,...o});
 const coverOfEntry=(e,y,o={})=>{const g=findGameY(e.t,e.y||y);return g?cover(g,o):coverHTML(e.t,y,hueOf(norm(e.t)),"stick",o)};
@@ -1293,7 +1296,7 @@ function renderStart(m){
     <div class="hero-head">
       <div style="min-width:0;max-width:68ch">
         <h1 class="h1" style="margin-bottom:6px">What worlds raised you growing up?</h1>
-        <p class="lede" style="margin:0">Tap any cover to build your gaming timeline.</p>
+        <p class="lede" style="margin:0">Tap any cover to build your timeline — no account, saved locally.</p>
       </div>
       <div class="tap-hint" style="margin:0" aria-label="Tap 1 time for played, 2 times for played a ton, 3 times for favorite"><span><b>✓</b>1× played</span><span><b class="l2">★</b>2× a ton</span><span><b class="l3">♥</b>3× favorite</span></div>
     </div>
@@ -1303,7 +1306,7 @@ function renderStart(m){
       <button type="button" class="chip" data-act="heroShuffle" title="Show 16 more games from this window">Shuffle 16</button>
       <span class="sync hero-winhint" style="margin-left:auto">${esc(win.label)} · hold cover or tap title for info</span>
     </div>
-    <div class="hero-wall" id="heroWall">${wall.map(g=>tileHTML(g,hist,{act:"heroCycle",sub:`${g.year}`})).join("")}</div>
+    <div class="hero-wall" id="heroWall">${wall.map((g,idx)=>tileHTML(g,hist,{act:"heroCycle",sub:`${g.year}`,eager:idx<8,hiPri:idx<4})).join("")}</div>
     <div class="hero-bar" id="heroBar">
       <div class="row" style="gap:10px;min-width:0">
         <span id="heroCount" style="font-size:14px">${pickedN?`<b>${plural(pickedN,"game")}</b> picked — auto-saved`:`<span class="muted">0 picked</span>`}</span>
@@ -1471,10 +1474,10 @@ function pickTileSub(g,ownSet,sysFilter){
   if(hits.length)return `${g.year} · ${esc(hits.slice(0,2).join(", "))}`;
   return `${g.year} · ${ps[0]?esc(ps[0]):studioBtn(studio(g))}`;
 }
-function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false,quickTick=false}={}){
+function tileHTML(g,d,{act="cycle",sub=null,cls="",wkTog=false,quickTick=false,eager=false,hiPri=false}={}){
   const lv=d?levelOf(d,g):0,ent=d?entryOf(d,g):null,wk=!!(ent&&ent.wk);
   const qt=quickTick&&playable(g)?`<button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}" aria-label="${esc(g.title)}: ${lv?LV[lv].label:"Mark as played"}">${lv?LV[lv].m+" "+LV[lv].label:"+ Played"}</button>`:"";
-  return `<div class="tile${lv?" lv"+lv:""}${wk?" worked":""} ${cls}"><div class="artwrap"><button class="art" data-act="${act}" data-id="${g.id}" data-lp="${g.id}" aria-label="${esc(g.title)}, ${wk?"worked on it":lv?LV[lv].label:"not played"}">${cover(g)}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button></div>
+  return `<div class="tile${lv?" lv"+lv:""}${wk?" worked":""} ${cls}"><div class="artwrap"><button class="art" data-act="${act}" data-id="${g.id}" data-lp="${g.id}" aria-label="${esc(g.title)}, ${wk?"worked on it":lv?LV[lv].label:"not played"}">${cover(g,{eager,hiPri})}${wk?`<span class="wkbadge" title="Worked on this">🛠</span>`:""}${lv?`<span class="lvb${lv===3?" l3":lv===2?" l2":""}" aria-hidden="true">${LV[lv].m}</span>`:""}</button></div>
     <button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(g.title)}</button>${wk&&ent.role?`<span class="trole">🛠 ${esc(ent.role)}</span>`:""}${sub!==null?`<span class="ts">${sub}</span>`:`<span class="ts">${g.year} · ${studioBtn(studio(g))}</span>`}${qt}${wkTog&&isDevMode()?`<button type="button" class="wktog" data-act="toggleWk" data-id="${g.id}" aria-pressed="${wk}">🛠 ${wk?"Worked on ✓":"I worked on"}</button>`:""}</div>`}
 function histBars(d,from,to){const counts={},loves={};for(const {y,lv} of entries(d)){counts[y]=(counts[y]||0)+1;if(lv===3)loves[y]=1}
   const max=Math.max(1,...Object.values(counts));let h="";for(let y=from;y<=to;y++){const c=counts[y]||0;h+=`<i class="${c?(loves[y]?"l":""):"z"}" style="height:${c?Math.max(12,c/max*100):6}%" title="${y}: ${c}"></i>`}return h}
@@ -1587,24 +1590,68 @@ function lifeStrip(d,{mine=true,workedOnly=false}={}){
   const ys=Object.keys(byY).map(Number);
   const minPlayed=Math.min(...ys),from=minPlayed,to=workedOnly?Math.max(...ys):(mine?NOW:Math.max(...ys));
   let h=(mine&&!workedOnly&&d.birth&&minPlayed>d.birth)?`<div class="ygap" data-yrow="${d.birth}" style="padding-block:6px"><b class="mono">${d.birth===minPlayed-1?d.birth:`${d.birth}–${minPlayed-1}`}</b><button class="link" data-act="year" data-y="${Math.min(minPlayed-1,d.birth+6)}">+ Add earlier childhood games (${d.birth===minPlayed-1?d.birth:`${d.birth}–${minPlayed-1}`})</button></div>`:"";
-  let stage="",gapFrom=null;
-  const flushGap=y=>{if(gapFrom!=null){if(!workedOnly){const a=gapFrom,b=y-1;const lbl=a===b?String(a):`${a}\u2013${b}`;h+=`<div class="ygap" data-yrow="${a}"><b>${lbl}</b>${mine?`<button class="link" data-act="year" data-y="${a}">+ ${lbl}</button>`:""}</div>`}gapFrom=null}};
+  const tileMarkup=(x,y)=>{
+    const g=x.g,wk=!!x.e.wk,wy=workedYearOf(x);const ttl=g?g.title:x.e.t;
+    const relDiff=workedOnly&&g&&g.year!==wy?`<span class="ts">Launched ${g.year} · Live Ops ${wy}</span>`:(g&&g.year!==y?`<span class="ts">Out ${g.year}</span>`:(!g&&wk?`<span class="ts">${x.e.wkType==="mod"?"Mod / Map":"Custom / unshipped"}</span>`:""));
+    const roleBits=[x.e.wkType==="mod"?"Mod / Map":"",x.e.role||""].filter(Boolean).join(" · ");
+    const roleLine=wk?`<span class="trole">🛠 ${esc(roleBits||"Worked on it")}${!workedOnly&&x.e.wy&&x.e.wy!==x.y?` (${x.e.wy})`:""}</span>`:"";
+    const memLine=x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:(x.e.mtags&&x.e.mtags.length?`<span class="ts">${esc(x.e.mtags[0])}</span>`:"");
+    const grab=mine&&!workedOnly?`<button type="button" class="ygrab" data-y="${x.y}" data-t="${esc(x.e.t)}" title="Drag to another year (or use Up/Down arrow keys)" aria-label="Move ${esc(ttl)} from ${x.y}. Drag to another year or use Up and Down arrow keys.">⠿</button>`:"";
+    return `<div class="tile lv${x.lv}${wk?" worked":""}"><div class="artwrap">${grab}<button class="art" data-act="entry" data-y="${x.y}" data-t="${esc(x.e.t)}" ${g?`data-lp="${g.id}"`:""} ${mine?"":`data-ro="1"`} aria-label="${esc(ttl)}, ${wk?"worked on it":LV[x.lv].label}">${coverOfEntry(x.e,x.y,{showYear:false})}${wk?`<span class="wkbadge" title="${x.e.wkType==="mod"?"Mod / Map credit":"Worked on this"}">🛠</span>`:""}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}" aria-hidden="true">${LV[x.lv].m}</span></button></div>${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(ttl)}</button>`:`<span class="tn">${esc(ttl)}</span>`}${roleLine}${relDiff}${memLine}</div>`;
+  };
+  const ageTxt=age=>d.birth?(age<0?`${-age} before you`:age===0?"born":"age "+age):"";
+  const renderFullYr=it=>`<div class="tl-yr" data-yrow="${it.y}"><div class="yl"><b>${it.y}</b><span>${ageTxt(it.age)}</span></div><div class="yt">${it.xs.map(x=>tileMarkup(x,it.y)).join("")}${mine&&(workedOnly?`<button class="yadd" data-act="makerSheet" aria-label="Add game credit">+ Credit</button>`:`<button class="yadd" data-act="year" data-y="${it.y}" aria-label="Add games from ${it.y}">+ Add</button>`)||""}</div></div>`;
+  const renderCompactYr=it=>`<div class="tl-yr compact" data-yrow="${it.y}"><div class="yl"><b>${it.y}</b>${ageTxt(it.age)?`<span>${ageTxt(it.age)}</span>`:""}${mine&&(workedOnly?`<button class="yadd-in" data-act="makerSheet" aria-label="Add game credit" title="Add game credit">+</button>`:`<button class="yadd-in" data-act="year" data-y="${it.y}" aria-label="Add games from ${it.y}" title="Add games from ${it.y}">+</button>`)||""}</div><div class="yt">${it.xs.map(x=>tileMarkup(x,it.y)).join("")}</div></div>`;
+  const renderGap=(a,b,inline=false)=>{
+    if(workedOnly)return "";
+    const lbl=a===b?String(a):`${a}\u2013${b}`;
+    if(inline)return `<div class="ygap-in" data-yrow="${a}"><span>${lbl}</span>${mine?`<button class="link" data-act="year" data-y="${a}" aria-label="Add games from ${lbl}">+ Add</button>`:""}</div>`;
+    return `<div class="ygap" data-yrow="${a}"><b>${lbl}</b>${mine?`<button class="link" data-act="year" data-y="${a}">+ ${lbl}</button>`:""}</div>`;
+  };
+  // Group years into stage buckets so consecutive sparse years (<=2 games) sit inline cleanly
+  const stages=[];
+  let curSt=null,gapFrom=null;
+  const pushGap=y=>{if(gapFrom!=null){if(curSt)curSt.items.push({type:"gap",a:gapFrom,b:y-1});gapFrom=null}};
   for(let y=from;y<=to;y++){
     const age=d.birth?y-d.birth:0,st=(workedOnly||!d.birth)?`${Math.floor(y/10)*10}s`:lifeStage(age);
     const xs=(byY[y]||[]).sort((a,b)=>(!!b.e.wk-!!a.e.wk)||b.lv-a.lv||((b.g&&b.g.pop)||0)-((a.g&&a.g.pop)||0));
     if(!xs.length){if(gapFrom==null)gapFrom=y;continue}
-    if(st!==stage){flushGap(y);const sr=!workedOnly&&stageYearRange(st,d.birth);h+=`<div class="stage">${st}</div>${sr?eraMomentsHTML(sr[0],sr[1]):""}`;stage=st}
-    flushGap(y);
-    h+=`<div class="tl-yr" data-yrow="${y}"><div class="yl"><b>${y}</b><span>${d.birth?(age<0?`${-age} before you`:age===0?"born":"age "+age):""}</span></div><div class="yt">${xs.map(x=>{const g=x.g,wk=!!x.e.wk,wy=workedYearOf(x);const ttl=g?g.title:x.e.t;
-      const relDiff=workedOnly&&g&&g.year!==wy?`<span class="ts">Launched ${g.year} · Live Ops ${wy}</span>`:(g&&g.year!==y?`<span class="ts">Out ${g.year}</span>`:(!g&&wk?`<span class="ts">${x.e.wkType==="mod"?"Mod / Map":"Custom / unshipped"}</span>`:""));
-      const roleBits=[x.e.wkType==="mod"?"Mod / Map":"",x.e.role||""].filter(Boolean).join(" · ");
-      const roleLine=wk?`<span class="trole">🛠 ${esc(roleBits||"Worked on it")}${!workedOnly&&x.e.wy&&x.e.wy!==x.y?` (${x.e.wy})`:""}</span>`:"";
-      const memLine=x.e.mem?`<span class="tmem">“${esc(x.e.mem)}”</span>`:(x.e.mtags&&x.e.mtags.length?`<span class="ts">${esc(x.e.mtags[0])}</span>`:"");
-      const grab=mine&&!workedOnly?`<button type="button" class="ygrab" data-y="${x.y}" data-t="${esc(x.e.t)}" title="Drag to another year (or use Up/Down arrow keys)" aria-label="Move ${esc(ttl)} from ${x.y}. Drag to another year or use Up and Down arrow keys.">⠿</button>`:"";
-      return `<div class="tile lv${x.lv}${wk?" worked":""}"><div class="artwrap">${grab}<button class="art" data-act="entry" data-y="${x.y}" data-t="${esc(x.e.t)}" ${g?`data-lp="${g.id}"`:""} ${mine?"":`data-ro="1"`} aria-label="${esc(ttl)}, ${wk?"worked on it":LV[x.lv].label}">${coverOfEntry(x.e,x.y,{showYear:false})}${wk?`<span class="wkbadge" title="${x.e.wkType==="mod"?"Mod / Map credit":"Worked on this"}">🛠</span>`:""}<span class="lvb${x.lv===3?" l3":x.lv===2?" l2":""}" aria-hidden="true">${LV[x.lv].m}</span></button></div>${g?`<button type="button" class="tnbtn" data-act="quickLook" data-id="${g.id}">${esc(ttl)}</button>`:`<span class="tn">${esc(ttl)}</span>`}${roleLine}${relDiff}${memLine}</div>`}).join("")}
-      ${mine&&(workedOnly?`<button class="yadd" data-act="makerSheet" aria-label="Add game credit">+ Credit</button>`:`<button class="yadd" data-act="year" data-y="${y}" aria-label="Add games from ${y}">+ Add</button>`)||""}</div></div>`;
+    if(!curSt||curSt.name!==st){pushGap(y);curSt={name:st,items:[]};stages.push(curSt)}
+    else pushGap(y);
+    curSt.items.push({type:"yr",y,age,xs});
   }
-  flushGap(to+1);
+  pushGap(to+1);
+  for(const st of stages){
+    const sr=!workedOnly&&stageYearRange(st.name,d.birth);
+    h+=`<div class="stage">${st.name}</div>${sr?eraMomentsHTML(sr[0],sr[1]):""}`;
+    const items=st.items;
+    let i=0;
+    while(i<items.length){
+      const it=items[i];
+      if(it.type==="gap"){h+=renderGap(it.a,it.b,false);i++;continue}
+      if(it.xs.length>2){h+=renderFullYr(it);i++;continue}
+      // Look ahead for consecutive sparse years (allowing single intervening gaps)
+      let j=i,yrCount=0,lastYrIdx=i;
+      while(j<items.length){
+        const nx=items[j];
+        if(nx.type==="yr"&&nx.xs.length<=2){yrCount++;lastYrIdx=j;j++}
+        else if(nx.type==="gap"&&j+1<items.length&&items[j+1].type==="yr"&&items[j+1].xs.length<=2){j++}
+        else break;
+      }
+      if(yrCount>=2){
+        h+=`<div class="tl-inline">`;
+        for(let k=i;k<=lastYrIdx;k++){
+          const c=items[k];
+          h+=c.type==="yr"?renderCompactYr(c):renderGap(c.a,c.b,true);
+        }
+        h+=`</div>`;
+        i=lastYrIdx+1;
+      }else{
+        h+=renderFullYr(it);
+        i++;
+      }
+    }
+  }
   return h;
 }
 function wireTimelineDrag(root){
@@ -1613,18 +1660,24 @@ function wireTimelineDrag(root){
     let pid=null,sx=0,sy=0,startScrollY=0,lastX=0,lastY=0,moved=false,targetRow=null,raf=0;
     const tile=handle.closest(".tile"),fromY=+handle.dataset.y,title=handle.dataset.t;
     const clearHi=()=>{root.querySelectorAll(".drop-target").forEach(r=>r.classList.remove("drop-target"));targetRow=null};
-    const updateDrop=cy=>{
+    const updateDrop=(cx,cy)=>{
       clearHi();
+      let hit=null,fallback=null;
       for(const r of root.querySelectorAll("[data-yrow]")){
         const b=r.getBoundingClientRect();
-        if(cy>=b.top-6&&cy<=b.bottom+6){if(+r.dataset.yrow!==fromY){r.classList.add("drop-target");targetRow=r}break}
+        if(cy>=b.top-6&&cy<=b.bottom+6){
+          if(cx>=b.left-10&&cx<=b.right+10){hit=r;break}
+          if(!fallback)fallback=r;
+        }
       }
+      const chosen=hit||fallback;
+      if(chosen&&+chosen.dataset.yrow!==fromY){chosen.classList.add("drop-target");targetRow=chosen}
     };
     const applyPos=()=>{
       if(!moved||!tile)return;
       const dx=lastX-sx,dy=(lastY-sy)+(window.scrollY-startScrollY);
       tile.style.translate=`${dx}px ${dy}px`;
-      updateDrop(lastY);
+      updateDrop(lastX,lastY);
     };
     const cleanup=()=>{
       cancelAnimationFrame(raf);pid=null;moved=false;document.documentElement.classList.remove("dragging");
@@ -2311,7 +2364,7 @@ function renderAlmanac(m,tab){
   state.almTab=cur;
   const nav=`<section class="wrap" style="padding-block:18px 0">
     <p class="eyebrow" style="margin-bottom:4px">Almanac · Archives, studios, hardware &amp; craft</p>
-    <div class="almtabs" role="tablist" aria-label="Almanac sections">${ALMANAC_TABS.map(t=>`<button type="button" class="chip" role="tab" aria-selected="${cur===t.k}" aria-pressed="${cur===t.k}" data-act="almTab" data-t="${t.k}" data-h="${t.hash}">${esc(t.label)}</button>`).join("")}</div>
+    <div class="almtabs" role="tablist" aria-label="Almanac sections">${ALMANAC_TABS.map(t=>`<button type="button" class="chip" role="tab" aria-selected="${cur===t.k}" data-act="almTab" data-t="${t.k}" data-h="${t.hash}">${esc(t.label)}</button>`).join("")}</div>
   </section>`;
   let body="";
   if(cur==="vault")body=vaultSectionHTML();
@@ -2430,7 +2483,7 @@ function vaultGameCardHTML(g,mode){
         ${g.tree?`<button type="button" class="btn sm ghost" data-act="game" data-id="${g.id}">Family tree</button>`:`<button type="button" class="btn sm ghost" data-act="quickLook" data-id="${g.id}">Game info</button>`}
         <button type="button" class="btn sm ghost" data-act="watchTv" data-id="${g.id}">▶ Footage</button>
       </span>
-      <button type="button" class="btn sm love" data-act="gratSheet" data-id="${g.id}">Thank team</button>
+      <button type="button" class="btn sm" data-act="gratSheet" data-id="${g.id}">Thank team</button>
     </footer>
   </article>`;
 }
@@ -3651,7 +3704,7 @@ function computeTreeLayout(g){
 function treeSVG(g,nodeAct="game"){
   const {gen,cols,more,ks}=computeTreeLayout(g);
   const mob=typeof window!=="undefined"&&window.innerWidth<=560;
-  const W=mob?148:192,H=mob?48:52,RG=mob?8:10,CG=mob?34:50,M=mob?12:16,TOP=40;
+  const W=mob?152:192,H=mob?56:52,RG=mob?8:10,CG=mob?34:50,M=mob?12:16,TOP=40;
   const maxRows=Math.max(...ks.map(k=>cols[k].length+(more[k]?1:0)));
   const pos=new Map();const colX={};ks.forEach((k,ci)=>colX[k]=M+ci*(W+CG));
   const colOff={};
@@ -3660,31 +3713,43 @@ function treeSVG(g,nodeAct="game"){
   const width=M*2+ks.length*(W+CG)-CG,height=actualBottom+8;
   const C=cssVar,ink=C("--ink"),muted=C("--muted"),line2=C("--line2"),card=C("--card"),paper=C("--paper"),acc=C("--accent"),accInk=C("--accent-ink"),upInk=C("--up-ink"),downInk=C("--down-ink");
   const useImg=document.documentElement.dataset.art!=="era";
-  const covW=mob?26:30,covH=mob?36:40,txX=mob?38:44;
+  const covW=mob?28:30,covH=mob?44:40,txX=mob?40:44;
+  const splitMobTitle=t=>{
+    if(t.length<=15)return [t];
+    let cut=t.lastIndexOf(" ",15);
+    if(cut<6)cut=15;
+    const l1=t.slice(0,cut).trim(),rest=t.slice(cut).trim();
+    const l2=rest.length>15?rest.slice(0,14)+"…":rest;
+    return l2?[l1,l2]:[l1];
+  };
   let defs="";
   for(const [i,p] of pos)if(useImg&&G[i].img)defs+=`<clipPath id="tc-${i}"><rect x="${p.x+6}" y="${p.y+6}" width="${covW}" height="${covH}" rx="4"/></clipPath>`;
-  let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="img" aria-label="Family tree of ${esc(g.title)}">${defs?`<defs>${defs}</defs>`:""}`;
+  let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="group" aria-label="Family tree of ${esc(g.title)}">${defs?`<defs>${defs}</defs>`:""}`;
   const lab={"-2":mob?"◂ Earlier":"◂ Earlier ancestors","-1":"◂ Inspired it","0":"This game","1":"It inspired ▸","2":mob?"Later ▸":"Later descendants ▸"};
   ks.forEach(k=>{
     const tot=cols[k].length+(more[k]||0),lbl=k===0?lab[k]:`${lab[k]} (${tot})`;
-    s+=`<g class="wnode" data-act="treeColJump" data-col="${k}" data-colx="${colX[k]+W/2}" pointer-events="all" style="cursor:pointer" role="button" tabindex="0" aria-label="Scroll to ${esc(lbl)}"><rect x="${colX[k]+6}" y="6" width="${W-12}" height="24" rx="12" fill="${card}" fill-opacity="0.85" stroke="${line2}" stroke-opacity="0.65"/><text x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="${mob?10.5:11}" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${esc(lbl)}</text></g>`;
+    s+=`<g class="wnode" data-act="treeColJump" data-col="${k}" data-colx="${colX[k]+W/2}" pointer-events="all" style="cursor:pointer" role="button" tabindex="0" aria-label="Scroll to ${esc(lbl)}"><rect x="${colX[k]+6}" y="6" width="${W-12}" height="24" rx="12" fill="${card}" fill-opacity="0.85" stroke="${line2}" stroke-opacity="0.65"/><text aria-hidden="true" x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="${mob?10.5:11}" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${esc(lbl)}</text></g>`;
   });
   const edges=L.filter(l=>tierOn(l)&&pos.has(l.from)&&pos.has(l.to)&&gen.get(l.to)-gen.get(l.from)===1);
   edges.forEach(l=>{const A=pos.get(l.from),B=pos.get(l.to),t=TIERS[l.t];const x1=A.x+W,y1=A.y+H/2,x2=B.x,y2=B.y+H/2,dx=Math.max(16,(x2-x1)/2);
     const touch=l.from===g.i||l.to===g.i;
     s+=`<path d="M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}" fill="none" stroke="${C(t.c)}" stroke-width="${touch?2.5:1.5}" ${t.dash?`stroke-dasharray="${t.dash}"`:""} stroke-linecap="round" opacity="${touch?.92:.5}" pointer-events="none"/>`});
-  for(const [i,p] of pos){const n=G[i],isC=i===g.i;const maxC=mob?15:22;const t1=n.title.length>maxC?n.title.slice(0,maxC-1)+"…":n.title;const st=studio(n),t2=mob?`${n.year}${n.cancelled?" · unshipped":n.sunset?" · sunset":""}`:`${n.year}${n.cancelled?" (unreleased)":n.sunset?" (sunset)":""} · ${st.length>15?st.slice(0,14)+"…":st}`;
+  for(const [i,p] of pos){const n=G[i],isC=i===g.i;const tLines=mob?splitMobTitle(n.title):[n.title.length>21?n.title.slice(0,20)+"…":n.title];const st=studio(n),t2=mob?`${n.year}${n.cancelled?" · unshipped":n.sunset?" · sunset":""}`:`${n.year}${n.cancelled?" (unreleased)":n.sunset?" (sunset)":""} · ${st.length>15?st.slice(0,14)+"…":st}`;
     const myl=levelOf(hist,n),myw=isWorked(hist,n);
     const act=isC&&nodeAct==="linFocus"?"game":nodeAct;
-    s+=`<g class="wnode" data-act="${act}" data-id="${n.id}" pointer-events="all" style="cursor:pointer" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link" aria-label="${esc(n.title)}, ${n.year}${n.cancelled?", unreleased":""}">
+    const titleSvg=tLines.length===2
+      ?`<text x="${p.x+txX}" y="${p.y+17}" font-size="11" font-weight="700" fill="${isC?accInk:ink}"><tspan x="${p.x+txX}">${esc(tLines[0])}</tspan><tspan x="${p.x+txX}" dy="13">${esc(tLines[1])}</tspan></text>`
+      :`<text x="${p.x+txX}" y="${p.y+(mob?22:21)}" font-size="${mob?11.5:12.5}" font-weight="700" fill="${isC?accInk:ink}">${esc(tLines[0])}</text>`;
+    s+=`<g class="wnode" data-act="${act}" data-id="${n.id}" pointer-events="all" style="cursor:pointer" ${isC?`data-center="1" data-cx="${p.x+W/2}"`:""} tabindex="0" role="link">
+      <title>${esc(n.title)} (${n.year}${n.cancelled?", unreleased":""})</title>
       <rect x="${p.x}" y="${p.y}" width="${W}" height="${H}" rx="10" fill="${isC?acc:card}" stroke="${myw?C("--craft"):isC?acc:n.cancelled?C("--hook"):line2}" stroke-width="${myw||n.cancelled?1.8:1}" ${n.cancelled&&!isC?'stroke-dasharray="4 2"':""}/>
       <rect x="${p.x+6}" y="${p.y+6}" width="${covW}" height="${covH}" rx="4" fill="hsl(${n.h} 55% 40%)"/>
       ${useImg&&n.img?`<image href="${esc(n.img)}" x="${p.x+6}" y="${p.y+6}" width="${covW}" height="${covH}" preserveAspectRatio="xMidYMid slice" clip-path="url(#tc-${i})"/>`:""}
-      <text x="${p.x+txX}" y="${p.y+(mob?19:21)}" font-size="${mob?11.5:12.5}" font-weight="700" fill="${isC?accInk:ink}">${esc(t1)}</text>
-      <text x="${p.x+txX}" y="${p.y+(mob?34:37)}" font-size="${mob?10:10.5}" fill="${isC?accInk:muted}">${esc(t2)}</text>
-      ${myw||myl?`<circle cx="${p.x+W-10}" cy="${p.y+10}" r="7" fill="${myw?C("--craft"):myl===3?C("--love"):acc}"/><text x="${p.x+W-10}" y="${p.y+13.5}" text-anchor="middle" font-size="9" font-weight="700" fill="${myw?C("--craft-ink"):paper}">${myw?"🛠":myl===3?"♥":"✓"}</text>`:""}</g>`}
+      ${titleSvg}
+      <text x="${p.x+txX}" y="${p.y+(mob?(tLines.length===2?46:38):37)}" font-size="${mob?10:10.5}" fill="${isC?accInk:muted}">${esc(t2)}</text>
+      ${myw||myl?`<circle cx="${p.x+W-10}" cy="${p.y+10}" r="7" fill="${myw?C("--craft"):myl===3?C("--love"):acc}"/><text aria-hidden="true" x="${p.x+W-10}" y="${p.y+13.5}" text-anchor="middle" font-size="9" font-weight="700" fill="${myw?C("--craft-ink"):paper}">${myw?"🛠":myl===3?"♥":"✓"}</text>`:""}</g>`}
   ks.forEach(k=>{if(more[k]){const n=cols[k].length,y=TOP+colOff[k]+n*(H+RG);
-    s+=`<g class="wnode" data-act="treeMore" data-col="${k}" pointer-events="all" style="cursor:pointer" tabindex="0" role="button" aria-label="Show ${more[k]} more games in column"><rect x="${colX[k]}" y="${y}" width="${W}" height="${H}" rx="10" fill="${card}" fill-opacity="0.92" stroke="${acc}" stroke-dasharray="4 3"/><text x="${colX[k]+W/2}" y="${y+30}" text-anchor="middle" font-size="12.5" font-weight="700" fill="${acc}">+${more[k]} more ▾</text></g>`}});
+    s+=`<g class="wnode" data-act="treeMore" data-col="${k}" pointer-events="all" style="cursor:pointer" tabindex="0" role="button" aria-label="Show ${more[k]} more games in column"><rect x="${colX[k]}" y="${y}" width="${W}" height="${H}" rx="10" fill="${card}" fill-opacity="0.92" stroke="${acc}" stroke-dasharray="4 3"/><text aria-hidden="true" x="${colX[k]+W/2}" y="${y+30}" text-anchor="middle" font-size="12.5" font-weight="700" fill="${acc}">+${more[k]} more ▾</text></g>`}});
   return s+`</svg>`;
 }
 /* ---------- story mode: walk the roots (left = older, right = newer; starts at target game on right, click left to step back) ---------- */
@@ -3851,7 +3916,7 @@ function vsHudHTML(f){
     </div>
     ${ss?`<div style="margin-top:10px"><span class="vs-server-pill">${ss.isOnline?"🌐 Same Server, Same Year":"✨ Same Year, Same World"}: You both played ${esc(ss.title)} in ${ss.year}</span></div>`:""}
     <div class="row" style="margin-top:12px;gap:8px">
-      ${mine?`<button type="button" class="btn sm primary" data-act="duoPng">Save / Share Duo Overlap PNG</button><button type="button" class="btn sm" data-act="compare">Full side-by-side compare</button><a class="btn sm ghost" href="#timeline">Open my timeline (${entries(hist).length}) ▸</a>`:`<a class="btn sm ghost" href="#start">Or build my own timeline from scratch ▸</a>`}
+      ${mine?`<button type="button" class="btn sm primary" data-act="duoPng">Save Duo card</button><button type="button" class="btn sm" data-act="compare">Full side-by-side compare</button><a class="btn sm ghost" href="#timeline">Open my timeline (${entries(hist).length}) ▸</a>`:`<a class="btn sm ghost" href="#start">Or build my own timeline from scratch ▸</a>`}
     </div>`;
 }
 function loadChallenger(){
@@ -4465,7 +4530,7 @@ function openLuckyWheel(){
     drawWheel();
     const g=games[idx];if(!g||!winBox)return;
     const lv=levelOf(hist,g),dc=directCrossLinks(g).length,upC=(UP[g.i]||[]).length,genObj=genreOf(g);
-    const infBit=dc>0?` · Inspired <b>${dc}</b> directly${g.inf?` · <b>${g.inf.toLocaleString()}</b> across genres`:""}`:(g.inf>0?` · <b>${g.inf.toLocaleString()}</b> downstream games`:(upC>0?` · Built on <b>${upC}</b> earlier game${upC===1?"":"s"}`:(genObj?` · ${esc(genObj.label)}`:"")));
+    const infBit=dc>0?` · Inspired <b>${dc}</b> directly${g.inf?` · <b>${g.inf.toLocaleString()}</b> across genres`:""}`:(g.inf>0?` · <b>${plural(g.inf,"downstream game")}</b>`:(upC>0?` · Built on <b>${plural(upC,"earlier game")}</b>`:(genObj?` · ${esc(genObj.label)}`:"")));
     playBlip(2);
     winBox.innerHTML=`<div class="wheel-win">
       <div class="gsheet">${cover(g)}
@@ -4473,11 +4538,11 @@ function openLuckyWheel(){
           <span class="eyebrow" style="margin:0 0 2px">Winner · ${g.year}</span>
           <h3 class="h2" style="margin:0 0 4px">${esc(g.title)}</h3>
           <p class="sub" style="margin:0 0 8px">${flag(g.cc)} ${studioLinks(g.dev||"")}${infBit}</p>
-          <p style="margin:0 0 12px;font-size:13.8px;color:var(--ink2)">${esc(g.note||"A landmark in the family tree of video games.")}</p>
+          ${g.note?`<p style="margin:0 0 12px;font-size:13.8px;color:var(--ink2)">${esc(g.note)}</p>`:""}
           <div class="row" style="gap:6px">
             <button type="button" class="btn sm primary" data-act="game" data-id="${g.id}" data-close="1">Family tree</button>
             <button type="button" class="btn sm" data-act="watchTv" data-id="${g.id}">▶ Watch gameplay</button>
-            <button type="button" class="qtick${lv?" lv"+lv:""}" data-act="qtick" data-id="${g.id}" aria-pressed="${lv>0}">${lv?`${LV[lv].m} ${LV[lv].label}`:"+ Played"}</button>
+            <button type="button" class="btn sm${lv?" primary":""}" data-act="qtick" data-id="${g.id}" aria-pressed="${lv>0}">${lv?`${LV[lv].m} ${LV[lv].label}`:"+ Played"}</button>
             <button type="button" class="btn sm" id="wheelSpinAgain">Spin again</button>
           </div>
         </div>
@@ -4485,6 +4550,7 @@ function openLuckyWheel(){
     </div>`;
     const again=$("#wheelSpinAgain");
     if(again)again.addEventListener("click",()=>triggerAutoYank());
+    try{winBox.scrollIntoView({behavior:prefersReducedMotion()?"auto":"smooth",block:"nearest"})}catch(e){}
     announceSR(`Lucky Wheel landed on ${g.title}, ${g.year}`);
   };
   const ensureLoop=()=>{if(WHEEL===WSTATE&&!WSTATE.raf){WSTATE.lastT=0;WSTATE.raf=requestAnimationFrame(tick)}};
@@ -5917,7 +5983,7 @@ function drawFavsCard(d,name,imgMap){
   const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#121629");bg.addColorStop(1,"#261533");x.fillStyle=bg;x.fillRect(0,0,W,H);
   const es=entries(d),{t10,picks}=favCardPicks(d);
   const persona=gamerPersonaOf(d);
-  const hdr=t10.length>=10?"MY TOP 10":t10.length>=4?`MY TOP ${t10.length}`:"MY ALL-TIME FAVORITES";
+  const hdr=t10.length>=10?"MY TOP 10":(t10.length>=4&&picks.length===t10.length)?`MY TOP ${t10.length}`:"MY ALL-TIME FAVORITES";
   x.fillStyle="#FF6E5A";x.font="600 26px IBM Plex Mono, monospace";x.fillText(hdr,72,110);
   x.fillStyle="#F2F4F8";x.font="700 62px Unbounded, Arial Black, sans-serif";x.fillText(name||(d.name||"My Favorites"),72,186,W-300);
   x.fillStyle="#AEB6C8";x.font="500 26px IBM Plex Mono, monospace";x.fillText(`${pngEraBadge(d)}${persona?" · "+persona.title:""}`,72,236,W-300);
@@ -6031,7 +6097,7 @@ function drawLinkedInCard(d,name,imgMap){
       const rx0=Math.max(296,56+wkShow.length*(cw+cGap)+44);
       const rw=118,rh=158,rGap=14;
       const maxRip=Math.max(1,Math.floor((W-56-rx0+rGap)/(rw+rGap)));
-      const ripList=mk.desc.slice().sort((a,b)=>(!!(b.g&&b.g.img&&(!imgMap||imgMap.has(b.g.img)))-!!(a.g&&a.g.img&&(!imgMap||imgMap.has(a.g.img))))||(b.g.pop-a.g.pop)).slice(0,Math.min(6,maxRip));
+      const ripList=mk.desc.slice().sort((a,b)=>(!!(b.g&&b.g.img&&(!imgMap||imgMap.has(b.g.img)))-!!(a.g&&a.g.img&&(!imgMap||imgMap.has(a.g.img))))||(b.g.pop-a.g.pop)).slice(0,Math.min(6,maxRip)).sort((a,b)=>(a.g.year-b.g.year)||a.g.title.localeCompare(b.g.title));
       x.fillStyle="#8C9DFF";x.font="600 15px IBM Plex Mono, monospace";x.fillText("DOWNSTREAM RIPPLE",rx0,236);
       const ry=baseY+(ch-rh);
       ripList.forEach((r,k)=>{

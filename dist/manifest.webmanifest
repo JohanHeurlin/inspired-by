@@ -42,14 +42,14 @@
       "sizes": "1280x800",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Interactive video game lineage org-chart, personal timeline & 6-mode game lore trivia"
+      "label": "Interactive video game family tree, personal childhood timeline & ROOTS daily trivia"
     },
     {
       "src": "./pwa-mobile.png",
-      "sizes": "540x960",
+      "sizes": "750x1334",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Tap childhood games across every console & export shareable timeline cards"
+      "label": "Tap childhood games across every era & export shareable timeline cards"
     }
   ],
   "shortcuts": [
