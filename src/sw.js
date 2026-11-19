@@ -41,13 +41,13 @@ self.addEventListener("activate", (event) => {
 
 function staleWhileRevalidate(req, cacheName) {
   return caches.open(cacheName).then(async (cache) => {
-    const cached = await cache.match(req);
+    const cached = (await cache.match(req)) || (await caches.match(req));
     const net = fetch(req)
       .then((res) => {
         if (res && res.ok) cache.put(req, res.clone());
         return res;
       })
-      .catch(() => cached);
+      .catch(() => cached || Response.error());
     return cached || net;
   });
 }

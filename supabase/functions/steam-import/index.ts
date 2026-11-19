@@ -40,9 +40,14 @@ function checkRateLimit(ip: string): { allowed: boolean; retryAfterSec: number }
 }
 
 function jsonResponse(body: unknown, status = 200, extraHeaders?: Record<string, string>): Response {
+  const isErr = status >= 400 || (typeof body === "object" && body !== null && (body as { ok?: boolean }).ok === false);
   return new Response(JSON.stringify(body), {
     status,
-    headers: { ...CORS_HEADERS, ...(extraHeaders ?? {}) },
+    headers: {
+      ...CORS_HEADERS,
+      ...(isErr ? { "Cache-Control": "no-store" } : {}),
+      ...(extraHeaders ?? {}),
+    },
   });
 }
 
@@ -180,12 +185,25 @@ Deno.serve(async (req: Request) => {
 
     const profRes = await fetchWithTimeout(profileUrl, 7500);
     const profText = await profRes.text();
+    if (profRes.status === 429) {
+      return jsonResponse(
+        { ok: false, code: "upstream_rate_limited", message: "Steam is throttling lookups right now — use the instant Paste tab below." },
+        502,
+      );
+    }
     if (profText.includes("<error>")) {
       const errMsg = extractTag(profText, "error");
       return jsonResponse(
         { ok: false, code: "not_found", message: errMsg || "Steam profile not found." },
         404,
       );
+    }
+    if (!steamId64 && (profRes.url?.includes("/login") || (!profText.includes("<profile>") && profText.includes("<!DOCTYPE html")))) {
+      return jsonResponse({
+        ok: false,
+        code: "steam_login_gate",
+        message: "Steam asked for sign-in while looking up that profile — use the instant Paste tab below!",
+      });
     }
     const resolved64 = extractTag(profText, "steamID64");
     if (/^7656\d{13}$/.test(resolved64)) steamId64 = resolved64;

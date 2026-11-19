@@ -920,6 +920,16 @@ details.arcade-acc:not([open])::details-content{block-size:0}
 .t10-row{display:grid;grid-template-columns:28px 26px 40px minmax(0,1fr) auto;gap:8px;align-items:center;padding:6px 8px;border-radius:10px;background:var(--paper);border:1px solid var(--line);view-transition-name:match-element;transition:background .14s,border-color .14s}
 .t10-row.lifting{opacity:.85;background:var(--accent-soft);border-color:var(--accent);box-shadow:var(--shadow);position:relative;z-index:5}
 .t10-row.drop-over{border-color:var(--accent);box-shadow:inset 0 2px 0 var(--accent)}
+.t10-row.drop-after{border-color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+/* Persisted challenger banner */
+.chal-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--accent-soft) 72%,var(--card));border:1.5px solid color-mix(in srgb,var(--accent) 40%,var(--line));margin-bottom:12px;font-size:13.5px}
+/* Konami Tron Grid accent while unlocked Tron Synth plays */
+body.tron-grid{background-image:linear-gradient(rgb(0 229 255 / .12) 1px,transparent 1px),linear-gradient(90deg,rgb(0 229 255 / .12) 1px,transparent 1px)}
+/* Offline zoomed-cover fallback */
+.roots-zoom.err{display:grid;place-items:center;text-align:center;padding:12px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 22%,var(--card)),var(--paper))}
+.roots-zoom.err img{display:none}
+.roots-zoom-fb{display:none;flex-direction:column;align-items:center;gap:4px;font-family:var(--f-mono);color:var(--ink)}
+.roots-zoom.err .roots-zoom-fb{display:flex}
 .t10-grab{display:inline-grid;place-items:center;width:28px;height:36px;border:0;background:none;color:var(--muted);cursor:grab;touch-action:none;font-size:15px;border-radius:6px}
 .t10-grab:hover{background:var(--accent-soft);color:var(--ink)}
 .t10-grab:active{cursor:grabbing}

@@ -1,14 +1,14 @@
 /* Played & Made — Offline-capable Service Worker (Sprint 2: split shell + immutable hashed assets + SWR) */
 "use strict";
 
-const CACHE_NAME = "pm-shell-d492391bee";
+const CACHE_NAME = "pm-shell-581458e33a";
 const RUNTIME_CACHE = "pm-runtime-v2";
 const FONT_CACHE = "pm-fonts-v1";
 const PRECACHE = [
   "./index.html",
-  "./app.54cb16bb94.css",
-  "./app.61c7a235c2.js",
-  "./data.1111828a4d.json",
+  "./app.f6e6986d92.css",
+  "./app.7379ce4440.js",
+  "./data.3817b99494.json",
   "./manifest.webmanifest",
   "./icon-192.png",
   "./icon-512.png",
@@ -41,13 +41,13 @@ self.addEventListener("activate", (event) => {
 
 function staleWhileRevalidate(req, cacheName) {
   return caches.open(cacheName).then(async (cache) => {
-    const cached = await cache.match(req);
+    const cached = (await cache.match(req)) || (await caches.match(req));
     const net = fetch(req)
       .then((res) => {
         if (res && res.ok) cache.put(req, res.clone());
         return res;
       })
-      .catch(() => cached);
+      .catch(() => cached || Response.error());
     return cached || net;
   });
 }
