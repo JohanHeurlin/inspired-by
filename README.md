@@ -1,6 +1,6 @@
 # Played & Made — Life in Games
 
-Live site: **<https://johanheurlin.github.io/inspired-by/>**
+Live site: **<https://playedmade.com/>** *(also mirrored at <https://johanheurlin.github.io/inspired-by/>)*
 
 An interactive family tree of video game history (1950s to today), a heartfelt tribute to the human makers, studios, and hardware engineers behind the art, and a shareable two-minute **"Life in Games"** childhood & industry-career timeline.
 

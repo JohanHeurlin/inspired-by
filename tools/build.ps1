@@ -1,4 +1,4 @@
-﻿# Inspired By - build script
+# Inspired By - build script
 # Merges the base data (from the Nov 7 artifact) with research-agent output in data\agents,
 # validates it, and injects a compact JSON blob into src\app.html -> dist\inspired-by.html.
 # Run:  powershell -ExecutionPolicy Bypass -File tools\build.ps1
@@ -421,7 +421,7 @@ if ($tpl -notmatch '/\*__DATA__\*/') { throw 'src\app.html has no /*__DATA__*/ p
 $html = $tpl.Replace('/*__DATA__*/', $json)
 [IO.File]::WriteAllText((Join-Path $root $Out), $html, $utf8)
 # Standalone web document + installable PWA + Google/AI-search (GEO) structured metadata
-$SiteUrl = "https://johanheurlin.github.io/inspired-by/"
+$SiteUrl = "https://playedmade.com/"
 $todayIso = (Get-Date).ToString("yyyy-MM-dd")
 $jsonLd = '{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"' + $SiteUrl + '#website","url":"' + $SiteUrl + '","name":"Played & Made","alternateName":["Played & Made — Life in Games","Played&Made","Played and Made","Inspired By Video Game Family Tree"],"description":"Build your childhood or dev-career gaming timeline, trace ' + $games.Count + '+ video games back to the 1950s, play game lore trivia, and celebrate the human makers and hardware behind the art.","creator":{"@type":"Person","name":"Johan Heurlin"}},{"@type":"WebApplication","@id":"' + $SiteUrl + '#app","name":"Played & Made — Life in Games","url":"' + $SiteUrl + '","applicationCategory":"GameApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Personal childhood and industry-career video game timeline builder","Interactive video game lineage and family tree (' + $games.Count + ' games, ' + $links.Count + ' sourced links)","Game Lore, Deep Cuts & Lineage Trivia","The Vault: cancelled games, sunsetted online worlds, regional consoles (Dendy, TecToy, Subor, Sharp X68000, Vectrex) and gaming folklore","Video game price history and inflation comparison (1977-2026)","Thank-you postcards and tributes to video game developers and shuttered studios"]},{"@type":"Dataset","@id":"' + $SiteUrl + '#dataset","name":"Played & Made Video Game Lineage, Studio History & Hardware Archive","url":"' + $SiteUrl + '","description":"Curated historical graph of ' + $games.Count + ' video games across 46 countries, ' + $links.Count + ' documented inspiration links, ' + $studiosRaw.Count + ' studio diaspora profiles, cancelled and sunsetted games, and 1977-2026 inflation-adjusted launch prices.","creator":{"@type":"Person","name":"Johan Heurlin"},"dateModified":"' + $todayIso + '"}]}'
 $seoMain = '<main id="main"><div class="wrap" style="padding:24px 18px"><h1>Played &amp; Made — Life in Games</h1><p>Build your shareable childhood or game-industry career timeline in two minutes, trace ' + $games.Count + '+ video games and ' + $links.Count + '+ sourced inspiration links from the 1950s to today, test your knowledge in 6-mode Game Lore &amp; Lineage Trivia, explore cancelled masterpieces and sunsetted online worlds in The Vault (including Dendy, Gizmondo, Atari''s Alamogordo dig, Project Titan, Van Buren, and TecToy Brazil), compare 1977–2026 game prices against inflation, and send thank-you postcards to the human creators behind the art.</p></div></main>'
@@ -522,3 +522,5 @@ $logPath = Join-Path $root 'dist\build-log.txt'
 $all = @($rep) + @('', 'Unresolved ids (count):') + @($unresolved.GetEnumerator() | Sort-Object Value -Descending | ForEach-Object { "  $($_.Key) x$($_.Value)" }) + @('', 'Notes:') + @($log)
 [IO.File]::WriteAllLines($logPath, [string[]]$all, $utf8)
 Write-Output "Log: dist\build-log.txt ($($log.Count) notes, $($unresolved.Count) unresolved ids)"
+
+[IO.File]::WriteAllText((Join-Path $root 'dist\CNAME'), 'playedmade.com', (New-Object System.Text.UTF8Encoding($false)))

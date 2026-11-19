@@ -846,7 +846,7 @@ table.ptable tbody tr.hi th,table.ptable tbody tr.hi td{background:color-mix(in 
    ================================================================ */
 const RAW=JSON.parse(document.getElementById("data").textContent);
 const NOW=Math.max(new Date().getFullYear(),2026);
-const shareBase=()=>location.protocol.startsWith("http")?location.origin+location.pathname:"https://johanheurlin.github.io/inspired-by/";
+const shareBase=()=>location.protocol.startsWith("http")?location.origin+location.pathname:"https://playedmade.com/";
 const ghRepoURL=()=>{if(location.hostname.endsWith(".github.io")){const u=location.hostname.slice(0,-10),r=location.pathname.split("/").filter(Boolean)[0];if(u&&r)return `https://github.com/${u}/${r}`}return ""};
 const TIERS=[
   {k:"dev",label:"Developer said so",c:"--t-dev",w:3},

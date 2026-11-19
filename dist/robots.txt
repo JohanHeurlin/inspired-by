@@ -19,4 +19,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://johanheurlin.github.io/inspired-by/sitemap.xml
+Sitemap: https://playedmade.com/sitemap.xml

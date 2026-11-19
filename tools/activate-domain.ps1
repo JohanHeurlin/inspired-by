@@ -5,7 +5,7 @@ $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 
 Write-Host "Checking DNS resolution for $Domain..."
-$ips = @(Resolve-DnsName $Domain -Type A -ErrorAction SilentlyContinue | Select-Object -ExpandProperty IPAddress)
+$ips = @(Resolve-DnsName $Domain -Type A -Server 1.1.1.1 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty IPAddress)
 if (-not $ips.Count) {
   throw "DNS A records for $Domain are not resolving yet. Add the 4 GitHub Pages A records in Cloudflare DNS first, then re-run this script."
 }
