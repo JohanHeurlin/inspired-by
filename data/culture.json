@@ -492,7 +492,7 @@
       "year": 1994,
       "maker": "Sony Computer Entertainment",
       "cc": "JP",
-      "engineers": "Ken Kutaragi, Masakazu Suzoki & Teiyu Goto",
+      "engineers": "Ken Kutaragi, Masakazu Suzuoki & Teiyu Goto",
       "headline": "Affordable 650 MB CD-ROMs & dedicated 3D geometry silicon",
       "bio": "After a joint SNES CD project fell through, Ken Kutaragi persuaded Sony to build a dedicated 3D polygon console paired with CD-ROM discs that cost a fraction of ROM cartridges to press. Teiyu Goto's four-symbol dual-grip controller and welcoming third-party dev kits carried video games into late-night music and club culture."
     },
@@ -573,7 +573,7 @@
       "year": 1982,
       "maker": "General Consumer Electronics / Milton Bradley",
       "cc": "US",
-      "engineers": "Jay Smith III, John Ross, Gerry Karr & Richardharm",
+      "engineers": "Jay Smith III, John Ross, Gerry Karr & Mike Purvis",
       "headline": "The only home console with its own built-in glowing vector CRT & snap-on color overlays",
       "bio": "Rather than hooking up to a blurry family television, Jay Smith's compact black tower housed a real 9-inch Samsung vector CRT that steered an electron beam point-to-point for laser-sharp Asteroids-style lines. Every box shipped with Mine Storm in ROM and translucent color overlays that snapped over the glass."
     },
@@ -627,9 +627,9 @@
       "year": 2005,
       "maker": "Tiger Telematics",
       "cc": "SE",
-      "engineers": "Plextek (Cambridge RF/ARM hardware), Carl Freer & Stefan Eriksson",
-      "headline": "ARM9 GPS handheld drowned in a $300M Uppsala Mafia scandal & 162-mph Malibu Ferrari wreck",
-      "bio": "Cambridge engineers at Plextek actually delivered capable 400 MHz ARM9, NVIDIA GoForce 3D, and GPS hardware—only for Tiger Telematics executives Carl Freer and former Uppsala Mafia figure Stefan Eriksson to torch ~$300M on celebrity parties, Le Mans cars, and embezzled supercars, stranding 14 dev-team games under fewer than 25,000 units sold."
+      "engineers": "Plextek (Cambridge RF/ARM hardware) & Rick Dickinson (industrial design)",
+      "headline": "ARM9 GPS handheld derailed by executive fraud & a 2006 Malibu Ferrari crash",
+      "bio": "Cambridge engineers at Plextek and industrial designer Rick Dickinson delivered capable 400 MHz ARM9, NVIDIA GoForce 3D, and GPS hardware—only for Tiger Telematics executives Carl Freer and Stefan Eriksson to rack up roughly $300M in reported losses before bankruptcy and Eriksson's 2006 Malibu Ferrari Enzo crash, stranding 14 dev-team games under fewer than 25,000 units sold."
     }
   ],
   "eras": [
@@ -638,10 +638,10 @@
       "to": 1979,
       "vibe": "Woodgrain TVs, roller-disco rinks & Star Wars blockbusters",
       "moments": [
-        "🎬 Jaws, Star Wars (1977) & Close Encounters lines wrapping around the block",
-        "🕺 Disco mirror balls, Fleetwood Mac's Rumours, punk 45s & the first Sony Walkman (1979)",
-        "🎲 Boxed Dungeons & Dragons booklets, Apple II kits & rotary-dial kitchen phones",
-        "🛰️ Voyager's Golden Record launched into interstellar space & post-Watergate headlines"
+        "Jaws, Star Wars (1977) & Close Encounters lines wrapping around the block",
+        "Disco mirror balls, Fleetwood Mac's Rumours, punk 45s & the first Sony Walkman (1979)",
+        "Boxed Dungeons & Dragons booklets, Apple II kits & rotary-dial kitchen phones",
+        "Voyager's Golden Record launched into interstellar space & post-Watergate headlines"
       ]
     },
     {
@@ -649,10 +649,10 @@
       "to": 1983,
       "vibe": "Pockets full of quarters, MTV's launch & BMX bikes on front lawns",
       "moments": [
-        "📺 MTV's 1981 debut ('Video Killed the Radio Star') & Michael Jackson's Thriller",
-        "🚲 The Empire Strikes Back, Raiders of the Lost Ark, E.T. & WarGames",
-        "🧩 Rubik's Cube mania, type-in BASIC magazine listings & cassette boomboxes",
-        "🚀 Columbia's maiden Space Shuttle flight (1981) & 'Pac-Man Fever' on FM radio"
+        "MTV's 1981 debut ('Video Killed the Radio Star') & Michael Jackson's Thriller",
+        "The Empire Strikes Back, Raiders of the Lost Ark, E.T. & WarGames",
+        "Rubik's Cube mania, type-in BASIC magazine listings & cassette boomboxes",
+        "Columbia's maiden Space Shuttle flight (1981) & 'Pac-Man Fever' on FM radio"
       ]
     },
     {
@@ -660,10 +660,10 @@
       "to": 1986,
       "vibe": "Cassette Walkmans, VHS video stores & neon arcades",
       "moments": [
-        "🎧 Foam-earpad Sony Walkmans, Prince's Purple Rain, Madonna & synth-pop cassettes",
-        "👻 Ghostbusters, Back to the Future, The Goonies & Saturday morning cartoons",
-        "💾 3.5-inch floppies, Apple's 1984 Macintosh, bedroom coding & rewinding VHS rentals",
-        "🌍 Live Aid's global concert broadcast (1985), Halley's Comet & Chernobyl headlines"
+        "Foam-earpad Sony Walkmans, Prince's Purple Rain, Madonna & synth-pop cassettes",
+        "Ghostbusters, Back to the Future, The Goonies & Saturday morning cartoons",
+        "3.5-inch floppies, Apple's 1984 Macintosh, bedroom coding & rewinding VHS rentals",
+        "Live Aid's global concert broadcast (1985), Halley's Comet & Chernobyl headlines"
       ]
     },
     {
@@ -671,10 +671,10 @@
       "to": 1989,
       "vibe": "Mall food courts, skateboards, CD towers & the fall of the Berlin Wall",
       "moments": [
-        "📼 Die Hard, Akira, Tim Burton's Batman, Who Framed Roger Rabbit & The Simpsons' debut",
-        "🎤 Public Enemy, N.W.A, Guns N' Roses & Michael Jackson's Bad on tape and CD",
-        "☎️ Nintendo Power's first issue, 1-900 counselor tip lines & transparent bedroom phones",
-        "🧱 Glasnost, Tiananmen Square & crowds cheering atop the Berlin Wall (Nov 1989)"
+        "Die Hard, Akira, Tim Burton's Batman, Who Framed Roger Rabbit & The Simpsons' debut",
+        "Public Enemy, N.W.A, Guns N' Roses & Michael Jackson's Bad on tape and CD",
+        "Nintendo Power's first issue, 1-900 counselor tip lines & transparent bedroom phones",
+        "Glasnost, Tiananmen Square & crowds cheering atop the Berlin Wall (Nov 1989)"
       ]
     },
     {
@@ -682,10 +682,10 @@
       "to": 1992,
       "vibe": "Flannel shirts, Super Soakers, 16-bit schoolyard debates & Blockbuster nights",
       "moments": [
-        "🎸 Nirvana's Nevermind, A Tribe Called Quest, Dr. Dre's The Chronic & MTV Unplugged",
-        "🦖 Home Alone, Terminator 2, Wayne's World & Friday rows of Blockbuster boxes",
-        "📟 Clear-shell pagers, Rollerblades, Reebok Pumps & Windows 3.1 desktops",
-        "🌍 End of the Cold War, Hubble Space Telescope launch & Nelson Mandela walking free"
+        "Nirvana's Nevermind, A Tribe Called Quest, Dr. Dre's The Chronic & MTV Unplugged",
+        "Home Alone, Terminator 2, Wayne's World & Friday rows of Blockbuster boxes",
+        "Clear-shell pagers, Rollerblades, Reebok Pumps & Windows 3.1 desktops",
+        "End of the Cold War, Hubble Space Telescope launch & Nelson Mandela walking free"
       ]
     },
     {
@@ -693,10 +693,10 @@
       "to": 1995,
       "vibe": "Screaming dial-up modems, Jurassic Park CG & CD-ROM multimedia",
       "moments": [
-        "🦕 Jurassic Park, Pulp Fiction, Pixar's Toy Story (1995) & Friday-night X-Files",
-        "💿 Oasis vs. Blur Britpop, Wu-Tang Clan, Green Day's Dookie & Alanis Morissette",
-        "🌐 14.4k modem handshakes, AOL trial floppies, midnight Doom LANs & Windows 95",
-        "🏛️ Early Mosaic/Netscape web pages & US Senate hearings creating ESRB ratings"
+        "Jurassic Park, Pulp Fiction, Pixar's Toy Story (1995) & Friday-night X-Files",
+        "Oasis vs. Blur Britpop, Wu-Tang Clan, Green Day's Dookie & Alanis Morissette",
+        "14.4k modem handshakes, AOL trial floppies, midnight Doom LANs & Windows 95",
+        "Early Mosaic/Netscape web pages & US Senate hearings creating ESRB ratings"
       ]
     },
     {
@@ -704,10 +704,10 @@
       "to": 1998,
       "vibe": "Tamagotchi keychains, four-player N64 sleepovers & GeoCities pages",
       "moments": [
-        "🚢 Titanic sweep, The Truman Show, Scream, Cowboy Bebop & South Park's cutout debut",
-        "📻 Radiohead's OK Computer, Spice Girls, Daft Punk's Homework & Lauryn Hill",
-        "🥚 Beeping Tamagotchis in class, Nokia 6110 Snake, ICQ 'uh-oh!' & 3dfx Voodoo cards",
-        "🔭 Mars Pathfinder's Sojourner rover, Dolly the cloned sheep & Google founded in a garage"
+        "Titanic sweep, The Truman Show, Scream, Cowboy Bebop & South Park's cutout debut",
+        "Radiohead's OK Computer, Spice Girls, Daft Punk's Homework & Lauryn Hill",
+        "Beeping Tamagotchis in class, Nokia 6110 Snake, ICQ 'uh-oh!' & 3dfx Voodoo cards",
+        "Mars Pathfinder's Sojourner rover, Dolly the cloned sheep & Google founded in a garage"
       ]
     },
     {
@@ -715,10 +715,10 @@
       "to": 2002,
       "vibe": "Y2K chrome, Napster MP3s, bullet-time cinema & late-night LAN cafés",
       "moments": [
-        "🕶️ The Matrix, Fight Club, Spirited Away & The Lord of the Rings: Fellowship",
-        "🎧 Napster & Winamp skins, Eminem, OutKast, The Strokes & stacks of burned CD-Rs",
-        "💻 Candy-colored iMac G3s, first scroll-wheel iPod (2001), Razor scooters & AIM away messages",
-        "🕯️ Y2K midnight countdown, dot-com crash, 9/11 & euro notes entering circulation"
+        "The Matrix, Fight Club, Spirited Away & The Lord of the Rings: Fellowship",
+        "Napster & Winamp skins, Eminem, OutKast, The Strokes & stacks of burned CD-Rs",
+        "Candy-colored iMac G3s, first scroll-wheel iPod (2001), Razor scooters & AIM away messages",
+        "Y2K midnight countdown, dot-com crash, 9/11 & euro notes entering circulation"
       ]
     },
     {
@@ -726,10 +726,10 @@
       "to": 2006,
       "vibe": "Razr flip phones, white iPod earbuds, MySpace Top 8 & broadband headsets",
       "moments": [
-        "📺 Lost island theories, The Wire, Chappelle's Show, Shaun of the Dead & Batman Begins",
-        "🎵 White iPod earbuds on subways, Gorillaz's Demon Days, Kanye West & polyphonic ringtones",
-        "📱 Motorola Razr V3 flip phones, MySpace HTML profiles, Skype, Xbox Live & early YouTube",
-        "🪐 Mars rovers Spirit and Opportunity, Concorde's final flight & Pluto reclassified"
+        "Lost island theories, The Wire, Chappelle's Show, Shaun of the Dead & Batman Begins",
+        "White iPod earbuds on subways, Gorillaz's Demon Days, Kanye West & polyphonic ringtones",
+        "Motorola Razr V3 flip phones, MySpace HTML profiles, Skype, Xbox Live & early YouTube",
+        "Mars rovers Spirit and Opportunity, Concorde's final flight & Pluto reclassified"
       ]
     },
     {
@@ -737,10 +737,10 @@
       "to": 2011,
       "vibe": "Pinch-to-zoom iPhones, plastic living-room guitars & midnight launch queues",
       "moments": [
-        "🎬 The Dark Knight, Iron Man's MCU kickoff, Inception, Breaking Bad & Avatar in 3D",
-        "🎸 Plastic Rock Band drum kits, Lady Gaga, LCD Soundsystem & MP3 music blogs",
-        "📱 Steve Jobs unveiling iPhone (2007), App Store hits, Netflix streaming & Justin.tv/Twitch",
-        "📉 2008 global financial crisis, Barack Obama's election & Bitcoin's 2009 genesis block"
+        "The Dark Knight, Iron Man's MCU kickoff, Inception, Breaking Bad & Avatar in 3D",
+        "Plastic Rock Band drum kits, Lady Gaga, LCD Soundsystem & MP3 music blogs",
+        "Steve Jobs unveiling iPhone (2007), App Store hits, Netflix streaming & Justin.tv/Twitch",
+        "2008 global financial crisis, Barack Obama's election & Bitcoin's 2009 genesis block"
       ]
     },
     {
@@ -748,10 +748,10 @@
       "to": 2018,
       "vibe": "Twitch marathons, Discord voice channels, Pokémon Go parks & prestige TV",
       "moments": [
-        "🐉 Sunday Game of Thrones watch parties, Mad Max: Fury Road, Stranger Things & Spider-Verse",
-        "🎧 Kendrick Lamar, Beyoncé's Lemonade, Daft Punk's Random Access Memories & lo-fi study streams",
-        "📲 Crowded parks playing Pokémon Go (2016), Vine 6-second loops, Discord & consumer VR",
-        "🌌 Curiosity touching down on Mars, Higgs boson confirmed & gravitational waves detected"
+        "Sunday Game of Thrones watch parties, Mad Max: Fury Road, Stranger Things & Spider-Verse",
+        "Kendrick Lamar, Beyoncé's Lemonade, Daft Punk's Random Access Memories & lo-fi study streams",
+        "Crowded parks playing Pokémon Go (2016), Vine 6-second loops, Discord & consumer VR",
+        "Curiosity touching down on Mars, Higgs boson confirmed & gravitational waves detected"
       ]
     },
     {
@@ -759,10 +759,10 @@
       "to": 2026,
       "vibe": "Lockdown islands, backpack PC handhelds, short-form feeds & everyday AI",
       "moments": [
-        "🍿 Parasite, Everything Everywhere All at Once, Barbenheimer, Dune: Part Two & Arcane",
-        "🏝️ Animal Crossing & Among Us keeping friends connected in 2020, Bad Bunny & Charli xcx",
-        "🎮 Couch-and-commute handheld PCs (Steam Deck), OLED displays, TikTok clips & cross-saves",
-        "🔭 Remote-work shift after 2020, James Webb deep-space photos & generative AI tools arriving"
+        "Parasite, Everything Everywhere All at Once, Barbenheimer, Dune: Part Two & Arcane",
+        "Animal Crossing & Among Us keeping friends connected in 2020, Bad Bunny & Charli xcx",
+        "Couch-and-commute handheld PCs (Steam Deck), OLED displays, TikTok clips & cross-saves",
+        "Remote-work shift after 2020, James Webb deep-space photos & generative AI tools arriving"
       ]
     }
   ],
@@ -812,8 +812,8 @@
     {
       "year": 2026,
       "kicker": "64 Years After Spacewar!",
-      "quote": "Thousands of writers, artists, animators, and engineers build Leonida while fast-followers chase every frame",
-      "body": "Sixty-four years after MIT students shared Spacewar! on punched paper tape, modern open worlds unite thousands of specialists—from water-physics coders and Foley sound recordists to street-culture researchers and motion-capture actors. Even as opportunistic clones scramble to mimic each trailer beat, the soul of a living world still comes from patient human craft.",
+      "quote": "Thousands of writers, artists, animators, and engineers build Leonida for a new generation of open worlds",
+      "body": "Sixty-four years after MIT students shared Spacewar! on punched paper tape, modern open worlds unite thousands of specialists—from water-physics coders and Foley sound recordists to street-culture researchers and motion-capture actors. The lasting pull of a living virtual city still comes from patient human craft.",
       "game": "grand-theft-auto-vi"
     }
   ],
@@ -884,17 +884,18 @@
   "gratitude": [],
   "vaultLore": [
     {
-      "tag": "🕵️ Scam & Scandal · 2005–2006",
-      "title": "Gizmondo, the Uppsala Mafia & the 162-MPH Malibu Ferrari",
+      "tag": "Scandal & Collapse · 2005–2006",
+      "title": "Gizmondo, Executive Fraud & the 162-MPH Malibu Ferrari",
       "cc": "SE",
       "sys": "Gizmondo",
       "games": [
         "sticky-balls"
       ],
-      "body": "Swedish executives Carl Freer and Stefan 'Tjock-Steffe' Eriksson—a former enforcer in Sweden's notorious Uppsala Mafia—burned through ~$300M+ in investor funds launching the GPS-equipped Gizmondo handheld, staging London Mayfair parties with Sting and Jamiroquai while selling fewer than 25,000 units. Weeks after bankruptcy, Eriksson split an embezzled $1M+ Ferrari Enzo in half at 162 mph on Malibu's Pacific Coast Highway and blamed a phantom German driver named 'Dietrich'—leaving real devs at Warthog Games and Indie Studios with 14 orphaned games."
+      "source": "Aftonbladet (2005), Wired ('The Strange Tale of the Gizmondo', 2006) & Los Angeles Times (2006)",
+      "body": "Tiger Telematics executives Carl Freer and Stefan Eriksson—previously convicted in Sweden's Uppsalamaffian criminal cases—oversaw roughly $300M+ in reported losses launching the GPS-equipped Gizmondo handheld, staging London Mayfair parties with Sting and Jamiroquai while selling fewer than 25,000 units. Weeks after bankruptcy in February 2006, Eriksson wrecked a leased Ferrari Enzo at roughly 162 mph on Malibu's Pacific Coast Highway and blamed an imaginary driver named 'Dietrich' before pleading no contest to embezzlement—leaving real devs at Warthog Games and Indie Studios with 14 orphaned games."
     },
     {
-      "tag": "🏜️ Urban Legend Proven Real · 1982–2014",
+      "tag": "Urban Legend Proven Real · 1982–2014",
       "title": "728,000 Cartridges in the New Mexico Desert — & Howard Scott Warshaw's Redemption",
       "cc": "US",
       "sys": "Atari 2600",
@@ -904,7 +905,7 @@
       "body": "Blamed for thirty years as the programmer who 'killed video games,' Atari star coder Howard Scott Warshaw (Yars' Revenge) had actually been handed an impossible 5-week solo deadline before Christmas 1982 instead of six months. In Sept 1983, Atari quietly buried ~728,000 unsold warehouse cartridges in Alamogordo, New Mexico. When excavators dug 30 feet down in April 2014 and pulled ~1,300 carts into the sunlight—sending one to the Smithsonian—crowds cheered Warshaw in one of gaming's warmest human redemptions."
     },
     {
-      "tag": "🌍 Parallel Universe · 1989–Today",
+      "tag": "Parallel Market · 1989–Today",
       "title": "TecToy's 35-Year Sega Universe in Brazil",
       "cc": "BR",
       "sys": "Master System",
@@ -915,7 +916,7 @@
       "body": "When steep Brazilian electronics tariffs priced out imports, São Paulo maker TecToy partnered officially with Sega in 1989—translating Phantasy Star into Portuguese, swapping Wonder Boy sprites into beloved Brazilian comic hero Turma da Mônica, porting Street Fighter II onto 8-bit hardware, launching the 3G cellular Zeebo console, and manufacturing brand-new Master System and Mega Drive variations into the 2020s."
     },
     {
-      "tag": "🌍 Parallel Universe · 1992–2000",
+      "tag": "Parallel Market · 1992–2000",
       "title": "Dendy, Subor & Pegasus: How Yellow Multicarts Raised Half the Planet",
       "cc": "TW",
       "sys": "Dendy",
@@ -927,7 +928,7 @@
       "body": "Nintendo never officially launched the 8-bit NES across Russia, Ukraine, Poland, or mainland China—so Taiwanese clone silicon stepped into the gap. Marketed with Ivan Maximov's cheerful elephant as Dendy, as Pegasus in Poland, and disguised inside a Jackie Chan–endorsed 'educational typing keyboard' by Subor (Xiaobawang) in China, bright yellow '9999-in-1' market cartridges introduced tens of millions of kids to couch co-op and computer programming."
     },
     {
-      "tag": "📡 Lost Broadcasts · 1994–2000",
+      "tag": "Lost Broadcasts · 1994–2000",
       "title": "Streaming Games in 1994: Coax Sega Channel & Live-Voice Satellaview",
       "cc": "JP",
       "sys": "SNES",
@@ -937,36 +938,36 @@
       "body": "Years before home broadband, Time Warner and TCI beamed 50 rotating Genesis games a month over coaxial cable-TV wires via the Sega Channel adapter. A year later in Japan, Nintendo's Satellaview modem pulled live SoundLink episodes down from an orbital satellite at 6:00 PM on Sundays: actors performed live radio drama over Super Famicom Zelda stages while the real-world clock triggered timed weather buffs and vanishing dungeons."
     },
     {
-      "tag": "🕵️ Vaporware Hall of Infamy · 2003–2016",
+      "tag": "Vaporware Archive · 2003–2016",
       "title": "Gutted PCs & Hot-Glued Capture Cards: Infinium Phantom & Coleco Chameleon",
       "cc": "US",
       "games": [],
       "body": "Hardware hype has its own folklore. In 2003, Infinium Labs raised ~$70M+ promising an always-online subscription console called The Phantom, sued journalists who questioned it, and ended in SEC fraud charges after shipping only a swivel keyboard. Thirteen years later, retro-cartridge darling Coleco Chameleon imploded overnight when eagle-eyed forum sleuths proved its NY Toy Fair 'prototype' was a PCI video-capture card hot-glued inside a clear Atari Jaguar shell."
     },
     {
-      "tag": "🚌 Unreleased Cult Miracle · 1995–Today",
+      "tag": "Unreleased Cult Milestone · 1995–Today",
       "title": "Desert Bus: How a Cancelled Penn & Teller Prank Raised $11M+ for Hospitalized Kids",
       "cc": "US",
       "sys": "Sega CD",
       "games": [
         "penn-and-tellers-smoke-and-mirrors"
       ],
-      "body": "Built to satirize 1990s Senate moral-panic hearings, Desert Bus asked Sega CD players to steer an empty highway bus for 8 real-time hours from Tucson to Las Vegas at a top speed of 45 mph—pulling slightly to the right so nobody could tape a button down—for 1 single point. Cancelled when Absolute Entertainment went bankrupt in 1995, a rediscovered press disc inspired loadingReadyRun's Desert Bus for Hope marathon, raising over $11 million for Child's Play Charity."
+      "body": "Built to satirize 1990s Senate moral-panic hearings, Desert Bus asked Sega CD players to steer an empty highway bus for 8 real-time hours from Tucson to Las Vegas at a top speed of 45 mph—pulling slightly to the right so nobody could tape a button down—for 1 single point. Cancelled when Absolute Entertainment went bankrupt in 1995, a rediscovered press disc inspired LoadingReadyRun's Desert Bus for Hope marathon, raising over $11 million for Child's Play Charity."
     },
     {
-      "tag": "🕯️ Shelved 22 Years · 1995–2017",
-      "title": "Star Fox 2: Finished in 1995, Locked in a Vault, Yet Quietly Shaping 3D Nintendo",
+      "tag": "Shelved 22 Years · 1995–2017",
+      "title": "Star Fox 2: Finished in 1995, Locked in a Vault, Reborn in Star Fox 64",
       "cc": "JP",
       "sys": "SNES",
       "games": [
         "star-fox-2",
-        "super-mario-64",
-        "star-fox-64"
+        "star-fox-64",
+        "super-mario-64"
       ],
-      "body": "Argonaut coder Dylan Cuthbert and Nintendo EAD completely finished, localized, and QA-tested Star Fox 2 in 1995—only for Shigeru Miyamoto to shelve the completed ROM so SNES polygons wouldn't look dated beside the PlayStation and upcoming N64. Yet the team's labor wasn't wasted: its free-roaming 3D camera and all-range dogfights fed directly into Super Mario 64 and Star Fox 64 before the untouched 1995 master finally shipped in 2017."
+      "body": "Argonaut coder Dylan Cuthbert and Nintendo EAD completely finished, localized, and QA-tested Star Fox 2 in 1995—only for Shigeru Miyamoto to shelve the completed ROM so SNES polygons wouldn't look dated beside the PlayStation and upcoming N64. Its all-range dogfights and Star Wolf rivals carried directly into Star Fox 64, and Cuthbert later recalled that some of its early 3D ground-movement and camera experiments helped inform Nintendo EAD heading into Super Mario 64 before the untouched 1995 master finally shipped in 2017."
     },
     {
-      "tag": "👻 Arcade Urban Legend · 1981",
+      "tag": "Arcade Urban Legend · 1981",
       "title": "Polybius: Portland's Men-in-Black Arcade Cabinet Myth",
       "cc": "US",
       "sys": "Arcade",
@@ -976,7 +977,7 @@
       "body": "In late 1981, Portland arcades saw real news crews covering teenagers struck with vertigo at glowing vector Tempest cabinets alongside federal agents inspecting coin-op machines in gambling stings. Twenty years later on early web archives, those tangled memories fused into gaming's quintessential ghost story: a mysterious black cabinet called Polybius whose players suffered amnesia while men in dark suits harvested scores after closing time."
     },
     {
-      "tag": "🎛️ Glorious Hardware Madness · 2002",
+      "tag": "Hardware Ambition · 2002",
       "title": "Steel Battalion's 40-Button Cockpit & Save-Wiping Eject Cover",
       "cc": "JP",
       "sys": "Xbox",
@@ -988,12 +989,12 @@
   ],
   "realStories": [
     {
-      "tag": "Documented · 1987–2017",
+      "tag": "Documented · 1987–2011",
       "title": "Robin & Zelda Williams — Named After Hyrule",
       "studio": "nintendo",
       "game": "zelda",
-      "source": "Nintendo 25th Anniversary Interview (2011) & Polygon (2017)",
-      "body": "While expecting their daughter in 1989, Robin and Marsha Williams spent evenings solving the gold NES cartridge of The Legend of Zelda together—and named Zelda Williams after the princess. Twenty-two years later, father and daughter filmed a warm tribute commercial for Ocarina of Time 3D, and after Robin's passing, Nintendo's developers quietly placed a wandering traveller tribute along Hyrule's roads in Breath of the Wild."
+      "source": "Nintendo 25th Anniversary Interview (2011)",
+      "body": "While expecting their daughter in 1989, Robin and Marsha Williams spent evenings playing the gold NES cartridge of The Legend of Zelda together—and named Zelda Williams after the princess. Twenty-two years later, father and daughter filmed a warm tribute commercial for Ocarina of Time 3D. (Fans later speculated that a wandering traveler in Breath of the Wild paid tribute to Robin, though Nintendo never officially confirmed it.)"
     },
     {
       "tag": "Documented · GDC 2005",
@@ -1008,8 +1009,8 @@
       "title": "87-Year-Old “Mayor Audie” & 3,580 Hours in Animal Crossing",
       "studio": "nintendo",
       "game": "animal-crossing-new-horizons",
-      "source": "Paul Hubans Video (2019) & Eurogamer / Nintendo Treehouse (2020)",
-      "body": "While recovering from illness at age 87, Audrey (“Audie” on her 3DS) tended flowers, mailed letters to villagers, and logged over 3,580 hours across four years in Animal Crossing: New Leaf. After her grandson shared a clip of her town tour online, Nintendo's team quietly named New Horizons' upbeat wolf villager Audie in her honor."
+      "source": "Paul Hubans Video (2019) & Eurogamer (2020)",
+      "body": "While recovering from illness at age 87, Audrey (“Audie” on her 3DS) tended flowers, mailed letters to villagers, and logged over 3,580 hours across four years in Animal Crossing: New Leaf, captured in a viral 2019 town tour shared by her grandson. When New Horizons launched the next year with an upbeat wolf villager localized in English as Audie, fans widely embraced it as a quiet nod—though Nintendo never officially confirmed the naming connection."
     },
     {
       "tag": "Documented · 1983–2000",
@@ -1025,7 +1026,7 @@
       "studio": "valve",
       "game": "portal",
       "source": "Geoff Keighley, The Final Hours of Portal 2 (2011)",
-      "body": "Diagnosed with ulcerative colitis while writing sharp, hilarious criticism on Old Man Murray, Erik Wolpaw was recruited by Gabe Newell to Valve—helping write Half-Life 2 episodes, Psychonauts, and Portal. Even when flare-ups landed him back in hospital beds, the dry, resilient comedy he poured into GLaDOS and Wheatley turned a tiny student-team puzzle experiment into one of gaming's best-loved scripts."
+      "body": "After writing sharp, hilarious criticism on Old Man Murray and co-writing Double Fine's Psychonauts (2005) with Tim Schafer, Erik Wolpaw was recruited by Gabe Newell to Valve—co-writing Half-Life 2: Episode One & Two, Portal, Left 4 Dead, and Portal 2. Even when ulcerative colitis flare-ups landed him in hospital beds, the dry, resilient comedy he poured into GLaDOS and Wheatley turned a small student-team puzzle concept into one of gaming's best-loved scripts."
     },
     {
       "tag": "Documented · 1995–Today",
@@ -1067,7 +1068,7 @@
       "pubg",
       "vampire-slayer"
     ],
-    "intro": "I grew up in Sweden in the late '80s and '90s swapping floppies and cartridges with friends, studied economics in Ohio, and have spent the last sixteen years working directly with the teams who build games and the platforms that carry them. I built Played & Made as a hobby love letter to two things: the worlds that quietly carried us through growing up, and the real human designers, engineers, writers, and artists whose craft deserves credit—especially in an era of studio closures and instant fast-follow clones.",
+    "intro": "I grew up in Sweden in the late '80s and '90s swapping floppies and cartridges with friends, studied economics in Ohio, and have spent the last sixteen years working alongside the teams who build games and the platforms that carry them. For millions of us, games weren't a distraction—they were safe harbors, living art built by designers, engineers, writers, and composers, and worlds that outlast every studio closure. I built Played & Made as an independent personal hobby project to honor the games that raised us and trace the human craft connecting them.",
     "chapters": [
       {
         "org": "Google",
@@ -1097,7 +1098,7 @@
   },
   "mobilePillars": [
     {
-      "tag": "👆 Touch-First Physics · 1997–2011",
+      "tag": "Touch-First Physics · 1997–2011",
       "title": "Reinventing Game Feel for One Thumb & Capacitive Glass",
       "body": "Translating D-pads onto glass failed until designers built around direct touch: Nokia's Snake (1997) in pockets worldwide, Rovio's slingshot trajectories in Angry Birds (game #52 after 51 near-misses), Halfbrick's multi-touch blade arcs in Fruit Ninja and Jetpack Joyride, ZeptoLab's Cut the Rope, and Tiny Wings.",
       "games": [
@@ -1110,9 +1111,9 @@
       ]
     },
     {
-      "tag": "🌍 3 Billion Players · 2012–Today",
+      "tag": "3 Billion Players · 2012–Today",
       "title": "Welcoming Parents, Commuters & Mobile-First Nations",
-      "body": "Hardcore forums often overlook that a $500 console and living-room TV were out of reach for most of humanity. Mobile turned subway rides and waiting rooms into playgrounds across every age and country—led by King's Candy Crush Saga, SYBO's Subway Surfers, Dream Games' Royal Match, Scopely's Monopoly GO!, and Tencent's Honor of Kings.",
+      "body": "For billions of players where a $500 console and living-room TV were out of reach, a phone was their first game machine. Mobile turned subway rides and waiting rooms into playgrounds across every age and country—led by King's Candy Crush Saga, SYBO's Subway Surfers, Dream Games' Royal Match, Scopely's Monopoly GO!, and Tencent's Honor of Kings.",
       "games": [
         "candy-crush-saga",
         "subway-surfers",
@@ -1123,7 +1124,7 @@
       ]
     },
     {
-      "tag": "🥂 Small-Cell Craft & 3-Minute Strategy",
+      "tag": "Small-Cell Craft & 3-Minute Strategy",
       "title": "Autonomous Studio Cells & Deep Pocket Tactics",
       "body": "In Helsinki, Supercell pioneered 6-to-12-person autonomous 'cells' that famously toast champagne when killing prototypes that aren't generational—yielding decade-long hits Clash of Clans, Clash Royale, and Brawl Stars. Meanwhile Second Dinner distilled collectible card mind-games into 3-minute Marvel Snap duels alongside Balatro and Vampire Survivors.",
       "games": [
@@ -1136,9 +1137,9 @@
       ]
     },
     {
-      "tag": "🎨 Pocket Art, Real-World Parks & Silicon Limits",
+      "tag": "Pocket Art, Real-World Parks & Silicon Limits",
       "title": "From Escher Puzzle Boxes & AR Summers to Console GPUs",
-      "body": "Mobile also birthed intimate interactive art and technical marvels: Asher Vollmer's Threes! (and the famous 2048 clone lesson), ustwo's Monument Valley, Ken Wong's Florence, inkle's 80 Days, Niantic's Pokémon GO filling summer 2016 parks with neighbors, and HoYoverse pushing phone thermals and shaders to open-world scale in Genshin Impact.",
+      "body": "Mobile also birthed intimate interactive art and technical marvels: Asher Vollmer's Threes!, ustwo's Monument Valley, Ken Wong's Florence, inkle's 80 Days, Niantic's Pokémon GO filling summer 2016 parks with neighbors, and HoYoverse pushing phone thermals and shaders to open-world scale in Genshin Impact.",
       "games": [
         "threes",
         "monument-valley",
@@ -1151,9 +1152,9 @@
   ],
   "ugcPillars": [
     {
-      "tag": "🛠️ Bedroom Mods → Billion-Dollar Genres · 1996–2013",
-      "title": "Plot Twist for Purists: PC Gaming's Biggest Genres Started as Mods",
-      "body": "Before dismissing modern UGC, remember how core PC genres began: Robin Walker's Quake mod Team Fortress (1996), Minh Le & Jess Cliffe's dorm-room Half-Life mod Counter-Strike (1999), Warcraft III custom map Defense of the Ancients (2003) birthing MOBAs, Garry's Mod & The Stanley Parable on Source, and Dean Hall's DayZ + Brendan Greene's ARMA mods sparking Battle Royale.",
+      "tag": "Bedroom Mods → Major Genres · 1996–2013",
+      "title": "How PC Gaming's Biggest Genres Started as Mods",
+      "body": "Some of PC gaming's most enduring genres began inside another game's modding tools: Robin Walker's Quake mod Team Fortress (1996), Minh Le & Jess Cliffe's dorm-room Half-Life mod Counter-Strike (1999), Warcraft III custom map Defense of the Ancients (2003) birthing MOBAs, Garry's Mod & The Stanley Parable on Source, and Dean Hall's DayZ + Brendan Greene's ARMA mods sparking Battle Royale.",
       "games": [
         "team-fortress",
         "counter-strike",
@@ -1164,7 +1165,7 @@
       ]
     },
     {
-      "tag": "⛏️ Sandbox Worlds & Player-Run Servers · 2008–Today",
+      "tag": "Sandbox Worlds & Player-Run Servers · 2008–Today",
       "title": "Play, Create, Share: Minecraft, LittleBigPlanet, Mario Maker & FiveM",
       "body": "Media Molecule's LittleBigPlanet (2008) and Nintendo's Super Mario Maker handed console players the level editor, while Mojang's Minecraft became digital LEGO—spawning working Redstone CPUs and massive RPG servers like Hypixel SkyBlock. On PC, Cfx.re's FiveM turned GTA V into unscripted improv theater before officially joining Rockstar.",
       "games": [
@@ -1177,7 +1178,7 @@
       ]
     },
     {
-      "tag": "🧱 Teenagers Shipping Hits for Millions · Roblox",
+      "tag": "Teenagers Shipping Hits for Millions · Roblox",
       "title": "From a 1989 Physics Classroom Sim to Gen Z's Indie Incubator",
       "body": "David Baszucki and Erik Cassel's 1989 educational lab Interactive Physics evolved into Roblox—where solo creators, college dormmates, and 17-year-old designers ship instant cross-platform phenomena like Adopt Me!, Brookhaven RP, co-op horror hit DOORS, and runaway fashion sensation Dress to Impress.",
       "games": [
@@ -1190,7 +1191,7 @@
       ]
     },
     {
-      "tag": "🌐 Live Engines as Platforms · UEFN, Auto Chess & VRChat",
+      "tag": "Live Engines as Platforms · UEFN, Auto Chess & VRChat",
       "title": "When Games Become Operating Systems for New Genres",
       "body": "From Drodo Studio inventing the auto-battler craze inside Dota 2's Workshop (Dota Auto Chess → Teamfight Tactics) to social avatars in VRChat and Epic opening Unreal Editor & Verse scripting inside Fortnite (UEFN), today's sharpest new mechanics often sprout inside another game's tools first.",
       "games": [
@@ -1205,7 +1206,7 @@
   ],
   "modStories": [
     {
-      "tag": "🦇 Cult Asymmetric GoldSrc Gem · 2000",
+      "tag": "Cult Asymmetric GoldSrc Gem · 2000",
       "title": "Huddling in a Mansion With Shotguns: Vampire Slayer (“Vampire Hunters”)",
       "cc": "GB",
       "games": [
@@ -1217,7 +1218,7 @@
       "body": "Long before Left 4 Dead Versus or Dead by Daylight, UK coder Routetwo's Half-Life mod Vampire Slayer (fondly remembered by LAN regulars as 'Vampire Hunters') nailed hilarious, heart-pounding asymmetric horror. Human Slayers huddled shoulder-to-shoulder inside creaking gothic mansions clutching pump and double-barreled shotguns, terrified of the dark—while Team Vampire leapt silently across moonlit rooftops outside, equally scared to drop into shotgun range because a downed vampire could be permanently staked through the heart before regenerating. Somebody genuinely needs to bring this exact dynamic back."
     },
     {
-      "tag": "🎯 Dorm-Room Mod → Forever Sport · 1998–1999",
+      "tag": "Dorm-Room Mod → Forever Sport · 1998–1999",
       "title": "20 Hours a Week in a University Bedroom: Action Quake 2 to Counter-Strike",
       "cc": "CA",
       "games": [
@@ -1229,7 +1230,7 @@
       "body": "Before Counter-Strike, Simon Fraser University student Minh 'Gooseman' Le co-created Action Quake 2 (John Woo shootouts in Quake II). During his final semester in Burnaby, BC, he spent 20 hours a week modeling realistic weapons in the Half-Life SDK while 17-year-old Jess Cliffe ran the website, curated community maps, and recorded the 'Counter-Terrorists Win' voice prompt himself. Beta 1.0 dropped free in June 1999; within months it eclipsed every retail shooter on Earth."
     },
     {
-      "tag": "🪂 Mod of a Mod → Global Phenomenon · 2012–2017",
+      "tag": "Mod of a Mod → Global Phenomenon · 2012–2017",
       "title": "From Czech Mil-Sim ARMA 2 to DayZ, Battle Royale & PUBG",
       "cc": "IE",
       "games": [
@@ -1241,7 +1242,7 @@
       "body": "New Zealand designer Dean Hall channeled military survival training into DayZ (2012), a brutal permadeath zombie mod whose tension spiked three-year-old ARMA 2 sales by 500%. Watching DayZ Survivor GameZ players camp in forests, Irish photographer and DJ Brendan 'PlayerUnknown' Greene taught himself scripting to build a mod of a mod—DayZ: Battle Royale (2013)—adding cargo-plane drops and a shrinking zone inspired by the 2000 Japanese film Battle Royale, igniting H1Z1, PUBG, Fortnite BR, and Warzone."
     },
     {
-      "tag": "🛠️ Class Shooters & Grapple Hooks · 1996",
+      "tag": "Class Shooters & Grapple Hooks · 1996",
       "title": "Three Melbourne Students & a Weekend Hack: Team Fortress & Threewave CTF",
       "cc": "AU",
       "games": [
@@ -1251,10 +1252,10 @@
         "team-fortress-2",
         "metroid-prime"
       ],
-      "body": "Within months of id Software shipping QuakeC in 1996, two mods rewired multiplayer DNA. In Melbourne, students Robin Walker, John Cook, and Ian Caughley built Team Fortress—inventing Medic, Spy, Sniper, and Engineer roles before Gabe Newell flew them to Seattle (where Walker later led TF2 and Half-Life: Alyx). Weeks later, Dave 'Zoid' Kirsch coded Threewave Capture the Flag with an off-hand grappling hook, launching a path from Valve straight to Retro Studios' Metroid Prime."
+      "body": "Within months of id Software shipping QuakeC in 1996, two mods rewired multiplayer DNA. In Melbourne, students Robin Walker, John Cook, and Ian Caughley built Team Fortress—inventing Medic, Spy, Sniper, and Engineer roles before Gabe Newell flew them to Seattle (where Walker later led TF2 and Half-Life: Alyx). Weeks later, Dave 'Zoid' Kirsch coded Threewave Capture the Flag with an off-hand grappling hook—leading id Software to hire him for Quake II CTF before he moved to Retro Studios as a senior engineer on Metroid Prime and later worked at Valve."
     },
     {
-      "tag": "🚁 Total Conversion → Studio Deal · 2003–2015",
+      "tag": "Total Conversion → Studio Deal · 2003–2015",
       "title": "When DICE Hired the Modders: Desert Combat → Battlefield 2 & Squad",
       "cc": "SE",
       "games": [
@@ -1267,7 +1268,7 @@
       "body": "New York mod team Trauma Studios overhauled Stockholm studio DICE's WWII Battlefield 1942 into Desert Combat (2003), introducing supersonic jets, M1A1 tanks, and notoriously high-skill AH-6 Little Bird helicopters. Rather than shutting them down, DICE acquired Trauma Studios to help build Battlefield 2 (2005)—whose own realism modders then built Project Reality and founded Offworld Industries to ship Squad."
     },
     {
-      "tag": "👽 FPS + RTS Hybrid · 2002–2014",
+      "tag": "FPS + RTS Hybrid · 2002–2014",
       "title": "One Marine in a Command Chair, Skulks in the Vents: Natural Selection → Subnautica",
       "cc": "US",
       "games": [
@@ -1275,10 +1276,10 @@
         "natural-selection",
         "subnautica"
       ],
-      "body": "Solo coder Charlie Cleveland fused StarCraft with Half-Life in 2002's Natural Selection: one player stepped into a top-down RTS Command Chair welding doors and dropping ammo packs while squadmates crept down dark corridors hunted by player-controlled Skulk aliens skittering across ceilings. Its success funded Unknown Worlds—eventually trading corridor firefights for deep-ocean wonder in Subnautica."
+      "body": "Lead coder Charlie Cleveland and a volunteer mod team fused StarCraft with Half-Life in 2002's Natural Selection: one player stepped into a top-down RTS Command Chair welding doors and dropping ammo packs while squadmates crept down dark corridors hunted by player-controlled Skulk aliens skittering across ceilings. Its success funded Unknown Worlds—eventually trading corridor firefights for deep-ocean wonder in Subnautica."
     },
     {
-      "tag": "🕴️ Fearless GoldSrc & Source Experiments · 1999–2005",
+      "tag": "Fearless GoldSrc & Source Experiments · 1999–2005",
       "title": "Kidnapping Scientists, Matrix Bullet-Time & Invisible Stalkers",
       "cc": "IT",
       "games": [
@@ -1290,7 +1291,7 @@
       "body": "With zero publisher focus groups to please, early Valve modders shipped gloriously weird multiplayer ideas: Science and Industry had rival megacorps clubbing and kidnapping each other's labcoat scientists to research bizarre weapons faster; The Specialists pulled off live multiplayer Matrix bullet-time dives and kung-fu kicks; Sven Co-op kept Half-Life co-op alive for 25+ years; and The Hidden: Source pit eight terrified SWAT officers against one nearly invisible knife-wielding stalker whispering over VoIP."
     },
     {
-      "tag": "🕵️ Mods Inside a Mod · 2004–2009",
+      "tag": "Mods Inside a Mod · 2004–2009",
       "title": "Coffee Mugs & Paranoia: Trouble in Terrorist Town & Prop Hunt",
       "cc": "NL",
       "games": [
@@ -1302,7 +1303,7 @@
       "body": "In 2004, 22-year-old Garry Newman stripped every goal out of Source so players could weld ragdolls to rockets. Inside Garry's Mod, community Lua scripters built mods inside a mod: Bad King Urgrain's Trouble in Terrorist Town (TTT) pioneered Traitor/Detective social deduction nine years before Among Us swept the world, while Prop Hunt turned players disguised as office chairs and coffee mugs into a party staple later adopted by Call of Duty and Fortnite."
     },
     {
-      "tag": "🗺️ Two Map Editors → Three Genres · 1998–2019",
+      "tag": "Two Map Editors → Three Genres · 1998–2019",
       "title": "StarEdit & World Editor: Aeon of Strife, DotA, Tower Defense & Auto Chess",
       "cc": "US",
       "games": [
@@ -1315,7 +1316,7 @@
       "body": "Blizzard's StarCraft and Warcraft III map editors served as an open game-design school. StarCraft custom map Aeon of Strife inspired Eul, Guinsoo, and IceFrog's Defense of the Ancients (DotA)—birthing MOBAs (League of Legends, Dota 2, Honor of Kings) alongside Wintermaul / Element TD Tower Defense—and in 2019, Drodo Studio used Dota 2's Workshop to invent auto-battlers with Dota Auto Chess."
     },
     {
-      "tag": "🕯️ Solo Obsession & Overhauls · 1999–2021",
+      "tag": "Solo Obsession & Overhauls · 1999–2021",
       "title": "PC Gamer Cover Discs, Nocturnal Stockholm & 120-Hour XCOM",
       "cc": "SE",
       "games": [

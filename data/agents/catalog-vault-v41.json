@@ -77,7 +77,7 @@
       "genres": ["space", "shooter"],
       "plats": ["SNES"],
       "pop": 4,
-      "note": "Completely finished, localized, and bug-tested in 1995 using the upgraded Super FX 2 chip—then locked in Nintendo's vault for 22 years so its flat-shaded 3D wouldn't look dated beside the upcoming N64, even as its free-roaming all-range flight and 3D camera lessons shaped Super Mario 64 and Star Fox 64 (finally released in 2017)."
+      "note": "Completely finished, localized, and bug-tested in 1995 using the upgraded Super FX 2 chip—then locked in Nintendo's vault for 22 years so its flat-shaded 3D wouldn't look dated beside the upcoming N64. Its all-range dogfights carried directly into Star Fox 64, and lead programmer Dylan Cuthbert noted its early 3D camera and movement tests helped inform Nintendo EAD heading into Super Mario 64 (finally released in 2017)."
     },
     {
       "id": "lsd-dream-emulator",
@@ -447,10 +447,10 @@
       "to": "super-mario-64",
       "tier": "dev",
       "rel": "evolution",
-      "took": "3D camera-tracking experiments and walker-mode ground movement prototyped on the unreleased Super FX 2 sequel",
-      "added": "Full analog 3D platforming vocabulary and Lakitu camera controls on Nintendo 64",
+      "took": "Early 3D camera and free-roaming ground/walker prototyping by Dylan Cuthbert and Nintendo EAD on the shelved SNES sequel",
+      "added": "Full analog 3D platforming vocabulary and Lakitu camera controls built specifically for Nintendo 64",
       "src": [
-        { "t": "Shigeru Miyamoto on Star Fox 2 influencing Super Mario 64", "u": "https://en.wikipedia.org/wiki/Star_Fox_2" }
+        { "t": "Dylan Cuthbert on Star Fox 2's 3D prototyping — Wikipedia", "u": "https://en.wikipedia.org/wiki/Star_Fox_2" }
       ]
     },
     {
