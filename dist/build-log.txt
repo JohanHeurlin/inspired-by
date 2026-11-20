@@ -1,4 +1,4 @@
-Built 2026-11-19 12:24  ->  dist\index.html (11.7 KB shell) + app.fabeece0f5.css (98.1 KB) + app.2f16e0f9f7.js (582.5 KB) + data.06f370fbfd.json (2425 KB)  |  standalone dist\inspired-by.html (3106 KB)
+Built 2026-11-19 23:19  ->  dist\index.html (11.8 KB shell) + app.0a231adacd.css (98.2 KB) + app.212ad93b40.js (588.1 KB) + data.06f370fbfd.json (2425 KB)  |  standalone dist\inspired-by.html (3112 KB)
 Agent files: 85  |  games: 4250 (in family tree: 2845, in catalog: 3777, new from agents: 3399)
 Links: 3908  |  
 dev=883 team=780 series=1174 critic=656 mech=383 disp=32
@@ -143,5 +143,5 @@ pair conflict: dikumud>everquest kept dev over critic [wrpg-5.json vs roots-2.js
 pair conflict: dikumud>ultima-online kept dev over critic [roots-2.json vs wrpg-5.json]
 pair conflict: everquest>world-of-warcraft kept dev over critic [wrpg-5.json vs roots-2.json]
 pair conflict: frontier-elite-ii>elite-dangerous kept series over series [wrpg-5.json vs openworld-4.json]
-recycled old asset: app.e2e3268899.css
-recycled old asset: app.9dd26c2642.js
+recycled old asset: app.fabeece0f5.css
+recycled old asset: app.509b42e833.js

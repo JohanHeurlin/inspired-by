@@ -456,6 +456,7 @@ button.chip:hover{border-color:var(--line2)}
 .treebox{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:auto;max-height:min(72vh,680px);max-height:min(72dvh,680px);-webkit-overflow-scrolling:touch}
 .wnode{cursor:pointer}
 .wnode:focus-visible rect{stroke:var(--accent);stroke-width:3}
+.wnode.tcol-exp:hover rect{stroke-opacity:1;fill:var(--paper)}
 .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
 @media (max-width:820px){.cols{grid-template-columns:minmax(0,1fr)}}
 .panel{border-radius:14px;padding:16px;transition:box-shadow .28s ease}
@@ -2057,7 +2058,7 @@ const shareLink=(d,opts)=>shareBase()+"#"+encodeShare(d,opts);
 /* ================================================================
    Router and views
    ================================================================ */
-const state={route:{view:"start"},heroEra:"90s",heroBirth:null,heroShuffle:0,wheelFilter:"all",shareBirth:false,shareNotes:false,shareSlide:0,attractDisabled:false,infMode:store.get("ib2-inf","direct"),cmpMode:"age",almTab:"vault",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),makerRole:"",makerWkType:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),eraFold:store.get("ib3-erafold",{}),mechTab:"mechanics",priceReal:false,priceComp:false,priceEra:3,genreSel:"",worldCC:"",worldMine:false,quizMode:"lore",posterMode:"wall",mapMode:"pillars",mapStrong:true,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
+const state={route:{view:"start"},heroEra:"90s",heroBirth:null,heroShuffle:0,wheelFilter:"all",shareBirth:false,shareNotes:false,shareSlide:0,attractDisabled:false,infMode:store.get("ib2-inf","direct"),cmpMode:"age",almTab:"vault",stFilter:"all",tlMode:"all",devMode:store.get("ib3-devmode",0),makerRole:"",makerWkType:"",pickSys:"",pickMode:"eras",packKey:"coop",eraMem:store.get("ib3-eramem",1),eraFold:store.get("ib3-erafold",{}),mechTab:"mechanics",priceReal:false,priceComp:false,priceEra:3,genreSel:"",worldCC:"",worldMine:false,quizMode:"lore",posterMode:"wall",mapMode:"pillars",mapStrong:true,trail:[],navCount:0,tiers:Object.assign({dev:1,team:1,series:1,critic:1,mech:1,disp:1},store.get("ib2-tiers",{})),treeFocusId:"",treeDepthBack:2,treeDepthFwd:2,treeMore:{},viewing:null,showAllYear:false,pickExtra:{}};
 state.tiers.disp=store.get("ib3-disp-init")?state.tiers.disp:1;store.set("ib3-disp-init",1);
 const isDevMode=()=>!!(state.devMode||workedEntries(hist).length||(hist.workedStudios&&hist.workedStudios.length));
 function renderSandboxBar(){
@@ -3303,10 +3304,7 @@ function renderFamilyTree(m,focusId,opts={}){
   </section>
   ${footer()}`;
   requestAnimationFrame(()=>{
-    const tb=$("#treebox");if(tb){
-      if(state.treeKeepScroll!=null){tb.scrollLeft=state.treeKeepScroll;state.treeKeepScroll=null}
-      else{const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx,mob=window.innerWidth<=560;tb.scrollLeft=Math.max(0,x-tb.clientWidth*(mob?0.28:0.5))}}
-    }
+    restoreTreeScroll($("#treebox"));
     const mc=$("#mapThumb");if(mc)drawMapThumb(mc);
   });
   wireSearch($("#linQ"),$("#linR"),x=>{if(!x||!x.id)return;if(x.tree)go("lineage-"+x.id);else go(x.id)},{treeOnly:false});
@@ -3357,7 +3355,7 @@ function stepAttractMode(){
   }
   ATTRACT.lastId=cur.id;
   state.linId=pick.g.id;
-  state.treeMore={};
+  state.treeMore={};state.treeDepthBack=2;state.treeDepthFwd=2;
   const m=$("#main");
   if(m){
     renderFamilyTree(m,pick.g.id,{fromAttract:true});
@@ -4715,13 +4713,13 @@ function renderGame(m,id){
         const arrow=!nx?"":nx.collapsed?`<span class="rfold" title="${esc(nx.collapsed.via.map(v=>v.title).join(", "))}">… ${nx.collapsed.n} more in the series …</span>`:(()=>{const lk=nx.link;return lk?`<span class="rarr" style="--c:var(${TIERS[lk.t].c})" title="${esc(tierLabelForLink(lk))}" aria-hidden="true"></span>`:``})();
         return `<button class="rs${s.g.i===g.i?" cur":""}" data-act="game" data-id="${s.g.id}">${cover(s.g,{showYear:false})}<b>${esc(s.g.title)}</b><span>${s.g.year}</span></button>${arrow}`}).join("")}</div></section>`
       :`<section class="sec"><p class="sub">No recorded roots yet.</p></section>`}
-    ${g.tree?`<section class="sec"><div class="sechead"><div><h2 class="h2">${esc(treeHeading(g.title))}</h2><p class="sub">Two generations back and forward. Tap any game to refocus the tree.</p></div></div>
+    ${g.tree?`<section class="sec"><div class="sechead"><div><h2 class="h2">${esc(treeHeading(g.title))}</h2><p class="sub">Tap ◂ Earlier or Later ▸ to open more generations, or any game to refocus the tree.</p></div></div>
       <div class="pickstrip" style="padding:0 0 8px;gap:5px">${TIERS.map(t=>`<button type="button" class="chip tierchip" style="--c:var(${t.c})" data-act="tier" data-tier="${t.k}" aria-pressed="${!!state.tiers[t.k]}">${tierSwatchSVG(t)}${t.label}</button>`).join("")}</div>
       <div class="treebox" id="treebox" tabindex="0" role="region" aria-label="Interactive family tree">${treeSVG(g)}</div></section>
     <section class="sec"><div class="cols">${panelHTML("up",ups,g)}${panelHTML("down",downs,g)}</div></section>`:""}
   </div>${footer()}`;
   requestAnimationFrame(()=>{const rr=$("#rootsRow");if(rr)rr.scrollLeft=rr.scrollWidth;
-    const tb=$("#treebox");if(tb){if(state.treeKeepScroll!=null){tb.scrollLeft=state.treeKeepScroll;state.treeKeepScroll=null}else{const c=tb.querySelector("[data-center]");if(c){const x=+c.dataset.cx,mob=window.innerWidth<=560;tb.scrollLeft=Math.max(0,x-tb.clientWidth*(mob?0.28:0.5))}}}});
+    restoreTreeScroll($("#treebox"))});
   mountGameGallery(g,"#gameGalBox");
 }
 /* catalog-only games: no dead end, point to nearby games that are in the family tree */
@@ -4730,25 +4728,71 @@ function relatedSection(g){
   return `<section class="sec"><div class="card"><h2 class="h3">${esc(g.title)} isn't in the family tree yet</h2><p class="sub" style="margin:0">It's in the catalog, so you can add it to your timeline. Nobody has recorded what inspired it yet.</p></div>
     ${rel.length?`<h2 class="h2" style="margin-top:22px">Related games in the family tree</h2><p class="sub">Same kind of game, from around the same time.</p><div class="recs">${rel.map(r=>tileHTML(r,hist,{act:"game",quickTick:true})).join("")}</div>`:""}</section>`;
 }
-/* two generations each way, capped per column; ordered by year, with real box art thumbnails */
+/* expandable generations each way (starts at 2, expands up to 12); ordered by year, with real box art thumbnails */
 function computeTreeLayout(g){
-  const gen=new Map([[g.i,0]]),cols={"-2":[],"-1":[],"0":[g.i],"1":[],"2":[]};
+  if(state.treeFocusId!==g.id){
+    state.treeFocusId=g.id;
+    state.treeMore={};
+    state.treeDepthBack=2;
+    state.treeDepthFwd=2;
+  }
+  const MAX_DEPTH=12;
+  const dBack=Math.max(2,Math.min(MAX_DEPTH,state.treeDepthBack||2));
+  const dFwd=Math.max(2,Math.min(MAX_DEPTH,state.treeDepthFwd||2));
+  const gen=new Map([[g.i,0]]),cols={0:[g.i]};
+  for(let d=1;d<=dBack;d++)cols[-d]=[];
+  for(let d=1;d<=dFwd;d++)cols[d]=[];
   const imp=i=>G[i].pop*10+Math.min(G[i].inf,500)/10;
   const add=(i,k)=>{if(!gen.has(i)){gen.set(i,k);cols[k].push(i)}};
-  UP[g.i].filter(tierOn).forEach(l=>add(l.from,-1));
-  DOWN[g.i].filter(tierOn).forEach(l=>add(l.to,1));
   const cap=k=>state.treeMore["c"+k]?60:9;
-  const trim=k=>{cols[k].sort((a,b)=>imp(b)-imp(a));const more=cols[k].length-cap(k);if(more>0){cols[k].slice(cap(k)).forEach(i=>gen.delete(i));cols[k]=cols[k].slice(0,cap(k))}return Math.max(0,more)};
-  const more={"-1":trim(-1),"1":trim(1)};
-  cols["-1"].forEach(i=>UP[i].filter(tierOn).forEach(l=>add(l.from,-2)));
-  cols["1"].forEach(i=>DOWN[i].filter(tierOn).forEach(l=>add(l.to,2)));
-  more["-2"]=trim(-2);more["2"]=trim(2);
-  const ks=[-2,-1,0,1,2].filter(k=>cols[k].length);
+  const trim=k=>{
+    cols[k].sort((a,b)=>imp(b)-imp(a));
+    const m=cols[k].length-cap(k);
+    if(m>0){cols[k].slice(cap(k)).forEach(i=>gen.delete(i));cols[k]=cols[k].slice(0,cap(k))}
+    return Math.max(0,m);
+  };
+  const more={};
+  for(let d=1;d<=dBack;d++){
+    (cols[-(d-1)]||[]).forEach(i=>UP[i].filter(tierOn).forEach(l=>add(l.from,-d)));
+    more[-d]=trim(-d);
+  }
+  for(let d=1;d<=dFwd;d++){
+    (cols[d-1]||[]).forEach(i=>DOWN[i].filter(tierOn).forEach(l=>add(l.to,d)));
+    more[d]=trim(d);
+  }
+  const ks=[];
+  for(let d=dBack;d>=1;d--)if(cols[-d].length)ks.push(-d);
+  ks.push(0);
+  for(let d=1;d<=dFwd;d++)if(cols[d].length)ks.push(d);
   ks.forEach(k=>cols[k].sort((a,b)=>G[a].year-G[b].year||G[a].title.localeCompare(G[b].title)));
-  return {gen,cols,more,ks};
+  const minK=ks[0],maxK=ks[ks.length-1];
+  const nextBackSet=new Set(),nextFwdSet=new Set();
+  if(minK<0&&-minK<MAX_DEPTH)cols[minK].forEach(i=>UP[i].filter(tierOn).forEach(l=>{if(!gen.has(l.from))nextBackSet.add(l.from)}));
+  if(maxK>0&&maxK<MAX_DEPTH)cols[maxK].forEach(i=>DOWN[i].filter(tierOn).forEach(l=>{if(!gen.has(l.to))nextFwdSet.add(l.to)}));
+  return {gen,cols,more,ks,minK,maxK,nextBack:nextBackSet.size,nextFwd:nextFwdSet.size,maxDepth:MAX_DEPTH};
+}
+function restoreTreeScroll(tb){
+  if(!tb)return;
+  const keep=state.treeKeepScroll;
+  if(keep!=null){
+    state.treeKeepScroll=null;
+    if(typeof keep==="number"){tb.scrollLeft=keep;return}
+    const maxX=Math.max(0,tb.scrollWidth-tb.clientWidth);
+    if(keep.top!=null)tb.scrollTop=keep.top;
+    if(keep.fromLeft!=null)tb.scrollLeft=Math.max(0,Math.min(maxX,keep.fromLeft));
+    if(keep.toLeft!=null){
+      const dest=keep.toLeft==="end"?maxX:Math.max(0,Math.min(maxX,keep.toLeft));
+      const beh=prefersReducedMotion()?"auto":"smooth";
+      if(beh==="smooth"&&Math.abs(tb.scrollLeft-dest)>2)tb.scrollTo({left:dest,behavior:"smooth"});
+      else tb.scrollLeft=dest;
+    }
+    return;
+  }
+  const c=tb.querySelector("[data-center]");
+  if(c){const x=+c.dataset.cx,mob=window.innerWidth<=560;tb.scrollLeft=Math.max(0,x-tb.clientWidth*(mob?0.28:0.5))}
 }
 function treeSVG(g,nodeAct="game"){
-  const {gen,cols,more,ks}=computeTreeLayout(g);
+  const {gen,cols,more,ks,minK,maxK,nextBack,nextFwd}=computeTreeLayout(g);
   const mob=typeof window!=="undefined"&&window.innerWidth<=560;
   const W=mob?152:192,H=mob?56:52,RG=mob?8:10,CG=mob?34:50,M=mob?12:16,TOP=40;
   const maxRows=Math.max(...ks.map(k=>cols[k].length+(more[k]?1:0)));
@@ -4770,11 +4814,39 @@ function treeSVG(g,nodeAct="game"){
   };
   let defs="";
   for(const [i,p] of pos)if(useImg&&G[i].img)defs+=`<clipPath id="tc-${i}"><rect x="${p.x+6}" y="${p.y+6}" width="${covW}" height="${covH}" rx="4"/></clipPath>`;
-  let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="group" aria-label="Family tree of ${esc(g.title)}">${defs?`<defs>${defs}</defs>`:""}`;
-  const lab={"-2":mob?"◂ Earlier":"◂ Earlier ancestors","-1":"◂ Inspired it","0":"This game","1":"It inspired ▸","2":mob?"Later ▸":"Later descendants ▸"};
+  let s=`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" data-step="${W+CG}" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" style="display:block" role="group" aria-label="Family tree of ${esc(g.title)}">${defs?`<defs>${defs}</defs>`:""}`;
+  const colName=k=>{
+    if(k===0)return "This game";
+    if(k===-1)return "Inspired it";
+    if(k===1)return "It inspired";
+    if(k===-2)return mob?"Earlier":"Earlier ancestors";
+    if(k===2)return mob?"Later":"Later descendants";
+    if(k<-2)return mob?`${-k} back`:`${-k} gens earlier`;
+    return mob?`${k} later`:`${k} gens later`;
+  };
   ks.forEach(k=>{
-    const tot=cols[k].length+(more[k]||0),lbl=k===0?lab[k]:`${lab[k]} (${tot})`;
-    s+=`<g class="wnode" data-act="treeColJump" data-col="${k}" data-colx="${colX[k]+W/2}" pointer-events="all" style="cursor:pointer" role="button" tabindex="0" aria-label="Scroll to ${esc(lbl)}"><rect x="${colX[k]+6}" y="6" width="${W-12}" height="24" rx="12" fill="${card}" fill-opacity="0.85" stroke="${line2}" stroke-opacity="0.65"/><text aria-hidden="true" x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="${mob?10.5:11}" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${esc(lbl)}</text></g>`;
+    const tot=cols[k].length+(more[k]||0);
+    const canBack=k===minK&&k<0&&nextBack>0;
+    const canFwd=k===maxK&&k>0&&nextFwd>0;
+    const canMore=!canBack&&!canFwd&&(more[k]||0)>0;
+    const canLess=!canBack&&!canFwd&&!more[k]&&!!state.treeMore["c"+k]&&cols[k].length>9;
+    const exp=canBack?"back":canFwd?"fwd":canMore?"more":canLess?"less":"";
+    const edge=k===minK&&k<0?"back":k===maxK&&k>0?"fwd":"";
+    const base=colName(k);
+    const lbl=k===0?base:canBack?`◂ ${base} (${tot})`:canFwd?`${base} (${tot}) ▸`:canMore?`${base} (${tot}) ▾`:canLess?`${base} (${tot}) ▴`:`${base} (${tot})`;
+    const aria=canBack?`Open ${plural(nextBack,"earlier title")} beyond ${base} (${tot})`
+      :canFwd?`Open ${plural(nextFwd,"later title")} beyond ${base} (${tot})`
+      :canMore?`Show ${more[k]} more games in ${base} (${tot} total)`
+      :canLess?`Collapse ${base} back to top 9 (${tot} total)`
+      :k===0?base:`${base} (${tot})`;
+    const tip=canBack?`Click to open ${plural(nextBack,"earlier title")} (generation ${k-1})`
+      :canFwd?`Click to open ${plural(nextFwd,"later title")} (generation +${k+1})`
+      :canMore?`Click to show all ${tot} titles in this column`
+      :canLess?`Click to show top 9 titles in this column`:aria;
+    const strokeCol=exp?(k<0?upInk:downInk):line2;
+    const strokeOp=exp?"0.72":"0.65";
+    const strokeW=exp?"1.35":"1";
+    s+=`<g class="wnode${exp?" tcol-exp":""}" data-act="treeColJump" data-col="${k}" data-colx="${colX[k]+W/2}" data-exp="${exp}" data-edge="${edge}" pointer-events="all" style="cursor:pointer" role="button" tabindex="0" aria-label="${esc(aria)}"><title>${esc(tip)}</title><rect x="${colX[k]+6}" y="6" width="${W-12}" height="24" rx="12" fill="${card}" fill-opacity="0.92" stroke="${strokeCol}" stroke-opacity="${strokeOp}" stroke-width="${strokeW}"/><text aria-hidden="true" x="${colX[k]+W/2}" y="22" text-anchor="middle" font-size="${mob?10.5:11}" font-weight="700" fill="${k<0?upInk:k>0?downInk:ink}">${esc(lbl)}</text></g>`;
   });
   const edges=L.filter(l=>tierOn(l)&&pos.has(l.from)&&pos.has(l.to)&&gen.get(l.to)-gen.get(l.from)===1);
   edges.forEach(l=>{const A=pos.get(l.from),B=pos.get(l.to),t=TIERS[l.t];const x1=A.x+W,y1=A.y+H/2,x2=B.x,y2=B.y+H/2,dx=Math.max(16,(x2-x1)/2);
@@ -7872,7 +7944,7 @@ const ACTIONS={
   },
   attractStop(){stopAttractMode(true);toast("Attract mode turned off for this session")},
   steamImport(){openSteamImportSheet()},
-  linFocus(el){const id=el.dataset.id;if(!id)return;state.linId=id;state.treeMore={};go("lineage-"+id)},
+  linFocus(el){const id=el.dataset.id;if(!id)return;state.linId=id;state.treeMore={};state.treeDepthBack=2;state.treeDepthFwd=2;go("lineage-"+id)},
   shuffleStories(){storyDeckOffset++;const cur=$("#homeStories");if(cur){const tmp=document.createElement("div");tmp.innerHTML=rotatingStoriesHTML();if(tmp.firstElementChild)cur.replaceWith(tmp.firstElementChild)}else{const y=window.scrollY;render();window.scrollTo({top:y})}},
   jumpPanel(el){jumpToPanel(el.dataset.dir||"up",el.dataset.id||"")},
   reachSheet(el){const g=byId.get(el.dataset.id);if(!g)return;openReachSheet(g,el.dataset.dir||"down",true)},
@@ -7884,7 +7956,7 @@ const ACTIONS={
   vidClose(){closeVidDock()},
   vidCycleCorner(){cycleVidCorner()},
   vidKeyHelp(){toast("Tip: Drag ⠿ or press Arrow keys to move · ⇄ snaps corners · ⤢ expands")},
-  vidGoLineage(){const id=VID_STATE.gid;minimizeVidDock();if(!id)return;const g=byId.get(id);if(g&&g.tree){state.linId=id;state.treeMore={};go("lineage-"+id)}else go(id)},
+  vidGoLineage(){const id=VID_STATE.gid;minimizeVidDock();if(!id)return;const g=byId.get(id);if(g&&g.tree){state.linId=id;state.treeMore={};state.treeDepthBack=2;state.treeDepthFwd=2;go("lineage-"+id)}else go(id)},
   vidGoGame(){const id=VID_STATE.gid;minimizeVidDock();if(id)go(id)},
   vidGoWalk(){const g=VID_STATE.gid&&byId.get(VID_STATE.gid);minimizeVidDock();if(g&&UP[g.i]&&UP[g.i].length)openStory(rootsChain(g.i))},
   goGiveBack(){clearLayer();go("giveback")},
@@ -8051,21 +8123,51 @@ const ACTIONS={
     if(location.hash&&location.hash!=="#start")history.replaceState(null,"","#start");
     go("start");render();toast("Reset to first-time experience");
   },
-  tier(el){const tb=$("#treebox");if(tb)state.treeKeepScroll=tb.scrollLeft;const k=el.dataset.tier;state.tiers[k]=state.tiers[k]?0:1;store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
-  allTiers(){const tb=$("#treebox");if(tb)state.treeKeepScroll=tb.scrollLeft;TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
+  tier(el){const tb=$("#treebox");if(tb)state.treeKeepScroll={fromLeft:tb.scrollLeft,top:tb.scrollTop};const k=el.dataset.tier;state.tiers[k]=state.tiers[k]?0:1;store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
+  allTiers(){const tb=$("#treebox");if(tb)state.treeKeepScroll={fromLeft:tb.scrollLeft,top:tb.scrollTop};TIERS.forEach(t=>state.tiers[t.k]=1);store.set("ib2-tiers",state.tiers);const y=window.scrollY;render();window.scrollTo({top:y})},
   moreLinks(el){state.treeMore[el.dataset.dir]=1;const y=window.scrollY;render();window.scrollTo({top:y})},
-  treeMore(el){const tb=$("#treebox");if(tb)state.treeKeepScroll=tb.scrollLeft;state.treeMore["c"+el.dataset.col]=1;const y=window.scrollY;render();window.scrollTo({top:y})},
+  treeMore(el){const tb=$("#treebox");if(tb)state.treeKeepScroll={fromLeft:tb.scrollLeft,top:tb.scrollTop};state.treeMore["c"+el.dataset.col]=1;playUiTick("fwd");haptic(8);const y=window.scrollY;render();window.scrollTo({top:y})},
   treeColJump(el){
-    const col=el.dataset.col,tb=$("#treebox");if(!tb)return;
-    const hdr=tb.querySelector(`g[data-colx][data-col="${col}"]`);
-    if(!hdr)return;
-    const target=Math.max(0,(+hdr.dataset.colx)-tb.clientWidth/2);
-    const moreBtn=tb.querySelector(`g[data-act="treeMore"][data-col="${col}"]`);
-    if(moreBtn&&Math.abs(tb.scrollLeft-target)<36){
-      state.treeKeepScroll=target;state.treeMore["c"+col]=1;
-      const y=window.scrollY;render();window.scrollTo({top:y});return;
+    const col=el.dataset.col,k=+col,tb=$("#treebox");if(!tb)return;
+    const exp=el.dataset.exp||"";
+    const step=+(tb.querySelector("svg")?.dataset.step||(window.innerWidth<=560?186:242));
+    const y=window.scrollY;
+    if(exp==="back"){
+      state.treeKeepScroll={fromLeft:tb.scrollLeft+step,toLeft:0,top:tb.scrollTop};
+      state.treeDepthBack=Math.min(12,Math.abs(k)+1);
+      playUiTick("back");haptic(8);
+      render();window.scrollTo({top:y});return;
     }
-    tb.scrollTo({left:target,behavior:"smooth"});
+    if(exp==="fwd"){
+      state.treeKeepScroll={fromLeft:tb.scrollLeft,toLeft:"end",top:tb.scrollTop};
+      state.treeDepthFwd=Math.min(12,Math.abs(k)+1);
+      playUiTick("fwd");haptic(8);
+      render();window.scrollTo({top:y});return;
+    }
+    if(exp==="more"){
+      state.treeKeepScroll={fromLeft:tb.scrollLeft,top:tb.scrollTop};
+      state.treeMore["c"+col]=1;
+      playUiTick("fwd");haptic(8);
+      render();window.scrollTo({top:y});return;
+    }
+    if(exp==="less"){
+      state.treeKeepScroll={fromLeft:tb.scrollLeft,top:tb.scrollTop};
+      delete state.treeMore["c"+col];
+      playUiTick("back");
+      render();window.scrollTo({top:y});return;
+    }
+    const hdr=tb.querySelector(`g[data-colx][data-col="${col}"]`);
+    if(hdr){
+      const maxX=Math.max(0,tb.scrollWidth-tb.clientWidth);
+      const target=Math.max(0,Math.min(maxX,(+hdr.dataset.colx)-tb.clientWidth/2));
+      if(Math.abs(tb.scrollLeft-target)>12){
+        tb.scrollTo({left:target,behavior:prefersReducedMotion()?"auto":"smooth"});
+        return;
+      }
+    }
+    const edge=el.dataset.edge||"";
+    if(edge==="back")toast(Math.abs(k)>=12?"Showing 12 generations back — click any earlier game to keep tracing":"Earliest recorded ancestors shown");
+    else if(edge==="fwd")toast(Math.abs(k)>=12?"Showing 12 generations ahead — click any later game to keep tracing":"Latest recorded descendants shown");
   },
   closeStory(){closeStory()},storyNext(){storyStep(1)},storyPrev(){storyStep(-1)},storyRestart(){if(story){story.dir=1;story.k=story.chain.length-1;drawStory()}},storyJump(el){if(story){const nk=+el.dataset.k;story.dir=nk<story.k?-1:1;story.k=nk;drawStory()}},
   compare(){const f=state.viewing;if(f)openCompare(f)}
